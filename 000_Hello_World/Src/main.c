@@ -17,6 +17,7 @@
  */
 
 #include <stdint.h>
+#include <stdio.h>
 
 #if !defined(__SOFT_FP__) && defined(__ARM_FP)
   #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use."
@@ -25,5 +26,11 @@
 int main(void)
 {
     /* Loop forever */
+	printf("Hello World!!!\n");
+//	while(1){
+//		printf("Hello World!!!");
+//		for(int i=0;i<10000;i++);
+//	}
+
 	for(;;);
 }
