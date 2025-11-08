@@ -54,11 +54,11 @@
 int main(void) {
 	/* Loop forever */
 	//1. Enable GPIOA peripheral
-	uint32_t *pRCC_AHB1ENR = (uint32_t*) RCC_AHB1ENR;
+	volatile uint32_t *pRCC_AHB1ENR = (uint32_t*) RCC_AHB1ENR;
 	*pRCC_AHB1ENR |= (1 << 0);
 
 	//2. Set pin PA0 as the input
-	uint32_t *pGPIOA_MODER = (uint32_t*) GPIOA_MODER;
+	volatile uint32_t *pGPIOA_MODER = (uint32_t*) GPIOA_MODER;
 	*pGPIOA_MODER &= ~(3 << 0); //Setting PA0 as input
 	//uint32_t *pGPIOA_IDR = (uint32_t*) GPIOA_IDR;
 
@@ -66,7 +66,7 @@ int main(void) {
 	*pRCC_AHB1ENR |= (1 << 3);
 
 	//4. Setup Pin PD12 as output
-	uint32_t *pGPIOD_MODER = (uint32_t*) GPIOD_MODER;
+	volatile uint32_t *pGPIOD_MODER = (uint32_t*) GPIOD_MODER;
 	*pGPIOD_MODER |= (1 << 24); //Setting PD12 as output
 	*pGPIOD_MODER |= (1 << 26); //Setting PD13 as output
 	*pGPIOD_MODER |= (1 << 28); //Setting PD14 as output
@@ -74,28 +74,28 @@ int main(void) {
 
 
 	//5. Enable the interrupt peripheral peripheral
-	uint32_t* pRCC_APB2ENR = (uint32_t*)RCC_APB2ENR;
+	volatile uint32_t* pRCC_APB2ENR = (uint32_t*)RCC_APB2ENR;
 	*pRCC_APB2ENR |= (1<<14);
 
 	//6. Set EXT0 to pin PA0
-	uint32_t* pSYSCFG_EXTICR1 = (uint32_t*)SYSCFG_EXTICR1;
+	volatile uint32_t* pSYSCFG_EXTICR1 = (uint32_t*)SYSCFG_EXTICR1;
 	*pSYSCFG_EXTICR1 &= ~(15<<0);
 
 	//7. Unmask EXTI0
-	uint32_t* pEXTI_IMR = (uint32_t*)EXTI_IMR;
+	volatile uint32_t* pEXTI_IMR = (uint32_t*)EXTI_IMR;
 	*pEXTI_IMR |= (1<<0);
 
 	//8. Setting EXTI_RTSR for rising edge trigger
-	uint32_t* pEXTI_RTSR = (uint32_t*)EXTI_RTSR;
+	volatile uint32_t* pEXTI_RTSR = (uint32_t*)EXTI_RTSR;
 	*pEXTI_RTSR |= (1<<0);
 
 	//9. Enable the IRQ corresponding to the EXTI0 in the Cortex M4 processor
-	uint32_t* pNVIC_ISER0 = (uint32_t*)NVIC_ISER0;
+	volatile uint32_t* pNVIC_ISER0 = (uint32_t*)NVIC_ISER0;
 	*pNVIC_ISER0 |= (1<<6);
 
 
 	//10. Toggle the LED on button press
-	uint32_t *pGPIOD_ODR = (uint32_t*) GPIOD_ODR;
+	volatile uint32_t *pGPIOD_ODR = (uint32_t*) GPIOD_ODR;
 	*pGPIOD_ODR |= (1 << 12);
 	*pGPIOD_ODR |= (1 << 14);
 //	*pGPIOD_ODR |= (1<<12); //Setting PA0 as input
@@ -120,14 +120,17 @@ int main(void) {
 }
 
 void EXTI0_IRQHandler(void) {
-	uint32_t *pGPIOD_ODR = (uint32_t*) GPIOD_ODR;
-	uint32_t *pGPIOA_IDR = (uint32_t*) GPIOA_IDR;
-	uint32_t* pEXTI_IMR = (uint32_t*)EXTI_IMR;
-	uint32_t* pEXTI_PR = (uint32_t*)EXTI_PR;
+	volatile uint32_t *pGPIOD_ODR = (uint32_t*) GPIOD_ODR;
+	volatile uint32_t *pGPIOA_IDR = (uint32_t*) GPIOA_IDR;
+	volatile uint32_t* pEXTI_IMR = (uint32_t*)EXTI_IMR;
+	volatile uint32_t* pEXTI_PR = (uint32_t*)EXTI_PR;
 
-
+	// Clear the interrupt flag
+	//*******Most important Clear the pending interrupt in the EXTI peripheral
+	// To clear it we have to write 1 to it.
+	*pEXTI_PR |= (1<<0);
 	//Mask the interrupt
-	*pEXTI_IMR &= (1<<0);
+	*pEXTI_IMR &= ~(1<<0);
 	for (int i = 0; i < 100000; i++)
 		;
 	//Debounce while press
@@ -144,7 +147,5 @@ void EXTI0_IRQHandler(void) {
 	//Unmask the interrupt
 	*pEXTI_IMR |= (1<<0);
 
-	//*******Most important Clear the pending interrupt in the EXTI peripheral
-	// To clear it we have to write 1 to it.
-	*pEXTI_PR |= (1<<0);
+
 }
