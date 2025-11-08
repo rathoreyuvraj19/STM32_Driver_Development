@@ -27,10 +27,5 @@ int main(void)
 {
     /* Loop forever */
 	printf("Hello World!!!\n");
-//	while(1){
-//		printf("Hello World!!!");
-//		for(int i=0;i<10000;i++);
-//	}
-
 	for(;;);
 }
