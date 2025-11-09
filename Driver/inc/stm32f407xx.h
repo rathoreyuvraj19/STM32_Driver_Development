@@ -12,8 +12,8 @@
 #define INC_STM32F407XX_H_
 
 
-/*
- * @defgroup Memory Segmentation
+/**
+ * @defgroup MEMORY_SEGMENTATION Memory Segmentation
  * @brief Base Addresses various memory and buses
  * @{
  */
@@ -25,11 +25,11 @@
 #define SRAM			SRAM1_BASEADDR	/**< SRAM base address (It is nothing but SRAM1)*/
 #define SRAM2_BASEADDR	0x2001C000UL	/**< SRAM2 base address */
 #define SRAM3_BASEADDR	0x20020000UL    /**< SRAM3 base address */
-#define ROM_BASEADDR	0x1FFF0000UL 	/**< ROM base address,It is called as System Memory */
-/**< @note The ROM is called “System Memory” because it holds the ST factory bootloader,
- * used only for system-level functions like firmware programming or DFU
- * — not for normal application execution.
- */
+#define ROM_BASEADDR	0x1FFF0000UL 	/**< @note The ROM is called "System Memory" because it holds
+                                   	   	   * the ST factory bootloader, used only for system-level
+                                   	   	   * functions like firmware programming or DFU — not for
+                                   	   	   * normal application execution.
+                                   	   	   */
 #define PERIPHERAL_BASEADDR 		0x40000000UL /**< Peripheral base address */
 #define APB1_PERIPHERAL_BASEADDR 	0x40000000UL /**< APB1 Peripheral base address */
 #define APB2_PERIPHERAL_BASEADDR 	0x40010000UL /**< APB2 Peripheral base address */
@@ -38,9 +38,9 @@
 /** @} */
 
 
-/*
- * @defgroup AHB1 Bus Peripheral Base Addresses
- * @brief Base Addresses of peripheral hanging on AHB1 Bus
+/**
+ * @defgroup AHB1_BASE_ADDRESSES AHB1 Bus Peripheral Base Addresses
+ * @brief Base addresses of peripherals connected to AHB1 Bus
  * @{
  */
 
@@ -67,8 +67,7 @@
 /** @} */
 
 
-/*
- * @defgroup AHB2 Bus Peripheral Base Addresses
+/**@defgroup AHB2_BASE_ADDRESSES AHB2 Bus Peripheral Base Addresses
  * @brief Base Addresses of peripheral hanging on AHB2 Bus
  * @{
  */
@@ -82,8 +81,7 @@
 /** @} */
 
 
-/*
- * @defgroup APB1 Bus Peripheral Base Addresses
+/**@defgroup APB1_BASE_ADDRESSES APB1 Bus Peripheral Base Addresses
  * @brief Base Addresses of peripheral hanging on APB1 Bus
  * @{
  */
@@ -119,8 +117,7 @@
 #define UART8_BASEADDR			 0x40007C00UL       /**< Universal Asynchronous Receiver Transmitter 8 (UART8) Peripheral base address */
 /** @} */
 
-/*
- * @defgroup APB2 Bus Peripheral Base Addresses
+/**@defgroup APB2_BASE_ADDRESSES APB2 Bus Peripheral Base Addresses
  * @brief Base Addresses of peripheral hanging on APB2 Bus
  * @{
  */

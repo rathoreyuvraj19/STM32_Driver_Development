@@ -1,0 +1,280 @@
+\@ifundefined {etoctocstyle}{\let \etoc@startlocaltoc \@gobble \let \etoc@settocdepth \@gobble \let \etoc@depthtag \@gobble \let \etoc@setlocaltop \@gobble }{}
+\contentsline {chapter}{\numberline {1}🧠 STM32 Driver Development }{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}📂 Repository Structure}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.2}⚙️ Hardware Used}{1}{section.1.2}%
+\contentsline {section}{\numberline {1.3}💻 Development Approach}{2}{section.1.3}%
+\contentsline {section}{\numberline {1.4}🧩 Concepts Covered So Far}{2}{section.1.4}%
+\contentsline {section}{\numberline {1.5}🚀 Upcoming Modules}{2}{section.1.5}%
+\contentsline {section}{\numberline {1.6}🧠 Learning Objective}{2}{section.1.6}%
+\contentsline {section}{\numberline {1.7}🧑‍💻 Author}{3}{section.1.7}%
+\contentsline {section}{\numberline {1.8}📜 License}{3}{section.1.8}%
+\contentsline {subsection}{\numberline {1.8.1}⭐ If you find this repository helpful, don’t forget to star it on Git\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Hub!}{3}{subsection.1.8.1}%
+\contentsline {chapter}{\numberline {2}Topic Index}{5}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Topics}{5}{section.2.1}%
+\contentsline {chapter}{\numberline {3}Directory Hierarchy}{7}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Directories}{7}{section.3.1}%
+\contentsline {chapter}{\numberline {4}File Index}{9}{chapter.4}%
+\contentsline {section}{\numberline {4.1}File List}{9}{section.4.1}%
+\contentsline {chapter}{\numberline {5}Topic Documentation}{11}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Memory Segmentation }{11}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Detailed Description}{11}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Macro Definition Documentation}{11}{subsection.5.1.2}%
+\contentsline {subsubsection}{\numberline {5.1.2.1}AHB1\_PERIPHERAL\_BASEADDR}{11}{subsubsection.5.1.2.1}%
+\contentsline {subsubsection}{\numberline {5.1.2.2}AHB2\_PERIPHERAL\_BASEADDR}{11}{subsubsection.5.1.2.2}%
+\contentsline {subsubsection}{\numberline {5.1.2.3}APB1\_PERIPHERAL\_BASEADDR}{11}{subsubsection.5.1.2.3}%
+\contentsline {subsubsection}{\numberline {5.1.2.4}APB2\_PERIPHERAL\_BASEADDR}{12}{subsubsection.5.1.2.4}%
+\contentsline {subsubsection}{\numberline {5.1.2.5}FLASH\_BASEADDR}{12}{subsubsection.5.1.2.5}%
+\contentsline {subsubsection}{\numberline {5.1.2.6}PERIPHERAL\_BASEADDR}{12}{subsubsection.5.1.2.6}%
+\contentsline {subsubsection}{\numberline {5.1.2.7}ROM\_BASEADDR}{12}{subsubsection.5.1.2.7}%
+\contentsline {subsubsection}{\numberline {5.1.2.8}SRAM}{12}{subsubsection.5.1.2.8}%
+\contentsline {subsubsection}{\numberline {5.1.2.9}SRAM1\_BASEADDR}{12}{subsubsection.5.1.2.9}%
+\contentsline {subsubsection}{\numberline {5.1.2.10}SRAM2\_BASEADDR}{12}{subsubsection.5.1.2.10}%
+\contentsline {subsubsection}{\numberline {5.1.2.11}SRAM3\_BASEADDR}{12}{subsubsection.5.1.2.11}%
+\contentsline {section}{\numberline {5.2}AHB1 Bus Peripheral Base Addresses }{12}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Detailed Description}{13}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Macro Definition Documentation}{13}{subsection.5.2.2}%
+\contentsline {subsubsection}{\numberline {5.2.2.1}BKPSRAM\_BASEADDR}{13}{subsubsection.5.2.2.1}%
+\contentsline {subsubsection}{\numberline {5.2.2.2}CRC\_BASEADDR}{13}{subsubsection.5.2.2.2}%
+\contentsline {subsubsection}{\numberline {5.2.2.3}DMA1\_BASEADDR}{13}{subsubsection.5.2.2.3}%
+\contentsline {subsubsection}{\numberline {5.2.2.4}DMA2\_BASEADDR}{13}{subsubsection.5.2.2.4}%
+\contentsline {subsubsection}{\numberline {5.2.2.5}DMA2D\_BASEADDR}{13}{subsubsection.5.2.2.5}%
+\contentsline {subsubsection}{\numberline {5.2.2.6}ETHERNET\_MAC\_BASEADDR}{14}{subsubsection.5.2.2.6}%
+\contentsline {subsubsection}{\numberline {5.2.2.7}FLASH\_IF\_REG\_BASEADDR}{14}{subsubsection.5.2.2.7}%
+\contentsline {subsubsection}{\numberline {5.2.2.8}GPIOA\_BASEADDR}{14}{subsubsection.5.2.2.8}%
+\contentsline {subsubsection}{\numberline {5.2.2.9}GPIOB\_BASEADDR}{14}{subsubsection.5.2.2.9}%
+\contentsline {subsubsection}{\numberline {5.2.2.10}GPIOC\_BASEADDR}{14}{subsubsection.5.2.2.10}%
+\contentsline {subsubsection}{\numberline {5.2.2.11}GPIOD\_BASEADDR}{14}{subsubsection.5.2.2.11}%
+\contentsline {subsubsection}{\numberline {5.2.2.12}GPIOE\_BASEADDR}{14}{subsubsection.5.2.2.12}%
+\contentsline {subsubsection}{\numberline {5.2.2.13}GPIOF\_BASEADDR}{14}{subsubsection.5.2.2.13}%
+\contentsline {subsubsection}{\numberline {5.2.2.14}GPIOG\_BASEADDR}{14}{subsubsection.5.2.2.14}%
+\contentsline {subsubsection}{\numberline {5.2.2.15}GPIOH\_BASEADDR}{14}{subsubsection.5.2.2.15}%
+\contentsline {subsubsection}{\numberline {5.2.2.16}GPIOI\_BASEADDR}{15}{subsubsection.5.2.2.16}%
+\contentsline {subsubsection}{\numberline {5.2.2.17}GPIOJ\_BASEADDR}{15}{subsubsection.5.2.2.17}%
+\contentsline {subsubsection}{\numberline {5.2.2.18}GPIOK\_BASEADDR}{15}{subsubsection.5.2.2.18}%
+\contentsline {subsubsection}{\numberline {5.2.2.19}RCC\_BASEADDR}{15}{subsubsection.5.2.2.19}%
+\contentsline {subsubsection}{\numberline {5.2.2.20}USB\_OTG\_HS\_BASEADDR}{15}{subsubsection.5.2.2.20}%
+\contentsline {section}{\numberline {5.3}AHB2 Bus Peripheral Base Addresses }{15}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Detailed Description}{15}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}Macro Definition Documentation}{15}{subsection.5.3.2}%
+\contentsline {subsubsection}{\numberline {5.3.2.1}CRYP\_BASEADDR}{15}{subsubsection.5.3.2.1}%
+\contentsline {subsubsection}{\numberline {5.3.2.2}DCMI\_BASEADDR}{15}{subsubsection.5.3.2.2}%
+\contentsline {subsubsection}{\numberline {5.3.2.3}FSMC\_CR\_BASEADDR}{16}{subsubsection.5.3.2.3}%
+\contentsline {subsubsection}{\numberline {5.3.2.4}HASH\_BASEADDR}{16}{subsubsection.5.3.2.4}%
+\contentsline {subsubsection}{\numberline {5.3.2.5}RNG\_BASEADDR}{16}{subsubsection.5.3.2.5}%
+\contentsline {subsubsection}{\numberline {5.3.2.6}USB\_OTG\_FS\_BASEADDR}{16}{subsubsection.5.3.2.6}%
+\contentsline {section}{\numberline {5.4}APB1 Bus Peripheral Base Addresses }{16}{section.5.4}%
+\contentsline {subsection}{\numberline {5.4.1}Detailed Description}{17}{subsection.5.4.1}%
+\contentsline {subsection}{\numberline {5.4.2}Macro Definition Documentation}{17}{subsection.5.4.2}%
+\contentsline {subsubsection}{\numberline {5.4.2.1}CAN1\_BASEADDR}{17}{subsubsection.5.4.2.1}%
+\contentsline {subsubsection}{\numberline {5.4.2.2}CAN2\_BASEADDR}{17}{subsubsection.5.4.2.2}%
+\contentsline {subsubsection}{\numberline {5.4.2.3}DAC\_BASEADDR}{17}{subsubsection.5.4.2.3}%
+\contentsline {subsubsection}{\numberline {5.4.2.4}I2C1\_BASEADDR}{17}{subsubsection.5.4.2.4}%
+\contentsline {subsubsection}{\numberline {5.4.2.5}I2C2\_BASEADDR}{17}{subsubsection.5.4.2.5}%
+\contentsline {subsubsection}{\numberline {5.4.2.6}I2C3\_BASEADDR}{17}{subsubsection.5.4.2.6}%
+\contentsline {subsubsection}{\numberline {5.4.2.7}I2S2ext\_BASEADDR}{17}{subsubsection.5.4.2.7}%
+\contentsline {subsubsection}{\numberline {5.4.2.8}I2S3ext\_BASEADDR}{17}{subsubsection.5.4.2.8}%
+\contentsline {subsubsection}{\numberline {5.4.2.9}IWDG\_BASEADDR}{17}{subsubsection.5.4.2.9}%
+\contentsline {subsubsection}{\numberline {5.4.2.10}PWR\_BASEADDR}{18}{subsubsection.5.4.2.10}%
+\contentsline {subsubsection}{\numberline {5.4.2.11}RTC\_BKP\_REG\_BASEADDR}{18}{subsubsection.5.4.2.11}%
+\contentsline {subsubsection}{\numberline {5.4.2.12}SPI2\_I2S2\_BASEADDR}{18}{subsubsection.5.4.2.12}%
+\contentsline {subsubsection}{\numberline {5.4.2.13}SPI3\_I2S3\_BASEADDR}{18}{subsubsection.5.4.2.13}%
+\contentsline {subsubsection}{\numberline {5.4.2.14}TIM12\_BASEADDR}{18}{subsubsection.5.4.2.14}%
+\contentsline {subsubsection}{\numberline {5.4.2.15}TIM13\_BASEADDR}{18}{subsubsection.5.4.2.15}%
+\contentsline {subsubsection}{\numberline {5.4.2.16}TIM14\_BASEADDR}{18}{subsubsection.5.4.2.16}%
+\contentsline {subsubsection}{\numberline {5.4.2.17}TIM2\_BASEADDR}{18}{subsubsection.5.4.2.17}%
+\contentsline {subsubsection}{\numberline {5.4.2.18}TIM3\_BASEADDR}{18}{subsubsection.5.4.2.18}%
+\contentsline {subsubsection}{\numberline {5.4.2.19}TIM4\_BASEADDR}{18}{subsubsection.5.4.2.19}%
+\contentsline {subsubsection}{\numberline {5.4.2.20}TIM5\_BASEADDR}{19}{subsubsection.5.4.2.20}%
+\contentsline {subsubsection}{\numberline {5.4.2.21}TIM6\_BASEADDR}{19}{subsubsection.5.4.2.21}%
+\contentsline {subsubsection}{\numberline {5.4.2.22}TIM7\_BASEADDR}{19}{subsubsection.5.4.2.22}%
+\contentsline {subsubsection}{\numberline {5.4.2.23}UART4\_BASEADDR}{19}{subsubsection.5.4.2.23}%
+\contentsline {subsubsection}{\numberline {5.4.2.24}UART5\_BASEADDR}{19}{subsubsection.5.4.2.24}%
+\contentsline {subsubsection}{\numberline {5.4.2.25}UART7\_BASEADDR}{19}{subsubsection.5.4.2.25}%
+\contentsline {subsubsection}{\numberline {5.4.2.26}UART8\_BASEADDR}{19}{subsubsection.5.4.2.26}%
+\contentsline {subsubsection}{\numberline {5.4.2.27}USART2\_BASEADDR}{19}{subsubsection.5.4.2.27}%
+\contentsline {subsubsection}{\numberline {5.4.2.28}USART3\_BASEADDR}{19}{subsubsection.5.4.2.28}%
+\contentsline {subsubsection}{\numberline {5.4.2.29}WWDG\_BASEADDR}{19}{subsubsection.5.4.2.29}%
+\contentsline {section}{\numberline {5.5}APB2 Bus Peripheral Base Addresses }{20}{section.5.5}%
+\contentsline {subsection}{\numberline {5.5.1}Detailed Description}{20}{subsection.5.5.1}%
+\contentsline {subsection}{\numberline {5.5.2}Macro Definition Documentation}{20}{subsection.5.5.2}%
+\contentsline {subsubsection}{\numberline {5.5.2.1}ADC123\_BASEADDR}{20}{subsubsection.5.5.2.1}%
+\contentsline {subsubsection}{\numberline {5.5.2.2}EXTI\_BASEADDR}{20}{subsubsection.5.5.2.2}%
+\contentsline {subsubsection}{\numberline {5.5.2.3}LCD\_TFT\_BASEADDR}{20}{subsubsection.5.5.2.3}%
+\contentsline {subsubsection}{\numberline {5.5.2.4}SAI1\_BASEADDR}{20}{subsubsection.5.5.2.4}%
+\contentsline {subsubsection}{\numberline {5.5.2.5}SDIO\_BASEADDR}{20}{subsubsection.5.5.2.5}%
+\contentsline {subsubsection}{\numberline {5.5.2.6}SPI1\_BASEADDR}{21}{subsubsection.5.5.2.6}%
+\contentsline {subsubsection}{\numberline {5.5.2.7}SPI4\_BASEADDR}{21}{subsubsection.5.5.2.7}%
+\contentsline {subsubsection}{\numberline {5.5.2.8}SPI5\_BASEADDR}{21}{subsubsection.5.5.2.8}%
+\contentsline {subsubsection}{\numberline {5.5.2.9}SPI6\_BASEADDR}{21}{subsubsection.5.5.2.9}%
+\contentsline {subsubsection}{\numberline {5.5.2.10}SYSCFG\_BASEADDR}{21}{subsubsection.5.5.2.10}%
+\contentsline {subsubsection}{\numberline {5.5.2.11}TIM10\_BASEADDR}{21}{subsubsection.5.5.2.11}%
+\contentsline {subsubsection}{\numberline {5.5.2.12}TIM11\_BASEADDR}{21}{subsubsection.5.5.2.12}%
+\contentsline {subsubsection}{\numberline {5.5.2.13}TIM1\_BASEADDR}{21}{subsubsection.5.5.2.13}%
+\contentsline {subsubsection}{\numberline {5.5.2.14}TIM8\_BASEADDR}{21}{subsubsection.5.5.2.14}%
+\contentsline {subsubsection}{\numberline {5.5.2.15}TIM9\_BASEADDR}{21}{subsubsection.5.5.2.15}%
+\contentsline {subsubsection}{\numberline {5.5.2.16}USART1\_BASEADDR}{22}{subsubsection.5.5.2.16}%
+\contentsline {subsubsection}{\numberline {5.5.2.17}USART6\_BASEADDR}{22}{subsubsection.5.5.2.17}%
+\contentsline {chapter}{\numberline {6}Directory Documentation}{23}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Projects/000\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Hello\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}World Directory Reference}{23}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Projects/001\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}STM\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}CLOCK\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ENABLE Directory Reference}{23}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Projects/002\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}User\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}button\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}interrupt Directory Reference}{24}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Driver Directory Reference}{24}{section.6.4}%
+\contentsline {section}{\numberline {6.5}Driver/inc Directory Reference}{24}{section.6.5}%
+\contentsline {section}{\numberline {6.6}Projects Directory Reference}{25}{section.6.6}%
+\contentsline {section}{\numberline {6.7}Projects/000\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Hello\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}World/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Src Directory Reference}{25}{section.6.7}%
+\contentsline {section}{\numberline {6.8}Projects/001\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}STM\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}CLOCK\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ENABLE/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Src Directory Reference}{25}{section.6.8}%
+\contentsline {section}{\numberline {6.9}Projects/002\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}User\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}button\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}interrupt/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Src Directory Reference}{26}{section.6.9}%
+\contentsline {chapter}{\numberline {7}File Documentation}{27}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Driver/inc/stm32f407xx.h File Reference}{27}{section.7.1}%
+\contentsline {subsection}{\numberline {7.1.1}Detailed Description}{29}{subsection.7.1.1}%
+\contentsline {section}{\numberline {7.2}stm32f407xx.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{29}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Projects/000\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Hello\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}World/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Src/main.c File Reference}{30}{section.7.3}%
+\contentsline {subsection}{\numberline {7.3.1}Detailed Description}{31}{subsection.7.3.1}%
+\contentsline {subsection}{\numberline {7.3.2}Function Documentation}{31}{subsection.7.3.2}%
+\contentsline {subsubsection}{\numberline {7.3.2.1}main()}{31}{subsubsection.7.3.2.1}%
+\contentsline {section}{\numberline {7.4}main.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c}{31}{section.7.4}%
+\contentsline {section}{\numberline {7.5}Projects/001\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}STM\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}CLOCK\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ENABLE/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Src/main.c File Reference}{32}{section.7.5}%
+\contentsline {subsection}{\numberline {7.5.1}Detailed Description}{32}{subsection.7.5.1}%
+\contentsline {subsection}{\numberline {7.5.2}Macro Definition Documentation}{33}{subsection.7.5.2}%
+\contentsline {subsubsection}{\numberline {7.5.2.1}GPIOA\_AFRL\_ADDRESS}{33}{subsubsection.7.5.2.1}%
+\contentsline {subsubsection}{\numberline {7.5.2.2}GPIOA\_BASE\_ADDRESS}{33}{subsubsection.7.5.2.2}%
+\contentsline {subsubsection}{\numberline {7.5.2.3}GPIOA\_MODER}{33}{subsubsection.7.5.2.3}%
+\contentsline {subsubsection}{\numberline {7.5.2.4}RCC\_AHB1ENR}{33}{subsubsection.7.5.2.4}%
+\contentsline {subsubsection}{\numberline {7.5.2.5}RCC\_BASE\_ADDRESS}{33}{subsubsection.7.5.2.5}%
+\contentsline {subsubsection}{\numberline {7.5.2.6}RCC\_CFGR}{33}{subsubsection.7.5.2.6}%
+\contentsline {subsubsection}{\numberline {7.5.2.7}RCC\_CR}{33}{subsubsection.7.5.2.7}%
+\contentsline {subsection}{\numberline {7.5.3}Function Documentation}{33}{subsection.7.5.3}%
+\contentsline {subsubsection}{\numberline {7.5.3.1}main()}{33}{subsubsection.7.5.3.1}%
+\contentsline {section}{\numberline {7.6}main.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c}{34}{section.7.6}%
+\contentsline {section}{\numberline {7.7}Projects/002\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}User\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}button\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}interrupt/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Src/main.c File Reference}{34}{section.7.7}%
+\contentsline {subsection}{\numberline {7.7.1}Detailed Description}{35}{subsection.7.7.1}%
+\contentsline {subsection}{\numberline {7.7.2}Macro Definition Documentation}{36}{subsection.7.7.2}%
+\contentsline {subsubsection}{\numberline {7.7.2.1}EXTI\_BASE\_ADDRESS}{36}{subsubsection.7.7.2.1}%
+\contentsline {subsubsection}{\numberline {7.7.2.2}EXTI\_IMR}{36}{subsubsection.7.7.2.2}%
+\contentsline {subsubsection}{\numberline {7.7.2.3}EXTI\_PR}{36}{subsubsection.7.7.2.3}%
+\contentsline {subsubsection}{\numberline {7.7.2.4}EXTI\_RTSR}{36}{subsubsection.7.7.2.4}%
+\contentsline {subsubsection}{\numberline {7.7.2.5}GPIOA\_BASE\_ADDRESS}{36}{subsubsection.7.7.2.5}%
+\contentsline {subsubsection}{\numberline {7.7.2.6}GPIOA\_IDR}{36}{subsubsection.7.7.2.6}%
+\contentsline {subsubsection}{\numberline {7.7.2.7}GPIOA\_MODER}{36}{subsubsection.7.7.2.7}%
+\contentsline {subsubsection}{\numberline {7.7.2.8}GPIOA\_PUPDR}{36}{subsubsection.7.7.2.8}%
+\contentsline {subsubsection}{\numberline {7.7.2.9}GPIOD\_BASE\_ADDRESS}{36}{subsubsection.7.7.2.9}%
+\contentsline {subsubsection}{\numberline {7.7.2.10}GPIOD\_MODER}{36}{subsubsection.7.7.2.10}%
+\contentsline {subsubsection}{\numberline {7.7.2.11}GPIOD\_ODR}{36}{subsubsection.7.7.2.11}%
+\contentsline {subsubsection}{\numberline {7.7.2.12}NVIC\_BASE\_ADDRESS}{36}{subsubsection.7.7.2.12}%
+\contentsline {subsubsection}{\numberline {7.7.2.13}NVIC\_ISER0}{37}{subsubsection.7.7.2.13}%
+\contentsline {subsubsection}{\numberline {7.7.2.14}RCC\_AHB1ENR}{37}{subsubsection.7.7.2.14}%
+\contentsline {subsubsection}{\numberline {7.7.2.15}RCC\_APB2ENR}{37}{subsubsection.7.7.2.15}%
+\contentsline {subsubsection}{\numberline {7.7.2.16}RCC\_BASE\_ADDRESS}{37}{subsubsection.7.7.2.16}%
+\contentsline {subsubsection}{\numberline {7.7.2.17}SYSCFG\_BASE\_ADDRESS}{37}{subsubsection.7.7.2.17}%
+\contentsline {subsubsection}{\numberline {7.7.2.18}SYSCFG\_EXTICR1}{37}{subsubsection.7.7.2.18}%
+\contentsline {subsection}{\numberline {7.7.3}Function Documentation}{37}{subsection.7.7.3}%
+\contentsline {subsubsection}{\numberline {7.7.3.1}EXTI0\_IRQHandler()}{37}{subsubsection.7.7.3.1}%
+\contentsline {subsubsection}{\numberline {7.7.3.2}main()}{38}{subsubsection.7.7.3.2}%
+\contentsline {section}{\numberline {7.8}main.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c}{38}{section.7.8}%
+\contentsline {section}{\numberline {7.9}Projects/000\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Hello\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}World/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Src/syscalls.c File Reference}{40}{section.7.9}%
+\contentsline {subsection}{\numberline {7.9.1}Detailed Description}{41}{subsection.7.9.1}%
+\contentsline {subsection}{\numberline {7.9.2}Macro Definition Documentation}{41}{subsection.7.9.2}%
+\contentsline {subsubsection}{\numberline {7.9.2.1}DEMCR}{41}{subsubsection.7.9.2.1}%
+\contentsline {subsubsection}{\numberline {7.9.2.2}ITM\_STIMULUS\_PORT0}{41}{subsubsection.7.9.2.2}%
+\contentsline {subsubsection}{\numberline {7.9.2.3}ITM\_TRACE\_EN}{42}{subsubsection.7.9.2.3}%
+\contentsline {subsection}{\numberline {7.9.3}Function Documentation}{42}{subsection.7.9.3}%
+\contentsline {subsubsection}{\numberline {7.9.3.1}\_\_attribute\_\_()}{42}{subsubsection.7.9.3.1}%
+\contentsline {subsubsection}{\numberline {7.9.3.2}\_\_io\_getchar()}{42}{subsubsection.7.9.3.2}%
+\contentsline {subsubsection}{\numberline {7.9.3.3}\_\_io\_putchar()}{42}{subsubsection.7.9.3.3}%
+\contentsline {subsubsection}{\numberline {7.9.3.4}\_close()}{43}{subsubsection.7.9.3.4}%
+\contentsline {subsubsection}{\numberline {7.9.3.5}\_execve()}{43}{subsubsection.7.9.3.5}%
+\contentsline {subsubsection}{\numberline {7.9.3.6}\_exit()}{43}{subsubsection.7.9.3.6}%
+\contentsline {subsubsection}{\numberline {7.9.3.7}\_fork()}{43}{subsubsection.7.9.3.7}%
+\contentsline {subsubsection}{\numberline {7.9.3.8}\_fstat()}{43}{subsubsection.7.9.3.8}%
+\contentsline {subsubsection}{\numberline {7.9.3.9}\_getpid()}{44}{subsubsection.7.9.3.9}%
+\contentsline {subsubsection}{\numberline {7.9.3.10}\_isatty()}{44}{subsubsection.7.9.3.10}%
+\contentsline {subsubsection}{\numberline {7.9.3.11}\_kill()}{44}{subsubsection.7.9.3.11}%
+\contentsline {subsubsection}{\numberline {7.9.3.12}\_link()}{44}{subsubsection.7.9.3.12}%
+\contentsline {subsubsection}{\numberline {7.9.3.13}\_lseek()}{44}{subsubsection.7.9.3.13}%
+\contentsline {subsubsection}{\numberline {7.9.3.14}\_open()}{45}{subsubsection.7.9.3.14}%
+\contentsline {subsubsection}{\numberline {7.9.3.15}\_stat()}{45}{subsubsection.7.9.3.15}%
+\contentsline {subsubsection}{\numberline {7.9.3.16}\_times()}{45}{subsubsection.7.9.3.16}%
+\contentsline {subsubsection}{\numberline {7.9.3.17}\_unlink()}{45}{subsubsection.7.9.3.17}%
+\contentsline {subsubsection}{\numberline {7.9.3.18}\_wait()}{45}{subsubsection.7.9.3.18}%
+\contentsline {subsubsection}{\numberline {7.9.3.19}initialise\_monitor\_handles()}{46}{subsubsection.7.9.3.19}%
+\contentsline {subsubsection}{\numberline {7.9.3.20}ITM\_SendChar()}{46}{subsubsection.7.9.3.20}%
+\contentsline {subsection}{\numberline {7.9.4}Variable Documentation}{46}{subsection.7.9.4}%
+\contentsline {subsubsection}{\numberline {7.9.4.1}environ}{46}{subsubsection.7.9.4.1}%
+\contentsline {section}{\numberline {7.10}syscalls.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c}{46}{section.7.10}%
+\contentsline {section}{\numberline {7.11}Projects/001\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}STM\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}CLOCK\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ENABLE/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Src/syscalls.c File Reference}{48}{section.7.11}%
+\contentsline {subsection}{\numberline {7.11.1}Detailed Description}{49}{subsection.7.11.1}%
+\contentsline {subsection}{\numberline {7.11.2}Function Documentation}{50}{subsection.7.11.2}%
+\contentsline {subsubsection}{\numberline {7.11.2.1}\_\_attribute\_\_()}{50}{subsubsection.7.11.2.1}%
+\contentsline {subsubsection}{\numberline {7.11.2.2}\_\_io\_getchar()}{50}{subsubsection.7.11.2.2}%
+\contentsline {subsubsection}{\numberline {7.11.2.3}\_\_io\_putchar()}{50}{subsubsection.7.11.2.3}%
+\contentsline {subsubsection}{\numberline {7.11.2.4}\_close()}{50}{subsubsection.7.11.2.4}%
+\contentsline {subsubsection}{\numberline {7.11.2.5}\_execve()}{50}{subsubsection.7.11.2.5}%
+\contentsline {subsubsection}{\numberline {7.11.2.6}\_exit()}{51}{subsubsection.7.11.2.6}%
+\contentsline {subsubsection}{\numberline {7.11.2.7}\_fork()}{51}{subsubsection.7.11.2.7}%
+\contentsline {subsubsection}{\numberline {7.11.2.8}\_fstat()}{51}{subsubsection.7.11.2.8}%
+\contentsline {subsubsection}{\numberline {7.11.2.9}\_getpid()}{51}{subsubsection.7.11.2.9}%
+\contentsline {subsubsection}{\numberline {7.11.2.10}\_isatty()}{51}{subsubsection.7.11.2.10}%
+\contentsline {subsubsection}{\numberline {7.11.2.11}\_kill()}{52}{subsubsection.7.11.2.11}%
+\contentsline {subsubsection}{\numberline {7.11.2.12}\_link()}{52}{subsubsection.7.11.2.12}%
+\contentsline {subsubsection}{\numberline {7.11.2.13}\_lseek()}{52}{subsubsection.7.11.2.13}%
+\contentsline {subsubsection}{\numberline {7.11.2.14}\_open()}{52}{subsubsection.7.11.2.14}%
+\contentsline {subsubsection}{\numberline {7.11.2.15}\_stat()}{52}{subsubsection.7.11.2.15}%
+\contentsline {subsubsection}{\numberline {7.11.2.16}\_times()}{53}{subsubsection.7.11.2.16}%
+\contentsline {subsubsection}{\numberline {7.11.2.17}\_unlink()}{53}{subsubsection.7.11.2.17}%
+\contentsline {subsubsection}{\numberline {7.11.2.18}\_wait()}{53}{subsubsection.7.11.2.18}%
+\contentsline {subsubsection}{\numberline {7.11.2.19}initialise\_monitor\_handles()}{53}{subsubsection.7.11.2.19}%
+\contentsline {subsection}{\numberline {7.11.3}Variable Documentation}{53}{subsection.7.11.3}%
+\contentsline {subsubsection}{\numberline {7.11.3.1}environ}{53}{subsubsection.7.11.3.1}%
+\contentsline {section}{\numberline {7.12}syscalls.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c}{53}{section.7.12}%
+\contentsline {section}{\numberline {7.13}Projects/002\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}User\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}button\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}interrupt/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Src/syscalls.c File Reference}{55}{section.7.13}%
+\contentsline {subsection}{\numberline {7.13.1}Detailed Description}{56}{subsection.7.13.1}%
+\contentsline {subsection}{\numberline {7.13.2}Macro Definition Documentation}{56}{subsection.7.13.2}%
+\contentsline {subsubsection}{\numberline {7.13.2.1}DEMCR}{56}{subsubsection.7.13.2.1}%
+\contentsline {subsubsection}{\numberline {7.13.2.2}ITM\_STIMULUS\_PORT0}{57}{subsubsection.7.13.2.2}%
+\contentsline {subsubsection}{\numberline {7.13.2.3}ITM\_TRACE\_EN}{57}{subsubsection.7.13.2.3}%
+\contentsline {subsection}{\numberline {7.13.3}Function Documentation}{57}{subsection.7.13.3}%
+\contentsline {subsubsection}{\numberline {7.13.3.1}\_\_attribute\_\_()}{57}{subsubsection.7.13.3.1}%
+\contentsline {subsubsection}{\numberline {7.13.3.2}\_\_io\_getchar()}{57}{subsubsection.7.13.3.2}%
+\contentsline {subsubsection}{\numberline {7.13.3.3}\_\_io\_putchar()}{57}{subsubsection.7.13.3.3}%
+\contentsline {subsubsection}{\numberline {7.13.3.4}\_close()}{57}{subsubsection.7.13.3.4}%
+\contentsline {subsubsection}{\numberline {7.13.3.5}\_execve()}{58}{subsubsection.7.13.3.5}%
+\contentsline {subsubsection}{\numberline {7.13.3.6}\_exit()}{58}{subsubsection.7.13.3.6}%
+\contentsline {subsubsection}{\numberline {7.13.3.7}\_fork()}{58}{subsubsection.7.13.3.7}%
+\contentsline {subsubsection}{\numberline {7.13.3.8}\_fstat()}{58}{subsubsection.7.13.3.8}%
+\contentsline {subsubsection}{\numberline {7.13.3.9}\_getpid()}{58}{subsubsection.7.13.3.9}%
+\contentsline {subsubsection}{\numberline {7.13.3.10}\_isatty()}{59}{subsubsection.7.13.3.10}%
+\contentsline {subsubsection}{\numberline {7.13.3.11}\_kill()}{59}{subsubsection.7.13.3.11}%
+\contentsline {subsubsection}{\numberline {7.13.3.12}\_link()}{59}{subsubsection.7.13.3.12}%
+\contentsline {subsubsection}{\numberline {7.13.3.13}\_lseek()}{59}{subsubsection.7.13.3.13}%
+\contentsline {subsubsection}{\numberline {7.13.3.14}\_open()}{59}{subsubsection.7.13.3.14}%
+\contentsline {subsubsection}{\numberline {7.13.3.15}\_stat()}{60}{subsubsection.7.13.3.15}%
+\contentsline {subsubsection}{\numberline {7.13.3.16}\_times()}{60}{subsubsection.7.13.3.16}%
+\contentsline {subsubsection}{\numberline {7.13.3.17}\_unlink()}{60}{subsubsection.7.13.3.17}%
+\contentsline {subsubsection}{\numberline {7.13.3.18}\_wait()}{60}{subsubsection.7.13.3.18}%
+\contentsline {subsubsection}{\numberline {7.13.3.19}initialise\_monitor\_handles()}{60}{subsubsection.7.13.3.19}%
+\contentsline {subsubsection}{\numberline {7.13.3.20}ITM\_SendChar()}{60}{subsubsection.7.13.3.20}%
+\contentsline {subsection}{\numberline {7.13.4}Variable Documentation}{61}{subsection.7.13.4}%
+\contentsline {subsubsection}{\numberline {7.13.4.1}environ}{61}{subsubsection.7.13.4.1}%
+\contentsline {section}{\numberline {7.14}syscalls.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c}{61}{section.7.14}%
+\contentsline {section}{\numberline {7.15}Projects/000\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Hello\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}World/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Src/sysmem.c File Reference}{63}{section.7.15}%
+\contentsline {subsection}{\numberline {7.15.1}Detailed Description}{63}{subsection.7.15.1}%
+\contentsline {subsection}{\numberline {7.15.2}Function Documentation}{64}{subsection.7.15.2}%
+\contentsline {subsubsection}{\numberline {7.15.2.1}\_sbrk()}{64}{subsubsection.7.15.2.1}%
+\contentsline {subsection}{\numberline {7.15.3}Variable Documentation}{65}{subsection.7.15.3}%
+\contentsline {subsubsection}{\numberline {7.15.3.1}\_\_sbrk\_heap\_end}{65}{subsubsection.7.15.3.1}%
+\contentsline {section}{\numberline {7.16}sysmem.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c}{65}{section.7.16}%
+\contentsline {section}{\numberline {7.17}Projects/001\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}STM\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}CLOCK\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ENABLE/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Src/sysmem.c File Reference}{65}{section.7.17}%
+\contentsline {subsection}{\numberline {7.17.1}Detailed Description}{66}{subsection.7.17.1}%
+\contentsline {subsection}{\numberline {7.17.2}Function Documentation}{66}{subsection.7.17.2}%
+\contentsline {subsubsection}{\numberline {7.17.2.1}\_sbrk()}{66}{subsubsection.7.17.2.1}%
+\contentsline {subsection}{\numberline {7.17.3}Variable Documentation}{67}{subsection.7.17.3}%
+\contentsline {subsubsection}{\numberline {7.17.3.1}\_\_sbrk\_heap\_end}{67}{subsubsection.7.17.3.1}%
+\contentsline {section}{\numberline {7.18}sysmem.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c}{67}{section.7.18}%
+\contentsline {section}{\numberline {7.19}Projects/002\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}User\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}button\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}interrupt/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Src/sysmem.c File Reference}{67}{section.7.19}%
+\contentsline {subsection}{\numberline {7.19.1}Detailed Description}{68}{subsection.7.19.1}%
+\contentsline {subsection}{\numberline {7.19.2}Function Documentation}{68}{subsection.7.19.2}%
+\contentsline {subsubsection}{\numberline {7.19.2.1}\_sbrk()}{68}{subsubsection.7.19.2.1}%
+\contentsline {subsection}{\numberline {7.19.3}Variable Documentation}{69}{subsection.7.19.3}%
+\contentsline {subsubsection}{\numberline {7.19.3.1}\_\_sbrk\_heap\_end}{69}{subsubsection.7.19.3.1}%
+\contentsline {section}{\numberline {7.20}sysmem.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c}{69}{section.7.20}%
+\contentsline {section}{\numberline {7.21}README.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}md File Reference}{70}{section.7.21}%

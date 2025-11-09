@@ -1,0 +1,56 @@
+# --- Project Info ---
+PROJECT_NAME           = "STM32F407 Bare-Metal Driver Development"
+PROJECT_NUMBER         = "v1.0"
+PROJECT_BRIEF          = "Peripheral driver documentation (GPIO, RCC, EXTI, etc.)"
+OUTPUT_DIRECTORY       = docs
+OUTPUT_LANGUAGE        = English
+
+# --- Input ---
+INPUT                  = README.md Driver Projects
+RECURSIVE              = YES
+FILE_PATTERNS          = *.h *.c
+EXCLUDE                = docs
+INCLUDE_PATH           = 
+
+# --- Extraction ---
+EXTRACT_ALL            = YES
+EXTRACT_STATIC         = YES
+HIDE_UNDOC_MEMBERS     = NO
+SHOW_FILES             = YES
+SHOW_USED_FILES        = YES
+
+# --- Output Format ---
+GENERATE_HTML          = YES
+HTML_OUTPUT            = html
+GENERATE_LATEX         = YES
+SOURCE_BROWSER         = YES
+INLINE_SOURCES         = YES
+
+# --- Diagrams ---
+HAVE_DOT               = YES
+DOT_PATH               = 
+INCLUDE_GRAPH          = YES
+INCLUDED_BY_GRAPH      = YES
+CLASS_GRAPH            = YES
+DIRECTORY_GRAPH        = YES
+CALL_GRAPH             = YES
+CALLER_GRAPH           = YES
+
+# --- Grouping ---
+DISTRIBUTE_GROUP_DOC   = YES
+SUBGROUPING            = YES
+
+# --- Warnings ---
+WARNINGS               = YES
+WARN_IF_UNDOCUMENTED   = YES
+WARN_IF_DOC_ERROR      = YES
+WARN_LOGFILE           = DoxygenWarnings.log
+
+# --- Markdown / Main Page ---
+MARKDOWN_SUPPORT       = YES
+USE_MDFILE_AS_MAINPAGE = README.md
+
+# --- Visuals ---
+GENERATE_TREEVIEW      = YES
+FULL_SIDEBAR           = YES
+HTML_DYNAMIC_MENUS     = YES

@@ -1,0 +1,112 @@
+\chapter{🧠 STM32 Driver Development }
+\hypertarget{index}{}\label{index}\index{🧠 STM32 Driver Development@{🧠 STM32 Driver Development}}
+\label{index_md__r_e_a_d_m_e}%
+\Hypertarget{index_md__r_e_a_d_m_e}%
+
+
+This repository contains {\bfseries{bare-\/metal driver development projects}} for the {\bfseries{STM32\+F407 Discovery Board}}, written entirely from scratch without using HAL or STM32\+Cube libraries. ~\newline
+ Each project focuses on a specific hardware feature or peripheral of the STM32 microcontroller, helping to build a deep understanding of low-\/level embedded system design.
+
+\DoxyHorRuler{0}
+\hypertarget{index_autotoc_md2}{}\doxysection{\texorpdfstring{📂 Repository Structure}{📂 Repository Structure}}\label{index_autotoc_md2}
+
+\begin{DoxyTable}{2}{}{}{1}
+\SetCell{c,bg=\tableheadbgcolor,font=\bfseries}Folder  &\SetCell{c,bg=\tableheadbgcolor,font=\bfseries}Description  \\
+{\bfseries{000\+\_\+\+Hello\+\_\+\+World}}  &Basic GPIO configuration — toggle an LED using software delay.  \\
+{\bfseries{001\+\_\+\+STM\+\_\+\+CLOCK\+\_\+\+ENABLE}}  &Demonstrates clock enabling for GPIO peripherals and verifies clock using MCO pin on a logic analyzer.  \\
+{\bfseries{002\+\_\+\+User\+\_\+button\+\_\+interrupt}}  &Implements an {\bfseries{external interrupt (EXTI)}} on the user button (PA0) to toggle LEDs using an ISR.  \\
+{\bfseries{Resource}}  &Reference materials, schematics, and supporting documentation.  \\
+\end{DoxyTable}
+
+
+\DoxyHorRuler{0}
+\hypertarget{index_autotoc_md4}{}\doxysection{\texorpdfstring{⚙️ Hardware Used}{⚙️ Hardware Used}}\label{index_autotoc_md4}
+
+\begin{DoxyItemize}
+\item {\bfseries{Microcontroller\+:}} STM32\+F407\+VG (ARM Cortex-\/\+M4) ~\newline
+
+\item {\bfseries{Board\+:}} STM32\+F4 Discovery Kit ~\newline
+
+\item {\bfseries{Core Clock\+:}} 16 MHz (HSE) ~\newline
+
+\item {\bfseries{Tools Required\+:}}
+\begin{DoxyItemize}
+\item STM32\+Cube\+IDE or any ARM-\/\+GCC-\/based IDE ~\newline
+
+\item ST-\/\+Link debugger/programmer ~\newline
+
+\item Logic analyzer (optional, for clock verification)
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{index_autotoc_md6}{}\doxysection{\texorpdfstring{💻 Development Approach}{💻 Development Approach}}\label{index_autotoc_md6}
+All drivers are written {\bfseries{bare-\/metal}}, meaning\+:
+\begin{DoxyItemize}
+\item Direct register access (no HAL or Std\+Periph libraries)
+\item Complete control of clock gating, GPIO modes, and interrupt configuration
+\item Written in {\bfseries{C}} with startup assembly for vector table mapping
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{index_autotoc_md8}{}\doxysection{\texorpdfstring{🧩 Concepts Covered So Far}{🧩 Concepts Covered So Far}}\label{index_autotoc_md8}
+
+\begin{DoxyItemize}
+\item GPIO initialization and configuration ~\newline
+
+\item RCC (Reset and Clock Control) fundamentals ~\newline
+
+\item External interrupt (EXTI) setup using SYSCFG ~\newline
+
+\item NVIC configuration and interrupt masking ~\newline
+
+\item Debouncing techniques in ISRs ~\newline
+
+\item Understanding the STM32 bus architecture (AHB/\+APB) ~\newline
+
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{index_autotoc_md10}{}\doxysection{\texorpdfstring{🚀 Upcoming Modules}{🚀 Upcoming Modules}}\label{index_autotoc_md10}
+Planned future modules include\+:
+\begin{DoxyItemize}
+\item SPI Master/\+Slave driver implementation ~\newline
+
+\item I2C driver (polling + interrupt-\/based) ~\newline
+
+\item UART communication ~\newline
+
+\item Timer-\/based LED blinking (Sys\+Tick \& TIM2) ~\newline
+
+\item ADC/\+DAC configuration and data acquisition ~\newline
+
+\item DMA-\/controlled data transfers ~\newline
+
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{index_autotoc_md12}{}\doxysection{\texorpdfstring{🧠 Learning Objective}{🧠 Learning Objective}}\label{index_autotoc_md12}
+This repository is a {\bfseries{step-\/by-\/step journey}} toward mastering STM32 microcontrollers through\+:
+\begin{DoxyItemize}
+\item Building reusable driver-\/level code ~\newline
+
+\item Understanding how ARM Cortex-\/\+M4 interfaces with peripherals ~\newline
+
+\item Learning to read and apply the STM32 Reference Manual and Datasheet ~\newline
+
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{index_autotoc_md14}{}\doxysection{\texorpdfstring{🧑‍💻 Author}{🧑‍💻 Author}}\label{index_autotoc_md14}
+{\bfseries{Yuvraj Singh Rathore}} ~\newline
+ 🎓 IIT Bombay Postgraduate \texorpdfstring{$\vert$}{|} Scientist, DRDO ~\newline
+ 📍 Bangalore, India ~\newline
+ 💬 Interested in Embedded Systems, VLSI, and Radar Communication Systems ~\newline
+
+
+\DoxyHorRuler{0}
+\hypertarget{index_autotoc_md16}{}\doxysection{\texorpdfstring{📜 License}{📜 License}}\label{index_autotoc_md16}
+This project is released under the {\bfseries{MIT License}} — free to use, modify, and distribute with attribution.
+
+\DoxyHorRuler{0}
+\hypertarget{index_autotoc_md18}{}\doxysubsection{\texorpdfstring{⭐ If you find this repository helpful, don’t forget to star it on Git\+Hub!}{⭐ If you find this repository helpful, don’t forget to star it on Git\+Hub!}}\label{index_autotoc_md18}

@@ -1,0 +1,57 @@
+\doxysection{main.\+c}
+\hypertarget{001___s_t_m___c_l_o_c_k___e_n_a_b_l_e_2_src_2main_8c_source}{}\label{001___s_t_m___c_l_o_c_k___e_n_a_b_l_e_2_src_2main_8c_source}\index{Projects/001\_STM\_CLOCK\_ENABLE/Src/main.c@{Projects/001\_STM\_CLOCK\_ENABLE/Src/main.c}}
+\mbox{\hyperlink{001___s_t_m___c_l_o_c_k___e_n_a_b_l_e_2_src_2main_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{001___s_t_m___c_l_o_c_k___e_n_a_b_l_e_2_src_2main_8c_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{001___s_t_m___c_l_o_c_k___e_n_a_b_l_e_2_src_2main_8c_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{001___s_t_m___c_l_o_c_k___e_n_a_b_l_e_2_src_2main_8c_source_l00019}00019\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{\Hypertarget{001___s_t_m___c_l_o_c_k___e_n_a_b_l_e_2_src_2main_8c_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{001___s_t_m___c_l_o_c_k___e_n_a_b_l_e_2_src_2main_8c_source_l00021}00021\ \textcolor{preprocessor}{\#if\ !defined(\_\_SOFT\_FP\_\_)\ \&\&\ defined(\_\_ARM\_FP)}}
+\DoxyCodeLine{\Hypertarget{001___s_t_m___c_l_o_c_k___e_n_a_b_l_e_2_src_2main_8c_source_l00022}00022\ \textcolor{preprocessor}{\ \ \#warning\ "{}FPU\ is\ not\ initialized,\ but\ the\ project\ is\ compiling\ for\ an\ FPU.\ Please\ initialize\ the\ FPU\ before\ use."{}}}
+\DoxyCodeLine{\Hypertarget{001___s_t_m___c_l_o_c_k___e_n_a_b_l_e_2_src_2main_8c_source_l00023}00023\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{001___s_t_m___c_l_o_c_k___e_n_a_b_l_e_2_src_2main_8c_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{001___s_t_m___c_l_o_c_k___e_n_a_b_l_e_2_src_2main_8c_source_l00025}\mbox{\hyperlink{001___s_t_m___c_l_o_c_k___e_n_a_b_l_e_2_src_2main_8c_aa539b1cce2e30fa6c6721693837ff2c1}{00025}}\ \textcolor{preprocessor}{\#define\ RCC\_BASE\_ADDRESS\ 0x40023800UL}}
+\DoxyCodeLine{\Hypertarget{001___s_t_m___c_l_o_c_k___e_n_a_b_l_e_2_src_2main_8c_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{001___s_t_m___c_l_o_c_k___e_n_a_b_l_e_2_src_2main_8c_source_l00027}\mbox{\hyperlink{001___s_t_m___c_l_o_c_k___e_n_a_b_l_e_2_src_2main_8c_a3465fac46f8d87fc7e243765777af052}{00027}}\ \textcolor{preprocessor}{\#define\ RCC\_CR\ (RCC\_BASE\_ADDRESS\ +\ 0x00)}}
+\DoxyCodeLine{\Hypertarget{001___s_t_m___c_l_o_c_k___e_n_a_b_l_e_2_src_2main_8c_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{001___s_t_m___c_l_o_c_k___e_n_a_b_l_e_2_src_2main_8c_source_l00029}\mbox{\hyperlink{001___s_t_m___c_l_o_c_k___e_n_a_b_l_e_2_src_2main_8c_a8f7780f390ef4cbb05efa06554ba0998}{00029}}\ \textcolor{preprocessor}{\#define\ RCC\_CFGR\ (RCC\_BASE\_ADDRESS\ +\ 0x08)}}
+\DoxyCodeLine{\Hypertarget{001___s_t_m___c_l_o_c_k___e_n_a_b_l_e_2_src_2main_8c_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{001___s_t_m___c_l_o_c_k___e_n_a_b_l_e_2_src_2main_8c_source_l00031}\mbox{\hyperlink{001___s_t_m___c_l_o_c_k___e_n_a_b_l_e_2_src_2main_8c_a305184464592fe039a4e47e9d88bdcc4}{00031}}\ \textcolor{preprocessor}{\#define\ RCC\_AHB1ENR\ (RCC\_BASE\_ADDRESS\ +\ 0x30)}}
+\DoxyCodeLine{\Hypertarget{001___s_t_m___c_l_o_c_k___e_n_a_b_l_e_2_src_2main_8c_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{001___s_t_m___c_l_o_c_k___e_n_a_b_l_e_2_src_2main_8c_source_l00033}\mbox{\hyperlink{001___s_t_m___c_l_o_c_k___e_n_a_b_l_e_2_src_2main_8c_a034245d27ea38f0c5b26e72f78b18d8c}{00033}}\ \textcolor{preprocessor}{\#define\ GPIOA\_BASE\_ADDRESS\ 0x40020000UL}}
+\DoxyCodeLine{\Hypertarget{001___s_t_m___c_l_o_c_k___e_n_a_b_l_e_2_src_2main_8c_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{001___s_t_m___c_l_o_c_k___e_n_a_b_l_e_2_src_2main_8c_source_l00035}\mbox{\hyperlink{001___s_t_m___c_l_o_c_k___e_n_a_b_l_e_2_src_2main_8c_a1234035224d2d22cd6be76a5ee04cf02}{00035}}\ \textcolor{preprocessor}{\#define\ GPIOA\_MODER\ (GPIOA\_BASE\_ADDRESS\ +\ 0x00)}}
+\DoxyCodeLine{\Hypertarget{001___s_t_m___c_l_o_c_k___e_n_a_b_l_e_2_src_2main_8c_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{001___s_t_m___c_l_o_c_k___e_n_a_b_l_e_2_src_2main_8c_source_l00037}\mbox{\hyperlink{001___s_t_m___c_l_o_c_k___e_n_a_b_l_e_2_src_2main_8c_a5fd46a066ec0c3f9f72c2f2a438d3368}{00037}}\ \textcolor{preprocessor}{\#define\ GPIOA\_AFRL\_ADDRESS\ (GPIOA\_BASE\_ADDRESS\ +\ 0x20)}}
+\DoxyCodeLine{\Hypertarget{001___s_t_m___c_l_o_c_k___e_n_a_b_l_e_2_src_2main_8c_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{001___s_t_m___c_l_o_c_k___e_n_a_b_l_e_2_src_2main_8c_source_l00039}\mbox{\hyperlink{001___s_t_m___c_l_o_c_k___e_n_a_b_l_e_2_src_2main_8c_a840291bc02cba5474a4cb46a9b9566fe}{00039}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{000___hello___world_2_src_2main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{001___s_t_m___c_l_o_c_k___e_n_a_b_l_e_2_src_2main_8c_source_l00040}00040\ \{}
+\DoxyCodeLine{\Hypertarget{001___s_t_m___c_l_o_c_k___e_n_a_b_l_e_2_src_2main_8c_source_l00041}00041\ \ \ \ \ \textcolor{comment}{/*\ Loop\ forever\ */}}
+\DoxyCodeLine{\Hypertarget{001___s_t_m___c_l_o_c_k___e_n_a_b_l_e_2_src_2main_8c_source_l00042}00042\ \ \ \ \ \textcolor{comment}{//0.\ Enabling\ the\ HSE\ Clock}}
+\DoxyCodeLine{\Hypertarget{001___s_t_m___c_l_o_c_k___e_n_a_b_l_e_2_src_2main_8c_source_l00043}00043\ \ \ \ \ uint32\_t*\ pRCC\_CR\ =\ (uint32\_t*)\ \mbox{\hyperlink{001___s_t_m___c_l_o_c_k___e_n_a_b_l_e_2_src_2main_8c_a3465fac46f8d87fc7e243765777af052}{RCC\_CR}};}
+\DoxyCodeLine{\Hypertarget{001___s_t_m___c_l_o_c_k___e_n_a_b_l_e_2_src_2main_8c_source_l00044}00044\ \ \ \ \ *pRCC\_CR\ |=\ (1<<16);}
+\DoxyCodeLine{\Hypertarget{001___s_t_m___c_l_o_c_k___e_n_a_b_l_e_2_src_2main_8c_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{001___s_t_m___c_l_o_c_k___e_n_a_b_l_e_2_src_2main_8c_source_l00046}00046\ \ \ \ \ \textcolor{comment}{//1.\ Setting\ the\ MCO1\ Clock\ as\ HSI}}
+\DoxyCodeLine{\Hypertarget{001___s_t_m___c_l_o_c_k___e_n_a_b_l_e_2_src_2main_8c_source_l00047}00047\ \ \ \ \ uint32\_t*\ pRCC\_CFGR\_REG\ =\ (uint32\_t*)\ \mbox{\hyperlink{001___s_t_m___c_l_o_c_k___e_n_a_b_l_e_2_src_2main_8c_a8f7780f390ef4cbb05efa06554ba0998}{RCC\_CFGR}};}
+\DoxyCodeLine{\Hypertarget{001___s_t_m___c_l_o_c_k___e_n_a_b_l_e_2_src_2main_8c_source_l00048}00048\ \ \ \ \ *pRCC\_CFGR\_REG\ \&=\ \string~(3<<21);}
+\DoxyCodeLine{\Hypertarget{001___s_t_m___c_l_o_c_k___e_n_a_b_l_e_2_src_2main_8c_source_l00049}00049\ \ \ \ \ *pRCC\_CFGR\_REG\ |=\ (2<<21);}
+\DoxyCodeLine{\Hypertarget{001___s_t_m___c_l_o_c_k___e_n_a_b_l_e_2_src_2main_8c_source_l00050}00050\ \ \ \ \ *pRCC\_CFGR\_REG\ |=\ (6<<24);}
+\DoxyCodeLine{\Hypertarget{001___s_t_m___c_l_o_c_k___e_n_a_b_l_e_2_src_2main_8c_source_l00051}00051\ \ \ \ \ \textcolor{comment}{//*pRCC\_CFGR\_REG\ |=\ (3<<21);}}
+\DoxyCodeLine{\Hypertarget{001___s_t_m___c_l_o_c_k___e_n_a_b_l_e_2_src_2main_8c_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{001___s_t_m___c_l_o_c_k___e_n_a_b_l_e_2_src_2main_8c_source_l00053}00053\ \ \ \ \ \textcolor{comment}{//2.\ Enabling\ the\ GPIOA\ RCC}}
+\DoxyCodeLine{\Hypertarget{001___s_t_m___c_l_o_c_k___e_n_a_b_l_e_2_src_2main_8c_source_l00054}00054\ \ \ \ \ uint32\_t*\ pRCC\_AHB1ENR\_REG\ =\ (uint32\_t*)\ \mbox{\hyperlink{001___s_t_m___c_l_o_c_k___e_n_a_b_l_e_2_src_2main_8c_a305184464592fe039a4e47e9d88bdcc4}{RCC\_AHB1ENR}};}
+\DoxyCodeLine{\Hypertarget{001___s_t_m___c_l_o_c_k___e_n_a_b_l_e_2_src_2main_8c_source_l00055}00055\ \ \ \ \ *pRCC\_AHB1ENR\_REG\ |=\ (1<<0);}
+\DoxyCodeLine{\Hypertarget{001___s_t_m___c_l_o_c_k___e_n_a_b_l_e_2_src_2main_8c_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{001___s_t_m___c_l_o_c_k___e_n_a_b_l_e_2_src_2main_8c_source_l00057}00057\ \ \ \ \ \textcolor{comment}{//3.\ Setting\ PA8\ to\ alternate\ functionality\ AF0}}
+\DoxyCodeLine{\Hypertarget{001___s_t_m___c_l_o_c_k___e_n_a_b_l_e_2_src_2main_8c_source_l00058}00058\ \ \ \ \ uint32\_t*\ pGPIOA\_MODER\_REG\ =\ (uint32\_t*)\ \mbox{\hyperlink{001___s_t_m___c_l_o_c_k___e_n_a_b_l_e_2_src_2main_8c_a1234035224d2d22cd6be76a5ee04cf02}{GPIOA\_MODER}};}
+\DoxyCodeLine{\Hypertarget{001___s_t_m___c_l_o_c_k___e_n_a_b_l_e_2_src_2main_8c_source_l00059}00059\ \ \ \ \ *pGPIOA\_MODER\_REG\ |=\ (2<<16);}
+\DoxyCodeLine{\Hypertarget{001___s_t_m___c_l_o_c_k___e_n_a_b_l_e_2_src_2main_8c_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{001___s_t_m___c_l_o_c_k___e_n_a_b_l_e_2_src_2main_8c_source_l00061}00061\ \ \ \ \ \textcolor{comment}{//4.\ Setting\ the\ alternate\ function\ of\ GPIO\ PA8}}
+\DoxyCodeLine{\Hypertarget{001___s_t_m___c_l_o_c_k___e_n_a_b_l_e_2_src_2main_8c_source_l00062}00062\ \ \ \ \ uint32\_t*\ pGPIOA\_AFRL\ =\ (uint32\_t*)\ \mbox{\hyperlink{001___s_t_m___c_l_o_c_k___e_n_a_b_l_e_2_src_2main_8c_a5fd46a066ec0c3f9f72c2f2a438d3368}{GPIOA\_AFRL\_ADDRESS}};}
+\DoxyCodeLine{\Hypertarget{001___s_t_m___c_l_o_c_k___e_n_a_b_l_e_2_src_2main_8c_source_l00063}00063\ \ \ \ \ *pGPIOA\_AFRL\ |=\ 0;}
+\DoxyCodeLine{\Hypertarget{001___s_t_m___c_l_o_c_k___e_n_a_b_l_e_2_src_2main_8c_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{001___s_t_m___c_l_o_c_k___e_n_a_b_l_e_2_src_2main_8c_source_l00065}00065\ \textcolor{comment}{//\ \ for(;;);}}
+\DoxyCodeLine{\Hypertarget{001___s_t_m___c_l_o_c_k___e_n_a_b_l_e_2_src_2main_8c_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{001___s_t_m___c_l_o_c_k___e_n_a_b_l_e_2_src_2main_8c_source_l00067}00067\ \}}
+
+\end{DoxyCode}
