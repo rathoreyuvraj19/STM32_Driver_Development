@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['🚀_20upcoming_20modules_0',['🚀 Upcoming Modules',['../index.html#autotoc_md10',1,'']]]
+  ['📜_20license_0',['📜 License',['../index.html#autotoc_md16',1,'']]]
 ];

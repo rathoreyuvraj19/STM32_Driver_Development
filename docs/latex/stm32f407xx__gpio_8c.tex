@@ -1,0 +1,153 @@
+\doxysection{Projects/003\+\_\+\+Testing\+\_\+stm32f407xx\+\_\+drivers/\+Drivers/src/stm32f407xx\+\_\+gpio.c File Reference}
+\hypertarget{stm32f407xx__gpio_8c}{}\label{stm32f407xx__gpio_8c}\index{Projects/003\_Testing\_stm32f407xx\_drivers/Drivers/src/stm32f407xx\_gpio.c@{Projects/003\_Testing\_stm32f407xx\_drivers/Drivers/src/stm32f407xx\_gpio.c}}
+
+
+GPIO peripheral driver source file for STM32\+F407xx MCU.  
+
+
+{\ttfamily \#include "{}stm32f407xx\+\_\+gpio.\+h"{}}\newline
+Include dependency graph for stm32f407xx\+\_\+gpio.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=206pt]{stm32f407xx__gpio_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{stm32f407xx__gpio_8c_a10eb7b8d2cd68d8c3495beb9339c516f}{gpio\+\_\+init}} (\mbox{\hyperlink{struct_g_p_i_ox___handle__t}{GPIOx\+\_\+\+Handle\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+GPIOHandle)
+\begin{DoxyCompactList}\small\item\em Initializes the GPIO peripheral. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+GPIO peripheral driver source file for STM32\+F407xx MCU. 
+
+\begin{DoxyAuthor}{Author}
+Yuvraj Singh Rathore 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+13-\/Nov-\/2025 
+\end{DoxyDate}
+This file implements low-\/level GPIO driver functions using direct register access for deterministic timing and optimal performance. It provides APIs for\+:
+
+
+\begin{DoxyItemize}
+\item Initializing and de-\/initializing GPIO ports and pins
+\item Configuring pin modes, speeds, output types, pull-\/up/pull-\/down settings
+\item Reading from and writing to pins or entire ports
+\item Managing alternate functions and EXTI interrupt configuration
+\end{DoxyItemize}
+
+\begin{DoxyNote}{Note}
+Ensure the GPIO peripheral clock is enabled before calling any API. 
+\end{DoxyNote}
+\begin{DoxyAttention}{Attention}
+Bare-\/metal driver without HAL/\+Std\+Periph dependencies.
+\end{DoxyAttention}
+\hypertarget{stm32f407xx__gpio_8c_GPIO_API_Summary}{}\doxysubsection{\texorpdfstring{GPIO Driver API Summary}{GPIO Driver API Summary}}\label{stm32f407xx__gpio_8c_GPIO_API_Summary}
+
+\begin{DoxyItemize}
+\item \doxylink{stm32f407xx__gpio_8c_a10eb7b8d2cd68d8c3495beb9339c516f}{gpio\+\_\+init()} \+: Configure a GPIO pin (mode, type, speed, pull, AF)
+\item gpio\+\_\+deinit() \+: Reset an entire GPIO port
+\item gpio\+\_\+read\+\_\+pin() \+: Read the logic level of a pin
+\item gpio\+\_\+read\+\_\+port() \+: Read the 16-\/bit input state of a port
+\item gpio\+\_\+write\+\_\+pin() \+: Write HIGH/\+LOW to a pin
+\item gpio\+\_\+write\+\_\+port() \+: Write 16-\/bit value to a port
+\item gpio\+\_\+toggle\+\_\+pin() \+: Toggle pin output level
+\item gpio\+\_\+irq\+\_\+config() \+: Configure EXTI trigger type
+\item gpio\+\_\+irq\+\_\+control() \+: Enable/disable NVIC interrupt for GPIO EXTI line
+\item gpio\+\_\+irq\+\_\+clear() \+: Clear EXTI pending flag
+\end{DoxyItemize}
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{stm32f407xx__gpio_8h}{stm32f407xx\+\_\+gpio.\+h} 
+\end{DoxySeeAlso}
+
+
+Definition in file \mbox{\hyperlink{stm32f407xx__gpio_8c_source}{stm32f407xx\+\_\+gpio.\+c}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{stm32f407xx__gpio_8c_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{stm32f407xx__gpio_8c_a10eb7b8d2cd68d8c3495beb9339c516f}\index{stm32f407xx\_gpio.c@{stm32f407xx\_gpio.c}!gpio\_init@{gpio\_init}}
+\index{gpio\_init@{gpio\_init}!stm32f407xx\_gpio.c@{stm32f407xx\_gpio.c}}
+\doxysubsubsection{\texorpdfstring{gpio\_init()}{gpio\_init()}}
+{\footnotesize\ttfamily \label{stm32f407xx__gpio_8c_a10eb7b8d2cd68d8c3495beb9339c516f} 
+void gpio\+\_\+init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_p_i_ox___handle__t}{GPIOx\+\_\+\+Handle\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+GPIOHandle}{}\end{DoxyParamCaption})}
+
+
+
+Initializes the GPIO peripheral. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+GPIOHandle} & Pointer to GPIO handle structure. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None
+\end{DoxyReturn}
+Initializes the specified GPIO pin. 
+\begin{DoxyParams}{Parameters}
+{\em p\+GPIOHandle} & Pointer to GPIO handle structure containing port and configuration. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{stm32f407xx__gpio_8c_source_l00049}{49}} of file \mbox{\hyperlink{stm32f407xx__gpio_8c_source}{stm32f407xx\+\_\+gpio.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00050\ \{}
+\DoxyCodeLine{00051\ \ \ \ \ uint32\_t\ temp\ =\ 0;}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{comment}{/*\ 1.\ Enable\ the\ peripheral\ clock\ */}}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordflow}{if}(pGPIOHandle-\/>\mbox{\hyperlink{struct_g_p_i_ox___handle__t_af66476d0b69ef00a95863c8d55a33208}{pGPIOx}}\ ==\ \mbox{\hyperlink{group___g_p_i_ox___r_e_g___d_e_f_gac485358099728ddae050db37924dd6b7}{GPIOA}})\ \mbox{\hyperlink{group___a_h_b1___p_c_l_k___e_n___d_i___m_a_c_r_o_s_ga17c0eb1a7e7645a5d63d8b7a41fbb19c}{GPIOA\_PCLK\_EN}}();}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(pGPIOHandle-\/>\mbox{\hyperlink{struct_g_p_i_ox___handle__t_af66476d0b69ef00a95863c8d55a33208}{pGPIOx}}\ ==\ \mbox{\hyperlink{group___g_p_i_ox___r_e_g___d_e_f_ga68b66ac73be4c836db878a42e1fea3cd}{GPIOB}})\ \mbox{\hyperlink{group___a_h_b1___p_c_l_k___e_n___d_i___m_a_c_r_o_s_ga1bc2b8b73bb42c4d2cd758a732fbe871}{GPIOB\_PCLK\_EN}}();}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(pGPIOHandle-\/>\mbox{\hyperlink{struct_g_p_i_ox___handle__t_af66476d0b69ef00a95863c8d55a33208}{pGPIOx}}\ ==\ \mbox{\hyperlink{group___g_p_i_ox___r_e_g___d_e_f_ga2dca03332d620196ba943bc2346eaa08}{GPIOC}})\ \mbox{\hyperlink{group___a_h_b1___p_c_l_k___e_n___d_i___m_a_c_r_o_s_gab9e994b2e5e4ada47764117634c64728}{GPIOC\_PCLK\_EN}}();}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(pGPIOHandle-\/>\mbox{\hyperlink{struct_g_p_i_ox___handle__t_af66476d0b69ef00a95863c8d55a33208}{pGPIOx}}\ ==\ \mbox{\hyperlink{group___g_p_i_ox___r_e_g___d_e_f_ga7580b1a929ea9df59725ba9c18eba6ac}{GPIOD}})\ \mbox{\hyperlink{group___a_h_b1___p_c_l_k___e_n___d_i___m_a_c_r_o_s_gac08ecd1bbe57ab59746d6da5b972f493}{GPIOD\_PCLK\_EN}}();}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(pGPIOHandle-\/>\mbox{\hyperlink{struct_g_p_i_ox___handle__t_af66476d0b69ef00a95863c8d55a33208}{pGPIOx}}\ ==\ \mbox{\hyperlink{group___g_p_i_ox___r_e_g___d_e_f_gae04bdb5e8acc47cab1d0532e6b0d0763}{GPIOE}})\ \mbox{\hyperlink{group___a_h_b1___p_c_l_k___e_n___d_i___m_a_c_r_o_s_gaa93bc85ce9310ae89c709ad615d9bb18}{GPIOE\_PCLK\_EN}}();}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(pGPIOHandle-\/>\mbox{\hyperlink{struct_g_p_i_ox___handle__t_af66476d0b69ef00a95863c8d55a33208}{pGPIOx}}\ ==\ \mbox{\hyperlink{group___g_p_i_ox___r_e_g___d_e_f_ga43c3022dede7c9db7a58d3c3409dbc8d}{GPIOF}})\ \mbox{\hyperlink{group___a_h_b1___p_c_l_k___e_n___d_i___m_a_c_r_o_s_ga1a46c65e3a2959ce65c503bc735d45ea}{GPIOF\_PCLK\_EN}}();}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(pGPIOHandle-\/>\mbox{\hyperlink{struct_g_p_i_ox___handle__t_af66476d0b69ef00a95863c8d55a33208}{pGPIOx}}\ ==\ \mbox{\hyperlink{group___g_p_i_ox___r_e_g___d_e_f_ga02a2a23a32f9b02166a8c64012842414}{GPIOG}})\ \mbox{\hyperlink{group___a_h_b1___p_c_l_k___e_n___d_i___m_a_c_r_o_s_ga84b14038fe3d35ca857056c98f796c64}{GPIOG\_PCLK\_EN}}();}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(pGPIOHandle-\/>\mbox{\hyperlink{struct_g_p_i_ox___handle__t_af66476d0b69ef00a95863c8d55a33208}{pGPIOx}}\ ==\ \mbox{\hyperlink{group___g_p_i_ox___r_e_g___d_e_f_gadeacbb43ae86c879945afe98c679b285}{GPIOH}})\ \mbox{\hyperlink{group___a_h_b1___p_c_l_k___e_n___d_i___m_a_c_r_o_s_ga2be7b357e112e2036141678aa6bc3506}{GPIOH\_PCLK\_EN}}();}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(pGPIOHandle-\/>\mbox{\hyperlink{struct_g_p_i_ox___handle__t_af66476d0b69ef00a95863c8d55a33208}{pGPIOx}}\ ==\ \mbox{\hyperlink{group___g_p_i_ox___r_e_g___d_e_f_gad15f13545ecdbbabfccf43d5997e5ade}{GPIOI}})\ \mbox{\hyperlink{group___a_h_b1___p_c_l_k___e_n___d_i___m_a_c_r_o_s_gae7a11cdb49af5cb6c9fa08a57d474eba}{GPIOI\_PCLK\_EN}}();}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{comment}{/*\ 2.\ Configure\ GPIO\ mode\ */}}
+\DoxyCodeLine{00065\ \ \ \ \ temp\ =\ (pGPIOHandle-\/>GPIO\_Config.GPIO\_Mode\ <<\ (2\ *\ pGPIOHandle-\/>GPIO\_Config.GPIO\_PinNumber));}
+\DoxyCodeLine{00066\ \ \ \ \ pGPIOHandle-\/>\mbox{\hyperlink{struct_g_p_i_ox___handle__t_af66476d0b69ef00a95863c8d55a33208}{pGPIOx}}-\/>\mbox{\hyperlink{struct_g_p_i_ox___reg_def__t_a7131c3ab513a84fc69270888ddbe561d}{MODER}}\ \&=\ \string~(0x3\ <<\ (2\ *\ pGPIOHandle-\/>GPIO\_Config.GPIO\_PinNumber));\ \textcolor{comment}{//\ clear}}
+\DoxyCodeLine{00067\ \ \ \ \ pGPIOHandle-\/>\mbox{\hyperlink{struct_g_p_i_ox___handle__t_af66476d0b69ef00a95863c8d55a33208}{pGPIOx}}-\/>\mbox{\hyperlink{struct_g_p_i_ox___reg_def__t_a7131c3ab513a84fc69270888ddbe561d}{MODER}}\ |=\ temp;}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{comment}{/*\ 3.\ Configure\ output\ type\ */}}
+\DoxyCodeLine{00070\ \ \ \ \ temp\ =\ (pGPIOHandle-\/>GPIO\_Config.GPIO\_OP\_Type\ <<\ pGPIOHandle-\/>GPIO\_Config.GPIO\_PinNumber);}
+\DoxyCodeLine{00071\ \ \ \ \ pGPIOHandle-\/>\mbox{\hyperlink{struct_g_p_i_ox___handle__t_af66476d0b69ef00a95863c8d55a33208}{pGPIOx}}-\/>\mbox{\hyperlink{struct_g_p_i_ox___reg_def__t_a487e307dd27a1a694f8a52f1a2df6ce6}{OTYPER}}\ \&=\ \string~(0x1\ <<\ pGPIOHandle-\/>GPIO\_Config.GPIO\_PinNumber);\ \textcolor{comment}{//\ clear}}
+\DoxyCodeLine{00072\ \ \ \ \ pGPIOHandle-\/>\mbox{\hyperlink{struct_g_p_i_ox___handle__t_af66476d0b69ef00a95863c8d55a33208}{pGPIOx}}-\/>\mbox{\hyperlink{struct_g_p_i_ox___reg_def__t_a487e307dd27a1a694f8a52f1a2df6ce6}{OTYPER}}\ |=\ temp;}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{comment}{/*\ 4.\ Configure\ speed\ */}}
+\DoxyCodeLine{00075\ \ \ \ \ temp\ =\ (pGPIOHandle-\/>GPIO\_Config.GPIO\_Speed\ <<\ (2\ *\ pGPIOHandle-\/>GPIO\_Config.GPIO\_PinNumber));}
+\DoxyCodeLine{00076\ \ \ \ \ pGPIOHandle-\/>\mbox{\hyperlink{struct_g_p_i_ox___handle__t_af66476d0b69ef00a95863c8d55a33208}{pGPIOx}}-\/>\mbox{\hyperlink{struct_g_p_i_ox___reg_def__t_a3b356447d7a412130d1bc5b33cb4b7a0}{OSPEEDR}}\ \&=\ \string~(0x3\ <<\ (2\ *\ pGPIOHandle-\/>GPIO\_Config.GPIO\_PinNumber));}
+\DoxyCodeLine{00077\ \ \ \ \ pGPIOHandle-\/>\mbox{\hyperlink{struct_g_p_i_ox___handle__t_af66476d0b69ef00a95863c8d55a33208}{pGPIOx}}-\/>\mbox{\hyperlink{struct_g_p_i_ox___reg_def__t_a3b356447d7a412130d1bc5b33cb4b7a0}{OSPEEDR}}\ |=\ temp;}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{comment}{/*\ 5.\ Configure\ pull-\/up/pull-\/down\ */}}
+\DoxyCodeLine{00080\ \ \ \ \ temp\ =\ (pGPIOHandle-\/>GPIO\_Config.GPIO\_PU\_PD\ <<\ (2\ *\ pGPIOHandle-\/>GPIO\_Config.GPIO\_PinNumber));}
+\DoxyCodeLine{00081\ \ \ \ \ pGPIOHandle-\/>\mbox{\hyperlink{struct_g_p_i_ox___handle__t_af66476d0b69ef00a95863c8d55a33208}{pGPIOx}}-\/>\mbox{\hyperlink{struct_g_p_i_ox___reg_def__t_a9e83c5fefbd8c0caff3dc3dccd4cfa6f}{PUPDR}}\ \&=\ \string~(0x3\ <<\ (2\ *\ pGPIOHandle-\/>GPIO\_Config.GPIO\_PinNumber));}
+\DoxyCodeLine{00082\ \ \ \ \ pGPIOHandle-\/>\mbox{\hyperlink{struct_g_p_i_ox___handle__t_af66476d0b69ef00a95863c8d55a33208}{pGPIOx}}-\/>\mbox{\hyperlink{struct_g_p_i_ox___reg_def__t_a9e83c5fefbd8c0caff3dc3dccd4cfa6f}{PUPDR}}\ |=\ temp;}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{comment}{/*\ 6.\ Configure\ alternate\ function\ (if\ selected)\ */}}
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordflow}{if}(pGPIOHandle-\/>GPIO\_Config.GPIO\_Mode\ ==\ \mbox{\hyperlink{group___g_p_i_o___m_o_d_e_s_gaf97227968696e5e26432760060e61e48}{GPIO\_MODE\_ALT\_FUNC}})}
+\DoxyCodeLine{00086\ \ \ \ \ \{}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ uint8\_t\ pin\ =\ pGPIOHandle-\/>GPIO\_Config.GPIO\_PinNumber;}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ uint8\_t\ afr\_index\ =\ pin\ /\ 8;}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ uint8\_t\ afr\_position\ =\ pin\ \%\ 8;}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ pGPIOHandle-\/>\mbox{\hyperlink{struct_g_p_i_ox___handle__t_af66476d0b69ef00a95863c8d55a33208}{pGPIOx}}-\/>AFR[afr\_index]\ \&=\ \string~(0xF\ <<\ (4\ *\ afr\_position));}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ pGPIOHandle-\/>\mbox{\hyperlink{struct_g_p_i_ox___handle__t_af66476d0b69ef00a95863c8d55a33208}{pGPIOx}}-\/>AFR[afr\_index]\ |=\ (pGPIOHandle-\/>GPIO\_Config.GPIO\_ALT\_FUNC\ <<\ (4\ *\ afr\_position));}
+\DoxyCodeLine{00093\ \ \ \ \ \}}
+\DoxyCodeLine{00094\ \}}
+
+\end{DoxyCode}

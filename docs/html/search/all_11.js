@@ -15,5 +15,7 @@ var searchData=
   ['tim7_5fbaseaddr_12',['TIM7_BASEADDR',['../group___a_p_b1___b_a_s_e___a_d_d_r_e_s_s_e_s.html#ga3d459b9d2064d59b7b9e3d3750458a09',1,'stm32f407xx.h']]],
   ['tim8_5fbaseaddr_13',['TIM8_BASEADDR',['../group___a_p_b2___b_a_s_e___a_d_d_r_e_s_s_e_s.html#ga68f67915c98cef03345f71d6d57145f2',1,'stm32f407xx.h']]],
   ['tim9_5fbaseaddr_14',['TIM9_BASEADDR',['../group___a_p_b2___b_a_s_e___a_d_d_r_e_s_s_e_s.html#ga30f114534846e6efe1521f12239d72b8',1,'stm32f407xx.h']]],
-  ['to_20star_20it_20on_20github_15',['⭐ If you find this repository helpful, don’t forget to star it on GitHub!',['../index.html#autotoc_md18',1,'']]]
+  ['to_20star_20it_20on_20github_15',['⭐ If you find this repository helpful, don’t forget to star it on GitHub!',['../index.html#autotoc_md18',1,'']]],
+  ['todo_20list_16',['Todo List',['../todo.html',1,'']]],
+  ['types_17',['GPIO Output Types',['../group___g_p_i_o___o_p___t_y_p_e_s.html',1,'']]]
 ];

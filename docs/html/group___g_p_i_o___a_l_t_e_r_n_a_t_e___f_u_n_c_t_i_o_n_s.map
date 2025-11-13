@@ -1,0 +1,4 @@
+<map id="GPIO Alternate Function Options" name="GPIO Alternate Function Options">
+<area shape="rect" id="Node000001" title="GPIO alternate function selection macros (AF0–AF15)." alt="" coords="241,5,404,48"/>
+<area shape="rect" id="Node000002" href="$group___g_p_i_o___config___structure.html" title="Configuration parameters for a single GPIO pin." alt="" coords="5,5,193,48"/>
+</map>

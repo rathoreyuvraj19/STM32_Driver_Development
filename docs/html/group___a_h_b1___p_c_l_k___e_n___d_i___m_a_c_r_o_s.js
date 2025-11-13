@@ -1,0 +1,21 @@
+var group___a_h_b1___p_c_l_k___e_n___d_i___m_a_c_r_o_s =
+[
+    [ "GPIOA_PCLK_DI", "group___a_h_b1___p_c_l_k___e_n___d_i___m_a_c_r_o_s.html#ga7bd5daf4b7f73ce65ccccc10f3f62c25", null ],
+    [ "GPIOA_PCLK_EN", "group___a_h_b1___p_c_l_k___e_n___d_i___m_a_c_r_o_s.html#ga17c0eb1a7e7645a5d63d8b7a41fbb19c", null ],
+    [ "GPIOB_PCLK_DI", "group___a_h_b1___p_c_l_k___e_n___d_i___m_a_c_r_o_s.html#ga0b8beefb50159bf0b57ce00f391b9ffb", null ],
+    [ "GPIOB_PCLK_EN", "group___a_h_b1___p_c_l_k___e_n___d_i___m_a_c_r_o_s.html#ga1bc2b8b73bb42c4d2cd758a732fbe871", null ],
+    [ "GPIOC_PCLK_DI", "group___a_h_b1___p_c_l_k___e_n___d_i___m_a_c_r_o_s.html#ga786bf409a60ff677716cb03a610bd73e", null ],
+    [ "GPIOC_PCLK_EN", "group___a_h_b1___p_c_l_k___e_n___d_i___m_a_c_r_o_s.html#gab9e994b2e5e4ada47764117634c64728", null ],
+    [ "GPIOD_PCLK_DI", "group___a_h_b1___p_c_l_k___e_n___d_i___m_a_c_r_o_s.html#ga454d99148231ab9d69d282fa2977794a", null ],
+    [ "GPIOD_PCLK_EN", "group___a_h_b1___p_c_l_k___e_n___d_i___m_a_c_r_o_s.html#gac08ecd1bbe57ab59746d6da5b972f493", null ],
+    [ "GPIOE_PCLK_DI", "group___a_h_b1___p_c_l_k___e_n___d_i___m_a_c_r_o_s.html#ga978a7db44c8d879d33a615ef3b0ec112", null ],
+    [ "GPIOE_PCLK_EN", "group___a_h_b1___p_c_l_k___e_n___d_i___m_a_c_r_o_s.html#gaa93bc85ce9310ae89c709ad615d9bb18", null ],
+    [ "GPIOF_PCLK_DI", "group___a_h_b1___p_c_l_k___e_n___d_i___m_a_c_r_o_s.html#ga9249dead4ccda4f01c94b82a7fbe91a6", null ],
+    [ "GPIOF_PCLK_EN", "group___a_h_b1___p_c_l_k___e_n___d_i___m_a_c_r_o_s.html#ga1a46c65e3a2959ce65c503bc735d45ea", null ],
+    [ "GPIOG_PCLK_DI", "group___a_h_b1___p_c_l_k___e_n___d_i___m_a_c_r_o_s.html#gaead521c49fb953246a2a8d0682d3289d", null ],
+    [ "GPIOG_PCLK_EN", "group___a_h_b1___p_c_l_k___e_n___d_i___m_a_c_r_o_s.html#ga84b14038fe3d35ca857056c98f796c64", null ],
+    [ "GPIOH_PCLK_DI", "group___a_h_b1___p_c_l_k___e_n___d_i___m_a_c_r_o_s.html#ga5e62f105900568285d3f1c703048566b", null ],
+    [ "GPIOH_PCLK_EN", "group___a_h_b1___p_c_l_k___e_n___d_i___m_a_c_r_o_s.html#ga2be7b357e112e2036141678aa6bc3506", null ],
+    [ "GPIOI_PCLK_DI", "group___a_h_b1___p_c_l_k___e_n___d_i___m_a_c_r_o_s.html#gadb9c6929391cbf78e4d132b0a72453ae", null ],
+    [ "GPIOI_PCLK_EN", "group___a_h_b1___p_c_l_k___e_n___d_i___m_a_c_r_o_s.html#gae7a11cdb49af5cb6c9fa08a57d474eba", null ]
+];

@@ -16,8 +16,6 @@ var group___a_h_b1___b_a_s_e___a_d_d_r_e_s_s_e_s =
     [ "GPIOG_BASEADDR", "group___a_h_b1___b_a_s_e___a_d_d_r_e_s_s_e_s.html#ga90f006630c69a7540d8b0b1c0073f3d2", null ],
     [ "GPIOH_BASEADDR", "group___a_h_b1___b_a_s_e___a_d_d_r_e_s_s_e_s.html#ga63f9598aea50d8c995a9037578bb0907", null ],
     [ "GPIOI_BASEADDR", "group___a_h_b1___b_a_s_e___a_d_d_r_e_s_s_e_s.html#ga533d893dc77093a8db3b2ad55603587c", null ],
-    [ "GPIOJ_BASEADDR", "group___a_h_b1___b_a_s_e___a_d_d_r_e_s_s_e_s.html#gaf521eb2c807db60373a1aec7ec7c70cd", null ],
-    [ "GPIOK_BASEADDR", "group___a_h_b1___b_a_s_e___a_d_d_r_e_s_s_e_s.html#ga2c3e49cd79525cffb73a825787d5e826", null ],
     [ "RCC_BASEADDR", "group___a_h_b1___b_a_s_e___a_d_d_r_e_s_s_e_s.html#ga89610f202a9f78bcc85f76c5ba52d009", null ],
     [ "USB_OTG_HS_BASEADDR", "group___a_h_b1___b_a_s_e___a_d_d_r_e_s_s_e_s.html#gacf83eb65f63f6c2cbf1accf6cf8e8736", null ]
 ];

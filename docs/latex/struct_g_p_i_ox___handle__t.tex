@@ -1,0 +1,72 @@
+\doxysection{GPIOx\+\_\+\+Handle\+\_\+t Struct Reference}
+\hypertarget{struct_g_p_i_ox___handle__t}{}\label{struct_g_p_i_ox___handle__t}\index{GPIOx\_Handle\_t@{GPIOx\_Handle\_t}}
+
+
+GPIO Handle Structure.  
+
+
+
+
+{\ttfamily \#include $<$stm32f407xx\+\_\+gpio.\+h$>$}
+
+
+
+Collaboration diagram for GPIOx\+\_\+\+Handle\+\_\+t\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=293pt]{struct_g_p_i_ox___handle__t__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_g_p_i_ox___reg_def__t}{GPIOx\+\_\+\+Reg\+Def\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_g_p_i_ox___handle__t_af66476d0b69ef00a95863c8d55a33208}{p\+GPIOx}}
+\item 
+\mbox{\hyperlink{struct_g_p_i_ox___config__t}{GPIOx\+\_\+\+Config\+\_\+t}} \mbox{\hyperlink{struct_g_p_i_ox___handle__t_aeb936ee4e02972546dff148d2ce5e084}{GPIO\+\_\+\+CONFIG}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+GPIO Handle Structure. 
+
+The GPIO handle structure binds\+:
+\begin{DoxyItemize}
+\item A pointer to the GPIO peripheral register definition ({\ttfamily \doxylink{struct_g_p_i_ox___handle__t_af66476d0b69ef00a95863c8d55a33208}{p\+GPIOx}})
+\item A configuration structure ({\ttfamily GPIO\+\_\+\+Config})
+\end{DoxyItemize}
+
+It is passed to all GPIO driver APIs to operate on a pin/port. 
+
+Definition at line \mbox{\hyperlink{stm32f407xx__gpio_8h_source_l00169}{169}} of file \mbox{\hyperlink{stm32f407xx__gpio_8h_source}{stm32f407xx\+\_\+gpio.\+h}}.
+
+
+
+\label{doc-variable-members}
+\Hypertarget{struct_g_p_i_ox___handle__t_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{struct_g_p_i_ox___handle__t_aeb936ee4e02972546dff148d2ce5e084}\index{GPIOx\_Handle\_t@{GPIOx\_Handle\_t}!GPIO\_CONFIG@{GPIO\_CONFIG}}
+\index{GPIO\_CONFIG@{GPIO\_CONFIG}!GPIOx\_Handle\_t@{GPIOx\_Handle\_t}}
+\doxysubsubsection{\texorpdfstring{GPIO\_CONFIG}{GPIO\_CONFIG}}
+{\footnotesize\ttfamily \label{struct_g_p_i_ox___handle__t_aeb936ee4e02972546dff148d2ce5e084} 
+\mbox{\hyperlink{struct_g_p_i_ox___config__t}{GPIOx\+\_\+\+Config\+\_\+t}} GPIOx\+\_\+\+Handle\+\_\+t\+::\+GPIO\+\_\+\+CONFIG}
+
+GPIO pin configuration settings. 
+
+Definition at line \mbox{\hyperlink{stm32f407xx__gpio_8h_source_l00173}{173}} of file \mbox{\hyperlink{stm32f407xx__gpio_8h_source}{stm32f407xx\+\_\+gpio.\+h}}.
+
+\Hypertarget{struct_g_p_i_ox___handle__t_af66476d0b69ef00a95863c8d55a33208}\index{GPIOx\_Handle\_t@{GPIOx\_Handle\_t}!pGPIOx@{pGPIOx}}
+\index{pGPIOx@{pGPIOx}!GPIOx\_Handle\_t@{GPIOx\_Handle\_t}}
+\doxysubsubsection{\texorpdfstring{pGPIOx}{pGPIOx}}
+{\footnotesize\ttfamily \label{struct_g_p_i_ox___handle__t_af66476d0b69ef00a95863c8d55a33208} 
+\mbox{\hyperlink{struct_g_p_i_ox___reg_def__t}{GPIOx\+\_\+\+Reg\+Def\+\_\+t}}\texorpdfstring{$\ast$}{*} GPIOx\+\_\+\+Handle\+\_\+t\+::p\+GPIOx}
+
+Pointer to GPIO peripheral base address. Refer to GPIO\+\_\+\+Base\+\_\+\+Address. 
+
+Definition at line \mbox{\hyperlink{stm32f407xx__gpio_8h_source_l00170}{170}} of file \mbox{\hyperlink{stm32f407xx__gpio_8h_source}{stm32f407xx\+\_\+gpio.\+h}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Projects/003\+\_\+\+Testing\+\_\+stm32f407xx\+\_\+drivers/\+Drivers/inc/\mbox{\hyperlink{stm32f407xx__gpio_8h}{stm32f407xx\+\_\+gpio.\+h}}\end{DoxyCompactItemize}

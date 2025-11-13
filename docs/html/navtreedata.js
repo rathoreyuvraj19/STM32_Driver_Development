@@ -26,13 +26,23 @@ var NAVTREE =
 [
   [ "STM32F407 Bare-Metal Driver Development", "index.html", [
     [ "🧠 STM32 Driver Development", "index.html", "index" ],
+    [ "Todo List", "todo.html", null ],
     [ "Topics", "topics.html", "topics" ],
+    [ "Classes", "annotated.html", [
+      [ "Class List", "annotated.html", "annotated_dup" ],
+      [ "Class Index", "classes.html", null ],
+      [ "Class Members", "functions.html", [
+        [ "All", "functions.html", null ],
+        [ "Variables", "functions_vars.html", null ]
+      ] ]
+    ] ],
     [ "Files", "files.html", [
       [ "File List", "files.html", "files_dup" ],
       [ "File Members", "globals.html", [
-        [ "All", "globals.html", null ],
+        [ "All", "globals.html", "globals_dup" ],
         [ "Functions", "globals_func.html", null ],
         [ "Variables", "globals_vars.html", null ],
+        [ "Typedefs", "globals_type.html", null ],
         [ "Macros", "globals_defs.html", null ]
       ] ]
     ] ]
@@ -41,7 +51,8 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"000___hello___world_2_src_2main_8c.html"
+"000___hello___world_2_src_2main_8c.html",
+"group___a_p_b1___b_a_s_e___a_d_d_r_e_s_s_e_s.html#ga44e7e7597f47b4f3f3229de7c0ff7908"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';
