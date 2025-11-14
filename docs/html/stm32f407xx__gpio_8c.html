@@ -129,8 +129,12 @@ Include dependency graph for stm32f407xx_gpio.c:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a10eb7b8d2cd68d8c3495beb9339c516f" id="r_a10eb7b8d2cd68d8c3495beb9339c516f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a10eb7b8d2cd68d8c3495beb9339c516f">gpio_init</a> (<a class="el" href="struct_g_p_i_ox___handle__t.html">GPIOx_Handle_t</a> *pGPIOHandle)</td></tr>
-<tr class="memdesc:a10eb7b8d2cd68d8c3495beb9339c516f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the GPIO peripheral.  <br /></td></tr>
+<tr class="memitem:ga59f07285d055589998e910abf10c9ab1" id="r_ga59f07285d055589998e910abf10c9ab1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___g_p_i_o___driver___a_p_is.html#ga59f07285d055589998e910abf10c9ab1">gpio_pin_init</a> (<a class="el" href="struct_g_p_i_ox___handle__t.html">GPIOx_Handle_t</a> *GPIOx_Handle)</td></tr>
+<tr class="memdesc:ga59f07285d055589998e910abf10c9ab1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize a GPIO pin.  <br /></td></tr>
+<tr class="memitem:ga347db04adc58e4104a1b0600a2238395" id="r_ga347db04adc58e4104a1b0600a2238395"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___g_p_i_o___driver___a_p_is.html#ga347db04adc58e4104a1b0600a2238395">gpio_port_deinit</a> (<a class="el" href="struct_g_p_i_ox___reg_def__t.html">GPIOx_RegDef_t</a> *pGPIOx)</td></tr>
+<tr class="memdesc:ga347db04adc58e4104a1b0600a2238395"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize a GPIO pin.  <br /></td></tr>
+<tr class="memitem:ga7a2f606b1dfb968762d2ee9dcf59fc5f" id="r_ga7a2f606b1dfb968762d2ee9dcf59fc5f"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___g_p_i_o___driver___a_p_is.html#ga7a2f606b1dfb968762d2ee9dcf59fc5f">gpio_read_pin</a> (<a class="el" href="struct_g_p_i_ox___reg_def__t.html">GPIOx_RegDef_t</a> *pGPIOx, uint8_t pin)</td></tr>
+<tr class="memdesc:ga7a2f606b1dfb968762d2ee9dcf59fc5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read a GPIO pin.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>GPIO peripheral driver source file for STM32F407xx MCU. </p>
@@ -149,125 +153,21 @@ Functions</h2></td></tr>
 <h1 class="doxsection"><a class="anchor" id="GPIO_API_Summary"></a>
 GPIO Driver API Summary</h1>
 <ul>
-<li><a class="el" href="#a10eb7b8d2cd68d8c3495beb9339c516f" title="Initializes the GPIO peripheral.">gpio_init()</a> : Configure a GPIO pin (mode, type, speed, pull, AF)</li>
-<li>gpio_deinit() : Reset an entire GPIO port</li>
-<li>gpio_read_pin() : Read the logic level of a pin</li>
-<li>gpio_read_port() : Read the 16-bit input state of a port</li>
-<li>gpio_write_pin() : Write HIGH/LOW to a pin</li>
-<li>gpio_write_port() : Write 16-bit value to a port</li>
-<li>gpio_toggle_pin() : Toggle pin output level</li>
-<li>gpio_irq_config() : Configure EXTI trigger type</li>
-<li>gpio_irq_control() : Enable/disable NVIC interrupt for GPIO EXTI line</li>
-<li>gpio_irq_clear() : Clear EXTI pending flag</li>
+<li><a class="el" href="group___g_p_i_o___driver___a_p_is.html#ga59f07285d055589998e910abf10c9ab1" title="Initialize a GPIO pin.">gpio_pin_init()</a> : Configure a GPIO pin (mode, type, speed, pull, AF)</li>
+<li><a class="el" href="group___g_p_i_o___driver___a_p_is.html#ga347db04adc58e4104a1b0600a2238395" title="Initialize a GPIO pin.">gpio_port_deinit()</a> : Reset an entire GPIO port</li>
+<li><a class="el" href="group___g_p_i_o___driver___a_p_is.html#ga7a2f606b1dfb968762d2ee9dcf59fc5f" title="Read a GPIO pin.">gpio_read_pin()</a> : Read the logic level of a pin</li>
+<li><a class="el" href="group___g_p_i_o___driver___a_p_is.html#ga893c5d7e52c33fea09df85b817801855" title="Read 16-bit value of a port.">gpio_read_port()</a> : Read the 16-bit input state of a port</li>
+<li><a class="el" href="group___g_p_i_o___driver___a_p_is.html#ga3a438f76ce1b8d514645f41c5e13bc19" title="Write HIGH/LOW to a pin.">gpio_write_pin()</a> : Write HIGH/LOW to a pin</li>
+<li><a class="el" href="group___g_p_i_o___driver___a_p_is.html#ga4cc8a0fcb890802e6a9080ac494333a9" title="Write 16-bit value to a port.">gpio_write_port()</a> : Write 16-bit value to a port</li>
+<li><a class="el" href="group___g_p_i_o___driver___a_p_is.html#gaf33fe651c0911b5bfccfe253b8c44286" title="Toggle a pin&#39;s output state.">gpio_toggle_pin()</a> : Toggle pin output level</li>
+<li><a class="el" href="group___g_p_i_o___driver___a_p_is.html#ga59407004373e1086e102436ebe8c1609" title="Configure EXTI interrupt trigger.">gpio_irq_config()</a> : Configure EXTI trigger type</li>
+<li><a class="el" href="group___g_p_i_o___driver___a_p_is.html#gaecfc0d5327266f101f163c807cd08f9e" title="Enable/disable NVIC interrupt for a GPIO EXTI line.">gpio_irq_control()</a> : Enable/disable NVIC interrupt for GPIO EXTI line</li>
+<li><a class="el" href="group___g_p_i_o___driver___a_p_is.html#ga7029bc337ba529f1ed60ecec9003ae43" title="Clear EXTI interrupt pending bit.">gpio_irq_clear()</a> : Clear EXTI pending flag</li>
 </ul>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="stm32f407xx__gpio_8h.html" title="GPIO Driver Header for STM32F407xx MCU.">stm32f407xx_gpio.h</a> </dd></dl>
 
 <p class="definition">Definition in file <a class="el" href="stm32f407xx__gpio_8c_source.html">stm32f407xx_gpio.c</a>.</p>
-</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
-<a id="a10eb7b8d2cd68d8c3495beb9339c516f" name="a10eb7b8d2cd68d8c3495beb9339c516f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a10eb7b8d2cd68d8c3495beb9339c516f">&#9670;&#160;</a></span>gpio_init()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void gpio_init </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="struct_g_p_i_ox___handle__t.html">GPIOx_Handle_t</a> *</td>          <td class="paramname"><span class="paramname"><em>pGPIOHandle</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Initializes the GPIO peripheral. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">pGPIOHandle</td><td>Pointer to GPIO handle structure. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>None</dd></dl>
-<p>Initializes the specified GPIO pin. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">pGPIOHandle</td><td>Pointer to GPIO handle structure containing port and configuration. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="stm32f407xx__gpio_8c_source.html#l00049">49</a> of file <a class="el" href="stm32f407xx__gpio_8c_source.html">stm32f407xx_gpio.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   50</span>{</div>
-<div class="line"><span class="lineno">   51</span>    uint32_t temp = 0;</div>
-<div class="line"><span class="lineno">   52</span> </div>
-<div class="line"><span class="lineno">   53</span>    <span class="comment">/* 1. Enable the peripheral clock */</span></div>
-<div class="line"><span class="lineno">   54</span>    <span class="keywordflow">if</span>(pGPIOHandle-&gt;<a class="code hl_variable" href="struct_g_p_i_ox___handle__t.html#af66476d0b69ef00a95863c8d55a33208">pGPIOx</a> == <a class="code hl_define" href="group___g_p_i_ox___r_e_g___d_e_f.html#gac485358099728ddae050db37924dd6b7">GPIOA</a>) <a class="code hl_define" href="group___a_h_b1___p_c_l_k___e_n___d_i___m_a_c_r_o_s.html#ga17c0eb1a7e7645a5d63d8b7a41fbb19c">GPIOA_PCLK_EN</a>();</div>
-<div class="line"><span class="lineno">   55</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(pGPIOHandle-&gt;<a class="code hl_variable" href="struct_g_p_i_ox___handle__t.html#af66476d0b69ef00a95863c8d55a33208">pGPIOx</a> == <a class="code hl_define" href="group___g_p_i_ox___r_e_g___d_e_f.html#ga68b66ac73be4c836db878a42e1fea3cd">GPIOB</a>) <a class="code hl_define" href="group___a_h_b1___p_c_l_k___e_n___d_i___m_a_c_r_o_s.html#ga1bc2b8b73bb42c4d2cd758a732fbe871">GPIOB_PCLK_EN</a>();</div>
-<div class="line"><span class="lineno">   56</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(pGPIOHandle-&gt;<a class="code hl_variable" href="struct_g_p_i_ox___handle__t.html#af66476d0b69ef00a95863c8d55a33208">pGPIOx</a> == <a class="code hl_define" href="group___g_p_i_ox___r_e_g___d_e_f.html#ga2dca03332d620196ba943bc2346eaa08">GPIOC</a>) <a class="code hl_define" href="group___a_h_b1___p_c_l_k___e_n___d_i___m_a_c_r_o_s.html#gab9e994b2e5e4ada47764117634c64728">GPIOC_PCLK_EN</a>();</div>
-<div class="line"><span class="lineno">   57</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(pGPIOHandle-&gt;<a class="code hl_variable" href="struct_g_p_i_ox___handle__t.html#af66476d0b69ef00a95863c8d55a33208">pGPIOx</a> == <a class="code hl_define" href="group___g_p_i_ox___r_e_g___d_e_f.html#ga7580b1a929ea9df59725ba9c18eba6ac">GPIOD</a>) <a class="code hl_define" href="group___a_h_b1___p_c_l_k___e_n___d_i___m_a_c_r_o_s.html#gac08ecd1bbe57ab59746d6da5b972f493">GPIOD_PCLK_EN</a>();</div>
-<div class="line"><span class="lineno">   58</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(pGPIOHandle-&gt;<a class="code hl_variable" href="struct_g_p_i_ox___handle__t.html#af66476d0b69ef00a95863c8d55a33208">pGPIOx</a> == <a class="code hl_define" href="group___g_p_i_ox___r_e_g___d_e_f.html#gae04bdb5e8acc47cab1d0532e6b0d0763">GPIOE</a>) <a class="code hl_define" href="group___a_h_b1___p_c_l_k___e_n___d_i___m_a_c_r_o_s.html#gaa93bc85ce9310ae89c709ad615d9bb18">GPIOE_PCLK_EN</a>();</div>
-<div class="line"><span class="lineno">   59</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(pGPIOHandle-&gt;<a class="code hl_variable" href="struct_g_p_i_ox___handle__t.html#af66476d0b69ef00a95863c8d55a33208">pGPIOx</a> == <a class="code hl_define" href="group___g_p_i_ox___r_e_g___d_e_f.html#ga43c3022dede7c9db7a58d3c3409dbc8d">GPIOF</a>) <a class="code hl_define" href="group___a_h_b1___p_c_l_k___e_n___d_i___m_a_c_r_o_s.html#ga1a46c65e3a2959ce65c503bc735d45ea">GPIOF_PCLK_EN</a>();</div>
-<div class="line"><span class="lineno">   60</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(pGPIOHandle-&gt;<a class="code hl_variable" href="struct_g_p_i_ox___handle__t.html#af66476d0b69ef00a95863c8d55a33208">pGPIOx</a> == <a class="code hl_define" href="group___g_p_i_ox___r_e_g___d_e_f.html#ga02a2a23a32f9b02166a8c64012842414">GPIOG</a>) <a class="code hl_define" href="group___a_h_b1___p_c_l_k___e_n___d_i___m_a_c_r_o_s.html#ga84b14038fe3d35ca857056c98f796c64">GPIOG_PCLK_EN</a>();</div>
-<div class="line"><span class="lineno">   61</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(pGPIOHandle-&gt;<a class="code hl_variable" href="struct_g_p_i_ox___handle__t.html#af66476d0b69ef00a95863c8d55a33208">pGPIOx</a> == <a class="code hl_define" href="group___g_p_i_ox___r_e_g___d_e_f.html#gadeacbb43ae86c879945afe98c679b285">GPIOH</a>) <a class="code hl_define" href="group___a_h_b1___p_c_l_k___e_n___d_i___m_a_c_r_o_s.html#ga2be7b357e112e2036141678aa6bc3506">GPIOH_PCLK_EN</a>();</div>
-<div class="line"><span class="lineno">   62</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(pGPIOHandle-&gt;<a class="code hl_variable" href="struct_g_p_i_ox___handle__t.html#af66476d0b69ef00a95863c8d55a33208">pGPIOx</a> == <a class="code hl_define" href="group___g_p_i_ox___r_e_g___d_e_f.html#gad15f13545ecdbbabfccf43d5997e5ade">GPIOI</a>) <a class="code hl_define" href="group___a_h_b1___p_c_l_k___e_n___d_i___m_a_c_r_o_s.html#gae7a11cdb49af5cb6c9fa08a57d474eba">GPIOI_PCLK_EN</a>();</div>
-<div class="line"><span class="lineno">   63</span> </div>
-<div class="line"><span class="lineno">   64</span>    <span class="comment">/* 2. Configure GPIO mode */</span></div>
-<div class="line"><span class="lineno">   65</span>    temp = (pGPIOHandle-&gt;GPIO_Config.GPIO_Mode &lt;&lt; (2 * pGPIOHandle-&gt;GPIO_Config.GPIO_PinNumber));</div>
-<div class="line"><span class="lineno">   66</span>    pGPIOHandle-&gt;<a class="code hl_variable" href="struct_g_p_i_ox___handle__t.html#af66476d0b69ef00a95863c8d55a33208">pGPIOx</a>-&gt;<a class="code hl_variable" href="struct_g_p_i_ox___reg_def__t.html#a7131c3ab513a84fc69270888ddbe561d">MODER</a> &amp;= ~(0x3 &lt;&lt; (2 * pGPIOHandle-&gt;GPIO_Config.GPIO_PinNumber)); <span class="comment">// clear</span></div>
-<div class="line"><span class="lineno">   67</span>    pGPIOHandle-&gt;<a class="code hl_variable" href="struct_g_p_i_ox___handle__t.html#af66476d0b69ef00a95863c8d55a33208">pGPIOx</a>-&gt;<a class="code hl_variable" href="struct_g_p_i_ox___reg_def__t.html#a7131c3ab513a84fc69270888ddbe561d">MODER</a> |= temp;</div>
-<div class="line"><span class="lineno">   68</span> </div>
-<div class="line"><span class="lineno">   69</span>    <span class="comment">/* 3. Configure output type */</span></div>
-<div class="line"><span class="lineno">   70</span>    temp = (pGPIOHandle-&gt;GPIO_Config.GPIO_OP_Type &lt;&lt; pGPIOHandle-&gt;GPIO_Config.GPIO_PinNumber);</div>
-<div class="line"><span class="lineno">   71</span>    pGPIOHandle-&gt;<a class="code hl_variable" href="struct_g_p_i_ox___handle__t.html#af66476d0b69ef00a95863c8d55a33208">pGPIOx</a>-&gt;<a class="code hl_variable" href="struct_g_p_i_ox___reg_def__t.html#a487e307dd27a1a694f8a52f1a2df6ce6">OTYPER</a> &amp;= ~(0x1 &lt;&lt; pGPIOHandle-&gt;GPIO_Config.GPIO_PinNumber); <span class="comment">// clear</span></div>
-<div class="line"><span class="lineno">   72</span>    pGPIOHandle-&gt;<a class="code hl_variable" href="struct_g_p_i_ox___handle__t.html#af66476d0b69ef00a95863c8d55a33208">pGPIOx</a>-&gt;<a class="code hl_variable" href="struct_g_p_i_ox___reg_def__t.html#a487e307dd27a1a694f8a52f1a2df6ce6">OTYPER</a> |= temp;</div>
-<div class="line"><span class="lineno">   73</span> </div>
-<div class="line"><span class="lineno">   74</span>    <span class="comment">/* 4. Configure speed */</span></div>
-<div class="line"><span class="lineno">   75</span>    temp = (pGPIOHandle-&gt;GPIO_Config.GPIO_Speed &lt;&lt; (2 * pGPIOHandle-&gt;GPIO_Config.GPIO_PinNumber));</div>
-<div class="line"><span class="lineno">   76</span>    pGPIOHandle-&gt;<a class="code hl_variable" href="struct_g_p_i_ox___handle__t.html#af66476d0b69ef00a95863c8d55a33208">pGPIOx</a>-&gt;<a class="code hl_variable" href="struct_g_p_i_ox___reg_def__t.html#a3b356447d7a412130d1bc5b33cb4b7a0">OSPEEDR</a> &amp;= ~(0x3 &lt;&lt; (2 * pGPIOHandle-&gt;GPIO_Config.GPIO_PinNumber));</div>
-<div class="line"><span class="lineno">   77</span>    pGPIOHandle-&gt;<a class="code hl_variable" href="struct_g_p_i_ox___handle__t.html#af66476d0b69ef00a95863c8d55a33208">pGPIOx</a>-&gt;<a class="code hl_variable" href="struct_g_p_i_ox___reg_def__t.html#a3b356447d7a412130d1bc5b33cb4b7a0">OSPEEDR</a> |= temp;</div>
-<div class="line"><span class="lineno">   78</span> </div>
-<div class="line"><span class="lineno">   79</span>    <span class="comment">/* 5. Configure pull-up/pull-down */</span></div>
-<div class="line"><span class="lineno">   80</span>    temp = (pGPIOHandle-&gt;GPIO_Config.GPIO_PU_PD &lt;&lt; (2 * pGPIOHandle-&gt;GPIO_Config.GPIO_PinNumber));</div>
-<div class="line"><span class="lineno">   81</span>    pGPIOHandle-&gt;<a class="code hl_variable" href="struct_g_p_i_ox___handle__t.html#af66476d0b69ef00a95863c8d55a33208">pGPIOx</a>-&gt;<a class="code hl_variable" href="struct_g_p_i_ox___reg_def__t.html#a9e83c5fefbd8c0caff3dc3dccd4cfa6f">PUPDR</a> &amp;= ~(0x3 &lt;&lt; (2 * pGPIOHandle-&gt;GPIO_Config.GPIO_PinNumber));</div>
-<div class="line"><span class="lineno">   82</span>    pGPIOHandle-&gt;<a class="code hl_variable" href="struct_g_p_i_ox___handle__t.html#af66476d0b69ef00a95863c8d55a33208">pGPIOx</a>-&gt;<a class="code hl_variable" href="struct_g_p_i_ox___reg_def__t.html#a9e83c5fefbd8c0caff3dc3dccd4cfa6f">PUPDR</a> |= temp;</div>
-<div class="line"><span class="lineno">   83</span> </div>
-<div class="line"><span class="lineno">   84</span>    <span class="comment">/* 6. Configure alternate function (if selected) */</span></div>
-<div class="line"><span class="lineno">   85</span>    <span class="keywordflow">if</span>(pGPIOHandle-&gt;GPIO_Config.GPIO_Mode == <a class="code hl_define" href="group___g_p_i_o___m_o_d_e_s.html#gaf97227968696e5e26432760060e61e48">GPIO_MODE_ALT_FUNC</a>)</div>
-<div class="line"><span class="lineno">   86</span>    {</div>
-<div class="line"><span class="lineno">   87</span>        uint8_t pin = pGPIOHandle-&gt;GPIO_Config.GPIO_PinNumber;</div>
-<div class="line"><span class="lineno">   88</span>        uint8_t afr_index = pin / 8;</div>
-<div class="line"><span class="lineno">   89</span>        uint8_t afr_position = pin % 8;</div>
-<div class="line"><span class="lineno">   90</span> </div>
-<div class="line"><span class="lineno">   91</span>        pGPIOHandle-&gt;<a class="code hl_variable" href="struct_g_p_i_ox___handle__t.html#af66476d0b69ef00a95863c8d55a33208">pGPIOx</a>-&gt;AFR[afr_index] &amp;= ~(0xF &lt;&lt; (4 * afr_position));</div>
-<div class="line"><span class="lineno">   92</span>        pGPIOHandle-&gt;<a class="code hl_variable" href="struct_g_p_i_ox___handle__t.html#af66476d0b69ef00a95863c8d55a33208">pGPIOx</a>-&gt;AFR[afr_index] |= (pGPIOHandle-&gt;GPIO_Config.GPIO_ALT_FUNC &lt;&lt; (4 * afr_position));</div>
-<div class="line"><span class="lineno">   93</span>    }</div>
-<div class="line"><span class="lineno">   94</span>}</div>
-<div class="ttc" id="agroup___a_h_b1___p_c_l_k___e_n___d_i___m_a_c_r_o_s_html_ga17c0eb1a7e7645a5d63d8b7a41fbb19c"><div class="ttname"><a href="group___a_h_b1___p_c_l_k___e_n___d_i___m_a_c_r_o_s.html#ga17c0eb1a7e7645a5d63d8b7a41fbb19c">GPIOA_PCLK_EN</a></div><div class="ttdeci">#define GPIOA_PCLK_EN()</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx_8h_source.html#l00240">stm32f407xx.h:240</a></div></div>
-<div class="ttc" id="agroup___a_h_b1___p_c_l_k___e_n___d_i___m_a_c_r_o_s_html_ga1a46c65e3a2959ce65c503bc735d45ea"><div class="ttname"><a href="group___a_h_b1___p_c_l_k___e_n___d_i___m_a_c_r_o_s.html#ga1a46c65e3a2959ce65c503bc735d45ea">GPIOF_PCLK_EN</a></div><div class="ttdeci">#define GPIOF_PCLK_EN()</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx_8h_source.html#l00255">stm32f407xx.h:255</a></div></div>
-<div class="ttc" id="agroup___a_h_b1___p_c_l_k___e_n___d_i___m_a_c_r_o_s_html_ga1bc2b8b73bb42c4d2cd758a732fbe871"><div class="ttname"><a href="group___a_h_b1___p_c_l_k___e_n___d_i___m_a_c_r_o_s.html#ga1bc2b8b73bb42c4d2cd758a732fbe871">GPIOB_PCLK_EN</a></div><div class="ttdeci">#define GPIOB_PCLK_EN()</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx_8h_source.html#l00243">stm32f407xx.h:243</a></div></div>
-<div class="ttc" id="agroup___a_h_b1___p_c_l_k___e_n___d_i___m_a_c_r_o_s_html_ga2be7b357e112e2036141678aa6bc3506"><div class="ttname"><a href="group___a_h_b1___p_c_l_k___e_n___d_i___m_a_c_r_o_s.html#ga2be7b357e112e2036141678aa6bc3506">GPIOH_PCLK_EN</a></div><div class="ttdeci">#define GPIOH_PCLK_EN()</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx_8h_source.html#l00261">stm32f407xx.h:261</a></div></div>
-<div class="ttc" id="agroup___a_h_b1___p_c_l_k___e_n___d_i___m_a_c_r_o_s_html_ga84b14038fe3d35ca857056c98f796c64"><div class="ttname"><a href="group___a_h_b1___p_c_l_k___e_n___d_i___m_a_c_r_o_s.html#ga84b14038fe3d35ca857056c98f796c64">GPIOG_PCLK_EN</a></div><div class="ttdeci">#define GPIOG_PCLK_EN()</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx_8h_source.html#l00258">stm32f407xx.h:258</a></div></div>
-<div class="ttc" id="agroup___a_h_b1___p_c_l_k___e_n___d_i___m_a_c_r_o_s_html_gaa93bc85ce9310ae89c709ad615d9bb18"><div class="ttname"><a href="group___a_h_b1___p_c_l_k___e_n___d_i___m_a_c_r_o_s.html#gaa93bc85ce9310ae89c709ad615d9bb18">GPIOE_PCLK_EN</a></div><div class="ttdeci">#define GPIOE_PCLK_EN()</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx_8h_source.html#l00252">stm32f407xx.h:252</a></div></div>
-<div class="ttc" id="agroup___a_h_b1___p_c_l_k___e_n___d_i___m_a_c_r_o_s_html_gab9e994b2e5e4ada47764117634c64728"><div class="ttname"><a href="group___a_h_b1___p_c_l_k___e_n___d_i___m_a_c_r_o_s.html#gab9e994b2e5e4ada47764117634c64728">GPIOC_PCLK_EN</a></div><div class="ttdeci">#define GPIOC_PCLK_EN()</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx_8h_source.html#l00246">stm32f407xx.h:246</a></div></div>
-<div class="ttc" id="agroup___a_h_b1___p_c_l_k___e_n___d_i___m_a_c_r_o_s_html_gac08ecd1bbe57ab59746d6da5b972f493"><div class="ttname"><a href="group___a_h_b1___p_c_l_k___e_n___d_i___m_a_c_r_o_s.html#gac08ecd1bbe57ab59746d6da5b972f493">GPIOD_PCLK_EN</a></div><div class="ttdeci">#define GPIOD_PCLK_EN()</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx_8h_source.html#l00249">stm32f407xx.h:249</a></div></div>
-<div class="ttc" id="agroup___a_h_b1___p_c_l_k___e_n___d_i___m_a_c_r_o_s_html_gae7a11cdb49af5cb6c9fa08a57d474eba"><div class="ttname"><a href="group___a_h_b1___p_c_l_k___e_n___d_i___m_a_c_r_o_s.html#gae7a11cdb49af5cb6c9fa08a57d474eba">GPIOI_PCLK_EN</a></div><div class="ttdeci">#define GPIOI_PCLK_EN()</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx_8h_source.html#l00264">stm32f407xx.h:264</a></div></div>
-<div class="ttc" id="agroup___g_p_i_o___m_o_d_e_s_html_gaf97227968696e5e26432760060e61e48"><div class="ttname"><a href="group___g_p_i_o___m_o_d_e_s.html#gaf97227968696e5e26432760060e61e48">GPIO_MODE_ALT_FUNC</a></div><div class="ttdeci">#define GPIO_MODE_ALT_FUNC</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx__gpio_8h_source.html#l00045">stm32f407xx_gpio.h:45</a></div></div>
-<div class="ttc" id="agroup___g_p_i_ox___r_e_g___d_e_f_html_ga02a2a23a32f9b02166a8c64012842414"><div class="ttname"><a href="group___g_p_i_ox___r_e_g___d_e_f.html#ga02a2a23a32f9b02166a8c64012842414">GPIOG</a></div><div class="ttdeci">#define GPIOG</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx_8h_source.html#l00170">stm32f407xx.h:170</a></div></div>
-<div class="ttc" id="agroup___g_p_i_ox___r_e_g___d_e_f_html_ga2dca03332d620196ba943bc2346eaa08"><div class="ttname"><a href="group___g_p_i_ox___r_e_g___d_e_f.html#ga2dca03332d620196ba943bc2346eaa08">GPIOC</a></div><div class="ttdeci">#define GPIOC</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx_8h_source.html#l00166">stm32f407xx.h:166</a></div></div>
-<div class="ttc" id="agroup___g_p_i_ox___r_e_g___d_e_f_html_ga43c3022dede7c9db7a58d3c3409dbc8d"><div class="ttname"><a href="group___g_p_i_ox___r_e_g___d_e_f.html#ga43c3022dede7c9db7a58d3c3409dbc8d">GPIOF</a></div><div class="ttdeci">#define GPIOF</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx_8h_source.html#l00169">stm32f407xx.h:169</a></div></div>
-<div class="ttc" id="agroup___g_p_i_ox___r_e_g___d_e_f_html_ga68b66ac73be4c836db878a42e1fea3cd"><div class="ttname"><a href="group___g_p_i_ox___r_e_g___d_e_f.html#ga68b66ac73be4c836db878a42e1fea3cd">GPIOB</a></div><div class="ttdeci">#define GPIOB</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx_8h_source.html#l00165">stm32f407xx.h:165</a></div></div>
-<div class="ttc" id="agroup___g_p_i_ox___r_e_g___d_e_f_html_ga7580b1a929ea9df59725ba9c18eba6ac"><div class="ttname"><a href="group___g_p_i_ox___r_e_g___d_e_f.html#ga7580b1a929ea9df59725ba9c18eba6ac">GPIOD</a></div><div class="ttdeci">#define GPIOD</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx_8h_source.html#l00167">stm32f407xx.h:167</a></div></div>
-<div class="ttc" id="agroup___g_p_i_ox___r_e_g___d_e_f_html_gac485358099728ddae050db37924dd6b7"><div class="ttname"><a href="group___g_p_i_ox___r_e_g___d_e_f.html#gac485358099728ddae050db37924dd6b7">GPIOA</a></div><div class="ttdeci">#define GPIOA</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx_8h_source.html#l00164">stm32f407xx.h:164</a></div></div>
-<div class="ttc" id="agroup___g_p_i_ox___r_e_g___d_e_f_html_gad15f13545ecdbbabfccf43d5997e5ade"><div class="ttname"><a href="group___g_p_i_ox___r_e_g___d_e_f.html#gad15f13545ecdbbabfccf43d5997e5ade">GPIOI</a></div><div class="ttdeci">#define GPIOI</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx_8h_source.html#l00172">stm32f407xx.h:172</a></div></div>
-<div class="ttc" id="agroup___g_p_i_ox___r_e_g___d_e_f_html_gadeacbb43ae86c879945afe98c679b285"><div class="ttname"><a href="group___g_p_i_ox___r_e_g___d_e_f.html#gadeacbb43ae86c879945afe98c679b285">GPIOH</a></div><div class="ttdeci">#define GPIOH</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx_8h_source.html#l00171">stm32f407xx.h:171</a></div></div>
-<div class="ttc" id="agroup___g_p_i_ox___r_e_g___d_e_f_html_gae04bdb5e8acc47cab1d0532e6b0d0763"><div class="ttname"><a href="group___g_p_i_ox___r_e_g___d_e_f.html#gae04bdb5e8acc47cab1d0532e6b0d0763">GPIOE</a></div><div class="ttdeci">#define GPIOE</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx_8h_source.html#l00168">stm32f407xx.h:168</a></div></div>
-<div class="ttc" id="astruct_g_p_i_ox___handle__t_html_af66476d0b69ef00a95863c8d55a33208"><div class="ttname"><a href="struct_g_p_i_ox___handle__t.html#af66476d0b69ef00a95863c8d55a33208">GPIOx_Handle_t::pGPIOx</a></div><div class="ttdeci">GPIOx_RegDef_t * pGPIOx</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx__gpio_8h_source.html#l00170">stm32f407xx_gpio.h:170</a></div></div>
-<div class="ttc" id="astruct_g_p_i_ox___reg_def__t_html_a3b356447d7a412130d1bc5b33cb4b7a0"><div class="ttname"><a href="struct_g_p_i_ox___reg_def__t.html#a3b356447d7a412130d1bc5b33cb4b7a0">GPIOx_RegDef_t::OSPEEDR</a></div><div class="ttdeci">volatile uint32_t OSPEEDR</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx_8h_source.html#l00153">stm32f407xx.h:153</a></div></div>
-<div class="ttc" id="astruct_g_p_i_ox___reg_def__t_html_a487e307dd27a1a694f8a52f1a2df6ce6"><div class="ttname"><a href="struct_g_p_i_ox___reg_def__t.html#a487e307dd27a1a694f8a52f1a2df6ce6">GPIOx_RegDef_t::OTYPER</a></div><div class="ttdeci">volatile uint32_t OTYPER</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx_8h_source.html#l00152">stm32f407xx.h:152</a></div></div>
-<div class="ttc" id="astruct_g_p_i_ox___reg_def__t_html_a7131c3ab513a84fc69270888ddbe561d"><div class="ttname"><a href="struct_g_p_i_ox___reg_def__t.html#a7131c3ab513a84fc69270888ddbe561d">GPIOx_RegDef_t::MODER</a></div><div class="ttdeci">volatile uint32_t MODER</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx_8h_source.html#l00151">stm32f407xx.h:151</a></div></div>
-<div class="ttc" id="astruct_g_p_i_ox___reg_def__t_html_a9e83c5fefbd8c0caff3dc3dccd4cfa6f"><div class="ttname"><a href="struct_g_p_i_ox___reg_def__t.html#a9e83c5fefbd8c0caff3dc3dccd4cfa6f">GPIOx_RegDef_t::PUPDR</a></div><div class="ttdeci">volatile uint32_t PUPDR</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx_8h_source.html#l00154">stm32f407xx.h:154</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-</div><!-- contents -->
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">
 <div id="page-nav-resize-handle"></div>

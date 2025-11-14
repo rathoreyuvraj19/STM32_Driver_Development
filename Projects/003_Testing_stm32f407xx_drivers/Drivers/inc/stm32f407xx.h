@@ -39,8 +39,8 @@
 
 
 /**
- * @defgroup AHB1_BASE_ADDRESSES AHB1 Bus Peripheral Base Addresses
- * @brief Base addresses of peripherals connected to AHB1 Bus
+ * @defgroup AHB1_PERIPEHRALS_BASE_ADDRESSES Base address of AHB1 peripherals
+ * @brief Base addresses of peripherals connected on AHB1 Bus
  * @{
  */
 
@@ -67,10 +67,12 @@
 /** @} */
 
 
-/**@defgroup AHB2_BASE_ADDRESSES AHB2 Bus Peripheral Base Addresses
- * @brief Base Addresses of peripheral hanging on AHB2 Bus
+/**
+ * @defgroup AHB2_PERIPEHRALS_BASE_ADDRESSES Base address of AHB2 peripherals
+ * @brief Base addresses of peripherals connected on AHB2 Bus
  * @{
  */
+
 
 #define USB_OTG_FS_BASEADDR	        0x50000000UL	/**< USB On-The-Go Full Speed (USB OTG FS) Peripheral base address */
 #define DCMI_BASEADDR               0x50050000UL    /**< Digital Camera Interface (DCMI) Peripheral base address */
@@ -81,8 +83,9 @@
 /** @} */
 
 
-/**@defgroup APB1_BASE_ADDRESSES APB1 Bus Peripheral Base Addresses
- * @brief Base Addresses of peripheral hanging on APB1 Bus
+/**
+ * @defgroup APB1_PERIPEHRALS_BASE_ADDRESSES Base address of APB1 peripherals
+ * @brief Base addresses of peripherals connected on APB1 Bus
  * @{
  */
 
@@ -117,8 +120,9 @@
 #define UART8_BASEADDR			 0x40007C00UL       /**< Universal Asynchronous Receiver Transmitter 8 (UART8) Peripheral base address */
 /** @} */
 
-/**@defgroup APB2_BASE_ADDRESSES APB2 Bus Peripheral Base Addresses
- * @brief Base Addresses of peripheral hanging on APB2 Bus
+/**
+ * @defgroup APB2_PERIPEHRALS_BASE_ADDRESSES Base address of APB2 peripherals
+ * @brief Base addresses of peripherals connected on APB1 Bus
  * @{
  */
 
@@ -175,7 +179,7 @@ typedef struct GPIOx_RegDef_t{
 
 /** @} */
 
-/**@defgroup RCC_REG
+/**@defgroup RCC_REG RCC Peripheral Register Definition
  * @brief Register Definition of Reset and Clock Control (RCC) Peripheral Register
  * @{
  */
@@ -225,7 +229,7 @@ typedef struct RCC_RegDef_t {
 //==================================================================================//
 
 /**
- * @defgroup CLOCK_ENABLE_MACROS Clock Enable/Disable Macros for various peripherals
+ * @defgroup CLOCK_ENABLE_MACROS Macros to Enable/Disable clocks for various peripherals
  * @brief Contains macros to enable or disable peripheral clocks through RCC.
  * @{
  */
@@ -312,8 +316,81 @@ typedef struct RCC_RegDef_t {
 
 /** @} */// End of CLOCK_ENABLE_MACROS
 
+//==================================================================================//
+//=================== Peripheral Reset Macros ======================================//
+//==================================================================================//
+/**
+ * @defgroup PERIPHERAL_RESET_MACROS Macros to reset various peripherals
+ * @brief Contains macros to reset various peripheral through RCC Reset Reg
+ * @{
+ */
+
+	/**
+	 * @defgroup AHB1_RESET_MACROS AHB1 Peripheral Reset Macros
+	 * @ingroup  PERIPHERAL_RESET_MACROS
+	 * @brief Macros to reset AHB1 peripherals.
+	 * @{
+	 */
+
+		#define GPIOA_RESET()  do{ RCC->AHB1RSTR |= (1 << 0); RCC->AHB1RSTR &= ~(1 << 0); }while(0) /**< Reset GPIOA */
+		#define GPIOB_RESET()  do{ RCC->AHB1RSTR |= (1 << 1); RCC->AHB1RSTR &= ~(1 << 1); }while(0) /**< Reset GPIOB */
+		#define GPIOC_RESET()  do{ RCC->AHB1RSTR |= (1 << 2); RCC->AHB1RSTR &= ~(1 << 2); }while(0) /**< Reset GPIOC */
+		#define GPIOD_RESET()  do{ RCC->AHB1RSTR |= (1 << 3); RCC->AHB1RSTR &= ~(1 << 3); }while(0) /**< Reset GPIOD */
+		#define GPIOE_RESET()  do{ RCC->AHB1RSTR |= (1 << 4); RCC->AHB1RSTR &= ~(1 << 4); }while(0) /**< Reset GPIOE */
+		#define GPIOF_RESET()  do{ RCC->AHB1RSTR |= (1 << 5); RCC->AHB1RSTR &= ~(1 << 5); }while(0) /**< Reset GPIOF */
+		#define GPIOG_RESET()  do{ RCC->AHB1RSTR |= (1 << 6); RCC->AHB1RSTR &= ~(1 << 6); }while(0) /**< Reset GPIOG */
+		#define GPIOH_RESET()  do{ RCC->AHB1RSTR |= (1 << 7); RCC->AHB1RSTR &= ~(1 << 7); }while(0) /**< Reset GPIOH */
+		#define GPIOI_RESET()  do{ RCC->AHB1RSTR |= (1 << 8); RCC->AHB1RSTR &= ~(1 << 8); }while(0) /**< Reset GPIOI */
+	/** @todo Finish for rest of the peripheral */
+
+	/** @} */ // end of AHB1_RESET_MACROS
 
 
+	/**
+	 * @defgroup AHB2_RESET_MACROS AHB2 Peripheral Reset Macros
+	 * @ingroup PERIPHERAL_RESET_MACROS
+	 * @brief Macros to enable or disable for peripherals belonging to AHB2 bus.
+	 * @{
+	 */
+
+	/** @todo Complete for other peripherals */
+
+	/** @} */// End of AHB2 Bus Peripheral Reset Macros
+
+	/**
+	 * @defgroup AHB3_RESET_MACROS AHB3 Peripheral Reset Macros
+	 * @ingroup PERIPHERAL_RESET_MACROS
+	 * @brief Macros to enable or disable for peripherals belonging to AHB3 bus.
+	 * @{
+	 */
+
+	/** @todo Complete for other peripherals */
+
+	/** @} */// End of AHB3 Bus Peripheral Reset Macros
+
+	/**
+	 * @defgroup APB1_RESET_MACROS APB1 Peripheral Reset Macros
+	 * @ingroup PERIPHERAL_RESET_MACROS
+	 * @brief Macros to enable or disable for peripherals belonging to APB1 bus.
+	 * @{
+	 */
+
+	/** @todo Complete for other peripherals */
+
+	/** @} */// End of APB1 Bus Peripheral Reset Macros
+
+	/**
+	 * @defgroup APB2_RESET_MACROS APB2 Peripheral Reset Macros
+	 * @ingroup PERIPHERAL_RESET_MACROS
+	 * @brief Macros to enable or disable for peripherals belonging to APB2 bus.
+	 * @{
+	 */
+
+	/** @todo Complete for other peripherals */
+
+	/** @} */// End of APB2 Bus Peripheral Reset Macros
+
+/** @} */
 
 
 

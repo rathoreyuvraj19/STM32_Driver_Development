@@ -22,7 +22,7 @@
 \DoxyCodeLine{\Hypertarget{stm32f407xx__gpio_8h_source_l00056}\mbox{\hyperlink{group___g_p_i_o___o_p___t_y_p_e_s_ga8fab3cc9114990a89695903630083789}{00056}}\ \textcolor{preprocessor}{\#define\ GPIO\_OP\_TYPE\_PP\ \ \ \ \ 0\ \ \ }\textcolor{preprocessor}{}}
 \DoxyCodeLine{\Hypertarget{stm32f407xx__gpio_8h_source_l00057}\mbox{\hyperlink{group___g_p_i_o___o_p___t_y_p_e_s_ga7d07f73c03f1b79472b36f0098c147c8}{00057}}\ \textcolor{preprocessor}{\#define\ GPIO\_OP\_TYPE\_OD\ \ \ \ \ 1\ \ \ }\textcolor{preprocessor}{}}
 \DoxyCodeLine{\Hypertarget{stm32f407xx__gpio_8h_source_l00058}00058\ }
-\DoxyCodeLine{\Hypertarget{stm32f407xx__gpio_8h_source_l00059}00059\ \ \textcolor{comment}{/*\ end\ of\ GPIO\_OP\_TYPES\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__gpio_8h_source_l00059}00059\ \ \textcolor{comment}{/*\ end\ of\ GPIO\_OUTPUT\_TYPES\ */}}
 \DoxyCodeLine{\Hypertarget{stm32f407xx__gpio_8h_source_l00061}00061\ }
 \DoxyCodeLine{\Hypertarget{stm32f407xx__gpio_8h_source_l00067}00067\ }
 \DoxyCodeLine{\Hypertarget{stm32f407xx__gpio_8h_source_l00068}\mbox{\hyperlink{group___g_p_i_o___p_u_l_l_u_p___p_u_l_l_d_o_w_n_ga833f758ca24334def9cb736e528ccab9}{00068}}\ \textcolor{preprocessor}{\#define\ GPIO\_PU\_PD\_NONE\ \ \ \ \ \ \ \ 0\ \ \ }\textcolor{preprocessor}{}}
@@ -84,8 +84,33 @@
 \DoxyCodeLine{\Hypertarget{stm32f407xx__gpio_8h_source_l00173}\mbox{\hyperlink{struct_g_p_i_ox___handle__t_aeb936ee4e02972546dff148d2ce5e084}{00173}}\ \ \ \ \ \mbox{\hyperlink{struct_g_p_i_ox___config__t}{GPIOx\_Config\_t}}\ \ \mbox{\hyperlink{struct_g_p_i_ox___handle__t_aeb936ee4e02972546dff148d2ce5e084}{GPIO\_CONFIG}};\ }
 \DoxyCodeLine{\Hypertarget{stm32f407xx__gpio_8h_source_l00174}00174\ \}\ \mbox{\hyperlink{struct_g_p_i_ox___handle__t}{GPIOx\_Handle\_t}};}
 \DoxyCodeLine{\Hypertarget{stm32f407xx__gpio_8h_source_l00175}00175\ \ \textcolor{comment}{/*\ End\ of\ GPIO\_Handle\_Structure\ */}}
-\DoxyCodeLine{\Hypertarget{stm32f407xx__gpio_8h_source_l00177}00177\ \ \textcolor{comment}{/*\ End\ of\ GPIO\_Driver\ */}}
-\DoxyCodeLine{\Hypertarget{stm32f407xx__gpio_8h_source_l00179}00179\ }
-\DoxyCodeLine{\Hypertarget{stm32f407xx__gpio_8h_source_l00180}00180\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ INC\_STM32F407XX\_GPIO\_H\_\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__gpio_8h_source_l00177}00177\ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__gpio_8h_source_l00178}00178\ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__gpio_8h_source_l00179}00179\ \textcolor{comment}{/*================================================================================}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__gpio_8h_source_l00180}00180\ \textcolor{comment}{\ *===============================GPIO\_Driver\_APIs=================================}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__gpio_8h_source_l00181}00181\ \textcolor{comment}{\ ================================================================================*/}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__gpio_8h_source_l00187}00187\ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__gpio_8h_source_l00191}00191\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___g_p_i_o___driver___a_p_is_ga59f07285d055589998e910abf10c9ab1}{gpio\_pin\_init}}(\mbox{\hyperlink{struct_g_p_i_ox___handle__t}{GPIOx\_Handle\_t}}\ *handle);}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__gpio_8h_source_l00192}00192\ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__gpio_8h_source_l00196}00196\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___g_p_i_o___driver___a_p_is_ga347db04adc58e4104a1b0600a2238395}{gpio\_port\_deinit}}(\mbox{\hyperlink{struct_g_p_i_ox___reg_def__t}{GPIOx\_RegDef\_t}}\ *pGPIOx);}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__gpio_8h_source_l00197}00197\ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__gpio_8h_source_l00201}00201\ uint8\_t\ \mbox{\hyperlink{group___g_p_i_o___driver___a_p_is_ga7a2f606b1dfb968762d2ee9dcf59fc5f}{gpio\_read\_pin}}(\mbox{\hyperlink{struct_g_p_i_ox___reg_def__t}{GPIOx\_RegDef\_t}}\ *pGPIOx,\ uint8\_t\ pin);}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__gpio_8h_source_l00202}00202\ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__gpio_8h_source_l00206}\mbox{\hyperlink{group___g_p_i_o___driver___a_p_is_ga893c5d7e52c33fea09df85b817801855}{00206}}\ uint16\_t\ \mbox{\hyperlink{group___g_p_i_o___driver___a_p_is_ga893c5d7e52c33fea09df85b817801855}{gpio\_read\_port}}(\mbox{\hyperlink{struct_g_p_i_ox___reg_def__t}{GPIOx\_RegDef\_t}}\ *pGPIOx);}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__gpio_8h_source_l00207}00207\ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__gpio_8h_source_l00211}\mbox{\hyperlink{group___g_p_i_o___driver___a_p_is_ga3a438f76ce1b8d514645f41c5e13bc19}{00211}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___g_p_i_o___driver___a_p_is_ga3a438f76ce1b8d514645f41c5e13bc19}{gpio\_write\_pin}}(\mbox{\hyperlink{struct_g_p_i_ox___reg_def__t}{GPIOx\_RegDef\_t}}\ *pGPIOx,\ uint8\_t\ pin,\ uint8\_t\ state);}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__gpio_8h_source_l00212}00212\ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__gpio_8h_source_l00216}\mbox{\hyperlink{group___g_p_i_o___driver___a_p_is_ga4cc8a0fcb890802e6a9080ac494333a9}{00216}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___g_p_i_o___driver___a_p_is_ga4cc8a0fcb890802e6a9080ac494333a9}{gpio\_write\_port}}(\mbox{\hyperlink{struct_g_p_i_ox___reg_def__t}{GPIOx\_RegDef\_t}}\ *pGPIOx,\ uint16\_t\ value);}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__gpio_8h_source_l00217}00217\ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__gpio_8h_source_l00221}\mbox{\hyperlink{group___g_p_i_o___driver___a_p_is_gaf33fe651c0911b5bfccfe253b8c44286}{00221}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___g_p_i_o___driver___a_p_is_gaf33fe651c0911b5bfccfe253b8c44286}{gpio\_toggle\_pin}}(\mbox{\hyperlink{struct_g_p_i_ox___reg_def__t}{GPIOx\_RegDef\_t}}\ *pGPIOx,\ uint8\_t\ pin);}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__gpio_8h_source_l00222}00222\ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__gpio_8h_source_l00226}\mbox{\hyperlink{group___g_p_i_o___driver___a_p_is_ga59407004373e1086e102436ebe8c1609}{00226}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___g_p_i_o___driver___a_p_is_ga59407004373e1086e102436ebe8c1609}{gpio\_irq\_config}}(uint8\_t\ pin,\ uint8\_t\ trigger);}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__gpio_8h_source_l00227}00227\ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__gpio_8h_source_l00231}\mbox{\hyperlink{group___g_p_i_o___driver___a_p_is_gaecfc0d5327266f101f163c807cd08f9e}{00231}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___g_p_i_o___driver___a_p_is_gaecfc0d5327266f101f163c807cd08f9e}{gpio\_irq\_control}}(uint8\_t\ irq\_no,\ uint8\_t\ en);}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__gpio_8h_source_l00232}00232\ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__gpio_8h_source_l00236}\mbox{\hyperlink{group___g_p_i_o___driver___a_p_is_ga7029bc337ba529f1ed60ecec9003ae43}{00236}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___g_p_i_o___driver___a_p_is_ga7029bc337ba529f1ed60ecec9003ae43}{gpio\_irq\_clear}}(uint8\_t\ pin);}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__gpio_8h_source_l00237}00237\ \ \textcolor{comment}{/*\ end\ of\ GPIO\_Driver\_APIs\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__gpio_8h_source_l00239}00239\ \ \textcolor{comment}{/*\ End\ of\ GPIO\_Driver\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__gpio_8h_source_l00241}00241\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ INC\_STM32F407XX\_GPIO\_H\_\ */}\textcolor{preprocessor}{}}
 
 \end{DoxyCode}

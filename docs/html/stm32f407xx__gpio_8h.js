@@ -31,5 +31,15 @@ var stm32f407xx__gpio_8h =
     [ "GPIO_SPEED_HIGH", "group___g_p_i_o___s_p_e_e_d_s.html#gad693110177bf2e34c5431555c6977e8c", null ],
     [ "GPIO_SPEED_LOW", "group___g_p_i_o___s_p_e_e_d_s.html#ga5510b387afb7ec2117b5d4207889163c", null ],
     [ "GPIO_SPEED_MEDIUM", "group___g_p_i_o___s_p_e_e_d_s.html#ga44a0eb2335a21858efbbb1557ce8d5e5", null ],
-    [ "GPIO_SPEED_VERY_HIGH", "group___g_p_i_o___s_p_e_e_d_s.html#gae11603e44b5bb26398c583a2410cafd5", null ]
+    [ "GPIO_SPEED_VERY_HIGH", "group___g_p_i_o___s_p_e_e_d_s.html#gae11603e44b5bb26398c583a2410cafd5", null ],
+    [ "gpio_irq_clear", "group___g_p_i_o___driver___a_p_is.html#ga7029bc337ba529f1ed60ecec9003ae43", null ],
+    [ "gpio_irq_config", "group___g_p_i_o___driver___a_p_is.html#ga59407004373e1086e102436ebe8c1609", null ],
+    [ "gpio_irq_control", "group___g_p_i_o___driver___a_p_is.html#gaecfc0d5327266f101f163c807cd08f9e", null ],
+    [ "gpio_pin_init", "group___g_p_i_o___driver___a_p_is.html#ga59f07285d055589998e910abf10c9ab1", null ],
+    [ "gpio_port_deinit", "group___g_p_i_o___driver___a_p_is.html#ga347db04adc58e4104a1b0600a2238395", null ],
+    [ "gpio_read_pin", "group___g_p_i_o___driver___a_p_is.html#ga7a2f606b1dfb968762d2ee9dcf59fc5f", null ],
+    [ "gpio_read_port", "group___g_p_i_o___driver___a_p_is.html#ga893c5d7e52c33fea09df85b817801855", null ],
+    [ "gpio_toggle_pin", "group___g_p_i_o___driver___a_p_is.html#gaf33fe651c0911b5bfccfe253b8c44286", null ],
+    [ "gpio_write_pin", "group___g_p_i_o___driver___a_p_is.html#ga3a438f76ce1b8d514645f41c5e13bc19", null ],
+    [ "gpio_write_port", "group___g_p_i_o___driver___a_p_is.html#ga4cc8a0fcb890802e6a9080ac494333a9", null ]
 ];

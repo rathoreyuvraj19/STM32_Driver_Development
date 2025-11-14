@@ -29,7 +29,7 @@
  */
 
 /**
- * @defgroup GPIO_Config_Structure GPIO Configuration Structure and Enumerations
+ * @defgroup GPIO_Config_Structure GPIO Enumerations
  * @brief    Configuration parameters for a single GPIO pin.
  * @{
  */
@@ -57,7 +57,7 @@
 #define GPIO_OP_TYPE_OD 	1	/*!< Output Type Open Drain */
 
 
-/** @} */ /* end of GPIO_OP_TYPES */
+/** @} */ /* end of GPIO_OUTPUT_TYPES */
 
 /**
  * @defgroup GPIO_PULLUP_PULLDOWN GPIO Pull-Up/Pull-Down Options
@@ -175,6 +175,67 @@ typedef struct {
 
 /** @} */ /* End of GPIO_Handle_Structure */
 
-/** @} */ /* End of GPIO_Driver */
 
+/*================================================================================
+ *===============================GPIO_Driver_APIs=================================
+ ================================================================================*/
+/**
+ * @defgroup GPIO_Driver_APIs GPIO Driver Function Prototypes
+ * @brief Public API functions for GPIO configuration and control.
+ * @{
+ */
+
+/**
+ * @brief Initialize a GPIO pin.
+ */
+void gpio_pin_init(GPIOx_Handle_t *handle);
+
+/**
+ * @brief Reset a GPIO port.
+ */
+void gpio_port_deinit(GPIOx_RegDef_t *pGPIOx);
+
+/**
+ * @brief Read logic level of a pin.
+ */
+uint8_t gpio_read_pin(GPIOx_RegDef_t *pGPIOx, uint8_t pin);
+
+/**
+ * @brief Read 16-bit value of a port.
+ */
+uint16_t gpio_read_port(GPIOx_RegDef_t *pGPIOx);
+
+/**
+ * @brief Write HIGH/LOW to a pin.
+ */
+void gpio_write_pin(GPIOx_RegDef_t *pGPIOx, uint8_t pin, uint8_t state);
+
+/**
+ * @brief Write 16-bit value to a port.
+ */
+void gpio_write_port(GPIOx_RegDef_t *pGPIOx, uint16_t value);
+
+/**
+ * @brief Toggle a pin's output state.
+ */
+void gpio_toggle_pin(GPIOx_RegDef_t *pGPIOx, uint8_t pin);
+
+/**
+ * @brief Configure EXTI interrupt trigger.
+ */
+void gpio_irq_config(uint8_t pin, uint8_t trigger);
+
+/**
+ * @brief Enable/disable NVIC interrupt for a GPIO EXTI line.
+ */
+void gpio_irq_control(uint8_t irq_no, uint8_t en);
+
+/**
+ * @brief Clear EXTI interrupt pending bit.
+ */
+void gpio_irq_clear(uint8_t pin);
+
+/** @} */ /* end of GPIO_Driver_APIs */
+
+/** @} */ /* End of GPIO_Driver */
 #endif /* INC_STM32F407XX_GPIO_H_ */

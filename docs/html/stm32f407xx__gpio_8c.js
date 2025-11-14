@@ -1,4 +1,6 @@
 var stm32f407xx__gpio_8c =
 [
-    [ "gpio_init", "stm32f407xx__gpio_8c.html#a10eb7b8d2cd68d8c3495beb9339c516f", null ]
+    [ "gpio_pin_init", "group___g_p_i_o___driver___a_p_is.html#ga59f07285d055589998e910abf10c9ab1", null ],
+    [ "gpio_port_deinit", "group___g_p_i_o___driver___a_p_is.html#ga347db04adc58e4104a1b0600a2238395", null ],
+    [ "gpio_read_pin", "group___g_p_i_o___driver___a_p_is.html#ga7a2f606b1dfb968762d2ee9dcf59fc5f", null ]
 ];

@@ -1,9 +1,9 @@
-<map id="GPIO Configuration Structure and Enumerations" name="GPIO Configuration Structure and Enumerations">
-<area shape="rect" id="Node000007" href="$group___g_p_i_o___a_l_t_e_r_n_a_t_e___f_u_n_c_t_i_o_n_s.html" title="GPIO alternate function selection macros (AF0–AF15)." alt="" coords="383,5,546,48"/>
-<area shape="rect" id="Node000001" title="Configuration parameters for a single GPIO pin." alt="" coords="147,115,334,157"/>
-<area shape="rect" id="Node000003" href="$group___g_p_i_o___m_o_d_e_s.html" title="GPIO mode configuration macros." alt="" coords="404,72,525,99"/>
-<area shape="rect" id="Node000004" href="$group___g_p_i_o___o_p___t_y_p_e_s.html" title="GPIO pin output driver configuration macros." alt="" coords="397,123,532,149"/>
-<area shape="rect" id="Node000005" href="$group___g_p_i_o___p_u_l_l_u_p___p_u_l_l_d_o_w_n.html" title="GPIO internal resistor configuration macros." alt="" coords="382,173,547,216"/>
-<area shape="rect" id="Node000006" href="$group___g_p_i_o___s_p_e_e_d_s.html" title="GPIO output speed configuration macros." alt="" coords="392,240,537,267"/>
+<map id="GPIO Enumerations" name="GPIO Enumerations">
+<area shape="rect" id="Node000007" href="$group___g_p_i_o___a_l_t_e_r_n_a_t_e___f_u_n_c_t_i_o_n_s.html" title="GPIO alternate function selection macros (AF0–AF15)." alt="" coords="334,5,497,48"/>
+<area shape="rect" id="Node000001" title="Configuration parameters for a single GPIO pin." alt="" coords="147,123,285,149"/>
+<area shape="rect" id="Node000003" href="$group___g_p_i_o___m_o_d_e_s.html" title="GPIO mode configuration macros." alt="" coords="356,72,476,99"/>
+<area shape="rect" id="Node000004" href="$group___g_p_i_o___o_p___t_y_p_e_s.html" title="GPIO pin output driver configuration macros." alt="" coords="348,123,483,149"/>
+<area shape="rect" id="Node000005" href="$group___g_p_i_o___p_u_l_l_u_p___p_u_l_l_d_o_w_n.html" title="GPIO internal resistor configuration macros." alt="" coords="333,173,498,216"/>
+<area shape="rect" id="Node000006" href="$group___g_p_i_o___s_p_e_e_d_s.html" title="GPIO output speed configuration macros." alt="" coords="344,240,488,267"/>
 <area shape="rect" id="Node000002" href="$group___g_p_i_o___driver.html" title="STM32F407xx General Purpose I/O Driver." alt="" coords="5,123,99,149"/>
 </map>

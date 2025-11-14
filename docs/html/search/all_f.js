@@ -1,16 +1,16 @@
 var searchData=
 [
   ['rcc_0',['RCC',['../group___r_c_c___r_e_g.html#ga74944438a086975793d26ae48d5882d4',1,'stm32f407xx.h']]],
-  ['rcc_5fahb1enr_1',['RCC_AHB1ENR',['../001___s_t_m___c_l_o_c_k___e_n_a_b_l_e_2_src_2main_8c.html#a305184464592fe039a4e47e9d88bdcc4',1,'RCC_AHB1ENR:&#160;main.c'],['../002___user__button__interrupt_2_src_2main_8c.html#a305184464592fe039a4e47e9d88bdcc4',1,'RCC_AHB1ENR:&#160;main.c']]],
-  ['rcc_5fapb2enr_2',['RCC_APB2ENR',['../002___user__button__interrupt_2_src_2main_8c.html#a6d4cd87f49d551c356fed82cbbddc5a4',1,'main.c']]],
-  ['rcc_5fbase_5faddress_3',['RCC_BASE_ADDRESS',['../001___s_t_m___c_l_o_c_k___e_n_a_b_l_e_2_src_2main_8c.html#aa539b1cce2e30fa6c6721693837ff2c1',1,'RCC_BASE_ADDRESS:&#160;main.c'],['../002___user__button__interrupt_2_src_2main_8c.html#aa539b1cce2e30fa6c6721693837ff2c1',1,'RCC_BASE_ADDRESS:&#160;main.c']]],
-  ['rcc_5fbaseaddr_4',['RCC_BASEADDR',['../group___a_h_b1___b_a_s_e___a_d_d_r_e_s_s_e_s.html#ga89610f202a9f78bcc85f76c5ba52d009',1,'stm32f407xx.h']]],
-  ['rcc_5fcfgr_5',['RCC_CFGR',['../001___s_t_m___c_l_o_c_k___e_n_a_b_l_e_2_src_2main_8c.html#a8f7780f390ef4cbb05efa06554ba0998',1,'main.c']]],
-  ['rcc_5fcr_6',['RCC_CR',['../001___s_t_m___c_l_o_c_k___e_n_a_b_l_e_2_src_2main_8c.html#a3465fac46f8d87fc7e243765777af052',1,'main.c']]],
-  ['rcc_5freg_7',['RCC_REG',['../group___r_c_c___r_e_g.html',1,'']]],
+  ['rcc_20peripheral_20register_20definition_1',['RCC Peripheral Register Definition',['../group___r_c_c___r_e_g.html',1,'']]],
+  ['rcc_5fahb1enr_2',['RCC_AHB1ENR',['../001___s_t_m___c_l_o_c_k___e_n_a_b_l_e_2_src_2main_8c.html#a305184464592fe039a4e47e9d88bdcc4',1,'RCC_AHB1ENR:&#160;main.c'],['../002___user__button__interrupt_2_src_2main_8c.html#a305184464592fe039a4e47e9d88bdcc4',1,'RCC_AHB1ENR:&#160;main.c']]],
+  ['rcc_5fapb2enr_3',['RCC_APB2ENR',['../002___user__button__interrupt_2_src_2main_8c.html#a6d4cd87f49d551c356fed82cbbddc5a4',1,'main.c']]],
+  ['rcc_5fbase_5faddress_4',['RCC_BASE_ADDRESS',['../001___s_t_m___c_l_o_c_k___e_n_a_b_l_e_2_src_2main_8c.html#aa539b1cce2e30fa6c6721693837ff2c1',1,'RCC_BASE_ADDRESS:&#160;main.c'],['../002___user__button__interrupt_2_src_2main_8c.html#aa539b1cce2e30fa6c6721693837ff2c1',1,'RCC_BASE_ADDRESS:&#160;main.c']]],
+  ['rcc_5fbaseaddr_5',['RCC_BASEADDR',['../group___a_h_b1___p_e_r_i_p_e_h_r_a_l_s___b_a_s_e___a_d_d_r_e_s_s_e_s.html#ga89610f202a9f78bcc85f76c5ba52d009',1,'stm32f407xx.h']]],
+  ['rcc_5fcfgr_6',['RCC_CFGR',['../001___s_t_m___c_l_o_c_k___e_n_a_b_l_e_2_src_2main_8c.html#a8f7780f390ef4cbb05efa06554ba0998',1,'main.c']]],
+  ['rcc_5fcr_7',['RCC_CR',['../001___s_t_m___c_l_o_c_k___e_n_a_b_l_e_2_src_2main_8c.html#a3465fac46f8d87fc7e243765777af052',1,'main.c']]],
   ['rcc_5fregdef_5ft_8',['RCC_RegDef_t',['../struct_r_c_c___reg_def__t.html',1,'RCC_RegDef_t'],['../group___r_c_c___r_e_g.html#gaa7687f84fcd3bcd30ad80ef263c79f39',1,'RCC_RegDef_t:&#160;stm32f407xx.h']]],
   ['readme_2emd_9',['README.md',['../_r_e_a_d_m_e_8md.html',1,'']]],
-  ['register_20definition_10',['GPIOx Peripheral Register Definition',['../group___g_p_i_ox___r_e_g___d_e_f.html',1,'']]],
+  ['register_20definition_10',['Register Definition',['../group___g_p_i_ox___r_e_g___d_e_f.html',1,'GPIOx Peripheral Register Definition'],['../group___r_c_c___r_e_g.html',1,'RCC Peripheral Register Definition']]],
   ['repository_20helpful_20don’t_20forget_20to_20star_20it_20on_20github_11',['⭐ If you find this repository helpful, don’t forget to star it on GitHub!',['../index.html#autotoc_md18',1,'']]],
   ['repository_20structure_12',['📂 Repository Structure',['../index.html#autotoc_md2',1,'']]],
   ['reserve10_13',['reserve10',['../struct_r_c_c___reg_def__t.html#af71b3d9fcdd56a037baddb4f5806f34b',1,'RCC_RegDef_t']]],
@@ -24,7 +24,9 @@ var searchData=
   ['reserved2_21',['reserved2',['../struct_r_c_c___reg_def__t.html#aba7ab871739e5698268555688d585826',1,'RCC_RegDef_t']]],
   ['reserved3_22',['reserved3',['../struct_r_c_c___reg_def__t.html#afff7063f5b644fb29e15036ae1db0a85',1,'RCC_RegDef_t']]],
   ['reserved4_23',['reserved4',['../struct_r_c_c___reg_def__t.html#a3478865b120b4d405fa9c36c4ae119bd',1,'RCC_RegDef_t']]],
-  ['rng_5fbaseaddr_24',['RNG_BASEADDR',['../group___a_h_b2___b_a_s_e___a_d_d_r_e_s_s_e_s.html#gafc4cb5b290097a3180d47bf94196a5a1',1,'stm32f407xx.h']]],
-  ['rom_5fbaseaddr_25',['ROM_BASEADDR',['../group___m_e_m_o_r_y___s_e_g_m_e_n_t_a_t_i_o_n.html#ga548ca9ecc4b62f701800110d155a05dc',1,'stm32f407xx.h']]],
-  ['rtc_5fbkp_5freg_5fbaseaddr_26',['RTC_BKP_REG_BASEADDR',['../group___a_p_b1___b_a_s_e___a_d_d_r_e_s_s_e_s.html#ga98c3e6ad32fb5503744104470f07ccd9',1,'stm32f407xx.h']]]
+  ['reset_20macros_24',['Reset Macros',['../group___a_h_b1___r_e_s_e_t___m_a_c_r_o_s.html',1,'AHB1 Peripheral Reset Macros'],['../group___a_h_b2___r_e_s_e_t___m_a_c_r_o_s.html',1,'AHB2 Peripheral Reset Macros'],['../group___a_h_b3___r_e_s_e_t___m_a_c_r_o_s.html',1,'AHB3 Peripheral Reset Macros'],['../group___a_p_b1___r_e_s_e_t___m_a_c_r_o_s.html',1,'APB1 Peripheral Reset Macros'],['../group___a_p_b2___r_e_s_e_t___m_a_c_r_o_s.html',1,'APB2 Peripheral Reset Macros']]],
+  ['reset_20various_20peripherals_25',['Macros to reset various peripherals',['../group___p_e_r_i_p_h_e_r_a_l___r_e_s_e_t___m_a_c_r_o_s.html',1,'']]],
+  ['rng_5fbaseaddr_26',['RNG_BASEADDR',['../group___a_h_b2___p_e_r_i_p_e_h_r_a_l_s___b_a_s_e___a_d_d_r_e_s_s_e_s.html#gafc4cb5b290097a3180d47bf94196a5a1',1,'stm32f407xx.h']]],
+  ['rom_5fbaseaddr_27',['ROM_BASEADDR',['../group___m_e_m_o_r_y___s_e_g_m_e_n_t_a_t_i_o_n.html#ga548ca9ecc4b62f701800110d155a05dc',1,'stm32f407xx.h']]],
+  ['rtc_5fbkp_5freg_5fbaseaddr_28',['RTC_BKP_REG_BASEADDR',['../group___a_p_b1___p_e_r_i_p_e_h_r_a_l_s___b_a_s_e___a_d_d_r_e_s_s_e_s.html#ga98c3e6ad32fb5503744104470f07ccd9',1,'stm32f407xx.h']]]
 ];

@@ -1,0 +1,4 @@
+<map id="APB1 Peripheral Reset Macros" name="APB1 Peripheral Reset Macros">
+<area shape="rect" id="Node000001" title="Macros to enable or disable for peripherals belonging to APB1 bus." alt="" coords="212,5,368,48"/>
+<area shape="rect" id="Node000002" href="$group___p_e_r_i_p_h_e_r_a_l___r_e_s_e_t___m_a_c_r_o_s.html" title="Contains macros to reset various peripheral through RCC Reset Reg." alt="" coords="5,5,164,48"/>
+</map>
