@@ -1,112 +1,786 @@
-\chapter{🧠 STM32 Driver Development }
-\hypertarget{index}{}\label{index}\index{🧠 STM32 Driver Development@{🧠 STM32 Driver Development}}
+\chapter{STM32\+F407 Bare-\/\+Metal Driver Development }
+\hypertarget{index}{}\label{index}\index{STM32F407 Bare-\/Metal Driver Development@{STM32F407 Bare-\/Metal Driver Development}}
 \label{index_md__r_e_a_d_m_e}%
 \Hypertarget{index_md__r_e_a_d_m_e}%
 
 
-This repository contains {\bfseries{bare-\/metal driver development projects}} for the {\bfseries{STM32\+F407 Discovery Board}}, written entirely from scratch without using HAL or STM32\+Cube libraries. ~\newline
- Each project focuses on a specific hardware feature or peripheral of the STM32 microcontroller, helping to build a deep understanding of low-\/level embedded system design.
+\href{https://github.com/yourusername/stm32f407-drivers}{\texttt{}} \mbox{[}\mbox{]}(LICENSE) \href{https://www.st.com/en/microcontrollers-microprocessors/stm32f407.html}{\texttt{}}
+
+\begin{quote}
+Bare-\/metal driver development for STM32\+F407 Discovery Board without HAL or STM32\+Cube libraries. \end{quote}
+
+
+This repository contains a collection of bare-\/metal driver projects for the {\bfseries{STM32\+F407\+VG}} microcontroller, written entirely from scratch using direct register manipulation. Each project demonstrates specific hardware features and peripheral configurations, building a comprehensive understanding of low-\/level embedded system design.
 
 \DoxyHorRuler{0}
-\hypertarget{index_autotoc_md2}{}\doxysection{\texorpdfstring{📂 Repository Structure}{📂 Repository Structure}}\label{index_autotoc_md2}
-
-\begin{DoxyTable}{2}{}{}{1}
-\SetCell{c,bg=\tableheadbgcolor,font=\bfseries}Folder  &\SetCell{c,bg=\tableheadbgcolor,font=\bfseries}Description  \\
-{\bfseries{000\+\_\+\+Hello\+\_\+\+World}}  &Basic GPIO configuration — toggle an LED using software delay.  \\
-{\bfseries{001\+\_\+\+STM\+\_\+\+CLOCK\+\_\+\+ENABLE}}  &Demonstrates clock enabling for GPIO peripherals and verifies clock using MCO pin on a logic analyzer.  \\
-{\bfseries{002\+\_\+\+User\+\_\+button\+\_\+interrupt}}  &Implements an {\bfseries{external interrupt (EXTI)}} on the user button (PA0) to toggle LEDs using an ISR.  \\
-{\bfseries{Resource}}  &Reference materials, schematics, and supporting documentation.  \\
-\end{DoxyTable}
-
-
-\DoxyHorRuler{0}
-\hypertarget{index_autotoc_md4}{}\doxysection{\texorpdfstring{⚙️ Hardware Used}{⚙️ Hardware Used}}\label{index_autotoc_md4}
+\hypertarget{index_autotoc_md2}{}\doxysection{\texorpdfstring{Table of Contents}{Table of Contents}}\label{index_autotoc_md2}
 
 \begin{DoxyItemize}
-\item {\bfseries{Microcontroller\+:}} STM32\+F407\+VG (ARM Cortex-\/\+M4) ~\newline
-
-\item {\bfseries{Board\+:}} STM32\+F4 Discovery Kit ~\newline
-
-\item {\bfseries{Core Clock\+:}} 16 MHz (HSE) ~\newline
-
-\item {\bfseries{Tools Required\+:}}
-\begin{DoxyItemize}
-\item STM32\+Cube\+IDE or any ARM-\/\+GCC-\/based IDE ~\newline
-
-\item ST-\/\+Link debugger/programmer ~\newline
-
-\item Logic analyzer (optional, for clock verification)
-\end{DoxyItemize}
+\item Hardware Specifications
+\item Repository Structure
+\item Development Approach
+\item Projects Overview
+\item Concepts Covered
+\item Getting Started
+\item Building and Flashing
+\item API Documentation
+\item Upcoming Modules
+\item Learning Resources
+\item Author
+\item License
 \end{DoxyItemize}
 
 \DoxyHorRuler{0}
-\hypertarget{index_autotoc_md6}{}\doxysection{\texorpdfstring{💻 Development Approach}{💻 Development Approach}}\label{index_autotoc_md6}
-All drivers are written {\bfseries{bare-\/metal}}, meaning\+:
+\hypertarget{index_autotoc_md4}{}\doxysection{\texorpdfstring{Hardware Specifications}{Hardware Specifications}}\label{index_autotoc_md4}
+\hypertarget{index_autotoc_md5}{}\doxysubsection{\texorpdfstring{Microcontroller}{Microcontroller}}\label{index_autotoc_md5}
+
 \begin{DoxyItemize}
-\item Direct register access (no HAL or Std\+Periph libraries)
-\item Complete control of clock gating, GPIO modes, and interrupt configuration
-\item Written in {\bfseries{C}} with startup assembly for vector table mapping
+\item {\bfseries{MCU}}\+: STM32\+F407\+VG
+\item {\bfseries{Architecture}}\+: ARM Cortex-\/\+M4 with FPU and DSP
+\item {\bfseries{Core Clock}}\+: Up to 168 MHz
+\item {\bfseries{Flash Memory}}\+: 1 MB
+\item {\bfseries{SRAM}}\+: 192 KB (112 KB + 16 KB + 64 KB CCM)
+\item {\bfseries{Board}}\+: STM32\+F4 Discovery Kit
+\end{DoxyItemize}\hypertarget{index_autotoc_md6}{}\doxysubsection{\texorpdfstring{Clock Configuration}{Clock Configuration}}\label{index_autotoc_md6}
+
+\begin{DoxyItemize}
+\item {\bfseries{External Crystal}}\+: 16 MHz HSE 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{f\_HSE\ =\ 16\ MHz}
+\DoxyCodeLine{f\_SYSCLK\ =\ (f\_HSE\ /\ M)\ ×\ N\ /\ P\ \ (PLL\ configuration)}
+
+\end{DoxyCode}
+
+\end{DoxyItemize}\hypertarget{index_autotoc_md7}{}\doxysubsection{\texorpdfstring{Required Tools}{Required Tools}}\label{index_autotoc_md7}
+
+\begin{DoxyItemize}
+\item STM32\+Cube\+IDE or ARM-\/\+GCC toolchain
+\item ST-\/\+Link debugger (integrated on-\/board)
+\item Logic analyzer (optional, for signal verification)
+\item Serial terminal application (for debug output)
 \end{DoxyItemize}
 
 \DoxyHorRuler{0}
-\hypertarget{index_autotoc_md8}{}\doxysection{\texorpdfstring{🧩 Concepts Covered So Far}{🧩 Concepts Covered So Far}}\label{index_autotoc_md8}
+\hypertarget{index_autotoc_md9}{}\doxysection{\texorpdfstring{Repository Structure}{Repository Structure}}\label{index_autotoc_md9}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{STM32F407-\/Drivers/}
+\DoxyCodeLine{│}
+\DoxyCodeLine{├──\ Projects/}
+\DoxyCodeLine{│\ \ \ ├──\ 000\_Hello\_World/}
+\DoxyCodeLine{│\ \ \ │\ \ \ ├──\ Src/}
+\DoxyCodeLine{│\ \ \ │\ \ \ │\ \ \ ├──\ main.c}
+\DoxyCodeLine{│\ \ \ │\ \ \ │\ \ \ ├──\ syscalls.c}
+\DoxyCodeLine{│\ \ \ │\ \ \ │\ \ \ └──\ sysmem.c}
+\DoxyCodeLine{│\ \ \ │\ \ \ └──\ README.md}
+\DoxyCodeLine{│\ \ \ │}
+\DoxyCodeLine{│\ \ \ ├──\ 001\_STM\_CLOCK\_ENABLE/}
+\DoxyCodeLine{│\ \ \ │\ \ \ ├──\ Src/}
+\DoxyCodeLine{│\ \ \ │\ \ \ │\ \ \ ├──\ main.c}
+\DoxyCodeLine{│\ \ \ │\ \ \ │\ \ \ ├──\ syscalls.c}
+\DoxyCodeLine{│\ \ \ │\ \ \ │\ \ \ └──\ sysmem.c}
+\DoxyCodeLine{│\ \ \ │\ \ \ └──\ README.md}
+\DoxyCodeLine{│\ \ \ │}
+\DoxyCodeLine{│\ \ \ ├──\ 002\_User\_button\_interrupt/}
+\DoxyCodeLine{│\ \ \ │\ \ \ ├──\ Src/}
+\DoxyCodeLine{│\ \ \ │\ \ \ │\ \ \ ├──\ main.c}
+\DoxyCodeLine{│\ \ \ │\ \ \ │\ \ \ ├──\ syscalls.c}
+\DoxyCodeLine{│\ \ \ │\ \ \ │\ \ \ └──\ sysmem.c}
+\DoxyCodeLine{│\ \ \ │\ \ \ └──\ README.md}
+\DoxyCodeLine{│\ \ \ │}
+\DoxyCodeLine{│\ \ \ └──\ 003\_Testing\_stm32f407xx\_drivers/}
+\DoxyCodeLine{│\ \ \ \ \ \ \ ├──\ Drivers/}
+\DoxyCodeLine{│\ \ \ \ \ \ \ │\ \ \ ├──\ inc/}
+\DoxyCodeLine{│\ \ \ \ \ \ \ │\ \ \ │\ \ \ ├──\ stm32f407xx.h\ \ \ \ \ \ \ \ \ \ \ \#\ MCU\ register\ definitions}
+\DoxyCodeLine{│\ \ \ \ \ \ \ │\ \ \ │\ \ \ └──\ stm32f407xx\_gpio.h\ \ \ \ \ \ \#\ GPIO\ driver\ API}
+\DoxyCodeLine{│\ \ \ \ \ \ \ │\ \ \ └──\ src/}
+\DoxyCodeLine{│\ \ \ \ \ \ \ │\ \ \ \ \ \ \ └──\ stm32f407xx\_gpio.c\ \ \ \ \ \ \#\ GPIO\ driver\ implementation}
+\DoxyCodeLine{│\ \ \ \ \ \ \ ├──\ Src/}
+\DoxyCodeLine{│\ \ \ \ \ \ \ │\ \ \ ├──\ main.c}
+\DoxyCodeLine{│\ \ \ \ \ \ \ │\ \ \ ├──\ syscalls.c}
+\DoxyCodeLine{│\ \ \ \ \ \ \ │\ \ \ └──\ sysmem.c}
+\DoxyCodeLine{│\ \ \ \ \ \ \ └──\ README.md}
+\DoxyCodeLine{│}
+\DoxyCodeLine{├──\ Resources/\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ Datasheets\ and\ schematics}
+\DoxyCodeLine{├──\ Docs/\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ Doxygen-\/generated\ documentation}
+\DoxyCodeLine{│\ \ \ └──\ refman.pdf\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ Reference\ manual}
+\DoxyCodeLine{└──\ README.md}
+
+\end{DoxyCode}
+
+
+\DoxyHorRuler{0}
+\hypertarget{index_autotoc_md11}{}\doxysection{\texorpdfstring{Development Approach}{Development Approach}}\label{index_autotoc_md11}
+\hypertarget{index_autotoc_md12}{}\doxysubsection{\texorpdfstring{Bare-\/\+Metal Philosophy}{Bare-\/\+Metal Philosophy}}\label{index_autotoc_md12}
+All drivers are implemented {\bfseries{bare-\/metal}}, meaning\+:
+
+{\bfseries{What We Use\+:}}
+
 
 \begin{DoxyItemize}
-\item GPIO initialization and configuration ~\newline
+\item Direct access to peripheral registers via memory-\/mapped addresses 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Register\_Address\ =\ Base\_Address\ +\ Offset}
 
-\item RCC (Reset and Clock Control) fundamentals ~\newline
+\end{DoxyCode}
 
-\item External interrupt (EXTI) setup using SYSCFG ~\newline
+\item Manual RCC clock gating and control
+\item Direct GPIO register configuration
+\item Custom interrupt vector handling
+\item NVIC priority configuration
+\end{DoxyItemize}
 
-\item NVIC configuration and interrupt masking ~\newline
+{\bfseries{What We Don\textquotesingle{}t Use\+:}}
 
-\item Debouncing techniques in ISRs ~\newline
 
-\item Understanding the STM32 bus architecture (AHB/\+APB) ~\newline
+\begin{DoxyItemize}
+\item HAL (Hardware Abstraction Layer)
+\item LL (Low-\/\+Level) drivers
+\item Std\+Periph libraries
+\item Any ST-\/provided middleware or abstraction
+\end{DoxyItemize}\hypertarget{index_autotoc_md13}{}\doxysubsection{\texorpdfstring{Implementation Details}{Implementation Details}}\label{index_autotoc_md13}
+{\bfseries{Memory-\/\+Mapped I/O\+:}}
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ PERIPHERAL\_BASEADDR\ \ \ \ 0x40000000UL}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ AHB1\_PERIPHERAL\_BASE\ \ \ (PERIPHERAL\_BASEADDR\ +\ 0x00020000UL)}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ GPIOD\_BASEADDR\ \ \ \ \ \ \ \ \ (AHB1\_PERIPHERAL\_BASE\ +\ 0x0C00UL)}}
+
+\end{DoxyCode}
+
+
+{\bfseries{Register Access\+:}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{volatile}\ uint32\_t\ MODER;\ \ \ \ \ \ \textcolor{comment}{//\ Mode\ register}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{volatile}\ uint32\_t\ OTYPER;\ \ \ \ \ \textcolor{comment}{//\ Output\ type\ register}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{volatile}\ uint32\_t\ OSPEEDR;\ \ \ \ \textcolor{comment}{//\ Output\ speed\ register}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{volatile}\ uint32\_t\ PUPDR;\ \ \ \ \ \ \textcolor{comment}{//\ Pull-\/up/pull-\/down\ register}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{volatile}\ uint32\_t\ IDR;\ \ \ \ \ \ \ \ \textcolor{comment}{//\ Input\ data\ register}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{volatile}\ uint32\_t\ ODR;\ \ \ \ \ \ \ \ \textcolor{comment}{//\ Output\ data\ register}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{volatile}\ uint32\_t\ BSRR;\ \ \ \ \ \ \ \textcolor{comment}{//\ Bit\ set/reset\ register}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{volatile}\ uint32\_t\ LCKR;\ \ \ \ \ \ \ \textcolor{comment}{//\ Configuration\ lock\ register}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{volatile}\ uint32\_t\ AFRL;\ \ \ \ \ \ \ \textcolor{comment}{//\ Alternate\ function\ low\ register}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{volatile}\ uint32\_t\ AFRH;\ \ \ \ \ \ \ \textcolor{comment}{//\ Alternate\ function\ high\ register}}
+\DoxyCodeLine{\}\ \mbox{\hyperlink{struct_g_p_i_ox___reg_def__t}{GPIOx\_RegDef\_t}};}
+
+\end{DoxyCode}
+\hypertarget{index_autotoc_md14}{}\doxysubsection{\texorpdfstring{Technology Stack}{Technology Stack}}\label{index_autotoc_md14}
+
+\begin{DoxyItemize}
+\item {\bfseries{Language}}\+: C (driver logic)
+\item {\bfseries{Assembly}}\+: Startup code and vector table
+\item {\bfseries{Build System}}\+: ARM-\/\+GCC toolchain
+\item {\bfseries{Debugger}}\+: GDB with Open\+OCD/\+ST-\/\+Link
+\item {\bfseries{Documentation}}\+: Doxygen
 \end{DoxyItemize}
 
 \DoxyHorRuler{0}
-\hypertarget{index_autotoc_md10}{}\doxysection{\texorpdfstring{🚀 Upcoming Modules}{🚀 Upcoming Modules}}\label{index_autotoc_md10}
-Planned future modules include\+:
+\hypertarget{index_autotoc_md16}{}\doxysection{\texorpdfstring{Projects Overview}{Projects Overview}}\label{index_autotoc_md16}
+\hypertarget{index_autotoc_md17}{}\doxysubsection{\texorpdfstring{Project 000\+: Hello World}{Project 000\+: Hello World}}\label{index_autotoc_md17}
+{\bfseries{Purpose}}\+: Basic GPIO initialization and LED control
+
+{\bfseries{Features}}\+:
+
+
 \begin{DoxyItemize}
-\item SPI Master/\+Slave driver implementation ~\newline
+\item GPIO port clock enabling via RCC
+\item GPIO pin mode configuration (output)
+\item Simple LED toggle using software delay loop
+\item Introduction to memory-\/mapped peripheral access
+\end{DoxyItemize}
 
-\item I2C driver (polling + interrupt-\/based) ~\newline
+{\bfseries{Hardware Used}}\+:
 
-\item UART communication ~\newline
 
-\item Timer-\/based LED blinking (Sys\+Tick \& TIM2) ~\newline
+\begin{DoxyItemize}
+\item On-\/board LEDs (PD12, PD13, PD14, PD15)
+\end{DoxyItemize}
 
-\item ADC/\+DAC configuration and data acquisition ~\newline
+{\bfseries{Key Learning}}\+:
 
-\item DMA-\/controlled data transfers ~\newline
 
+\begin{DoxyItemize}
+\item Basic GPIO output configuration
+\item Software delay implementation
+\item Peripheral clock management
 \end{DoxyItemize}
 
 \DoxyHorRuler{0}
-\hypertarget{index_autotoc_md12}{}\doxysection{\texorpdfstring{🧠 Learning Objective}{🧠 Learning Objective}}\label{index_autotoc_md12}
-This repository is a {\bfseries{step-\/by-\/step journey}} toward mastering STM32 microcontrollers through\+:
+\hypertarget{index_autotoc_md19}{}\doxysubsection{\texorpdfstring{Project 001\+: STM Clock Enable}{Project 001\+: STM Clock Enable}}\label{index_autotoc_md19}
+{\bfseries{Purpose}}\+: Clock system configuration and external clock output
+
+{\bfseries{Features}}\+:
+
+
 \begin{DoxyItemize}
-\item Building reusable driver-\/level code ~\newline
+\item HSE (High-\/\+Speed External) clock enabling
+\item MCO1 (Microcontroller Clock Output) pin configuration
+\item Clock routing to PA8 for external measurement
+\item GPIO alternate function configuration (AF0)
+\end{DoxyItemize}
 
-\item Understanding how ARM Cortex-\/\+M4 interfaces with peripherals ~\newline
+{\bfseries{Hardware Used}}\+:
 
-\item Learning to read and apply the STM32 Reference Manual and Datasheet ~\newline
 
+\begin{DoxyItemize}
+\item PA8 (MCO1 output pin)
+\item Logic analyzer for clock verification
+\end{DoxyItemize}
+
+{\bfseries{Key Concepts}}\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{f\_MCO1\ =\ f\_HSE\ /\ Prescaler}
+
+\end{DoxyCode}
+
+
+{\bfseries{Key Learning}}\+:
+
+
+\begin{DoxyItemize}
+\item RCC clock control register (RCC\+\_\+\+CR)
+\item Clock configuration register (RCC\+\_\+\+CFGR)
+\item MCO prescaler settings
+\item GPIO alternate function mapping
 \end{DoxyItemize}
 
 \DoxyHorRuler{0}
-\hypertarget{index_autotoc_md14}{}\doxysection{\texorpdfstring{🧑‍💻 Author}{🧑‍💻 Author}}\label{index_autotoc_md14}
-{\bfseries{Yuvraj Singh Rathore}} ~\newline
- 🎓 IIT Bombay Postgraduate \texorpdfstring{$\vert$}{|} Scientist, DRDO ~\newline
- 📍 Bangalore, India ~\newline
- 💬 Interested in Embedded Systems, VLSI, and Radar Communication Systems ~\newline
+\hypertarget{index_autotoc_md21}{}\doxysubsection{\texorpdfstring{Project 002\+: User Button Interrupt}{Project 002\+: User Button Interrupt}}\label{index_autotoc_md21}
+{\bfseries{Purpose}}\+: External interrupt configuration and handling
+
+{\bfseries{Features}}\+:
+
+
+\begin{DoxyItemize}
+\item EXTI (External Interrupt) line configuration
+\item SYSCFG port mapping
+\item NVIC interrupt priority and enabling
+\item ISR (Interrupt Service Routine) implementation
+\item Button debouncing techniques
+\end{DoxyItemize}
+
+{\bfseries{Hardware Used}}\+:
+
+
+\begin{DoxyItemize}
+\item User button (PA0)
+\item On-\/board LEDs (PD12-\/\+PD15)
+\end{DoxyItemize}
+
+{\bfseries{Key Concepts}}\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{EXTI\_Line\ =\ Pin\_Number}
+
+\end{DoxyCode}
+
+
+{\bfseries{Interrupt Flow}}\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{GPIO\ Pin\ →\ EXTI\ Controller\ →\ NVIC\ →\ CPU\ →\ ISR}
+
+\end{DoxyCode}
+
+
+{\bfseries{Key Learning}}\+:
+
+
+\begin{DoxyItemize}
+\item EXTI configuration (IMR, RTSR, FTSR)
+\item SYSCFG external interrupt mapping
+\item NVIC interrupt enabling (ISER registers)
+\item Interrupt pending flag clearing
+\item Debouncing in ISR context
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{index_autotoc_md23}{}\doxysubsection{\texorpdfstring{Project 003\+: Testing STM32\+F407xx Drivers}{Project 003\+: Testing STM32\+F407xx Drivers}}\label{index_autotoc_md23}
+{\bfseries{Purpose}}\+: Modular driver development and testing framework
+
+{\bfseries{Features}}\+:
+
+
+\begin{DoxyItemize}
+\item Complete GPIO driver API implementation
+\item Structured driver architecture
+\item Configurable pin initialization
+\item Port-\/level and pin-\/level operations
+\end{DoxyItemize}
+
+{\bfseries{Driver Architecture}}\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ Configuration\ Structure}}
+\DoxyCodeLine{\textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{\ \ \ \ uint8\_t\ GPIO\_PIN\_NUMBER;\ \ \ \ \ \ \textcolor{comment}{//\ Pin\ 0-\/15}}
+\DoxyCodeLine{\ \ \ \ uint8\_t\ GPIO\_MODE;\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Input/Output/Alt/Analog}}
+\DoxyCodeLine{\ \ \ \ uint8\_t\ GPIO\_OP\_TYPE;\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Push-\/pull/Open-\/drain}}
+\DoxyCodeLine{\ \ \ \ uint8\_t\ GPIO\_PU\_PD;\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Pull-\/up/Pull-\/down/None}}
+\DoxyCodeLine{\ \ \ \ uint8\_t\ GPIO\_SPEED;\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Low/Medium/High/Very\ High}}
+\DoxyCodeLine{\ \ \ \ uint8\_t\ GPIO\_ALT\_FUNC;\ \ \ \ \ \ \ \ \textcolor{comment}{//\ AF0-\/AF15}}
+\DoxyCodeLine{\}\ \mbox{\hyperlink{struct_g_p_i_ox___config__t}{GPIOx\_Config\_t}};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Handle\ Structure}}
+\DoxyCodeLine{\textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct_g_p_i_ox___reg_def__t}{GPIOx\_RegDef\_t}}\ *pGPIOx;\ \ \ \ \ \ \ \textcolor{comment}{//\ Base\ address\ pointer}}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct_g_p_i_ox___config__t}{GPIOx\_Config\_t}}\ GPIO\_CONFIG;\ \ \ \textcolor{comment}{//\ Configuration\ settings}}
+\DoxyCodeLine{\}\ \mbox{\hyperlink{struct_g_p_i_ox___handle__t}{GPIOx\_Handle\_t}};}
+
+\end{DoxyCode}
+
+
+{\bfseries{API Functions}}\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ Initialization\ and\ De-\/initialization}}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___g_p_i_o___driver___a_p_is_ga59f07285d055589998e910abf10c9ab1}{gpio\_pin\_init}}(\mbox{\hyperlink{struct_g_p_i_ox___handle__t}{GPIOx\_Handle\_t}}\ *handle);}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___g_p_i_o___driver___a_p_is_ga347db04adc58e4104a1b0600a2238395}{gpio\_port\_deinit}}(\mbox{\hyperlink{struct_g_p_i_ox___reg_def__t}{GPIOx\_RegDef\_t}}\ *pGPIOx);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Read/Write\ Operations}}
+\DoxyCodeLine{uint8\_t\ \mbox{\hyperlink{group___g_p_i_o___driver___a_p_is_ga7a2f606b1dfb968762d2ee9dcf59fc5f}{gpio\_read\_pin}}(\mbox{\hyperlink{struct_g_p_i_ox___reg_def__t}{GPIOx\_RegDef\_t}}\ *pGPIOx,\ uint8\_t\ pin);}
+\DoxyCodeLine{uint16\_t\ \mbox{\hyperlink{group___g_p_i_o___driver___a_p_is_ga893c5d7e52c33fea09df85b817801855}{gpio\_read\_port}}(\mbox{\hyperlink{struct_g_p_i_ox___reg_def__t}{GPIOx\_RegDef\_t}}\ *pGPIOx);}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___g_p_i_o___driver___a_p_is_ga3a438f76ce1b8d514645f41c5e13bc19}{gpio\_write\_pin}}(\mbox{\hyperlink{struct_g_p_i_ox___reg_def__t}{GPIOx\_RegDef\_t}}\ *pGPIOx,\ uint8\_t\ pin,\ uint8\_t\ state);}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___g_p_i_o___driver___a_p_is_ga4cc8a0fcb890802e6a9080ac494333a9}{gpio\_write\_port}}(\mbox{\hyperlink{struct_g_p_i_ox___reg_def__t}{GPIOx\_RegDef\_t}}\ *pGPIOx,\ uint16\_t\ value);}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___g_p_i_o___driver___a_p_is_gaf33fe651c0911b5bfccfe253b8c44286}{gpio\_toggle\_pin}}(\mbox{\hyperlink{struct_g_p_i_ox___reg_def__t}{GPIOx\_RegDef\_t}}\ *pGPIOx,\ uint8\_t\ pin);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Interrupt\ Management}}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___g_p_i_o___driver___a_p_is_ga59407004373e1086e102436ebe8c1609}{gpio\_irq\_config}}(uint8\_t\ pin,\ uint8\_t\ trigger);}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___g_p_i_o___driver___a_p_is_gaecfc0d5327266f101f163c807cd08f9e}{gpio\_irq\_control}}(uint8\_t\ irq\_no,\ uint8\_t\ en);}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___g_p_i_o___driver___a_p_is_ga7029bc337ba529f1ed60ecec9003ae43}{gpio\_irq\_clear}}(uint8\_t\ pin);}
+
+\end{DoxyCode}
+
+
+{\bfseries{Key Learning}}\+:
+
+
+\begin{DoxyItemize}
+\item Modular driver design patterns
+\item API abstraction and encapsulation
+\item Configuration vs. operation separation
+\item Error handling strategies
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{index_autotoc_md25}{}\doxysection{\texorpdfstring{Concepts Covered}{Concepts Covered}}\label{index_autotoc_md25}
+\hypertarget{index_autotoc_md26}{}\doxysubsection{\texorpdfstring{Memory Architecture}{Memory Architecture}}\label{index_autotoc_md26}
+
+\begin{DoxyItemize}
+\item {\bfseries{Flash Memory}}\+: Main program storage (0x0800 0000)
+\item {\bfseries{SRAM1}}\+: 112 KB at 0x2000 0000
+\item {\bfseries{SRAM2}}\+: 16 KB at 0x2001 C000
+\item {\bfseries{SRAM3}}\+: 64 KB CCM at 0x2002 0000
+\item {\bfseries{System Memory}}\+: ROM bootloader at 0x1\+FFF 0000
+\end{DoxyItemize}\hypertarget{index_autotoc_md27}{}\doxysubsection{\texorpdfstring{Bus Architecture}{Bus Architecture}}\label{index_autotoc_md27}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ AHB\ (168\ MHz)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ │}
+\DoxyCodeLine{\ \ ┌───────────┼───────────┐}
+\DoxyCodeLine{\ \ │\ \ \ \ \ \ \ \ \ \ \ │\ \ \ \ \ \ \ \ \ \ \ │}
+\DoxyCodeLine{AHB1\ \ \ \ \ \ \ \ AHB2\ \ \ \ \ \ \ \ AHB3}
+\DoxyCodeLine{\ \ │\ \ \ \ \ \ \ \ \ \ \ │\ \ \ \ \ \ \ \ \ \ \ │}
+\DoxyCodeLine{GPIO\ \ \ \ \ \ \ \ USB\ \ \ \ \ \ \ \ \ FMC}
+\DoxyCodeLine{DMA\ \ \ \ \ \ \ Camera}
+\DoxyCodeLine{RCC}
+\DoxyCodeLine{\ \ │}
+\DoxyCodeLine{\ \ ├────\ APB1\ (42\ MHz)}
+\DoxyCodeLine{\ \ │\ \ \ \ \ └──\ TIM2-\/7,\ SPI2/3,\ I2C1-\/3,\ UART}
+\DoxyCodeLine{\ \ │}
+\DoxyCodeLine{\ \ └────\ APB2\ (84\ MHz)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ └──\ TIM1/8,\ SPI1,\ USART1/6,\ ADC}
+
+\end{DoxyCode}
+\hypertarget{index_autotoc_md28}{}\doxysubsection{\texorpdfstring{Clock System}{Clock System}}\label{index_autotoc_md28}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{HSE\ (16\ MHz)\ ──┐}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ├──>\ PLL\ ──>\ SYSCLK\ (up\ to\ 168\ MHz)}
+\DoxyCodeLine{HSI\ (16\ MHz)\ ──┘\ \ \ \ \ \ \ \ \ \ \ \ │}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ├──>\ AHB\ (HCLK)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ │\ \ \ \ └──>\ APB1\ (PCLK1)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ │\ \ \ \ └──>\ APB2\ (PCLK2)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ └──>\ MCO1/MCO2}
+
+\end{DoxyCode}
+\hypertarget{index_autotoc_md29}{}\doxysubsection{\texorpdfstring{GPIO Configuration}{GPIO Configuration}}\label{index_autotoc_md29}
+
+\begin{DoxyItemize}
+\item {\bfseries{Modes}}\+: Input, Output, Alternate Function, Analog
+\item {\bfseries{Output Types}}\+: Push-\/\+Pull, Open-\/\+Drain
+\item {\bfseries{Speeds}}\+: Low (2 MHz), Medium (25 MHz), High (50 MHz), Very High (100 MHz)
+\item {\bfseries{Pull resistors}}\+: None, Pull-\/up, Pull-\/down
+\item {\bfseries{Alternate Functions}}\+: AF0 through AF15
+\end{DoxyItemize}\hypertarget{index_autotoc_md30}{}\doxysubsection{\texorpdfstring{Interrupt System}{Interrupt System}}\label{index_autotoc_md30}
+
+\begin{DoxyItemize}
+\item {\bfseries{EXTI Lines}}\+: 0-\/22 (16 GPIO + 7 internal)
+\item {\bfseries{Priority Levels}}\+: 16 levels (0 = highest priority)
+\item {\bfseries{NVIC}}\+: Nested Vectored Interrupt Controller
+\item {\bfseries{Vector Table}}\+: Defined in startup assembly
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{index_autotoc_md32}{}\doxysection{\texorpdfstring{Getting Started}{Getting Started}}\label{index_autotoc_md32}
+\hypertarget{index_autotoc_md33}{}\doxysubsection{\texorpdfstring{Prerequisites}{Prerequisites}}\label{index_autotoc_md33}
+
+\begin{DoxyEnumerate}
+\item {\bfseries{Hardware}}\+:
+\begin{DoxyItemize}
+\item STM32\+F4 Discovery board
+\item USB cable for ST-\/\+Link
+\item (Optional) Logic analyzer
+\end{DoxyItemize}
+\item {\bfseries{Software}}\+:
+\begin{DoxyItemize}
+\item STM32\+Cube\+IDE (recommended) or
+\item ARM GCC toolchain + Make + Open\+OCD
+\item Git
+\end{DoxyItemize}
+\end{DoxyEnumerate}\hypertarget{index_autotoc_md34}{}\doxysubsection{\texorpdfstring{Installation}{Installation}}\label{index_autotoc_md34}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\#\ Clone\ the\ repository}
+\DoxyCodeLine{git\ clone\ https://github.com/yourusername/STM32F407-\/Drivers.git}
+\DoxyCodeLine{cd\ STM32F407-\/Drivers}
+\DoxyCodeLine{}
+\DoxyCodeLine{\#\ Open\ in\ STM32CubeIDE}
+\DoxyCodeLine{\#\ File\ →\ Open\ Projects\ from\ File\ System\ →\ Select\ project\ folder}
+
+\end{DoxyCode}
+\hypertarget{index_autotoc_md35}{}\doxysubsection{\texorpdfstring{Project Setup}{Project Setup}}\label{index_autotoc_md35}
+
+\begin{DoxyEnumerate}
+\item {\bfseries{Import Project}}\+:
+\begin{DoxyItemize}
+\item Open STM32\+Cube\+IDE
+\item File → Import → General → Existing Projects
+\item Select desired project from {\ttfamily Projects/} directory
+\end{DoxyItemize}
+\item {\bfseries{Build Configuration}}\+:
+\begin{DoxyItemize}
+\item Debug configuration for development
+\item Release configuration for optimized code
+\end{DoxyItemize}
+\item {\bfseries{Debugger Setup}}\+:
+\begin{DoxyItemize}
+\item Select ST-\/\+Link (ST-\/\+LINK GDB server)
+\item Configure SWD interface
+\item Set breakpoints as needed
+\end{DoxyItemize}
+\end{DoxyEnumerate}
+
+\DoxyHorRuler{0}
+\hypertarget{index_autotoc_md37}{}\doxysection{\texorpdfstring{Building and Flashing}{Building and Flashing}}\label{index_autotoc_md37}
+\hypertarget{index_autotoc_md38}{}\doxysubsection{\texorpdfstring{Using STM32\+Cube\+IDE}{Using STM32\+Cube\+IDE}}\label{index_autotoc_md38}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\#\ Build\ project}
+\DoxyCodeLine{Project\ →\ Build\ All\ (Ctrl+B)}
+\DoxyCodeLine{}
+\DoxyCodeLine{\#\ Flash\ and\ debug}
+\DoxyCodeLine{Run\ →\ Debug\ (F11)}
+\DoxyCodeLine{}
+\DoxyCodeLine{\#\ Or\ flash\ without\ debugging}
+\DoxyCodeLine{Run\ →\ Run\ (Ctrl+F11)}
+
+\end{DoxyCode}
+\hypertarget{index_autotoc_md39}{}\doxysubsection{\texorpdfstring{Using Command Line (ARM-\/\+GCC)}{Using Command Line (ARM-\/\+GCC)}}\label{index_autotoc_md39}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\#\ Navigate\ to\ project\ directory}
+\DoxyCodeLine{cd\ Projects/000\_Hello\_World}
+\DoxyCodeLine{}
+\DoxyCodeLine{\#\ Build}
+\DoxyCodeLine{make\ clean}
+\DoxyCodeLine{make\ all}
+\DoxyCodeLine{}
+\DoxyCodeLine{\#\ Flash\ using\ OpenOCD}
+\DoxyCodeLine{openocd\ -\/f\ interface/stlink.cfg\ -\/f\ target/stm32f4x.cfg\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ -\/c\ "{}program\ build/output.elf\ verify\ reset\ exit"{}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\#\ Or\ using\ st-\/flash}
+\DoxyCodeLine{st-\/flash\ write\ build/output.bin\ 0x8000000}
+
+\end{DoxyCode}
 
 
 \DoxyHorRuler{0}
-\hypertarget{index_autotoc_md16}{}\doxysection{\texorpdfstring{📜 License}{📜 License}}\label{index_autotoc_md16}
-This project is released under the {\bfseries{MIT License}} — free to use, modify, and distribute with attribution.
+\hypertarget{index_autotoc_md41}{}\doxysection{\texorpdfstring{API Documentation}{API Documentation}}\label{index_autotoc_md41}
+\hypertarget{index_autotoc_md42}{}\doxysubsection{\texorpdfstring{GPIO Driver API}{GPIO Driver API}}\label{index_autotoc_md42}
+\hypertarget{index_autotoc_md43}{}\doxysubsubsection{\texorpdfstring{Initialization Functions}{Initialization Functions}}\label{index_autotoc_md43}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___g_p_i_o___driver___a_p_is_ga59f07285d055589998e910abf10c9ab1}{gpio\_pin\_init}}(\mbox{\hyperlink{struct_g_p_i_ox___handle__t}{GPIOx\_Handle\_t}}\ *handle);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___g_p_i_o___driver___a_p_is_ga347db04adc58e4104a1b0600a2238395}{gpio\_port\_deinit}}(\mbox{\hyperlink{struct_g_p_i_ox___reg_def__t}{GPIOx\_RegDef\_t}}\ *pGPIOx);}
+
+\end{DoxyCode}
+\hypertarget{index_autotoc_md44}{}\doxysubsubsection{\texorpdfstring{Read/\+Write Functions}{Read/\+Write Functions}}\label{index_autotoc_md44}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{}
+\DoxyCodeLine{uint8\_t\ \mbox{\hyperlink{group___g_p_i_o___driver___a_p_is_ga7a2f606b1dfb968762d2ee9dcf59fc5f}{gpio\_read\_pin}}(\mbox{\hyperlink{struct_g_p_i_ox___reg_def__t}{GPIOx\_RegDef\_t}}\ *pGPIOx,\ uint8\_t\ pin);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___g_p_i_o___driver___a_p_is_ga3a438f76ce1b8d514645f41c5e13bc19}{gpio\_write\_pin}}(\mbox{\hyperlink{struct_g_p_i_ox___reg_def__t}{GPIOx\_RegDef\_t}}\ *pGPIOx,\ uint8\_t\ pin,\ uint8\_t\ state);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___g_p_i_o___driver___a_p_is_gaf33fe651c0911b5bfccfe253b8c44286}{gpio\_toggle\_pin}}(\mbox{\hyperlink{struct_g_p_i_ox___reg_def__t}{GPIOx\_RegDef\_t}}\ *pGPIOx,\ uint8\_t\ pin);}
+
+\end{DoxyCode}
+\hypertarget{index_autotoc_md45}{}\doxysubsubsection{\texorpdfstring{Interrupt Functions}{Interrupt Functions}}\label{index_autotoc_md45}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___g_p_i_o___driver___a_p_is_ga59407004373e1086e102436ebe8c1609}{gpio\_irq\_config}}(uint8\_t\ pin,\ uint8\_t\ trigger);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___g_p_i_o___driver___a_p_is_gaecfc0d5327266f101f163c807cd08f9e}{gpio\_irq\_control}}(uint8\_t\ irq\_no,\ uint8\_t\ en);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___g_p_i_o___driver___a_p_is_ga7029bc337ba529f1ed60ecec9003ae43}{gpio\_irq\_clear}}(uint8\_t\ pin);}
+
+\end{DoxyCode}
+\hypertarget{index_autotoc_md46}{}\doxysubsection{\texorpdfstring{Usage Example}{Usage Example}}\label{index_autotoc_md46}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{stm32f407xx_8h}{stm32f407xx.h}}"{}}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{stm32f407xx__gpio_8h}{stm32f407xx\_gpio.h}}"{}}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ \mbox{\hyperlink{000___hello___world_2_src_2main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}}(\textcolor{keywordtype}{void})\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct_g_p_i_ox___handle__t}{GPIOx\_Handle\_t}}\ gpio\_led;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Configure\ LED\ pin\ (PD12)}}
+\DoxyCodeLine{\ \ \ \ gpio\_led.\mbox{\hyperlink{struct_g_p_i_ox___handle__t_af66476d0b69ef00a95863c8d55a33208}{pGPIOx}}\ =\ \mbox{\hyperlink{group___g_p_i_o___b_a_s_e___a_d_d_r_e_s_s_e_s_ga7580b1a929ea9df59725ba9c18eba6ac}{GPIOD}};}
+\DoxyCodeLine{\ \ \ \ gpio\_led.\mbox{\hyperlink{struct_g_p_i_ox___handle__t_aeb936ee4e02972546dff148d2ce5e084}{GPIO\_CONFIG}}.\mbox{\hyperlink{struct_g_p_i_ox___config__t_abec5d159383522318eeaf3483fe0d59f}{GPIO\_PIN\_NUMBER}}\ =\ 12;}
+\DoxyCodeLine{\ \ \ \ gpio\_led.\mbox{\hyperlink{struct_g_p_i_ox___handle__t_aeb936ee4e02972546dff148d2ce5e084}{GPIO\_CONFIG}}.\mbox{\hyperlink{struct_g_p_i_ox___config__t_a2d2975ab95a428fccf3285a24c4fd8e2}{GPIO\_MODE}}\ =\ \mbox{\hyperlink{group___g_p_i_o___m_o_d_e_s_gaca6eb0cd4dbe7402497829badacfa6df}{GPIO\_MODE\_OUTPUT}};}
+\DoxyCodeLine{\ \ \ \ gpio\_led.\mbox{\hyperlink{struct_g_p_i_ox___handle__t_aeb936ee4e02972546dff148d2ce5e084}{GPIO\_CONFIG}}.\mbox{\hyperlink{struct_g_p_i_ox___config__t_ab2e10b90fc7e80cc4a14c6cb80e08ee0}{GPIO\_OP\_TYPE}}\ =\ \mbox{\hyperlink{group___g_p_i_o___o_p___t_y_p_e_s_ga8fab3cc9114990a89695903630083789}{GPIO\_OP\_TYPE\_PP}};}
+\DoxyCodeLine{\ \ \ \ gpio\_led.\mbox{\hyperlink{struct_g_p_i_ox___handle__t_aeb936ee4e02972546dff148d2ce5e084}{GPIO\_CONFIG}}.\mbox{\hyperlink{struct_g_p_i_ox___config__t_a1c233fdedf6811ed531077825b58f35d}{GPIO\_SPEED}}\ =\ \mbox{\hyperlink{group___g_p_i_o___s_p_e_e_d_s_ga5510b387afb7ec2117b5d4207889163c}{GPIO\_SPEED\_LOW}};}
+\DoxyCodeLine{\ \ \ \ gpio\_led.\mbox{\hyperlink{struct_g_p_i_ox___handle__t_aeb936ee4e02972546dff148d2ce5e084}{GPIO\_CONFIG}}.\mbox{\hyperlink{struct_g_p_i_ox___config__t_addfcf63ac9c75696ad9ff04afe7c45ba}{GPIO\_PU\_PD}}\ =\ \mbox{\hyperlink{group___g_p_i_o___p_u_l_l_u_p___p_u_l_l_d_o_w_n_ga833f758ca24334def9cb736e528ccab9}{GPIO\_PU\_PD\_NONE}};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Initialize\ pin}}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{group___g_p_i_o___driver___a_p_is_ga59f07285d055589998e910abf10c9ab1}{gpio\_pin\_init}}(\&gpio\_led);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Toggle\ LED}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{while}(1)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \mbox{\hyperlink{group___g_p_i_o___driver___a_p_is_gaf33fe651c0911b5bfccfe253b8c44286}{gpio\_toggle\_pin}}(\mbox{\hyperlink{group___g_p_i_o___b_a_s_e___a_d_d_r_e_s_s_e_s_ga7580b1a929ea9df59725ba9c18eba6ac}{GPIOD}},\ 12);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{volatile}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 500000;\ i++);}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
 
 \DoxyHorRuler{0}
-\hypertarget{index_autotoc_md18}{}\doxysubsection{\texorpdfstring{⭐ If you find this repository helpful, don’t forget to star it on Git\+Hub!}{⭐ If you find this repository helpful, don’t forget to star it on Git\+Hub!}}\label{index_autotoc_md18}
+\hypertarget{index_autotoc_md48}{}\doxysection{\texorpdfstring{Upcoming Modules}{Upcoming Modules}}\label{index_autotoc_md48}
+\hypertarget{index_autotoc_md49}{}\doxysubsection{\texorpdfstring{Planned Peripherals}{Planned Peripherals}}\label{index_autotoc_md49}
+
+\begin{DoxyEnumerate}
+\item {\bfseries{SPI Driver}}
+\begin{DoxyItemize}
+\item Master/\+Slave modes
+\item DMA support
+\item Full-\/duplex communication
+\end{DoxyItemize}
+\item {\bfseries{I2C Driver}}
+\begin{DoxyItemize}
+\item Multi-\/master support
+\item 7-\/bit and 10-\/bit addressing
+\item Polling and interrupt modes
+\end{DoxyItemize}
+\item {\bfseries{UART/\+USART Driver}}
+\begin{DoxyItemize}
+\item Asynchronous communication
+\item Hardware flow control
+\item DMA transfer
+\end{DoxyItemize}
+\item {\bfseries{Timer Driver}}
+\begin{DoxyItemize}
+\item PWM generation
+\item Input capture
+\item Output compare
+\item Encoder interface
+\end{DoxyItemize}
+\item {\bfseries{ADC Driver}}
+\begin{DoxyItemize}
+\item Single and continuous conversion
+\item DMA circular mode
+\item Multi-\/channel scanning
+\end{DoxyItemize}
+\item {\bfseries{DMA Driver}}
+\begin{DoxyItemize}
+\item Memory-\/to-\/memory
+\item Peripheral-\/to-\/memory
+\item Stream configuration
+\end{DoxyItemize}
+\item {\bfseries{Advanced Clock Configuration}}
+\begin{DoxyItemize}
+\item PLL configuration 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{f\_SYSCLK\ =\ (f\_HSE\ /\ M)\ ×\ N\ /\ P}
+
+\end{DoxyCode}
+
+\item System clock switching
+\item Peripheral clock scaling
+\end{DoxyItemize}
+\end{DoxyEnumerate}
+
+\DoxyHorRuler{0}
+\hypertarget{index_autotoc_md51}{}\doxysection{\texorpdfstring{Learning Resources}{Learning Resources}}\label{index_autotoc_md51}
+\hypertarget{index_autotoc_md52}{}\doxysubsection{\texorpdfstring{Reference Documents}{Reference Documents}}\label{index_autotoc_md52}
+
+\begin{DoxyItemize}
+\item {\bfseries{RM0090}}\+: STM32\+F407 Reference Manual
+\item {\bfseries{PM0214}}\+: STM32\+F4 Programming Manual
+\item {\bfseries{DS8626}}\+: STM32\+F407\+VG Datasheet
+\item {\bfseries{UM1472}}\+: STM32\+F4 Discovery Kit User Manual
+\end{DoxyItemize}\hypertarget{index_autotoc_md53}{}\doxysubsection{\texorpdfstring{Documentation}{Documentation}}\label{index_autotoc_md53}
+Full API documentation is generated using Doxygen and available in\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Docs/html/index.html\ \ \ \ \ \ \ \#\ HTML\ documentation}
+\DoxyCodeLine{Docs/refman.pdf\ \ \ \ \ \ \ \ \ \ \ \ \#\ PDF\ reference\ manual}
+
+\end{DoxyCode}
+\hypertarget{index_autotoc_md54}{}\doxysubsection{\texorpdfstring{Key Sections in Reference Manual}{Key Sections in Reference Manual}}\label{index_autotoc_md54}
+
+\begin{DoxyItemize}
+\item Section 6\+: Clock Control (RCC)
+\item Section 7\+: General-\/purpose I/\+Os (GPIO)
+\item Section 10\+: Interrupts and Events (EXTI)
+\item Section 12\+: Nested Vectored Interrupt Controller (NVIC)
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{index_autotoc_md56}{}\doxysection{\texorpdfstring{Learning Objectives}{Learning Objectives}}\label{index_autotoc_md56}
+This repository is designed to help developers\+:
+
+
+\begin{DoxyEnumerate}
+\item {\bfseries{Understand Hardware}}
+\begin{DoxyItemize}
+\item ARM Cortex-\/\+M4 architecture
+\item Memory-\/mapped peripherals
+\item Bus architecture and timing
+\end{DoxyItemize}
+\item {\bfseries{Master Register-\/\+Level Programming}}
+\begin{DoxyItemize}
+\item Direct register manipulation
+\item Bit-\/field operations
+\item Hardware abstraction design
+\end{DoxyItemize}
+\item {\bfseries{Build Reusable Drivers}}
+\begin{DoxyItemize}
+\item Modular code structure
+\item API design principles
+\item Documentation practices
+\end{DoxyItemize}
+\item {\bfseries{Navigate Reference Manuals}}
+\begin{DoxyItemize}
+\item Register descriptions
+\item Peripheral operation
+\item Timing diagrams
+\end{DoxyItemize}
+\item {\bfseries{Debug Embedded Systems}}
+\begin{DoxyItemize}
+\item SWD debugging
+\item Logic analyzer usage
+\item Peripheral register inspection
+\end{DoxyItemize}
+\end{DoxyEnumerate}
+
+\DoxyHorRuler{0}
+\hypertarget{index_autotoc_md58}{}\doxysection{\texorpdfstring{Contributing}{Contributing}}\label{index_autotoc_md58}
+Contributions are welcome! Please follow these guidelines\+:
+
+
+\begin{DoxyEnumerate}
+\item Fork the repository
+\item Create a feature branch ({\ttfamily git checkout -\/b feature/\+Amazing\+Feature})
+\item Follow existing code style and documentation standards
+\item Add Doxygen comments for all public APIs
+\item Test thoroughly on hardware
+\item Commit your changes ({\ttfamily git commit -\/m \textquotesingle{}Add some Amazing\+Feature\textquotesingle{}})
+\item Push to the branch ({\ttfamily git push origin feature/\+Amazing\+Feature})
+\item Open a Pull Request
+\end{DoxyEnumerate}
+
+\DoxyHorRuler{0}
+\hypertarget{index_autotoc_md60}{}\doxysection{\texorpdfstring{Author}{Author}}\label{index_autotoc_md60}
+{\bfseries{Yuvraj Singh Rathore}}
+
+
+\begin{DoxyItemize}
+\item Postgraduate, IIT Bombay
+\item Scientist, DRDO
+\item Location\+: Bangalore, India
+\item Interests\+: Embedded Systems, VLSI, Radar Communication Systems
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{index_autotoc_md62}{}\doxysection{\texorpdfstring{License}{License}}\label{index_autotoc_md62}
+This project is licensed under the MIT License -\/ see the \mbox{[}LICENSE\mbox{]}(LICENSE) file for details.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{MIT\ License}
+\DoxyCodeLine{}
+\DoxyCodeLine{Copyright\ (c)\ 2025\ Yuvraj\ Singh\ Rathore}
+\DoxyCodeLine{}
+\DoxyCodeLine{Permission\ is\ hereby\ granted,\ free\ of\ charge,\ to\ any\ person\ obtaining\ a\ copy}
+\DoxyCodeLine{of\ this\ software\ and\ associated\ documentation\ files\ (the\ "{}Software"{}),\ to\ deal}
+\DoxyCodeLine{in\ the\ Software\ without\ restriction,\ including\ without\ limitation\ the\ rights}
+\DoxyCodeLine{to\ use,\ copy,\ modify,\ merge,\ publish,\ distribute,\ sublicense,\ and/or\ sell}
+\DoxyCodeLine{copies\ of\ the\ Software,\ and\ to\ permit\ persons\ to\ whom\ the\ Software\ is}
+\DoxyCodeLine{furnished\ to\ do\ so,\ subject\ to\ the\ following\ conditions:}
+\DoxyCodeLine{}
+\DoxyCodeLine{The\ above\ copyright\ notice\ and\ this\ permission\ notice\ shall\ be\ included\ in\ all}
+\DoxyCodeLine{copies\ or\ substantial\ portions\ of\ the\ Software.}
+\DoxyCodeLine{}
+\DoxyCodeLine{THE\ SOFTWARE\ IS\ PROVIDED\ "{}AS\ IS"{},\ WITHOUT\ WARRANTY\ OF\ ANY\ KIND,\ EXPRESS\ OR}
+\DoxyCodeLine{IMPLIED,\ INCLUDING\ BUT\ NOT\ LIMITED\ TO\ THE\ WARRANTIES\ OF\ MERCHANTABILITY,}
+\DoxyCodeLine{FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE\ AND\ NONINFRINGEMENT.\ IN\ NO\ EVENT\ SHALL\ THE}
+\DoxyCodeLine{AUTHORS\ OR\ COPYRIGHT\ HOLDERS\ BE\ LIABLE\ FOR\ ANY\ CLAIM,\ DAMAGES\ OR\ OTHER}
+\DoxyCodeLine{LIABILITY,\ WHETHER\ IN\ AN\ ACTION\ OF\ CONTRACT,\ TORT\ OR\ OTHERWISE,\ ARISING\ FROM,}
+\DoxyCodeLine{OUT\ OF\ OR\ IN\ CONNECTION\ WITH\ THE\ SOFTWARE\ OR\ THE\ USE\ OR\ OTHER\ DEALINGS\ IN\ THE}
+\DoxyCodeLine{SOFTWARE.}
+
+\end{DoxyCode}
+
+
+\DoxyHorRuler{0}
+\hypertarget{index_autotoc_md64}{}\doxysection{\texorpdfstring{Acknowledgments}{Acknowledgments}}\label{index_autotoc_md64}
+
+\begin{DoxyItemize}
+\item STMicroelectronics for comprehensive documentation
+\item ARM for Cortex-\/\+M4 architecture documentation
+\item Open-\/source embedded systems community
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{index_autotoc_md66}{}\doxysection{\texorpdfstring{Support}{Support}}\label{index_autotoc_md66}
+If you find this repository useful, please consider\+:
+
+
+\begin{DoxyItemize}
+\item Starring the repository on Git\+Hub
+\item Sharing with fellow embedded enthusiasts
+\item Contributing improvements and bug fixes
+\item Reporting issues or suggesting enhancements
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+
+
+{\bfseries{Note}}\+: This is an educational project focused on understanding low-\/level hardware programming. For production applications, consider using tested libraries like STM32 HAL or third-\/party RTOS solutions. 

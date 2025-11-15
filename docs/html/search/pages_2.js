@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['development_0',['🧠 STM32 Driver Development',['../index.html',1,'']]],
-  ['development_20approach_1',['💻 Development Approach',['../index.html#autotoc_md6',1,'']]],
-  ['don’t_20forget_20to_20star_20it_20on_20github_2',['⭐ If you find this repository helpful, don’t forget to star it on GitHub!',['../index.html#autotoc_md18',1,'']]],
-  ['driver_20api_20summary_3',['GPIO Driver API Summary',['../stm32f407xx__gpio_8c.html#GPIO_API_Summary',1,'']]],
-  ['driver_20development_4',['🧠 STM32 Driver Development',['../index.html',1,'']]]
+  ['bare_20metal_20driver_20development_0',['STM32F407 Bare-Metal Driver Development',['../index.html',1,'']]],
+  ['bare_20metal_20philosophy_1',['Bare-Metal Philosophy',['../index.html#autotoc_md12',1,'']]],
+  ['building_20and_20flashing_2',['Building and Flashing',['../index.html#autotoc_md37',1,'']]],
+  ['bus_20architecture_3',['Bus Architecture',['../index.html#autotoc_md27',1,'']]],
+  ['button_20interrupt_4',['Project 002: User Button Interrupt',['../index.html#autotoc_md21',1,'']]]
 ];

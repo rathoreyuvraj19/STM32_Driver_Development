@@ -13,6 +13,19 @@
 #include<stdint.h>
 
 /**
+ * @defgroup MISCELLANEOUS_MACROS General-purpose macros
+ * @brief General macros that can be used across the codebase.
+ * @{
+ */
+
+#define ENABLE   1
+#define DISABLE  0
+#define SET      1
+#define RESET    0
+
+/** @} */  // end of MISCELLANEOUS_MACROS
+
+/**
  * @defgroup MEMORY_SEGMENTATION Memory Segmentation
  * @brief Base Addresses various memory and buses
  * @{
@@ -54,7 +67,7 @@
 #define GPIOH_BASEADDR              0x40021C00UL    /**< GPIOH Peripheral base address */
 #define GPIOI_BASEADDR              0x40022000UL    /**< GPIOI Peripheral base address */
 //#define GPIOJ_BASEADDR              0x40022400UL    /**< GPIOJ Peripheral base address */
-//#define GPIOK_BASEADDR 	            0x40022800UL    /**< GPIOK Peripheral base address */
+//#define GPIOK_BASEADDR 	          0x40022800UL    /**< GPIOK Peripheral base address */
 #define CRC_BASEADDR                0x40023000UL    /**< Cyclic Redundancy Check (CRC) Peripheral base address */
 #define RCC_BASEADDR    			0x40023800UL    /**< Reset and Clock Control (RCC) Peripheral base address */
 #define FLASH_IF_REG_BASEADDR		0x40023C00UL    /**< Flash interface register Peripheral base address */
@@ -163,21 +176,30 @@ typedef struct GPIOx_RegDef_t{
 	volatile uint32_t AFRL;      /*!< @todo Add Explanation*/
 	volatile uint32_t AFRH;      /*!< @todo Add Explanation*/
 }GPIOx_RegDef_t;
-
-
-#define GPIOA 	(GPIOx_RegDef_t*)GPIOA_BASEADDR			/*!< @todo Add Explanation*/
-#define GPIOB 	(GPIOx_RegDef_t*)GPIOB_BASEADDR         /*!< @todo Add Explanation*/
-#define GPIOC 	(GPIOx_RegDef_t*)GPIOC_BASEADDR         /*!< @todo Add Explanation*/
-#define GPIOD 	(GPIOx_RegDef_t*)GPIOD_BASEADDR         /*!< @todo Add Explanation*/
-#define GPIOE 	(GPIOx_RegDef_t*)GPIOE_BASEADDR         /*!< @todo Add Explanation*/
-#define GPIOF 	(GPIOx_RegDef_t*)GPIOF_BASEADDR         /*!< @todo Add Explanation*/
-#define GPIOG 	(GPIOx_RegDef_t*)GPIOG_BASEADDR         /*!< @todo Add Explanation*/
-#define GPIOH 	(GPIOx_RegDef_t*)GPIOH_BASEADDR         /*!< @todo Add Explanation*/
-#define GPIOI 	(GPIOx_RegDef_t*)GPIOI_BASEADDR         /*!< @todo Add Explanation*/
-//#define GPIOJ 	(GPIOx_RegDef_t*)GPIOJ_BASEADDR         /*!< @todo Add Explanation*/
-//#define GPIOK 	(GPIOx_RegDef_t*)GPIOK_BASEADDR         /*!< @todo Add Explanation*/
-
 /** @} */
+
+/**
+ * @defgroup GPIO_BASE_ADDRESSES GPIO Port Base Address Macros
+ * @brief Macros that provide typed base address pointers for all GPIO ports.
+ * @{
+ */
+
+#define GPIOA   ((GPIOx_RegDef_t*)GPIOA_BASEADDR)   /*!< Base address pointer for GPIO Port A */
+#define GPIOB   ((GPIOx_RegDef_t*)GPIOB_BASEADDR)   /*!< Base address pointer for GPIO Port B */
+#define GPIOC   ((GPIOx_RegDef_t*)GPIOC_BASEADDR)   /*!< Base address pointer for GPIO Port C */
+#define GPIOD   ((GPIOx_RegDef_t*)GPIOD_BASEADDR)   /*!< Base address pointer for GPIO Port D */
+#define GPIOE   ((GPIOx_RegDef_t*)GPIOE_BASEADDR)   /*!< Base address pointer for GPIO Port E */
+#define GPIOF   ((GPIOx_RegDef_t*)GPIOF_BASEADDR)   /*!< Base address pointer for GPIO Port F */
+#define GPIOG   ((GPIOx_RegDef_t*)GPIOG_BASEADDR)   /*!< Base address pointer for GPIO Port G */
+#define GPIOH   ((GPIOx_RegDef_t*)GPIOH_BASEADDR)   /*!< Base address pointer for GPIO Port H */
+#define GPIOI   ((GPIOx_RegDef_t*)GPIOI_BASEADDR)   /*!< Base address pointer for GPIO Port I */
+//#define GPIOJ ((GPIOx_RegDef_t*)GPIOJ_BASEADDR)   /*!< Base address pointer for GPIO Port J */
+//#define GPIOK ((GPIOx_RegDef_t*)GPIOK_BASEADDR)   /*!< Base address pointer for GPIO Port K */
+
+/** @} */   /* End of GPIO_BASE_ADDRESSES */
+
+
+
 
 /**@defgroup RCC_REG RCC Peripheral Register Definition
  * @brief Register Definition of Reset and Clock Control (RCC) Peripheral Register

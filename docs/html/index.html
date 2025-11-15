@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.15.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>STM32F407 Bare-Metal Driver Development: 🧠 STM32 Driver Development</title>
+<title>STM32F407 Bare-Metal Driver Development: STM32F407 Bare-Metal Driver Development</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript">var page_layout=1;</script>
 <script type="text/javascript" src="jquery.js"></script>
@@ -103,114 +103,672 @@ $(function() {
 </div>
 
 <div><div class="header">
-  <div class="headertitle"><div class="title">🧠 STM32 Driver Development </div></div>
+  <div class="headertitle"><div class="title">STM32F407 Bare-Metal Driver Development </div></div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p><a class="anchor" id="md__r_e_a_d_m_e"></a></p>
-<p>This repository contains <b>bare-metal driver development projects</b> for the <b>STM32F407 Discovery Board</b>, written entirely from scratch without using HAL or STM32Cube libraries. <br  />
- Each project focuses on a specific hardware feature or peripheral of the STM32 microcontroller, helping to build a deep understanding of low-level embedded system design.</p>
+<p><a href="https://github.com/yourusername/stm32f407-drivers"><img src="https://img.shields.io/badge/version-1.0-blue.svg" alt="Version" style="pointer-events: none;" class="inline"/></a> [<img src="https://img.shields.io/badge/license-MIT-green.svg" alt="License" style="pointer-events: none;" class="inline"/>](LICENSE) <a href="https://www.st.com/en/microcontrollers-microprocessors/stm32f407.html"><img src="https://img.shields.io/badge/platform-STM32F407-orange.svg" alt="Platform" style="pointer-events: none;" class="inline"/></a></p>
+<blockquote class="doxtable">
+<p>Bare-metal driver development for STM32F407 Discovery Board without HAL or STM32Cube libraries. </p>
+</blockquote>
+<p>This repository contains a collection of bare-metal driver projects for the <b>STM32F407VG</b> microcontroller, written entirely from scratch using direct register manipulation. Each project demonstrates specific hardware features and peripheral configurations, building a comprehensive understanding of low-level embedded system design.</p>
 <hr  />
 <h1 class="doxsection"><a class="anchor" id="autotoc_md2"></a>
-📂 Repository Structure</h1>
-<table class="markdownTable">
-<tr class="markdownTableHead">
-<th class="markdownTableHeadNone">Folder  </th><th class="markdownTableHeadNone">Description  </th></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><b>000_Hello_World</b>  </td><td class="markdownTableBodyNone">Basic GPIO configuration — toggle an LED using software delay.  </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><b>001_STM_CLOCK_ENABLE</b>  </td><td class="markdownTableBodyNone">Demonstrates clock enabling for GPIO peripherals and verifies clock using MCO pin on a logic analyzer.  </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><b>002_User_button_interrupt</b>  </td><td class="markdownTableBodyNone">Implements an <b>external interrupt (EXTI)</b> on the user button (PA0) to toggle LEDs using an ISR.  </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><b>Resource</b>  </td><td class="markdownTableBodyNone">Reference materials, schematics, and supporting documentation.  </td></tr>
-</table>
+Table of Contents</h1>
+<ul>
+<li>Hardware Specifications</li>
+<li>Repository Structure</li>
+<li>Development Approach</li>
+<li>Projects Overview</li>
+<li>Concepts Covered</li>
+<li>Getting Started</li>
+<li>Building and Flashing</li>
+<li>API Documentation</li>
+<li>Upcoming Modules</li>
+<li>Learning Resources</li>
+<li>Author</li>
+<li>License</li>
+</ul>
 <hr  />
 <h1 class="doxsection"><a class="anchor" id="autotoc_md4"></a>
-⚙️ Hardware Used</h1>
+Hardware Specifications</h1>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md5"></a>
+Microcontroller</h2>
 <ul>
-<li><b>Microcontroller:</b> STM32F407VG (ARM Cortex-M4) <br  />
-</li>
-<li><b>Board:</b> STM32F4 Discovery Kit <br  />
-</li>
-<li><b>Core Clock:</b> 16 MHz (HSE) <br  />
-</li>
-<li><b>Tools Required:</b><ul>
-<li>STM32CubeIDE or any ARM-GCC-based IDE <br  />
-</li>
-<li>ST-Link debugger/programmer <br  />
-</li>
-<li>Logic analyzer (optional, for clock verification)</li>
+<li><b>MCU</b>: STM32F407VG</li>
+<li><b>Architecture</b>: ARM Cortex-M4 with FPU and DSP</li>
+<li><b>Core Clock</b>: Up to 168 MHz</li>
+<li><b>Flash Memory</b>: 1 MB</li>
+<li><b>SRAM</b>: 192 KB (112 KB + 16 KB + 64 KB CCM)</li>
+<li><b>Board</b>: STM32F4 Discovery Kit</li>
 </ul>
-</li>
-</ul>
-<hr  />
-<h1 class="doxsection"><a class="anchor" id="autotoc_md6"></a>
-💻 Development Approach</h1>
-<p>All drivers are written <b>bare-metal</b>, meaning:</p><ul>
-<li>Direct register access (no HAL or StdPeriph libraries)</li>
-<li>Complete control of clock gating, GPIO modes, and interrupt configuration</li>
-<li>Written in <b>C</b> with startup assembly for vector table mapping</li>
-</ul>
-<hr  />
-<h1 class="doxsection"><a class="anchor" id="autotoc_md8"></a>
-🧩 Concepts Covered So Far</h1>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md6"></a>
+Clock Configuration</h2>
 <ul>
-<li>GPIO initialization and configuration <br  />
-</li>
-<li>RCC (Reset and Clock Control) fundamentals <br  />
-</li>
-<li>External interrupt (EXTI) setup using SYSCFG <br  />
-</li>
-<li>NVIC configuration and interrupt masking <br  />
-</li>
-<li>Debouncing techniques in ISRs <br  />
-</li>
-<li>Understanding the STM32 bus architecture (AHB/APB) <br  />
-</li>
+<li><b>External Crystal</b>: 16 MHz HSE <div class="fragment"><div class="line">f_HSE = 16 MHz</div>
+<div class="line">f_SYSCLK = (f_HSE / M) × N / P  (PLL configuration)</div>
+</div><!-- fragment --></li>
+</ul>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md7"></a>
+Required Tools</h2>
+<ul>
+<li>STM32CubeIDE or ARM-GCC toolchain</li>
+<li>ST-Link debugger (integrated on-board)</li>
+<li>Logic analyzer (optional, for signal verification)</li>
+<li>Serial terminal application (for debug output)</li>
 </ul>
 <hr  />
-<h1 class="doxsection"><a class="anchor" id="autotoc_md10"></a>
-🚀 Upcoming Modules</h1>
-<p>Planned future modules include:</p><ul>
-<li>SPI Master/Slave driver implementation <br  />
-</li>
-<li>I2C driver (polling + interrupt-based) <br  />
-</li>
-<li>UART communication <br  />
-</li>
-<li>Timer-based LED blinking (SysTick &amp; TIM2) <br  />
-</li>
-<li>ADC/DAC configuration and data acquisition <br  />
-</li>
-<li>DMA-controlled data transfers <br  />
-</li>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md9"></a>
+Repository Structure</h1>
+<div class="fragment"><div class="line">STM32F407-Drivers/</div>
+<div class="line">│</div>
+<div class="line">├── Projects/</div>
+<div class="line">│   ├── 000_Hello_World/</div>
+<div class="line">│   │   ├── Src/</div>
+<div class="line">│   │   │   ├── main.c</div>
+<div class="line">│   │   │   ├── syscalls.c</div>
+<div class="line">│   │   │   └── sysmem.c</div>
+<div class="line">│   │   └── README.md</div>
+<div class="line">│   │</div>
+<div class="line">│   ├── 001_STM_CLOCK_ENABLE/</div>
+<div class="line">│   │   ├── Src/</div>
+<div class="line">│   │   │   ├── main.c</div>
+<div class="line">│   │   │   ├── syscalls.c</div>
+<div class="line">│   │   │   └── sysmem.c</div>
+<div class="line">│   │   └── README.md</div>
+<div class="line">│   │</div>
+<div class="line">│   ├── 002_User_button_interrupt/</div>
+<div class="line">│   │   ├── Src/</div>
+<div class="line">│   │   │   ├── main.c</div>
+<div class="line">│   │   │   ├── syscalls.c</div>
+<div class="line">│   │   │   └── sysmem.c</div>
+<div class="line">│   │   └── README.md</div>
+<div class="line">│   │</div>
+<div class="line">│   └── 003_Testing_stm32f407xx_drivers/</div>
+<div class="line">│       ├── Drivers/</div>
+<div class="line">│       │   ├── inc/</div>
+<div class="line">│       │   │   ├── stm32f407xx.h           # MCU register definitions</div>
+<div class="line">│       │   │   └── stm32f407xx_gpio.h      # GPIO driver API</div>
+<div class="line">│       │   └── src/</div>
+<div class="line">│       │       └── stm32f407xx_gpio.c      # GPIO driver implementation</div>
+<div class="line">│       ├── Src/</div>
+<div class="line">│       │   ├── main.c</div>
+<div class="line">│       │   ├── syscalls.c</div>
+<div class="line">│       │   └── sysmem.c</div>
+<div class="line">│       └── README.md</div>
+<div class="line">│</div>
+<div class="line">├── Resources/                              # Datasheets and schematics</div>
+<div class="line">├── Docs/                                   # Doxygen-generated documentation</div>
+<div class="line">│   └── refman.pdf                          # Reference manual</div>
+<div class="line">└── README.md</div>
+</div><!-- fragment --><hr  />
+<h1 class="doxsection"><a class="anchor" id="autotoc_md11"></a>
+Development Approach</h1>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md12"></a>
+Bare-Metal Philosophy</h2>
+<p>All drivers are implemented <b>bare-metal</b>, meaning:</p>
+<p><b>What We Use:</b></p>
+<ul>
+<li>Direct access to peripheral registers via memory-mapped addresses <div class="fragment"><div class="line">Register_Address = Base_Address + Offset</div>
+</div><!-- fragment --></li>
+<li>Manual RCC clock gating and control</li>
+<li>Direct GPIO register configuration</li>
+<li>Custom interrupt vector handling</li>
+<li>NVIC priority configuration</li>
 </ul>
-<hr  />
-<h1 class="doxsection"><a class="anchor" id="autotoc_md12"></a>
-🧠 Learning Objective</h1>
-<p>This repository is a <b>step-by-step journey</b> toward mastering STM32 microcontrollers through:</p><ul>
-<li>Building reusable driver-level code <br  />
-</li>
-<li>Understanding how ARM Cortex-M4 interfaces with peripherals <br  />
-</li>
-<li>Learning to read and apply the STM32 Reference Manual and Datasheet <br  />
-</li>
+<p><b>What We Don't Use:</b></p>
+<ul>
+<li>HAL (Hardware Abstraction Layer)</li>
+<li>LL (Low-Level) drivers</li>
+<li>StdPeriph libraries</li>
+<li>Any ST-provided middleware or abstraction</li>
 </ul>
-<hr  />
-<h1 class="doxsection"><a class="anchor" id="autotoc_md14"></a>
-🧑‍💻 Author</h1>
-<p><b>Yuvraj Singh Rathore</b> <br  />
- 🎓 IIT Bombay Postgraduate | Scientist, DRDO <br  />
- 📍 Bangalore, India <br  />
- 💬 Interested in Embedded Systems, VLSI, and Radar Communication Systems <br  />
-</p>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md13"></a>
+Implementation Details</h2>
+<p><b>Memory-Mapped I/O:</b></p>
+<div class="fragment"><div class="line"><span class="preprocessor">#define PERIPHERAL_BASEADDR    0x40000000UL</span></div>
+<div class="line"><span class="preprocessor">#define AHB1_PERIPHERAL_BASE   (PERIPHERAL_BASEADDR + 0x00020000UL)</span></div>
+<div class="line"><span class="preprocessor">#define GPIOD_BASEADDR         (AHB1_PERIPHERAL_BASE + 0x0C00UL)</span></div>
+</div><!-- fragment --><p><b>Register Access:</b></p>
+<div class="fragment"><div class="line"><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line">    <span class="keyword">volatile</span> uint32_t MODER;      <span class="comment">// Mode register</span></div>
+<div class="line">    <span class="keyword">volatile</span> uint32_t OTYPER;     <span class="comment">// Output type register</span></div>
+<div class="line">    <span class="keyword">volatile</span> uint32_t OSPEEDR;    <span class="comment">// Output speed register</span></div>
+<div class="line">    <span class="keyword">volatile</span> uint32_t PUPDR;      <span class="comment">// Pull-up/pull-down register</span></div>
+<div class="line">    <span class="keyword">volatile</span> uint32_t IDR;        <span class="comment">// Input data register</span></div>
+<div class="line">    <span class="keyword">volatile</span> uint32_t ODR;        <span class="comment">// Output data register</span></div>
+<div class="line">    <span class="keyword">volatile</span> uint32_t BSRR;       <span class="comment">// Bit set/reset register</span></div>
+<div class="line">    <span class="keyword">volatile</span> uint32_t LCKR;       <span class="comment">// Configuration lock register</span></div>
+<div class="line">    <span class="keyword">volatile</span> uint32_t AFRL;       <span class="comment">// Alternate function low register</span></div>
+<div class="line">    <span class="keyword">volatile</span> uint32_t AFRH;       <span class="comment">// Alternate function high register</span></div>
+<div class="line">} <a class="code hl_struct" href="struct_g_p_i_ox___reg_def__t.html">GPIOx_RegDef_t</a>;</div>
+<div class="ttc" id="astruct_g_p_i_ox___reg_def__t_html"><div class="ttname"><a href="struct_g_p_i_ox___reg_def__t.html">GPIOx_RegDef_t</a></div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx_8h_source.html#l00167">stm32f407xx.h:167</a></div></div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md14"></a>
+Technology Stack</h2>
+<ul>
+<li><b>Language</b>: C (driver logic)</li>
+<li><b>Assembly</b>: Startup code and vector table</li>
+<li><b>Build System</b>: ARM-GCC toolchain</li>
+<li><b>Debugger</b>: GDB with OpenOCD/ST-Link</li>
+<li><b>Documentation</b>: Doxygen</li>
+</ul>
 <hr  />
 <h1 class="doxsection"><a class="anchor" id="autotoc_md16"></a>
-📜 License</h1>
-<p>This project is released under the <b>MIT License</b> — free to use, modify, and distribute with attribution.</p>
+Projects Overview</h1>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md17"></a>
+Project 000: Hello World</h2>
+<p><b>Purpose</b>: Basic GPIO initialization and LED control</p>
+<p><b>Features</b>:</p>
+<ul>
+<li>GPIO port clock enabling via RCC</li>
+<li>GPIO pin mode configuration (output)</li>
+<li>Simple LED toggle using software delay loop</li>
+<li>Introduction to memory-mapped peripheral access</li>
+</ul>
+<p><b>Hardware Used</b>:</p>
+<ul>
+<li>On-board LEDs (PD12, PD13, PD14, PD15)</li>
+</ul>
+<p><b>Key Learning</b>:</p>
+<ul>
+<li>Basic GPIO output configuration</li>
+<li>Software delay implementation</li>
+<li>Peripheral clock management</li>
+</ul>
 <hr  />
-<h2 class="doxsection"><a class="anchor" id="autotoc_md18"></a>
-⭐ If you find this repository helpful, don’t forget to star it on GitHub!</h2>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md19"></a>
+Project 001: STM Clock Enable</h2>
+<p><b>Purpose</b>: Clock system configuration and external clock output</p>
+<p><b>Features</b>:</p>
+<ul>
+<li>HSE (High-Speed External) clock enabling</li>
+<li>MCO1 (Microcontroller Clock Output) pin configuration</li>
+<li>Clock routing to PA8 for external measurement</li>
+<li>GPIO alternate function configuration (AF0)</li>
+</ul>
+<p><b>Hardware Used</b>:</p>
+<ul>
+<li>PA8 (MCO1 output pin)</li>
+<li>Logic analyzer for clock verification</li>
+</ul>
+<p><b>Key Concepts</b>:</p>
+<div class="fragment"><div class="line">f_MCO1 = f_HSE / Prescaler</div>
+</div><!-- fragment --><p><b>Key Learning</b>:</p>
+<ul>
+<li>RCC clock control register (RCC_CR)</li>
+<li>Clock configuration register (RCC_CFGR)</li>
+<li>MCO prescaler settings</li>
+<li>GPIO alternate function mapping</li>
+</ul>
+<hr  />
+<h2 class="doxsection"><a class="anchor" id="autotoc_md21"></a>
+Project 002: User Button Interrupt</h2>
+<p><b>Purpose</b>: External interrupt configuration and handling</p>
+<p><b>Features</b>:</p>
+<ul>
+<li>EXTI (External Interrupt) line configuration</li>
+<li>SYSCFG port mapping</li>
+<li>NVIC interrupt priority and enabling</li>
+<li>ISR (Interrupt Service Routine) implementation</li>
+<li>Button debouncing techniques</li>
+</ul>
+<p><b>Hardware Used</b>:</p>
+<ul>
+<li>User button (PA0)</li>
+<li>On-board LEDs (PD12-PD15)</li>
+</ul>
+<p><b>Key Concepts</b>:</p>
+<div class="fragment"><div class="line">EXTI_Line = Pin_Number</div>
+</div><!-- fragment --><p><b>Interrupt Flow</b>:</p>
+<div class="fragment"><div class="line">GPIO Pin → EXTI Controller → NVIC → CPU → ISR</div>
+</div><!-- fragment --><p><b>Key Learning</b>:</p>
+<ul>
+<li>EXTI configuration (IMR, RTSR, FTSR)</li>
+<li>SYSCFG external interrupt mapping</li>
+<li>NVIC interrupt enabling (ISER registers)</li>
+<li>Interrupt pending flag clearing</li>
+<li>Debouncing in ISR context</li>
+</ul>
+<hr  />
+<h2 class="doxsection"><a class="anchor" id="autotoc_md23"></a>
+Project 003: Testing STM32F407xx Drivers</h2>
+<p><b>Purpose</b>: Modular driver development and testing framework</p>
+<p><b>Features</b>:</p>
+<ul>
+<li>Complete GPIO driver API implementation</li>
+<li>Structured driver architecture</li>
+<li>Configurable pin initialization</li>
+<li>Port-level and pin-level operations</li>
+</ul>
+<p><b>Driver Architecture</b>:</p>
+<div class="fragment"><div class="line"><span class="comment">// Configuration Structure</span></div>
+<div class="line"><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line">    uint8_t GPIO_PIN_NUMBER;      <span class="comment">// Pin 0-15</span></div>
+<div class="line">    uint8_t GPIO_MODE;            <span class="comment">// Input/Output/Alt/Analog</span></div>
+<div class="line">    uint8_t GPIO_OP_TYPE;         <span class="comment">// Push-pull/Open-drain</span></div>
+<div class="line">    uint8_t GPIO_PU_PD;           <span class="comment">// Pull-up/Pull-down/None</span></div>
+<div class="line">    uint8_t GPIO_SPEED;           <span class="comment">// Low/Medium/High/Very High</span></div>
+<div class="line">    uint8_t GPIO_ALT_FUNC;        <span class="comment">// AF0-AF15</span></div>
+<div class="line">} <a class="code hl_struct" href="struct_g_p_i_ox___config__t.html">GPIOx_Config_t</a>;</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Handle Structure</span></div>
+<div class="line"><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line">    <a class="code hl_struct" href="struct_g_p_i_ox___reg_def__t.html">GPIOx_RegDef_t</a> *pGPIOx;       <span class="comment">// Base address pointer</span></div>
+<div class="line">    <a class="code hl_struct" href="struct_g_p_i_ox___config__t.html">GPIOx_Config_t</a> GPIO_CONFIG;   <span class="comment">// Configuration settings</span></div>
+<div class="line">} <a class="code hl_struct" href="struct_g_p_i_ox___handle__t.html">GPIOx_Handle_t</a>;</div>
+<div class="ttc" id="astruct_g_p_i_ox___config__t_html"><div class="ttname"><a href="struct_g_p_i_ox___config__t.html">GPIOx_Config_t</a></div><div class="ttdoc">GPIO Configuration Structure.</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx__gpio_8h_source.html#l00132">stm32f407xx_gpio.h:132</a></div></div>
+<div class="ttc" id="astruct_g_p_i_ox___handle__t_html"><div class="ttname"><a href="struct_g_p_i_ox___handle__t.html">GPIOx_Handle_t</a></div><div class="ttdoc">GPIO Handle Structure.</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx__gpio_8h_source.html#l00169">stm32f407xx_gpio.h:169</a></div></div>
+</div><!-- fragment --><p><b>API Functions</b>:</p>
+<div class="fragment"><div class="line"><span class="comment">// Initialization and De-initialization</span></div>
+<div class="line"><span class="keywordtype">void</span> <a class="code hl_function" href="group___g_p_i_o___driver___a_p_is.html#ga59f07285d055589998e910abf10c9ab1">gpio_pin_init</a>(<a class="code hl_struct" href="struct_g_p_i_ox___handle__t.html">GPIOx_Handle_t</a> *handle);</div>
+<div class="line"><span class="keywordtype">void</span> <a class="code hl_function" href="group___g_p_i_o___driver___a_p_is.html#ga347db04adc58e4104a1b0600a2238395">gpio_port_deinit</a>(<a class="code hl_struct" href="struct_g_p_i_ox___reg_def__t.html">GPIOx_RegDef_t</a> *pGPIOx);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Read/Write Operations</span></div>
+<div class="line">uint8_t <a class="code hl_function" href="group___g_p_i_o___driver___a_p_is.html#ga7a2f606b1dfb968762d2ee9dcf59fc5f">gpio_read_pin</a>(<a class="code hl_struct" href="struct_g_p_i_ox___reg_def__t.html">GPIOx_RegDef_t</a> *pGPIOx, uint8_t pin);</div>
+<div class="line">uint16_t <a class="code hl_function" href="group___g_p_i_o___driver___a_p_is.html#ga893c5d7e52c33fea09df85b817801855">gpio_read_port</a>(<a class="code hl_struct" href="struct_g_p_i_ox___reg_def__t.html">GPIOx_RegDef_t</a> *pGPIOx);</div>
+<div class="line"><span class="keywordtype">void</span> <a class="code hl_function" href="group___g_p_i_o___driver___a_p_is.html#ga3a438f76ce1b8d514645f41c5e13bc19">gpio_write_pin</a>(<a class="code hl_struct" href="struct_g_p_i_ox___reg_def__t.html">GPIOx_RegDef_t</a> *pGPIOx, uint8_t pin, uint8_t state);</div>
+<div class="line"><span class="keywordtype">void</span> <a class="code hl_function" href="group___g_p_i_o___driver___a_p_is.html#ga4cc8a0fcb890802e6a9080ac494333a9">gpio_write_port</a>(<a class="code hl_struct" href="struct_g_p_i_ox___reg_def__t.html">GPIOx_RegDef_t</a> *pGPIOx, uint16_t value);</div>
+<div class="line"><span class="keywordtype">void</span> <a class="code hl_function" href="group___g_p_i_o___driver___a_p_is.html#gaf33fe651c0911b5bfccfe253b8c44286">gpio_toggle_pin</a>(<a class="code hl_struct" href="struct_g_p_i_ox___reg_def__t.html">GPIOx_RegDef_t</a> *pGPIOx, uint8_t pin);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Interrupt Management</span></div>
+<div class="line"><span class="keywordtype">void</span> <a class="code hl_function" href="group___g_p_i_o___driver___a_p_is.html#ga59407004373e1086e102436ebe8c1609">gpio_irq_config</a>(uint8_t pin, uint8_t trigger);</div>
+<div class="line"><span class="keywordtype">void</span> <a class="code hl_function" href="group___g_p_i_o___driver___a_p_is.html#gaecfc0d5327266f101f163c807cd08f9e">gpio_irq_control</a>(uint8_t irq_no, uint8_t en);</div>
+<div class="line"><span class="keywordtype">void</span> <a class="code hl_function" href="group___g_p_i_o___driver___a_p_is.html#ga7029bc337ba529f1ed60ecec9003ae43">gpio_irq_clear</a>(uint8_t pin);</div>
+<div class="ttc" id="agroup___g_p_i_o___driver___a_p_is_html_ga347db04adc58e4104a1b0600a2238395"><div class="ttname"><a href="group___g_p_i_o___driver___a_p_is.html#ga347db04adc58e4104a1b0600a2238395">gpio_port_deinit</a></div><div class="ttdeci">void gpio_port_deinit(GPIOx_RegDef_t *pGPIOx)</div><div class="ttdoc">De-initialize a GPIO port.</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx__gpio_8c_source.html#l00101">stm32f407xx_gpio.c:101</a></div></div>
+<div class="ttc" id="agroup___g_p_i_o___driver___a_p_is_html_ga3a438f76ce1b8d514645f41c5e13bc19"><div class="ttname"><a href="group___g_p_i_o___driver___a_p_is.html#ga3a438f76ce1b8d514645f41c5e13bc19">gpio_write_pin</a></div><div class="ttdeci">void gpio_write_pin(GPIOx_RegDef_t *pGPIOx, uint8_t pin, uint8_t state)</div><div class="ttdoc">Write HIGH/LOW to a pin.</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx__gpio_8c_source.html#l00160">stm32f407xx_gpio.c:160</a></div></div>
+<div class="ttc" id="agroup___g_p_i_o___driver___a_p_is_html_ga4cc8a0fcb890802e6a9080ac494333a9"><div class="ttname"><a href="group___g_p_i_o___driver___a_p_is.html#ga4cc8a0fcb890802e6a9080ac494333a9">gpio_write_port</a></div><div class="ttdeci">void gpio_write_port(GPIOx_RegDef_t *pGPIOx, uint16_t value)</div><div class="ttdoc">Write 16-bit value to a port.</div></div>
+<div class="ttc" id="agroup___g_p_i_o___driver___a_p_is_html_ga59407004373e1086e102436ebe8c1609"><div class="ttname"><a href="group___g_p_i_o___driver___a_p_is.html#ga59407004373e1086e102436ebe8c1609">gpio_irq_config</a></div><div class="ttdeci">void gpio_irq_config(uint8_t pin, uint8_t trigger)</div><div class="ttdoc">Configure EXTI interrupt trigger.</div></div>
+<div class="ttc" id="agroup___g_p_i_o___driver___a_p_is_html_ga59f07285d055589998e910abf10c9ab1"><div class="ttname"><a href="group___g_p_i_o___driver___a_p_is.html#ga59f07285d055589998e910abf10c9ab1">gpio_pin_init</a></div><div class="ttdeci">void gpio_pin_init(GPIOx_Handle_t *handle)</div><div class="ttdoc">Initialize a GPIO pin.</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx__gpio_8c_source.html#l00040">stm32f407xx_gpio.c:40</a></div></div>
+<div class="ttc" id="agroup___g_p_i_o___driver___a_p_is_html_ga7029bc337ba529f1ed60ecec9003ae43"><div class="ttname"><a href="group___g_p_i_o___driver___a_p_is.html#ga7029bc337ba529f1ed60ecec9003ae43">gpio_irq_clear</a></div><div class="ttdeci">void gpio_irq_clear(uint8_t pin)</div><div class="ttdoc">Clear EXTI interrupt pending bit.</div></div>
+<div class="ttc" id="agroup___g_p_i_o___driver___a_p_is_html_ga7a2f606b1dfb968762d2ee9dcf59fc5f"><div class="ttname"><a href="group___g_p_i_o___driver___a_p_is.html#ga7a2f606b1dfb968762d2ee9dcf59fc5f">gpio_read_pin</a></div><div class="ttdeci">uint8_t gpio_read_pin(GPIOx_RegDef_t *pGPIOx, uint8_t pin)</div><div class="ttdoc">Read a GPIO pin.</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx__gpio_8c_source.html#l00150">stm32f407xx_gpio.c:150</a></div></div>
+<div class="ttc" id="agroup___g_p_i_o___driver___a_p_is_html_ga893c5d7e52c33fea09df85b817801855"><div class="ttname"><a href="group___g_p_i_o___driver___a_p_is.html#ga893c5d7e52c33fea09df85b817801855">gpio_read_port</a></div><div class="ttdeci">uint16_t gpio_read_port(GPIOx_RegDef_t *pGPIOx)</div><div class="ttdoc">Read the entire GPIO input port.</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx__gpio_8c_source.html#l00156">stm32f407xx_gpio.c:156</a></div></div>
+<div class="ttc" id="agroup___g_p_i_o___driver___a_p_is_html_gaecfc0d5327266f101f163c807cd08f9e"><div class="ttname"><a href="group___g_p_i_o___driver___a_p_is.html#gaecfc0d5327266f101f163c807cd08f9e">gpio_irq_control</a></div><div class="ttdeci">void gpio_irq_control(uint8_t irq_no, uint8_t en)</div><div class="ttdoc">Enable/disable NVIC interrupt for a GPIO EXTI line.</div></div>
+<div class="ttc" id="agroup___g_p_i_o___driver___a_p_is_html_gaf33fe651c0911b5bfccfe253b8c44286"><div class="ttname"><a href="group___g_p_i_o___driver___a_p_is.html#gaf33fe651c0911b5bfccfe253b8c44286">gpio_toggle_pin</a></div><div class="ttdeci">void gpio_toggle_pin(GPIOx_RegDef_t *pGPIOx, uint8_t pin)</div><div class="ttdoc">Toggle a pin&#39;s output state.</div></div>
+</div><!-- fragment --><p><b>Key Learning</b>:</p>
+<ul>
+<li>Modular driver design patterns</li>
+<li>API abstraction and encapsulation</li>
+<li>Configuration vs. operation separation</li>
+<li>Error handling strategies</li>
+</ul>
+<hr  />
+<h1 class="doxsection"><a class="anchor" id="autotoc_md25"></a>
+Concepts Covered</h1>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md26"></a>
+Memory Architecture</h2>
+<ul>
+<li><b>Flash Memory</b>: Main program storage (0x0800 0000)</li>
+<li><b>SRAM1</b>: 112 KB at 0x2000 0000</li>
+<li><b>SRAM2</b>: 16 KB at 0x2001 C000</li>
+<li><b>SRAM3</b>: 64 KB CCM at 0x2002 0000</li>
+<li><b>System Memory</b>: ROM bootloader at 0x1FFF 0000</li>
+</ul>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md27"></a>
+Bus Architecture</h2>
+<div class="fragment"><div class="line">         AHB (168 MHz)</div>
+<div class="line">              │</div>
+<div class="line">  ┌───────────┼───────────┐</div>
+<div class="line">  │           │           │</div>
+<div class="line">AHB1        AHB2        AHB3</div>
+<div class="line">  │           │           │</div>
+<div class="line">GPIO        USB         FMC</div>
+<div class="line">DMA       Camera</div>
+<div class="line">RCC</div>
+<div class="line">  │</div>
+<div class="line">  ├──── APB1 (42 MHz)</div>
+<div class="line">  │     └── TIM2-7, SPI2/3, I2C1-3, UART</div>
+<div class="line">  │</div>
+<div class="line">  └──── APB2 (84 MHz)</div>
+<div class="line">        └── TIM1/8, SPI1, USART1/6, ADC</div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md28"></a>
+Clock System</h2>
+<div class="fragment"><div class="line">HSE (16 MHz) ──┐</div>
+<div class="line">               ├──&gt; PLL ──&gt; SYSCLK (up to 168 MHz)</div>
+<div class="line">HSI (16 MHz) ──┘            │</div>
+<div class="line">                            ├──&gt; AHB (HCLK)</div>
+<div class="line">                            │    └──&gt; APB1 (PCLK1)</div>
+<div class="line">                            │    └──&gt; APB2 (PCLK2)</div>
+<div class="line">                            └──&gt; MCO1/MCO2</div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md29"></a>
+GPIO Configuration</h2>
+<ul>
+<li><b>Modes</b>: Input, Output, Alternate Function, Analog</li>
+<li><b>Output Types</b>: Push-Pull, Open-Drain</li>
+<li><b>Speeds</b>: Low (2 MHz), Medium (25 MHz), High (50 MHz), Very High (100 MHz)</li>
+<li><b>Pull resistors</b>: None, Pull-up, Pull-down</li>
+<li><b>Alternate Functions</b>: AF0 through AF15</li>
+</ul>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md30"></a>
+Interrupt System</h2>
+<ul>
+<li><b>EXTI Lines</b>: 0-22 (16 GPIO + 7 internal)</li>
+<li><b>Priority Levels</b>: 16 levels (0 = highest priority)</li>
+<li><b>NVIC</b>: Nested Vectored Interrupt Controller</li>
+<li><b>Vector Table</b>: Defined in startup assembly</li>
+</ul>
+<hr  />
+<h1 class="doxsection"><a class="anchor" id="autotoc_md32"></a>
+Getting Started</h1>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md33"></a>
+Prerequisites</h2>
+<ol type="1">
+<li><b>Hardware</b>:<ul>
+<li>STM32F4 Discovery board</li>
+<li>USB cable for ST-Link</li>
+<li>(Optional) Logic analyzer</li>
+</ul>
+</li>
+<li><b>Software</b>:<ul>
+<li>STM32CubeIDE (recommended) or</li>
+<li>ARM GCC toolchain + Make + OpenOCD</li>
+<li>Git</li>
+</ul>
+</li>
+</ol>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md34"></a>
+Installation</h2>
+<div class="fragment"><div class="line"># Clone the repository</div>
+<div class="line">git clone https://github.com/yourusername/STM32F407-Drivers.git</div>
+<div class="line">cd STM32F407-Drivers</div>
+<div class="line"> </div>
+<div class="line"># Open in STM32CubeIDE</div>
+<div class="line"># File → Open Projects from File System → Select project folder</div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md35"></a>
+Project Setup</h2>
+<ol type="1">
+<li><b>Import Project</b>:<ul>
+<li>Open STM32CubeIDE</li>
+<li>File → Import → General → Existing Projects</li>
+<li>Select desired project from <span class="tt">Projects/</span> directory</li>
+</ul>
+</li>
+<li><b>Build Configuration</b>:<ul>
+<li>Debug configuration for development</li>
+<li>Release configuration for optimized code</li>
+</ul>
+</li>
+<li><b>Debugger Setup</b>:<ul>
+<li>Select ST-Link (ST-LINK GDB server)</li>
+<li>Configure SWD interface</li>
+<li>Set breakpoints as needed</li>
+</ul>
+</li>
+</ol>
+<hr  />
+<h1 class="doxsection"><a class="anchor" id="autotoc_md37"></a>
+Building and Flashing</h1>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md38"></a>
+Using STM32CubeIDE</h2>
+<div class="fragment"><div class="line"># Build project</div>
+<div class="line">Project → Build All (Ctrl+B)</div>
+<div class="line"> </div>
+<div class="line"># Flash and debug</div>
+<div class="line">Run → Debug (F11)</div>
+<div class="line"> </div>
+<div class="line"># Or flash without debugging</div>
+<div class="line">Run → Run (Ctrl+F11)</div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md39"></a>
+Using Command Line (ARM-GCC)</h2>
+<div class="fragment"><div class="line"># Navigate to project directory</div>
+<div class="line">cd Projects/000_Hello_World</div>
+<div class="line"> </div>
+<div class="line"># Build</div>
+<div class="line">make clean</div>
+<div class="line">make all</div>
+<div class="line"> </div>
+<div class="line"># Flash using OpenOCD</div>
+<div class="line">openocd -f interface/stlink.cfg -f target/stm32f4x.cfg \</div>
+<div class="line">        -c &quot;program build/output.elf verify reset exit&quot;</div>
+<div class="line"> </div>
+<div class="line"># Or using st-flash</div>
+<div class="line">st-flash write build/output.bin 0x8000000</div>
+</div><!-- fragment --><hr  />
+<h1 class="doxsection"><a class="anchor" id="autotoc_md41"></a>
+API Documentation</h1>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md42"></a>
+GPIO Driver API</h2>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md43"></a>
+Initialization Functions</h3>
+<div class="fragment"><div class="line"></div>
+<div class="line"><span class="keywordtype">void</span> <a class="code hl_function" href="group___g_p_i_o___driver___a_p_is.html#ga59f07285d055589998e910abf10c9ab1">gpio_pin_init</a>(<a class="code hl_struct" href="struct_g_p_i_ox___handle__t.html">GPIOx_Handle_t</a> *handle);</div>
+<div class="line"></div>
+<div class="line"><span class="keywordtype">void</span> <a class="code hl_function" href="group___g_p_i_o___driver___a_p_is.html#ga347db04adc58e4104a1b0600a2238395">gpio_port_deinit</a>(<a class="code hl_struct" href="struct_g_p_i_ox___reg_def__t.html">GPIOx_RegDef_t</a> *pGPIOx);</div>
+</div><!-- fragment --><h3 class="doxsection"><a class="anchor" id="autotoc_md44"></a>
+Read/Write Functions</h3>
+<div class="fragment"><div class="line"></div>
+<div class="line">uint8_t <a class="code hl_function" href="group___g_p_i_o___driver___a_p_is.html#ga7a2f606b1dfb968762d2ee9dcf59fc5f">gpio_read_pin</a>(<a class="code hl_struct" href="struct_g_p_i_ox___reg_def__t.html">GPIOx_RegDef_t</a> *pGPIOx, uint8_t pin);</div>
+<div class="line"></div>
+<div class="line"><span class="keywordtype">void</span> <a class="code hl_function" href="group___g_p_i_o___driver___a_p_is.html#ga3a438f76ce1b8d514645f41c5e13bc19">gpio_write_pin</a>(<a class="code hl_struct" href="struct_g_p_i_ox___reg_def__t.html">GPIOx_RegDef_t</a> *pGPIOx, uint8_t pin, uint8_t state);</div>
+<div class="line"></div>
+<div class="line"><span class="keywordtype">void</span> <a class="code hl_function" href="group___g_p_i_o___driver___a_p_is.html#gaf33fe651c0911b5bfccfe253b8c44286">gpio_toggle_pin</a>(<a class="code hl_struct" href="struct_g_p_i_ox___reg_def__t.html">GPIOx_RegDef_t</a> *pGPIOx, uint8_t pin);</div>
+</div><!-- fragment --><h3 class="doxsection"><a class="anchor" id="autotoc_md45"></a>
+Interrupt Functions</h3>
+<div class="fragment"><div class="line"></div>
+<div class="line"><span class="keywordtype">void</span> <a class="code hl_function" href="group___g_p_i_o___driver___a_p_is.html#ga59407004373e1086e102436ebe8c1609">gpio_irq_config</a>(uint8_t pin, uint8_t trigger);</div>
+<div class="line"></div>
+<div class="line"><span class="keywordtype">void</span> <a class="code hl_function" href="group___g_p_i_o___driver___a_p_is.html#gaecfc0d5327266f101f163c807cd08f9e">gpio_irq_control</a>(uint8_t irq_no, uint8_t en);</div>
+<div class="line"></div>
+<div class="line"><span class="keywordtype">void</span> <a class="code hl_function" href="group___g_p_i_o___driver___a_p_is.html#ga7029bc337ba529f1ed60ecec9003ae43">gpio_irq_clear</a>(uint8_t pin);</div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md46"></a>
+Usage Example</h2>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="stm32f407xx_8h.html">stm32f407xx.h</a>&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="stm32f407xx__gpio_8h.html">stm32f407xx_gpio.h</a>&quot;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">int</span> <a class="code hl_function" href="000___hello___world_2_src_2main_8c.html#a840291bc02cba5474a4cb46a9b9566fe">main</a>(<span class="keywordtype">void</span>) {</div>
+<div class="line">    <a class="code hl_struct" href="struct_g_p_i_ox___handle__t.html">GPIOx_Handle_t</a> gpio_led;</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// Configure LED pin (PD12)</span></div>
+<div class="line">    gpio_led.<a class="code hl_variable" href="struct_g_p_i_ox___handle__t.html#af66476d0b69ef00a95863c8d55a33208">pGPIOx</a> = <a class="code hl_define" href="group___g_p_i_o___b_a_s_e___a_d_d_r_e_s_s_e_s.html#ga7580b1a929ea9df59725ba9c18eba6ac">GPIOD</a>;</div>
+<div class="line">    gpio_led.<a class="code hl_variable" href="struct_g_p_i_ox___handle__t.html#aeb936ee4e02972546dff148d2ce5e084">GPIO_CONFIG</a>.<a class="code hl_variable" href="struct_g_p_i_ox___config__t.html#abec5d159383522318eeaf3483fe0d59f">GPIO_PIN_NUMBER</a> = 12;</div>
+<div class="line">    gpio_led.<a class="code hl_variable" href="struct_g_p_i_ox___handle__t.html#aeb936ee4e02972546dff148d2ce5e084">GPIO_CONFIG</a>.<a class="code hl_variable" href="struct_g_p_i_ox___config__t.html#a2d2975ab95a428fccf3285a24c4fd8e2">GPIO_MODE</a> = <a class="code hl_define" href="group___g_p_i_o___m_o_d_e_s.html#gaca6eb0cd4dbe7402497829badacfa6df">GPIO_MODE_OUTPUT</a>;</div>
+<div class="line">    gpio_led.<a class="code hl_variable" href="struct_g_p_i_ox___handle__t.html#aeb936ee4e02972546dff148d2ce5e084">GPIO_CONFIG</a>.<a class="code hl_variable" href="struct_g_p_i_ox___config__t.html#ab2e10b90fc7e80cc4a14c6cb80e08ee0">GPIO_OP_TYPE</a> = <a class="code hl_define" href="group___g_p_i_o___o_p___t_y_p_e_s.html#ga8fab3cc9114990a89695903630083789">GPIO_OP_TYPE_PP</a>;</div>
+<div class="line">    gpio_led.<a class="code hl_variable" href="struct_g_p_i_ox___handle__t.html#aeb936ee4e02972546dff148d2ce5e084">GPIO_CONFIG</a>.<a class="code hl_variable" href="struct_g_p_i_ox___config__t.html#a1c233fdedf6811ed531077825b58f35d">GPIO_SPEED</a> = <a class="code hl_define" href="group___g_p_i_o___s_p_e_e_d_s.html#ga5510b387afb7ec2117b5d4207889163c">GPIO_SPEED_LOW</a>;</div>
+<div class="line">    gpio_led.<a class="code hl_variable" href="struct_g_p_i_ox___handle__t.html#aeb936ee4e02972546dff148d2ce5e084">GPIO_CONFIG</a>.<a class="code hl_variable" href="struct_g_p_i_ox___config__t.html#addfcf63ac9c75696ad9ff04afe7c45ba">GPIO_PU_PD</a> = <a class="code hl_define" href="group___g_p_i_o___p_u_l_l_u_p___p_u_l_l_d_o_w_n.html#ga833f758ca24334def9cb736e528ccab9">GPIO_PU_PD_NONE</a>;</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// Initialize pin</span></div>
+<div class="line">    <a class="code hl_function" href="group___g_p_i_o___driver___a_p_is.html#ga59f07285d055589998e910abf10c9ab1">gpio_pin_init</a>(&amp;gpio_led);</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// Toggle LED</span></div>
+<div class="line">    <span class="keywordflow">while</span>(1) {</div>
+<div class="line">        <a class="code hl_function" href="group___g_p_i_o___driver___a_p_is.html#gaf33fe651c0911b5bfccfe253b8c44286">gpio_toggle_pin</a>(<a class="code hl_define" href="group___g_p_i_o___b_a_s_e___a_d_d_r_e_s_s_e_s.html#ga7580b1a929ea9df59725ba9c18eba6ac">GPIOD</a>, 12);</div>
+<div class="line">        <span class="keywordflow">for</span>(<span class="keyword">volatile</span> <span class="keywordtype">int</span> i = 0; i &lt; 500000; i++);</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+<div class="ttc" id="a000___hello___world_2_src_2main_8c_html_a840291bc02cba5474a4cb46a9b9566fe"><div class="ttname"><a href="000___hello___world_2_src_2main_8c.html#a840291bc02cba5474a4cb46a9b9566fe">main</a></div><div class="ttdeci">int main(void)</div><div class="ttdef"><b>Definition</b> <a href="000___hello___world_2_src_2main_8c_source.html#l00026">main.c:26</a></div></div>
+<div class="ttc" id="agroup___g_p_i_o___b_a_s_e___a_d_d_r_e_s_s_e_s_html_ga7580b1a929ea9df59725ba9c18eba6ac"><div class="ttname"><a href="group___g_p_i_o___b_a_s_e___a_d_d_r_e_s_s_e_s.html#ga7580b1a929ea9df59725ba9c18eba6ac">GPIOD</a></div><div class="ttdeci">#define GPIOD</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx_8h_source.html#l00190">stm32f407xx.h:190</a></div></div>
+<div class="ttc" id="agroup___g_p_i_o___m_o_d_e_s_html_gaca6eb0cd4dbe7402497829badacfa6df"><div class="ttname"><a href="group___g_p_i_o___m_o_d_e_s.html#gaca6eb0cd4dbe7402497829badacfa6df">GPIO_MODE_OUTPUT</a></div><div class="ttdeci">#define GPIO_MODE_OUTPUT</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx__gpio_8h_source.html#l00044">stm32f407xx_gpio.h:44</a></div></div>
+<div class="ttc" id="agroup___g_p_i_o___o_p___t_y_p_e_s_html_ga8fab3cc9114990a89695903630083789"><div class="ttname"><a href="group___g_p_i_o___o_p___t_y_p_e_s.html#ga8fab3cc9114990a89695903630083789">GPIO_OP_TYPE_PP</a></div><div class="ttdeci">#define GPIO_OP_TYPE_PP</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx__gpio_8h_source.html#l00056">stm32f407xx_gpio.h:56</a></div></div>
+<div class="ttc" id="agroup___g_p_i_o___p_u_l_l_u_p___p_u_l_l_d_o_w_n_html_ga833f758ca24334def9cb736e528ccab9"><div class="ttname"><a href="group___g_p_i_o___p_u_l_l_u_p___p_u_l_l_d_o_w_n.html#ga833f758ca24334def9cb736e528ccab9">GPIO_PU_PD_NONE</a></div><div class="ttdeci">#define GPIO_PU_PD_NONE</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx__gpio_8h_source.html#l00068">stm32f407xx_gpio.h:68</a></div></div>
+<div class="ttc" id="agroup___g_p_i_o___s_p_e_e_d_s_html_ga5510b387afb7ec2117b5d4207889163c"><div class="ttname"><a href="group___g_p_i_o___s_p_e_e_d_s.html#ga5510b387afb7ec2117b5d4207889163c">GPIO_SPEED_LOW</a></div><div class="ttdeci">#define GPIO_SPEED_LOW</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx__gpio_8h_source.html#l00092">stm32f407xx_gpio.h:92</a></div></div>
+<div class="ttc" id="astm32f407xx_8h_html"><div class="ttname"><a href="stm32f407xx_8h.html">stm32f407xx.h</a></div><div class="ttdoc">: Header file for STM32F407xx MCUS</div></div>
+<div class="ttc" id="astm32f407xx__gpio_8h_html"><div class="ttname"><a href="stm32f407xx__gpio_8h.html">stm32f407xx_gpio.h</a></div><div class="ttdoc">GPIO Driver Header for STM32F407xx MCU.</div></div>
+<div class="ttc" id="astruct_g_p_i_ox___config__t_html_a1c233fdedf6811ed531077825b58f35d"><div class="ttname"><a href="struct_g_p_i_ox___config__t.html#a1c233fdedf6811ed531077825b58f35d">GPIOx_Config_t::GPIO_SPEED</a></div><div class="ttdeci">uint8_t GPIO_SPEED</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx__gpio_8h_source.html#l00145">stm32f407xx_gpio.h:145</a></div></div>
+<div class="ttc" id="astruct_g_p_i_ox___config__t_html_a2d2975ab95a428fccf3285a24c4fd8e2"><div class="ttname"><a href="struct_g_p_i_ox___config__t.html#a2d2975ab95a428fccf3285a24c4fd8e2">GPIOx_Config_t::GPIO_MODE</a></div><div class="ttdeci">uint8_t GPIO_MODE</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx__gpio_8h_source.html#l00136">stm32f407xx_gpio.h:136</a></div></div>
+<div class="ttc" id="astruct_g_p_i_ox___config__t_html_ab2e10b90fc7e80cc4a14c6cb80e08ee0"><div class="ttname"><a href="struct_g_p_i_ox___config__t.html#ab2e10b90fc7e80cc4a14c6cb80e08ee0">GPIOx_Config_t::GPIO_OP_TYPE</a></div><div class="ttdeci">uint8_t GPIO_OP_TYPE</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx__gpio_8h_source.html#l00139">stm32f407xx_gpio.h:139</a></div></div>
+<div class="ttc" id="astruct_g_p_i_ox___config__t_html_abec5d159383522318eeaf3483fe0d59f"><div class="ttname"><a href="struct_g_p_i_ox___config__t.html#abec5d159383522318eeaf3483fe0d59f">GPIOx_Config_t::GPIO_PIN_NUMBER</a></div><div class="ttdeci">uint8_t GPIO_PIN_NUMBER</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx__gpio_8h_source.html#l00133">stm32f407xx_gpio.h:133</a></div></div>
+<div class="ttc" id="astruct_g_p_i_ox___config__t_html_addfcf63ac9c75696ad9ff04afe7c45ba"><div class="ttname"><a href="struct_g_p_i_ox___config__t.html#addfcf63ac9c75696ad9ff04afe7c45ba">GPIOx_Config_t::GPIO_PU_PD</a></div><div class="ttdeci">uint8_t GPIO_PU_PD</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx__gpio_8h_source.html#l00142">stm32f407xx_gpio.h:142</a></div></div>
+<div class="ttc" id="astruct_g_p_i_ox___handle__t_html_aeb936ee4e02972546dff148d2ce5e084"><div class="ttname"><a href="struct_g_p_i_ox___handle__t.html#aeb936ee4e02972546dff148d2ce5e084">GPIOx_Handle_t::GPIO_CONFIG</a></div><div class="ttdeci">GPIOx_Config_t GPIO_CONFIG</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx__gpio_8h_source.html#l00173">stm32f407xx_gpio.h:173</a></div></div>
+<div class="ttc" id="astruct_g_p_i_ox___handle__t_html_af66476d0b69ef00a95863c8d55a33208"><div class="ttname"><a href="struct_g_p_i_ox___handle__t.html#af66476d0b69ef00a95863c8d55a33208">GPIOx_Handle_t::pGPIOx</a></div><div class="ttdeci">GPIOx_RegDef_t * pGPIOx</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx__gpio_8h_source.html#l00170">stm32f407xx_gpio.h:170</a></div></div>
+</div><!-- fragment --><hr  />
+<h1 class="doxsection"><a class="anchor" id="autotoc_md48"></a>
+Upcoming Modules</h1>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md49"></a>
+Planned Peripherals</h2>
+<ol type="1">
+<li><b>SPI Driver</b><ul>
+<li>Master/Slave modes</li>
+<li>DMA support</li>
+<li>Full-duplex communication</li>
+</ul>
+</li>
+<li><b>I2C Driver</b><ul>
+<li>Multi-master support</li>
+<li>7-bit and 10-bit addressing</li>
+<li>Polling and interrupt modes</li>
+</ul>
+</li>
+<li><b>UART/USART Driver</b><ul>
+<li>Asynchronous communication</li>
+<li>Hardware flow control</li>
+<li>DMA transfer</li>
+</ul>
+</li>
+<li><b>Timer Driver</b><ul>
+<li>PWM generation</li>
+<li>Input capture</li>
+<li>Output compare</li>
+<li>Encoder interface</li>
+</ul>
+</li>
+<li><b>ADC Driver</b><ul>
+<li>Single and continuous conversion</li>
+<li>DMA circular mode</li>
+<li>Multi-channel scanning</li>
+</ul>
+</li>
+<li><b>DMA Driver</b><ul>
+<li>Memory-to-memory</li>
+<li>Peripheral-to-memory</li>
+<li>Stream configuration</li>
+</ul>
+</li>
+<li><b>Advanced Clock Configuration</b><ul>
+<li>PLL configuration <div class="fragment"><div class="line">f_SYSCLK = (f_HSE / M) × N / P</div>
+</div><!-- fragment --></li>
+<li>System clock switching</li>
+<li>Peripheral clock scaling</li>
+</ul>
+</li>
+</ol>
+<hr  />
+<h1 class="doxsection"><a class="anchor" id="autotoc_md51"></a>
+Learning Resources</h1>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md52"></a>
+Reference Documents</h2>
+<ul>
+<li><b>RM0090</b>: STM32F407 Reference Manual</li>
+<li><b>PM0214</b>: STM32F4 Programming Manual</li>
+<li><b>DS8626</b>: STM32F407VG Datasheet</li>
+<li><b>UM1472</b>: STM32F4 Discovery Kit User Manual</li>
+</ul>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md53"></a>
+Documentation</h2>
+<p>Full API documentation is generated using Doxygen and available in:</p>
+<div class="fragment"><div class="line">Docs/html/index.html       # HTML documentation</div>
+<div class="line">Docs/refman.pdf            # PDF reference manual</div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md54"></a>
+Key Sections in Reference Manual</h2>
+<ul>
+<li>Section 6: Clock Control (RCC)</li>
+<li>Section 7: General-purpose I/Os (GPIO)</li>
+<li>Section 10: Interrupts and Events (EXTI)</li>
+<li>Section 12: Nested Vectored Interrupt Controller (NVIC)</li>
+</ul>
+<hr  />
+<h1 class="doxsection"><a class="anchor" id="autotoc_md56"></a>
+Learning Objectives</h1>
+<p>This repository is designed to help developers:</p>
+<ol type="1">
+<li><b>Understand Hardware</b><ul>
+<li>ARM Cortex-M4 architecture</li>
+<li>Memory-mapped peripherals</li>
+<li>Bus architecture and timing</li>
+</ul>
+</li>
+<li><b>Master Register-Level Programming</b><ul>
+<li>Direct register manipulation</li>
+<li>Bit-field operations</li>
+<li>Hardware abstraction design</li>
+</ul>
+</li>
+<li><b>Build Reusable Drivers</b><ul>
+<li>Modular code structure</li>
+<li>API design principles</li>
+<li>Documentation practices</li>
+</ul>
+</li>
+<li><b>Navigate Reference Manuals</b><ul>
+<li>Register descriptions</li>
+<li>Peripheral operation</li>
+<li>Timing diagrams</li>
+</ul>
+</li>
+<li><b>Debug Embedded Systems</b><ul>
+<li>SWD debugging</li>
+<li>Logic analyzer usage</li>
+<li>Peripheral register inspection</li>
+</ul>
+</li>
+</ol>
+<hr  />
+<h1 class="doxsection"><a class="anchor" id="autotoc_md58"></a>
+Contributing</h1>
+<p>Contributions are welcome! Please follow these guidelines:</p>
+<ol type="1">
+<li>Fork the repository</li>
+<li>Create a feature branch (<span class="tt">git checkout -b feature/AmazingFeature</span>)</li>
+<li>Follow existing code style and documentation standards</li>
+<li>Add Doxygen comments for all public APIs</li>
+<li>Test thoroughly on hardware</li>
+<li>Commit your changes (<span class="tt">git commit -m 'Add some AmazingFeature'</span>)</li>
+<li>Push to the branch (<span class="tt">git push origin feature/AmazingFeature</span>)</li>
+<li>Open a Pull Request</li>
+</ol>
+<hr  />
+<h1 class="doxsection"><a class="anchor" id="autotoc_md60"></a>
+Author</h1>
+<p><b>Yuvraj Singh Rathore</b></p>
+<ul>
+<li>Postgraduate, IIT Bombay</li>
+<li>Scientist, DRDO</li>
+<li>Location: Bangalore, India</li>
+<li>Interests: Embedded Systems, VLSI, Radar Communication Systems</li>
+</ul>
+<hr  />
+<h1 class="doxsection"><a class="anchor" id="autotoc_md62"></a>
+License</h1>
+<p>This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.</p>
+<div class="fragment"><div class="line">MIT License</div>
+<div class="line"> </div>
+<div class="line">Copyright (c) 2025 Yuvraj Singh Rathore</div>
+<div class="line"> </div>
+<div class="line">Permission is hereby granted, free of charge, to any person obtaining a copy</div>
+<div class="line">of this software and associated documentation files (the &quot;Software&quot;), to deal</div>
+<div class="line">in the Software without restriction, including without limitation the rights</div>
+<div class="line">to use, copy, modify, merge, publish, distribute, sublicense, and/or sell</div>
+<div class="line">copies of the Software, and to permit persons to whom the Software is</div>
+<div class="line">furnished to do so, subject to the following conditions:</div>
+<div class="line"> </div>
+<div class="line">The above copyright notice and this permission notice shall be included in all</div>
+<div class="line">copies or substantial portions of the Software.</div>
+<div class="line"> </div>
+<div class="line">THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</div>
+<div class="line">IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</div>
+<div class="line">FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</div>
+<div class="line">AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</div>
+<div class="line">LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</div>
+<div class="line">OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE</div>
+<div class="line">SOFTWARE.</div>
+</div><!-- fragment --><hr  />
+<h1 class="doxsection"><a class="anchor" id="autotoc_md64"></a>
+Acknowledgments</h1>
+<ul>
+<li>STMicroelectronics for comprehensive documentation</li>
+<li>ARM for Cortex-M4 architecture documentation</li>
+<li>Open-source embedded systems community</li>
+</ul>
+<hr  />
+<h1 class="doxsection"><a class="anchor" id="autotoc_md66"></a>
+Support</h1>
+<p>If you find this repository useful, please consider:</p>
+<ul>
+<li>Starring the repository on GitHub</li>
+<li>Sharing with fellow embedded enthusiasts</li>
+<li>Contributing improvements and bug fixes</li>
+<li>Reporting issues or suggesting enhancements</li>
+</ul>
+<hr  />
+<p><b>Note</b>: This is an educational project focused on understanding low-level hardware programming. For production applications, consider using tested libraries like STM32 HAL or third-party RTOS solutions. </p>
 </div></div><!-- PageDoc -->
 <a href="doxygen_crawl.html"></a>
 </div><!-- contents -->

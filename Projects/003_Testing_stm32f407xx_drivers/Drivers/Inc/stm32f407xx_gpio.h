@@ -185,38 +185,58 @@ typedef struct {
  * @{
  */
 
+
 /**
  * @brief Initialize a GPIO pin.
+ * @param handle Pointer to GPIO handle structure
+ * @retval void
  */
 void gpio_pin_init(GPIOx_Handle_t *handle);
 
 /**
- * @brief Reset a GPIO port.
+ * @brief De-initialize a GPIO port.
+ * @param pGPIOx Pointer to the GPIO port base address. @ref GPIO_BASE_ADDRESSES
+ * @retval void
+ * @note RCC Reset Register can be used to reset a peripheral
  */
 void gpio_port_deinit(GPIOx_RegDef_t *pGPIOx);
 
 /**
- * @brief Read logic level of a pin.
+ * @brief Read a GPIO pin.
+ * @param pGPIOx Pointer to the GPIO port base address. @ref GPIO_BASE_ADDRESSES
+ * @param Pin number from which you want to read
+ * @retval uint8_t Single bit read for the specified pin
  */
 uint8_t gpio_read_pin(GPIOx_RegDef_t *pGPIOx, uint8_t pin);
 
 /**
- * @brief Read 16-bit value of a port.
+ * @brief Read the entire GPIO input port.
+ * @param pGPIOx Pointer to the GPIO port base address. @ref GPIO_BASE_ADDRESSES
+ * @retval uint16_t Current 16-bit value of the input data register.
  */
 uint16_t gpio_read_port(GPIOx_RegDef_t *pGPIOx);
 
 /**
  * @brief Write HIGH/LOW to a pin.
+ * @param pGPIOx Pointer to the GPIO port base address. @ref GPIO_BASE_ADDRESSES
+ * @param Pin number to which you want to write.
+ * @param State you want to set, Set/Reset @ref MISCELLANEOUS_MACROS
+ * @retval void
  */
 void gpio_write_pin(GPIOx_RegDef_t *pGPIOx, uint8_t pin, uint8_t state);
 
 /**
- * @brief Write 16-bit value to a port.
+ * @brief Write a 16-bit value to the entire GPIO output port.
+ * @param pGPIOx Pointer to the GPIO port base address. @ref GPIO_BASE_ADDRESSES
+ * @param write_data 16-bit data to write to the GPIO port.
+ * @retval void
  */
-void gpio_write_port(GPIOx_RegDef_t *pGPIOx, uint16_t value);
+void gpio_write_port(GPIOx_RegDef_t *pGPIOx, uint16_t write_data);
 
 /**
- * @brief Toggle a pin's output state.
+ * @brief Toggle the logic level of a GPIO output pin.
+ * @param pGPIOx Pointer to the GPIO port base address. @ref GPIO_BASE_ADDRESSES
+ * @param pin Pin number to toggle (0–15).
  */
 void gpio_toggle_pin(GPIOx_RegDef_t *pGPIOx, uint8_t pin);
 

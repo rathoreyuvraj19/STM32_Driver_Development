@@ -37,11 +37,6 @@
 
 #include "stm32f407xx_gpio.h"
 
-/**
- * @brief Initialize a GPIO pin.
- * @param handle Pointer to GPIO handle structure
- * @retval none
- */
 void gpio_pin_init(GPIOx_Handle_t *GPIOx_Handle) {
 	uint8_t gpio_pin_number = GPIOx_Handle->GPIO_CONFIG.GPIO_PIN_NUMBER;
 	uint8_t gpio_mode = GPIOx_Handle->GPIO_CONFIG.GPIO_MODE;
@@ -103,12 +98,6 @@ void gpio_pin_init(GPIOx_Handle_t *GPIOx_Handle) {
 
 }
 
-/**
- * @brief Initialize a GPIO pin.
- * @param handle Pointer to GPIO handle structure
- * @retval none
- * @note RCC Reset Register can be used to reset a peripheral
- */
 void gpio_port_deinit(GPIOx_RegDef_t *pGPIOx) {
 	if (pGPIOx == GPIOA) {
 //		RCC->AHB1RSTR |= (1 << 0); 	/* Assert the reset bit */
@@ -158,14 +147,48 @@ void gpio_port_deinit(GPIOx_RegDef_t *pGPIOx) {
 	}
 }
 
-/**
- * @brief Read a GPIO pin.
- * @param Port base address from which you want to read
- * @param Pin number from which you want to read
- * @retval uint8_t Single bit read for the specified pin
- */
-
 uint8_t gpio_read_pin(GPIOx_RegDef_t *pGPIOx, uint8_t pin) {
-
-	return 0;
+	if (pin > 15)
+		return 0; /** @note Safety: Pin number cannot be more than 15 */
+	return (uint8_t) ((pGPIOx->IDR >> pin) & 0x1);
 }
+
+uint16_t gpio_read_port(GPIOx_RegDef_t *pGPIOx) {
+	return (uint16_t) (pGPIOx->IDR);
+}
+
+void gpio_write_pin(GPIOx_RegDef_t *pGPIOx, uint8_t pin, uint8_t state) {
+	pGPIOx->ODR |= ((state << pin));
+}
+
+void gpio_write_port(GPIOx_RegDef_t *pGPIOx, uint16_t write_data) {
+	pGPIOx->ODR = write_data;
+}
+
+void gpio_toggle_pin(GPIOx_RegDef_t* pGPIOx, uint8_t pin){
+	if (pin > 15) return;
+	pGPIOx->ODR ^= (0x01<<pin);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['you_20find_20this_20repository_20helpful_20don’t_20forget_20to_20star_20it_20on_20github_0',['⭐ If you find this repository helpful, don’t forget to star it on GitHub!',['../index.html#autotoc_md18',1,'']]]
+  ['various_20peripherals_0',['various peripherals',['../group___c_l_o_c_k___e_n_a_b_l_e___m_a_c_r_o_s.html',1,'Macros to Enable/Disable clocks for various peripherals'],['../group___p_e_r_i_p_h_e_r_a_l___r_e_s_e_t___m_a_c_r_o_s.html',1,'Macros to reset various peripherals']]]
 ];

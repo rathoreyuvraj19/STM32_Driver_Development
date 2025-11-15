@@ -1,6 +1,9 @@
 var searchData=
 [
-  ['this_20repository_20helpful_20don’t_20forget_20to_20star_20it_20on_20github_0',['⭐ If you find this repository helpful, don’t forget to star it on GitHub!',['../index.html#autotoc_md18',1,'']]],
-  ['to_20star_20it_20on_20github_1',['⭐ If you find this repository helpful, don’t forget to star it on GitHub!',['../index.html#autotoc_md18',1,'']]],
-  ['todo_20list_2',['Todo List',['../todo.html',1,'']]]
+  ['manual_0',['Key Sections in Reference Manual',['../index.html#autotoc_md54',1,'']]],
+  ['memory_20architecture_1',['Memory Architecture',['../index.html#autotoc_md26',1,'']]],
+  ['metal_20driver_20development_2',['STM32F407 Bare-Metal Driver Development',['../index.html',1,'']]],
+  ['metal_20philosophy_3',['Bare-Metal Philosophy',['../index.html#autotoc_md12',1,'']]],
+  ['microcontroller_4',['Microcontroller',['../index.html#autotoc_md5',1,'']]],
+  ['modules_5',['Upcoming Modules',['../index.html#autotoc_md48',1,'']]]
 ];

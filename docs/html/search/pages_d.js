@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['upcoming_20modules_0',['🚀 Upcoming Modules',['../index.html#autotoc_md10',1,'']]],
-  ['used_1',['⚙️ Hardware Used',['../index.html#autotoc_md4',1,'']]]
+  ['objectives_0',['Learning Objectives',['../index.html#autotoc_md56',1,'']]],
+  ['of_20contents_1',['Table of Contents',['../index.html#autotoc_md2',1,'']]],
+  ['overview_2',['Projects Overview',['../index.html#autotoc_md16',1,'']]]
 ];

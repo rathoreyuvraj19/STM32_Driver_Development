@@ -19,9 +19,13 @@ Include dependency graph for stm32f407xx\+\_\+gpio.\+c\+:\nopagebreak
 void \mbox{\hyperlink{group___g_p_i_o___driver___a_p_is_ga59f07285d055589998e910abf10c9ab1}{gpio\+\_\+pin\+\_\+init}} (\mbox{\hyperlink{struct_g_p_i_ox___handle__t}{GPIOx\+\_\+\+Handle\+\_\+t}} \texorpdfstring{$\ast$}{*}GPIOx\+\_\+\+Handle)
 \begin{DoxyCompactList}\small\item\em Initialize a GPIO pin. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{group___g_p_i_o___driver___a_p_is_ga347db04adc58e4104a1b0600a2238395}{gpio\+\_\+port\+\_\+deinit}} (\mbox{\hyperlink{struct_g_p_i_ox___reg_def__t}{GPIOx\+\_\+\+Reg\+Def\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+GPIOx)
-\begin{DoxyCompactList}\small\item\em Initialize a GPIO pin. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em De-\/initialize a GPIO port. \end{DoxyCompactList}\item 
 uint8\+\_\+t \mbox{\hyperlink{group___g_p_i_o___driver___a_p_is_ga7a2f606b1dfb968762d2ee9dcf59fc5f}{gpio\+\_\+read\+\_\+pin}} (\mbox{\hyperlink{struct_g_p_i_ox___reg_def__t}{GPIOx\+\_\+\+Reg\+Def\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+GPIOx, uint8\+\_\+t pin)
-\begin{DoxyCompactList}\small\item\em Read a GPIO pin. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Read a GPIO pin. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{group___g_p_i_o___driver___a_p_is_ga893c5d7e52c33fea09df85b817801855}{gpio\+\_\+read\+\_\+port}} (\mbox{\hyperlink{struct_g_p_i_ox___reg_def__t}{GPIOx\+\_\+\+Reg\+Def\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+GPIOx)
+\begin{DoxyCompactList}\small\item\em Read the entire GPIO input port. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___g_p_i_o___driver___a_p_is_ga3a438f76ce1b8d514645f41c5e13bc19}{gpio\+\_\+write\+\_\+pin}} (\mbox{\hyperlink{struct_g_p_i_ox___reg_def__t}{GPIOx\+\_\+\+Reg\+Def\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+GPIOx, uint8\+\_\+t pin, uint8\+\_\+t state)
+\begin{DoxyCompactList}\small\item\em Write HIGH/\+LOW to a pin. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}

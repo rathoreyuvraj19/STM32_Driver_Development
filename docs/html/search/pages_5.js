@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['hardware_20used_0',['⚙️ Hardware Used',['../index.html#autotoc_md4',1,'']]],
-  ['helpful_20don’t_20forget_20to_20star_20it_20on_20github_1',['⭐ If you find this repository helpful, don’t forget to star it on GitHub!',['../index.html#autotoc_md18',1,'']]]
+  ['enable_0',['Project 001: STM Clock Enable',['../index.html#autotoc_md19',1,'']]],
+  ['example_1',['Usage Example',['../index.html#autotoc_md46',1,'']]]
 ];

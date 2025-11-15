@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['if_20you_20find_20this_20repository_20helpful_20don’t_20forget_20to_20star_20it_20on_20github_0',['⭐ If you find this repository helpful, don’t forget to star it on GitHub!',['../index.html#autotoc_md18',1,'']]],
-  ['it_20on_20github_1',['⭐ If you find this repository helpful, don’t forget to star it on GitHub!',['../index.html#autotoc_md18',1,'']]]
+  ['flashing_0',['Building and Flashing',['../index.html#autotoc_md37',1,'']]],
+  ['functions_1',['Functions',['../index.html#autotoc_md43',1,'Initialization Functions'],['../index.html#autotoc_md45',1,'Interrupt Functions'],['../index.html#autotoc_md44',1,'Read/Write Functions']]]
 ];

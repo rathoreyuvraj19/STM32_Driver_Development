@@ -1,6 +1,12 @@
 var searchData=
 [
-  ['far_0',['🧩 Concepts Covered So Far',['../index.html#autotoc_md8',1,'']]],
-  ['find_20this_20repository_20helpful_20don’t_20forget_20to_20star_20it_20on_20github_1',['⭐ If you find this repository helpful, don’t forget to star it on GitHub!',['../index.html#autotoc_md18',1,'']]],
-  ['forget_20to_20star_20it_20on_20github_2',['⭐ If you find this repository helpful, don’t forget to star it on GitHub!',['../index.html#autotoc_md18',1,'']]]
+  ['clock_20configuration_0',['Clock Configuration',['../index.html#autotoc_md6',1,'']]],
+  ['clock_20enable_1',['Project 001: STM Clock Enable',['../index.html#autotoc_md19',1,'']]],
+  ['clock_20system_2',['Clock System',['../index.html#autotoc_md28',1,'']]],
+  ['command_20line_20arm_20gcc_3',['Using Command Line (ARM-GCC)',['../index.html#autotoc_md39',1,'']]],
+  ['concepts_20covered_4',['Concepts Covered',['../index.html#autotoc_md25',1,'']]],
+  ['configuration_5',['Configuration',['../index.html#autotoc_md6',1,'Clock Configuration'],['../index.html#autotoc_md29',1,'GPIO Configuration']]],
+  ['contents_6',['Table of Contents',['../index.html#autotoc_md2',1,'']]],
+  ['contributing_7',['Contributing',['../index.html#autotoc_md58',1,'']]],
+  ['covered_8',['Concepts Covered',['../index.html#autotoc_md25',1,'']]]
 ];
