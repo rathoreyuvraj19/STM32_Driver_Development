@@ -9,5 +9,5 @@ var group___g_p_i_o___driver___a_p_is =
     [ "gpio_read_port", "group___g_p_i_o___driver___a_p_is.html#ga893c5d7e52c33fea09df85b817801855", null ],
     [ "gpio_toggle_pin", "group___g_p_i_o___driver___a_p_is.html#gaf33fe651c0911b5bfccfe253b8c44286", null ],
     [ "gpio_write_pin", "group___g_p_i_o___driver___a_p_is.html#ga3a438f76ce1b8d514645f41c5e13bc19", null ],
-    [ "gpio_write_port", "group___g_p_i_o___driver___a_p_is.html#ga4cc8a0fcb890802e6a9080ac494333a9", null ]
+    [ "gpio_write_port", "group___g_p_i_o___driver___a_p_is.html#ga58fd0d0b3c266d7a1e9777cef52e8207", null ]
 ];

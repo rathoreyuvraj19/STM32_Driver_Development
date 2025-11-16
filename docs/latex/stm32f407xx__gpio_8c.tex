@@ -1,16 +1,17 @@
-\doxysection{Projects/003\+\_\+\+Testing\+\_\+stm32f407xx\+\_\+drivers/\+Drivers/src/stm32f407xx\+\_\+gpio.c File Reference}
-\hypertarget{stm32f407xx__gpio_8c}{}\label{stm32f407xx__gpio_8c}\index{Projects/003\_Testing\_stm32f407xx\_drivers/Drivers/src/stm32f407xx\_gpio.c@{Projects/003\_Testing\_stm32f407xx\_drivers/Drivers/src/stm32f407xx\_gpio.c}}
+\doxysection{Projects/003\+\_\+\+Testing\+\_\+stm32f407xx\+\_\+drivers/\+Drivers/\+Src/stm32f407xx\+\_\+gpio.c File Reference}
+\hypertarget{stm32f407xx__gpio_8c}{}\label{stm32f407xx__gpio_8c}\index{Projects/003\_Testing\_stm32f407xx\_drivers/Drivers/Src/stm32f407xx\_gpio.c@{Projects/003\_Testing\_stm32f407xx\_drivers/Drivers/Src/stm32f407xx\_gpio.c}}
 
 
 GPIO peripheral driver source file for STM32\+F407xx MCU.  
 
 
 {\ttfamily \#include "{}stm32f407xx\+\_\+gpio.\+h"{}}\newline
-Include dependency graph for stm32f407xx\+\_\+gpio.\+c\+:\nopagebreak
+Include dependency graph for stm32f407xx\+\_\+gpio.\+c\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=206pt]{stm32f407xx__gpio_8c__incl}
+\includegraphics[width=208pt]{stm32f407xx__gpio_8c__incl}
 \end{center}
 \end{figure}
 \doxysubsubsection*{Functions}
@@ -25,7 +26,11 @@ uint8\+\_\+t \mbox{\hyperlink{group___g_p_i_o___driver___a_p_is_ga7a2f606b1dfb96
 uint16\+\_\+t \mbox{\hyperlink{group___g_p_i_o___driver___a_p_is_ga893c5d7e52c33fea09df85b817801855}{gpio\+\_\+read\+\_\+port}} (\mbox{\hyperlink{struct_g_p_i_ox___reg_def__t}{GPIOx\+\_\+\+Reg\+Def\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+GPIOx)
 \begin{DoxyCompactList}\small\item\em Read the entire GPIO input port. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{group___g_p_i_o___driver___a_p_is_ga3a438f76ce1b8d514645f41c5e13bc19}{gpio\+\_\+write\+\_\+pin}} (\mbox{\hyperlink{struct_g_p_i_ox___reg_def__t}{GPIOx\+\_\+\+Reg\+Def\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+GPIOx, uint8\+\_\+t pin, uint8\+\_\+t state)
-\begin{DoxyCompactList}\small\item\em Write HIGH/\+LOW to a pin. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Write HIGH/\+LOW to a pin. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___g_p_i_o___driver___a_p_is_ga58fd0d0b3c266d7a1e9777cef52e8207}{gpio\+\_\+write\+\_\+port}} (\mbox{\hyperlink{struct_g_p_i_ox___reg_def__t}{GPIOx\+\_\+\+Reg\+Def\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+GPIOx, uint16\+\_\+t write\+\_\+data)
+\begin{DoxyCompactList}\small\item\em Write a 16-\/bit value to the entire GPIO output port. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___g_p_i_o___driver___a_p_is_gaf33fe651c0911b5bfccfe253b8c44286}{gpio\+\_\+toggle\+\_\+pin}} (\mbox{\hyperlink{struct_g_p_i_ox___reg_def__t}{GPIOx\+\_\+\+Reg\+Def\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+GPIOx, uint8\+\_\+t pin)
+\begin{DoxyCompactList}\small\item\em Toggle the logic level of a GPIO output pin. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -64,7 +69,7 @@ Bare-\/metal driver without HAL/\+Std\+Periph dependencies.
 \item \doxylink{group___g_p_i_o___driver___a_p_is_ga7a2f606b1dfb968762d2ee9dcf59fc5f}{gpio\+\_\+read\+\_\+pin()} \+: Read the logic level of a pin
 \item \doxylink{group___g_p_i_o___driver___a_p_is_ga893c5d7e52c33fea09df85b817801855}{gpio\+\_\+read\+\_\+port()} \+: Read the 16-\/bit input state of a port
 \item \doxylink{group___g_p_i_o___driver___a_p_is_ga3a438f76ce1b8d514645f41c5e13bc19}{gpio\+\_\+write\+\_\+pin()} \+: Write HIGH/\+LOW to a pin
-\item \doxylink{group___g_p_i_o___driver___a_p_is_ga4cc8a0fcb890802e6a9080ac494333a9}{gpio\+\_\+write\+\_\+port()} \+: Write 16-\/bit value to a port
+\item \doxylink{group___g_p_i_o___driver___a_p_is_ga58fd0d0b3c266d7a1e9777cef52e8207}{gpio\+\_\+write\+\_\+port()} \+: Write 16-\/bit value to a port
 \item \doxylink{group___g_p_i_o___driver___a_p_is_gaf33fe651c0911b5bfccfe253b8c44286}{gpio\+\_\+toggle\+\_\+pin()} \+: Toggle pin output level
 \item \doxylink{group___g_p_i_o___driver___a_p_is_ga59407004373e1086e102436ebe8c1609}{gpio\+\_\+irq\+\_\+config()} \+: Configure EXTI trigger type
 \item \doxylink{group___g_p_i_o___driver___a_p_is_gaecfc0d5327266f101f163c807cd08f9e}{gpio\+\_\+irq\+\_\+control()} \+: Enable/disable NVIC interrupt for GPIO EXTI line

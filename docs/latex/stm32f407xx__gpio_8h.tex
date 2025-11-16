@@ -1,23 +1,25 @@
-\doxysection{Projects/003\+\_\+\+Testing\+\_\+stm32f407xx\+\_\+drivers/\+Drivers/inc/stm32f407xx\+\_\+gpio.h File Reference}
-\hypertarget{stm32f407xx__gpio_8h}{}\label{stm32f407xx__gpio_8h}\index{Projects/003\_Testing\_stm32f407xx\_drivers/Drivers/inc/stm32f407xx\_gpio.h@{Projects/003\_Testing\_stm32f407xx\_drivers/Drivers/inc/stm32f407xx\_gpio.h}}
+\doxysection{Projects/003\+\_\+\+Testing\+\_\+stm32f407xx\+\_\+drivers/\+Drivers/\+Inc/stm32f407xx\+\_\+gpio.h File Reference}
+\hypertarget{stm32f407xx__gpio_8h}{}\label{stm32f407xx__gpio_8h}\index{Projects/003\_Testing\_stm32f407xx\_drivers/Drivers/Inc/stm32f407xx\_gpio.h@{Projects/003\_Testing\_stm32f407xx\_drivers/Drivers/Inc/stm32f407xx\_gpio.h}}
 
 
 GPIO Driver Header for STM32\+F407xx MCU.  
 
 
 {\ttfamily \#include "{}stm32f407xx.\+h"{}}\newline
-Include dependency graph for stm32f407xx\+\_\+gpio.\+h\+:\nopagebreak
+Include dependency graph for stm32f407xx\+\_\+gpio.\+h\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=206pt]{stm32f407xx__gpio_8h__incl}
 \end{center}
 \end{figure}
-This graph shows which files directly or indirectly include this file\+:\nopagebreak
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=336pt]{stm32f407xx__gpio_8h__dep__incl}
+\includegraphics[width=338pt]{stm32f407xx__gpio_8h__dep__incl}
 \end{center}
 \end{figure}
 \doxysubsubsection*{Classes}
@@ -107,10 +109,10 @@ uint16\+\_\+t \mbox{\hyperlink{group___g_p_i_o___driver___a_p_is_ga893c5d7e52c33
 \begin{DoxyCompactList}\small\item\em Read the entire GPIO input port. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{group___g_p_i_o___driver___a_p_is_ga3a438f76ce1b8d514645f41c5e13bc19}{gpio\+\_\+write\+\_\+pin}} (\mbox{\hyperlink{struct_g_p_i_ox___reg_def__t}{GPIOx\+\_\+\+Reg\+Def\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+GPIOx, uint8\+\_\+t pin, uint8\+\_\+t state)
 \begin{DoxyCompactList}\small\item\em Write HIGH/\+LOW to a pin. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{group___g_p_i_o___driver___a_p_is_ga4cc8a0fcb890802e6a9080ac494333a9}{gpio\+\_\+write\+\_\+port}} (\mbox{\hyperlink{struct_g_p_i_ox___reg_def__t}{GPIOx\+\_\+\+Reg\+Def\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+GPIOx, uint16\+\_\+t value)
-\begin{DoxyCompactList}\small\item\em Write 16-\/bit value to a port. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___g_p_i_o___driver___a_p_is_ga58fd0d0b3c266d7a1e9777cef52e8207}{gpio\+\_\+write\+\_\+port}} (\mbox{\hyperlink{struct_g_p_i_ox___reg_def__t}{GPIOx\+\_\+\+Reg\+Def\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+GPIOx, uint16\+\_\+t write\+\_\+data)
+\begin{DoxyCompactList}\small\item\em Write a 16-\/bit value to the entire GPIO output port. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{group___g_p_i_o___driver___a_p_is_gaf33fe651c0911b5bfccfe253b8c44286}{gpio\+\_\+toggle\+\_\+pin}} (\mbox{\hyperlink{struct_g_p_i_ox___reg_def__t}{GPIOx\+\_\+\+Reg\+Def\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+GPIOx, uint8\+\_\+t pin)
-\begin{DoxyCompactList}\small\item\em Toggle a pin\textquotesingle{}s output state. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Toggle the logic level of a GPIO output pin. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{group___g_p_i_o___driver___a_p_is_ga59407004373e1086e102436ebe8c1609}{gpio\+\_\+irq\+\_\+config}} (uint8\+\_\+t pin, uint8\+\_\+t trigger)
 \begin{DoxyCompactList}\small\item\em Configure EXTI interrupt trigger. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{group___g_p_i_o___driver___a_p_is_gaecfc0d5327266f101f163c807cd08f9e}{gpio\+\_\+irq\+\_\+control}} (uint8\+\_\+t irq\+\_\+no, uint8\+\_\+t en)

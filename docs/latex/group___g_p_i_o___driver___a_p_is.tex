@@ -25,10 +25,10 @@ uint16\+\_\+t \mbox{\hyperlink{group___g_p_i_o___driver___a_p_is_ga893c5d7e52c33
 \begin{DoxyCompactList}\small\item\em Read the entire GPIO input port. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{group___g_p_i_o___driver___a_p_is_ga3a438f76ce1b8d514645f41c5e13bc19}{gpio\+\_\+write\+\_\+pin}} (\mbox{\hyperlink{struct_g_p_i_ox___reg_def__t}{GPIOx\+\_\+\+Reg\+Def\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+GPIOx, uint8\+\_\+t pin, uint8\+\_\+t state)
 \begin{DoxyCompactList}\small\item\em Write HIGH/\+LOW to a pin. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{group___g_p_i_o___driver___a_p_is_ga4cc8a0fcb890802e6a9080ac494333a9}{gpio\+\_\+write\+\_\+port}} (\mbox{\hyperlink{struct_g_p_i_ox___reg_def__t}{GPIOx\+\_\+\+Reg\+Def\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+GPIOx, uint16\+\_\+t value)
-\begin{DoxyCompactList}\small\item\em Write 16-\/bit value to a port. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___g_p_i_o___driver___a_p_is_ga58fd0d0b3c266d7a1e9777cef52e8207}{gpio\+\_\+write\+\_\+port}} (\mbox{\hyperlink{struct_g_p_i_ox___reg_def__t}{GPIOx\+\_\+\+Reg\+Def\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+GPIOx, uint16\+\_\+t write\+\_\+data)
+\begin{DoxyCompactList}\small\item\em Write a 16-\/bit value to the entire GPIO output port. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{group___g_p_i_o___driver___a_p_is_gaf33fe651c0911b5bfccfe253b8c44286}{gpio\+\_\+toggle\+\_\+pin}} (\mbox{\hyperlink{struct_g_p_i_ox___reg_def__t}{GPIOx\+\_\+\+Reg\+Def\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+GPIOx, uint8\+\_\+t pin)
-\begin{DoxyCompactList}\small\item\em Toggle a pin\textquotesingle{}s output state. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Toggle the logic level of a GPIO output pin. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{group___g_p_i_o___driver___a_p_is_ga59407004373e1086e102436ebe8c1609}{gpio\+\_\+irq\+\_\+config}} (uint8\+\_\+t pin, uint8\+\_\+t trigger)
 \begin{DoxyCompactList}\small\item\em Configure EXTI interrupt trigger. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{group___g_p_i_o___driver___a_p_is_gaecfc0d5327266f101f163c807cd08f9e}{gpio\+\_\+irq\+\_\+control}} (uint8\+\_\+t irq\+\_\+no, uint8\+\_\+t en)
@@ -319,8 +319,27 @@ void gpio\+\_\+toggle\+\_\+pin (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{
 
 
 
-Toggle a pin\textquotesingle{}s output state. 
+Toggle the logic level of a GPIO output pin. 
 
+
+\begin{DoxyParams}{Parameters}
+{\em p\+GPIOx} & Pointer to the GPIO port base address. \doxylink{group___g_p_i_o___b_a_s_e___a_d_d_r_e_s_s_e_s}{GPIO Port Base Address Macros} \\
+\hline
+{\em pin} & Pin number to toggle (0–15). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{stm32f407xx__gpio_8c_source_l00168}{168}} of file \mbox{\hyperlink{stm32f407xx__gpio_8c_source}{stm32f407xx\+\_\+gpio.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00169\ \ \ \ \ \textcolor{keywordflow}{if}\ (pin\ >\ 15)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00170\ \ \ \ \ pGPIOx-\/>\mbox{\hyperlink{struct_g_p_i_ox___reg_def__t_acf54c3304e180a735525c8a2e7e29f40}{ODR}}\ \string^=\ (0x01<<pin);}
+\DoxyCodeLine{00171\ \}}
+
+\end{DoxyCode}
 \Hypertarget{group___g_p_i_o___driver___a_p_is_ga3a438f76ce1b8d514645f41c5e13bc19}\index{GPIO Driver Function Prototypes@{GPIO Driver Function Prototypes}!gpio\_write\_pin@{gpio\_write\_pin}}
 \index{gpio\_write\_pin@{gpio\_write\_pin}!GPIO Driver Function Prototypes@{GPIO Driver Function Prototypes}}
 \doxysubsubsubsection{\texorpdfstring{gpio\_write\_pin()}{gpio\_write\_pin()}}
@@ -356,13 +375,36 @@ Definition at line \mbox{\hyperlink{stm32f407xx__gpio_8c_source_l00160}{160}} of
 \DoxyCodeLine{00162\ \}}
 
 \end{DoxyCode}
-\Hypertarget{group___g_p_i_o___driver___a_p_is_ga4cc8a0fcb890802e6a9080ac494333a9}\index{GPIO Driver Function Prototypes@{GPIO Driver Function Prototypes}!gpio\_write\_port@{gpio\_write\_port}}
+\Hypertarget{group___g_p_i_o___driver___a_p_is_ga58fd0d0b3c266d7a1e9777cef52e8207}\index{GPIO Driver Function Prototypes@{GPIO Driver Function Prototypes}!gpio\_write\_port@{gpio\_write\_port}}
 \index{gpio\_write\_port@{gpio\_write\_port}!GPIO Driver Function Prototypes@{GPIO Driver Function Prototypes}}
 \doxysubsubsubsection{\texorpdfstring{gpio\_write\_port()}{gpio\_write\_port()}}
-{\footnotesize\ttfamily \label{group___g_p_i_o___driver___a_p_is_ga4cc8a0fcb890802e6a9080ac494333a9} 
-void gpio\+\_\+write\+\_\+port (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_p_i_ox___reg_def__t}{GPIOx\+\_\+\+Reg\+Def\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+GPIOx}{, }\item[{uint16\+\_\+t}]{value}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{group___g_p_i_o___driver___a_p_is_ga58fd0d0b3c266d7a1e9777cef52e8207} 
+void gpio\+\_\+write\+\_\+port (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_p_i_ox___reg_def__t}{GPIOx\+\_\+\+Reg\+Def\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+GPIOx}{, }\item[{uint16\+\_\+t}]{write\+\_\+data}{}\end{DoxyParamCaption})}
 
 
 
-Write 16-\/bit value to a port. 
+Write a 16-\/bit value to the entire GPIO output port. 
 
+
+\begin{DoxyParams}{Parameters}
+{\em p\+GPIOx} & Pointer to the GPIO port base address. \doxylink{group___g_p_i_o___b_a_s_e___a_d_d_r_e_s_s_e_s}{GPIO Port Base Address Macros} \\
+\hline
+{\em write\+\_\+data} & 16-\/bit data to write to the GPIO port. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em void} & \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line \mbox{\hyperlink{stm32f407xx__gpio_8c_source_l00164}{164}} of file \mbox{\hyperlink{stm32f407xx__gpio_8c_source}{stm32f407xx\+\_\+gpio.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00165\ \ \ \ \ pGPIOx-\/>\mbox{\hyperlink{struct_g_p_i_ox___reg_def__t_acf54c3304e180a735525c8a2e7e29f40}{ODR}}\ =\ write\_data;}
+\DoxyCodeLine{00166\ \}}
+
+\end{DoxyCode}

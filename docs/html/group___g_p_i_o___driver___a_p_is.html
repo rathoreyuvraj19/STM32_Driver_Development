@@ -131,10 +131,10 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga893c5d7e52c33fea09df85b817801855"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read the entire GPIO input port.  <br /></td></tr>
 <tr class="memitem:ga3a438f76ce1b8d514645f41c5e13bc19" id="r_ga3a438f76ce1b8d514645f41c5e13bc19"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga3a438f76ce1b8d514645f41c5e13bc19">gpio_write_pin</a> (<a class="el" href="struct_g_p_i_ox___reg_def__t.html">GPIOx_RegDef_t</a> *pGPIOx, uint8_t pin, uint8_t state)</td></tr>
 <tr class="memdesc:ga3a438f76ce1b8d514645f41c5e13bc19"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write HIGH/LOW to a pin.  <br /></td></tr>
-<tr class="memitem:ga4cc8a0fcb890802e6a9080ac494333a9" id="r_ga4cc8a0fcb890802e6a9080ac494333a9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga4cc8a0fcb890802e6a9080ac494333a9">gpio_write_port</a> (<a class="el" href="struct_g_p_i_ox___reg_def__t.html">GPIOx_RegDef_t</a> *pGPIOx, uint16_t value)</td></tr>
-<tr class="memdesc:ga4cc8a0fcb890802e6a9080ac494333a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write 16-bit value to a port.  <br /></td></tr>
+<tr class="memitem:ga58fd0d0b3c266d7a1e9777cef52e8207" id="r_ga58fd0d0b3c266d7a1e9777cef52e8207"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga58fd0d0b3c266d7a1e9777cef52e8207">gpio_write_port</a> (<a class="el" href="struct_g_p_i_ox___reg_def__t.html">GPIOx_RegDef_t</a> *pGPIOx, uint16_t write_data)</td></tr>
+<tr class="memdesc:ga58fd0d0b3c266d7a1e9777cef52e8207"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write a 16-bit value to the entire GPIO output port.  <br /></td></tr>
 <tr class="memitem:gaf33fe651c0911b5bfccfe253b8c44286" id="r_gaf33fe651c0911b5bfccfe253b8c44286"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaf33fe651c0911b5bfccfe253b8c44286">gpio_toggle_pin</a> (<a class="el" href="struct_g_p_i_ox___reg_def__t.html">GPIOx_RegDef_t</a> *pGPIOx, uint8_t pin)</td></tr>
-<tr class="memdesc:gaf33fe651c0911b5bfccfe253b8c44286"><td class="mdescLeft">&#160;</td><td class="mdescRight">Toggle a pin's output state.  <br /></td></tr>
+<tr class="memdesc:gaf33fe651c0911b5bfccfe253b8c44286"><td class="mdescLeft">&#160;</td><td class="mdescRight">Toggle the logic level of a GPIO output pin.  <br /></td></tr>
 <tr class="memitem:ga59407004373e1086e102436ebe8c1609" id="r_ga59407004373e1086e102436ebe8c1609"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga59407004373e1086e102436ebe8c1609">gpio_irq_config</a> (uint8_t pin, uint8_t trigger)</td></tr>
 <tr class="memdesc:ga59407004373e1086e102436ebe8c1609"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configure EXTI interrupt trigger.  <br /></td></tr>
 <tr class="memitem:gaecfc0d5327266f101f163c807cd08f9e" id="r_gaecfc0d5327266f101f163c807cd08f9e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaecfc0d5327266f101f163c807cd08f9e">gpio_irq_control</a> (uint8_t irq_no, uint8_t en)</td></tr>
@@ -515,8 +515,22 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Toggle a pin's output state. </p>
+<p>Toggle the logic level of a GPIO output pin. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pGPIOx</td><td>Pointer to the GPIO port base address. <a class="el" href="group___g_p_i_o___b_a_s_e___a_d_d_r_e_s_s_e_s.html">GPIO Port Base Address Macros</a> </td></tr>
+    <tr><td class="paramname">pin</td><td>Pin number to toggle (0–15). </td></tr>
+  </table>
+  </dd>
+</dl>
 
+<p class="definition">Definition at line <a class="el" href="stm32f407xx__gpio_8c_source.html#l00168">168</a> of file <a class="el" href="stm32f407xx__gpio_8c_source.html">stm32f407xx_gpio.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  168</span>                                                         {</div>
+<div class="line"><span class="lineno">  169</span>    <span class="keywordflow">if</span> (pin &gt; 15) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  170</span>    pGPIOx-&gt;<a class="code hl_variable" href="struct_g_p_i_ox___reg_def__t.html#acf54c3304e180a735525c8a2e7e29f40">ODR</a> ^= (0x01&lt;&lt;pin);</div>
+<div class="line"><span class="lineno">  171</span>}</div>
+<div class="ttc" id="astruct_g_p_i_ox___reg_def__t_html_acf54c3304e180a735525c8a2e7e29f40"><div class="ttname"><a href="struct_g_p_i_ox___reg_def__t.html#acf54c3304e180a735525c8a2e7e29f40">GPIOx_RegDef_t::ODR</a></div><div class="ttdeci">volatile uint32_t ODR</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx_8h_source.html#l00173">stm32f407xx.h:173</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ga3a438f76ce1b8d514645f41c5e13bc19" name="ga3a438f76ce1b8d514645f41c5e13bc19"></a>
@@ -563,12 +577,11 @@ Functions</h2></td></tr>
 <div class="fragment"><div class="line"><span class="lineno">  160</span>                                                                        {</div>
 <div class="line"><span class="lineno">  161</span>    pGPIOx-&gt;<a class="code hl_variable" href="struct_g_p_i_ox___reg_def__t.html#acf54c3304e180a735525c8a2e7e29f40">ODR</a> |= ((state &lt;&lt; pin));</div>
 <div class="line"><span class="lineno">  162</span>}</div>
-<div class="ttc" id="astruct_g_p_i_ox___reg_def__t_html_acf54c3304e180a735525c8a2e7e29f40"><div class="ttname"><a href="struct_g_p_i_ox___reg_def__t.html#acf54c3304e180a735525c8a2e7e29f40">GPIOx_RegDef_t::ODR</a></div><div class="ttdeci">volatile uint32_t ODR</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx_8h_source.html#l00173">stm32f407xx.h:173</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="ga4cc8a0fcb890802e6a9080ac494333a9" name="ga4cc8a0fcb890802e6a9080ac494333a9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga4cc8a0fcb890802e6a9080ac494333a9">&#9670;&#160;</a></span>gpio_write_port()</h2>
+<a id="ga58fd0d0b3c266d7a1e9777cef52e8207" name="ga58fd0d0b3c266d7a1e9777cef52e8207"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga58fd0d0b3c266d7a1e9777cef52e8207">&#9670;&#160;</a></span>gpio_write_port()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -581,13 +594,31 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>value</em></span>&#160;)</td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>write_data</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Write 16-bit value to a port. </p>
+<p>Write a 16-bit value to the entire GPIO output port. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pGPIOx</td><td>Pointer to the GPIO port base address. <a class="el" href="group___g_p_i_o___b_a_s_e___a_d_d_r_e_s_s_e_s.html">GPIO Port Base Address Macros</a> </td></tr>
+    <tr><td class="paramname">write_data</td><td>16-bit data to write to the GPIO port. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">void</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 
+<p class="definition">Definition at line <a class="el" href="stm32f407xx__gpio_8c_source.html#l00164">164</a> of file <a class="el" href="stm32f407xx__gpio_8c_source.html">stm32f407xx_gpio.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  164</span>                                                                  {</div>
+<div class="line"><span class="lineno">  165</span>    pGPIOx-&gt;<a class="code hl_variable" href="struct_g_p_i_ox___reg_def__t.html#acf54c3304e180a735525c8a2e7e29f40">ODR</a> = write_data;</div>
+<div class="line"><span class="lineno">  166</span>}</div>
+</div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->
