@@ -23,8 +23,68 @@
   #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use."
 #endif
 
+int count=0;
+
 int main(void)
 {
+	//1. Initialize the USER button as input connected at PA0
+	GPIOx_Handle_t GPIOA_PA0_Handle;
+	GPIOA_PA0_Handle.pGPIOx = GPIOA;
+	GPIOA_PA0_Handle.GPIO_CONFIG.GPIO_MODE = GPIO_MODE_INPUT;
+	GPIOA_PA0_Handle.GPIO_CONFIG.GPIO_PU_PD = GPIO_PU_PD_NONE;
+	GPIOA_PA0_Handle.GPIO_CONFIG.GPIO_PIN_NUMBER = GPIO_PIN_0;
+	GPIOA_PA0_Handle.GPIO_CONFIG.GPIO_SPEED = GPIO_SPEED_MEDIUM;
+	gpio_pin_init(&GPIOA_PA0_Handle);
+	//2. Initialize the LED connected at PD12 as output
+	GPIOx_Handle_t GPIOD_PD12_Handle;
+	GPIOD_PD12_Handle.pGPIOx = GPIOD;
+	GPIOD_PD12_Handle.GPIO_CONFIG.GPIO_MODE = GPIO_MODE_OUTPUT;
+	GPIOD_PD12_Handle.GPIO_CONFIG.GPIO_SPEED = GPIO_SPEED_MEDIUM;
+	GPIOD_PD12_Handle.GPIO_CONFIG.GPIO_OP_TYPE = GPIO_OP_TYPE_PP;
+	GPIOD_PD12_Handle.GPIO_CONFIG.GPIO_PIN_NUMBER = GPIO_PIN_12;
+	gpio_pin_init(&GPIOD_PD12_Handle);
+	//3. Enable the interrupt
+	gpio_irq_config(GPIOA, GPIO_PIN_0 , INTERRUPT_TRIGGER_TYPE_RISING , NVIC_IRQ_PRIORITY_0);
+	gpio_irq_control(GPIO_PIN_0, ENABLE);
+
     /* Loop forever */
-	for(;;);
+	while(1){
+//		if(gpio_read_pin(GPIOA, GPIO_PIN_0)){
+//			gpio_write_pin(GPIOD, GPIO_PIN_12, SET);
+//		}else{
+//			gpio_write_pin(GPIOD, GPIO_PIN_12, RESET);
+//		}
+	}
 }
+
+void EXTI0_IRQHandler(void){
+	count++;
+	gpio_irq_control(GPIO_PIN_0, DISABLE); // Disabling the interrupt so that no more triggering due to debouncing
+	for(volatile int i=0;i<20000;i++); // Press Debounce
+	while(gpio_read_pin(GPIOA, GPIO_PIN_0));
+	for(volatile int i=0;i<20000;i++); // Release Debounce
+	gpio_toggle_pin(GPIOD, GPIO_PIN_12);
+	gpio_irq_control(GPIO_PIN_0, ENABLE);// Enabling the interrupt before leaving the ISR
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

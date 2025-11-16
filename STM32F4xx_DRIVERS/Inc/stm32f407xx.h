@@ -177,24 +177,52 @@
  * @{
  */
 
-#define PIN_0     0  /*!< GPIO Pin 0  */
-#define PIN_1     1  /*!< GPIO Pin 1  */
-#define PIN_2     2  /*!< GPIO Pin 2  */
-#define PIN_3     3  /*!< GPIO Pin 3  */
-#define PIN_4     4  /*!< GPIO Pin 4  */
-#define PIN_5     5  /*!< GPIO Pin 5  */
-#define PIN_6     6  /*!< GPIO Pin 6  */
-#define PIN_7     7  /*!< GPIO Pin 7  */
-#define PIN_8     8  /*!< GPIO Pin 8  */
-#define PIN_9     9  /*!< GPIO Pin 9  */
-#define PIN_10   10 /*!< GPIO Pin 10 */
-#define PIN_11   11 /*!< GPIO Pin 11 */
-#define PIN_12   12 /*!< GPIO Pin 12 */
-#define PIN_13   13 /*!< GPIO Pin 13 */
-#define PIN_14   14 /*!< GPIO Pin 14 */
-#define PIN_15   15 /*!< GPIO Pin 15 */
+#define GPIO_PIN_0     0  /*!< GPIO Pin 0  */
+#define GPIO_PIN_1     1  /*!< GPIO Pin 1  */
+#define GPIO_PIN_2     2  /*!< GPIO Pin 2  */
+#define GPIO_PIN_3     3  /*!< GPIO Pin 3  */
+#define GPIO_PIN_4     4  /*!< GPIO Pin 4  */
+#define GPIO_PIN_5     5  /*!< GPIO Pin 5  */
+#define GPIO_PIN_6     6  /*!< GPIO Pin 6  */
+#define GPIO_PIN_7     7  /*!< GPIO Pin 7  */
+#define GPIO_PIN_8     8  /*!< GPIO Pin 8  */
+#define GPIO_PIN_9     9  /*!< GPIO Pin 9  */
+#define GPIO_PIN_10   10 /*!< GPIO Pin 10 */
+#define GPIO_PIN_11   11 /*!< GPIO Pin 11 */
+#define GPIO_PIN_12   12 /*!< GPIO Pin 12 */
+#define GPIO_PIN_13   13 /*!< GPIO Pin 13 */
+#define GPIO_PIN_14   14 /*!< GPIO Pin 14 */
+#define GPIO_PIN_15   15 /*!< GPIO Pin 15 */
 
 /** @} */ /* End of GPIO_PIN_NUMBER_MACROS */
+
+/**
+ * @defgroup NVIC_IRQ_PRIORITY_LEVELS NVIC Interrupt Priority Levels (0–15)
+ * @brief Priority encoding for STM32F4 NVIC (lower = higher priority).
+ *
+ * @note Cortex-M4 uses only upper 4 bits of priority byte.
+ * @note Priority 0 is highest urgency, 15 is lowest.
+ * @{
+ */
+
+#define NVIC_IRQ_PRIORITY_0     0   /**< Highest priority - real-time critical */
+#define NVIC_IRQ_PRIORITY_1     1   /**< Very high priority */
+#define NVIC_IRQ_PRIORITY_2     2   /**< Time-critical */
+#define NVIC_IRQ_PRIORITY_3     3   /**< High priority */
+#define NVIC_IRQ_PRIORITY_4     4   /**< Above normal */
+#define NVIC_IRQ_PRIORITY_5     5   /**< Normal priority */
+#define NVIC_IRQ_PRIORITY_6     6   /**< Medium priority */
+#define NVIC_IRQ_PRIORITY_7     7   /**< Mid-Low priority */
+#define NVIC_IRQ_PRIORITY_8     8   /**< Low priority */
+#define NVIC_IRQ_PRIORITY_9     9   /**< Lower priority */
+#define NVIC_IRQ_PRIORITY_10   10   /**< Background servicing */
+#define NVIC_IRQ_PRIORITY_11   11   /**< Low background */
+#define NVIC_IRQ_PRIORITY_12   12   /**< Very low */
+#define NVIC_IRQ_PRIORITY_13   13   /**< Idle-level tasks */
+#define NVIC_IRQ_PRIORITY_14   14   /**< Near lowest */
+#define NVIC_IRQ_PRIORITY_15   15   /**< Lowest possible priority */
+
+/** @} */ // end of NVIC_IRQ_PRIORITY_LEVELS
 
 
 //*********************Peripheral Register Definition structure**********************//
