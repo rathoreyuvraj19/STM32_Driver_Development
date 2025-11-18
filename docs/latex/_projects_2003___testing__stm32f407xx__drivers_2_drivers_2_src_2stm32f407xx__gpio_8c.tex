@@ -1,0 +1,84 @@
+\doxysection{Projects/003\+\_\+\+Testing\+\_\+stm32f407xx\+\_\+drivers/\+Drivers/\+Src/stm32f407xx\+\_\+gpio.c File Reference}
+\hypertarget{_projects_2003___testing__stm32f407xx__drivers_2_drivers_2_src_2stm32f407xx__gpio_8c}{}\label{_projects_2003___testing__stm32f407xx__drivers_2_drivers_2_src_2stm32f407xx__gpio_8c}\index{Projects/003\_Testing\_stm32f407xx\_drivers/Drivers/Src/stm32f407xx\_gpio.c@{Projects/003\_Testing\_stm32f407xx\_drivers/Drivers/Src/stm32f407xx\_gpio.c}}
+
+
+GPIO peripheral driver source file for STM32\+F407xx MCU.  
+
+
+{\ttfamily \#include "{}stm32f407xx\+\_\+gpio.\+h"{}}\newline
+Include dependency graph for stm32f407xx\+\_\+gpio.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{_projects_2003___testing__stm32f407xx__drivers_2_drivers_2_src_2stm32f407xx__gpio_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___g_p_i_o___driver___a_p_is_ga59f07285d055589998e910abf10c9ab1}{gpio\+\_\+pin\+\_\+init}} (\mbox{\hyperlink{struct_g_p_i_ox___handle__t}{GPIOx\+\_\+\+Handle\+\_\+t}} \texorpdfstring{$\ast$}{*}GPIOx\+\_\+\+Handle)
+\begin{DoxyCompactList}\small\item\em Initialize a GPIO pin. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___g_p_i_o___driver___a_p_is_ga347db04adc58e4104a1b0600a2238395}{gpio\+\_\+port\+\_\+deinit}} (\mbox{\hyperlink{struct_g_p_i_ox___reg_def__t}{GPIOx\+\_\+\+Reg\+Def\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+GPIOx)
+\begin{DoxyCompactList}\small\item\em De-\/initialize a GPIO port. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group___g_p_i_o___driver___a_p_is_ga7a2f606b1dfb968762d2ee9dcf59fc5f}{gpio\+\_\+read\+\_\+pin}} (\mbox{\hyperlink{struct_g_p_i_ox___reg_def__t}{GPIOx\+\_\+\+Reg\+Def\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+GPIOx, uint8\+\_\+t pin)
+\begin{DoxyCompactList}\small\item\em Read a GPIO pin. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{group___g_p_i_o___driver___a_p_is_ga893c5d7e52c33fea09df85b817801855}{gpio\+\_\+read\+\_\+port}} (\mbox{\hyperlink{struct_g_p_i_ox___reg_def__t}{GPIOx\+\_\+\+Reg\+Def\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+GPIOx)
+\begin{DoxyCompactList}\small\item\em Read the entire GPIO input port. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___g_p_i_o___driver___a_p_is_ga3a438f76ce1b8d514645f41c5e13bc19}{gpio\+\_\+write\+\_\+pin}} (\mbox{\hyperlink{struct_g_p_i_ox___reg_def__t}{GPIOx\+\_\+\+Reg\+Def\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+GPIOx, uint8\+\_\+t pin, uint8\+\_\+t state)
+\begin{DoxyCompactList}\small\item\em Write HIGH/\+LOW to a pin. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___g_p_i_o___driver___a_p_is_ga58fd0d0b3c266d7a1e9777cef52e8207}{gpio\+\_\+write\+\_\+port}} (\mbox{\hyperlink{struct_g_p_i_ox___reg_def__t}{GPIOx\+\_\+\+Reg\+Def\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+GPIOx, uint16\+\_\+t write\+\_\+data)
+\begin{DoxyCompactList}\small\item\em Write a 16-\/bit value to the entire GPIO output port. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___g_p_i_o___driver___a_p_is_gaf33fe651c0911b5bfccfe253b8c44286}{gpio\+\_\+toggle\+\_\+pin}} (\mbox{\hyperlink{struct_g_p_i_ox___reg_def__t}{GPIOx\+\_\+\+Reg\+Def\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+GPIOx, uint8\+\_\+t pin)
+\begin{DoxyCompactList}\small\item\em Toggle the logic level of a GPIO output pin. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+GPIO peripheral driver source file for STM32\+F407xx MCU. 
+
+\begin{DoxyAuthor}{Author}
+Yuvraj Singh Rathore 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+13-\/Nov-\/2025 
+\end{DoxyDate}
+This file implements low-\/level GPIO driver functions using direct register access for deterministic timing and optimal performance. It provides APIs for\+:
+
+
+\begin{DoxyItemize}
+\item Initializing and de-\/initializing GPIO ports and pins
+\item Configuring pin modes, speeds, output types, pull-\/up/pull-\/down settings
+\item Reading from and writing to pins or entire ports
+\item Managing alternate functions and EXTI interrupt configuration
+\end{DoxyItemize}
+
+\begin{DoxyNote}{Note}
+Ensure the GPIO peripheral clock is enabled before calling any API. 
+\end{DoxyNote}
+\begin{DoxyAttention}{Attention}
+Bare-\/metal driver without HAL/\+Std\+Periph dependencies.
+\end{DoxyAttention}
+\hypertarget{_s_t_m32_f4xx___d_r_i_v_e_r_s_2_src_2stm32f407xx__gpio_8c_GPIO_API_Summary}{}\doxysubsection{\texorpdfstring{GPIO Driver API Summary}{GPIO Driver API Summary}}\label{_s_t_m32_f4xx___d_r_i_v_e_r_s_2_src_2stm32f407xx__gpio_8c_GPIO_API_Summary}
+
+\begin{DoxyItemize}
+\item \doxylink{group___g_p_i_o___driver___a_p_is_ga59f07285d055589998e910abf10c9ab1}{gpio\+\_\+pin\+\_\+init()} \+: Configure a GPIO pin (mode, type, speed, pull, AF)
+\item \doxylink{group___g_p_i_o___driver___a_p_is_ga347db04adc58e4104a1b0600a2238395}{gpio\+\_\+port\+\_\+deinit()} \+: Reset an entire GPIO port
+\item \doxylink{group___g_p_i_o___driver___a_p_is_ga7a2f606b1dfb968762d2ee9dcf59fc5f}{gpio\+\_\+read\+\_\+pin()} \+: Read the logic level of a pin
+\item \doxylink{group___g_p_i_o___driver___a_p_is_ga893c5d7e52c33fea09df85b817801855}{gpio\+\_\+read\+\_\+port()} \+: Read the 16-\/bit input state of a port
+\item \doxylink{group___g_p_i_o___driver___a_p_is_ga3a438f76ce1b8d514645f41c5e13bc19}{gpio\+\_\+write\+\_\+pin()} \+: Write HIGH/\+LOW to a pin
+\item \doxylink{group___g_p_i_o___driver___a_p_is_ga58fd0d0b3c266d7a1e9777cef52e8207}{gpio\+\_\+write\+\_\+port()} \+: Write 16-\/bit value to a port
+\item \doxylink{group___g_p_i_o___driver___a_p_is_gaf33fe651c0911b5bfccfe253b8c44286}{gpio\+\_\+toggle\+\_\+pin()} \+: Toggle pin output level
+\item \doxylink{group___g_p_i_o___driver___a_p_is_ga314747314a10eafbe93c75f2d3d43b28}{gpio\+\_\+irq\+\_\+config()} \+: Configure EXTI trigger type
+\item \doxylink{group___g_p_i_o___driver___a_p_is_ga2095b94c246588474f2dfec5999d3efb}{gpio\+\_\+irq\+\_\+control()} \+: Enable/disable NVIC interrupt for GPIO EXTI line
+\item \doxylink{group___g_p_i_o___driver___a_p_is_ga7029bc337ba529f1ed60ecec9003ae43}{gpio\+\_\+irq\+\_\+clear()} \+: Clear EXTI pending flag
+\end{DoxyItemize}
+
+\begin{DoxySeeAlso}{See also}
+stm32f407xx\+\_\+gpio.\+h 
+\end{DoxySeeAlso}
+
+
+Definition in file \mbox{\hyperlink{_projects_2003___testing__stm32f407xx__drivers_2_drivers_2_src_2stm32f407xx__gpio_8c_source}{stm32f407xx\+\_\+gpio.\+c}}.
+

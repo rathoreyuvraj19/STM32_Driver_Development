@@ -1,0 +1,5 @@
+<map id="gpio_irq_control" name="gpio_irq_control">
+<area shape="rect" id="Node000001" title="Enable or disable NVIC interrupt for a GPIO EXTI line." alt="" coords="5,5,118,32"/>
+<area shape="rect" id="Node000002" href="$group___g_p_i_o___driver___a_p_is.html#ga7029bc337ba529f1ed60ecec9003ae43" title="Clears the interrupt pending flag for the specified EXTI line." alt="" coords="166,5,267,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="118,16,150,16,150,21,118,21"/>
+</map>

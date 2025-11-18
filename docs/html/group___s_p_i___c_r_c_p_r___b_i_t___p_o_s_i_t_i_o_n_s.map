@@ -1,0 +1,4 @@
+<map id="SPI_CRCPR_BIT_POSITIONS" name="SPI_CRCPR_BIT_POSITIONS">
+<area shape="rect" id="Node000002" href="$group___s_p_i___b_i_t___p_o_s_i_t_i_o_n___m_a_c_r_o_s.html" title="Bit position definitions for SPI peripheral registers." alt="" coords="5,5,173,32"/>
+<area shape="rect" id="Node000001" title="Bit position for CRC Polynomial Register." alt="" coords="221,5,428,32"/>
+</map>

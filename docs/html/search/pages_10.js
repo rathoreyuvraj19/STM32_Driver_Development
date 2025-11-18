@@ -1,16 +1,16 @@
 var searchData=
 [
-  ['sections_20in_20reference_20manual_0',['Key Sections in Reference Manual',['../index.html#autotoc_md54',1,'']]],
-  ['setup_1',['Project Setup',['../index.html#autotoc_md35',1,'']]],
-  ['specifications_2',['Hardware Specifications',['../index.html#autotoc_md4',1,'']]],
-  ['stack_3',['Technology Stack',['../index.html#autotoc_md14',1,'']]],
-  ['started_4',['Getting Started',['../index.html#autotoc_md32',1,'']]],
-  ['stm_20clock_20enable_5',['Project 001: STM Clock Enable',['../index.html#autotoc_md19',1,'']]],
-  ['stm32cubeide_6',['Using STM32CubeIDE',['../index.html#autotoc_md38',1,'']]],
-  ['stm32f407_20bare_20metal_20driver_20development_7',['STM32F407 Bare-Metal Driver Development',['../index.html',1,'']]],
-  ['stm32f407xx_20drivers_8',['Project 003: Testing STM32F407xx Drivers',['../index.html#autotoc_md23',1,'']]],
-  ['structure_9',['Repository Structure',['../index.html#autotoc_md9',1,'']]],
-  ['summary_10',['GPIO Driver API Summary',['../stm32f407xx__gpio_8c.html#GPIO_API_Summary',1,'']]],
-  ['support_11',['Support',['../index.html#autotoc_md66',1,'']]],
-  ['system_12',['System',['../index.html#autotoc_md28',1,'Clock System'],['../index.html#autotoc_md30',1,'Interrupt System']]]
+  ['peripherals_0',['Planned Peripherals',['../index.html#autotoc_md49',1,'']]],
+  ['philosophy_1',['Bare-Metal Philosophy',['../index.html#autotoc_md12',1,'']]],
+  ['pin_2012–15_20→_203_2',['pin 12–15 → 3',['../group___g_p_i_o___driver___a_p_is.html#autotoc_md69',1,'']]],
+  ['planned_20peripherals_3',['Planned Peripherals',['../index.html#autotoc_md49',1,'']]],
+  ['port_20code_20to_20select_20the_20source_20input_4',['- Write GPIO port code to select the source input',['../group___g_p_i_o___driver___a_p_is.html#autotoc_md71',1,'']]],
+  ['port_20i_5',['0x8 = Port I',['../group___g_p_i_o___driver___a_p_is.html#autotoc_md70',1,'']]],
+  ['prerequisites_6',['Prerequisites',['../index.html#autotoc_md33',1,'']]],
+  ['project_20000_3a_20hello_20world_7',['Project 000: Hello World',['../index.html#autotoc_md17',1,'']]],
+  ['project_20001_3a_20stm_20clock_20enable_8',['Project 001: STM Clock Enable',['../index.html#autotoc_md19',1,'']]],
+  ['project_20002_3a_20user_20button_20interrupt_9',['Project 002: User Button Interrupt',['../index.html#autotoc_md21',1,'']]],
+  ['project_20003_3a_20testing_20stm32f407xx_20drivers_10',['Project 003: Testing STM32F407xx Drivers',['../index.html#autotoc_md23',1,'']]],
+  ['project_20setup_11',['Project Setup',['../index.html#autotoc_md35',1,'']]],
+  ['projects_20overview_12',['Projects Overview',['../index.html#autotoc_md16',1,'']]]
 ];

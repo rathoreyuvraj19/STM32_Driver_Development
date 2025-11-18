@@ -1,9 +1,6 @@
 var searchData=
 [
-  ['of_20ahb1_20peripherals_0',['Base address of AHB1 peripherals',['../group___a_h_b1___p_e_r_i_p_e_h_r_a_l_s___b_a_s_e___a_d_d_r_e_s_s_e_s.html',1,'']]],
-  ['of_20ahb2_20peripherals_1',['Base address of AHB2 peripherals',['../group___a_h_b2___p_e_r_i_p_e_h_r_a_l_s___b_a_s_e___a_d_d_r_e_s_s_e_s.html',1,'']]],
-  ['of_20apb1_20peripherals_2',['Base address of APB1 peripherals',['../group___a_p_b1___p_e_r_i_p_e_h_r_a_l_s___b_a_s_e___a_d_d_r_e_s_s_e_s.html',1,'']]],
-  ['of_20apb2_20peripherals_3',['Base address of APB2 peripherals',['../group___a_p_b2___p_e_r_i_p_e_h_r_a_l_s___b_a_s_e___a_d_d_r_e_s_s_e_s.html',1,'']]],
-  ['options_4',['Options',['../group___g_p_i_o___a_l_t_e_r_n_a_t_e___f_u_n_c_t_i_o_n_s.html',1,'GPIO Alternate Function Options'],['../group___g_p_i_o___p_u_l_l_u_p___p_u_l_l_d_o_w_n.html',1,'GPIO Pull-Up/Pull-Down Options'],['../group___g_p_i_o___s_p_e_e_d_s.html',1,'GPIO Speed Options']]],
-  ['output_20types_5',['GPIO Output Types',['../group___g_p_i_o___o_p___t_y_p_e_s.html',1,'']]]
+  ['interrupt_20priority_20levels_200–15_0',['NVIC Interrupt Priority Levels (0–15)',['../group___n_v_i_c___i_r_q___p_r_i_o_r_i_t_y___l_e_v_e_l_s.html',1,'']]],
+  ['interrupt_20trigger_20type_20macros_1',['Interrupt Trigger Type Macros',['../group___i_n_t_e_r_r_u_p_t___t_r_i_g_g_e_r___t_y_p_e___m_a_c_r_o_s.html',1,'']]],
+  ['irq_20numbers_20for_20stm32f407_2',['IRQ Numbers for STM32F407',['../group___i_r_q___n_u_m_b_e_r___m_a_c_r_o_s.html',1,'']]]
 ];

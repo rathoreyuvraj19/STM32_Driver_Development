@@ -6,7 +6,7 @@ OUTPUT_DIRECTORY       = docs
 OUTPUT_LANGUAGE        = English
 
 # --- Input ---
-INPUT                  = README.md Driver Projects
+INPUT                  = README.md STM32F4xx_DRIVERS Projects
 RECURSIVE              = YES
 FILE_PATTERNS          = *.h *.c
 EXCLUDE                = docs

@@ -1,11 +1,9 @@
 <map id="Projects/003_Testing_stm32f407xx_drivers/Src/main.c" name="Projects/003_Testing_stm32f407xx_drivers/Src/main.c">
-<area shape="rect" id="Node000001" title=": Main program body" alt="" coords="5,5,155,64"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="42,261,107,288"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="73,65,58,133,55,173,57,213,66,246,61,247,52,214,49,173,53,132,68,64"/>
-<area shape="rect" id="Node000003" href="$stm32f407xx_8h.html" title=": Header file for STM32F407xx MCUS" alt="" coords="66,187,174,213"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="90,64,116,171,111,172,84,65"/>
-<area shape="rect" id="Node000004" href="$stm32f407xx__gpio_8h.html" title="GPIO Driver Header for STM32F407xx MCU." alt="" coords="118,112,256,139"/>
-<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="116,62,162,100,158,104,113,66"/>
-<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="114,215,93,249,88,247,110,212"/>
-<area shape="poly" id="edge5_Node000004_Node000003" title=" " alt="" coords="177,141,144,177,140,173,173,137"/>
+<area shape="rect" id="Node000001" title=": Main program body" alt="" coords="72,5,222,64"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,112,70,139"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="113,66,67,104,63,100,110,62"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="93,112,200,139"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="150,64,150,96,144,96,144,64"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="224,112,363,139"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="196,62,261,101,258,106,193,67"/>
 </map>

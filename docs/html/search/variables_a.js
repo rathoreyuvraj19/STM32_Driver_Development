@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['pgpiox_0',['pGPIOx',['../struct_g_p_i_ox___handle__t.html#af66476d0b69ef00a95863c8d55a33208',1,'GPIOx_Handle_t']]],
-  ['pllcfgr_1',['PLLCFGR',['../struct_r_c_c___reg_def__t.html#a0ac141565a18dadd2c131adae95f4314',1,'RCC_RegDef_t']]],
-  ['plli2scfgr_2',['PLLI2SCFGR',['../struct_r_c_c___reg_def__t.html#a8eec149ac5b3db9c512a93e44184804e',1,'RCC_RegDef_t']]],
-  ['pupdr_3',['PUPDR',['../struct_g_p_i_ox___reg_def__t.html#a9e83c5fefbd8c0caff3dc3dccd4cfa6f',1,'GPIOx_RegDef_t']]]
+  ['memrmp_0',['MEMRMP',['../struct_s_y_s_c_f_g___reg_def__t.html#a1088a147730054a910827504ed395a74',1,'SYSCFG_RegDef_t']]],
+  ['moder_1',['MODER',['../struct_g_p_i_ox___reg_def__t.html#a7131c3ab513a84fc69270888ddbe561d',1,'GPIOx_RegDef_t']]]
 ];

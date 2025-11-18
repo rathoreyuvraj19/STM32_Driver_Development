@@ -355,8 +355,8 @@ All drivers are implemented {\bfseries{bare-\/metal}}, meaning\+:
 \DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___g_p_i_o___driver___a_p_is_gaf33fe651c0911b5bfccfe253b8c44286}{gpio\_toggle\_pin}}(\mbox{\hyperlink{struct_g_p_i_ox___reg_def__t}{GPIOx\_RegDef\_t}}\ *pGPIOx,\ uint8\_t\ pin);}
 \DoxyCodeLine{}
 \DoxyCodeLine{\textcolor{comment}{//\ Interrupt\ Management}}
-\DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___g_p_i_o___driver___a_p_is_ga59407004373e1086e102436ebe8c1609}{gpio\_irq\_config}}(uint8\_t\ pin,\ uint8\_t\ trigger);}
-\DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___g_p_i_o___driver___a_p_is_gaecfc0d5327266f101f163c807cd08f9e}{gpio\_irq\_control}}(uint8\_t\ irq\_no,\ uint8\_t\ en);}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___g_p_i_o___driver___a_p_is_ga314747314a10eafbe93c75f2d3d43b28}{gpio\_irq\_config}}(uint8\_t\ pin,\ uint8\_t\ trigger);}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___g_p_i_o___driver___a_p_is_ga2095b94c246588474f2dfec5999d3efb}{gpio\_irq\_control}}(uint8\_t\ irq\_no,\ uint8\_t\ en);}
 \DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___g_p_i_o___driver___a_p_is_ga7029bc337ba529f1ed60ecec9003ae43}{gpio\_irq\_clear}}(uint8\_t\ pin);}
 
 \end{DoxyCode}
@@ -543,9 +543,9 @@ All drivers are implemented {\bfseries{bare-\/metal}}, meaning\+:
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{}
-\DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___g_p_i_o___driver___a_p_is_ga59407004373e1086e102436ebe8c1609}{gpio\_irq\_config}}(uint8\_t\ pin,\ uint8\_t\ trigger);}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___g_p_i_o___driver___a_p_is_ga314747314a10eafbe93c75f2d3d43b28}{gpio\_irq\_config}}(uint8\_t\ pin,\ uint8\_t\ trigger);}
 \DoxyCodeLine{}
-\DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___g_p_i_o___driver___a_p_is_gaecfc0d5327266f101f163c807cd08f9e}{gpio\_irq\_control}}(uint8\_t\ irq\_no,\ uint8\_t\ en);}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___g_p_i_o___driver___a_p_is_ga2095b94c246588474f2dfec5999d3efb}{gpio\_irq\_control}}(uint8\_t\ irq\_no,\ uint8\_t\ en);}
 \DoxyCodeLine{}
 \DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___g_p_i_o___driver___a_p_is_ga7029bc337ba529f1ed60ecec9003ae43}{gpio\_irq\_clear}}(uint8\_t\ pin);}
 
@@ -553,14 +553,14 @@ All drivers are implemented {\bfseries{bare-\/metal}}, meaning\+:
 \hypertarget{index_autotoc_md46}{}\doxysubsection{\texorpdfstring{Usage Example}{Usage Example}}\label{index_autotoc_md46}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{stm32f407xx_8h}{stm32f407xx.h}}"{}}}
-\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{stm32f407xx__gpio_8h}{stm32f407xx\_gpio.h}}"{}}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}stm32f407xx.h"{}}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}stm32f407xx\_gpio.h"{}}}
 \DoxyCodeLine{}
 \DoxyCodeLine{\textcolor{keywordtype}{int}\ \mbox{\hyperlink{000___hello___world_2_src_2main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}}(\textcolor{keywordtype}{void})\ \{}
 \DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct_g_p_i_ox___handle__t}{GPIOx\_Handle\_t}}\ gpio\_led;}
 \DoxyCodeLine{}
 \DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Configure\ LED\ pin\ (PD12)}}
-\DoxyCodeLine{\ \ \ \ gpio\_led.\mbox{\hyperlink{struct_g_p_i_ox___handle__t_af66476d0b69ef00a95863c8d55a33208}{pGPIOx}}\ =\ \mbox{\hyperlink{group___g_p_i_o___b_a_s_e___a_d_d_r_e_s_s_e_s_ga7580b1a929ea9df59725ba9c18eba6ac}{GPIOD}};}
+\DoxyCodeLine{\ \ \ \ gpio\_led.\mbox{\hyperlink{struct_g_p_i_ox___handle__t_a08f8fb9a9b2c746b063a4c0fdad89aee}{pGPIOx}}\ =\ \mbox{\hyperlink{group___g_p_i_o___b_a_s_e___a_d_d_r_e_s_s_e_s_ga7580b1a929ea9df59725ba9c18eba6ac}{GPIOD}};}
 \DoxyCodeLine{\ \ \ \ gpio\_led.\mbox{\hyperlink{struct_g_p_i_ox___handle__t_aeb936ee4e02972546dff148d2ce5e084}{GPIO\_CONFIG}}.\mbox{\hyperlink{struct_g_p_i_ox___config__t_abec5d159383522318eeaf3483fe0d59f}{GPIO\_PIN\_NUMBER}}\ =\ 12;}
 \DoxyCodeLine{\ \ \ \ gpio\_led.\mbox{\hyperlink{struct_g_p_i_ox___handle__t_aeb936ee4e02972546dff148d2ce5e084}{GPIO\_CONFIG}}.\mbox{\hyperlink{struct_g_p_i_ox___config__t_a2d2975ab95a428fccf3285a24c4fd8e2}{GPIO\_MODE}}\ =\ \mbox{\hyperlink{group___g_p_i_o___m_o_d_e_s_gaca6eb0cd4dbe7402497829badacfa6df}{GPIO\_MODE\_OUTPUT}};}
 \DoxyCodeLine{\ \ \ \ gpio\_led.\mbox{\hyperlink{struct_g_p_i_ox___handle__t_aeb936ee4e02972546dff148d2ce5e084}{GPIO\_CONFIG}}.\mbox{\hyperlink{struct_g_p_i_ox___config__t_ab2e10b90fc7e80cc4a14c6cb80e08ee0}{GPIO\_OP\_TYPE}}\ =\ \mbox{\hyperlink{group___g_p_i_o___o_p___t_y_p_e_s_ga8fab3cc9114990a89695903630083789}{GPIO\_OP\_TYPE\_PP}};}

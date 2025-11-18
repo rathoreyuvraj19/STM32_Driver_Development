@@ -1,0 +1,139 @@
+\doxysection{STM32\+F4xx\+\_\+\+DRIVERS/\+Inc/stm32f407xx\+\_\+gpio.h File Reference}
+\hypertarget{_s_t_m32_f4xx___d_r_i_v_e_r_s_2_inc_2stm32f407xx__gpio_8h}{}\label{_s_t_m32_f4xx___d_r_i_v_e_r_s_2_inc_2stm32f407xx__gpio_8h}\index{STM32F4xx\_DRIVERS/Inc/stm32f407xx\_gpio.h@{STM32F4xx\_DRIVERS/Inc/stm32f407xx\_gpio.h}}
+
+
+GPIO Driver Header for STM32\+F407xx MCU.  
+
+
+{\ttfamily \#include "{}stm32f407xx.\+h"{}}\newline
+Include dependency graph for stm32f407xx\+\_\+gpio.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=217pt]{_s_t_m32_f4xx___d_r_i_v_e_r_s_2_inc_2stm32f407xx__gpio_8h__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_g_p_i_ox___config__t}{GPIOx\+\_\+\+Config\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em GPIO Configuration Structure. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_g_p_i_ox___handle__t}{GPIOx\+\_\+\+Handle\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em GPIO Handle Structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___g_p_i_o___m_o_d_e_s_gaf40bec3146810028a84b628d37d3b391}{GPIO\+\_\+\+MODE\+\_\+\+INPUT}}~0
+\item 
+\#define \mbox{\hyperlink{group___g_p_i_o___m_o_d_e_s_gaca6eb0cd4dbe7402497829badacfa6df}{GPIO\+\_\+\+MODE\+\_\+\+OUTPUT}}~1
+\item 
+\#define \mbox{\hyperlink{group___g_p_i_o___m_o_d_e_s_gaf97227968696e5e26432760060e61e48}{GPIO\+\_\+\+MODE\+\_\+\+ALT\+\_\+\+FUNC}}~2
+\item 
+\#define \mbox{\hyperlink{group___g_p_i_o___m_o_d_e_s_ga7a04f9ab65ad572ad20791a35009220c}{GPIO\+\_\+\+MODE\+\_\+\+ANALOG}}~3
+\item 
+\#define \mbox{\hyperlink{group___g_p_i_o___o_p___t_y_p_e_s_ga8fab3cc9114990a89695903630083789}{GPIO\+\_\+\+OP\+\_\+\+TYPE\+\_\+\+PP}}~0
+\item 
+\#define \mbox{\hyperlink{group___g_p_i_o___o_p___t_y_p_e_s_ga7d07f73c03f1b79472b36f0098c147c8}{GPIO\+\_\+\+OP\+\_\+\+TYPE\+\_\+\+OD}}~1
+\item 
+\#define \mbox{\hyperlink{group___g_p_i_o___p_u_l_l_u_p___p_u_l_l_d_o_w_n_ga833f758ca24334def9cb736e528ccab9}{GPIO\+\_\+\+PU\+\_\+\+PD\+\_\+\+NONE}}~0
+\item 
+\#define \mbox{\hyperlink{group___g_p_i_o___p_u_l_l_u_p___p_u_l_l_d_o_w_n_ga5d039d5e31318f8f2f7d9610e9c506dc}{GPIO\+\_\+\+PU\+\_\+\+PD\+\_\+\+PULL\+\_\+\+UP}}~1
+\item 
+\#define \mbox{\hyperlink{group___g_p_i_o___p_u_l_l_u_p___p_u_l_l_d_o_w_n_gaca4193f57a5900ccae44d92cd8532177}{GPIO\+\_\+\+PU\+\_\+\+PD\+\_\+\+PULL\+\_\+\+DOWN}}~2
+\item 
+\#define \mbox{\hyperlink{group___g_p_i_o___p_u_l_l_u_p___p_u_l_l_d_o_w_n_ga14de65266fc8865a9440b70dfbff68e7}{GPIO\+\_\+\+PU\+\_\+\+PD\+\_\+\+NONE}}~0
+\item 
+\#define \mbox{\hyperlink{group___g_p_i_o___p_u_l_l_u_p___p_u_l_l_d_o_w_n_gad428ed110afc2f0c03c9dceba07d48d8}{GPIO\+\_\+\+PU\+\_\+\+PD\+\_\+\+PULL\+\_\+\+UP}}~1
+\item 
+\#define \mbox{\hyperlink{group___g_p_i_o___p_u_l_l_u_p___p_u_l_l_d_o_w_n_gaaebad844f1dcf8fd753295dc3c27f05f}{GPIO\+\_\+\+PU\+\_\+\+PD\+\_\+\+PULL\+\_\+\+DOWN}}~2
+\item 
+\#define \mbox{\hyperlink{group___g_p_i_o___s_p_e_e_d_s_ga5510b387afb7ec2117b5d4207889163c}{GPIO\+\_\+\+SPEED\+\_\+\+LOW}}~0
+\item 
+\#define \mbox{\hyperlink{group___g_p_i_o___s_p_e_e_d_s_ga44a0eb2335a21858efbbb1557ce8d5e5}{GPIO\+\_\+\+SPEED\+\_\+\+MEDIUM}}~1
+\item 
+\#define \mbox{\hyperlink{group___g_p_i_o___s_p_e_e_d_s_gad693110177bf2e34c5431555c6977e8c}{GPIO\+\_\+\+SPEED\+\_\+\+HIGH}}~2
+\item 
+\#define \mbox{\hyperlink{group___g_p_i_o___s_p_e_e_d_s_gae11603e44b5bb26398c583a2410cafd5}{GPIO\+\_\+\+SPEED\+\_\+\+VERY\+\_\+\+HIGH}}~3
+\item 
+\#define \mbox{\hyperlink{group___g_p_i_o___a_l_t_e_r_n_a_t_e___f_u_n_c_t_i_o_n_s_ga1d74d4de02de588ea7bb06855bcd9bc7}{GPIO\+\_\+\+ALT\+\_\+\+FUNC\+\_\+0}}~0
+\item 
+\#define \mbox{\hyperlink{group___g_p_i_o___a_l_t_e_r_n_a_t_e___f_u_n_c_t_i_o_n_s_gaad55732c612be679eae05e8412bcffa0}{GPIO\+\_\+\+ALT\+\_\+\+FUNC\+\_\+1}}~1
+\item 
+\#define \mbox{\hyperlink{group___g_p_i_o___a_l_t_e_r_n_a_t_e___f_u_n_c_t_i_o_n_s_gac7d2b83419efbfab051ffb505220f1da}{GPIO\+\_\+\+ALT\+\_\+\+FUNC\+\_\+2}}~2
+\item 
+\#define \mbox{\hyperlink{group___g_p_i_o___a_l_t_e_r_n_a_t_e___f_u_n_c_t_i_o_n_s_ga25c0833923d8086da992976d82c4c95e}{GPIO\+\_\+\+ALT\+\_\+\+FUNC\+\_\+3}}~3
+\item 
+\#define \mbox{\hyperlink{group___g_p_i_o___a_l_t_e_r_n_a_t_e___f_u_n_c_t_i_o_n_s_gae81bfbc39049aac07554fd5955049c7b}{GPIO\+\_\+\+ALT\+\_\+\+FUNC\+\_\+4}}~4
+\item 
+\#define \mbox{\hyperlink{group___g_p_i_o___a_l_t_e_r_n_a_t_e___f_u_n_c_t_i_o_n_s_ga4aef01a4641ad7f3083e3a5aa8d708ef}{GPIO\+\_\+\+ALT\+\_\+\+FUNC\+\_\+5}}~5
+\item 
+\#define \mbox{\hyperlink{group___g_p_i_o___a_l_t_e_r_n_a_t_e___f_u_n_c_t_i_o_n_s_ga9df73364e633c162c25432b8dc85cf69}{GPIO\+\_\+\+ALT\+\_\+\+FUNC\+\_\+6}}~6
+\item 
+\#define \mbox{\hyperlink{group___g_p_i_o___a_l_t_e_r_n_a_t_e___f_u_n_c_t_i_o_n_s_ga348e0f2784c3ee5bd19ba4adf6b3f20e}{GPIO\+\_\+\+ALT\+\_\+\+FUNC\+\_\+7}}~7
+\item 
+\#define \mbox{\hyperlink{group___g_p_i_o___a_l_t_e_r_n_a_t_e___f_u_n_c_t_i_o_n_s_ga8c5a60031b01bb456374bcd535451d80}{GPIO\+\_\+\+ALT\+\_\+\+FUNC\+\_\+8}}~8
+\item 
+\#define \mbox{\hyperlink{group___g_p_i_o___a_l_t_e_r_n_a_t_e___f_u_n_c_t_i_o_n_s_gae831b76365abdf9a0f1a6d8fb6374efe}{GPIO\+\_\+\+ALT\+\_\+\+FUNC\+\_\+9}}~9
+\item 
+\#define \mbox{\hyperlink{group___g_p_i_o___a_l_t_e_r_n_a_t_e___f_u_n_c_t_i_o_n_s_gac31052d210aeb690f9b64b585fc08233}{GPIO\+\_\+\+ALT\+\_\+\+FUNC\+\_\+10}}~10
+\item 
+\#define \mbox{\hyperlink{group___g_p_i_o___a_l_t_e_r_n_a_t_e___f_u_n_c_t_i_o_n_s_ga52cf7f5226397df7cc1085e69d57bf9b}{GPIO\+\_\+\+ALT\+\_\+\+FUNC\+\_\+11}}~11
+\item 
+\#define \mbox{\hyperlink{group___g_p_i_o___a_l_t_e_r_n_a_t_e___f_u_n_c_t_i_o_n_s_ga1452d81855dccfe61081be7cb9cda815}{GPIO\+\_\+\+ALT\+\_\+\+FUNC\+\_\+12}}~12
+\item 
+\#define \mbox{\hyperlink{group___g_p_i_o___a_l_t_e_r_n_a_t_e___f_u_n_c_t_i_o_n_s_ga7f8f2d46a0b11fc1eba6eaf855bfd34d}{GPIO\+\_\+\+ALT\+\_\+\+FUNC\+\_\+13}}~13
+\item 
+\#define \mbox{\hyperlink{group___g_p_i_o___a_l_t_e_r_n_a_t_e___f_u_n_c_t_i_o_n_s_ga461ef4f3fba5e23d405842bcd6620825}{GPIO\+\_\+\+ALT\+\_\+\+FUNC\+\_\+14}}~14
+\item 
+\#define \mbox{\hyperlink{group___g_p_i_o___a_l_t_e_r_n_a_t_e___f_u_n_c_t_i_o_n_s_gaf45dc1fbaaf36745ca3dd0ca65851eb2}{GPIO\+\_\+\+ALT\+\_\+\+FUNC\+\_\+15}}~15
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___g_p_i_o___driver___a_p_is_ga59f07285d055589998e910abf10c9ab1}{gpio\+\_\+pin\+\_\+init}} (\mbox{\hyperlink{struct_g_p_i_ox___handle__t}{GPIOx\+\_\+\+Handle\+\_\+t}} \texorpdfstring{$\ast$}{*}handle)
+\begin{DoxyCompactList}\small\item\em Initialize a GPIO pin. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___g_p_i_o___driver___a_p_is_ga347db04adc58e4104a1b0600a2238395}{gpio\+\_\+port\+\_\+deinit}} (\mbox{\hyperlink{struct_g_p_i_ox___reg_def__t}{GPIOx\+\_\+\+Reg\+Def\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+GPIOx)
+\begin{DoxyCompactList}\small\item\em De-\/initialize a GPIO port. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group___g_p_i_o___driver___a_p_is_ga7a2f606b1dfb968762d2ee9dcf59fc5f}{gpio\+\_\+read\+\_\+pin}} (\mbox{\hyperlink{struct_g_p_i_ox___reg_def__t}{GPIOx\+\_\+\+Reg\+Def\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+GPIOx, uint8\+\_\+t pin)
+\begin{DoxyCompactList}\small\item\em Read a GPIO pin. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{group___g_p_i_o___driver___a_p_is_ga893c5d7e52c33fea09df85b817801855}{gpio\+\_\+read\+\_\+port}} (\mbox{\hyperlink{struct_g_p_i_ox___reg_def__t}{GPIOx\+\_\+\+Reg\+Def\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+GPIOx)
+\begin{DoxyCompactList}\small\item\em Read the entire GPIO input port. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___g_p_i_o___driver___a_p_is_ga3a438f76ce1b8d514645f41c5e13bc19}{gpio\+\_\+write\+\_\+pin}} (\mbox{\hyperlink{struct_g_p_i_ox___reg_def__t}{GPIOx\+\_\+\+Reg\+Def\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+GPIOx, uint8\+\_\+t pin, uint8\+\_\+t state)
+\begin{DoxyCompactList}\small\item\em Write HIGH/\+LOW to a pin. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___g_p_i_o___driver___a_p_is_ga58fd0d0b3c266d7a1e9777cef52e8207}{gpio\+\_\+write\+\_\+port}} (\mbox{\hyperlink{struct_g_p_i_ox___reg_def__t}{GPIOx\+\_\+\+Reg\+Def\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+GPIOx, uint16\+\_\+t write\+\_\+data)
+\begin{DoxyCompactList}\small\item\em Write a 16-\/bit value to the entire GPIO output port. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___g_p_i_o___driver___a_p_is_gaf33fe651c0911b5bfccfe253b8c44286}{gpio\+\_\+toggle\+\_\+pin}} (\mbox{\hyperlink{struct_g_p_i_ox___reg_def__t}{GPIOx\+\_\+\+Reg\+Def\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+GPIOx, uint8\+\_\+t pin)
+\begin{DoxyCompactList}\small\item\em Toggle the logic level of a GPIO output pin. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___g_p_i_o___driver___a_p_is_ga314747314a10eafbe93c75f2d3d43b28}{gpio\+\_\+irq\+\_\+config}} (\mbox{\hyperlink{struct_g_p_i_ox___reg_def__t}{GPIOx\+\_\+\+Reg\+Def\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+GPIOx, uint8\+\_\+t pin, uint8\+\_\+t trigger, uint8\+\_\+t irq\+\_\+priority)
+\begin{DoxyCompactList}\small\item\em Configure a GPIO pin as an external interrupt (EXTI). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___g_p_i_o___driver___a_p_is_ga2095b94c246588474f2dfec5999d3efb}{gpio\+\_\+irq\+\_\+control}} (uint8\+\_\+t pin, uint8\+\_\+t en\+\_\+di)
+\begin{DoxyCompactList}\small\item\em Enable or disable NVIC interrupt for a GPIO EXTI line. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___g_p_i_o___driver___a_p_is_ga7029bc337ba529f1ed60ecec9003ae43}{gpio\+\_\+irq\+\_\+clear}} (uint8\+\_\+t pin)
+\begin{DoxyCompactList}\small\item\em Clears the interrupt pending flag for the specified EXTI line. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+GPIO Driver Header for STM32\+F407xx MCU. 
+
+\begin{DoxyAuthor}{Author}
+Yuvraj Singh 
+\end{DoxyAuthor}
+This file contains\+:
+\begin{DoxyItemize}
+\item GPIO register definition structure
+\item GPIO configuration structure
+\item GPIO handle structure
+\item Supported macro definitions for GPIO modes, speed, pull-\/up/pull-\/down, output types, and alternate functions.
+\item Doxygen-\/compliant documentation for easy code navigation and API usage.
+\end{DoxyItemize}
+
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+14-\/Nov-\/2025 
+\end{DoxyDate}
+
+
+Definition in file \mbox{\hyperlink{_s_t_m32_f4xx___d_r_i_v_e_r_s_2_inc_2stm32f407xx__gpio_8h_source}{stm32f407xx\+\_\+gpio.\+h}}.
+

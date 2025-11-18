@@ -1,12 +1,9 @@
 var searchData=
 [
-  ['details_0',['Implementation Details',['../index.html#autotoc_md13',1,'']]],
-  ['development_1',['STM32F407 Bare-Metal Driver Development',['../index.html',1,'']]],
-  ['development_20approach_2',['Development Approach',['../index.html#autotoc_md11',1,'']]],
-  ['documentation_3',['Documentation',['../index.html#autotoc_md41',1,'API Documentation'],['../index.html#autotoc_md53',1,'Documentation']]],
-  ['documents_4',['Reference Documents',['../index.html#autotoc_md52',1,'']]],
-  ['driver_20api_5',['GPIO Driver API',['../index.html#autotoc_md42',1,'']]],
-  ['driver_20api_20summary_6',['GPIO Driver API Summary',['../stm32f407xx__gpio_8c.html#GPIO_API_Summary',1,'']]],
-  ['driver_20development_7',['STM32F407 Bare-Metal Driver Development',['../index.html',1,'']]],
-  ['drivers_8',['Project 003: Testing STM32F407xx Drivers',['../index.html#autotoc_md23',1,'']]]
+  ['bare_20metal_20driver_20development_0',['STM32F407 Bare-Metal Driver Development',['../index.html',1,'']]],
+  ['bare_20metal_20philosophy_1',['Bare-Metal Philosophy',['../index.html#autotoc_md12',1,'']]],
+  ['before_20accessing_20them_2',['We must enable its clock before accessing them.',['../group___g_p_i_o___driver___a_p_is.html#autotoc_md68',1,'']]],
+  ['building_20and_20flashing_3',['Building and Flashing',['../index.html#autotoc_md37',1,'']]],
+  ['bus_20architecture_4',['Bus Architecture',['../index.html#autotoc_md27',1,'']]],
+  ['button_20interrupt_5',['Project 002: User Button Interrupt',['../index.html#autotoc_md21',1,'']]]
 ];

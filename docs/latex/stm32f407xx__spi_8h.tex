@@ -1,0 +1,180 @@
+\doxysection{STM32\+F4xx\+\_\+\+DRIVERS/\+Inc/stm32f407xx\+\_\+spi.h File Reference}
+\hypertarget{stm32f407xx__spi_8h}{}\label{stm32f407xx__spi_8h}\index{STM32F4xx\_DRIVERS/Inc/stm32f407xx\_spi.h@{STM32F4xx\_DRIVERS/Inc/stm32f407xx\_spi.h}}
+{\ttfamily \#include "{}stm32f407xx.\+h"{}}\newline
+Include dependency graph for stm32f407xx\+\_\+spi.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=217pt]{stm32f407xx__spi_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=218pt]{stm32f407xx__spi_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_s_p_ix___config__t}{SPIx\+\_\+\+Config\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{struct_s_p_ix___handle__t}{SPIx\+\_\+\+Handle\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___d_e_v_i_c_e___m_o_d_e___m_a_c_r_o_s_gae14503419450066f92b6fc8803f892ac}{SPI\+\_\+\+DEVICE\+\_\+\+MODE\+\_\+\+MASTER}}~1
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___d_e_v_i_c_e___m_o_d_e___m_a_c_r_o_s_gaab62db7f593efc07b3e9316483477b15}{SPI\+\_\+\+DEVICE\+\_\+\+MODE\+\_\+\+SLAVE}}~0
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___d_e_v_i_c_e___b_u_s___m_o_d_e___m_a_c_r_o_s_ga7146e4b419f9b1ed0950d016239b68f6}{SPI\+\_\+\+DEVICE\+\_\+\+BUS\+\_\+\+MODE\+\_\+\+FULL\+\_\+\+DUPLEX}}~0
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___d_e_v_i_c_e___b_u_s___m_o_d_e___m_a_c_r_o_s_gadfa15cb8b874f642da5e25099a76e634}{SPI\+\_\+\+DEVICE\+\_\+\+BUS\+\_\+\+MODE\+\_\+\+HALF\+\_\+\+DUPLEX}}~1
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___d_e_v_i_c_e___b_u_s___m_o_d_e___m_a_c_r_o_s_ga70ca8b6374435a686f6dbc768b4b26a3}{SPI\+\_\+\+DEVICE\+\_\+\+BUS\+\_\+\+MODE\+\_\+\+SIMPLEX}}~2
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___c_l_o_c_k___s_p_e_e_d___m_a_c_r_o_s_ga23a6efab7ad15dd53fd90f71fbd7af5e}{SPI\+\_\+\+CLOCK\+\_\+\+SPEED\+\_\+\+BY\+\_\+2}}~0
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___c_l_o_c_k___s_p_e_e_d___m_a_c_r_o_s_ga7b07f212e61df5c75eb7f36bc2a78340}{SPI\+\_\+\+CLOCK\+\_\+\+SPEED\+\_\+\+BY\+\_\+4}}~1
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___c_l_o_c_k___s_p_e_e_d___m_a_c_r_o_s_gab0d1870a0095790106ccb4d1f04b7d3e}{SPI\+\_\+\+CLOCK\+\_\+\+SPEED\+\_\+\+BY\+\_\+8}}~2
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___c_l_o_c_k___s_p_e_e_d___m_a_c_r_o_s_ga015e6a575d941354ce9a24726c426759}{SPI\+\_\+\+CLOCK\+\_\+\+SPEED\+\_\+\+BY\+\_\+16}}~3
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___c_l_o_c_k___s_p_e_e_d___m_a_c_r_o_s_ga37ad9df99bdd5fae1ea883c6396f0786}{SPI\+\_\+\+CLOCK\+\_\+\+SPEED\+\_\+\+BY\+\_\+32}}~4
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___c_l_o_c_k___s_p_e_e_d___m_a_c_r_o_s_ga9c109a355c89cb4e41cf12bd486bf16e}{SPI\+\_\+\+CLOCK\+\_\+\+SPEED\+\_\+\+BY\+\_\+64}}~5
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___c_l_o_c_k___s_p_e_e_d___m_a_c_r_o_s_ga9cd7b629cdb40774a27e341fd9d59a7c}{SPI\+\_\+\+CLOCK\+\_\+\+SPEED\+\_\+\+BY\+\_\+128}}~6
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___c_l_o_c_k___s_p_e_e_d___m_a_c_r_o_s_ga7300e386366948b5092d05bd7e88e937}{SPI\+\_\+\+CLOCK\+\_\+\+SPEED\+\_\+\+BY\+\_\+256}}~7
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___c_p_o_l___m_a_c_r_o_s_gaf5161f1e7fb512ef0e58612267db52d6}{SPI\+\_\+\+CPOL\+\_\+\+HIGH}}~1
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___c_p_o_l___m_a_c_r_o_s_ga83a0541021071c7e33997d3affc0c8d4}{SPI\+\_\+\+CPOL\+\_\+\+LOW}}~0
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___c_p_h_a___m_a_c_r_o_s_ga1ecd4ff3f83f43eac188be8d1c2c1e3f}{SPI\+\_\+\+CPHA\+\_\+\+FIRST\+\_\+\+EDGE}}~0
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___c_p_h_a___m_a_c_r_o_s_ga1cd9990424875bbc316c6b14033fb2dd}{SPI\+\_\+\+CPHA\+\_\+\+SECOND\+\_\+\+EDGE}}~1
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___f_r_a_m_e___s_i_z_e___m_a_c_r_o_s_gaa61be39f5126f032df7554922238a6fb}{SPI\+\_\+\+FRAME\+\_\+\+SIZE\+\_\+8\+\_\+\+BITS}}~0
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___f_r_a_m_e___s_i_z_e___m_a_c_r_o_s_ga0363c65d5eb8d597d36b630f06bd2aa7}{SPI\+\_\+\+FRAME\+\_\+\+SIZE\+\_\+16\+\_\+\+BITS}}~1
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___s_s_m___m_a_c_r_o_s_ga5c7aa70ffa0b137245857a75597c4461}{SPI\+\_\+\+SSM\+\_\+\+SETTING\+\_\+\+DI}}~0
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___s_s_m___m_a_c_r_o_s_ga797c7bb7f2b8f20e995507c69025fbcc}{SPI\+\_\+\+SSM\+\_\+\+SETTING\+\_\+\+EN}}~1
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___b_i_t___o_r_d_e_r___m_a_c_r_o_s_gadf5efb25feb17a826e16ff6fe764374f}{SPI\+\_\+\+BIT\+\_\+\+ORDER\+\_\+\+LSB\+\_\+\+FIRST}}~1
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___b_i_t___o_r_d_e_r___m_a_c_r_o_s_gaa554398df986c0edc87b7f9fac7edbd9}{SPI\+\_\+\+BIT\+\_\+\+ORDER\+\_\+\+MSB\+\_\+\+FIRST}}~0
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___s_s_o_e___m_a_c_r_o_s_ga1f4e36d4bd815d46a8c14312de591316}{SPI\+\_\+\+SSOE\+\_\+\+EN}}~1
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___s_s_o_e___m_a_c_r_o_s_ga77dcce5b050052771db706e43b88a3d5}{SPI\+\_\+\+SSOE\+\_\+\+DI}}~0
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___c_r_c___m_a_c_r_o_s_gacf3839ccf80f04e1682eb8036894d962}{SPI\+\_\+\+CRC\+\_\+\+ENABLE}}~1
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___c_r_c___m_a_c_r_o_s_ga5a5ce38ae6641a08f7513162fef4899e}{SPI\+\_\+\+CRC\+\_\+\+DISABLE}}~0
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___s_t_a_t_u_s___f_l_a_g___m_a_c_r_o_s_gaa4bf84364251d2d1fb189fd72030656e}{SPI\+\_\+\+STATUS\+\_\+\+FLAG\+\_\+\+RXNE}}~0
+\begin{DoxyCompactList}\small\item\em Receive buffer not empty (bit 0). \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_p_i___s_t_a_t_u_s___f_l_a_g___m_a_c_r_o_s_ga13cea6befcaaeb6421eb7e801abb48fe}{SPI\+\_\+\+STATUS\+\_\+\+FLAG\+\_\+\+TXE}}~1
+\begin{DoxyCompactList}\small\item\em Transmit buffer empty (bit 1). \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_p_i___s_t_a_t_u_s___f_l_a_g___m_a_c_r_o_s_ga3017bec8f75601f7195ec984a9fc0746}{SPI\+\_\+\+STATUS\+\_\+\+FLAG\+\_\+\+CHSIDE}}~2
+\begin{DoxyCompactList}\small\item\em Channel side (bit 2). \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_p_i___s_t_a_t_u_s___f_l_a_g___m_a_c_r_o_s_gacbba7922997b519488d93c6c3a0b8bfb}{SPI\+\_\+\+STATUS\+\_\+\+FLAG\+\_\+\+UDR}}~3
+\begin{DoxyCompactList}\small\item\em Underrun error (bit 3). \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_p_i___s_t_a_t_u_s___f_l_a_g___m_a_c_r_o_s_ga9c8a4d37f13d0ad3bd10eb1aa1bc19b6}{SPI\+\_\+\+STATUS\+\_\+\+FLAG\+\_\+\+CRCERR}}~4
+\begin{DoxyCompactList}\small\item\em CRC error (bit 4). \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_p_i___s_t_a_t_u_s___f_l_a_g___m_a_c_r_o_s_ga03bd0883899d8dcc406d3af27287a35e}{SPI\+\_\+\+STATUS\+\_\+\+FLAG\+\_\+\+MODF}}~5
+\begin{DoxyCompactList}\small\item\em Mode fault (bit 5). \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_p_i___s_t_a_t_u_s___f_l_a_g___m_a_c_r_o_s_ga56a2f9dc08aa73b82af59effc87d12c6}{SPI\+\_\+\+STATUS\+\_\+\+FLAG\+\_\+\+OVR}}~6
+\begin{DoxyCompactList}\small\item\em Overrun error (bit 6). \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_p_i___s_t_a_t_u_s___f_l_a_g___m_a_c_r_o_s_ga891a0e21281996b5ea7421f13182d5b6}{SPI\+\_\+\+STATUS\+\_\+\+FLAG\+\_\+\+BSY}}~7
+\begin{DoxyCompactList}\small\item\em Busy (bit 7). \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_p_i___s_t_a_t_u_s___f_l_a_g___m_a_c_r_o_s_ga0db5fe5f162a4647007ae3242a45da97}{SPI\+\_\+\+STATUS\+\_\+\+FLAG\+\_\+\+FRE}}~8
+\begin{DoxyCompactList}\small\item\em Frame format error (bit 8). \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s_ga2f1d2c5a9e481ca06d0e29332f6f948a}{SPI\+\_\+\+CR1\+\_\+\+CPHA\+\_\+\+Pos}}~0U
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s_gadd3274c0dce6293370773c5050f9c4be}{SPI\+\_\+\+CR1\+\_\+\+CPOL\+\_\+\+Pos}}~1U
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s_ga27567886a2c76d088e01ad16851cdb71}{SPI\+\_\+\+CR1\+\_\+\+MSTR\+\_\+\+Pos}}~2U
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s_gac6a71c219a81b476e66c3579d72120b9}{SPI\+\_\+\+CR1\+\_\+\+BR\+\_\+\+Pos}}~3U
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s_ga3f5515b536f82c1d91a64bd534030284}{SPI\+\_\+\+CR1\+\_\+\+SPE\+\_\+\+Pos}}~6U
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s_ga982b564879d1dc60a3be787409df0c27}{SPI\+\_\+\+CR1\+\_\+\+LSBFIRST\+\_\+\+Pos}}~7U
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s_gad99cf4909aa9307e01f61645451a9d0e}{SPI\+\_\+\+CR1\+\_\+\+SSI\+\_\+\+Pos}}~8U
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s_gab2909290fab17ee930afc335811f574c}{SPI\+\_\+\+CR1\+\_\+\+SSM\+\_\+\+Pos}}~9U
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s_gadd702fae4dcca65f3b43b2e02f67ee7b}{SPI\+\_\+\+CR1\+\_\+\+RXONLY\+\_\+\+Pos}}~10U
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s_ga5290662db14690d4bcf30ed9e4694462}{SPI\+\_\+\+CR1\+\_\+\+DFF\+\_\+\+Pos}}~11U
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s_ga4280bd0e8bcc3a268fa3a17b684499d7}{SPI\+\_\+\+CR1\+\_\+\+CRCNEXT\+\_\+\+Pos}}~12U
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s_ga54cb3022c5e3d98cd81a7ff1cb087fac}{SPI\+\_\+\+CR1\+\_\+\+CRCEN\+\_\+\+Pos}}~13U
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s_ga2975c27caad9e31aad719d78d591ac1d}{SPI\+\_\+\+CR1\+\_\+\+BIDIOE\+\_\+\+Pos}}~14U
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s_gab07c9facbfdb0a7d5d89b1fd6a3ef711}{SPI\+\_\+\+CR1\+\_\+\+BIDIMODE\+\_\+\+Pos}}~15U
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___c_r2___b_i_t___p_o_s_i_t_i_o_n_s_ga3079c4eebd0aef7bd22817bb99f21021}{SPI\+\_\+\+CR2\+\_\+\+RXDMAEN\+\_\+\+Pos}}~0U
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___c_r2___b_i_t___p_o_s_i_t_i_o_n_s_ga24ae89d7e48296566cd18fb7495a2c81}{SPI\+\_\+\+CR2\+\_\+\+TXDMAEN\+\_\+\+Pos}}~1U
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___c_r2___b_i_t___p_o_s_i_t_i_o_n_s_gaa0d0f5f51a5804e1a204bf1643516896}{SPI\+\_\+\+CR2\+\_\+\+SSOE\+\_\+\+Pos}}~2U
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___c_r2___b_i_t___p_o_s_i_t_i_o_n_s_gaa192ac1c1066c8867a6fec7de630d222}{SPI\+\_\+\+CR2\+\_\+\+FRF\+\_\+\+Pos}}~4U
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___c_r2___b_i_t___p_o_s_i_t_i_o_n_s_ga632cdba8557df9c3bbd2561b93f4e0f7}{SPI\+\_\+\+CR2\+\_\+\+ERRIE\+\_\+\+Pos}}~5U
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___c_r2___b_i_t___p_o_s_i_t_i_o_n_s_gaf2e1e16fa6007b96880333d0321c5971}{SPI\+\_\+\+CR2\+\_\+\+RXNEIE\+\_\+\+Pos}}~6U
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___c_r2___b_i_t___p_o_s_i_t_i_o_n_s_ga01e9b00dc195c10d1baefd0687ab9262}{SPI\+\_\+\+CR2\+\_\+\+TXEIE\+\_\+\+Pos}}~7U
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___s_r___b_i_t___p_o_s_i_t_i_o_n_s_ga306a27b203d1275f848f2767d76c9e3b}{SPI\+\_\+\+SR\+\_\+\+RXNE\+\_\+\+Pos}}~0U
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___s_r___b_i_t___p_o_s_i_t_i_o_n_s_ga92e10388eb117c22b63994b491d9ec9d}{SPI\+\_\+\+SR\+\_\+\+TXE\+\_\+\+Pos}}~1U
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___s_r___b_i_t___p_o_s_i_t_i_o_n_s_gae5b742da8b06539f6119d020885a6e0c}{SPI\+\_\+\+SR\+\_\+\+CHSIDE\+\_\+\+Pos}}~2U
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___s_r___b_i_t___p_o_s_i_t_i_o_n_s_ga93586e3966e74b1df8dbda75e68b26f0}{SPI\+\_\+\+SR\+\_\+\+UDR\+\_\+\+Pos}}~3U
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___s_r___b_i_t___p_o_s_i_t_i_o_n_s_ga411b6a4aa85d06e425050130f82db35c}{SPI\+\_\+\+SR\+\_\+\+CRCERR\+\_\+\+Pos}}~4U
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___s_r___b_i_t___p_o_s_i_t_i_o_n_s_gafb7ef73b03bbd542c54fc4e9c9124e73}{SPI\+\_\+\+SR\+\_\+\+MODF\+\_\+\+Pos}}~5U
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___s_r___b_i_t___p_o_s_i_t_i_o_n_s_ga6137ac3afbbc8b50c7a998368d2cb9be}{SPI\+\_\+\+SR\+\_\+\+OVR\+\_\+\+Pos}}~6U
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___s_r___b_i_t___p_o_s_i_t_i_o_n_s_ga8313629719f8dc81536dd8faa824e6c8}{SPI\+\_\+\+SR\+\_\+\+BSY\+\_\+\+Pos}}~7U
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___s_r___b_i_t___p_o_s_i_t_i_o_n_s_gafb0e70677f5775a55044111eb83e1ba6}{SPI\+\_\+\+SR\+\_\+\+FRE\+\_\+\+Pos}}~8U
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___d_r___b_i_t___p_o_s_i_t_i_o_n_s_ga5b57ca6bca45cfdaed4a26fefc0da85f}{SPI\+\_\+\+DR\+\_\+\+DR\+\_\+\+Pos}}~0U
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___c_r_c_p_r___b_i_t___p_o_s_i_t_i_o_n_s_ga0244eb48f4c5158b03dd4b26cc0d2eac}{SPI\+\_\+\+CRCPR\+\_\+\+CRCPOLY\+\_\+\+Pos}}~0U
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___r_x_c_r_c_r___b_i_t___p_o_s_i_t_i_o_n_s_ga2b80d92a2b51c4c61d5a646ac2b36129}{SPI\+\_\+\+RXCRCR\+\_\+\+RXCRC\+\_\+\+Pos}}~0U
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___t_x_c_r_c_r___b_i_t___p_o_s_i_t_i_o_n_s_ga0a0e6e24778c36e45838350d052916d1}{SPI\+\_\+\+TXCRCR\+\_\+\+TXCRC\+\_\+\+Pos}}~0U
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s_gab01fdd1c8bc842ad1e9017997c73722c}{SPIx\+\_\+\+Init}} (\mbox{\hyperlink{struct_s_p_ix___handle__t}{SPIx\+\_\+\+Handle\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+SPI\+\_\+\+Handle)
+\begin{DoxyCompactList}\small\item\em Initializes the SPI peripheral based on the configuration provided in the SPI handle structure. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s_ga0864ea8e8f7aaf657d0ba57b60f4227e}{SPIx\+\_\+\+De\+Init}} (\mbox{\hyperlink{struct_s_p_ix___reg_def__t}{SPIx\+\_\+\+Reg\+Def\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+SPIx)
+\begin{DoxyCompactList}\small\item\em Resets the SPI peripheral registers to their default reset values. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s_ga66a55c39f2954c6fba416822612497cb}{SPIx\+\_\+\+Peri\+\_\+\+Control}} (\mbox{\hyperlink{struct_s_p_ix___reg_def__t}{SPIx\+\_\+\+Reg\+Def\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+SPIx, uint8\+\_\+t EN\+\_\+\+DI)
+\begin{DoxyCompactList}\small\item\em Enables or disables the SPI peripheral. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s_ga28c21c2e8a6f53982ec6666fb0969123}{SPIx\+\_\+\+Get\+Flag\+Status}} (\mbox{\hyperlink{struct_s_p_ix___reg_def__t}{SPIx\+\_\+\+Reg\+Def\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+SPIx, uint32\+\_\+t Flag\+Name)
+\begin{DoxyCompactList}\small\item\em Reads the status of a specific SPI status flag. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s_ga2f1a0a4006270d72092844c3e764d399}{SPIx\+\_\+\+Send\+Data\+\_\+\+Blocking}} (\mbox{\hyperlink{struct_s_p_ix___reg_def__t}{SPIx\+\_\+\+Reg\+Def\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+SPIx, uint8\+\_\+t \texorpdfstring{$\ast$}{*}p\+Data, uint32\+\_\+t Len)
+\begin{DoxyCompactList}\small\item\em Send data over the specified SPI peripheral. \end{DoxyCompactList}\end{DoxyCompactItemize}

@@ -37,5 +37,6 @@ var group___r_c_c___r_e_g =
       [ "SSCGR", "struct_r_c_c___reg_def__t.html#a0addf6bf7447e8de71be463cbaa317f9", null ]
     ] ],
     [ "RCC", "group___r_c_c___r_e_g.html#ga74944438a086975793d26ae48d5882d4", null ],
+    [ "RCC", "group___r_c_c___r_e_g.html#ga74944438a086975793d26ae48d5882d4", null ],
     [ "RCC_RegDef_t", "group___r_c_c___r_e_g.html#gaa7687f84fcd3bcd30ad80ef263c79f39", null ]
 ];

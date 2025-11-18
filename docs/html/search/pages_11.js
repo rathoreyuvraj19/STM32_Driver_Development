@@ -1,8 +1,9 @@
 var searchData=
 [
-  ['table_20of_20contents_0',['Table of Contents',['../index.html#autotoc_md2',1,'']]],
-  ['technology_20stack_1',['Technology Stack',['../index.html#autotoc_md14',1,'']]],
-  ['testing_20stm32f407xx_20drivers_2',['Project 003: Testing STM32F407xx Drivers',['../index.html#autotoc_md23',1,'']]],
-  ['todo_20list_3',['Todo List',['../todo.html',1,'']]],
-  ['tools_4',['Required Tools',['../index.html#autotoc_md7',1,'']]]
+  ['read_20write_20functions_0',['Read/Write Functions',['../index.html#autotoc_md44',1,'']]],
+  ['reference_20documents_1',['Reference Documents',['../index.html#autotoc_md52',1,'']]],
+  ['reference_20manual_2',['Key Sections in Reference Manual',['../index.html#autotoc_md54',1,'']]],
+  ['repository_20structure_3',['Repository Structure',['../index.html#autotoc_md9',1,'']]],
+  ['required_20tools_4',['Required Tools',['../index.html#autotoc_md7',1,'']]],
+  ['resources_5',['Learning Resources',['../index.html#autotoc_md51',1,'']]]
 ];

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['hardware_20specifications_0',['Hardware Specifications',['../index.html#autotoc_md4',1,'']]],
-  ['hello_20world_1',['Project 000: Hello World',['../index.html#autotoc_md17',1,'']]]
+  ['flashing_0',['Building and Flashing',['../index.html#autotoc_md37',1,'']]],
+  ['functions_1',['Functions',['../index.html#autotoc_md43',1,'Initialization Functions'],['../index.html#autotoc_md45',1,'Interrupt Functions'],['../index.html#autotoc_md44',1,'Read/Write Functions']]]
 ];

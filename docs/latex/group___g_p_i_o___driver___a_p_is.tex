@@ -29,12 +29,14 @@ void \mbox{\hyperlink{group___g_p_i_o___driver___a_p_is_ga58fd0d0b3c266d7a1e9777
 \begin{DoxyCompactList}\small\item\em Write a 16-\/bit value to the entire GPIO output port. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{group___g_p_i_o___driver___a_p_is_gaf33fe651c0911b5bfccfe253b8c44286}{gpio\+\_\+toggle\+\_\+pin}} (\mbox{\hyperlink{struct_g_p_i_ox___reg_def__t}{GPIOx\+\_\+\+Reg\+Def\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+GPIOx, uint8\+\_\+t pin)
 \begin{DoxyCompactList}\small\item\em Toggle the logic level of a GPIO output pin. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{group___g_p_i_o___driver___a_p_is_ga59407004373e1086e102436ebe8c1609}{gpio\+\_\+irq\+\_\+config}} (uint8\+\_\+t pin, uint8\+\_\+t trigger)
-\begin{DoxyCompactList}\small\item\em Configure EXTI interrupt trigger. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{group___g_p_i_o___driver___a_p_is_gaecfc0d5327266f101f163c807cd08f9e}{gpio\+\_\+irq\+\_\+control}} (uint8\+\_\+t irq\+\_\+no, uint8\+\_\+t en)
-\begin{DoxyCompactList}\small\item\em Enable/disable NVIC interrupt for a GPIO EXTI line. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___g_p_i_o___driver___a_p_is_ga314747314a10eafbe93c75f2d3d43b28}{gpio\+\_\+irq\+\_\+config}} (\mbox{\hyperlink{struct_g_p_i_ox___reg_def__t}{GPIOx\+\_\+\+Reg\+Def\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+GPIOx, uint8\+\_\+t pin, uint8\+\_\+t trigger, uint8\+\_\+t irq\+\_\+priority)
+\begin{DoxyCompactList}\small\item\em Configure a GPIO pin as an external interrupt (EXTI). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___g_p_i_o___driver___a_p_is_ga2095b94c246588474f2dfec5999d3efb}{gpio\+\_\+irq\+\_\+control}} (uint8\+\_\+t pin, uint8\+\_\+t en\+\_\+di)
+\begin{DoxyCompactList}\small\item\em Enable or disable NVIC interrupt for a GPIO EXTI line. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{group___g_p_i_o___driver___a_p_is_ga7029bc337ba529f1ed60ecec9003ae43}{gpio\+\_\+irq\+\_\+clear}} (uint8\+\_\+t pin)
-\begin{DoxyCompactList}\small\item\em Clear EXTI interrupt pending bit. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Clears the interrupt pending flag for the specified EXTI line. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___g_p_i_o___driver___a_p_is_ga59407004373e1086e102436ebe8c1609}{gpio\+\_\+irq\+\_\+config}} (uint8\+\_\+t pin, uint8\+\_\+t trigger)
+\begin{DoxyCompactList}\small\item\em Configure EXTI interrupt trigger. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsubsection{Detailed Description}
@@ -53,11 +55,246 @@ void gpio\+\_\+irq\+\_\+clear (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{pin
 
 
 
-Clear EXTI interrupt pending bit. 
+Clears the interrupt pending flag for the specified EXTI line. 
 
+Clear EXTI interrupt pending bit.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pin} & GPIO pin number (0–15) associated with the EXTI line.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+This function writes a \textquotesingle{}1\textquotesingle{} to the EXTI\+\_\+\+PR register bit. Clearing the EXTI pending bit also clears the corresponding NVIC pending state automatically — no NVIC action is needed. 
+\end{DoxyNote}
+
+
+Definition at line \mbox{\hyperlink{_s_t_m32_f4xx___d_r_i_v_e_r_s_2_src_2stm32f407xx__gpio_8c_source_l00339}{339}} of file \mbox{\hyperlink{_s_t_m32_f4xx___d_r_i_v_e_r_s_2_src_2stm32f407xx__gpio_8c_source}{stm32f407xx\+\_\+gpio.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00339\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00340\ \ \ \ \ \mbox{\hyperlink{struct_e_x_t_i___reg_def__t}{EXTI\_RegDef\_t}}\ *pEXTI\ =\ \mbox{\hyperlink{group___e_x_t_i___r_e_g_ga9189e770cd9b63dadd36683eb9843cac}{EXTI}};}
+\DoxyCodeLine{00341\ \ \ \ \ pEXTI-\/>\mbox{\hyperlink{struct_e_x_t_i___reg_def__t_a95f180dda1e0dab5d9ca9c1c96a80d42}{PR}}\ |=\ (1\ <<\ pin);}
+\DoxyCodeLine{00342\ \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=276pt]{group___g_p_i_o___driver___a_p_is_ga7029bc337ba529f1ed60ecec9003ae43_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{group___g_p_i_o___driver___a_p_is_ga314747314a10eafbe93c75f2d3d43b28}\index{GPIO Driver Function Prototypes@{GPIO Driver Function Prototypes}!gpio\_irq\_config@{gpio\_irq\_config}}
+\index{gpio\_irq\_config@{gpio\_irq\_config}!GPIO Driver Function Prototypes@{GPIO Driver Function Prototypes}}
+\doxysubsubsubsection{\texorpdfstring{gpio\_irq\_config()}{gpio\_irq\_config()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{group___g_p_i_o___driver___a_p_is_ga314747314a10eafbe93c75f2d3d43b28} 
+void gpio\+\_\+irq\+\_\+config (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_p_i_ox___reg_def__t}{GPIOx\+\_\+\+Reg\+Def\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+GPIOx}{, }\item[{uint8\+\_\+t}]{pin}{, }\item[{uint8\+\_\+t}]{trigger}{, }\item[{uint8\+\_\+t}]{irq\+\_\+priority}{}\end{DoxyParamCaption})}
+
+
+
+Configure a GPIO pin as an external interrupt (EXTI). 
+
+This API configures the selected GPIO pin for external interrupt usage by\+:
+\begin{DoxyItemize}
+\item Mapping the GPIO port to the correct EXTI line using SYSCFG
+\item Configuring the trigger type (rising/falling/both)
+\item Enabling the interrupt line in EXTI
+\item Setting the NVIC priority for the corresponding EXTI IRQ
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+GPIOx} & Pointer to the GPIO port (GPIOA, GPIOB, ...) \doxylink{group___g_p_i_o___b_a_s_e___a_d_d_r_e_s_s_e_s}{GPIO Port Base Address Macros} \\
+\hline
+{\em pin} & GPIO pin number (0–15) \doxylink{group___g_p_i_o___p_i_n___n_u_m_b_e_r___m_a_c_r_o_s}{GPIO Pin Number Macros} \\
+\hline
+{\em trigger} & Interrupt trigger selection \doxylink{group___i_n_t_e_r_r_u_p_t___t_r_i_g_g_e_r___t_y_p_e___m_a_c_r_o_s}{Interrupt Trigger Type Macros} \\
+\hline
+{\em irq\+\_\+priority} & NVIC priority for the EXTI interrupt (0 = highest) \\
+\hline
+\end{DoxyParams}
+Sequence of steps in \doxylink{group___g_p_i_o___driver___a_p_is_ga314747314a10eafbe93c75f2d3d43b28}{gpio\+\_\+irq\+\_\+config()} API\+:
+\begin{DoxyEnumerate}
+\item Program SYSCFG
+\item Program EXTI
+\item Program Trigger mode
+\item Clear pending interrupt
+\item Unmask EXTI line
+\item Sets NVIC priority
+\end{DoxyEnumerate}
+
+\DoxyHorRuler{0}
+
+\begin{DoxyEnumerate}
+\item Enable SYSCFG Peripheral Clock
+\end{DoxyEnumerate}
+
+The EXTI configuration registers (EXTICR1–4) reside inside SYSCFG. \hypertarget{group___g_p_i_o___driver___a_p_is_autotoc_md68}{}\doxysubsubsubsection{\texorpdfstring{We must enable its clock before accessing them.}{We must enable its clock before accessing them.}}\label{group___g_p_i_o___driver___a_p_is_autotoc_md68}
+Pointer to access SYSCFG register block
+
+\DoxyHorRuler{0}
+
+\begin{DoxyEnumerate}
+\item Determine which EXTICR register to use
+\end{DoxyEnumerate}
+
+Each EXTICR register configures 4 pins\+: EXTICR1 → EXTI0..3 EXTICR2 → EXTI4..7 EXTICR3 → EXTI8..11 EXTICR4 → EXTI12..15
+
+Index is pin / 4\+: pin 0–3 → 0 pin 4–7 → 1 pin 8–11 → 2 \hypertarget{group___g_p_i_o___driver___a_p_is_autotoc_md69}{}\doxysubsubsubsection{\texorpdfstring{pin 12–15 → 3}{pin 12–15 → 3}}\label{group___g_p_i_o___driver___a_p_is_autotoc_md69}
+\DoxyHorRuler{0}
+
+\begin{DoxyEnumerate}
+\item Determine GPIO port code for mapping
+\end{DoxyEnumerate}
+
+SYSCFG\+\_\+\+EXTICR expects\+: 0x0 = Port A 0x1 = Port B 0x2 = Port C ... \hypertarget{group___g_p_i_o___driver___a_p_is_autotoc_md70}{}\doxysubsubsubsection{\texorpdfstring{0x8 = Port I}{0x8 = Port I}}\label{group___g_p_i_o___driver___a_p_is_autotoc_md70}
+Invalid GPIO pointer
+
+\DoxyHorRuler{0}
+
+\begin{DoxyEnumerate}
+\item Configure the correct SYSCFG\+\_\+\+EXTICR register
+\end{DoxyEnumerate}
+
+Each pin gets 4 bits inside its EXTICR register\+: Bits = 4 × (pin \% 4)
+
+Steps\+:
+\begin{DoxyItemize}
+\item Clear the 4-\/bit field for the selected EXTI line 
+\end{DoxyItemize}\hypertarget{group___g_p_i_o___driver___a_p_is_autotoc_md71}{}\doxysubsubsubsection{\texorpdfstring{-\/ Write GPIO port code to select the source input}{-\/ Write GPIO port code to select the source input}}\label{group___g_p_i_o___driver___a_p_is_autotoc_md71}
+Configure EXTI0–3
+
+Configure EXTI4–7
+
+Configure EXTI8–11
+
+Configure EXTI12–15
+
+
+\begin{DoxyEnumerate}
+\item Setting rising/falling trigger or both
+\end{DoxyEnumerate}
+
+4 Clearing the pending interrupt. A interrupt is clearing by writing 1 to EXTI\+\_\+\+PR Register
+
+
+\begin{DoxyEnumerate}
+\item After Clearing the pending bit. Now unmask the interrupt.
+\end{DoxyEnumerate}
+
+
+\begin{DoxyEnumerate}
+\item Finally, configure the NVIC interrupt priority
+\end{DoxyEnumerate}
+
+Definition at line \mbox{\hyperlink{_s_t_m32_f4xx___d_r_i_v_e_r_s_2_src_2stm32f407xx__gpio_8c_source_l00181}{181}} of file \mbox{\hyperlink{_s_t_m32_f4xx___d_r_i_v_e_r_s_2_src_2stm32f407xx__gpio_8c_source}{stm32f407xx\+\_\+gpio.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00198\ \ \ \ \ \mbox{\hyperlink{group___a_p_b2___p_c_l_k___e_n___d_i___m_a_c_r_o_s_gaf4132dd5c45ad1cbdb0226b3f0108cf6}{SYSCFG\_PCLK\_EN}}();}
+\DoxyCodeLine{00199\ }
+\DoxyCodeLine{00201\ \ \ \ \ \mbox{\hyperlink{struct_s_y_s_c_f_g___reg_def__t}{SYSCFG\_RegDef\_t}}\ *pSYSCFG\ =\ \mbox{\hyperlink{group___s_y_s_c_f_g___r_e_g_ga3c833fe1c486cb62250ccbca32899cb8}{SYSCFG}};}
+\DoxyCodeLine{00202\ }
+\DoxyCodeLine{00218\ \ \ \ \ uint8\_t\ sys\_cfg\_reg\_number\ =\ pin\ /\ 4;}
+\DoxyCodeLine{00219\ }
+\DoxyCodeLine{00230\ \ \ \ \ uint8\_t\ gpio\_port\_map;}
+\DoxyCodeLine{00231\ }
+\DoxyCodeLine{00232\ \ \ \ \ \textcolor{keywordflow}{if}\ (pGPIOx\ ==\ \mbox{\hyperlink{group___g_p_i_o___b_a_s_e___a_d_d_r_e_s_s_e_s_gac485358099728ddae050db37924dd6b7}{GPIOA}})}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ gpio\_port\_map\ =\ 0x00;}
+\DoxyCodeLine{00234\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (pGPIOx\ ==\ \mbox{\hyperlink{group___g_p_i_o___b_a_s_e___a_d_d_r_e_s_s_e_s_ga68b66ac73be4c836db878a42e1fea3cd}{GPIOB}})}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ gpio\_port\_map\ =\ 0x01;}
+\DoxyCodeLine{00236\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (pGPIOx\ ==\ \mbox{\hyperlink{group___g_p_i_o___b_a_s_e___a_d_d_r_e_s_s_e_s_ga2dca03332d620196ba943bc2346eaa08}{GPIOC}})}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ gpio\_port\_map\ =\ 0x02;}
+\DoxyCodeLine{00238\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (pGPIOx\ ==\ \mbox{\hyperlink{group___g_p_i_o___b_a_s_e___a_d_d_r_e_s_s_e_s_ga7580b1a929ea9df59725ba9c18eba6ac}{GPIOD}})}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ gpio\_port\_map\ =\ 0x03;}
+\DoxyCodeLine{00240\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (pGPIOx\ ==\ \mbox{\hyperlink{group___g_p_i_o___b_a_s_e___a_d_d_r_e_s_s_e_s_gae04bdb5e8acc47cab1d0532e6b0d0763}{GPIOE}})}
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ gpio\_port\_map\ =\ 0x04;}
+\DoxyCodeLine{00242\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (pGPIOx\ ==\ \mbox{\hyperlink{group___g_p_i_o___b_a_s_e___a_d_d_r_e_s_s_e_s_ga43c3022dede7c9db7a58d3c3409dbc8d}{GPIOF}})}
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ gpio\_port\_map\ =\ 0x05;}
+\DoxyCodeLine{00244\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (pGPIOx\ ==\ \mbox{\hyperlink{group___g_p_i_o___b_a_s_e___a_d_d_r_e_s_s_e_s_ga02a2a23a32f9b02166a8c64012842414}{GPIOG}})}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ gpio\_port\_map\ =\ 0x06;}
+\DoxyCodeLine{00246\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (pGPIOx\ ==\ \mbox{\hyperlink{group___g_p_i_o___b_a_s_e___a_d_d_r_e_s_s_e_s_gadeacbb43ae86c879945afe98c679b285}{GPIOH}})}
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ gpio\_port\_map\ =\ 0x07;}
+\DoxyCodeLine{00248\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (pGPIOx\ ==\ \mbox{\hyperlink{group___g_p_i_o___b_a_s_e___a_d_d_r_e_s_s_e_s_gad15f13545ecdbbabfccf43d5997e5ade}{GPIOI}})}
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ gpio\_port\_map\ =\ 0x08;}
+\DoxyCodeLine{00250\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};\ }
+\DoxyCodeLine{00252\ }
+\DoxyCodeLine{00263\ \ \ \ \ uint8\_t\ shift\_amount\ =\ 4\ *\ (pin\ \%\ 4);}
+\DoxyCodeLine{00264\ }
+\DoxyCodeLine{00265\ \ \ \ \ \textcolor{keywordflow}{if}\ (sys\_cfg\_reg\_number\ ==\ 0)\ \{}
+\DoxyCodeLine{00267\ \ \ \ \ \ \ \ \ pSYSCFG-\/>\mbox{\hyperlink{struct_s_y_s_c_f_g___reg_def__t_abb0ba14ceed44971a21712a9ddbe205c}{EXTICR1}}\ \&=\ \string~(0xF\ <<\ shift\_amount);}
+\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ pSYSCFG-\/>\mbox{\hyperlink{struct_s_y_s_c_f_g___reg_def__t_abb0ba14ceed44971a21712a9ddbe205c}{EXTICR1}}\ |=\ (gpio\_port\_map\ <<\ shift\_amount);}
+\DoxyCodeLine{00269\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (sys\_cfg\_reg\_number\ ==\ 1)\ \{}
+\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ pSYSCFG-\/>\mbox{\hyperlink{struct_s_y_s_c_f_g___reg_def__t_aa553af3d6e18b5b83b364f38a8a06854}{EXTICR2}}\ \&=\ \string~(0xF\ <<\ shift\_amount);}
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ pSYSCFG-\/>\mbox{\hyperlink{struct_s_y_s_c_f_g___reg_def__t_aa553af3d6e18b5b83b364f38a8a06854}{EXTICR2}}\ |=\ (gpio\_port\_map\ <<\ shift\_amount);}
+\DoxyCodeLine{00273\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (sys\_cfg\_reg\_number\ ==\ 2)\ \{}
+\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ pSYSCFG-\/>\mbox{\hyperlink{struct_s_y_s_c_f_g___reg_def__t_a32d87a6ff68cccfae52a00302c597fd4}{EXTICR3}}\ \&=\ \string~(0xF\ <<\ shift\_amount);}
+\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ pSYSCFG-\/>\mbox{\hyperlink{struct_s_y_s_c_f_g___reg_def__t_a32d87a6ff68cccfae52a00302c597fd4}{EXTICR3}}\ |=\ (gpio\_port\_map\ <<\ shift\_amount);}
+\DoxyCodeLine{00277\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (sys\_cfg\_reg\_number\ ==\ 3)\ \{}
+\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ pSYSCFG-\/>\mbox{\hyperlink{struct_s_y_s_c_f_g___reg_def__t_a953b3f9b9979f643d27c740c30cf1533}{EXTICR4}}\ \&=\ \string~(0xF\ <<\ shift\_amount);}
+\DoxyCodeLine{00280\ \ \ \ \ \ \ \ \ pSYSCFG-\/>\mbox{\hyperlink{struct_s_y_s_c_f_g___reg_def__t_a953b3f9b9979f643d27c740c30cf1533}{EXTICR4}}\ |=\ (gpio\_port\_map\ <<\ shift\_amount);}
+\DoxyCodeLine{00281\ \ \ \ \ \}}
+\DoxyCodeLine{00282\ }
+\DoxyCodeLine{00284\ \ \ \ \ \mbox{\hyperlink{struct_e_x_t_i___reg_def__t}{EXTI\_RegDef\_t}}\ *pEXTI\ =\ \mbox{\hyperlink{group___e_x_t_i___r_e_g_ga9189e770cd9b63dadd36683eb9843cac}{EXTI}};}
+\DoxyCodeLine{00285\ \ \ \ \ pEXTI-\/>\mbox{\hyperlink{struct_e_x_t_i___reg_def__t_a8750f176ecede5dfebf1f9ed67e2bec9}{RTSR}}\ \&=\ \string~(1\ <<\ pin);}
+\DoxyCodeLine{00286\ \ \ \ \ pEXTI-\/>\mbox{\hyperlink{struct_e_x_t_i___reg_def__t_ac9d02ca57991dcd0f5578bb8894e23a1}{FTSR}}\ \&=\ \string~(1\ <<\ pin);}
+\DoxyCodeLine{00287\ \ \ \ \ \textcolor{keywordflow}{if}\ (trigger\ ==\ \mbox{\hyperlink{group___i_n_t_e_r_r_u_p_t___t_r_i_g_g_e_r___t_y_p_e___m_a_c_r_o_s_ga92e1d5ba4cf472003e787cc515a5460a}{INTERRUPT\_TRIGGER\_TYPE\_RISING}})\ \{}
+\DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ pEXTI-\/>\mbox{\hyperlink{struct_e_x_t_i___reg_def__t_a8750f176ecede5dfebf1f9ed67e2bec9}{RTSR}}\ |=\ (1\ <<\ pin);}
+\DoxyCodeLine{00289\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (trigger\ ==\ \mbox{\hyperlink{group___i_n_t_e_r_r_u_p_t___t_r_i_g_g_e_r___t_y_p_e___m_a_c_r_o_s_gae82959fb786b765dbc3b8ed6c4a205bb}{INTERRUPT\_TRIGGER\_TYPE\_FALLING}})\ \{}
+\DoxyCodeLine{00290\ \ \ \ \ \ \ \ \ pEXTI-\/>\mbox{\hyperlink{struct_e_x_t_i___reg_def__t_ac9d02ca57991dcd0f5578bb8894e23a1}{FTSR}}\ |=\ (1\ <<\ pin);}
+\DoxyCodeLine{00291\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (trigger\ ==\ \mbox{\hyperlink{group___i_n_t_e_r_r_u_p_t___t_r_i_g_g_e_r___t_y_p_e___m_a_c_r_o_s_ga512fa3be3a911ca00866311731beb8e8}{INTERRUPT\_TRIGGER\_TYPE\_BOTH}})\ \{}
+\DoxyCodeLine{00292\ \ \ \ \ \ \ \ \ pEXTI-\/>\mbox{\hyperlink{struct_e_x_t_i___reg_def__t_a8750f176ecede5dfebf1f9ed67e2bec9}{RTSR}}\ |=\ (1\ <<\ pin);}
+\DoxyCodeLine{00293\ \ \ \ \ \ \ \ \ pEXTI-\/>\mbox{\hyperlink{struct_e_x_t_i___reg_def__t_ac9d02ca57991dcd0f5578bb8894e23a1}{FTSR}}\ |=\ (1\ <<\ pin);}
+\DoxyCodeLine{00294\ \ \ \ \ \}}
+\DoxyCodeLine{00295\ }
+\DoxyCodeLine{00297\ \ \ \ \ pEXTI-\/>\mbox{\hyperlink{struct_e_x_t_i___reg_def__t_a95f180dda1e0dab5d9ca9c1c96a80d42}{PR}}\ |=\ (1\ <<\ pin);}
+\DoxyCodeLine{00298\ }
+\DoxyCodeLine{00300\ \ \ \ \ pEXTI-\/>\mbox{\hyperlink{struct_e_x_t_i___reg_def__t_adf667b91e34f6a9c58bd4f0f55f2bd03}{IMR}}\ |=\ (1\ <<\ pin);}
+\DoxyCodeLine{00301\ }
+\DoxyCodeLine{00303\ }
+\DoxyCodeLine{00304\ \ \ \ \ uint8\_t\ irq;}
+\DoxyCodeLine{00305\ }
+\DoxyCodeLine{00306\ \ \ \ \ \textcolor{comment}{/*\ Step\ 1:\ Identify\ which\ IRQ\ vector\ corresponds\ to\ the\ EXTI\ line\ */}}
+\DoxyCodeLine{00307\ \ \ \ \ \textcolor{keywordflow}{if}\ (pin\ <=\ 4)\ \{}
+\DoxyCodeLine{00308\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ EXTI0\ →\ IRQ6,\ EXTI1\ →\ IRQ7,\ ...\ EXTI4\ →\ IRQ10\ */}}
+\DoxyCodeLine{00309\ \ \ \ \ \ \ \ \ irq\ =\ \mbox{\hyperlink{group___i_r_q___n_u_m_b_e_r___m_a_c_r_o_s_ga8dec3798afc9f6560d8c635812709703}{IRQ\_NUM\_EXTI0}}\ +\ pin;}
+\DoxyCodeLine{00310\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (pin\ <=\ 9)\ \{}
+\DoxyCodeLine{00311\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ EXTI5–9\ all\ map\ to\ EXTI9\_5\ shared\ IRQ\ */}}
+\DoxyCodeLine{00312\ \ \ \ \ \ \ \ \ irq\ =\ \mbox{\hyperlink{group___i_r_q___n_u_m_b_e_r___m_a_c_r_o_s_ga9143ab83f09040ca3fa93ef3daa607b1}{IRQ\_NUM\_EXTI9\_5}};}
+\DoxyCodeLine{00313\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00314\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ EXTI10–15\ all\ map\ to\ EXTI15\_10\ shared\ IRQ\ */}}
+\DoxyCodeLine{00315\ \ \ \ \ \ \ \ \ irq\ =\ \mbox{\hyperlink{group___i_r_q___n_u_m_b_e_r___m_a_c_r_o_s_gac04b7c8a56409ed47b7fcfee84cfd367}{IRQ\_NUM\_EXTI15\_10}};}
+\DoxyCodeLine{00316\ \ \ \ \ \}}
+\DoxyCodeLine{00317\ }
+\DoxyCodeLine{00318\ \ \ \ \ \textcolor{comment}{/*\ Step\ 2:\ Compute\ the\ NVIC\ IPR\ register\ and\ byte\ offset\ */}}
+\DoxyCodeLine{00319\ \ \ \ \ \mbox{\hyperlink{struct_n_v_i_c___reg_def__t}{NVIC\_RegDef\_t}}\ *pNVIC\ =\ \mbox{\hyperlink{group___n_v_i_c___r_e_g_gac8e97e8ce56ae9f57da1363a937f8a17}{NVIC}};}
+\DoxyCodeLine{00320\ \ \ \ \ uint8\_t\ ipr\_index\ =\ irq\ /\ 4;\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Each\ IPR\ holds\ 4\ priority\ fields}}
+\DoxyCodeLine{00321\ \ \ \ \ uint8\_t\ ipr\_offset\ =\ (irq\ \%\ 4)\ *\ 8;\ \ \ \textcolor{comment}{//\ Select\ correct\ byte}}
+\DoxyCodeLine{00322\ \ \ \ \ ipr\_offset\ +=\ 4;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Priority\ uses\ only\ upper\ 4\ bits\ [7:4]}}
+\DoxyCodeLine{00323\ }
+\DoxyCodeLine{00324\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00325\ \textcolor{comment}{\ \ \ \ \ *\ Step\ 3:\ Clear\ the\ old\ priority }}
+\DoxyCodeLine{00326\ \textcolor{comment}{\ \ \ \ \ *\ We\ clear\ a\ full\ byte\ (even\ though\ only\ 4\ bits\ are\ used), }}
+\DoxyCodeLine{00327\ \textcolor{comment}{\ \ \ \ \ *\ because\ NVIC\ ignores\ the\ lower\ 4\ bits\ anyway. }}
+\DoxyCodeLine{00328\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{00329\ \ \ \ \ pNVIC-\/>\mbox{\hyperlink{struct_n_v_i_c___reg_def__t_a57ba3a0dfe22a59876fb6b15390a5b40}{IPR}}[ipr\_index]\ \&=\ \string~(0xFF\ <<\ ipr\_offset);}
+\DoxyCodeLine{00330\ }
+\DoxyCodeLine{00331\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00332\ \textcolor{comment}{\ \ \ \ \ *\ Step\ 4:\ Write\ new\ priority }}
+\DoxyCodeLine{00333\ \textcolor{comment}{\ \ \ \ \ *\ irq\_priority\ is\ masked\ to\ 4\ bits\ (0–15), }}
+\DoxyCodeLine{00334\ \textcolor{comment}{\ \ \ \ \ *\ then\ shifted\ into\ bits\ [7:4]\ of\ the\ correct\ byte. }}
+\DoxyCodeLine{00335\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{00336\ \ \ \ \ pNVIC-\/>\mbox{\hyperlink{struct_n_v_i_c___reg_def__t_a57ba3a0dfe22a59876fb6b15390a5b40}{IPR}}[ipr\_index]\ |=\ ((irq\_priority\ \&\ 0x0F)\ <<\ ipr\_offset);}
+\DoxyCodeLine{00337\ \}}
+
+\end{DoxyCode}
 \Hypertarget{group___g_p_i_o___driver___a_p_is_ga59407004373e1086e102436ebe8c1609}\index{GPIO Driver Function Prototypes@{GPIO Driver Function Prototypes}!gpio\_irq\_config@{gpio\_irq\_config}}
 \index{gpio\_irq\_config@{gpio\_irq\_config}!GPIO Driver Function Prototypes@{GPIO Driver Function Prototypes}}
-\doxysubsubsubsection{\texorpdfstring{gpio\_irq\_config()}{gpio\_irq\_config()}}
+\doxysubsubsubsection{\texorpdfstring{gpio\_irq\_config()}{gpio\_irq\_config()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily \label{group___g_p_i_o___driver___a_p_is_ga59407004373e1086e102436ebe8c1609} 
 void gpio\+\_\+irq\+\_\+config (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{pin}{, }\item[{uint8\+\_\+t}]{trigger}{}\end{DoxyParamCaption})}
 
@@ -65,16 +302,110 @@ void gpio\+\_\+irq\+\_\+config (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{pi
 
 Configure EXTI interrupt trigger. 
 
-\Hypertarget{group___g_p_i_o___driver___a_p_is_gaecfc0d5327266f101f163c807cd08f9e}\index{GPIO Driver Function Prototypes@{GPIO Driver Function Prototypes}!gpio\_irq\_control@{gpio\_irq\_control}}
+\Hypertarget{group___g_p_i_o___driver___a_p_is_ga2095b94c246588474f2dfec5999d3efb}\index{GPIO Driver Function Prototypes@{GPIO Driver Function Prototypes}!gpio\_irq\_control@{gpio\_irq\_control}}
 \index{gpio\_irq\_control@{gpio\_irq\_control}!GPIO Driver Function Prototypes@{GPIO Driver Function Prototypes}}
 \doxysubsubsubsection{\texorpdfstring{gpio\_irq\_control()}{gpio\_irq\_control()}}
-{\footnotesize\ttfamily \label{group___g_p_i_o___driver___a_p_is_gaecfc0d5327266f101f163c807cd08f9e} 
-void gpio\+\_\+irq\+\_\+control (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{irq\+\_\+no}{, }\item[{uint8\+\_\+t}]{en}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{group___g_p_i_o___driver___a_p_is_ga2095b94c246588474f2dfec5999d3efb} 
+void gpio\+\_\+irq\+\_\+control (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{pin}{, }\item[{uint8\+\_\+t}]{en\+\_\+di}{}\end{DoxyParamCaption})}
 
 
 
-Enable/disable NVIC interrupt for a GPIO EXTI line. 
+Enable or disable NVIC interrupt for a GPIO EXTI line. 
 
+Enable/disable NVIC interrupt for a GPIO EXTI line.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pin} & GPIO pin number (0–15), used to determine EXTI line. \\
+\hline
+{\em en\+\_\+di} & ENABLE or DISABLE.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+This function only updates NVIC enable registers. It does NOT configure EXTI, SYSCFG, or trigger polarity. 
+\end{DoxyNote}
+\begin{DoxyNote}{Note}
+This API only controls EXTI GPIO interrupts (EXTI0–\+EXTI15).
+\end{DoxyNote}
+Steps to ENABLE a GPIO EXTI interrupt\+:
+\begin{DoxyEnumerate}
+\item Unmask the EXTI line in EXTI\+\_\+\+IMR
+\item Enable the corresponding NVIC interrupt via NVIC\+\_\+\+ISER
+\item (Optional but recommended) Clear any pending EXTI flag using \doxylink{group___g_p_i_o___driver___a_p_is_ga7029bc337ba529f1ed60ecec9003ae43}{gpio\+\_\+irq\+\_\+clear()} Try to follow the sequence, to avoid race condition
+\end{DoxyEnumerate}
+
+Steps to DISABLE a GPIO EXTI interrupt\+:
+\begin{DoxyEnumerate}
+\item Disable the corresponding NVIC interrupt via NVIC\+\_\+\+ICER
+\item Mask the EXTI line in EXTI\+\_\+\+IMR
+\item Clear any pending EXTI flag using \doxylink{group___g_p_i_o___driver___a_p_is_ga7029bc337ba529f1ed60ecec9003ae43}{gpio\+\_\+irq\+\_\+clear()} Try to follow the sequence, to avoid race around condition
+\end{DoxyEnumerate}
+
+\begin{DoxyNote}{Note}
+Only EXTI-\/\texorpdfstring{$>$}{>}PR must be written to clear pending interrupts. Writing 1 to EXTI\+\_\+\+PR clears both the EXTI and NVIC pending state. No need to write to NVIC-\/\texorpdfstring{$>$}{>}ICPR for EXTI lines.
+\end{DoxyNote}
+
+
+Definition at line \mbox{\hyperlink{_s_t_m32_f4xx___d_r_i_v_e_r_s_2_src_2stm32f407xx__gpio_8c_source_l00344}{344}} of file \mbox{\hyperlink{_s_t_m32_f4xx___d_r_i_v_e_r_s_2_src_2stm32f407xx__gpio_8c_source}{stm32f407xx\+\_\+gpio.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00344\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00363\ }
+\DoxyCodeLine{00364\ \ \ \ \ \mbox{\hyperlink{struct_n_v_i_c___reg_def__t}{NVIC\_RegDef\_t}}\ *pNVIC\ =\ \mbox{\hyperlink{group___n_v_i_c___r_e_g_gac8e97e8ce56ae9f57da1363a937f8a17}{NVIC}};}
+\DoxyCodeLine{00365\ \ \ \ \ \mbox{\hyperlink{struct_e_x_t_i___reg_def__t}{EXTI\_RegDef\_t}}\ *pEXTI\ =\ \mbox{\hyperlink{group___e_x_t_i___r_e_g_ga9189e770cd9b63dadd36683eb9843cac}{EXTI}};}
+\DoxyCodeLine{00366\ }
+\DoxyCodeLine{00367\ \ \ \ \ \textcolor{keywordflow}{if}\ (en\_di\ ==\ \mbox{\hyperlink{group___m_i_s_c_e_l_l_a_n_e_o_u_s___m_a_c_r_o_s_ga514ad415fb6125ba296793df7d1a468a}{ENABLE}})\ \{}
+\DoxyCodeLine{00368\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 1.\ Unmask\ the\ EXTI\ line\ in\ EXTI\_IMR}}
+\DoxyCodeLine{00369\ \ \ \ \ \ \ \ \ pEXTI-\/>\mbox{\hyperlink{struct_e_x_t_i___reg_def__t_adf667b91e34f6a9c58bd4f0f55f2bd03}{IMR}}\ |=\ (1\ <<\ pin);}
+\DoxyCodeLine{00370\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 2.\ Enable\ the\ corresponding\ NVIC\ interrupt\ via\ NVIC\_ISER}}
+\DoxyCodeLine{00371\ \ \ \ \ \ \ \ \ uint8\_t\ irq;}
+\DoxyCodeLine{00372\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (pin\ <=\ 4)\ \{}
+\DoxyCodeLine{00373\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ EXTI0\ →\ IRQ6,\ EXTI1\ →\ IRQ7,\ ...\ EXTI4\ →\ IRQ10\ */}}
+\DoxyCodeLine{00374\ \ \ \ \ \ \ \ \ \ \ \ \ irq\ =\ \mbox{\hyperlink{group___i_r_q___n_u_m_b_e_r___m_a_c_r_o_s_ga8dec3798afc9f6560d8c635812709703}{IRQ\_NUM\_EXTI0}}\ +\ pin;}
+\DoxyCodeLine{00375\ \ \ \ \ \ \ \ \ \ \ \ \ pNVIC-\/>\mbox{\hyperlink{struct_n_v_i_c___reg_def__t_ac00a34631cedcc431ca68e634410bac3}{ISER}}[0]\ |=\ (1\ <<\ irq);}
+\DoxyCodeLine{00376\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (pin\ <=\ 9)\ \{}
+\DoxyCodeLine{00377\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ EXTI5–9\ all\ map\ to\ EXTI9\_5\ shared\ IRQ\ */}}
+\DoxyCodeLine{00378\ \ \ \ \ \ \ \ \ \ \ \ \ irq\ =\ \mbox{\hyperlink{group___i_r_q___n_u_m_b_e_r___m_a_c_r_o_s_ga9143ab83f09040ca3fa93ef3daa607b1}{IRQ\_NUM\_EXTI9\_5}};}
+\DoxyCodeLine{00379\ \ \ \ \ \ \ \ \ \ \ \ \ pNVIC-\/>\mbox{\hyperlink{struct_n_v_i_c___reg_def__t_ac00a34631cedcc431ca68e634410bac3}{ISER}}[0]\ |=\ (1\ <<\ irq);}
+\DoxyCodeLine{00380\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00381\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ EXTI10–15\ all\ map\ to\ EXTI15\_10\ shared\ IRQ\ */}}
+\DoxyCodeLine{00382\ \ \ \ \ \ \ \ \ \ \ \ \ irq\ =\ \mbox{\hyperlink{group___i_r_q___n_u_m_b_e_r___m_a_c_r_o_s_gac04b7c8a56409ed47b7fcfee84cfd367}{IRQ\_NUM\_EXTI15\_10}};}
+\DoxyCodeLine{00383\ \ \ \ \ \ \ \ \ \ \ \ \ pNVIC-\/>\mbox{\hyperlink{struct_n_v_i_c___reg_def__t_ac00a34631cedcc431ca68e634410bac3}{ISER}}[1]\ |=\ (1\ <<\ (irq\ \%\ 32));}
+\DoxyCodeLine{00384\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00385\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 3.\ Clear\ the\ Pending\ interrupt.}}
+\DoxyCodeLine{00386\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group___g_p_i_o___driver___a_p_is_ga7029bc337ba529f1ed60ecec9003ae43}{gpio\_irq\_clear}}(pin);}
+\DoxyCodeLine{00387\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Disable\ interrupt}}
+\DoxyCodeLine{00388\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 1.\ Mask\ the\ EXTI\ line\ in\ EXTI\_IMR}}
+\DoxyCodeLine{00389\ \ \ \ \ \ \ \ \ pEXTI-\/>\mbox{\hyperlink{struct_e_x_t_i___reg_def__t_adf667b91e34f6a9c58bd4f0f55f2bd03}{IMR}}\ \&=\ \string~(1\ <<\ pin);}
+\DoxyCodeLine{00390\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 2.\ Disable\ the\ corresponding\ NVIC\ interrupt\ via\ NVIC\_ISER}}
+\DoxyCodeLine{00391\ \ \ \ \ \ \ \ \ uint8\_t\ irq;}
+\DoxyCodeLine{00392\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (pin\ <=\ 4)\ \{}
+\DoxyCodeLine{00393\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ EXTI0\ →\ IRQ6,\ EXTI1\ →\ IRQ7,\ ...\ EXTI4\ →\ IRQ10\ */}}
+\DoxyCodeLine{00394\ \ \ \ \ \ \ \ \ \ \ \ \ irq\ =\ \mbox{\hyperlink{group___i_r_q___n_u_m_b_e_r___m_a_c_r_o_s_ga8dec3798afc9f6560d8c635812709703}{IRQ\_NUM\_EXTI0}}\ +\ pin;}
+\DoxyCodeLine{00395\ \ \ \ \ \ \ \ \ \ \ \ \ pNVIC-\/>\mbox{\hyperlink{struct_n_v_i_c___reg_def__t_a9277c2bfdae8353c09f1f696e7f00462}{ICER}}[0]\ |=\ (1\ <<\ irq);}
+\DoxyCodeLine{00396\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (pin\ <=\ 9)\ \{}
+\DoxyCodeLine{00397\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ EXTI5–9\ all\ map\ to\ EXTI9\_5\ shared\ IRQ\ */}}
+\DoxyCodeLine{00398\ \ \ \ \ \ \ \ \ \ \ \ \ irq\ =\ \mbox{\hyperlink{group___i_r_q___n_u_m_b_e_r___m_a_c_r_o_s_ga9143ab83f09040ca3fa93ef3daa607b1}{IRQ\_NUM\_EXTI9\_5}};}
+\DoxyCodeLine{00399\ \ \ \ \ \ \ \ \ \ \ \ \ pNVIC-\/>\mbox{\hyperlink{struct_n_v_i_c___reg_def__t_a9277c2bfdae8353c09f1f696e7f00462}{ICER}}[0]\ |=\ (1\ <<\ irq);}
+\DoxyCodeLine{00400\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00401\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ EXTI10–15\ all\ map\ to\ EXTI15\_10\ shared\ IRQ\ */}}
+\DoxyCodeLine{00402\ \ \ \ \ \ \ \ \ \ \ \ \ irq\ =\ \mbox{\hyperlink{group___i_r_q___n_u_m_b_e_r___m_a_c_r_o_s_gac04b7c8a56409ed47b7fcfee84cfd367}{IRQ\_NUM\_EXTI15\_10}};}
+\DoxyCodeLine{00403\ \ \ \ \ \ \ \ \ \ \ \ \ pNVIC-\/>\mbox{\hyperlink{struct_n_v_i_c___reg_def__t_a9277c2bfdae8353c09f1f696e7f00462}{ICER}}[1]\ |=\ (1\ <<\ (irq\ \%\ 32));}
+\DoxyCodeLine{00404\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00405\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 3.\ Clear\ the\ Pending\ interrupt.}}
+\DoxyCodeLine{00406\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group___g_p_i_o___driver___a_p_is_ga7029bc337ba529f1ed60ecec9003ae43}{gpio\_irq\_clear}}(pin);}
+\DoxyCodeLine{00407\ \ \ \ \ \}}
+\DoxyCodeLine{00408\ \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=276pt]{group___g_p_i_o___driver___a_p_is_ga2095b94c246588474f2dfec5999d3efb_cgraph}
+\end{center}
+\end{figure}
 \Hypertarget{group___g_p_i_o___driver___a_p_is_ga59f07285d055589998e910abf10c9ab1}\index{GPIO Driver Function Prototypes@{GPIO Driver Function Prototypes}!gpio\_pin\_init@{gpio\_pin\_init}}
 \index{gpio\_pin\_init@{gpio\_pin\_init}!GPIO Driver Function Prototypes@{GPIO Driver Function Prototypes}}
 \doxysubsubsubsection{\texorpdfstring{gpio\_pin\_init()}{gpio\_pin\_init()}}
@@ -97,7 +428,7 @@ Initialize a GPIO pin.
 \end{DoxyRetVals}
 
 
-Definition at line \mbox{\hyperlink{stm32f407xx__gpio_8c_source_l00040}{40}} of file \mbox{\hyperlink{stm32f407xx__gpio_8c_source}{stm32f407xx\+\_\+gpio.\+c}}.
+Definition at line \mbox{\hyperlink{_s_t_m32_f4xx___d_r_i_v_e_r_s_2_src_2stm32f407xx__gpio_8c_source_l00040}{40}} of file \mbox{\hyperlink{_s_t_m32_f4xx___d_r_i_v_e_r_s_2_src_2stm32f407xx__gpio_8c_source}{stm32f407xx\+\_\+gpio.\+c}}.
 
 
 \begin{DoxyCode}{0}
@@ -153,14 +484,16 @@ Definition at line \mbox{\hyperlink{stm32f407xx__gpio_8c_source_l00040}{40}} of 
 \DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordflow}{if}\ (gpio\_mode\ ==\ \mbox{\hyperlink{group___g_p_i_o___m_o_d_e_s_gaf97227968696e5e26432760060e61e48}{GPIO\_MODE\_ALT\_FUNC}})\ \{}
 \DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (gpio\_pin\_number\ <=\ 7)\ \{\ \textcolor{comment}{/*We\ have\ to\ configure\ AFRL\ */}}
 \DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ GPIOx\_Handle-\/>pGPIOx-\/>AFRL\ \&=\ \string~(0xF\ <<\ (4\ *\ (gpio\_pin\_number\ \%\ 8)));}
-\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ GPIOx\_Handle-\/>pGPIOx-\/>AFRL\ |=\ (gpio\_alt\_func\ <<\ (4\ *\ (gpio\_pin\_number\ \%\ 8)));}
-\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{\ \textcolor{comment}{/*We\ have\ to\ configure\ AFRH\ */}}
-\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ GPIOx\_Handle-\/>pGPIOx-\/>AFRH\ \&=\ \string~(0xF\ <<\ (4\ *\ (gpio\_pin\_number\ \%\ 8)));}
-\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ GPIOx\_Handle-\/>pGPIOx-\/>AFRH\ |=\ (gpio\_alt\_func\ <<\ (4\ *\ (gpio\_pin\_number\ \%\ 8)));}
-\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00097\ \ \ \ \ \}}
-\DoxyCodeLine{00098\ }
-\DoxyCodeLine{00099\ \}}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ GPIOx\_Handle-\/>pGPIOx-\/>AFRL\ |=\ (gpio\_alt\_func}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ (4\ *\ (gpio\_pin\_number\ \%\ 8)));}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{\ \textcolor{comment}{/*We\ have\ to\ configure\ AFRH\ */}}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ GPIOx\_Handle-\/>pGPIOx-\/>AFRH\ \&=\ \string~(0xF\ <<\ (4\ *\ (gpio\_pin\_number\ \%\ 8)));}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ GPIOx\_Handle-\/>pGPIOx-\/>AFRH\ |=\ (gpio\_alt\_func}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ (4\ *\ (gpio\_pin\_number\ \%\ 8)));}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00099\ \ \ \ \ \}}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \}}
 
 \end{DoxyCode}
 \Hypertarget{group___g_p_i_o___driver___a_p_is_ga347db04adc58e4104a1b0600a2238395}\index{GPIO Driver Function Prototypes@{GPIO Driver Function Prototypes}!gpio\_port\_deinit@{gpio\_port\_deinit}}
@@ -184,62 +517,75 @@ De-\/initialize a GPIO port.
 \hline
 \end{DoxyRetVals}
 \begin{DoxyNote}{Note}
+RCC Reset Register can be used to reset a periph eral
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em p\+GPIOx} & Pointer to the GPIO port base address. \doxylink{group___g_p_i_o___b_a_s_e___a_d_d_r_e_s_s_e_s}{GPIO Port Base Address Macros} \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em void} & \\
+\hline
+\end{DoxyRetVals}
+\begin{DoxyNote}{Note}
 RCC Reset Register can be used to reset a peripheral 
 \end{DoxyNote}
 
 
-Definition at line \mbox{\hyperlink{stm32f407xx__gpio_8c_source_l00101}{101}} of file \mbox{\hyperlink{stm32f407xx__gpio_8c_source}{stm32f407xx\+\_\+gpio.\+c}}.
+Definition at line \mbox{\hyperlink{_s_t_m32_f4xx___d_r_i_v_e_r_s_2_src_2stm32f407xx__gpio_8c_source_l00103}{103}} of file \mbox{\hyperlink{_s_t_m32_f4xx___d_r_i_v_e_r_s_2_src_2stm32f407xx__gpio_8c_source}{stm32f407xx\+\_\+gpio.\+c}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordflow}{if}\ (pGPIOx\ ==\ \mbox{\hyperlink{group___g_p_i_o___b_a_s_e___a_d_d_r_e_s_s_e_s_gac485358099728ddae050db37924dd6b7}{GPIOA}})\ \{}
-\DoxyCodeLine{00103\ \textcolor{comment}{//\ \ \ \ \ \ RCC-\/>AHB1RSTR\ |=\ (1\ <<\ 0);\ \ /*\ Assert\ the\ reset\ bit\ */}}
-\DoxyCodeLine{00104\ \textcolor{comment}{//\ \ \ \ \ \ RCC-\/>AHB1RSTR\ \&=\ \string~(1\ <<\ 0);\ /*\ De-\/assert\ the\ reset\ bit\ */}}
-\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Instead\ of\ this\ we\ will\ use\ macros.}}
-\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group___a_h_b1___r_e_s_e_t___m_a_c_r_o_s_ga8bc666ed7242f6faa9bffc65a062fe55}{GPIOA\_RESET}}();}
-\DoxyCodeLine{00107\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (pGPIOx\ ==\ \mbox{\hyperlink{group___g_p_i_o___b_a_s_e___a_d_d_r_e_s_s_e_s_ga68b66ac73be4c836db878a42e1fea3cd}{GPIOB}})\ \{}
-\DoxyCodeLine{00108\ \textcolor{comment}{//\ \ \ \ \ \ RCC-\/>AHB1RSTR\ |=\ (1\ <<\ 1);\ \ /*\ Assert\ the\ reset\ bit\ */}}
-\DoxyCodeLine{00109\ \textcolor{comment}{//\ \ \ \ \ \ RCC-\/>AHB1RSTR\ \&=\ \string~(1\ <<\ 1);\ /*\ De-\/assert\ the\ reset\ bit\ */}}
-\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Instead\ of\ this\ we\ will\ use\ macros.}}
-\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group___a_h_b1___r_e_s_e_t___m_a_c_r_o_s_gaf0048d94161bb7fe5d170c2406bc0fd7}{GPIOB\_RESET}}();}
-\DoxyCodeLine{00112\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (pGPIOx\ ==\ \mbox{\hyperlink{group___g_p_i_o___b_a_s_e___a_d_d_r_e_s_s_e_s_ga2dca03332d620196ba943bc2346eaa08}{GPIOC}})\ \{}
-\DoxyCodeLine{00113\ \textcolor{comment}{//\ \ \ \ \ \ RCC-\/>AHB1RSTR\ |=\ (1\ <<\ 2);\ \ /*\ Assert\ the\ reset\ bit\ */}}
-\DoxyCodeLine{00114\ \textcolor{comment}{//\ \ \ \ \ \ RCC-\/>AHB1RSTR\ \&=\ \string~(1\ <<\ 2);\ /*\ De-\/assert\ the\ reset\ bit\ */}}
-\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Instead\ of\ this\ we\ will\ use\ macros.}}
-\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group___a_h_b1___r_e_s_e_t___m_a_c_r_o_s_gaa4542df78f0d1560397d909f611c6ce7}{GPIOC\_RESET}}();}
-\DoxyCodeLine{00117\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (pGPIOx\ ==\ \mbox{\hyperlink{group___g_p_i_o___b_a_s_e___a_d_d_r_e_s_s_e_s_ga7580b1a929ea9df59725ba9c18eba6ac}{GPIOD}})\ \{}
-\DoxyCodeLine{00118\ \textcolor{comment}{//\ \ \ \ \ \ RCC-\/>AHB1RSTR\ |=\ (1\ <<\ 3);\ \ /*\ Assert\ the\ reset\ bit\ */}}
-\DoxyCodeLine{00119\ \textcolor{comment}{//\ \ \ \ \ \ RCC-\/>AHB1RSTR\ \&=\ \string~(1\ <<\ 3);\ /*\ De-\/assert\ the\ reset\ bit\ */}}
-\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Instead\ of\ this\ we\ will\ use\ macros.}}
-\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group___a_h_b1___r_e_s_e_t___m_a_c_r_o_s_ga92694d8c9d9c00155654721623708f35}{GPIOD\_RESET}}();}
-\DoxyCodeLine{00122\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (pGPIOx\ ==\ \mbox{\hyperlink{group___g_p_i_o___b_a_s_e___a_d_d_r_e_s_s_e_s_gae04bdb5e8acc47cab1d0532e6b0d0763}{GPIOE}})\ \{}
-\DoxyCodeLine{00123\ \textcolor{comment}{//\ \ \ \ \ \ RCC-\/>AHB1RSTR\ |=\ (1\ <<\ 4);\ \ /*\ Assert\ the\ reset\ bit\ */}}
-\DoxyCodeLine{00124\ \textcolor{comment}{//\ \ \ \ \ \ RCC-\/>AHB1RSTR\ \&=\ \string~(1\ <<\ 4);\ /*\ De-\/assert\ the\ reset\ bit\ */}}
-\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Instead\ of\ this\ we\ will\ use\ macros.}}
-\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group___a_h_b1___r_e_s_e_t___m_a_c_r_o_s_ga497349d3ec829b56e5a26953e61c1e8a}{GPIOE\_RESET}}();}
-\DoxyCodeLine{00127\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (pGPIOx\ ==\ \mbox{\hyperlink{group___g_p_i_o___b_a_s_e___a_d_d_r_e_s_s_e_s_ga43c3022dede7c9db7a58d3c3409dbc8d}{GPIOF}})\ \{}
-\DoxyCodeLine{00128\ \textcolor{comment}{//\ \ \ \ \ \ RCC-\/>AHB1RSTR\ |=\ (1\ <<\ 5);\ \ /*\ Assert\ the\ reset\ bit\ */}}
-\DoxyCodeLine{00129\ \textcolor{comment}{//\ \ \ \ \ \ RCC-\/>AHB1RSTR\ \&=\ \string~(1\ <<\ 5);\ /*\ De-\/assert\ the\ reset\ bit\ */}}
-\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Instead\ of\ this\ we\ will\ use\ macros.}}
-\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group___a_h_b1___r_e_s_e_t___m_a_c_r_o_s_gafe0496ab47e7164336adefca4797ac3e}{GPIOF\_RESET}}();}
-\DoxyCodeLine{00132\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (pGPIOx\ ==\ \mbox{\hyperlink{group___g_p_i_o___b_a_s_e___a_d_d_r_e_s_s_e_s_ga02a2a23a32f9b02166a8c64012842414}{GPIOG}})\ \{}
-\DoxyCodeLine{00133\ \textcolor{comment}{//\ \ \ \ \ \ RCC-\/>AHB1RSTR\ |=\ (1\ <<\ 6);\ \ /*\ Assert\ the\ reset\ bit\ */}}
-\DoxyCodeLine{00134\ \textcolor{comment}{//\ \ \ \ \ \ RCC-\/>AHB1RSTR\ \&=\ \string~(1\ <<\ 6);\ /*\ De-\/assert\ the\ reset\ bit\ */}}
-\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Instead\ of\ this\ we\ will\ use\ macros.}}
-\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group___a_h_b1___r_e_s_e_t___m_a_c_r_o_s_gad69709b4469070fa4be32b4b137c4373}{GPIOG\_RESET}}();}
-\DoxyCodeLine{00137\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (pGPIOx\ ==\ \mbox{\hyperlink{group___g_p_i_o___b_a_s_e___a_d_d_r_e_s_s_e_s_gadeacbb43ae86c879945afe98c679b285}{GPIOH}})\ \{}
-\DoxyCodeLine{00138\ \textcolor{comment}{//\ \ \ \ \ \ RCC-\/>AHB1RSTR\ |=\ (1\ <<\ 7);\ \ /*\ Assert\ the\ reset\ bit\ */}}
-\DoxyCodeLine{00139\ \textcolor{comment}{//\ \ \ \ \ \ RCC-\/>AHB1RSTR\ \&=\ \string~(1\ <<\ 7);\ /*\ De-\/assert\ the\ reset\ bit\ */}}
-\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Instead\ of\ this\ we\ will\ use\ macros.}}
-\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group___a_h_b1___r_e_s_e_t___m_a_c_r_o_s_ga30f67db20df721ed84d527133fe1de4f}{GPIOH\_RESET}}();}
-\DoxyCodeLine{00142\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (pGPIOx\ ==\ \mbox{\hyperlink{group___g_p_i_o___b_a_s_e___a_d_d_r_e_s_s_e_s_gad15f13545ecdbbabfccf43d5997e5ade}{GPIOI}})\ \{}
-\DoxyCodeLine{00143\ \textcolor{comment}{//\ \ \ \ \ \ RCC-\/>AHB1RSTR\ |=\ (1\ <<\ 8);\ \ /*\ Assert\ the\ reset\ bit\ */}}
-\DoxyCodeLine{00144\ \textcolor{comment}{//\ \ \ \ \ \ RCC-\/>AHB1RSTR\ \&=\ \string~(1\ <<\ 8);\ /*\ De-\/assert\ the\ reset\ bit\ */}}
-\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Instead\ of\ this\ we\ will\ use\ macros.}}
-\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group___a_h_b1___r_e_s_e_t___m_a_c_r_o_s_ga044a47439c7e8f852439c76250a57901}{GPIOI\_RESET}}();}
-\DoxyCodeLine{00147\ \ \ \ \ \}}
-\DoxyCodeLine{00148\ \}}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keywordflow}{if}\ (pGPIOx\ ==\ \mbox{\hyperlink{group___g_p_i_o___b_a_s_e___a_d_d_r_e_s_s_e_s_gac485358099728ddae050db37924dd6b7}{GPIOA}})\ \{}
+\DoxyCodeLine{00105\ \textcolor{comment}{//\ \ \ \ \ \ RCC-\/>AHB1RSTR\ |=\ (1\ <<\ 0);\ \ /*\ Assert\ the\ reset\ bit\ */}}
+\DoxyCodeLine{00106\ \textcolor{comment}{//\ \ \ \ \ \ RCC-\/>AHB1RSTR\ \&=\ \string~(1\ <<\ 0);\ /*\ De-\/assert\ the\ reset\ bit\ */}}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Instead\ of\ this\ we\ will\ use\ macros.}}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group___a_h_b1___r_e_s_e_t___m_a_c_r_o_s_ga8bc666ed7242f6faa9bffc65a062fe55}{GPIOA\_RESET}}();}
+\DoxyCodeLine{00109\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (pGPIOx\ ==\ \mbox{\hyperlink{group___g_p_i_o___b_a_s_e___a_d_d_r_e_s_s_e_s_ga68b66ac73be4c836db878a42e1fea3cd}{GPIOB}})\ \{}
+\DoxyCodeLine{00110\ \textcolor{comment}{//\ \ \ \ \ \ RCC-\/>AHB1RSTR\ |=\ (1\ <<\ 1);\ \ /*\ Assert\ the\ reset\ bit\ */}}
+\DoxyCodeLine{00111\ \textcolor{comment}{//\ \ \ \ \ \ RCC-\/>AHB1RSTR\ \&=\ \string~(1\ <<\ 1);\ /*\ De-\/assert\ the\ reset\ bit\ */}}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Instead\ of\ this\ we\ will\ use\ macros.}}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group___a_h_b1___r_e_s_e_t___m_a_c_r_o_s_gaf0048d94161bb7fe5d170c2406bc0fd7}{GPIOB\_RESET}}();}
+\DoxyCodeLine{00114\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (pGPIOx\ ==\ \mbox{\hyperlink{group___g_p_i_o___b_a_s_e___a_d_d_r_e_s_s_e_s_ga2dca03332d620196ba943bc2346eaa08}{GPIOC}})\ \{}
+\DoxyCodeLine{00115\ \textcolor{comment}{//\ \ \ \ \ \ RCC-\/>AHB1RSTR\ |=\ (1\ <<\ 2);\ \ /*\ Assert\ the\ reset\ bit\ */}}
+\DoxyCodeLine{00116\ \textcolor{comment}{//\ \ \ \ \ \ RCC-\/>AHB1RSTR\ \&=\ \string~(1\ <<\ 2);\ /*\ De-\/assert\ the\ reset\ bit\ */}}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Instead\ of\ this\ we\ will\ use\ macros.}}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group___a_h_b1___r_e_s_e_t___m_a_c_r_o_s_gaa4542df78f0d1560397d909f611c6ce7}{GPIOC\_RESET}}();}
+\DoxyCodeLine{00119\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (pGPIOx\ ==\ \mbox{\hyperlink{group___g_p_i_o___b_a_s_e___a_d_d_r_e_s_s_e_s_ga7580b1a929ea9df59725ba9c18eba6ac}{GPIOD}})\ \{}
+\DoxyCodeLine{00120\ \textcolor{comment}{//\ \ \ \ \ \ RCC-\/>AHB1RSTR\ |=\ (1\ <<\ 3);\ \ /*\ Assert\ the\ reset\ bit\ */}}
+\DoxyCodeLine{00121\ \textcolor{comment}{//\ \ \ \ \ \ RCC-\/>AHB1RSTR\ \&=\ \string~(1\ <<\ 3);\ /*\ De-\/assert\ the\ reset\ bit\ */}}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Instead\ of\ this\ we\ will\ use\ macros.}}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group___a_h_b1___r_e_s_e_t___m_a_c_r_o_s_ga92694d8c9d9c00155654721623708f35}{GPIOD\_RESET}}();}
+\DoxyCodeLine{00124\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (pGPIOx\ ==\ \mbox{\hyperlink{group___g_p_i_o___b_a_s_e___a_d_d_r_e_s_s_e_s_gae04bdb5e8acc47cab1d0532e6b0d0763}{GPIOE}})\ \{}
+\DoxyCodeLine{00125\ \textcolor{comment}{//\ \ \ \ \ \ RCC-\/>AHB1RSTR\ |=\ (1\ <<\ 4);\ \ /*\ Assert\ the\ reset\ bit\ */}}
+\DoxyCodeLine{00126\ \textcolor{comment}{//\ \ \ \ \ \ RCC-\/>AHB1RSTR\ \&=\ \string~(1\ <<\ 4);\ /*\ De-\/assert\ the\ reset\ bit\ */}}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Instead\ of\ this\ we\ will\ use\ macros.}}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group___a_h_b1___r_e_s_e_t___m_a_c_r_o_s_ga497349d3ec829b56e5a26953e61c1e8a}{GPIOE\_RESET}}();}
+\DoxyCodeLine{00129\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (pGPIOx\ ==\ \mbox{\hyperlink{group___g_p_i_o___b_a_s_e___a_d_d_r_e_s_s_e_s_ga43c3022dede7c9db7a58d3c3409dbc8d}{GPIOF}})\ \{}
+\DoxyCodeLine{00130\ \textcolor{comment}{//\ \ \ \ \ \ RCC-\/>AHB1RSTR\ |=\ (1\ <<\ 5);\ \ /*\ Assert\ the\ reset\ bit\ */}}
+\DoxyCodeLine{00131\ \textcolor{comment}{//\ \ \ \ \ \ RCC-\/>AHB1RSTR\ \&=\ \string~(1\ <<\ 5);\ /*\ De-\/assert\ the\ reset\ bit\ */}}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Instead\ of\ this\ we\ will\ use\ macros.}}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group___a_h_b1___r_e_s_e_t___m_a_c_r_o_s_gafe0496ab47e7164336adefca4797ac3e}{GPIOF\_RESET}}();}
+\DoxyCodeLine{00134\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (pGPIOx\ ==\ \mbox{\hyperlink{group___g_p_i_o___b_a_s_e___a_d_d_r_e_s_s_e_s_ga02a2a23a32f9b02166a8c64012842414}{GPIOG}})\ \{}
+\DoxyCodeLine{00135\ \textcolor{comment}{//\ \ \ \ \ \ RCC-\/>AHB1RSTR\ |=\ (1\ <<\ 6);\ \ /*\ Assert\ the\ reset\ bit\ */}}
+\DoxyCodeLine{00136\ \textcolor{comment}{//\ \ \ \ \ \ RCC-\/>AHB1RSTR\ \&=\ \string~(1\ <<\ 6);\ /*\ De-\/assert\ the\ reset\ bit\ */}}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Instead\ of\ this\ we\ will\ use\ macros.}}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group___a_h_b1___r_e_s_e_t___m_a_c_r_o_s_gad69709b4469070fa4be32b4b137c4373}{GPIOG\_RESET}}();}
+\DoxyCodeLine{00139\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (pGPIOx\ ==\ \mbox{\hyperlink{group___g_p_i_o___b_a_s_e___a_d_d_r_e_s_s_e_s_gadeacbb43ae86c879945afe98c679b285}{GPIOH}})\ \{}
+\DoxyCodeLine{00140\ \textcolor{comment}{//\ \ \ \ \ \ RCC-\/>AHB1RSTR\ |=\ (1\ <<\ 7);\ \ /*\ Assert\ the\ reset\ bit\ */}}
+\DoxyCodeLine{00141\ \textcolor{comment}{//\ \ \ \ \ \ RCC-\/>AHB1RSTR\ \&=\ \string~(1\ <<\ 7);\ /*\ De-\/assert\ the\ reset\ bit\ */}}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Instead\ of\ this\ we\ will\ use\ macros.}}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group___a_h_b1___r_e_s_e_t___m_a_c_r_o_s_ga30f67db20df721ed84d527133fe1de4f}{GPIOH\_RESET}}();}
+\DoxyCodeLine{00144\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (pGPIOx\ ==\ \mbox{\hyperlink{group___g_p_i_o___b_a_s_e___a_d_d_r_e_s_s_e_s_gad15f13545ecdbbabfccf43d5997e5ade}{GPIOI}})\ \{}
+\DoxyCodeLine{00145\ \textcolor{comment}{//\ \ \ \ \ \ RCC-\/>AHB1RSTR\ |=\ (1\ <<\ 8);\ \ /*\ Assert\ the\ reset\ bit\ */}}
+\DoxyCodeLine{00146\ \textcolor{comment}{//\ \ \ \ \ \ RCC-\/>AHB1RSTR\ \&=\ \string~(1\ <<\ 8);\ /*\ De-\/assert\ the\ reset\ bit\ */}}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Instead\ of\ this\ we\ will\ use\ macros.}}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group___a_h_b1___r_e_s_e_t___m_a_c_r_o_s_ga044a47439c7e8f852439c76250a57901}{GPIOI\_RESET}}();}
+\DoxyCodeLine{00149\ \ \ \ \ \}}
+\DoxyCodeLine{00150\ \}}
 
 \end{DoxyCode}
 \Hypertarget{group___g_p_i_o___driver___a_p_is_ga7a2f606b1dfb968762d2ee9dcf59fc5f}\index{GPIO Driver Function Prototypes@{GPIO Driver Function Prototypes}!gpio\_read\_pin@{gpio\_read\_pin}}
@@ -269,15 +615,16 @@ Safety\+: Pin number cannot be more than 15
 \end{DoxyNote}
 
 
-Definition at line \mbox{\hyperlink{stm32f407xx__gpio_8c_source_l00150}{150}} of file \mbox{\hyperlink{stm32f407xx__gpio_8c_source}{stm32f407xx\+\_\+gpio.\+c}}.
+Definition at line \mbox{\hyperlink{_s_t_m32_f4xx___d_r_i_v_e_r_s_2_src_2stm32f407xx__gpio_8c_source_l00152}{152}} of file \mbox{\hyperlink{_s_t_m32_f4xx___d_r_i_v_e_r_s_2_src_2stm32f407xx__gpio_8c_source}{stm32f407xx\+\_\+gpio.\+c}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00151\ \ \ \ \ \textcolor{keywordflow}{if}\ (pin\ >\ 15)}
-\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;\ }
-\DoxyCodeLine{00153\ \ \ \ \ \textcolor{keywordflow}{return}\ (uint8\_t)\ ((pGPIOx-\/>\mbox{\hyperlink{struct_g_p_i_ox___reg_def__t_a6e89a0ca7efb4878fed5adafca726873}{IDR}}\ >>\ pin)\ \&\ 0x1);}
-\DoxyCodeLine{00154\ \}}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00153\ \ \ \ \ \textcolor{keywordflow}{if}\ (pin\ >\ 15)}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;\ }
+\DoxyCodeLine{00155\ \ \ \ \ uint8\_t\ temp\ =\ (uint8\_t)\ ((pGPIOx-\/>\mbox{\hyperlink{struct_g_p_i_ox___reg_def__t_a6e89a0ca7efb4878fed5adafca726873}{IDR}}\ >>\ pin)\ \&\ 0x1);}
+\DoxyCodeLine{00156\ \ \ \ \ \textcolor{keywordflow}{return}\ temp;}
+\DoxyCodeLine{00157\ \}}
 
 \end{DoxyCode}
 \Hypertarget{group___g_p_i_o___driver___a_p_is_ga893c5d7e52c33fea09df85b817801855}\index{GPIO Driver Function Prototypes@{GPIO Driver Function Prototypes}!gpio\_read\_port@{gpio\_read\_port}}
@@ -302,13 +649,13 @@ Read the entire GPIO input port.
 \end{DoxyRetVals}
 
 
-Definition at line \mbox{\hyperlink{stm32f407xx__gpio_8c_source_l00156}{156}} of file \mbox{\hyperlink{stm32f407xx__gpio_8c_source}{stm32f407xx\+\_\+gpio.\+c}}.
+Definition at line \mbox{\hyperlink{_s_t_m32_f4xx___d_r_i_v_e_r_s_2_src_2stm32f407xx__gpio_8c_source_l00159}{159}} of file \mbox{\hyperlink{_s_t_m32_f4xx___d_r_i_v_e_r_s_2_src_2stm32f407xx__gpio_8c_source}{stm32f407xx\+\_\+gpio.\+c}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00157\ \ \ \ \ \textcolor{keywordflow}{return}\ (uint16\_t)\ (pGPIOx-\/>\mbox{\hyperlink{struct_g_p_i_ox___reg_def__t_a6e89a0ca7efb4878fed5adafca726873}{IDR}});}
-\DoxyCodeLine{00158\ \}}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00160\ \ \ \ \ \textcolor{keywordflow}{return}\ (uint16\_t)\ (pGPIOx-\/>\mbox{\hyperlink{struct_g_p_i_ox___reg_def__t_a6e89a0ca7efb4878fed5adafca726873}{IDR}});}
+\DoxyCodeLine{00161\ \}}
 
 \end{DoxyCode}
 \Hypertarget{group___g_p_i_o___driver___a_p_is_gaf33fe651c0911b5bfccfe253b8c44286}\index{GPIO Driver Function Prototypes@{GPIO Driver Function Prototypes}!gpio\_toggle\_pin@{gpio\_toggle\_pin}}
@@ -330,14 +677,15 @@ Toggle the logic level of a GPIO output pin.
 \end{DoxyParams}
 
 
-Definition at line \mbox{\hyperlink{stm32f407xx__gpio_8c_source_l00168}{168}} of file \mbox{\hyperlink{stm32f407xx__gpio_8c_source}{stm32f407xx\+\_\+gpio.\+c}}.
+Definition at line \mbox{\hyperlink{_s_t_m32_f4xx___d_r_i_v_e_r_s_2_src_2stm32f407xx__gpio_8c_source_l00175}{175}} of file \mbox{\hyperlink{_s_t_m32_f4xx___d_r_i_v_e_r_s_2_src_2stm32f407xx__gpio_8c_source}{stm32f407xx\+\_\+gpio.\+c}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00169\ \ \ \ \ \textcolor{keywordflow}{if}\ (pin\ >\ 15)\ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{00170\ \ \ \ \ pGPIOx-\/>\mbox{\hyperlink{struct_g_p_i_ox___reg_def__t_acf54c3304e180a735525c8a2e7e29f40}{ODR}}\ \string^=\ (0x01<<pin);}
-\DoxyCodeLine{00171\ \}}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00176\ \ \ \ \ \textcolor{keywordflow}{if}\ (pin\ >\ 15)}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00178\ \ \ \ \ pGPIOx-\/>\mbox{\hyperlink{struct_g_p_i_ox___reg_def__t_acf54c3304e180a735525c8a2e7e29f40}{ODR}}\ \string^=\ (0x01\ <<\ pin);}
+\DoxyCodeLine{00179\ \}}
 
 \end{DoxyCode}
 \Hypertarget{group___g_p_i_o___driver___a_p_is_ga3a438f76ce1b8d514645f41c5e13bc19}\index{GPIO Driver Function Prototypes@{GPIO Driver Function Prototypes}!gpio\_write\_pin@{gpio\_write\_pin}}
@@ -366,13 +714,17 @@ Write HIGH/\+LOW to a pin.
 \end{DoxyRetVals}
 
 
-Definition at line \mbox{\hyperlink{stm32f407xx__gpio_8c_source_l00160}{160}} of file \mbox{\hyperlink{stm32f407xx__gpio_8c_source}{stm32f407xx\+\_\+gpio.\+c}}.
+Definition at line \mbox{\hyperlink{_s_t_m32_f4xx___d_r_i_v_e_r_s_2_src_2stm32f407xx__gpio_8c_source_l00163}{163}} of file \mbox{\hyperlink{_s_t_m32_f4xx___d_r_i_v_e_r_s_2_src_2stm32f407xx__gpio_8c_source}{stm32f407xx\+\_\+gpio.\+c}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00161\ \ \ \ \ pGPIOx-\/>\mbox{\hyperlink{struct_g_p_i_ox___reg_def__t_acf54c3304e180a735525c8a2e7e29f40}{ODR}}\ |=\ ((state\ <<\ pin));}
-\DoxyCodeLine{00162\ \}}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00164\ \ \ \ \ \textcolor{keywordflow}{if}\ (state)\ \{}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ pGPIOx-\/>\mbox{\hyperlink{struct_g_p_i_ox___reg_def__t_acf54c3304e180a735525c8a2e7e29f40}{ODR}}\ |=\ ((1\ <<\ pin));}
+\DoxyCodeLine{00166\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ pGPIOx-\/>\mbox{\hyperlink{struct_g_p_i_ox___reg_def__t_acf54c3304e180a735525c8a2e7e29f40}{ODR}}\ \&=\ \string~((1\ <<\ pin));}
+\DoxyCodeLine{00168\ \ \ \ \ \}}
+\DoxyCodeLine{00169\ \}}
 
 \end{DoxyCode}
 \Hypertarget{group___g_p_i_o___driver___a_p_is_ga58fd0d0b3c266d7a1e9777cef52e8207}\index{GPIO Driver Function Prototypes@{GPIO Driver Function Prototypes}!gpio\_write\_port@{gpio\_write\_port}}
@@ -399,12 +751,12 @@ Write a 16-\/bit value to the entire GPIO output port.
 \end{DoxyRetVals}
 
 
-Definition at line \mbox{\hyperlink{stm32f407xx__gpio_8c_source_l00164}{164}} of file \mbox{\hyperlink{stm32f407xx__gpio_8c_source}{stm32f407xx\+\_\+gpio.\+c}}.
+Definition at line \mbox{\hyperlink{_s_t_m32_f4xx___d_r_i_v_e_r_s_2_src_2stm32f407xx__gpio_8c_source_l00171}{171}} of file \mbox{\hyperlink{_s_t_m32_f4xx___d_r_i_v_e_r_s_2_src_2stm32f407xx__gpio_8c_source}{stm32f407xx\+\_\+gpio.\+c}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00165\ \ \ \ \ pGPIOx-\/>\mbox{\hyperlink{struct_g_p_i_ox___reg_def__t_acf54c3304e180a735525c8a2e7e29f40}{ODR}}\ =\ write\_data;}
-\DoxyCodeLine{00166\ \}}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00172\ \ \ \ \ pGPIOx-\/>\mbox{\hyperlink{struct_g_p_i_ox___reg_def__t_acf54c3304e180a735525c8a2e7e29f40}{ODR}}\ =\ write\_data;}
+\DoxyCodeLine{00173\ \}}
 
 \end{DoxyCode}

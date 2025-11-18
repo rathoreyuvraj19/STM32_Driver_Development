@@ -440,6 +440,12 @@ typedef struct
 	 * @brief Macros to enable or disable for peripherals belonging to APB1 bus.
 	 * @{
 	 */
+
+	#define SPI2_PCLK_EN()		  	(RCC->APB1ENR |= (1<<14))
+	#define SPI2_PCLK_DI()        	(RCC->APB1ENR &= ~(1<<14))
+
+	#define SPI3_PCLK_EN()         	(RCC->APB1ENR |= (1<<15))
+	#define SPI3_PCLK_DI()         	(RCC->APB1ENR &= ~(1<<15))
 	/** @todo Complete for other peripherals */
 
 	/** @} */ // End of APB1 Bus Peripheral Enable Disable
@@ -450,8 +456,13 @@ typedef struct
 	 * @brief Macros to enable or disable for peripherals belonging to APB2 bus.
 	 * @{
 	 */
-	#define SYSCFG_PCLK_EN()	(RCC->APB2ENR |= (1<<14))
-	#define SYSCFG_PCLK_DI()	(RCC->APB2ENR &= ~(1<<14))
+	#define SYSCFG_PCLK_EN()		(RCC->APB2ENR |= (1<<14))
+	#define SYSCFG_PCLK_DI()		(RCC->APB2ENR &= ~(1<<14))
+
+	#define SPI1_PCLK_EN()			(RCC->APB2ENR |= (1<<12))
+	#define SPI1_PCLK_DI()			(RCC->APB2ENR &= ~(1<<12))
+
+
 	/** @todo Complete for other peripherals */
 
 	/** @} */ // End of APB2 Bus Peripheral Enable Disable
@@ -529,7 +540,7 @@ typedef struct
 	 * @brief Macros to enable or disable for peripherals belonging to APB2 bus.
 	 * @{
 	 */
-	#define SYSCFG_EN() 	(RCC.)
+
 	/** @todo Complete for other peripherals */
 
 	/** @} */// End of APB2 Bus Peripheral Reset Macros
@@ -549,7 +560,7 @@ typedef struct
 
 /* NVIC register layout */
 typedef struct
-{
+NVIC_RegDef_t{
     volatile uint32_t ISER[8];     /*!< Interrupt Set-Enable Registers    */
     uint32_t RESERVED0[24];
 
@@ -695,6 +706,44 @@ typedef struct
 #define IRQ_NUM_FPU                81  /*!< Floating Point Unit global interrupt */
 
 /** @} */
+
+//==================================================================================//
+//=========================SPI Peripheral ==========================================//
+//==================================================================================//
+
+/**
+ * @file    stm32f407_spi.h
+ * @brief   SPI register definition for STM32F407 (bare-metal)
+ * @note    Refer RM0090 (SPI peripheral) for register details
+ */
+
+typedef struct
+{
+    volatile uint32_t CR1;      /*!< Control register 1      | Offset: 0x00 */
+    volatile uint32_t CR2;      /*!< Control register 2      | Offset: 0x04 */
+    volatile uint32_t SR;       /*!< Status register         | Offset: 0x08 */
+    volatile uint32_t DR;       /*!< Data register           | Offset: 0x0C */
+    volatile uint32_t CRCPR;    /*!< CRC polynomial reg      | Offset: 0x10 */
+    volatile uint32_t RXCRCR;   /*!< RX CRC register         | Offset: 0x14 */
+    volatile uint32_t TXCRCR;   /*!< TX CRC register         | Offset: 0x18 */
+    volatile uint32_t I2SCFGR;  /*!< I2S config register     | Offset: 0x1C */
+    volatile uint32_t I2SPR;    /*!< I2S prescaler register  | Offset: 0x20 */
+
+} SPIx_RegDef_t;
+
+/**
+ * @defgroup SPI_Instances SPI Peripheral Definitions
+ * @brief  Base pointer macros for all SPI instances on STM32F407
+ * @note   These macros cast the base addresses to @ref SPIx_RegDef_t
+ * @{
+ */
+
+#define SPI1   ((SPIx_RegDef_t*)SPI1_BASEADDR)              /*!< SPI1 base address */
+#define SPI2   ((SPIx_RegDef_t*)SPI2_I2S2_BASEADDR)         /*!< SPI2 / I2S2 base address */
+#define SPI3   ((SPIx_RegDef_t*)SPI3_I2S3_BASEADDR)         /*!< SPI3 / I2S3 base address */
+
+/** @} */ // end of SPI_Instances
+
 
 
 

@@ -1,8 +1,6 @@
 <map id="Projects/003_Testing_stm32f407xx_drivers" name="Projects/003_Testing_stm32f407xx_drivers">
-<area shape="rect" id="node2" href="dir_31956e2ddfb45a72c7f5dfafc94c2670.html" title="Drivers" alt="" coords="214,155,277,181"/>
-<area shape="rect" id="node3" href="dir_ab64fec8359dd5670a83bd938c6163b3.html" title="Src" alt="" coords="235,72,277,99"/>
-<area shape="poly" id="edge1" href="dir_000011_000004.html" alt="" coords="257,100,252,140,246,139,252,99"/>
-<area shape="rect" id="edge1-headlabel" href="dir_000011_000004.html" title="2" alt="" coords="254,130,261,146"/>
-<area shape="rect" id="clust2" href="dir_34fb647808f2e666ca54bee75d080922.html" alt="" coords="27,53,288,192"/>
-<area shape="rect" id="clust1" href="dir_7a6499598ddcfcabe96e224cb4a6d834.html" title="Projects" alt="" coords="16,16,299,203"/>
+<area shape="rect" id="node2" href="dir_31956e2ddfb45a72c7f5dfafc94c2670.html" title="Drivers" alt="" coords="235,72,298,99"/>
+<area shape="rect" id="node3" href="dir_ab64fec8359dd5670a83bd938c6163b3.html" title="Src" alt="" coords="322,72,363,99"/>
+<area shape="rect" id="clust2" href="dir_34fb647808f2e666ca54bee75d080922.html" alt="" coords="27,53,375,117"/>
+<area shape="rect" id="clust1" href="dir_7a6499598ddcfcabe96e224cb4a6d834.html" title="Projects" alt="" coords="16,16,385,128"/>
 </map>

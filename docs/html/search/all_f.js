@@ -1,15 +1,21 @@
 var searchData=
 [
-  ['objectives_0',['Learning Objectives',['../index.html#autotoc_md56',1,'']]],
-  ['odr_1',['ODR',['../struct_g_p_i_ox___reg_def__t.html#acf54c3304e180a735525c8a2e7e29f40',1,'GPIOx_RegDef_t']]],
-  ['of_20ahb1_20peripherals_2',['Base address of AHB1 peripherals',['../group___a_h_b1___p_e_r_i_p_e_h_r_a_l_s___b_a_s_e___a_d_d_r_e_s_s_e_s.html',1,'']]],
-  ['of_20ahb2_20peripherals_3',['Base address of AHB2 peripherals',['../group___a_h_b2___p_e_r_i_p_e_h_r_a_l_s___b_a_s_e___a_d_d_r_e_s_s_e_s.html',1,'']]],
-  ['of_20apb1_20peripherals_4',['Base address of APB1 peripherals',['../group___a_p_b1___p_e_r_i_p_e_h_r_a_l_s___b_a_s_e___a_d_d_r_e_s_s_e_s.html',1,'']]],
-  ['of_20apb2_20peripherals_5',['Base address of APB2 peripherals',['../group___a_p_b2___p_e_r_i_p_e_h_r_a_l_s___b_a_s_e___a_d_d_r_e_s_s_e_s.html',1,'']]],
-  ['of_20contents_6',['Table of Contents',['../index.html#autotoc_md2',1,'']]],
-  ['options_7',['Options',['../group___g_p_i_o___a_l_t_e_r_n_a_t_e___f_u_n_c_t_i_o_n_s.html',1,'GPIO Alternate Function Options'],['../group___g_p_i_o___p_u_l_l_u_p___p_u_l_l_d_o_w_n.html',1,'GPIO Pull-Up/Pull-Down Options'],['../group___g_p_i_o___s_p_e_e_d_s.html',1,'GPIO Speed Options']]],
-  ['ospeedr_8',['OSPEEDR',['../struct_g_p_i_ox___reg_def__t.html#a3b356447d7a412130d1bc5b33cb4b7a0',1,'GPIOx_RegDef_t']]],
-  ['otyper_9',['OTYPER',['../struct_g_p_i_ox___reg_def__t.html#a487e307dd27a1a694f8a52f1a2df6ce6',1,'GPIOx_RegDef_t']]],
-  ['output_20types_10',['GPIO Output Types',['../group___g_p_i_o___o_p___t_y_p_e_s.html',1,'']]],
-  ['overview_11',['Projects Overview',['../index.html#autotoc_md16',1,'']]]
+  ['macros_0',['Macros',['../group___a_h_b1___r_e_s_e_t___m_a_c_r_o_s.html',1,'AHB1 Peripheral Reset Macros'],['../group___a_h_b2___r_e_s_e_t___m_a_c_r_o_s.html',1,'AHB2 Peripheral Reset Macros'],['../group___a_h_b3___r_e_s_e_t___m_a_c_r_o_s.html',1,'AHB3 Peripheral Reset Macros'],['../group___a_p_b1___r_e_s_e_t___m_a_c_r_o_s.html',1,'APB1 Peripheral Reset Macros'],['../group___a_p_b2___r_e_s_e_t___m_a_c_r_o_s.html',1,'APB2 Peripheral Reset Macros'],['../group___g_p_i_o___p_i_n___n_u_m_b_e_r___m_a_c_r_o_s.html',1,'GPIO Pin Number Macros'],['../group___g_p_i_o___b_a_s_e___a_d_d_r_e_s_s_e_s.html',1,'GPIO Port Base Address Macros'],['../group___i_n_t_e_r_r_u_p_t___t_r_i_g_g_e_r___t_y_p_e___m_a_c_r_o_s.html',1,'Interrupt Trigger Type Macros'],['../group___s_p_i___b_i_t___o_r_d_e_r___m_a_c_r_o_s.html',1,'SPI Bit Order Configuration Macros'],['../group___s_p_i___c_l_o_c_k___s_p_e_e_d___m_a_c_r_o_s.html',1,'SPI Clock Speed Macros'],['../group___s_p_i___c_o_n_f_i_g___m_a_c_r_o_s.html',1,'SPI Configuration Macros'],['../group___s_p_i___c_p_h_a___m_a_c_r_o_s.html',1,'SPI CPHA Configuration Macros'],['../group___s_p_i___c_p_o_l___m_a_c_r_o_s.html',1,'SPI CPOL Configuration Macros'],['../group___s_p_i___c_r_c___m_a_c_r_o_s.html',1,'SPI CRC Configuration Macros'],['../group___s_p_i___d_e_v_i_c_e___b_u_s___m_o_d_e___m_a_c_r_o_s.html',1,'SPI Device Bus Mode Macros'],['../group___s_p_i___d_e_v_i_c_e___m_o_d_e___m_a_c_r_o_s.html',1,'SPI Device Mode Macros'],['../group___s_p_i___f_r_a_m_e___s_i_z_e___m_a_c_r_o_s.html',1,'SPI Frame Size Configuration Macros'],['../group___s_p_i___s_s_m___m_a_c_r_o_s.html',1,'SPI SSM Configuration Macros'],['../group___s_p_i___s_s_o_e___m_a_c_r_o_s.html',1,'SPI SSOE Configuration Macros'],['../group___s_p_i___s_t_a_t_u_s___f_l_a_g___m_a_c_r_o_s.html',1,'SPI Status Flag Macros']]],
+  ['macros_1',['General-purpose macros',['../group___m_i_s_c_e_l_l_a_n_e_o_u_s___m_a_c_r_o_s.html',1,'']]],
+  ['macros_20to_20enable_20disable_20clocks_20for_20various_20peripherals_2',['Macros to Enable/Disable clocks for various peripherals',['../group___c_l_o_c_k___e_n_a_b_l_e___m_a_c_r_o_s.html',1,'']]],
+  ['macros_20to_20reset_20various_20peripherals_3',['Macros to reset various peripherals',['../group___p_e_r_i_p_h_e_r_a_l___r_e_s_e_t___m_a_c_r_o_s.html',1,'']]],
+  ['main_4',['main',['../000___hello___world_2_src_2main_8c.html#a840291bc02cba5474a4cb46a9b9566fe',1,'main(void):&#160;main.c'],['../001___s_t_m___c_l_o_c_k___e_n_a_b_l_e_2_src_2main_8c.html#a840291bc02cba5474a4cb46a9b9566fe',1,'main(void):&#160;main.c'],['../002___user__button__interrupt_2_src_2main_8c.html#a840291bc02cba5474a4cb46a9b9566fe',1,'main(void):&#160;main.c'],['../003___testing__stm32f407xx__drivers_2_src_2main_8c.html#a840291bc02cba5474a4cb46a9b9566fe',1,'main(void):&#160;main.c']]],
+  ['main_2ec_5',['main.c',['../000___hello___world_2_src_2main_8c.html',1,'(Global Namespace)'],['../001___s_t_m___c_l_o_c_k___e_n_a_b_l_e_2_src_2main_8c.html',1,'(Global Namespace)'],['../002___user__button__interrupt_2_src_2main_8c.html',1,'(Global Namespace)'],['../003___testing__stm32f407xx__drivers_2_src_2main_8c.html',1,'(Global Namespace)']]],
+  ['manual_6',['Key Sections in Reference Manual',['../index.html#autotoc_md54',1,'']]],
+  ['memory_20architecture_7',['Memory Architecture',['../index.html#autotoc_md26',1,'']]],
+  ['memory_20segmentation_8',['Memory Segmentation',['../group___m_e_m_o_r_y___s_e_g_m_e_n_t_a_t_i_o_n.html',1,'']]],
+  ['memrmp_9',['MEMRMP',['../struct_s_y_s_c_f_g___reg_def__t.html#a1088a147730054a910827504ed395a74',1,'SYSCFG_RegDef_t']]],
+  ['metal_20driver_20development_10',['STM32F407 Bare-Metal Driver Development',['../index.html',1,'']]],
+  ['metal_20philosophy_11',['Bare-Metal Philosophy',['../index.html#autotoc_md12',1,'']]],
+  ['microcontroller_12',['Microcontroller',['../index.html#autotoc_md5',1,'']]],
+  ['mode_20macros_13',['Mode Macros',['../group___s_p_i___d_e_v_i_c_e___b_u_s___m_o_d_e___m_a_c_r_o_s.html',1,'SPI Device Bus Mode Macros'],['../group___s_p_i___d_e_v_i_c_e___m_o_d_e___m_a_c_r_o_s.html',1,'SPI Device Mode Macros']]],
+  ['moder_14',['MODER',['../struct_g_p_i_ox___reg_def__t.html#a7131c3ab513a84fc69270888ddbe561d',1,'GPIOx_RegDef_t']]],
+  ['modes_15',['GPIO Pin Modes',['../group___g_p_i_o___m_o_d_e_s.html',1,'']]],
+  ['modules_16',['Upcoming Modules',['../index.html#autotoc_md48',1,'']]],
+  ['must_20enable_20its_20clock_20before_20accessing_20them_17',['We must enable its clock before accessing them.',['../group___g_p_i_o___driver___a_p_is.html#autotoc_md68',1,'']]]
 ];

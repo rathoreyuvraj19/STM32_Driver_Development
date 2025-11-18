@@ -1,0 +1,175 @@
+\doxysection{stm32f407xx\+\_\+spi.\+h}
+\hypertarget{stm32f407xx__spi_8h_source}{}\label{stm32f407xx__spi_8h_source}\index{STM32F4xx\_DRIVERS/Inc/stm32f407xx\_spi.h@{STM32F4xx\_DRIVERS/Inc/stm32f407xx\_spi.h}}
+\mbox{\hyperlink{stm32f407xx__spi_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00001}00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00002}00002\ \textcolor{comment}{\ *\ stm32f407xx\_spi.h}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00003}00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00004}00004\ \textcolor{comment}{\ *\ \ Created\ on:\ Nov\ 17,\ 2025}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00005}00005\ \textcolor{comment}{\ *\ \ \ \ \ \ Author:\ ratho}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00006}00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00008}00008\ \textcolor{preprocessor}{\#ifndef\ INC\_STM32F407XX\_SPI\_H\_}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00009}00009\ \textcolor{preprocessor}{\#define\ INC\_STM32F407XX\_SPI\_H\_}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00010}00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_s_t_m32_f4xx___d_r_i_v_e_r_s_2_inc_2stm32f407xx_8h}{stm32f407xx.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00030}\mbox{\hyperlink{group___s_p_i___d_e_v_i_c_e___m_o_d_e___m_a_c_r_o_s_gae14503419450066f92b6fc8803f892ac}{00030}}\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#define\ SPI\_DEVICE\_MODE\_MASTER\ \ 1\ \ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00031}\mbox{\hyperlink{group___s_p_i___d_e_v_i_c_e___m_o_d_e___m_a_c_r_o_s_gaab62db7f593efc07b3e9316483477b15}{00031}}\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#define\ SPI\_DEVICE\_MODE\_SLAVE\ \ \ 0\ \ }\textcolor{preprocessor}{}\textcolor{preprocessor}{\ \ \ }\textcolor{comment}{//\ end\ of\ SPI\_DEVICE\_MODE\_MACROS}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00040}\mbox{\hyperlink{group___s_p_i___d_e_v_i_c_e___b_u_s___m_o_d_e___m_a_c_r_o_s_ga7146e4b419f9b1ed0950d016239b68f6}{00040}}\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#define\ SPI\_DEVICE\_BUS\_MODE\_FULL\_DUPLEX\ \ \ \ \ 0\ \ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00041}\mbox{\hyperlink{group___s_p_i___d_e_v_i_c_e___b_u_s___m_o_d_e___m_a_c_r_o_s_gadfa15cb8b874f642da5e25099a76e634}{00041}}\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#define\ SPI\_DEVICE\_BUS\_MODE\_HALF\_DUPLEX\ \ \ \ \ 1\ \ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00042}\mbox{\hyperlink{group___s_p_i___d_e_v_i_c_e___b_u_s___m_o_d_e___m_a_c_r_o_s_ga70ca8b6374435a686f6dbc768b4b26a3}{00042}}\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#define\ SPI\_DEVICE\_BUS\_MODE\_SIMPLEX\ \ \ \ \ \ \ \ \ 2\ \ }\textcolor{preprocessor}{}\textcolor{preprocessor}{\ \ \ }\textcolor{comment}{//\ end\ of\ SPI\_DEVICE\_BUS\_MODE\_MACROS}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00051}\mbox{\hyperlink{group___s_p_i___c_l_o_c_k___s_p_e_e_d___m_a_c_r_o_s_ga23a6efab7ad15dd53fd90f71fbd7af5e}{00051}}\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#define\ SPI\_CLOCK\_SPEED\_BY\_2\ \ \ \ \ 0\ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00052}\mbox{\hyperlink{group___s_p_i___c_l_o_c_k___s_p_e_e_d___m_a_c_r_o_s_ga7b07f212e61df5c75eb7f36bc2a78340}{00052}}\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#define\ SPI\_CLOCK\_SPEED\_BY\_4\ \ \ \ \ 1\ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00053}\mbox{\hyperlink{group___s_p_i___c_l_o_c_k___s_p_e_e_d___m_a_c_r_o_s_gab0d1870a0095790106ccb4d1f04b7d3e}{00053}}\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#define\ SPI\_CLOCK\_SPEED\_BY\_8\ \ \ \ \ 2\ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00054}\mbox{\hyperlink{group___s_p_i___c_l_o_c_k___s_p_e_e_d___m_a_c_r_o_s_ga015e6a575d941354ce9a24726c426759}{00054}}\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#define\ SPI\_CLOCK\_SPEED\_BY\_16\ \ \ \ 3\ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00055}\mbox{\hyperlink{group___s_p_i___c_l_o_c_k___s_p_e_e_d___m_a_c_r_o_s_ga37ad9df99bdd5fae1ea883c6396f0786}{00055}}\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#define\ SPI\_CLOCK\_SPEED\_BY\_32\ \ \ \ 4\ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00056}\mbox{\hyperlink{group___s_p_i___c_l_o_c_k___s_p_e_e_d___m_a_c_r_o_s_ga9c109a355c89cb4e41cf12bd486bf16e}{00056}}\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#define\ SPI\_CLOCK\_SPEED\_BY\_64\ \ \ \ 5\ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00057}\mbox{\hyperlink{group___s_p_i___c_l_o_c_k___s_p_e_e_d___m_a_c_r_o_s_ga9cd7b629cdb40774a27e341fd9d59a7c}{00057}}\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#define\ SPI\_CLOCK\_SPEED\_BY\_128\ \ \ 6\ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00058}\mbox{\hyperlink{group___s_p_i___c_l_o_c_k___s_p_e_e_d___m_a_c_r_o_s_ga7300e386366948b5092d05bd7e88e937}{00058}}\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#define\ SPI\_CLOCK\_SPEED\_BY\_256\ \ \ 7\ }\textcolor{preprocessor}{}\textcolor{preprocessor}{\ \ \ }\textcolor{comment}{//\ end\ of\ SPI\_CLOCK\_SPEED\_MACROS}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00067}\mbox{\hyperlink{group___s_p_i___c_p_o_l___m_a_c_r_o_s_gaf5161f1e7fb512ef0e58612267db52d6}{00067}}\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#define\ SPI\_CPOL\_HIGH\ \ \ 1\ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00068}\mbox{\hyperlink{group___s_p_i___c_p_o_l___m_a_c_r_o_s_ga83a0541021071c7e33997d3affc0c8d4}{00068}}\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#define\ SPI\_CPOL\_LOW\ \ \ \ 0\ }\textcolor{preprocessor}{}\textcolor{preprocessor}{\ \ \ }\textcolor{comment}{//\ end\ of\ SPI\_CPOL\_MACROS}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00077}\mbox{\hyperlink{group___s_p_i___c_p_h_a___m_a_c_r_o_s_ga1ecd4ff3f83f43eac188be8d1c2c1e3f}{00077}}\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#define\ SPI\_CPHA\_FIRST\_EDGE\ \ \ \ \ 0\ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00078}\mbox{\hyperlink{group___s_p_i___c_p_h_a___m_a_c_r_o_s_ga1cd9990424875bbc316c6b14033fb2dd}{00078}}\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#define\ SPI\_CPHA\_SECOND\_EDGE\ \ \ \ 1\ }\textcolor{preprocessor}{}\textcolor{preprocessor}{\ \ \ }\textcolor{comment}{//\ end\ of\ SPI\_CPHA\_MACROS}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00087}\mbox{\hyperlink{group___s_p_i___f_r_a_m_e___s_i_z_e___m_a_c_r_o_s_gaa61be39f5126f032df7554922238a6fb}{00087}}\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#define\ SPI\_FRAME\_SIZE\_8\_BITS\ \ \ \ \ 0\ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00088}\mbox{\hyperlink{group___s_p_i___f_r_a_m_e___s_i_z_e___m_a_c_r_o_s_ga0363c65d5eb8d597d36b630f06bd2aa7}{00088}}\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#define\ SPI\_FRAME\_SIZE\_16\_BITS\ \ \ \ 1\ }\textcolor{preprocessor}{}\textcolor{preprocessor}{\ \ \ }\textcolor{comment}{//\ end\ of\ SPI\_FRAME\_SIZE\_MACROS}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00097}\mbox{\hyperlink{group___s_p_i___s_s_m___m_a_c_r_o_s_ga5c7aa70ffa0b137245857a75597c4461}{00097}}\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#define\ SPI\_SSM\_SETTING\_DI\ \ \ \ 0\ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00098}\mbox{\hyperlink{group___s_p_i___s_s_m___m_a_c_r_o_s_ga797c7bb7f2b8f20e995507c69025fbcc}{00098}}\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#define\ SPI\_SSM\_SETTING\_EN\ \ \ \ 1\ }\textcolor{preprocessor}{}\textcolor{preprocessor}{\ \ \ }\textcolor{comment}{//\ end\ of\ SPI\_SSM\_MACROS}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00107}\mbox{\hyperlink{group___s_p_i___b_i_t___o_r_d_e_r___m_a_c_r_o_s_gadf5efb25feb17a826e16ff6fe764374f}{00107}}\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#define\ SPI\_BIT\_ORDER\_LSB\_FIRST\ \ \ \ 1\ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00108}\mbox{\hyperlink{group___s_p_i___b_i_t___o_r_d_e_r___m_a_c_r_o_s_gaa554398df986c0edc87b7f9fac7edbd9}{00108}}\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#define\ SPI\_BIT\_ORDER\_MSB\_FIRST\ \ \ \ 0\ }\textcolor{preprocessor}{}\textcolor{preprocessor}{\ \ \ }\textcolor{comment}{//\ end\ of\ SPI\_BIT\_ORDER\_MACROS}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00110}00110\ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00117}\mbox{\hyperlink{group___s_p_i___s_s_o_e___m_a_c_r_o_s_ga1f4e36d4bd815d46a8c14312de591316}{00117}}\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#define\ SPI\_SSOE\_EN\ \ \ 1\ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00118}\mbox{\hyperlink{group___s_p_i___s_s_o_e___m_a_c_r_o_s_ga77dcce5b050052771db706e43b88a3d5}{00118}}\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#define\ SPI\_SSOE\_DI\ \ \ 0\ }\textcolor{preprocessor}{}\textcolor{preprocessor}{\ \ \ }\textcolor{comment}{//\ end\ of\ SPI\_SSOE\_MACROS}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00120}00120\ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00127}\mbox{\hyperlink{group___s_p_i___c_r_c___m_a_c_r_o_s_gacf3839ccf80f04e1682eb8036894d962}{00127}}\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#define\ SPI\_CRC\_ENABLE\ \ \ \ 1\ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00128}\mbox{\hyperlink{group___s_p_i___c_r_c___m_a_c_r_o_s_ga5a5ce38ae6641a08f7513162fef4899e}{00128}}\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#define\ SPI\_CRC\_DISABLE\ \ \ 0\ }\textcolor{preprocessor}{}\textcolor{preprocessor}{\ \ \ }\textcolor{comment}{//\ end\ of\ SPI\_CRC\_MACROS}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00130}00130\ \ \ \ \textcolor{comment}{//\ end\ of\ SPI\_CONFIG\_MACROS}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00132}00132\ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00133}00133\ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00134}00134\ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00141}\mbox{\hyperlink{struct_s_p_ix___config__t}{00141}}\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00142}00142\ \{}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00143}\mbox{\hyperlink{struct_s_p_ix___config__t_a58ec8a46f301546f865e2e7477bf3d8f}{00143}}\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{struct_s_p_ix___config__t_a58ec8a46f301546f865e2e7477bf3d8f}{SPI\_DEVICE\_MODE}};\ \ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00144}\mbox{\hyperlink{struct_s_p_ix___config__t_a0d54bb16c7b59c8894f9c27f2061c232}{00144}}\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{struct_s_p_ix___config__t_a0d54bb16c7b59c8894f9c27f2061c232}{SPI\_BUS\_MODE}};\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00145}\mbox{\hyperlink{struct_s_p_ix___config__t_a192d86623e71d56bbbbf99b8efffd298}{00145}}\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{struct_s_p_ix___config__t_a192d86623e71d56bbbbf99b8efffd298}{SPI\_CLOCK\_SPEED}};\ \ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00146}\mbox{\hyperlink{struct_s_p_ix___config__t_a908cc1f30a9b3d2603b9c904fa16087b}{00146}}\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{struct_s_p_ix___config__t_a908cc1f30a9b3d2603b9c904fa16087b}{SPI\_CPOL}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00147}\mbox{\hyperlink{struct_s_p_ix___config__t_aa1c544b092454a095481cce8672dd4d5}{00147}}\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{struct_s_p_ix___config__t_aa1c544b092454a095481cce8672dd4d5}{SPI\_CPHA}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00148}\mbox{\hyperlink{struct_s_p_ix___config__t_a649f465ce3b2a3c787a6f5495770e1fa}{00148}}\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{struct_s_p_ix___config__t_a649f465ce3b2a3c787a6f5495770e1fa}{SPI\_FRAME\_SIZE}};\ \ \ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00149}\mbox{\hyperlink{struct_s_p_ix___config__t_a9d287666eb349733ac55fd6317aa7cc3}{00149}}\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{struct_s_p_ix___config__t_a9d287666eb349733ac55fd6317aa7cc3}{SPI\_SSM\_SETTING}};\ \ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00150}\mbox{\hyperlink{struct_s_p_ix___config__t_a36304b6c78174800ccd32eb837da0754}{00150}}\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{struct_s_p_ix___config__t_a36304b6c78174800ccd32eb837da0754}{SPI\_BIT\_ORDER}};\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00151}\mbox{\hyperlink{struct_s_p_ix___config__t_a57dd078d1351d4a0a54b79ea5a2e08cb}{00151}}\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{struct_s_p_ix___config__t_a57dd078d1351d4a0a54b79ea5a2e08cb}{SPI\_SSOE}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00152}\mbox{\hyperlink{struct_s_p_ix___config__t_a207736f784d8a45e51344760a1e2163f}{00152}}\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{struct_s_p_ix___config__t_a207736f784d8a45e51344760a1e2163f}{SPI\_CRC\_EN}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00153}00153\ \}\ \mbox{\hyperlink{struct_s_p_ix___config__t}{SPIx\_Config\_t}};\ \textcolor{comment}{//\ End\ of\ SPIx\_Config\_t\ Structure\ Definition}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00155}00155\ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00156}00156\ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00163}\mbox{\hyperlink{struct_s_p_ix___handle__t}{00163}}\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00164}00164\ \{}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00165}\mbox{\hyperlink{struct_s_p_ix___handle__t_a2139a08270d0669a4bfd52184169f444}{00165}}\ \ \ \ \ \mbox{\hyperlink{struct_s_p_ix___reg_def__t}{SPIx\_RegDef\_t}}\ *\mbox{\hyperlink{struct_s_p_ix___handle__t_a2139a08270d0669a4bfd52184169f444}{pSPIx}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00166}\mbox{\hyperlink{struct_s_p_ix___handle__t_ad8dfc166a5c690bfebcc6e855132e805}{00166}}\ \ \ \ \ \mbox{\hyperlink{struct_s_p_ix___config__t}{SPIx\_Config\_t}}\ \ \mbox{\hyperlink{struct_s_p_ix___handle__t_ad8dfc166a5c690bfebcc6e855132e805}{SPI\_CONFIG}};\ \ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00167}00167\ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00168}00168\ \}\ \mbox{\hyperlink{struct_s_p_ix___handle__t}{SPIx\_Handle\_t}};\ \textcolor{comment}{//\ End\ of\ SPIx\_Handle\_t\ Structure\ Definition}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00170}00170\ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00176}00176\ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00183}\mbox{\hyperlink{group___s_p_i___s_t_a_t_u_s___f_l_a_g___m_a_c_r_o_s_gaa4bf84364251d2d1fb189fd72030656e}{00183}}\ \textcolor{preprocessor}{\ \ \ \ \#define\ SPI\_STATUS\_FLAG\_RXNE\ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00184}00184\ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00191}\mbox{\hyperlink{group___s_p_i___s_t_a_t_u_s___f_l_a_g___m_a_c_r_o_s_ga13cea6befcaaeb6421eb7e801abb48fe}{00191}}\ \textcolor{preprocessor}{\ \ \ \ \#define\ SPI\_STATUS\_FLAG\_TXE\ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00192}00192\ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00199}\mbox{\hyperlink{group___s_p_i___s_t_a_t_u_s___f_l_a_g___m_a_c_r_o_s_ga3017bec8f75601f7195ec984a9fc0746}{00199}}\ \textcolor{preprocessor}{\ \ \ \ \#define\ SPI\_STATUS\_FLAG\_CHSIDE\ \ \ \ \ 2}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00200}00200\ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00207}\mbox{\hyperlink{group___s_p_i___s_t_a_t_u_s___f_l_a_g___m_a_c_r_o_s_gacbba7922997b519488d93c6c3a0b8bfb}{00207}}\ \textcolor{preprocessor}{\ \ \ \ \#define\ SPI\_STATUS\_FLAG\_UDR\ \ \ \ \ \ \ \ 3}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00208}00208\ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00215}\mbox{\hyperlink{group___s_p_i___s_t_a_t_u_s___f_l_a_g___m_a_c_r_o_s_ga9c8a4d37f13d0ad3bd10eb1aa1bc19b6}{00215}}\ \textcolor{preprocessor}{\ \ \ \ \#define\ SPI\_STATUS\_FLAG\_CRCERR\ \ \ \ \ 4}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00216}00216\ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00223}\mbox{\hyperlink{group___s_p_i___s_t_a_t_u_s___f_l_a_g___m_a_c_r_o_s_ga03bd0883899d8dcc406d3af27287a35e}{00223}}\ \textcolor{preprocessor}{\ \ \ \ \#define\ SPI\_STATUS\_FLAG\_MODF\ \ \ \ \ \ \ 5}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00224}00224\ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00231}\mbox{\hyperlink{group___s_p_i___s_t_a_t_u_s___f_l_a_g___m_a_c_r_o_s_ga56a2f9dc08aa73b82af59effc87d12c6}{00231}}\ \textcolor{preprocessor}{\ \ \ \ \#define\ SPI\_STATUS\_FLAG\_OVR\ \ \ \ \ \ \ \ 6}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00232}00232\ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00239}\mbox{\hyperlink{group___s_p_i___s_t_a_t_u_s___f_l_a_g___m_a_c_r_o_s_ga891a0e21281996b5ea7421f13182d5b6}{00239}}\ \textcolor{preprocessor}{\ \ \ \ \#define\ SPI\_STATUS\_FLAG\_BSY\ \ \ \ \ \ \ \ 7}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00240}00240\ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00247}\mbox{\hyperlink{group___s_p_i___s_t_a_t_u_s___f_l_a_g___m_a_c_r_o_s_ga0db5fe5f162a4647007ae3242a45da97}{00247}}\ \textcolor{preprocessor}{\ \ \ \ \#define\ SPI\_STATUS\_FLAG\_FRE\ \ \ \ \ \ \ \ 8}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00248}00248\ \ \textcolor{comment}{//\ End\ of\ SPI\_STATUS\_FLAG\_MACROS}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00250}00250\ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00257}00257\ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00271}00271\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s_gab01fdd1c8bc842ad1e9017997c73722c}{SPIx\_Init}}(\mbox{\hyperlink{struct_s_p_ix___handle__t}{SPIx\_Handle\_t}}\ *pSPI\_Handle);}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00272}00272\ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00284}00284\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s_ga0864ea8e8f7aaf657d0ba57b60f4227e}{SPIx\_DeInit}}(\mbox{\hyperlink{struct_s_p_ix___reg_def__t}{SPIx\_RegDef\_t}}\ *pSPIx);}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00285}00285\ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00300}00300\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s_ga66a55c39f2954c6fba416822612497cb}{SPIx\_Peri\_Control}}(\mbox{\hyperlink{struct_s_p_ix___reg_def__t}{SPIx\_RegDef\_t}}\ *pSPIx,\ uint8\_t\ EN\_DI);}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00301}00301\ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00321}00321\ uint8\_t\ \mbox{\hyperlink{group___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s_ga28c21c2e8a6f53982ec6666fb0969123}{SPIx\_GetFlagStatus}}(\mbox{\hyperlink{struct_s_p_ix___reg_def__t}{SPIx\_RegDef\_t}}\ *pSPIx,\ uint32\_t\ FlagName);}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00322}00322\ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00339}00339\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s_ga2f1a0a4006270d72092844c3e764d399}{SPIx\_SendData\_Blocking}}(\mbox{\hyperlink{struct_s_p_ix___reg_def__t}{SPIx\_RegDef\_t}}\ *pSPIx,\ uint8\_t*\ pData,\ uint32\_t\ Len);}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00340}00340\ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00341}00341\ \ \textcolor{comment}{//\ End\ of\ SPI\_API\_PROTOTYPES}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00343}00343\ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00367}00367\ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00376}00376\ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00377}\mbox{\hyperlink{group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s_ga2f1d2c5a9e481ca06d0e29332f6f948a}{00377}}\ \textcolor{preprocessor}{\ \ \ \ \#define\ SPI\_CR1\_CPHA\_Pos\ \ \ \ \ \ \ \ 0U}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00378}\mbox{\hyperlink{group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s_gadd3274c0dce6293370773c5050f9c4be}{00378}}\ \textcolor{preprocessor}{\ \ \ \ \#define\ SPI\_CR1\_CPOL\_Pos\ \ \ \ \ \ \ \ 1U}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00379}\mbox{\hyperlink{group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s_ga27567886a2c76d088e01ad16851cdb71}{00379}}\ \textcolor{preprocessor}{\ \ \ \ \#define\ SPI\_CR1\_MSTR\_Pos\ \ \ \ \ \ \ \ 2U}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00380}\mbox{\hyperlink{group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s_gac6a71c219a81b476e66c3579d72120b9}{00380}}\ \textcolor{preprocessor}{\ \ \ \ \#define\ SPI\_CR1\_BR\_Pos\ \ \ \ \ \ \ \ \ \ 3U\ \ \ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00381}\mbox{\hyperlink{group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s_ga3f5515b536f82c1d91a64bd534030284}{00381}}\ \textcolor{preprocessor}{\ \ \ \ \#define\ SPI\_CR1\_SPE\_Pos\ \ \ \ \ \ \ \ \ 6U}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00382}\mbox{\hyperlink{group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s_ga982b564879d1dc60a3be787409df0c27}{00382}}\ \textcolor{preprocessor}{\ \ \ \ \#define\ SPI\_CR1\_LSBFIRST\_Pos\ \ \ \ 7U}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00383}\mbox{\hyperlink{group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s_gad99cf4909aa9307e01f61645451a9d0e}{00383}}\ \textcolor{preprocessor}{\ \ \ \ \#define\ SPI\_CR1\_SSI\_Pos\ \ \ \ \ \ \ \ \ 8U}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00384}\mbox{\hyperlink{group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s_gab2909290fab17ee930afc335811f574c}{00384}}\ \textcolor{preprocessor}{\ \ \ \ \#define\ SPI\_CR1\_SSM\_Pos\ \ \ \ \ \ \ \ \ 9U}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00385}\mbox{\hyperlink{group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s_gadd702fae4dcca65f3b43b2e02f67ee7b}{00385}}\ \textcolor{preprocessor}{\ \ \ \ \#define\ SPI\_CR1\_RXONLY\_Pos\ \ \ \ \ \ 10U}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00386}\mbox{\hyperlink{group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s_ga5290662db14690d4bcf30ed9e4694462}{00386}}\ \textcolor{preprocessor}{\ \ \ \ \#define\ SPI\_CR1\_DFF\_Pos\ \ \ \ \ \ \ \ \ 11U}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00387}\mbox{\hyperlink{group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s_ga4280bd0e8bcc3a268fa3a17b684499d7}{00387}}\ \textcolor{preprocessor}{\ \ \ \ \#define\ SPI\_CR1\_CRCNEXT\_Pos\ \ \ \ \ 12U}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00388}\mbox{\hyperlink{group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s_ga54cb3022c5e3d98cd81a7ff1cb087fac}{00388}}\ \textcolor{preprocessor}{\ \ \ \ \#define\ SPI\_CR1\_CRCEN\_Pos\ \ \ \ \ \ \ 13U}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00389}\mbox{\hyperlink{group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s_ga2975c27caad9e31aad719d78d591ac1d}{00389}}\ \textcolor{preprocessor}{\ \ \ \ \#define\ SPI\_CR1\_BIDIOE\_Pos\ \ \ \ \ \ 14U}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00390}\mbox{\hyperlink{group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s_gab07c9facbfdb0a7d5d89b1fd6a3ef711}{00390}}\ \textcolor{preprocessor}{\ \ \ \ \#define\ SPI\_CR1\_BIDIMODE\_Pos\ \ \ \ 15U}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00391}00391\ \ \textcolor{comment}{//\ End\ of\ SPI\_CR1\_BIT\_POSITIONS}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00393}00393\ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00394}00394\ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00405}00405\ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00406}\mbox{\hyperlink{group___s_p_i___c_r2___b_i_t___p_o_s_i_t_i_o_n_s_ga3079c4eebd0aef7bd22817bb99f21021}{00406}}\ \textcolor{preprocessor}{\ \ \ \ \#define\ SPI\_CR2\_RXDMAEN\_Pos\ \ \ \ \ 0U\ \ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00407}\mbox{\hyperlink{group___s_p_i___c_r2___b_i_t___p_o_s_i_t_i_o_n_s_ga24ae89d7e48296566cd18fb7495a2c81}{00407}}\ \textcolor{preprocessor}{\ \ \ \ \#define\ SPI\_CR2\_TXDMAEN\_Pos\ \ \ \ \ 1U\ \ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00408}\mbox{\hyperlink{group___s_p_i___c_r2___b_i_t___p_o_s_i_t_i_o_n_s_gaa0d0f5f51a5804e1a204bf1643516896}{00408}}\ \textcolor{preprocessor}{\ \ \ \ \#define\ SPI\_CR2\_SSOE\_Pos\ \ \ \ \ \ \ \ 2U\ \ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00409}\mbox{\hyperlink{group___s_p_i___c_r2___b_i_t___p_o_s_i_t_i_o_n_s_gaa192ac1c1066c8867a6fec7de630d222}{00409}}\ \textcolor{preprocessor}{\ \ \ \ \#define\ SPI\_CR2\_FRF\_Pos\ \ \ \ \ \ \ \ \ 4U\ \ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00410}\mbox{\hyperlink{group___s_p_i___c_r2___b_i_t___p_o_s_i_t_i_o_n_s_ga632cdba8557df9c3bbd2561b93f4e0f7}{00410}}\ \textcolor{preprocessor}{\ \ \ \ \#define\ SPI\_CR2\_ERRIE\_Pos\ \ \ \ \ \ \ 5U\ \ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00411}\mbox{\hyperlink{group___s_p_i___c_r2___b_i_t___p_o_s_i_t_i_o_n_s_gaf2e1e16fa6007b96880333d0321c5971}{00411}}\ \textcolor{preprocessor}{\ \ \ \ \#define\ SPI\_CR2\_RXNEIE\_Pos\ \ \ \ \ \ 6U\ \ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00412}\mbox{\hyperlink{group___s_p_i___c_r2___b_i_t___p_o_s_i_t_i_o_n_s_ga01e9b00dc195c10d1baefd0687ab9262}{00412}}\ \textcolor{preprocessor}{\ \ \ \ \#define\ SPI\_CR2\_TXEIE\_Pos\ \ \ \ \ \ \ 7U\ \ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00413}00413\ \ \textcolor{comment}{//\ End\ of\ SPI\_CR2\_BIT\_POSITIONS}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00415}00415\ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00424}00424\ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00425}\mbox{\hyperlink{group___s_p_i___s_r___b_i_t___p_o_s_i_t_i_o_n_s_ga306a27b203d1275f848f2767d76c9e3b}{00425}}\ \textcolor{preprocessor}{\ \ \ \ \#define\ SPI\_SR\_RXNE\_Pos\ \ \ \ \ \ \ \ \ 0U}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00426}\mbox{\hyperlink{group___s_p_i___s_r___b_i_t___p_o_s_i_t_i_o_n_s_ga92e10388eb117c22b63994b491d9ec9d}{00426}}\ \textcolor{preprocessor}{\ \ \ \ \#define\ SPI\_SR\_TXE\_Pos\ \ \ \ \ \ \ \ \ \ 1U}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00427}\mbox{\hyperlink{group___s_p_i___s_r___b_i_t___p_o_s_i_t_i_o_n_s_gae5b742da8b06539f6119d020885a6e0c}{00427}}\ \textcolor{preprocessor}{\ \ \ \ \#define\ SPI\_SR\_CHSIDE\_Pos\ \ \ \ \ \ \ 2U}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00428}\mbox{\hyperlink{group___s_p_i___s_r___b_i_t___p_o_s_i_t_i_o_n_s_ga93586e3966e74b1df8dbda75e68b26f0}{00428}}\ \textcolor{preprocessor}{\ \ \ \ \#define\ SPI\_SR\_UDR\_Pos\ \ \ \ \ \ \ \ \ \ 3U}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00429}\mbox{\hyperlink{group___s_p_i___s_r___b_i_t___p_o_s_i_t_i_o_n_s_ga411b6a4aa85d06e425050130f82db35c}{00429}}\ \textcolor{preprocessor}{\ \ \ \ \#define\ SPI\_SR\_CRCERR\_Pos\ \ \ \ \ \ \ 4U}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00430}\mbox{\hyperlink{group___s_p_i___s_r___b_i_t___p_o_s_i_t_i_o_n_s_gafb7ef73b03bbd542c54fc4e9c9124e73}{00430}}\ \textcolor{preprocessor}{\ \ \ \ \#define\ SPI\_SR\_MODF\_Pos\ \ \ \ \ \ \ \ \ 5U}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00431}\mbox{\hyperlink{group___s_p_i___s_r___b_i_t___p_o_s_i_t_i_o_n_s_ga6137ac3afbbc8b50c7a998368d2cb9be}{00431}}\ \textcolor{preprocessor}{\ \ \ \ \#define\ SPI\_SR\_OVR\_Pos\ \ \ \ \ \ \ \ \ \ 6U}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00432}\mbox{\hyperlink{group___s_p_i___s_r___b_i_t___p_o_s_i_t_i_o_n_s_ga8313629719f8dc81536dd8faa824e6c8}{00432}}\ \textcolor{preprocessor}{\ \ \ \ \#define\ SPI\_SR\_BSY\_Pos\ \ \ \ \ \ \ \ \ \ 7U}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00433}\mbox{\hyperlink{group___s_p_i___s_r___b_i_t___p_o_s_i_t_i_o_n_s_gafb0e70677f5775a55044111eb83e1ba6}{00433}}\ \textcolor{preprocessor}{\ \ \ \ \#define\ SPI\_SR\_FRE\_Pos\ \ \ \ \ \ \ \ \ \ 8U}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00434}00434\ \ \textcolor{comment}{//\ End\ of\ SPI\_SR\_BIT\_POSITIONS}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00436}00436\ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00445}00445\ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00446}\mbox{\hyperlink{group___s_p_i___d_r___b_i_t___p_o_s_i_t_i_o_n_s_ga5b57ca6bca45cfdaed4a26fefc0da85f}{00446}}\ \textcolor{preprocessor}{\ \ \ \ \#define\ SPI\_DR\_DR\_Pos\ \ \ \ \ \ \ \ \ \ \ 0U}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00447}00447\ \ \textcolor{comment}{//\ End\ of\ SPI\_DR\_BIT\_POSITIONS}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00449}00449\ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00458}00458\ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00459}\mbox{\hyperlink{group___s_p_i___c_r_c_p_r___b_i_t___p_o_s_i_t_i_o_n_s_ga0244eb48f4c5158b03dd4b26cc0d2eac}{00459}}\ \textcolor{preprocessor}{\ \ \ \ \#define\ SPI\_CRCPR\_CRCPOLY\_Pos\ \ \ 0U}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00460}00460\ \ \textcolor{comment}{//\ End\ of\ SPI\_CRCPR\_BIT\_POSITIONS}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00462}00462\ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00471}00471\ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00472}\mbox{\hyperlink{group___s_p_i___r_x_c_r_c_r___b_i_t___p_o_s_i_t_i_o_n_s_ga2b80d92a2b51c4c61d5a646ac2b36129}{00472}}\ \textcolor{preprocessor}{\ \ \ \ \#define\ SPI\_RXCRCR\_RXCRC\_Pos\ \ \ \ 0U}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00473}00473\ \ \textcolor{comment}{//\ End\ of\ SPI\_RXCRCR\_BIT\_POSITIONS}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00475}00475\ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00484}00484\ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00485}\mbox{\hyperlink{group___s_p_i___t_x_c_r_c_r___b_i_t___p_o_s_i_t_i_o_n_s_ga0a0e6e24778c36e45838350d052916d1}{00485}}\ \textcolor{preprocessor}{\ \ \ \ \#define\ SPI\_TXCRCR\_TXCRC\_Pos\ \ \ \ 0U}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00486}00486\ \ \textcolor{comment}{//\ End\ of\ SPI\_TXCRCR\_BIT\_POSITIONS}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00488}00488\ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00489}00489\ \ \textcolor{comment}{//\ End\ of\ SPI\_BIT\_POSITION\_MACROS}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00491}00491\ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00492}00492\ \ \textcolor{comment}{//\ End\ of\ SPI\ Driver}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__spi_8h_source_l00494}00494\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ INC\_STM32F407XX\_SPI\_H\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

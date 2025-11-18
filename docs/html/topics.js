@@ -6,10 +6,19 @@ var topics =
     [ "Base address of AHB2 peripherals", "group___a_h_b2___p_e_r_i_p_e_h_r_a_l_s___b_a_s_e___a_d_d_r_e_s_s_e_s.html", "group___a_h_b2___p_e_r_i_p_e_h_r_a_l_s___b_a_s_e___a_d_d_r_e_s_s_e_s" ],
     [ "Base address of APB1 peripherals", "group___a_p_b1___p_e_r_i_p_e_h_r_a_l_s___b_a_s_e___a_d_d_r_e_s_s_e_s.html", "group___a_p_b1___p_e_r_i_p_e_h_r_a_l_s___b_a_s_e___a_d_d_r_e_s_s_e_s" ],
     [ "Base address of APB2 peripherals", "group___a_p_b2___p_e_r_i_p_e_h_r_a_l_s___b_a_s_e___a_d_d_r_e_s_s_e_s.html", "group___a_p_b2___p_e_r_i_p_e_h_r_a_l_s___b_a_s_e___a_d_d_r_e_s_s_e_s" ],
+    [ "Interrupt Trigger Type Macros", "group___i_n_t_e_r_r_u_p_t___t_r_i_g_g_e_r___t_y_p_e___m_a_c_r_o_s.html", "group___i_n_t_e_r_r_u_p_t___t_r_i_g_g_e_r___t_y_p_e___m_a_c_r_o_s" ],
+    [ "GPIO Pin Number Macros", "group___g_p_i_o___p_i_n___n_u_m_b_e_r___m_a_c_r_o_s.html", "group___g_p_i_o___p_i_n___n_u_m_b_e_r___m_a_c_r_o_s" ],
+    [ "NVIC Interrupt Priority Levels (0–15)", "group___n_v_i_c___i_r_q___p_r_i_o_r_i_t_y___l_e_v_e_l_s.html", "group___n_v_i_c___i_r_q___p_r_i_o_r_i_t_y___l_e_v_e_l_s" ],
     [ "GPIOx Peripheral Register Definition", "group___g_p_i_ox___r_e_g___d_e_f.html", "group___g_p_i_ox___r_e_g___d_e_f" ],
     [ "GPIO Port Base Address Macros", "group___g_p_i_o___b_a_s_e___a_d_d_r_e_s_s_e_s.html", "group___g_p_i_o___b_a_s_e___a_d_d_r_e_s_s_e_s" ],
     [ "RCC Peripheral Register Definition", "group___r_c_c___r_e_g.html", "group___r_c_c___r_e_g" ],
+    [ "SYSCFG Peripheral Register Definition", "group___s_y_s_c_f_g___r_e_g.html", "group___s_y_s_c_f_g___r_e_g" ],
+    [ "EXTI Peripheral Register Definition", "group___e_x_t_i___r_e_g.html", "group___e_x_t_i___r_e_g" ],
     [ "Macros to Enable/Disable clocks for various peripherals", "group___c_l_o_c_k___e_n_a_b_l_e___m_a_c_r_o_s.html", "group___c_l_o_c_k___e_n_a_b_l_e___m_a_c_r_o_s" ],
     [ "Macros to reset various peripherals", "group___p_e_r_i_p_h_e_r_a_l___r_e_s_e_t___m_a_c_r_o_s.html", "group___p_e_r_i_p_h_e_r_a_l___r_e_s_e_t___m_a_c_r_o_s" ],
-    [ "GPIO Driver", "group___g_p_i_o___driver.html", "group___g_p_i_o___driver" ]
+    [ "NVIC Register Definition", "group___n_v_i_c___r_e_g.html", "group___n_v_i_c___r_e_g" ],
+    [ "IRQ Numbers for STM32F407", "group___i_r_q___n_u_m_b_e_r___m_a_c_r_o_s.html", "group___i_r_q___n_u_m_b_e_r___m_a_c_r_o_s" ],
+    [ "SPI Peripheral Definitions", "group___s_p_i___instances.html", "group___s_p_i___instances" ],
+    [ "GPIO Driver", "group___g_p_i_o___driver.html", "group___g_p_i_o___driver" ],
+    [ "SPI Driver", "group___s_p_i___d_r_i_v_e_r___d_e_v_e_l_o_p_e_m_n_t.html", "group___s_p_i___d_r_i_v_e_r___d_e_v_e_l_o_p_e_m_n_t" ]
 ];
