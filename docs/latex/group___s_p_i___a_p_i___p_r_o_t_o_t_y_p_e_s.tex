@@ -60,14 +60,46 @@ This function uses the RCC reset mechanism to reset the peripheral. After reset,
 None 
 \end{DoxyReturn}
 
+\begin{DoxyEnumerate}
+\item Disable peripheral clock to save power
+\end{DoxyEnumerate}
 
-Definition at line \mbox{\hyperlink{stm32f407xx__spi_8c_source_l00045}{45}} of file \mbox{\hyperlink{stm32f407xx__spi_8c_source}{stm32f407xx\+\_\+spi.\+c}}.
+Definition at line \mbox{\hyperlink{stm32f407xx__spi_8c_source_l00093}{93}} of file \mbox{\hyperlink{stm32f407xx__spi_8c_source}{stm32f407xx\+\_\+spi.\+c}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00046\ }
-\DoxyCodeLine{00047\ \}}
+\DoxyCodeLine{00094\ \{}
+\DoxyCodeLine{00095\ \ \ \ \ \mbox{\hyperlink{struct_r_c_c___reg_def__t}{RCC\_RegDef\_t}}\ *pRCC\ =\ \mbox{\hyperlink{group___r_c_c___r_e_g_ga74944438a086975793d26ae48d5882d4}{RCC}};}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordflow}{if}\ (pSPIx\ ==\ \mbox{\hyperlink{group___s_p_i___instances_gad483be344a28ac800be8f03654a9612f}{SPI1}})}
+\DoxyCodeLine{00098\ \ \ \ \ \{}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ pRCC-\/>\mbox{\hyperlink{struct_r_c_c___reg_def__t_a6c1588013b885c32b78b912e8249a26c}{APB2RSTR}}\ |=\ \ (1\ <<\ 12);\ \ \ \textcolor{comment}{//\ Force\ reset}}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ pRCC-\/>\mbox{\hyperlink{struct_r_c_c___reg_def__t_a6c1588013b885c32b78b912e8249a26c}{APB2RSTR}}\ \&=\ \string~(1\ <<\ 12);\ \ \ \textcolor{comment}{//\ Release\ reset}}
+\DoxyCodeLine{00101\ \ \ \ \ \}}
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (pSPIx\ ==\ \mbox{\hyperlink{group___s_p_i___instances_gaf2c3d8ce359dcfbb2261e07ed42af72b}{SPI2}})}
+\DoxyCodeLine{00103\ \ \ \ \ \{}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ pRCC-\/>\mbox{\hyperlink{struct_r_c_c___reg_def__t_acfa79aca8487958412be8f32e4632b47}{APB1RSTR}}\ |=\ \ (1\ <<\ 14);\ \ \ \textcolor{comment}{//\ Force\ reset}}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ pRCC-\/>\mbox{\hyperlink{struct_r_c_c___reg_def__t_acfa79aca8487958412be8f32e4632b47}{APB1RSTR}}\ \&=\ \string~(1\ <<\ 14);\ \ \ \textcolor{comment}{//\ Release\ reset}}
+\DoxyCodeLine{00106\ \ \ \ \ \}}
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (pSPIx\ ==\ \mbox{\hyperlink{group___s_p_i___instances_gab2339cbf25502bf562b19208b1b257fc}{SPI3}})}
+\DoxyCodeLine{00108\ \ \ \ \ \{}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ pRCC-\/>\mbox{\hyperlink{struct_r_c_c___reg_def__t_acfa79aca8487958412be8f32e4632b47}{APB1RSTR}}\ |=\ \ (1\ <<\ 15);\ \ \ \textcolor{comment}{//\ Force\ reset}}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ pRCC-\/>\mbox{\hyperlink{struct_r_c_c___reg_def__t_acfa79aca8487958412be8f32e4632b47}{APB1RSTR}}\ \&=\ \string~(1\ <<\ 15);\ \ \ \textcolor{comment}{//\ Release\ reset}}
+\DoxyCodeLine{00111\ \ \ \ \ \}}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (pSPIx\ ==\ \mbox{\hyperlink{group___s_p_i___instances_gad483be344a28ac800be8f03654a9612f}{SPI1}})}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ pRCC-\/>\mbox{\hyperlink{struct_r_c_c___reg_def__t_aa5211a53246098ec97c0e360759c5ad8}{APB2ENR}}\ \&=\ \string~(1\ <<\ 12);}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (pSPIx\ ==\ \mbox{\hyperlink{group___s_p_i___instances_gaf2c3d8ce359dcfbb2261e07ed42af72b}{SPI2}})}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ pRCC-\/>\mbox{\hyperlink{struct_r_c_c___reg_def__t_a389643cd117089ebb8dd10ec060488d8}{APB1ENR}}\ \&=\ \string~(1\ <<\ 14);}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (pSPIx\ ==\ \mbox{\hyperlink{group___s_p_i___instances_gab2339cbf25502bf562b19208b1b257fc}{SPI3}})}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ pRCC-\/>\mbox{\hyperlink{struct_r_c_c___reg_def__t_a389643cd117089ebb8dd10ec060488d8}{APB1ENR}}\ \&=\ \string~(1\ <<\ 15);}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00126\ \}}
 
 \end{DoxyCode}
 \Hypertarget{group___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s_ga28c21c2e8a6f53982ec6666fb0969123}\index{SPI API Prototypes@{SPI API Prototypes}!SPIx\_GetFlagStatus@{SPIx\_GetFlagStatus}}
@@ -100,16 +132,23 @@ uint8\+\_\+t \+: FLAG\+\_\+\+SET (1) if the flag is set FLAG\+\_\+\+RESET (0) if
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{stm32f407xx__spi_8c_source_l00053}{53}} of file \mbox{\hyperlink{stm32f407xx__spi_8c_source}{stm32f407xx\+\_\+spi.\+c}}.
+Definition at line \mbox{\hyperlink{stm32f407xx__spi_8c_source_l00141}{141}} of file \mbox{\hyperlink{stm32f407xx__spi_8c_source}{stm32f407xx\+\_\+spi.\+c}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00054\ }
-\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
-\DoxyCodeLine{00056\ \}}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{keywordflow}{return}\ (uint8\_t)\ (((pSPIx-\/>\mbox{\hyperlink{struct_s_p_ix___reg_def__t_a8beaebfb019b994f6de84acfde02c350}{SR}})\ >>\ FlagName)\ \&\ (0x01U));}
+\DoxyCodeLine{00143\ \}}
 
 \end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s_ga28c21c2e8a6f53982ec6666fb0969123_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{group___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s_gab01fdd1c8bc842ad1e9017997c73722c}\index{SPI API Prototypes@{SPI API Prototypes}!SPIx\_Init@{SPIx\_Init}}
 \index{SPIx\_Init@{SPIx\_Init}!SPI API Prototypes@{SPI API Prototypes}}
 \doxysubsubsubsection{\texorpdfstring{SPIx\_Init()}{SPIx\_Init()}}
@@ -144,6 +183,27 @@ Enable the SPI3 RCC APB1\+ENR reg
 
 
 \begin{DoxyEnumerate}
+\item Set Device Mode Master/\+Slave (MSTR) ~\newline
+
+\end{DoxyEnumerate}
+
+
+\begin{DoxyEnumerate}
+\item Set Bus Mode (Full Duplex/\+Half Duplex/\+Simplex) ~\newline
+
+\end{DoxyEnumerate}
+
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000066}{Todo}}]Implement later you should make seperate API for BIDIOE Bit \end{DoxyRefDesc}
+
+
+Clear this bit and use RX only for setting \begin{DoxyNote}{Note}
+Master can be in RX only mode as well, its not necessary that master has to be in TX only in Simplex mode 
+
+For simplex mode BIDIMODE Bit has to be Cleared
+\end{DoxyNote}
+
+\begin{DoxyEnumerate}
 \item Select the BR\mbox{[}2\+:0\mbox{]} bits to define the serial clock baud rate (see SPI\+\_\+\+CR1 register).
 \end{DoxyEnumerate}
 
@@ -158,13 +218,47 @@ Enable the SPI3 RCC APB1\+ENR reg
 
 \texorpdfstring{$<$}{<} Clear CPHA
 
+\texorpdfstring{$<$}{<} Clear CPOL
+
+\texorpdfstring{$<$}{<} Set CPHA
+
+\texorpdfstring{$<$}{<} Set CPOL
+
+
+\begin{DoxyEnumerate}
+\item Set the DFF bit to define 8-\/ or 16-\/bit data frame format
+\end{DoxyEnumerate}
+
+\texorpdfstring{$<$}{<} Clear DFF
+
+\texorpdfstring{$<$}{<} Set DFF
+
+
+\begin{DoxyEnumerate}
+\item Configure the LSBFIRST bit in the SPI\+\_\+\+CR1 register to define the frame format.
+\end{DoxyEnumerate}
+
+
+\begin{DoxyEnumerate}
+\item If the NSS pin is required in input mode, in hardware mode, connect the NSS pin to a high-\/level signal during the complete byte transmit sequence. In NSS software mode, set the SSM and SSI bits in the SPI\+\_\+\+CR1 register. If the NSS pin is required in output mode, the SSOE bit only should be set. This step is not required when the TI mode is selected.
+\end{DoxyEnumerate}
+
+
+\begin{DoxyEnumerate}
+\item Set the FRF bit in SPI\+\_\+\+CR2 to select the TI protocol for serial communications
+\end{DoxyEnumerate}
+
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000067}{Todo}}]implement CRC\+\_\+\+EN and FRF \end{DoxyRefDesc}
+
+
 Definition at line \mbox{\hyperlink{stm32f407xx__spi_8c_source_l00010}{10}} of file \mbox{\hyperlink{stm32f407xx__spi_8c_source}{stm32f407xx\+\_\+spi.\+c}}.
 
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
 \DoxyCodeLine{00011\ \ \ \ \ \mbox{\hyperlink{struct_s_p_ix___reg_def__t}{SPIx\_RegDef\_t}}*\ pSPIx\ =\ pSPI\_Handle-\/>\mbox{\hyperlink{struct_s_p_ix___handle__t_a2139a08270d0669a4bfd52184169f444}{pSPIx}};}
-\DoxyCodeLine{00012\ \ \ \ \ uint8\_t\ SPI\_DEVICE\_MODE\ =\ pSPI\_Handle-\/>\mbox{\hyperlink{struct_s_p_ix___handle__t_ad8dfc166a5c690bfebcc6e855132e805}{SPI\_CONFIG}}.\mbox{\hyperlink{struct_s_p_ix___config__t_a0d54bb16c7b59c8894f9c27f2061c232}{SPI\_BUS\_MODE}};}
+\DoxyCodeLine{00012\ \ \ \ \ uint8\_t\ SPI\_DEVICE\_MODE\ =\ pSPI\_Handle-\/>\mbox{\hyperlink{struct_s_p_ix___handle__t_ad8dfc166a5c690bfebcc6e855132e805}{SPI\_CONFIG}}.\mbox{\hyperlink{struct_s_p_ix___config__t_a58ec8a46f301546f865e2e7477bf3d8f}{SPI\_DEVICE\_MODE}};}
 \DoxyCodeLine{00013\ \ \ \ \ uint8\_t\ SPI\_BUS\_MODE\ =\ pSPI\_Handle-\/>\mbox{\hyperlink{struct_s_p_ix___handle__t_ad8dfc166a5c690bfebcc6e855132e805}{SPI\_CONFIG}}.\mbox{\hyperlink{struct_s_p_ix___config__t_a0d54bb16c7b59c8894f9c27f2061c232}{SPI\_BUS\_MODE}};}
 \DoxyCodeLine{00014\ \ \ \ \ uint8\_t\ SPI\_CLOCK\_SPEED\ =\ pSPI\_Handle-\/>\mbox{\hyperlink{struct_s_p_ix___handle__t_ad8dfc166a5c690bfebcc6e855132e805}{SPI\_CONFIG}}.\mbox{\hyperlink{struct_s_p_ix___config__t_a192d86623e71d56bbbbf99b8efffd298}{SPI\_CLOCK\_SPEED}};}
 \DoxyCodeLine{00015\ \ \ \ \ uint8\_t\ SPI\_CPOL\ =\ pSPI\_Handle-\/>\mbox{\hyperlink{struct_s_p_ix___handle__t_ad8dfc166a5c690bfebcc6e855132e805}{SPI\_CONFIG}}.\mbox{\hyperlink{struct_s_p_ix___config__t_a908cc1f30a9b3d2603b9c904fa16087b}{SPI\_CPOL}};}
@@ -177,19 +271,50 @@ Definition at line \mbox{\hyperlink{stm32f407xx__spi_8c_source_l00010}{10}} of f
 \DoxyCodeLine{00022\ }
 \DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{struct_r_c_c___reg_def__t}{RCC\_RegDef\_t}}*\ pRCC\ =\ \mbox{\hyperlink{group___r_c_c___r_e_g_ga74944438a086975793d26ae48d5882d4}{RCC}};}
 \DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordflow}{if}(pSPIx\ ==\ \mbox{\hyperlink{group___s_p_i___instances_gad483be344a28ac800be8f03654a9612f}{SPI1}})\{\ }
-\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group___r_c_c___r_e_g_ga74944438a086975793d26ae48d5882d4}{RCC}}-\/>APB2ENR\ |=\ (1\ <<\ 12);}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ pRCC-\/>\mbox{\hyperlink{struct_r_c_c___reg_def__t_aa5211a53246098ec97c0e360759c5ad8}{APB2ENR}}\ |=\ (1\ <<\ 12);}
 \DoxyCodeLine{00027\ \ \ \ \ \}\textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(pSPIx\ ==\ \mbox{\hyperlink{group___s_p_i___instances_gaf2c3d8ce359dcfbb2261e07ed42af72b}{SPI2}})\{}
-\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group___r_c_c___r_e_g_ga74944438a086975793d26ae48d5882d4}{RCC}}-\/>APB1ENR\ |=\ (1\ <<\ 14);}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ pRCC-\/>\mbox{\hyperlink{struct_r_c_c___reg_def__t_a389643cd117089ebb8dd10ec060488d8}{APB1ENR}}\ |=\ (1\ <<\ 14);}
 \DoxyCodeLine{00029\ \ \ \ \ \}\textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(pSPIx\ ==\ \mbox{\hyperlink{group___s_p_i___instances_gab2339cbf25502bf562b19208b1b257fc}{SPI3}})\{}
-\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group___r_c_c___r_e_g_ga74944438a086975793d26ae48d5882d4}{RCC}}-\/>APB1ENR\ |=\ (1\ <<\ 15);}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ pRCC-\/>\mbox{\hyperlink{struct_r_c_c___reg_def__t_a389643cd117089ebb8dd10ec060488d8}{APB1ENR}}\ |=\ (1\ <<\ 15);}
 \DoxyCodeLine{00031\ \ \ \ \ \}}
 \DoxyCodeLine{00032\ }
-\DoxyCodeLine{00034\ \ \ \ \ pSPIx-\/>\mbox{\hyperlink{struct_s_p_ix___reg_def__t_ac806058f093a3e33457f2acd149e73b9}{CR1}}\ \&=\ \string~(0x7\ <<\ 3);\ }
-\DoxyCodeLine{00035\ \ \ \ \ pSPIx-\/>\mbox{\hyperlink{struct_s_p_ix___reg_def__t_ac806058f093a3e33457f2acd149e73b9}{CR1}}\ |=\ (SPI\_CLOCK\_SPEED\ <<\ 3);\ }
+\DoxyCodeLine{00034\ \ \ \ \ pSPIx-\/>\mbox{\hyperlink{struct_s_p_ix___reg_def__t_ac806058f093a3e33457f2acd149e73b9}{CR1}}\ \&=\ \string~(1\ <<\ \mbox{\hyperlink{group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s_ga27567886a2c76d088e01ad16851cdb71}{SPI\_CR1\_MSTR\_Pos}});}
+\DoxyCodeLine{00035\ \ \ \ \ pSPIx-\/>\mbox{\hyperlink{struct_s_p_ix___reg_def__t_ac806058f093a3e33457f2acd149e73b9}{CR1}}\ |=\ (SPI\_DEVICE\_MODE\ <<\ \mbox{\hyperlink{group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s_ga27567886a2c76d088e01ad16851cdb71}{SPI\_CR1\_MSTR\_Pos}});}
 \DoxyCodeLine{00036\ }
-\DoxyCodeLine{00041\ \ \ \ \ pSPIx-\/>\mbox{\hyperlink{struct_s_p_ix___reg_def__t_ac806058f093a3e33457f2acd149e73b9}{CR1}}\ \&=\ \string~(1\ <<\ 0);\ }
-\DoxyCodeLine{00042\ \ \ \ \ pSPIx-\/>\mbox{\hyperlink{struct_s_p_ix___reg_def__t_ac806058f093a3e33457f2acd149e73b9}{CR1}}\ \&=\ \string~(1\ <<\ 1);}
-\DoxyCodeLine{00043\ \}}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordflow}{if}\ (SPI\_BUS\_MODE\ ==\ \mbox{\hyperlink{group___s_p_i___b_u_s___m_o_d_e___m_a_c_r_o_s_gaaee1a51a51147bb752571735e6895d00}{SPI\_BUS\_MODE\_FULL\_DUPLEX}})\ \{\ \textcolor{comment}{//\ Normal\ Mode}}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Clear\ BIDIMODE\ Bit\ in\ CR1\ Reg}}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ pSPIx-\/>\mbox{\hyperlink{struct_s_p_ix___reg_def__t_ac806058f093a3e33457f2acd149e73b9}{CR1}}\ \&=\ \string~(1\ <<\ \mbox{\hyperlink{group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s_gab07c9facbfdb0a7d5d89b1fd6a3ef711}{SPI\_CR1\_BIDIMODE\_Pos}});}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Also\ Clear\ the\ RXONLY\ Bit\ just\ for\ safety}}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ pSPIx-\/>\mbox{\hyperlink{struct_s_p_ix___reg_def__t_ac806058f093a3e33457f2acd149e73b9}{CR1}}\ \&=\ \string~(1\ <<\ \mbox{\hyperlink{group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s_gadd702fae4dcca65f3b43b2e02f67ee7b}{SPI\_CR1\_RXONLY\_Pos}});}
+\DoxyCodeLine{00043\ \ \ \ \ \}\textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(SPI\_BUS\_MODE\ ==\ \mbox{\hyperlink{group___s_p_i___b_u_s___m_o_d_e___m_a_c_r_o_s_ga1997337ed2896a4722b16affed5ec968}{SPI\_BUS\_MODE\_HALF\_DUPLEX}})\{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Set\ BIDIMODE\ Bit\ in\ CR1\ Reg}}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ pSPIx-\/>\mbox{\hyperlink{struct_s_p_ix___reg_def__t_ac806058f093a3e33457f2acd149e73b9}{CR1}}\ |=\ (1\ <<\ \mbox{\hyperlink{group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s_gab07c9facbfdb0a7d5d89b1fd6a3ef711}{SPI\_CR1\_BIDIMODE\_Pos}});}
+\DoxyCodeLine{00047\ \ \ \ \ \}\textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(SPI\_BUS\_MODE\ ==\ \mbox{\hyperlink{group___s_p_i___b_u_s___m_o_d_e___m_a_c_r_o_s_ga86c645f38e8da84614a462968ddf0554}{SPI\_BUS\_MODE\_SIMPLEX\_RX}})\{\textcolor{comment}{//\ Simplex\ Means\ either\ Tx\ only\ or\ Rx\ Only}}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ pSPIx-\/>\mbox{\hyperlink{struct_s_p_ix___reg_def__t_ac806058f093a3e33457f2acd149e73b9}{CR1}}\ \&=\ \string~(1\ <<\ \mbox{\hyperlink{group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s_gab07c9facbfdb0a7d5d89b1fd6a3ef711}{SPI\_CR1\_BIDIMODE\_Pos}});}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ pSPIx-\/>\mbox{\hyperlink{struct_s_p_ix___reg_def__t_ac806058f093a3e33457f2acd149e73b9}{CR1}}\ |=\ (1\ <<\ \mbox{\hyperlink{group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s_gadd702fae4dcca65f3b43b2e02f67ee7b}{SPI\_CR1\_RXONLY\_Pos}});}
+\DoxyCodeLine{00054\ \ \ \ \ \}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00057\ \ \ \ \ pSPIx-\/>\mbox{\hyperlink{struct_s_p_ix___reg_def__t_ac806058f093a3e33457f2acd149e73b9}{CR1}}\ \&=\ \string~(0x07\ <<\ 3);\ }
+\DoxyCodeLine{00058\ \ \ \ \ pSPIx-\/>\mbox{\hyperlink{struct_s_p_ix___reg_def__t_ac806058f093a3e33457f2acd149e73b9}{CR1}}\ |=\ (SPI\_CLOCK\_SPEED\ <<\ 3);\ }
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00064\ \ \ \ \ pSPIx-\/>\mbox{\hyperlink{struct_s_p_ix___reg_def__t_ac806058f093a3e33457f2acd149e73b9}{CR1}}\ \&=\ \string~(1\ <<\ \mbox{\hyperlink{group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s_ga2f1d2c5a9e481ca06d0e29332f6f948a}{SPI\_CR1\_CPHA\_Pos}});\ \ \ \ \ }
+\DoxyCodeLine{00065\ \ \ \ \ pSPIx-\/>\mbox{\hyperlink{struct_s_p_ix___reg_def__t_ac806058f093a3e33457f2acd149e73b9}{CR1}}\ \&=\ \string~(1\ <<\ \mbox{\hyperlink{group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s_gadd3274c0dce6293370773c5050f9c4be}{SPI\_CR1\_CPOL\_Pos}});\ \ \ \ \ }
+\DoxyCodeLine{00066\ \ \ \ \ pSPIx-\/>\mbox{\hyperlink{struct_s_p_ix___reg_def__t_ac806058f093a3e33457f2acd149e73b9}{CR1}}\ |=\ (SPI\_CPHA\ <<\ \mbox{\hyperlink{group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s_ga2f1d2c5a9e481ca06d0e29332f6f948a}{SPI\_CR1\_CPHA\_Pos}});\ \ \ \ \ \ \ }
+\DoxyCodeLine{00067\ \ \ \ \ pSPIx-\/>\mbox{\hyperlink{struct_s_p_ix___reg_def__t_ac806058f093a3e33457f2acd149e73b9}{CR1}}\ |=\ (SPI\_CPOL\ <<\ \mbox{\hyperlink{group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s_gadd3274c0dce6293370773c5050f9c4be}{SPI\_CR1\_CPOL\_Pos}});\ \ \ \ \ \ \ }
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00070\ \ \ \ \ pSPIx-\/>\mbox{\hyperlink{struct_s_p_ix___reg_def__t_ac806058f093a3e33457f2acd149e73b9}{CR1}}\ \&=\ \string~(1\ <<\ \mbox{\hyperlink{group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s_ga5290662db14690d4bcf30ed9e4694462}{SPI\_CR1\_DFF\_Pos}});\ }
+\DoxyCodeLine{00071\ \ \ \ \ pSPIx-\/>\mbox{\hyperlink{struct_s_p_ix___reg_def__t_ac806058f093a3e33457f2acd149e73b9}{CR1}}\ |=\ (SPI\_FRAME\_SIZE\ <<\ \mbox{\hyperlink{group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s_ga5290662db14690d4bcf30ed9e4694462}{SPI\_CR1\_DFF\_Pos}});\ }
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00074\ \ \ \ \ pSPIx-\/>\mbox{\hyperlink{struct_s_p_ix___reg_def__t_ac806058f093a3e33457f2acd149e73b9}{CR1}}\ \&=\ \string~(1\ <<\ \mbox{\hyperlink{group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s_ga982b564879d1dc60a3be787409df0c27}{SPI\_CR1\_LSBFIRST\_Pos}});}
+\DoxyCodeLine{00075\ \ \ \ \ pSPIx-\/>\mbox{\hyperlink{struct_s_p_ix___reg_def__t_ac806058f093a3e33457f2acd149e73b9}{CR1}}\ |=\ (SPI\_BIT\_ORDER\ <<\ \mbox{\hyperlink{group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s_ga982b564879d1dc60a3be787409df0c27}{SPI\_CR1\_LSBFIRST\_Pos}});}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00083\ \ \ \ \ pSPIx-\/>\mbox{\hyperlink{struct_s_p_ix___reg_def__t_ac806058f093a3e33457f2acd149e73b9}{CR1}}\ \&=\ \string~(1\ <<\ \mbox{\hyperlink{group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s_gab2909290fab17ee930afc335811f574c}{SPI\_CR1\_SSM\_Pos}});\ \textcolor{comment}{//\ Clear\ the\ SSM\ Bit\ in\ CR1\ Reg}}
+\DoxyCodeLine{00084\ \ \ \ \ pSPIx-\/>\mbox{\hyperlink{struct_s_p_ix___reg_def__t_ac806058f093a3e33457f2acd149e73b9}{CR1}}\ |=\ (SPI\_SSM\_SETTING\ <<\ \mbox{\hyperlink{group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s_gab2909290fab17ee930afc335811f574c}{SPI\_CR1\_SSM\_Pos}});\textcolor{comment}{//\ Set\ the\ bit}}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \ \ \ \ pSPIx-\/>\mbox{\hyperlink{struct_s_p_ix___reg_def__t_ae19a6b4335672191e29e0e1526e27fb0}{CR2}}\ \&=\ \string~(1\ <<\ \mbox{\hyperlink{group___s_p_i___c_r2___b_i_t___p_o_s_i_t_i_o_n_s_gaa0d0f5f51a5804e1a204bf1643516896}{SPI\_CR2\_SSOE\_Pos}});\ \textcolor{comment}{//\ Clear\ the\ SSOE\ Bit\ in\ CR2\ Reg}}
+\DoxyCodeLine{00087\ \ \ \ \ pSPIx-\/>\mbox{\hyperlink{struct_s_p_ix___reg_def__t_ae19a6b4335672191e29e0e1526e27fb0}{CR2}}\ |=\ (SPI\_SSOE\ <<\ \mbox{\hyperlink{group___s_p_i___c_r2___b_i_t___p_o_s_i_t_i_o_n_s_gaa0d0f5f51a5804e1a204bf1643516896}{SPI\_CR2\_SSOE\_Pos}});\textcolor{comment}{//\ Set\ the\ bit}}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00091\ \}}
 
 \end{DoxyCode}
 \Hypertarget{group___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s_ga66a55c39f2954c6fba416822612497cb}\index{SPI API Prototypes@{SPI API Prototypes}!SPIx\_Peri\_Control@{SPIx\_Peri\_Control}}
@@ -217,15 +342,32 @@ None
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{stm32f407xx__spi_8c_source_l00049}{49}} of file \mbox{\hyperlink{stm32f407xx__spi_8c_source}{stm32f407xx\+\_\+spi.\+c}}.
+Definition at line \mbox{\hyperlink{stm32f407xx__spi_8c_source_l00128}{128}} of file \mbox{\hyperlink{stm32f407xx__spi_8c_source}{stm32f407xx\+\_\+spi.\+c}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00050\ }
-\DoxyCodeLine{00051\ \}}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00129\ \ \ \ \ \textcolor{keywordflow}{if}(EN\_DI\ ==\ \mbox{\hyperlink{group___m_i_s_c_e_l_l_a_n_e_o_u_s___m_a_c_r_o_s_ga514ad415fb6125ba296793df7d1a468a}{ENABLE}})\{}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ pSPIx-\/>\mbox{\hyperlink{struct_s_p_ix___reg_def__t_ac806058f093a3e33457f2acd149e73b9}{CR1}}\ |=\ (1\ <<\ \mbox{\hyperlink{group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s_ga3f5515b536f82c1d91a64bd534030284}{SPI\_CR1\_SPE\_Pos}});}
+\DoxyCodeLine{00131\ \ \ \ \ \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ 1.\ Wait\ until\ TXE=1}}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}(!\mbox{\hyperlink{group___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s_ga28c21c2e8a6f53982ec6666fb0969123}{SPIx\_GetFlagStatus}}(pSPIx,\ \mbox{\hyperlink{group___s_p_i___s_t_a_t_u_s___f_l_a_g___m_a_c_r_o_s_ga13cea6befcaaeb6421eb7e801abb48fe}{SPI\_STATUS\_FLAG\_TXE}}));}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ 2.\ Then\ wait\ until\ BSY=0}}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}(\mbox{\hyperlink{group___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s_ga28c21c2e8a6f53982ec6666fb0969123}{SPIx\_GetFlagStatus}}(pSPIx,\ \mbox{\hyperlink{group___s_p_i___s_t_a_t_u_s___f_l_a_g___m_a_c_r_o_s_ga891a0e21281996b5ea7421f13182d5b6}{SPI\_STATUS\_FLAG\_BSY}}));}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ 3.\ The\ Disable\ the\ SPI}}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ pSPIx-\/>\mbox{\hyperlink{struct_s_p_ix___reg_def__t_ac806058f093a3e33457f2acd149e73b9}{CR1}}\ \&=\ \string~(1\ <<\ \mbox{\hyperlink{group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s_ga3f5515b536f82c1d91a64bd534030284}{SPI\_CR1\_SPE\_Pos}});}
+\DoxyCodeLine{00138\ \ \ \ \ \}}
+\DoxyCodeLine{00139\ \}}
 
 \end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=319pt]{group___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s_ga66a55c39f2954c6fba416822612497cb_cgraph}
+\end{center}
+\end{figure}
 \Hypertarget{group___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s_ga2f1a0a4006270d72092844c3e764d399}\index{SPI API Prototypes@{SPI API Prototypes}!SPIx\_SendData\_Blocking@{SPIx\_SendData\_Blocking}}
 \index{SPIx\_SendData\_Blocking@{SPIx\_SendData\_Blocking}!SPI API Prototypes@{SPI API Prototypes}}
 \doxysubsubsubsection{\texorpdfstring{SPIx\_SendData\_Blocking()}{SPIx\_SendData\_Blocking()}}
@@ -255,14 +397,39 @@ This is a blocking call. The function waits until all data has been transmitted 
 {\em None} & \\
 \hline
 \end{DoxyRetVals}
+After writing ALL data, wait for\+: TXE = 1 → DR empty BSY = 0 → last bit fully shifted out
 
-
-Definition at line \mbox{\hyperlink{stm32f407xx__spi_8c_source_l00058}{58}} of file \mbox{\hyperlink{stm32f407xx__spi_8c_source}{stm32f407xx\+\_\+spi.\+c}}.
+Definition at line \mbox{\hyperlink{stm32f407xx__spi_8c_source_l00145}{145}} of file \mbox{\hyperlink{stm32f407xx__spi_8c_source}{stm32f407xx\+\_\+spi.\+c}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00059\ }
-\DoxyCodeLine{00060\ \}}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00146\ \ \ \ \ \textcolor{keywordflow}{while}(Len>0)\{}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Wait\ until\ TXE\ =\ 1}}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (!\mbox{\hyperlink{group___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s_ga28c21c2e8a6f53982ec6666fb0969123}{SPIx\_GetFlagStatus}}(pSPIx,\ \mbox{\hyperlink{group___s_p_i___s_t_a_t_u_s___f_l_a_g___m_a_c_r_o_s_ga13cea6befcaaeb6421eb7e801abb48fe}{SPI\_STATUS\_FLAG\_TXE}}));}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Check\ the\ data\ format}}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(pSPIx-\/>\mbox{\hyperlink{struct_s_p_ix___reg_def__t_ac806058f093a3e33457f2acd149e73b9}{CR1}}\ \&\ (1U\ <<\ \mbox{\hyperlink{group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s_ga5290662db14690d4bcf30ed9e4694462}{SPI\_CR1\_DFF\_Pos}}))\{\textcolor{comment}{//\ Frame\ Size\ =\ 16}}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ pSPIx-\/>\mbox{\hyperlink{struct_s_p_ix___reg_def__t_aa59c17ad248dcbd0b66bc5aaa64c070f}{DR}}\ =\ *((uint16\_t*)\ pData);}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ pData\ +=\ 2;}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ Len\ -\/=\ 2;}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{else}\{\textcolor{comment}{//\ Frame\ Size\ =\ 8}}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ pSPIx-\/>\mbox{\hyperlink{struct_s_p_ix___reg_def__t_aa59c17ad248dcbd0b66bc5aaa64c070f}{DR}}\ =\ *pData;}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ pData++;}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ Len-\/-\/;}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00159\ \ \ \ \ \}}
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00167\ \ \ \ \ \textcolor{keywordflow}{while}\ (!\mbox{\hyperlink{group___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s_ga28c21c2e8a6f53982ec6666fb0969123}{SPIx\_GetFlagStatus}}(pSPIx,\ \mbox{\hyperlink{group___s_p_i___s_t_a_t_u_s___f_l_a_g___m_a_c_r_o_s_ga13cea6befcaaeb6421eb7e801abb48fe}{SPI\_STATUS\_FLAG\_TXE}}));}
+\DoxyCodeLine{00168\ \ \ \ \ \textcolor{keywordflow}{while}\ \ (\ \mbox{\hyperlink{group___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s_ga28c21c2e8a6f53982ec6666fb0969123}{SPIx\_GetFlagStatus}}(pSPIx,\ \mbox{\hyperlink{group___s_p_i___s_t_a_t_u_s___f_l_a_g___m_a_c_r_o_s_ga891a0e21281996b5ea7421f13182d5b6}{SPI\_STATUS\_FLAG\_BSY}}));}
+\DoxyCodeLine{00169\ \}}
 
 \end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s_ga2f1a0a4006270d72092844c3e764d399_cgraph}
+\end{center}
+\end{figure}

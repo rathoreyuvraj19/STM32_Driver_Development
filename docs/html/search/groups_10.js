@@ -12,7 +12,7 @@ var searchData=
   ['spi_20cpha_20configuration_20macros_9',['SPI CPHA Configuration Macros',['../group___s_p_i___c_p_h_a___m_a_c_r_o_s.html',1,'']]],
   ['spi_20cpol_20configuration_20macros_10',['SPI CPOL Configuration Macros',['../group___s_p_i___c_p_o_l___m_a_c_r_o_s.html',1,'']]],
   ['spi_20crc_20configuration_20macros_11',['SPI CRC Configuration Macros',['../group___s_p_i___c_r_c___m_a_c_r_o_s.html',1,'']]],
-  ['spi_20device_20bus_20mode_20macros_12',['SPI Device Bus Mode Macros',['../group___s_p_i___d_e_v_i_c_e___b_u_s___m_o_d_e___m_a_c_r_o_s.html',1,'']]],
+  ['spi_20device_20bus_20mode_20macros_12',['SPI Device Bus Mode Macros',['../group___s_p_i___b_u_s___m_o_d_e___m_a_c_r_o_s.html',1,'']]],
   ['spi_20device_20mode_20macros_13',['SPI Device Mode Macros',['../group___s_p_i___d_e_v_i_c_e___m_o_d_e___m_a_c_r_o_s.html',1,'']]],
   ['spi_20driver_14',['SPI Driver',['../group___s_p_i___d_r_i_v_e_r___d_e_v_e_l_o_p_e_m_n_t.html',1,'']]],
   ['spi_20frame_20size_20configuration_20macros_15',['SPI Frame Size Configuration Macros',['../group___s_p_i___f_r_a_m_e___s_i_z_e___m_a_c_r_o_s.html',1,'']]],

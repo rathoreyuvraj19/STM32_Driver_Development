@@ -35,16 +35,16 @@ void SPIx_Init(SPIx_Handle_t *pSPI_Handle){
 	pSPIx->CR1 |= (SPI_DEVICE_MODE << SPI_CR1_MSTR_Pos);
 
 	/** 3. Set Bus Mode (Full Duplex/Half Duplex/Simplex)	 */
-	if (SPI_BUS_MODE == SPI_DEVICE_BUS_MODE_FULL_DUPLEX) { // Normal Mode
+	if (SPI_BUS_MODE == SPI_BUS_MODE_FULL_DUPLEX) { // Normal Mode
 		//Clear BIDIMODE Bit in CR1 Reg
 		pSPIx->CR1 &= ~(1 << SPI_CR1_BIDIMODE_Pos);
 		// Also Clear the RXONLY Bit just for safety
 		pSPIx->CR1 &= ~(1 << SPI_CR1_RXONLY_Pos);
-	}else if(SPI_BUS_MODE == SPI_DEVICE_BUS_MODE_HALF_DUPLEX){
+	}else if(SPI_BUS_MODE == SPI_BUS_MODE_HALF_DUPLEX){
 		//Set BIDIMODE Bit in CR1 Reg
 		/** @todo Implement later you should make seperate API for BIDIOE Bit */
 		pSPIx->CR1 |= (1 << SPI_CR1_BIDIMODE_Pos);
-	}else if(SPI_BUS_MODE == SPI_DEVICE_BUS_MODE_SIMPLEX){// Simplex Means either Tx only or Rx Only
+	}else if(SPI_BUS_MODE == SPI_BUS_MODE_SIMPLEX_RX){// Simplex Means either Tx only or Rx Only
 		/** Clear this bit and use RX only for setting
 		 * 	@note Master can be in RX only mode as well, its not necessary that master has to be in TX only in Simplex mode
 		 * 	@note For simplex mode BIDIMODE Bit has to be Cleared

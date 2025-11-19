@@ -32,15 +32,15 @@
 	/** @} */   // end of SPI_DEVICE_MODE_MACROS
 
 	/**
-	 * @defgroup SPI_DEVICE_BUS_MODE_MACROS SPI Device Bus Mode Macros
+	 * @defgroup SPI_BUS_MODE_MACROS SPI Device Bus Mode Macros
 	 * @ingroup SPI_CONFIG_MACROS
 	 * @brief SPI_DEVICE_BUS_MODE configuration Macros
 	 * @{
 	 */
-		#define SPI_DEVICE_BUS_MODE_FULL_DUPLEX  	0  /*!< 2-line full duplex */
-		#define SPI_DEVICE_BUS_MODE_HALF_DUPLEX  	1  /*!< 1-line half duplex */
-		#define SPI_DEVICE_BUS_MODE_SIMPLEX_RX  	2  /*!< 1-line simplex (RX/TX only) */
-	/** @} */   // end of SPI_DEVICE_BUS_MODE_MACROS
+		#define SPI_BUS_MODE_FULL_DUPLEX  	0  /*!< 2-line full duplex */
+		#define SPI_BUS_MODE_HALF_DUPLEX  	1  /*!< 1-line half duplex */
+		#define SPI_BUS_MODE_SIMPLEX_RX  	2  /*!< 1-line simplex (RX/TX only) */
+	/** @} */   // end of SPI_BUS_MODE_MACROS
 
 	/**
 	 * @defgroup SPI_CLOCK_SPEED_MACROS SPI Clock Speed Macros
@@ -141,7 +141,7 @@
 typedef struct
 {
     uint8_t SPI_DEVICE_MODE;  /*!< Master or Slave mode selection.             Refer @ref SPI_DEVICE_MODE_MACROS        */
-    uint8_t SPI_BUS_MODE;     /*!< Full-duplex / Half-duplex / Rx-only mode.   Refer @ref SPI_DEVICE_BUS_MODE_MACROS    */
+    uint8_t SPI_BUS_MODE;     /*!< Full-duplex / Half-duplex / Rx-only mode.   Refer @ref SPI_BUS_MODE_MACROS    */
     uint8_t SPI_CLOCK_SPEED;  /*!< Baud rate configuration (BR[2:0] bits).     Refer @ref SPI_CLOCK_SPEED_MACROS        */
     uint8_t SPI_CPOL;         /*!< Clock polarity selection.                   Refer @ref SPI_CPOL_MACROS               */
     uint8_t SPI_CPHA;         /*!< Clock phase selection.                      Refer @ref SPI_CPHA_MACROS               */

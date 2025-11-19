@@ -744,6 +744,40 @@ typedef struct
 
 /** @} */ // end of SPI_Instances
 
+/**
+ * @defgroup RCC_AHB1ENR_BIT_POS RCC AHB1ENR Bit Positions
+ * @brief Bit positions for RCC AHB1ENR register.
+ * @{
+ */
+
+#define RCC_AHB1ENR_GPIOA_EN_Pos      0U  /*!< GPIOA clock enable */
+#define RCC_AHB1ENR_GPIOB_EN_Pos      1U  /*!< GPIOB clock enable */
+#define RCC_AHB1ENR_GPIOC_EN_Pos      2U  /*!< GPIOC clock enable */
+#define RCC_AHB1ENR_GPIOD_EN_Pos      3U  /*!< GPIOD clock enable */
+#define RCC_AHB1ENR_GPIOE_EN_Pos      4U  /*!< GPIOE clock enable */
+#define RCC_AHB1ENR_GPIOF_EN_Pos      5U  /*!< GPIOF clock enable */
+#define RCC_AHB1ENR_GPIOG_EN_Pos      6U  /*!< GPIOG clock enable */
+#define RCC_AHB1ENR_GPIOH_EN_Pos      7U  /*!< GPIOH clock enable */
+#define RCC_AHB1ENR_GPIOI_EN_Pos      8U  /*!< GPIOI clock enable */
+
+#define RCC_AHB1ENR_CRC_EN_Pos       12U  /*!< CRC module clock enable */
+#define RCC_AHB1ENR_BKPSRAM_EN_Pos   18U  /*!< Backup SRAM clock enable */
+#define RCC_AHB1ENR_CCMDATA_EN_Pos   20U  /*!< CCM Data RAM clock enable */
+
+#define RCC_AHB1ENR_DMA1_EN_Pos      21U  /*!< DMA1 clock enable */
+#define RCC_AHB1ENR_DMA2_EN_Pos      22U  /*!< DMA2 clock enable */
+
+#define RCC_AHB1ENR_ETHMAC_EN_Pos    25U  /*!< Ethernet MAC clock enable */
+#define RCC_AHB1ENR_ETHMACTX_EN_Pos  26U  /*!< Ethernet MAC TX clock enable */
+#define RCC_AHB1ENR_ETHMACRX_EN_Pos  27U  /*!< Ethernet MAC RX clock enable */
+#define RCC_AHB1ENR_ETHMACPTP_EN_Pos 28U  /*!< Ethernet MAC PTP clock enable */
+
+#define RCC_AHB1ENR_OTGHS_EN_Pos     30U  /*!< USB OTG HS clock enable */
+#define RCC_AHB1ENR_OTGHSULPI_EN_Pos 31U  /*!< USB OTG HS ULPI clock enable */
+
+/** @} */ // end of RCC_AHB1ENR_BIT_POS
+
+
 
 
 

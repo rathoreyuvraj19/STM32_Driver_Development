@@ -109,7 +109,7 @@ var NAVTREEINDEX =
 "000___hello___world_2_src_2main_8c.html",
 "group___a_h_b1___p_c_l_k___e_n___d_i___m_a_c_r_o_s.html#gab9e994b2e5e4ada47764117634c64728",
 "group___g_p_i_o___driver___a_p_is.html#ga3a438f76ce1b8d514645f41c5e13bc19",
-"group___s_p_i___c_r2___b_i_t___p_o_s_i_t_i_o_n_s.html"
+"group___s_p_i___c_o_n_f_i_g___m_a_c_r_o_s.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

@@ -9,7 +9,7 @@ var searchData=
   ['details_6',['Implementation Details',['../index.html#autotoc_md13',1,'']]],
   ['development_7',['STM32F407 Bare-Metal Driver Development',['../index.html',1,'']]],
   ['development_20approach_8',['Development Approach',['../index.html#autotoc_md11',1,'']]],
-  ['device_20bus_20mode_20macros_9',['SPI Device Bus Mode Macros',['../group___s_p_i___d_e_v_i_c_e___b_u_s___m_o_d_e___m_a_c_r_o_s.html',1,'']]],
+  ['device_20bus_20mode_20macros_9',['SPI Device Bus Mode Macros',['../group___s_p_i___b_u_s___m_o_d_e___m_a_c_r_o_s.html',1,'']]],
   ['device_20mode_20macros_10',['SPI Device Mode Macros',['../group___s_p_i___d_e_v_i_c_e___m_o_d_e___m_a_c_r_o_s.html',1,'']]],
   ['disable_11',['DISABLE',['../group___m_i_s_c_e_l_l_a_n_e_o_u_s___m_a_c_r_o_s.html#ga99496f7308834e8b220f7894efa0b6ab',1,'DISABLE:&#160;stm32f407xx.h'],['../group___m_i_s_c_e_l_l_a_n_e_o_u_s___m_a_c_r_o_s.html#ga99496f7308834e8b220f7894efa0b6ab',1,'DISABLE:&#160;stm32f407xx.h']]],
   ['disable_20clocks_20for_20various_20peripherals_12',['Macros to Enable/Disable clocks for various peripherals',['../group___c_l_o_c_k___e_n_a_b_l_e___m_a_c_r_o_s.html',1,'']]],

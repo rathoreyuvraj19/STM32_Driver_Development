@@ -71,17 +71,6 @@
 
 /** @} */ /* end of GPIO_PULLUP_PULLDOWN */
 
-/**
- * @defgroup GPIO_PULLUP_PULLDOWN GPIO Pull-Up/Pull-Down Options
- * @brief GPIO internal resistor configuration macros.
- * @{
- */
-
-#define GPIO_PU_PD_NONE        0   /*!< No pull-up or pull-down */
-#define GPIO_PU_PD_PULL_UP     1   /*!< Enable internal pull-up */
-#define GPIO_PU_PD_PULL_DOWN   2   /*!< Enable internal pull-down */
-
-/** @} */ /* end of GPIO_PULLUP_PULLDOWN */
 
 /**
  * @defgroup GPIO_SPEEDS GPIO Speed Options

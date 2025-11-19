@@ -17,6 +17,7 @@
  */
 
 #include <stdint.h>
+#include <string.h>
 #include "stm32f407xx_gpio.h"
 #include "stm32f407xx_spi.h"
 
@@ -24,8 +25,96 @@
   #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use."
 #endif
 
+void GPIO_SPI1_INIT(void)
+{
+    // Using GPIOA pins: PA4 (NSS), PA5 (SCK), PA6 (MISO), PA7 (MOSI)
+
+    RCC_RegDef_t *pRCC = RCC;
+
+    GPIOx_Handle_t GPIOA_Handle;
+    GPIOA_Handle.pGPIOx = GPIOA;
+
+    /** 1. Enable GPIOA Peripheral Clock */
+    pRCC->AHB1ENR |= (1U << RCC_AHB1ENR_GPIOA_EN_Pos);
+
+    /** Common configuration for all SPI pins */
+    GPIOA_Handle.GPIO_CONFIG.GPIO_MODE      = GPIO_MODE_ALT_FUNC;
+    GPIOA_Handle.GPIO_CONFIG.GPIO_ALT_FUNC  = GPIO_ALT_FUNC_5;
+    GPIOA_Handle.GPIO_CONFIG.GPIO_SPEED     = GPIO_SPEED_HIGH;
+    GPIOA_Handle.GPIO_CONFIG.GPIO_OP_TYPE   = GPIO_OP_TYPE_PP;
+
+    /** 2. PA4 = NSS (AF5, Pull-up recommended) */
+    GPIOA_Handle.GPIO_CONFIG.GPIO_PIN_NUMBER = GPIO_PIN_4;
+    GPIOA_Handle.GPIO_CONFIG.GPIO_PU_PD      = GPIO_PU_PD_PULL_UP;
+    gpio_pin_init(&GPIOA_Handle);
+
+    /** 3. PA5 = SCK (floating, AF5) */
+    GPIOA_Handle.GPIO_CONFIG.GPIO_PIN_NUMBER = GPIO_PIN_5;
+    GPIOA_Handle.GPIO_CONFIG.GPIO_PU_PD      = GPIO_PU_PD_NONE;
+    gpio_pin_init(&GPIOA_Handle);
+
+    /** 4. PA6 = MISO (floating is OK, optional pull-up) */
+    GPIOA_Handle.GPIO_CONFIG.GPIO_PIN_NUMBER = GPIO_PIN_6;
+    GPIOA_Handle.GPIO_CONFIG.GPIO_PU_PD      = GPIO_PU_PD_PULL_UP;
+    gpio_pin_init(&GPIOA_Handle);
+
+    /** 5. PA7 = MOSI (floating) */
+    GPIOA_Handle.GPIO_CONFIG.GPIO_PIN_NUMBER = GPIO_PIN_7;
+    GPIOA_Handle.GPIO_CONFIG.GPIO_PU_PD      = GPIO_PU_PD_NONE;
+    gpio_pin_init(&GPIOA_Handle);
+}
+
 int main(void)
 {
-    /* Loop forever */
-	for(;;);
+	/** 0. Set PA0 as input button */
+		GPIOx_Handle_t GPIOA_Handle;
+		memset(&GPIOA_Handle,0,sizeof(GPIOA_Handle));
+		GPIOA_Handle.pGPIOx = GPIOA;
+		GPIOA_Handle.GPIO_CONFIG.GPIO_MODE = GPIO_MODE_INPUT;
+		GPIOA_Handle.GPIO_CONFIG.GPIO_PIN_NUMBER = GPIO_PIN_0;
+		gpio_pin_init(&GPIOA_Handle);
+	/** 1. Enabling the GPIO for SPI1 Alternate Functionality */
+		GPIO_SPI1_INIT();
+	/** 2. Configure SPI1 */
+		SPIx_Handle_t SPI_Handle;
+		memset(&SPI_Handle,0,sizeof(SPI_Handle));
+		SPI_Handle.pSPIx = SPI1;
+		SPI_Handle.SPI_CONFIG.SPI_DEVICE_MODE = SPI_DEVICE_MODE_MASTER;
+		SPI_Handle.SPI_CONFIG.SPI_CLOCK_SPEED = SPI_CLOCK_SPEED_BY_16;
+		SPI_Handle.SPI_CONFIG.SPI_BUS_MODE = SPI_BUS_MODE_FULL_DUPLEX;
+		SPI_Handle.SPI_CONFIG.SPI_CPOL = SPI_CPOL_LOW;
+		SPI_Handle.SPI_CONFIG.SPI_CPHA = SPI_CPHA_FIRST_EDGE;
+		SPI_Handle.SPI_CONFIG.SPI_BIT_ORDER = SPI_BIT_ORDER_MSB_FIRST;
+		SPI_Handle.SPI_CONFIG.SPI_FRAME_SIZE = SPI_FRAME_SIZE_8_BITS;
+		SPI_Handle.SPI_CONFIG.SPI_SSOE = SPI_SSOE_EN;
+		SPIx_Init(&SPI_Handle);
+//	/** 2. Enable SPI1 */
+//		SPIx_Peri_Control(SPI_Handle.pSPIx, ENABLE);
+	/** 3. Send Data */
+		char data[] = "I love you nehudiiiiiiiiiiii.........";
+		while(1){
+			if(gpio_read_pin(GPIOA, GPIO_PIN_0)){
+				for(int i = 0;i<50000;i++);
+				SPIx_Peri_Control(SPI_Handle.pSPIx, ENABLE);
+				SPIx_SendData_Blocking(SPI1, (uint8_t*)data, sizeof(data));
+				SPIx_Peri_Control(SPI_Handle.pSPIx, DISABLE);
+				while(gpio_read_pin(GPIOA, GPIO_PIN_0));
+				for(int i = 0;i<50000;i++);
+			}
+
+		}
+
+
+    ///* Loop forever */
+	//for(;;);
 }
+
+
+
+
+
+
+
+
+
+
