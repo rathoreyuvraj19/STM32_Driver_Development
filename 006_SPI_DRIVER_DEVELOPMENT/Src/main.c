@@ -25,44 +25,125 @@
   #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use."
 #endif
 
-void GPIO_SPI1_INIT(void)
+//void GPIO_SPI1_INIT(void)
+//{
+//    // Using GPIOA pins: PA4 (NSS), PA5 (SCK), PA6 (MISO), PA7 (MOSI)
+//
+//    RCC_RegDef_t *pRCC = RCC;
+//
+//    GPIOx_Handle_t GPIOA_Handle;
+//    GPIOA_Handle.pGPIOx = GPIOA;
+//
+//    /** 1. Enable GPIOA Peripheral Clock */
+//    pRCC->AHB1ENR |= (1U << RCC_AHB1ENR_GPIOA_EN_Pos);
+//
+//    /** Common configuration for all SPI pins */
+//    GPIOA_Handle.GPIO_CONFIG.GPIO_MODE      = GPIO_MODE_ALT_FUNC;
+//    GPIOA_Handle.GPIO_CONFIG.GPIO_ALT_FUNC  = GPIO_ALT_FUNC_5;
+//    GPIOA_Handle.GPIO_CONFIG.GPIO_SPEED     = GPIO_SPEED_HIGH;
+//    GPIOA_Handle.GPIO_CONFIG.GPIO_OP_TYPE   = GPIO_OP_TYPE_PP;
+//
+//    /** 2. PA4 = NSS (AF5, Pull-up recommended) */
+//    GPIOA_Handle.GPIO_CONFIG.GPIO_PIN_NUMBER = GPIO_PIN_4;
+//    GPIOA_Handle.GPIO_CONFIG.GPIO_PU_PD      = GPIO_PU_PD_PULL_UP;
+//    gpio_pin_init(&GPIOA_Handle);
+//
+//    /** 3. PA5 = SCK (floating, AF5) */
+//    GPIOA_Handle.GPIO_CONFIG.GPIO_PIN_NUMBER = GPIO_PIN_5;
+//    GPIOA_Handle.GPIO_CONFIG.GPIO_PU_PD      = GPIO_PU_PD_NONE;
+//    gpio_pin_init(&GPIOA_Handle);
+//
+//    /** 4. PA6 = MISO (floating is OK, optional pull-up) */
+//    GPIOA_Handle.GPIO_CONFIG.GPIO_PIN_NUMBER = GPIO_PIN_6;
+//    GPIOA_Handle.GPIO_CONFIG.GPIO_PU_PD      = GPIO_PU_PD_PULL_UP;
+//    gpio_pin_init(&GPIOA_Handle);
+//
+//    /** 5. PA7 = MOSI (floating) */
+//    GPIOA_Handle.GPIO_CONFIG.GPIO_PIN_NUMBER = GPIO_PIN_7;
+//    GPIOA_Handle.GPIO_CONFIG.GPIO_PU_PD      = GPIO_PU_PD_NONE;
+//    gpio_pin_init(&GPIOA_Handle);
+//}
+//void GPIO_SPI2_INIT(void)
+//{
+//    // Using GPIOA pins: PB12 (NSS), PB13 (SCK), PB14 (MISO), PB15 (MOSI)
+//
+//    RCC_RegDef_t *pRCC = RCC;
+//
+//    GPIOx_Handle_t GPIOB_Handle;
+//    GPIOB_Handle.pGPIOx = GPIOB;
+//
+//    /** 1. Enable GPIOA Peripheral Clock */
+//    pRCC->AHB1ENR |= (1U << RCC_AHB1ENR_GPIOB_EN_Pos);
+//
+//    /** Common configuration for all SPI pins */
+//    GPIOB_Handle.GPIO_CONFIG.GPIO_MODE      = GPIO_MODE_ALT_FUNC;
+//    GPIOB_Handle.GPIO_CONFIG.GPIO_ALT_FUNC  = GPIO_ALT_FUNC_5;
+//    GPIOB_Handle.GPIO_CONFIG.GPIO_SPEED     = GPIO_SPEED_HIGH;
+//    GPIOB_Handle.GPIO_CONFIG.GPIO_OP_TYPE   = GPIO_OP_TYPE_PP;
+//
+//    /** 2. PB12 = NSS (AF5, Pull-up recommended) */
+//    GPIOB_Handle.GPIO_CONFIG.GPIO_PIN_NUMBER = GPIO_PIN_12;
+//    GPIOB_Handle.GPIO_CONFIG.GPIO_PU_PD      = GPIO_PU_PD_PULL_UP;
+//    gpio_pin_init(&GPIOB_Handle);
+//
+//    /** 3. PB13 = SCK (floating, AF5) */
+//    GPIOB_Handle.GPIO_CONFIG.GPIO_PIN_NUMBER = GPIO_PIN_13;
+//    GPIOB_Handle.GPIO_CONFIG.GPIO_PU_PD      = GPIO_PU_PD_NONE;
+//    gpio_pin_init(&GPIOB_Handle);
+//
+//    /** 4. PB14 = MISO (floating is OK, optional pull-up) */
+//    GPIOB_Handle.GPIO_CONFIG.GPIO_PIN_NUMBER = GPIO_PIN_14;
+//    GPIOB_Handle.GPIO_CONFIG.GPIO_PU_PD      = GPIO_PU_PD_PULL_UP;
+//    gpio_pin_init(&GPIOB_Handle);
+//
+//    /** 5. PB15 = MOSI (floating) */
+//    GPIOB_Handle.GPIO_CONFIG.GPIO_PIN_NUMBER = GPIO_PIN_15;
+//    GPIOB_Handle.GPIO_CONFIG.GPIO_PU_PD      = GPIO_PU_PD_NONE;
+//    gpio_pin_init(&GPIOB_Handle);
+//}
+void GPIO_SPI3_INIT(void)
 {
-    // Using GPIOA pins: PA4 (NSS), PA5 (SCK), PA6 (MISO), PA7 (MOSI)
+    // Using GPIOA pins: PA4 (NSS), PB3 (SCK), PB4 (MISO), PB5 (MOSI)
 
     RCC_RegDef_t *pRCC = RCC;
 
-    GPIOx_Handle_t GPIOA_Handle;
-    GPIOA_Handle.pGPIOx = GPIOA;
+    GPIOx_Handle_t GPIOB_Handle;
+    GPIOB_Handle.pGPIOx = GPIOB;
 
     /** 1. Enable GPIOA Peripheral Clock */
+    pRCC->AHB1ENR |= (1U << RCC_AHB1ENR_GPIOB_EN_Pos);
     pRCC->AHB1ENR |= (1U << RCC_AHB1ENR_GPIOA_EN_Pos);
 
     /** Common configuration for all SPI pins */
-    GPIOA_Handle.GPIO_CONFIG.GPIO_MODE      = GPIO_MODE_ALT_FUNC;
-    GPIOA_Handle.GPIO_CONFIG.GPIO_ALT_FUNC  = GPIO_ALT_FUNC_5;
-    GPIOA_Handle.GPIO_CONFIG.GPIO_SPEED     = GPIO_SPEED_HIGH;
-    GPIOA_Handle.GPIO_CONFIG.GPIO_OP_TYPE   = GPIO_OP_TYPE_PP;
+    GPIOB_Handle.GPIO_CONFIG.GPIO_MODE      = GPIO_MODE_ALT_FUNC;
+    GPIOB_Handle.GPIO_CONFIG.GPIO_ALT_FUNC  = GPIO_ALT_FUNC_6;
+    GPIOB_Handle.GPIO_CONFIG.GPIO_SPEED     = GPIO_SPEED_HIGH;
+    GPIOB_Handle.GPIO_CONFIG.GPIO_OP_TYPE   = GPIO_OP_TYPE_PP;
 
     /** 2. PA4 = NSS (AF5, Pull-up recommended) */
-    GPIOA_Handle.GPIO_CONFIG.GPIO_PIN_NUMBER = GPIO_PIN_4;
-    GPIOA_Handle.GPIO_CONFIG.GPIO_PU_PD      = GPIO_PU_PD_PULL_UP;
-    gpio_pin_init(&GPIOA_Handle);
+    GPIOB_Handle.pGPIOx = GPIOA;
+    GPIOB_Handle.GPIO_CONFIG.GPIO_PIN_NUMBER = GPIO_PIN_4;
+    GPIOB_Handle.GPIO_CONFIG.GPIO_PU_PD      = GPIO_PU_PD_PULL_UP;
+    gpio_pin_init(&GPIOB_Handle);
 
-    /** 3. PA5 = SCK (floating, AF5) */
-    GPIOA_Handle.GPIO_CONFIG.GPIO_PIN_NUMBER = GPIO_PIN_5;
-    GPIOA_Handle.GPIO_CONFIG.GPIO_PU_PD      = GPIO_PU_PD_NONE;
-    gpio_pin_init(&GPIOA_Handle);
+    GPIOB_Handle.pGPIOx = GPIOB;
+    /** 3. PB3 = SCK (floating, AF5) */
+    GPIOB_Handle.GPIO_CONFIG.GPIO_PIN_NUMBER = GPIO_PIN_3;
+    GPIOB_Handle.GPIO_CONFIG.GPIO_PU_PD      = GPIO_PU_PD_NONE;
+    gpio_pin_init(&GPIOB_Handle);
 
-    /** 4. PA6 = MISO (floating is OK, optional pull-up) */
-    GPIOA_Handle.GPIO_CONFIG.GPIO_PIN_NUMBER = GPIO_PIN_6;
-    GPIOA_Handle.GPIO_CONFIG.GPIO_PU_PD      = GPIO_PU_PD_PULL_UP;
-    gpio_pin_init(&GPIOA_Handle);
+    /** 4. PB4 = MISO (floating is OK, optional pull-up) */
+    GPIOB_Handle.GPIO_CONFIG.GPIO_PIN_NUMBER = GPIO_PIN_4;
+    GPIOB_Handle.GPIO_CONFIG.GPIO_PU_PD      = GPIO_PU_PD_PULL_UP;
+    gpio_pin_init(&GPIOB_Handle);
 
-    /** 5. PA7 = MOSI (floating) */
-    GPIOA_Handle.GPIO_CONFIG.GPIO_PIN_NUMBER = GPIO_PIN_7;
-    GPIOA_Handle.GPIO_CONFIG.GPIO_PU_PD      = GPIO_PU_PD_NONE;
-    gpio_pin_init(&GPIOA_Handle);
+    /** 5. PB5 = MOSI (floating) */
+    GPIOB_Handle.GPIO_CONFIG.GPIO_PIN_NUMBER = GPIO_PIN_5;
+    GPIOB_Handle.GPIO_CONFIG.GPIO_PU_PD      = GPIO_PU_PD_NONE;
+    gpio_pin_init(&GPIOB_Handle);
 }
+
+const static char data[] = "I love you nehudiiiiiiiiiiii.........";
 
 int main(void)
 {
@@ -73,12 +154,18 @@ int main(void)
 		GPIOA_Handle.GPIO_CONFIG.GPIO_MODE = GPIO_MODE_INPUT;
 		GPIOA_Handle.GPIO_CONFIG.GPIO_PIN_NUMBER = GPIO_PIN_0;
 		gpio_pin_init(&GPIOA_Handle);
+		gpio_irq_config(GPIOA, GPIO_PIN_0, INTERRUPT_TRIGGER_TYPE_RISING, 0);
+		gpio_irq_control(GPIO_PIN_0, ENABLE);
 	/** 1. Enabling the GPIO for SPI1 Alternate Functionality */
-		GPIO_SPI1_INIT();
+//		GPIO_SPI1_INIT();
+//		GPIO_SPI2_INIT();
+		GPIO_SPI3_INIT();
 	/** 2. Configure SPI1 */
 		SPIx_Handle_t SPI_Handle;
 		memset(&SPI_Handle,0,sizeof(SPI_Handle));
-		SPI_Handle.pSPIx = SPI1;
+		//SPI_Handle.pSPIx = SPI1;
+//		SPI_Handle.pSPIx = SPI2;
+		SPI_Handle.pSPIx = SPI3;
 		SPI_Handle.SPI_CONFIG.SPI_DEVICE_MODE = SPI_DEVICE_MODE_MASTER;
 		SPI_Handle.SPI_CONFIG.SPI_CLOCK_SPEED = SPI_CLOCK_SPEED_BY_16;
 		SPI_Handle.SPI_CONFIG.SPI_BUS_MODE = SPI_BUS_MODE_FULL_DUPLEX;
@@ -91,17 +178,16 @@ int main(void)
 //	/** 2. Enable SPI1 */
 //		SPIx_Peri_Control(SPI_Handle.pSPIx, ENABLE);
 	/** 3. Send Data */
-		char data[] = "I love you nehudiiiiiiiiiiii.........";
-		while(1){
-			if(gpio_read_pin(GPIOA, GPIO_PIN_0)){
-				for(int i = 0;i<50000;i++);
-				SPIx_Peri_Control(SPI_Handle.pSPIx, ENABLE);
-				SPIx_SendData_Blocking(SPI1, (uint8_t*)data, sizeof(data));
-				SPIx_Peri_Control(SPI_Handle.pSPIx, DISABLE);
-				while(gpio_read_pin(GPIOA, GPIO_PIN_0));
-				for(int i = 0;i<50000;i++);
-			}
 
+		while(1){
+//			if(gpio_read_pin(GPIOA, GPIO_PIN_0)){
+//				for(int i = 0;i<50000;i++);
+//				SPIx_Peri_Control(SPI_Handle.pSPIx, ENABLE);
+//				SPIx_SendData_Blocking(SPI1, (uint8_t*)data, sizeof(data));
+//				SPIx_Peri_Control(SPI_Handle.pSPIx, DISABLE);
+//				while(gpio_read_pin(GPIOA, GPIO_PIN_0));
+//				for(int i = 0;i<50000;i++);
+//			}
 		}
 
 
@@ -109,7 +195,21 @@ int main(void)
 	//for(;;);
 }
 
-
+void EXTI0_IRQHandler(void){
+	//gpio_irq_clear(GPIO_PIN_0);
+	gpio_irq_control(GPIO_PIN_0, DISABLE);
+	for(volatile int i = 0;i<15000;i++);
+//	SPIx_Peri_Control(SPI1, ENABLE);
+//	SPIx_Peri_Control(SPI2, ENABLE);
+	SPIx_Peri_Control(SPI3, ENABLE);
+	SPIx_SendData_Blocking(SPI3, (uint8_t*)data, sizeof(data));
+//	SPIx_Peri_Control(SPI1, DISABLE);
+	//SPIx_Peri_Control(SPI2, DISABLE);
+	SPIx_Peri_Control(SPI3, DISABLE);
+	while(gpio_read_pin(GPIOA, GPIO_PIN_0));
+	for(volatile int i = 0;i<15000;i++);
+	gpio_irq_control(GPIO_PIN_0, ENABLE);
+}
 
 
 
