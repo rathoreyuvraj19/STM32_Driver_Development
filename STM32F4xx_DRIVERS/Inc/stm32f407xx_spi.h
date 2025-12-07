@@ -162,8 +162,17 @@ typedef struct
  */
 typedef struct
 {
-    SPIx_RegDef_t *pSPIx;   	/*!< Pointer to SPI peripheral base address */
-    SPIx_Config_t  SPI_CONFIG; 	/*!< SPI configuration settings */
+    SPIx_RegDef_t 	*pSPIx;   	/*!< Pointer to SPI peripheral base address */
+    SPIx_Config_t  	SPI_CONFIG; 	/*!< SPI configuration settings */
+
+    volatile uint8_t		*pTXBuffer;
+    volatile uint32_t 		TXLen;
+    volatile uint8_t 		TxState;
+
+    volatile uint8_t		*pRXBuffer;
+    volatile uint32_t 		RXLen;
+    volatile uint8_t 		RxState;
+
 
 } SPIx_Handle_t;
 /** @} */ // End of SPIx_Handle_t Structure Definition
@@ -336,7 +345,247 @@ uint8_t SPIx_GetFlagStatus(SPIx_RegDef_t *pSPIx, uint32_t FlagName);
  *
  * @retval None
  */
-void SPIx_SendData_Blocking(SPIx_RegDef_t *pSPIx, uint8_t* pData, uint32_t Len);
+void SPIx_SendData_Blocking(SPIx_RegDef_t *pSPIx, uint8_t* pTX_Data_Buffer, uint32_t Len_Byte);
+/**
+ * @brief  Receive data from the specified SPI peripheral in blocking mode.
+ *
+ * This function receives a block of data from the given SPI instance
+ * using a polling-based (blocking) mechanism. In master mode, dummy writes
+ * are performed to generate the required SPI clock for data sampling. The
+ * function waits until each byte is available in the receive buffer before
+ * reading it from the data register.
+ *
+ * The function returns only after all requested bytes have been received.
+ * It does not handle interrupt- or DMA-based transfers.
+ *
+ * @param[in]  pSPIx     Pointer to the SPI peripheral register definition structure.
+ * @param[out] pData     Pointer to the receive buffer where incoming data will be stored.
+ * @param[in]  Len       Number of bytes to be received.
+ *
+ * @note Ensure the SPI peripheral is properly configured and enabled before
+ *       calling this function. In master mode, NSS should be driven low before
+ *       invoking this API and released high after the transfer completes.
+ *
+ * @note This API internally clears Overrun (OVR) errors for safe operation.
+ *
+ * @retval None
+ */
+void SPIx_ReceiveData_Blocking(SPIx_RegDef_t *pSPIx, uint8_t* pRX_Data_Buffer, uint32_t Len_Byte);
+
+/**
+ * @brief  Configure the priority of a given SPI interrupt in the NVIC.
+ *
+ * This function sets the interrupt priority for the specified SPI IRQ number
+ * in the Nested Vectored Interrupt Controller (NVIC). It does not enable or
+ * disable the interrupt; it only assigns the priority value to the corresponding
+ * NVIC IPR (Interrupt Priority Register) field.
+ *
+ * @param[in] IRQNumber      The IRQ number associated with the SPI peripheral
+ *                           (e.g., IRQ_NUM_SPI1, IRQ_NUM_SPI2, IRQ_NUM_SPI3).
+ *
+ * @param[in] irq_priority   Priority value (0–15). Only the upper 4 bits of each
+ *                           NVIC priority byte are implemented on Cortex-M MCUs,
+ *                           so only the lower 4 bits of @p irq_priority are used.
+ *
+ * @note  This API does NOT enable the interrupt. Use @ref SPIx_IRQEnable()
+ *        to enable or disable the interrupt in NVIC ISER/ICER registers.
+ *
+ * @note  This API DOES NOT configure SPI peripheral interrupt bits (CR2).
+ *        For enabling TXEIE/RXNEIE/ERRIE, use the SPI peripheral configuration APIs.
+ */
+void SPIx_IRQConfig(uint8_t IRQNumber, uint8_t irq_priority);
+
+/**
+ * @brief  Enable or disable the given SPI IRQ in the NVIC.
+ *
+ * This function controls the interrupt routing at the processor (NVIC) level.
+ * It does NOT configure SPI peripheral CR2 (TXEIE/RXNEIE/ERRIE); it only
+ * enables or disables the interrupt line in NVIC ISER/ICER registers.
+ *
+ * @param[in] IRQNumber   IRQ number corresponding to the SPI peripheral
+ *                        (e.g., IRQ_NUM_SPI1, IRQ_NUM_SPI2, IRQ_NUM_SPI3).
+ *
+ * @param[in] EN_DI       Enable/Disable interrupt line:
+ *                        - ENABLE  : Enable NVIC interrupt
+ *                        - DISABLE : Disable NVIC interrupt
+ */
+void SPIx_IRQControl(uint8_t IRQNumber, uint8_t EN_DI);
+
+/**
+ * @brief  Enable or disable specified SPI peripheral interrupts (CR2).
+ *
+ * @param[in] pSPIx   Pointer to SPI registers (SPI1, SPI2, ...).
+ * @param[in] ITType  Combination (OR) of SPI_IT_TXE, SPI_IT_RXNE, SPI_IT_ERR Refer @ref SPI_IT_TYPE.
+ * @param[in] EN_DI   ENABLE (non-zero) to set bits, DISABLE (0) to clear bits.
+ *
+ * @note This controls only the SPI peripheral (CR2). NVIC must be enabled/disabled
+ *       separately using SPIx_IRQControl()/SPIx_IRQEnable().
+ * @note Typical usage: configure priority, enable the correct CR2 bits, then enable NVIC.
+ */
+
+void SPIx_PeripheralInterruptControl(SPIx_RegDef_t *pSPIx, uint8_t ITType, uint8_t EN_DI);
+
+/**
+ * @brief  Start a non-blocking (interrupt-driven) transmit on the SPI peripheral.
+ *
+ * This function begins an interrupt-driven transmit using the SPI handle state.
+ * It programs the handle with the transmit buffer and length, sets the handle
+ * state to BUSY, and enables the SPI peripheral TXE interrupt (CR2: TXEIE).
+ *
+ * After this function returns the transfer is performed in IRQ context. The
+ * application is notified when the transfer completes via
+ * SPI_ApplicationEventCallback(..., SPI_EVENT_TX_CMPLT).
+ *
+ * Typical safe call sequence:
+ *   1. SPIx_IRQConfig(IRQ, priority);
+ *   2. SPIx_PeripheralInterruptControl(pHandle->pSPIx, SPI_IT_TYPE_TXEIE, ENABLE);
+ *   3. SPIx_IRQControl(IRQ, ENABLE);
+ *   4. SPIx_SendDataIT(pHandle, pTxBuf, Len);
+ *
+ * @param[in,out]  pHandle    Pointer to the SPI handle which holds peripheral and state.
+ * @param[in]      pTxBuf     Pointer to the transmit buffer. MUST remain valid until
+ *                            the SPI_EVENT_TX_CMPLT callback is invoked.
+ * @param[in]      Len        Number of bytes to transmit (for DFF=16 handle as number of bytes).
+ *
+ * @retval 0  Success — transfer started.
+ * @retval 1  Busy — transmit already in progress.
+ * @retval 2  Invalid parameter (NULL handle or NULL buffer or Len == 0).
+ *
+ * @note  This function only enables the SPI peripheral interrupt (CR2 TXEIE). The
+ *        caller is responsible for enabling the corresponding NVIC line via
+ *        SPIx_IRQConfig() + SPIx_IRQControl() (or do that earlier in init).
+ * @note  The transmit completion callback is invoked from IRQ context — keep it short
+ *        (set a flag or schedule work for the main loop).
+ */
+uint8_t SPIx_SendDataIT(SPIx_Handle_t *pHandle, uint8_t *pTxBuf, uint32_t Len);
+
+/**
+ * @brief  Start a non-blocking (interrupt-driven) receive on the SPI peripheral.
+ *
+ * This function begins an interrupt-driven receive using the SPI handle state.
+ * It programs the handle with the receive buffer and length, sets the handle
+ * state to BUSY, and enables the SPI peripheral RXNE interrupt (CR2: RXNEIE).
+ *
+ * In master mode the driver (or application) must provide clocking for the slave:
+ * the driver may perform dummy TX writes in the ISR to generate SCK (implementation detail).
+ *
+ * When the requested number of bytes has been received the application will be
+ * notified using SPI_ApplicationEventCallback(..., SPI_EVENT_RX_CMPLT).
+ *
+ * Typical safe call sequence:
+ *   1. SPIx_IRQConfig(IRQ, priority);
+ *   2. SPIx_PeripheralInterruptControl(pHandle->pSPIx, SPI_IT_TYPE_RXNEIE, ENABLE);
+ *   3. SPIx_IRQControl(IRQ, ENABLE);
+ *   4. SPIx_ReceiveDataIT(pHandle, pRxBuf, Len);
+ *
+ * @param[in,out]  pHandle    Pointer to the SPI handle which holds peripheral and state.
+ * @param[out]     pRxBuf     Pointer to the receive buffer. Must remain valid until
+ *                            the SPI_EVENT_RX_CMPLT callback.
+ * @param[in]      Len        Number of bytes to receive (for DFF=16 handle as number of bytes).
+ *
+ * @retval 0  Success — receive started.
+ * @retval 1  Busy — receive already in progress.
+ * @retval 2  Invalid parameter (NULL handle or NULL buffer or Len == 0).
+ *
+ * @note  The driver may perform dummy writes (0xFF) to generate clocks in master mode.
+ * @note  This function only enables the SPI peripheral RXNEIE bit; NVIC enabling must
+ *        be handled by the caller (SPIx_IRQConfig + SPIx_IRQControl).
+ * @note  The completion callback is invoked from IRQ context.
+ */
+uint8_t SPIx_ReceiveDataIT(SPIx_Handle_t *pHandle, uint8_t *pRxBuf, uint32_t Len);
+
+/**
+ * @brief  Handle all interrupt events for the given SPI peripheral.
+ *
+ * This function must be called from the actual SPI IRQ handler
+ * (e.g., SPI1_IRQHandler). It services TXE, RXNE, and OVR interrupt
+ * sources based on the state stored in the SPI handle.
+ *
+ * @param[in,out] pHandle   Pointer to the SPI handle structure associated
+ *                          with the SPI peripheral generating the interrupt.
+ *
+ * @note This function runs in IRQ context. Keep callback handlers short
+ *       and defer heavy processing to the main loop or a task.
+ *
+ * @retval None
+ */
+void SPIx_IRQHandling(SPIx_Handle_t *pHandle);
+
+/**
+  * @brief  Finalizes an ongoing SPI communication transaction by disabling interrupts
+  * and resetting the handle state variables.
+  * @param  pHandle: Pointer to a SPIx_Handle_t structure that contains
+  * the configuration and communication state for the specified SPI.
+  * @retval None
+  */
+void SPI_Close_Transfer(SPIx_Handle_t *pHandle);
+
+/**
+ * @brief  Application callback invoked by the SPI driver on asynchronous events.
+ *
+ * This callback is called from interrupt context by the SPI driver to notify
+ * the application about important asynchronous events (transfer complete,
+ * errors, etc.). The application SHOULD implement this function in its code
+ * to handle events; otherwise the weak default implementation will be used.
+ *
+ * IMPORTANT:
+ *  - This function is invoked from IRQ context. Keep the implementation short:
+ *    set flags, toggle an LED, or post to an RTOS queue — do not perform long
+ *    blocking operations or heavy processing inside this callback.
+ *  - Any data buffers passed via the SPI handle remain valid only until the
+ *    callback returns (unless otherwise documented).
+ *
+ * Typical AppEv values (define these in your header):
+ *  - SPI_EVENT_TX_CMPLT  : Transmit completed successfully
+ *  - SPI_EVENT_RX_CMPLT  : Receive completed successfully
+ *  - SPI_EVENT_OVR_ERR   : Overrun error occurred
+ *  - SPI_EVENT_CRC_ERR   : CRC error (if used)
+ *
+ * @param[in] pHandle  Pointer to the SPI handle that generated the event.
+ *                     The handle contains peripheral instance and transfer state.
+ * @param[in] AppEv    Event identifier (one of the SPI_EVENT_* constants).
+ */
+void SPI_ApplicationEventCallback(SPIx_Handle_t *pHandle, uint8_t AppEv);
+/**
+ * @brief  Gracefully terminate an ongoing SPI transmit interrupt operation.
+ *
+ * This function is called by the SPI driver when a TX interrupt-driven
+ * transmission has completed, or may be called by the application to abort
+ * an ongoing TX transfer.
+ *
+ * It performs the following actions:
+ *   - Disables the TXE interrupt (TXEIE bit in CR2).
+ *   - Resets the handle's TX state to @ref SPI_STATE_READY.
+ *   - Clears internal TX buffer pointers and counters.
+ *
+ * @note  This function does NOT disable the SPI peripheral (SPE bit).
+ *        It only stops the interrupt-driven transmission mechanism.
+ *
+ * @param[in,out] pHandle   Pointer to the SPI handle structure.
+ *
+ * @retval None
+ */
+void SPI_CloseTransmission(SPIx_Handle_t *pHandle);
+
+/**
+ * @brief  Gracefully terminate an ongoing SPI receive interrupt operation.
+ *
+ * This function is used by the SPI driver when an interrupt-driven RX transfer
+ * completes, or can be invoked by the application to abort a receive sequence.
+ *
+ * It performs the following actions:
+ *   - Disables the RXNE interrupt (RXNEIE bit in CR2).
+ *   - Resets the RX state to @ref SPI_STATE_READY.
+ *   - Clears internal RX buffer pointers and counters.
+ *
+ * @note  This function does NOT clear overrun (OVR) errors.
+ *        OVR must be handled separately by the error ISR helper.
+ *
+ * @param[in,out] pHandle   Pointer to the SPI handle structure.
+ *
+ * @retval None
+ */
+void SPI_CloseReception(SPIx_Handle_t *pHandle);
 
 
 /** @} */ // End of SPI_API_PROTOTYPES
@@ -488,6 +737,69 @@ void SPIx_SendData_Blocking(SPIx_RegDef_t *pSPIx, uint8_t* pData, uint32_t Len);
 
 
 /** @} */ // End of SPI_BIT_POSITION_MACROS
+
+/**
+ * @defgroup SPI_IT_TYPE SPI Peripheral Interrupt Types
+ * @brief Bit positions used to select which SPI interrupt to enable/disable.
+ *
+ * These definitions correspond to logical interrupt types in the SPI driver.
+ * They are NOT the CR2 register bit positions themselves, but identifiers used
+ * by software APIs (e.g., SPIx_PeripheralInterruptControl()) to specify which
+ * SPI interrupt to manipulate.
+ *
+ * @{
+ */
+
+	#define SPI_IT_TYPE_TXE    0U   /**< Transmit buffer empty interrupt type  */
+	#define SPI_IT_TYPE_RXNE   1U   /**< Receive buffer not empty interrupt type */
+	#define SPI_IT_TYPE_ERR    2U   /**< Error interrupt type (OVR, MODF, CRCERR) */
+
+/** @} */ /* End of SPI_IT_TYPE */
+
+/**
+ * @defgroup SPI_STATE SPI Driver States
+ * @brief Internal driver state values used to track ongoing SPI operations.
+ *
+ * These constants represent the current state of the SPI driver, and are used
+ * internally by APIs such as SPIx_SendDataIT() and SPIx_ReceiveDataIT() to
+ * prevent re-entrant transfers.
+ *
+ * @{
+ */
+
+#define SPI_STATE_READY        0U   /**< SPI is idle and ready for a new transfer */
+#define SPI_STATE_BUSY_IN_TX   1U   /**< SPI is currently transmitting data (IT mode) */
+#define SPI_STATE_BUSY_IN_RX   2U   /**< SPI is currently receiving data (IT mode) */
+
+/** @} */ /* End of SPI_STATE */
+
+/**
+ * @defgroup SPI_RETURN_CODES SPI Return Codes
+ * @brief Return status values used by SPI interrupt-driven APIs.
+ *
+ * These codes indicate whether an SPI IT-based transfer request was accepted,
+ * rejected due to an ongoing transfer, or invalid due to bad arguments.
+ *
+ * @{
+ */
+
+#define SPI_TXRX_SUCCESS     0U   /**< Operation successful — IT transfer started */
+#define SPI_BUSY             1U   /**< SPI is busy (TX or RX already in progress) */
+#define SPI_INVALID_PARAM    2U   /**< Invalid argument (NULL buffer, length 0, etc.) */
+
+/** @} */ /* End of SPI_RETURN_CODES */
+
+/** @defgroup SPI_Events
+ * @brief SPI driver event codes for application callbacks.
+ * @{
+ */
+#define SPI_EVENT_TX_CMPLT   1  /**< Transmission finished */
+#define SPI_EVENT_RX_CMPLT   2  /**< Reception finished */
+#define SPI_EVENT_OVR_ERR    3  /**< Overrun error occurred */
+#define SPI_EVENT_CRC_ERR    4  /**< CRC mismatch detected */
+#define SPI_EVENT_MODF_ERR   5  /**< Mode fault error */
+#define SPI_EVENT_FRE_ERR    6  /**< Frame format error */
+/** @} */ // end of SPI_Events
 
 
 /** @} */ // End of SPI Driver

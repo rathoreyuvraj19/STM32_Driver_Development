@@ -178,8 +178,7 @@ void gpio_toggle_pin(GPIOx_RegDef_t *pGPIOx, uint8_t pin) {
 	pGPIOx->ODR ^= (0x01 << pin);
 }
 
-void gpio_irq_config(GPIOx_RegDef_t *pGPIOx, uint8_t pin, uint8_t trigger,
-		uint8_t irq_priority) {
+void gpio_irq_config(GPIOx_RegDef_t *pGPIOx, uint8_t pin, uint8_t trigger,uint8_t irq_priority) {
 	/**
 	 * Sequence of steps in gpio_irq_config() API:
 	 * 1. Program SYSCFG

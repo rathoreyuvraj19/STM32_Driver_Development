@@ -11,6 +11,10 @@
 #ifndef INC_STM32F407XX_H_
 #define INC_STM32F407XX_H_
 #include<stdint.h>
+#include <stddef.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 /**
  * @defgroup MISCELLANEOUS_MACROS General-purpose macros
