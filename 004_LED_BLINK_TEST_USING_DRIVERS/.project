@@ -28,11 +28,4 @@
 		<nature>org.eclipse.cdt.managedbuilder.core.managedBuildNature</nature>
 		<nature>org.eclipse.cdt.managedbuilder.core.ScannerConfigNature</nature>
 	</natures>
-	<linkedResources>
-		<link>
-			<name>Drivers/STM32F4xx_DRIVERS</name>
-			<type>2</type>
-			<locationURI>PARENT-1-PROJECT_LOC/STM32F4xx_DRIVERS</locationURI>
-		</link>
-	</linkedResources>
 </projectDescription>

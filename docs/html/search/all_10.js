@@ -24,5 +24,5 @@ var searchData=
   ['nvic_5firq_5fpriority_5f8_21',['NVIC_IRQ_PRIORITY_8',['../group___n_v_i_c___i_r_q___p_r_i_o_r_i_t_y___l_e_v_e_l_s.html#gada3df33cbb9c1d30739a6123a8ad2324',1,'stm32f407xx.h']]],
   ['nvic_5firq_5fpriority_5f9_22',['NVIC_IRQ_PRIORITY_9',['../group___n_v_i_c___i_r_q___p_r_i_o_r_i_t_y___l_e_v_e_l_s.html#gabdf1495c12b801bbc4e7e5d8162290cf',1,'stm32f407xx.h']]],
   ['nvic_5fiser0_23',['NVIC_ISER0',['../002___user__button__interrupt_2_src_2main_8c.html#ab37d21c2e44fe7e3967deaf10e30a763',1,'main.c']]],
-  ['nvic_5fregdef_5ft_24',['NVIC_RegDef_t',['../struct_n_v_i_c___reg_def__t.html',1,'NVIC_RegDef_t'],['../group___n_v_i_c___r_e_g.html#ga1a6f911773212b59cc19775cb4c41e37',1,'NVIC_RegDef_t:&#160;stm32f407xx.h']]]
+  ['nvic_5fregdef_5ft_24',['NVIC_RegDef_t',['../struct_n_v_i_c___reg_def__t.html',1,'']]]
 ];

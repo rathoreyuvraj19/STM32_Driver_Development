@@ -1,0 +1,71 @@
+\doxysection{I2\+C\+\_\+\+Handle\+\_\+t Struct Reference}
+\hypertarget{struct_i2_c___handle__t}{}\label{struct_i2_c___handle__t}\index{I2C\_Handle\_t@{I2C\_Handle\_t}}
+
+
+I2C peripheral handle structure.  
+
+
+
+
+{\ttfamily \#include $<$stm32f407xx\+\_\+i2c.\+h$>$}
+
+
+
+Collaboration diagram for I2\+C\+\_\+\+Handle\+\_\+t\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=251pt]{struct_i2_c___handle__t__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+volatile \mbox{\hyperlink{struct_i2_c___reg_def__t}{I2\+C\+\_\+\+Reg\+Def\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_i2_c___handle__t_a57711f7502bd962af0a976686958a1dd}{p\+I2C}}
+\item 
+\mbox{\hyperlink{struct_i2_c___config__t}{I2\+C\+\_\+\+Config\+\_\+t}} \mbox{\hyperlink{struct_i2_c___handle__t_a8a6e5db764948a2ac80b01cc378e8471}{I2\+C\+\_\+\+Config}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+I2C peripheral handle structure. 
+
+This structure binds together\+:
+\begin{DoxyItemize}
+\item The base address of the I2C peripheral register map.
+\item The configuration parameters selected by the user.
+\item (Future) runtime state variables for interrupt/\+DMA-\/based communication. 
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{stm32f407xx__i2c_8h_source_l00105}{105}} of file \mbox{\hyperlink{stm32f407xx__i2c_8h_source}{stm32f407xx\+\_\+i2c.\+h}}.
+
+
+
+\label{doc-variable-members}
+\Hypertarget{struct_i2_c___handle__t_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{struct_i2_c___handle__t_a8a6e5db764948a2ac80b01cc378e8471}\index{I2C\_Handle\_t@{I2C\_Handle\_t}!I2C\_Config@{I2C\_Config}}
+\index{I2C\_Config@{I2C\_Config}!I2C\_Handle\_t@{I2C\_Handle\_t}}
+\doxysubsubsection{\texorpdfstring{I2C\_Config}{I2C\_Config}}
+{\footnotesize\ttfamily \label{struct_i2_c___handle__t_a8a6e5db764948a2ac80b01cc378e8471} 
+\mbox{\hyperlink{struct_i2_c___config__t}{I2\+C\+\_\+\+Config\+\_\+t}} I2\+C\+\_\+\+Handle\+\_\+t\+::\+I2\+C\+\_\+\+Config}
+
+I2C configuration settings provided by the user. 
+
+Definition at line \mbox{\hyperlink{stm32f407xx__i2c_8h_source_l00109}{109}} of file \mbox{\hyperlink{stm32f407xx__i2c_8h_source}{stm32f407xx\+\_\+i2c.\+h}}.
+
+\Hypertarget{struct_i2_c___handle__t_a57711f7502bd962af0a976686958a1dd}\index{I2C\_Handle\_t@{I2C\_Handle\_t}!pI2C@{pI2C}}
+\index{pI2C@{pI2C}!I2C\_Handle\_t@{I2C\_Handle\_t}}
+\doxysubsubsection{\texorpdfstring{pI2C}{pI2C}}
+{\footnotesize\ttfamily \label{struct_i2_c___handle__t_a57711f7502bd962af0a976686958a1dd} 
+volatile \mbox{\hyperlink{struct_i2_c___reg_def__t}{I2\+C\+\_\+\+Reg\+Def\+\_\+t}}\texorpdfstring{$\ast$}{*} I2\+C\+\_\+\+Handle\+\_\+t\+::p\+I2C}
+
+Pointer to I2C peripheral registers (I2\+C1, I2\+C2, I2\+C3). 
+
+Definition at line \mbox{\hyperlink{stm32f407xx__i2c_8h_source_l00107}{107}} of file \mbox{\hyperlink{stm32f407xx__i2c_8h_source}{stm32f407xx\+\_\+i2c.\+h}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+STM32\+F4xx\+\_\+\+DRIVERS/\+Inc/\mbox{\hyperlink{stm32f407xx__i2c_8h}{stm32f407xx\+\_\+i2c.\+h}}\end{DoxyCompactItemize}

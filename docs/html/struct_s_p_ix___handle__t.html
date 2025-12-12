@@ -125,11 +125,33 @@ Collaboration diagram for SPIx_Handle_t:</div>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a2139a08270d0669a4bfd52184169f444" id="r_a2139a08270d0669a4bfd52184169f444"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_s_p_ix___reg_def__t.html">SPIx_RegDef_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2139a08270d0669a4bfd52184169f444">pSPIx</a></td></tr>
 <tr class="memitem:ad8dfc166a5c690bfebcc6e855132e805" id="r_ad8dfc166a5c690bfebcc6e855132e805"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_s_p_ix___config__t.html">SPIx_Config_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad8dfc166a5c690bfebcc6e855132e805">SPI_CONFIG</a></td></tr>
+<tr class="memitem:ab9994cff36b24956fad7fb0462070a6c" id="r_ab9994cff36b24956fad7fb0462070a6c"><td class="memItemLeft" align="right" valign="top">volatile uint8_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab9994cff36b24956fad7fb0462070a6c">pTXBuffer</a></td></tr>
+<tr class="memitem:a54ab29aca25deaf50bf951c95a91eef8" id="r_a54ab29aca25deaf50bf951c95a91eef8"><td class="memItemLeft" align="right" valign="top">volatile uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a54ab29aca25deaf50bf951c95a91eef8">TXLen</a></td></tr>
+<tr class="memitem:ab7bc64878b66e3456dc8a035e6a480cb" id="r_ab7bc64878b66e3456dc8a035e6a480cb"><td class="memItemLeft" align="right" valign="top">volatile uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab7bc64878b66e3456dc8a035e6a480cb">TxState</a></td></tr>
+<tr class="memitem:ab63ab2271c4f90c95d42b26174d98104" id="r_ab63ab2271c4f90c95d42b26174d98104"><td class="memItemLeft" align="right" valign="top">volatile uint8_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab63ab2271c4f90c95d42b26174d98104">pRXBuffer</a></td></tr>
+<tr class="memitem:ab5eac9e2244e1065f288af094873b7a3" id="r_ab5eac9e2244e1065f288af094873b7a3"><td class="memItemLeft" align="right" valign="top">volatile uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab5eac9e2244e1065f288af094873b7a3">RXLen</a></td></tr>
+<tr class="memitem:a1b2787461399507391258f1bfcb9db23" id="r_a1b2787461399507391258f1bfcb9db23"><td class="memItemLeft" align="right" valign="top">volatile uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1b2787461399507391258f1bfcb9db23">RxState</a></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock">
 <p class="definition">Definition at line <a class="el" href="stm32f407xx__spi_8h_source.html#l00163">163</a> of file <a class="el" href="stm32f407xx__spi_8h_source.html">stm32f407xx_spi.h</a>.</p>
 </div><a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
+<a id="ab63ab2271c4f90c95d42b26174d98104" name="ab63ab2271c4f90c95d42b26174d98104"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab63ab2271c4f90c95d42b26174d98104">&#9670;&#160;</a></span>pRXBuffer</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile uint8_t* SPIx_Handle_t::pRXBuffer</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="stm32f407xx__spi_8h_source.html#l00172">172</a> of file <a class="el" href="stm32f407xx__spi_8h_source.html">stm32f407xx_spi.h</a>.</p>
+
+</div>
+</div>
 <a id="a2139a08270d0669a4bfd52184169f444" name="a2139a08270d0669a4bfd52184169f444"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2139a08270d0669a4bfd52184169f444">&#9670;&#160;</a></span>pSPIx</h2>
 
@@ -147,6 +169,54 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="ab9994cff36b24956fad7fb0462070a6c" name="ab9994cff36b24956fad7fb0462070a6c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9994cff36b24956fad7fb0462070a6c">&#9670;&#160;</a></span>pTXBuffer</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile uint8_t* SPIx_Handle_t::pTXBuffer</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="stm32f407xx__spi_8h_source.html#l00168">168</a> of file <a class="el" href="stm32f407xx__spi_8h_source.html">stm32f407xx_spi.h</a>.</p>
+
+</div>
+</div>
+<a id="ab5eac9e2244e1065f288af094873b7a3" name="ab5eac9e2244e1065f288af094873b7a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5eac9e2244e1065f288af094873b7a3">&#9670;&#160;</a></span>RXLen</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile uint32_t SPIx_Handle_t::RXLen</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="stm32f407xx__spi_8h_source.html#l00173">173</a> of file <a class="el" href="stm32f407xx__spi_8h_source.html">stm32f407xx_spi.h</a>.</p>
+
+</div>
+</div>
+<a id="a1b2787461399507391258f1bfcb9db23" name="a1b2787461399507391258f1bfcb9db23"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b2787461399507391258f1bfcb9db23">&#9670;&#160;</a></span>RxState</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile uint8_t SPIx_Handle_t::RxState</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="stm32f407xx__spi_8h_source.html#l00174">174</a> of file <a class="el" href="stm32f407xx__spi_8h_source.html">stm32f407xx_spi.h</a>.</p>
+
+</div>
+</div>
 <a id="ad8dfc166a5c690bfebcc6e855132e805" name="ad8dfc166a5c690bfebcc6e855132e805"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad8dfc166a5c690bfebcc6e855132e805">&#9670;&#160;</a></span>SPI_CONFIG</h2>
 
@@ -161,6 +231,38 @@ Public Attributes</h2></td></tr>
 <p>SPI configuration settings </p>
 
 <p class="definition">Definition at line <a class="el" href="stm32f407xx__spi_8h_source.html#l00166">166</a> of file <a class="el" href="stm32f407xx__spi_8h_source.html">stm32f407xx_spi.h</a>.</p>
+
+</div>
+</div>
+<a id="a54ab29aca25deaf50bf951c95a91eef8" name="a54ab29aca25deaf50bf951c95a91eef8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54ab29aca25deaf50bf951c95a91eef8">&#9670;&#160;</a></span>TXLen</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile uint32_t SPIx_Handle_t::TXLen</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="stm32f407xx__spi_8h_source.html#l00169">169</a> of file <a class="el" href="stm32f407xx__spi_8h_source.html">stm32f407xx_spi.h</a>.</p>
+
+</div>
+</div>
+<a id="ab7bc64878b66e3456dc8a035e6a480cb" name="ab7bc64878b66e3456dc8a035e6a480cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7bc64878b66e3456dc8a035e6a480cb">&#9670;&#160;</a></span>TxState</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile uint8_t SPIx_Handle_t::TxState</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="stm32f407xx__spi_8h_source.html#l00170">170</a> of file <a class="el" href="stm32f407xx__spi_8h_source.html">stm32f407xx_spi.h</a>.</p>
 
 </div>
 </div>

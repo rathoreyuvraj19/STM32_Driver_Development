@@ -1,7 +1,11 @@
 <map id="SPIx_GetFlagStatus" name="SPIx_GetFlagStatus">
-<area shape="rect" id="Node000001" title="Reads the status of a specific SPI status flag." alt="" coords="226,31,367,57"/>
-<area shape="rect" id="Node000002" href="$group___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s.html#ga66a55c39f2954c6fba416822612497cb" title="Enables or disables the SPI peripheral." alt="" coords="27,5,156,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="210,36,156,29,157,24,211,31"/>
-<area shape="rect" id="Node000003" href="$group___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s.html#ga2f1a0a4006270d72092844c3e764d399" title="Send data over the specified SPI peripheral." alt="" coords="5,56,178,83"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="211,57,179,61,178,56,210,52"/>
+<area shape="rect" id="Node000001" title="Reads the status of a specific SPI status flag." alt="" coords="244,81,385,108"/>
+<area shape="rect" id="Node000002" href="$group___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s.html#ga9637b0d6a930d03fd844877298605e78" title="Handle all interrupt events for the given SPI peripheral." alt="" coords="34,5,167,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="269,77,195,47,158,35,160,30,197,41,271,72"/>
+<area shape="rect" id="Node000003" href="$group___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s.html#ga66a55c39f2954c6fba416822612497cb" title="Enables or disables the SPI peripheral." alt="" coords="36,56,165,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="228,87,165,80,166,74,229,82"/>
+<area shape="rect" id="Node000004" href="$group___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s.html#ga49a1accdcb1df29926a4f4c4cdfb334e" title="Receive data from the specified SPI peripheral in blocking mode." alt="" coords="5,107,196,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="228,108,196,111,196,106,228,102"/>
+<area shape="rect" id="Node000005" href="$group___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s.html#gac63692a0517966f2db649606f09ee7ee" title="Send data over the specified SPI peripheral." alt="" coords="14,157,187,184"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="271,117,197,148,160,159,158,154,195,143,269,112"/>
 </map>

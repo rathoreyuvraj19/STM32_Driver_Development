@@ -10,7 +10,7 @@
  */
 #ifndef INC_STM32F407XX_H_
 #define INC_STM32F407XX_H_
-#include<stdint.h>
+#include <stdint.h>
 #include <stddef.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -414,6 +414,10 @@ typedef struct
 	#define GPIOI_PCLK_EN() (RCC->AHB1ENR |= (1<<8))  /*!< Enable GPIOI clock (AHB1ENR bit 8) */
 	#define GPIOI_PCLK_DI() (RCC->AHB1ENR &= ~(1<<8)) /*!< Disable GPIOI clock (AHB1ENR bit 8) */
 
+
+
+
+
 		/** @todo Complete for other peripherals */
 
 	/** @} */ // End of AHB1 Bus Peripheral Enable Disable
@@ -450,6 +454,28 @@ typedef struct
 
 	#define SPI3_PCLK_EN()         	(RCC->APB1ENR |= (1<<15))
 	#define SPI3_PCLK_DI()         	(RCC->APB1ENR &= ~(1<<15))
+
+	#define I2C1_PCLK_EN()         	(RCC->APB1ENR |= (1<<21))
+	#define I2C1_PCLK_DI()         	(RCC->APB1ENR &= ~(1<<21))
+
+	#define I2C2_PCLK_EN()         	(RCC->APB1ENR |= (1<<22))
+	#define I2C2_PCLK_DI()         	(RCC->APB1ENR &= ~(1<<22))
+
+	#define I2C3_PCLK_EN()         	(RCC->APB1ENR |= (1<<23))
+	#define I2C3_PCLK_DI()         	(RCC->APB1ENR &= ~(1<<23))
+
+	#define USART2_PCLK_EN() (RCC->APB1ENR |= (1<<17))  /*!< Enable USART2 clock (APB1ENR bit 17) */
+	#define USART2_PCLK_DI() (RCC->APB1ENR &= ~(1<<17)) /*!< Disable USART2 clock (APB1ENR bit 17) */
+
+	#define USART3_PCLK_EN() (RCC->APB1ENR |=  (1<<18))  /*!< Enable USART3 clock (APB1ENR bit 18) */
+	#define USART3_PCLK_DI() (RCC->APB1ENR &= ~(1<<18)) /*!< Disable USART3 clock (APB1ENR bit 18) */
+
+	#define UART4_PCLK_EN() (RCC->APB1ENR |=  (1<<19))  /*!< Enable UART4 clock (APB1ENR bit 19) */
+	#define UART4_PCLK_DI() (RCC->APB1ENR &= ~(1<<19)) /*!< Disable UART4 clock (APB1ENR bit 19) */
+
+	#define UART5_PCLK_EN() (RCC->APB1ENR |=  (1<<20))  /*!< Enable UART5 clock (APB1ENR bit 20) */
+	#define UART5_PCLK_DI() (RCC->APB1ENR &= ~(1<<20)) /*!< Disable UART5 clock (APB1ENR bit 20) */
+
 	/** @todo Complete for other peripherals */
 
 	/** @} */ // End of APB1 Bus Peripheral Enable Disable
@@ -466,6 +492,11 @@ typedef struct
 	#define SPI1_PCLK_EN()			(RCC->APB2ENR |= (1<<12))
 	#define SPI1_PCLK_DI()			(RCC->APB2ENR &= ~(1<<12))
 
+	#define USART1_PCLK_EN() (RCC->APB2ENR |=  (1<<4))  /*!< Enable USART1 clock (APB2ENR bit 4) */
+	#define USART1_PCLK_DI() (RCC->APB2ENR &= ~(1<<4)) /*!< Disable USART1 clock (APB2ENR bit 4) */
+
+	#define USART6_PCLK_EN() (RCC->APB2ENR |=  (1<<5))  /*!< Enable USART6 clock (APB2ENR bit 5) */
+	#define USART6_PCLK_DI() (RCC->APB2ENR &= ~(1<<5)) /*!< Disable USART6 clock (APB2ENR bit 5) */
 
 	/** @todo Complete for other peripherals */
 
@@ -563,8 +594,7 @@ typedef struct
 #define NVIC_BASEADDR     (0xE000E100UL)
 
 /* NVIC register layout */
-typedef struct
-NVIC_RegDef_t{
+typedef struct{
     volatile uint32_t ISER[8];     /*!< Interrupt Set-Enable Registers    */
     uint32_t RESERVED0[24];
 
@@ -747,6 +777,189 @@ typedef struct
 #define SPI3   ((SPIx_RegDef_t*)SPI3_I2S3_BASEADDR)         /*!< SPI3 / I2S3 base address */
 
 /** @} */ // end of SPI_Instances
+
+//==================================================================================//
+//========================I2C Peripheral ==========================================//
+//==================================================================================//
+
+/**
+ * @brief   I2C register definitions for STM32F407 (bare-metal)
+ * @note    Refer RM0090 (I2C peripheral) for register offsets and details
+ */
+
+typedef struct
+{
+    volatile uint32_t I2C_CR1;   /*!< 0x00 Control register 1 */
+    volatile uint32_t I2C_CR2;   /*!< 0x04 Control register 2 */
+    volatile uint32_t I2C_OAR1;  /*!< 0x08 Own address register 1 */
+    volatile uint32_t I2C_OAR2;  /*!< 0x0C Own address register 2 */
+    volatile uint32_t I2C_DR;    /*!< 0x10 Data register */
+    volatile uint32_t I2C_SR1;   /*!< 0x14 Status register 1 */
+    volatile uint32_t I2C_SR2;   /*!< 0x18 Status register 2 */
+    volatile uint32_t I2C_CCR;   /*!< 0x1C Clock control register */
+    volatile uint32_t I2C_TRISE; /*!< 0x20 TRISE register */
+    volatile uint32_t I2C_FLTR;  /*!< 0x24 Digital filter register */
+} I2C_RegDef_t;
+
+/**
+ * @defgroup I2C_Instances I2C Peripheral Definitions
+ * @brief  Base pointer macros for all I2C instances on STM32F407
+ * @{
+ *
+ * Note: I2C1_BASEADDR / I2C2_BASEADDR / I2C3_BASEADDR must be defined
+ *       elsewhere (e.g., device header or this file) as the peripheral
+ *       base addresses for your target.
+ */
+
+#define I2C1   ((I2C_RegDef_t*)I2C1_BASEADDR)  /*!< I2C1 base address */
+#define I2C2   ((I2C_RegDef_t*)I2C2_BASEADDR)  /*!< I2C2 base address */
+#define I2C3   ((I2C_RegDef_t*)I2C3_BASEADDR)  /*!< I2C3 base address */
+
+/** @} */ // end of I2C_Instances
+
+//==================================================================================//
+//========================UART Peripheral ==========================================//
+//==================================================================================//
+
+
+
+/**
+ * @defgroup UART_PERIPHERAL UART Peripheral
+ * @brief UART Peripheral
+ * @{
+ */
+
+/**
+ * @defgroup UART_REG_BIT_POSITION_MACROS UART Register Bit Position Macros
+ * @brief UART Register Bit Definition Macros
+ * @{
+ */
+	/**
+	 * @defgroup UART_SR_REG_BIT_POSITION_MACROS UART SR Register Bit Position Macros
+	 * @brief UART SR Register Bit Definition Macros
+	 * @{
+	 */
+		#define USART_SR_PE 	0U
+		#define USART_SR_FE 	1U
+		#define USART_SR_NF 	2U
+		#define USART_SR_ORE 	3U
+		#define USART_SR_IDLE 	4U
+		#define USART_SR_RXNE 	5U
+		#define USART_SR_TC 	6U
+		#define USART_SR_TXE 	7U
+		#define USART_SR_LBD 	8U
+		#define USART_SR_CTS 	9U
+	/** @} */ // End of UART_SR_REG_BIT_POSITION_MACROS
+
+	/**
+	 * @defgroup UART_DR_REG_BIT_POSITION_MACROS UART DR Register Bit Position Macros
+	 * @brief UART DR Register Bit Definition Macros
+	 * @{
+	 */
+		#define USART_DR_DATA	0U
+	/** @} */ // End of UART_DR_REG_BIT_POSITION_MACROS
+
+	/**
+	 * @defgroup UART_BRR_REG_BIT_POSITION_MACROS UART BRR Register Bit Position Macros
+	 * @brief UART BRR Register Bit Definition Macros
+	 * @{
+	 */
+		#define USART_BRR_DIV_Fraction	0U
+		#define USART_BRR_DIV_Mantissa	4U
+	/** @} */ // End of UART_BRR_REG_BIT_POSITION_MACROS
+
+	/**
+	 * @defgroup UART_CR1_REG_BIT_POSITION_MACROS UART CR1 Register Bit Position Macros
+	 * @brief UART CR1 Register Bit Definition Macros
+	 * @{
+	 */
+		#define USART_CR1_SBK		0U
+		#define USART_CR1_RWU		1U
+		#define USART_CR1_RE		2U
+		#define USART_CR1_TE		3U
+		#define USART_CR1_IDLEIE	4U
+		#define USART_CR1_RXNEIE	5U
+		#define USART_CR1_TCIE		6U
+		#define USART_CR1_TXEIE		7U
+		#define USART_CR1_PEIE		8U
+		#define USART_CR1_PS		9U
+		#define USART_CR1_PCE		10U
+		#define USART_CR1_WAKE		11U
+		#define USART_CR1_M			12U
+		#define USART_CR1_UE		13U
+		#define USART_CR1_OVER8		15U
+	/** @} */ // End of UART_CR1_REG_BIT_POSITION_MACROS
+
+	/**
+	 * @defgroup UART_CR2_REG_BIT_POSITION_MACROS UART CR2 Register Bit Position Macros
+	 * @brief UART CR2 Register Bit Definition Macros
+	 * @{
+	 */
+		#define USART_CR2_ADD	0U
+		#define USART_CR2_LBDL	5U
+		#define USART_CR2_LBDIE	6U
+		#define USART_CR2_LBCL	8U
+		#define USART_CR2_CPHA	9U
+		#define USART_CR2_CPOL	10U
+		#define USART_CR2_CLKEN	11U
+		#define USART_CR2_STOP	12U
+		#define USART_CR2_LINEN	14U
+	/** @} */ // End of UART_CR2_REG_BIT_POSITION_MACROS
+
+	/**
+	 * @defgroup UART_CR3_REG_BIT_POSITION_MACROS UART CR3 Register Bit Position Macros
+	 * @brief UART CR3 Register Bit Definition Macros
+	 * @{
+	 */
+		#define USART_CR3_EIE  		0U
+		#define USART_CR3_IREN  	1U
+		#define USART_CR3_IRLP  	2U
+		#define USART_CR3_HDSEL  	3U
+		#define USART_CR3_NACK  	4U
+		#define USART_CR3_SCEN  	5U
+		#define USART_CR3_DMAR  	6U
+		#define USART_CR3_DMAT  	7U
+		#define USART_CR3_RTSE  	8U
+		#define USART_CR3_CTSE  	9U
+		#define USART_CR3_CTSIE  	10U
+		#define USART_CR3_ONEBIT  	11U
+	/** @} */ // End of UART_CR2_REG_BIT_POSITION_MACROS
+
+/** @} */ // End of UART_REG_BIT_POSITION_MACROS
+
+typedef struct {
+	volatile uint32_t USART_SR;    // Status register        (OFFSET: 0x00)
+	volatile uint32_t USART_DR;    // Data register          (OFFSET: 0x04)
+	volatile uint32_t USART_BRR;   // Baud rate register     (OFFSET: 0x08)
+	volatile uint32_t USART_CR1;   // Control register 1     (OFFSET: 0x0C)
+	volatile uint32_t USART_CR2;   // Control register 2     (OFFSET: 0x10)
+	volatile uint32_t USART_CR3;   // Control register 3     (OFFSET: 0x14)
+	volatile uint32_t USART_GTPR;  // Guard time & prescaler (OFFSET: 0x18)
+} UART_Reg_Def_t;
+
+
+/**
+ * @defgroup UART_Instances UART Peripheral Definitions
+ * @brief  Base pointer macros for all UART instances on STM32F407
+ * @{
+ *
+ * Note: UART1_BASEADDR / UART2_BASEADDR / UART3_BASEADDR must be defined
+ *       elsewhere (e.g., device header or this file) as the peripheral
+ *       base addresses for your target.
+ */
+
+#define UART1   ((UART_RegDef_t*)USART1_BASEADDR)  /*!< UART1 base address */
+#define UART2   ((UART_RegDef_t*)USART2_BASEADDR)  /*!< UART2 base address */
+#define UART3   ((UART_RegDef_t*)USART3_BASEADDR)  /*!< UART3 base address */
+#define UART4   ((UART_RegDef_t*)UART4_BASEADDR)  /*!< UART4 base address */
+#define UART5   ((UART_RegDef_t*)UART5_BASEADDR)  /*!< UART5 base address */
+#define UART6   ((UART_RegDef_t*)USART6_BASEADDR)  /*!< UART6 base address */
+
+/** @} */ // end of UART_Instances
+
+/** @} */ // end of UART_PERIPHERAL
+
+
 
 /**
  * @defgroup RCC_AHB1ENR_BIT_POS RCC AHB1ENR Bit Positions

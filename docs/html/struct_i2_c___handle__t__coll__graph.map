@@ -1,0 +1,7 @@
+<map id="I2C_Handle_t" name="I2C_Handle_t">
+<area shape="rect" id="Node000001" title="I2C peripheral handle structure." alt="" coords="70,104,171,131"/>
+<area shape="rect" id="Node000002" href="$struct_i2_c___reg_def__t.html" title="I2C register definitions for STM32F407 (bare&#45;metal)." alt="" coords="5,5,111,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="77,44,115,102,110,105,72,46"/>
+<area shape="rect" id="Node000003" href="$struct_i2_c___config__t.html" title="I2C peripheral configuration structure. This structure holds all user&#45;configurable parameters require..." alt="" coords="134,5,232,32"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="169,46,131,105,126,102,165,44"/>
+</map>

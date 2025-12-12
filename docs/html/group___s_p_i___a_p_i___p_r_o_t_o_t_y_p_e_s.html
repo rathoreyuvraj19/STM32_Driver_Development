@@ -129,13 +129,268 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga66a55c39f2954c6fba416822612497cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables or disables the SPI peripheral.  <br /></td></tr>
 <tr class="memitem:ga28c21c2e8a6f53982ec6666fb0969123" id="r_ga28c21c2e8a6f53982ec6666fb0969123"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga28c21c2e8a6f53982ec6666fb0969123">SPIx_GetFlagStatus</a> (<a class="el" href="struct_s_p_ix___reg_def__t.html">SPIx_RegDef_t</a> *pSPIx, uint32_t FlagName)</td></tr>
 <tr class="memdesc:ga28c21c2e8a6f53982ec6666fb0969123"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the status of a specific SPI status flag.  <br /></td></tr>
-<tr class="memitem:ga2f1a0a4006270d72092844c3e764d399" id="r_ga2f1a0a4006270d72092844c3e764d399"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga2f1a0a4006270d72092844c3e764d399">SPIx_SendData_Blocking</a> (<a class="el" href="struct_s_p_ix___reg_def__t.html">SPIx_RegDef_t</a> *pSPIx, uint8_t *pData, uint32_t Len)</td></tr>
-<tr class="memdesc:ga2f1a0a4006270d72092844c3e764d399"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send data over the specified SPI peripheral.  <br /></td></tr>
+<tr class="memitem:gac63692a0517966f2db649606f09ee7ee" id="r_gac63692a0517966f2db649606f09ee7ee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gac63692a0517966f2db649606f09ee7ee">SPIx_SendData_Blocking</a> (<a class="el" href="struct_s_p_ix___reg_def__t.html">SPIx_RegDef_t</a> *pSPIx, uint8_t *pTX_Data_Buffer, uint32_t Len_Byte)</td></tr>
+<tr class="memdesc:gac63692a0517966f2db649606f09ee7ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send data over the specified SPI peripheral.  <br /></td></tr>
+<tr class="memitem:ga49a1accdcb1df29926a4f4c4cdfb334e" id="r_ga49a1accdcb1df29926a4f4c4cdfb334e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga49a1accdcb1df29926a4f4c4cdfb334e">SPIx_ReceiveData_Blocking</a> (<a class="el" href="struct_s_p_ix___reg_def__t.html">SPIx_RegDef_t</a> *pSPIx, uint8_t *pRX_Data_Buffer, uint32_t Len_Byte)</td></tr>
+<tr class="memdesc:ga49a1accdcb1df29926a4f4c4cdfb334e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receive data from the specified SPI peripheral in blocking mode.  <br /></td></tr>
+<tr class="memitem:ga1a0630eb77e67dbd0f23fd7d856ebd5d" id="r_ga1a0630eb77e67dbd0f23fd7d856ebd5d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga1a0630eb77e67dbd0f23fd7d856ebd5d">SPIx_IRQConfig</a> (uint8_t IRQNumber, uint8_t irq_priority)</td></tr>
+<tr class="memdesc:ga1a0630eb77e67dbd0f23fd7d856ebd5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configure the priority of a given SPI interrupt in the NVIC.  <br /></td></tr>
+<tr class="memitem:ga9f155aebbeb71ea03e0f2dd9ff4ff7b7" id="r_ga9f155aebbeb71ea03e0f2dd9ff4ff7b7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga9f155aebbeb71ea03e0f2dd9ff4ff7b7">SPIx_IRQControl</a> (uint8_t IRQNumber, uint8_t EN_DI)</td></tr>
+<tr class="memdesc:ga9f155aebbeb71ea03e0f2dd9ff4ff7b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable or disable the given SPI IRQ in the NVIC.  <br /></td></tr>
+<tr class="memitem:gae8becf850726d059d4808fe5ba705f07" id="r_gae8becf850726d059d4808fe5ba705f07"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gae8becf850726d059d4808fe5ba705f07">SPIx_PeripheralInterruptControl</a> (<a class="el" href="struct_s_p_ix___reg_def__t.html">SPIx_RegDef_t</a> *pSPIx, uint8_t ITType, uint8_t EN_DI)</td></tr>
+<tr class="memdesc:gae8becf850726d059d4808fe5ba705f07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable or disable specified SPI peripheral interrupts (CR2).  <br /></td></tr>
+<tr class="memitem:ga84fe922cab70472a7ae10fc726de8d10" id="r_ga84fe922cab70472a7ae10fc726de8d10"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga84fe922cab70472a7ae10fc726de8d10">SPIx_SendDataIT</a> (<a class="el" href="struct_s_p_ix___handle__t.html">SPIx_Handle_t</a> *pHandle, uint8_t *pTxBuf, uint32_t Len)</td></tr>
+<tr class="memdesc:ga84fe922cab70472a7ae10fc726de8d10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start a non-blocking (interrupt-driven) transmit on the SPI peripheral.  <br /></td></tr>
+<tr class="memitem:ga185a067739ac2ed3d3115a03ceee35a3" id="r_ga185a067739ac2ed3d3115a03ceee35a3"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga185a067739ac2ed3d3115a03ceee35a3">SPIx_ReceiveDataIT</a> (<a class="el" href="struct_s_p_ix___handle__t.html">SPIx_Handle_t</a> *pHandle, uint8_t *pRxBuf, uint32_t Len)</td></tr>
+<tr class="memdesc:ga185a067739ac2ed3d3115a03ceee35a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start a non-blocking (interrupt-driven) receive on the SPI peripheral.  <br /></td></tr>
+<tr class="memitem:ga9637b0d6a930d03fd844877298605e78" id="r_ga9637b0d6a930d03fd844877298605e78"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga9637b0d6a930d03fd844877298605e78">SPIx_IRQHandling</a> (<a class="el" href="struct_s_p_ix___handle__t.html">SPIx_Handle_t</a> *pHandle)</td></tr>
+<tr class="memdesc:ga9637b0d6a930d03fd844877298605e78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle all interrupt events for the given SPI peripheral.  <br /></td></tr>
+<tr class="memitem:ga29cfe1dcabfe0dcbcb6a6cf5f1e3c3d4" id="r_ga29cfe1dcabfe0dcbcb6a6cf5f1e3c3d4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga29cfe1dcabfe0dcbcb6a6cf5f1e3c3d4">SPI_Close_Transfer</a> (<a class="el" href="struct_s_p_ix___handle__t.html">SPIx_Handle_t</a> *pHandle)</td></tr>
+<tr class="memdesc:ga29cfe1dcabfe0dcbcb6a6cf5f1e3c3d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finalizes an ongoing SPI communication transaction by disabling interrupts and resetting the handle state variables.  <br /></td></tr>
+<tr class="memitem:ga07af1ab45d2edd8a8a05cf1986803e45" id="r_ga07af1ab45d2edd8a8a05cf1986803e45"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga07af1ab45d2edd8a8a05cf1986803e45">SPI_ApplicationEventCallback</a> (<a class="el" href="struct_s_p_ix___handle__t.html">SPIx_Handle_t</a> *pHandle, uint8_t AppEv)</td></tr>
+<tr class="memdesc:ga07af1ab45d2edd8a8a05cf1986803e45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Application callback invoked by the SPI driver on asynchronous events.  <br /></td></tr>
+<tr class="memitem:ga0e67d8e31e905a224b3ec5d806e94897" id="r_ga0e67d8e31e905a224b3ec5d806e94897"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga0e67d8e31e905a224b3ec5d806e94897">SPI_CloseTransmission</a> (<a class="el" href="struct_s_p_ix___handle__t.html">SPIx_Handle_t</a> *pHandle)</td></tr>
+<tr class="memdesc:ga0e67d8e31e905a224b3ec5d806e94897"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gracefully terminate an ongoing SPI transmit interrupt operation.  <br /></td></tr>
+<tr class="memitem:gaa33e1796de9a74dae78d9921de01df2a" id="r_gaa33e1796de9a74dae78d9921de01df2a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaa33e1796de9a74dae78d9921de01df2a">SPI_CloseReception</a> (<a class="el" href="struct_s_p_ix___handle__t.html">SPIx_Handle_t</a> *pHandle)</td></tr>
+<tr class="memdesc:gaa33e1796de9a74dae78d9921de01df2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gracefully terminate an ongoing SPI receive interrupt operation.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <p>SPI API Prototypes. </p>
 <dl class="section note"><dt>Note</dt><dd>Contains SPI API Prototypes </dd></dl>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
+<a id="ga07af1ab45d2edd8a8a05cf1986803e45" name="ga07af1ab45d2edd8a8a05cf1986803e45"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga07af1ab45d2edd8a8a05cf1986803e45">&#9670;&#160;</a></span>SPI_ApplicationEventCallback()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SPI_ApplicationEventCallback </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_s_p_ix___handle__t.html">SPIx_Handle_t</a> *</td>          <td class="paramname"><span class="paramname"><em>pHandle</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>AppEv</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Application callback invoked by the SPI driver on asynchronous events. </p>
+<p>This callback is called from interrupt context by the SPI driver to notify the application about important asynchronous events (transfer complete, errors, etc.). The application SHOULD implement this function in its code to handle events; otherwise the weak default implementation will be used.</p>
+<p>IMPORTANT:</p><ul>
+<li>This function is invoked from IRQ context. Keep the implementation short: set flags, toggle an LED, or post to an RTOS queue — do not perform long blocking operations or heavy processing inside this callback.</li>
+<li>Any data buffers passed via the SPI handle remain valid only until the callback returns (unless otherwise documented).</li>
+</ul>
+<p>Typical AppEv values (define these in your header):</p><ul>
+<li>SPI_EVENT_TX_CMPLT : Transmit completed successfully</li>
+<li>SPI_EVENT_RX_CMPLT : Receive completed successfully</li>
+<li>SPI_EVENT_OVR_ERR : Overrun error occurred</li>
+<li>SPI_EVENT_CRC_ERR : CRC error (if used)</li>
+</ul>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">pHandle</td><td>Pointer to the SPI handle that generated the event. The handle contains peripheral instance and transfer state. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">AppEv</td><td>Event identifier (one of the SPI_EVENT_* constants). </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="group___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s_ga07af1ab45d2edd8a8a05cf1986803e45_icgraph.png" border="0" usemap="#agroup___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s_ga07af1ab45d2edd8a8a05cf1986803e45_icgraph" loading="lazy" alt=""/></div>
+<map name="agroup___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s_ga07af1ab45d2edd8a8a05cf1986803e45_icgraph" id="agroup___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s_ga07af1ab45d2edd8a8a05cf1986803e45_icgraph">
+<area shape="rect" title="Application callback invoked by the SPI driver on asynchronous events." alt="" coords="413,107,612,133"/>
+<area shape="rect" href="group___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s.html#gaa33e1796de9a74dae78d9921de01df2a" title="Gracefully terminate an ongoing SPI receive interrupt operation." alt="" coords="204,5,347,32"/>
+<area shape="poly" title=" " alt="" coords="474,101,423,73,364,46,331,35,333,30,366,42,425,69,476,96"/>
+<area shape="rect" href="group___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s.html#ga0e67d8e31e905a224b3ec5d806e94897" title="Gracefully terminate an ongoing SPI transmit interrupt operation." alt="" coords="194,56,356,83"/>
+<area shape="poly" title=" " alt="" coords="431,105,341,86,342,81,433,100"/>
+<area shape="rect" href="stm32f407xx__spi_8c.html#a922a4e8bad579c2f61fd2c25e070a212" title=" " alt="" coords="186,107,365,133"/>
+<area shape="poly" title=" " alt="" coords="397,123,365,123,365,117,397,117"/>
+<area shape="rect" href="stm32f407xx__spi_8c.html#af666fb211c7cedc7095c6c1b0a7c3a3a" title=" " alt="" coords="204,157,347,184"/>
+<area shape="poly" title=" " alt="" coords="433,140,342,159,341,154,431,135"/>
+<area shape="rect" href="stm32f407xx__spi_8c.html#ae47cf0d5c83626d8a21a06ad7f99e3cd" title=" " alt="" coords="205,208,346,235"/>
+<area shape="poly" title=" " alt="" coords="476,144,425,171,366,198,333,210,331,205,364,194,423,167,474,139"/>
+<area shape="rect" href="group___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s.html#ga9637b0d6a930d03fd844877298605e78" title="Handle all interrupt events for the given SPI peripheral." alt="" coords="5,157,138,184"/>
+<area shape="poly" title=" " alt="" coords="205,140,129,159,128,154,203,135"/>
+<area shape="poly" title=" " alt="" coords="188,173,138,173,138,168,188,168"/>
+<area shape="poly" title=" " alt="" coords="203,206,128,187,129,182,205,201"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ga29cfe1dcabfe0dcbcb6a6cf5f1e3c3d4" name="ga29cfe1dcabfe0dcbcb6a6cf5f1e3c3d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga29cfe1dcabfe0dcbcb6a6cf5f1e3c3d4">&#9670;&#160;</a></span>SPI_Close_Transfer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SPI_Close_Transfer </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_s_p_ix___handle__t.html">SPIx_Handle_t</a> *</td>          <td class="paramname"><span class="paramname"><em>pHandle</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Finalizes an ongoing SPI communication transaction by disabling interrupts and resetting the handle state variables. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pHandle</td><td>Pointer to a <a class="el" href="struct_s_p_ix___handle__t.html">SPIx_Handle_t</a> structure that contains the configuration and communication state for the specified SPI. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">None</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gaa33e1796de9a74dae78d9921de01df2a" name="gaa33e1796de9a74dae78d9921de01df2a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa33e1796de9a74dae78d9921de01df2a">&#9670;&#160;</a></span>SPI_CloseReception()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SPI_CloseReception </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_s_p_ix___handle__t.html">SPIx_Handle_t</a> *</td>          <td class="paramname"><span class="paramname"><em>pHandle</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gracefully terminate an ongoing SPI receive interrupt operation. </p>
+<p>This function is used by the SPI driver when an interrupt-driven RX transfer completes, or can be invoked by the application to abort a receive sequence.</p>
+<p>It performs the following actions:</p><ul>
+<li>Disables the RXNE interrupt (RXNEIE bit in CR2).</li>
+<li>Resets the RX state to <a class="el" href="group___s_p_i___s_t_a_t_e.html#gaf7d5dbefc25f5ca2aafd67440455834e">SPI_STATE_READY</a>.</li>
+<li>Clears internal RX buffer pointers and counters.</li>
+</ul>
+<dl class="section note"><dt>Note</dt><dd>This function does NOT clear overrun (OVR) errors. OVR must be handled separately by the error ISR helper.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">pHandle</td><td>Pointer to the SPI handle structure.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">None</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="stm32f407xx__spi_8c_source.html#l00439">439</a> of file <a class="el" href="stm32f407xx__spi_8c_source.html">stm32f407xx_spi.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  439</span>                                               {</div>
+<div class="line"><span class="lineno">  440</span>    <span class="keywordflow">if</span> (pHandle == NULL) {</div>
+<div class="line"><span class="lineno">  441</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  442</span>    }</div>
+<div class="line"><span class="lineno">  443</span>    <a class="code hl_function" href="#gae8becf850726d059d4808fe5ba705f07">SPIx_PeripheralInterruptControl</a>(pHandle-&gt;<a class="code hl_variable" href="struct_s_p_ix___handle__t.html#a2139a08270d0669a4bfd52184169f444">pSPIx</a>, <a class="code hl_define" href="group___s_p_i___i_t___t_y_p_e.html#ga9652fdf02a531692dedd8c19f4de71f3">SPI_IT_TYPE_RXNE</a>, <a class="code hl_define" href="group___m_i_s_c_e_l_l_a_n_e_o_u_s___m_a_c_r_o_s.html#ga99496f7308834e8b220f7894efa0b6ab">DISABLE</a>);</div>
+<div class="line"><span class="lineno">  444</span>    pHandle-&gt;<a class="code hl_variable" href="struct_s_p_ix___handle__t.html#a1b2787461399507391258f1bfcb9db23">RxState</a> = <a class="code hl_define" href="group___s_p_i___s_t_a_t_e.html#gaf7d5dbefc25f5ca2aafd67440455834e">SPI_STATE_READY</a>;</div>
+<div class="line"><span class="lineno">  445</span>    pHandle-&gt;<a class="code hl_variable" href="struct_s_p_ix___handle__t.html#ab5eac9e2244e1065f288af094873b7a3">RXLen</a> = 0;</div>
+<div class="line"><span class="lineno">  446</span>    pHandle-&gt;<a class="code hl_variable" href="struct_s_p_ix___handle__t.html#ab63ab2271c4f90c95d42b26174d98104">pRXBuffer</a> = NULL;</div>
+<div class="line"><span class="lineno">  447</span>    <a class="code hl_function" href="#ga07af1ab45d2edd8a8a05cf1986803e45">SPI_ApplicationEventCallback</a>(pHandle, <a class="code hl_define" href="group___s_p_i___events.html#gab74714a01806856ff19f0e336e8c915d">SPI_EVENT_RX_CMPLT</a>);</div>
+<div class="line"><span class="lineno">  448</span>}</div>
+<div class="ttc" id="agroup___m_i_s_c_e_l_l_a_n_e_o_u_s___m_a_c_r_o_s_html_ga99496f7308834e8b220f7894efa0b6ab"><div class="ttname"><a href="group___m_i_s_c_e_l_l_a_n_e_o_u_s___m_a_c_r_o_s.html#ga99496f7308834e8b220f7894efa0b6ab">DISABLE</a></div><div class="ttdeci">#define DISABLE</div><div class="ttdef"><b>Definition</b> <a href="_s_t_m32_f4xx___d_r_i_v_e_r_s_2_inc_2stm32f407xx_8h_source.html#l00026">stm32f407xx.h:26</a></div></div>
+<div class="ttc" id="agroup___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s_html_ga07af1ab45d2edd8a8a05cf1986803e45"><div class="ttname"><a href="#ga07af1ab45d2edd8a8a05cf1986803e45">SPI_ApplicationEventCallback</a></div><div class="ttdeci">void SPI_ApplicationEventCallback(SPIx_Handle_t *pHandle, uint8_t AppEv)</div><div class="ttdoc">Application callback invoked by the SPI driver on asynchronous events.</div></div>
+<div class="ttc" id="agroup___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s_html_gae8becf850726d059d4808fe5ba705f07"><div class="ttname"><a href="#gae8becf850726d059d4808fe5ba705f07">SPIx_PeripheralInterruptControl</a></div><div class="ttdeci">void SPIx_PeripheralInterruptControl(SPIx_RegDef_t *pSPIx, uint8_t ITType, uint8_t EN_DI)</div><div class="ttdoc">Enable or disable specified SPI peripheral interrupts (CR2).</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx__spi_8c_source.html#l00310">stm32f407xx_spi.c:310</a></div></div>
+<div class="ttc" id="agroup___s_p_i___events_html_gab74714a01806856ff19f0e336e8c915d"><div class="ttname"><a href="group___s_p_i___events.html#gab74714a01806856ff19f0e336e8c915d">SPI_EVENT_RX_CMPLT</a></div><div class="ttdeci">#define SPI_EVENT_RX_CMPLT</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx__spi_8h_source.html#l00797">stm32f407xx_spi.h:797</a></div></div>
+<div class="ttc" id="agroup___s_p_i___i_t___t_y_p_e_html_ga9652fdf02a531692dedd8c19f4de71f3"><div class="ttname"><a href="group___s_p_i___i_t___t_y_p_e.html#ga9652fdf02a531692dedd8c19f4de71f3">SPI_IT_TYPE_RXNE</a></div><div class="ttdeci">#define SPI_IT_TYPE_RXNE</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx__spi_8h_source.html#l00754">stm32f407xx_spi.h:754</a></div></div>
+<div class="ttc" id="agroup___s_p_i___s_t_a_t_e_html_gaf7d5dbefc25f5ca2aafd67440455834e"><div class="ttname"><a href="group___s_p_i___s_t_a_t_e.html#gaf7d5dbefc25f5ca2aafd67440455834e">SPI_STATE_READY</a></div><div class="ttdeci">#define SPI_STATE_READY</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx__spi_8h_source.html#l00770">stm32f407xx_spi.h:770</a></div></div>
+<div class="ttc" id="astruct_s_p_ix___handle__t_html_a1b2787461399507391258f1bfcb9db23"><div class="ttname"><a href="struct_s_p_ix___handle__t.html#a1b2787461399507391258f1bfcb9db23">SPIx_Handle_t::RxState</a></div><div class="ttdeci">volatile uint8_t RxState</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx__spi_8h_source.html#l00174">stm32f407xx_spi.h:174</a></div></div>
+<div class="ttc" id="astruct_s_p_ix___handle__t_html_a2139a08270d0669a4bfd52184169f444"><div class="ttname"><a href="struct_s_p_ix___handle__t.html#a2139a08270d0669a4bfd52184169f444">SPIx_Handle_t::pSPIx</a></div><div class="ttdeci">SPIx_RegDef_t * pSPIx</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx__spi_8h_source.html#l00165">stm32f407xx_spi.h:165</a></div></div>
+<div class="ttc" id="astruct_s_p_ix___handle__t_html_ab5eac9e2244e1065f288af094873b7a3"><div class="ttname"><a href="struct_s_p_ix___handle__t.html#ab5eac9e2244e1065f288af094873b7a3">SPIx_Handle_t::RXLen</a></div><div class="ttdeci">volatile uint32_t RXLen</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx__spi_8h_source.html#l00173">stm32f407xx_spi.h:173</a></div></div>
+<div class="ttc" id="astruct_s_p_ix___handle__t_html_ab63ab2271c4f90c95d42b26174d98104"><div class="ttname"><a href="struct_s_p_ix___handle__t.html#ab63ab2271c4f90c95d42b26174d98104">SPIx_Handle_t::pRXBuffer</a></div><div class="ttdeci">volatile uint8_t * pRXBuffer</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx__spi_8h_source.html#l00172">stm32f407xx_spi.h:172</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="group___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s_gaa33e1796de9a74dae78d9921de01df2a_cgraph.png" border="0" usemap="#agroup___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s_gaa33e1796de9a74dae78d9921de01df2a_cgraph" loading="lazy" alt=""/></div>
+<map name="agroup___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s_gaa33e1796de9a74dae78d9921de01df2a_cgraph" id="agroup___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s_gaa33e1796de9a74dae78d9921de01df2a_cgraph">
+<area shape="rect" title="Gracefully terminate an ongoing SPI receive interrupt operation." alt="" coords="5,35,149,61"/>
+<area shape="rect" href="group___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s.html#ga07af1ab45d2edd8a8a05cf1986803e45" title="Application callback invoked by the SPI driver on asynchronous events." alt="" coords="197,5,396,32"/>
+<area shape="poly" title=" " alt="" coords="149,36,181,31,182,37,150,41"/>
+<area shape="rect" href="group___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s.html#gae8becf850726d059d4808fe5ba705f07" title="Enable or disable specified SPI peripheral interrupts (CR2)." alt="" coords="215,56,378,99"/>
+<area shape="poly" title=" " alt="" coords="150,55,199,62,199,67,149,60"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ga0e67d8e31e905a224b3ec5d806e94897" name="ga0e67d8e31e905a224b3ec5d806e94897"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0e67d8e31e905a224b3ec5d806e94897">&#9670;&#160;</a></span>SPI_CloseTransmission()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SPI_CloseTransmission </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_s_p_ix___handle__t.html">SPIx_Handle_t</a> *</td>          <td class="paramname"><span class="paramname"><em>pHandle</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gracefully terminate an ongoing SPI transmit interrupt operation. </p>
+<p>This function is called by the SPI driver when a TX interrupt-driven transmission has completed, or may be called by the application to abort an ongoing TX transfer.</p>
+<p>It performs the following actions:</p><ul>
+<li>Disables the TXE interrupt (TXEIE bit in CR2).</li>
+<li>Resets the handle's TX state to <a class="el" href="group___s_p_i___s_t_a_t_e.html#gaf7d5dbefc25f5ca2aafd67440455834e">SPI_STATE_READY</a>.</li>
+<li>Clears internal TX buffer pointers and counters.</li>
+</ul>
+<dl class="section note"><dt>Note</dt><dd>This function does NOT disable the SPI peripheral (SPE bit). It only stops the interrupt-driven transmission mechanism.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">pHandle</td><td>Pointer to the SPI handle structure.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">None</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="stm32f407xx__spi_8c_source.html#l00428">428</a> of file <a class="el" href="stm32f407xx__spi_8c_source.html">stm32f407xx_spi.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  428</span>                                                  {</div>
+<div class="line"><span class="lineno">  429</span>    <span class="keywordflow">if</span> (pHandle == NULL) {</div>
+<div class="line"><span class="lineno">  430</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  431</span>    }</div>
+<div class="line"><span class="lineno">  432</span>    <a class="code hl_function" href="#gae8becf850726d059d4808fe5ba705f07">SPIx_PeripheralInterruptControl</a>(pHandle-&gt;<a class="code hl_variable" href="struct_s_p_ix___handle__t.html#a2139a08270d0669a4bfd52184169f444">pSPIx</a>, <a class="code hl_define" href="group___s_p_i___i_t___t_y_p_e.html#ga4b882d1e5e1493afe4aad68483107400">SPI_IT_TYPE_TXE</a>, <a class="code hl_define" href="group___m_i_s_c_e_l_l_a_n_e_o_u_s___m_a_c_r_o_s.html#ga99496f7308834e8b220f7894efa0b6ab">DISABLE</a>);</div>
+<div class="line"><span class="lineno">  433</span>    pHandle-&gt;<a class="code hl_variable" href="struct_s_p_ix___handle__t.html#ab7bc64878b66e3456dc8a035e6a480cb">TxState</a> = <a class="code hl_define" href="group___s_p_i___s_t_a_t_e.html#gaf7d5dbefc25f5ca2aafd67440455834e">SPI_STATE_READY</a>;</div>
+<div class="line"><span class="lineno">  434</span>    pHandle-&gt;<a class="code hl_variable" href="struct_s_p_ix___handle__t.html#a54ab29aca25deaf50bf951c95a91eef8">TXLen</a> = 0;</div>
+<div class="line"><span class="lineno">  435</span>    pHandle-&gt;<a class="code hl_variable" href="struct_s_p_ix___handle__t.html#ab9994cff36b24956fad7fb0462070a6c">pTXBuffer</a> = NULL;</div>
+<div class="line"><span class="lineno">  436</span>    <a class="code hl_function" href="#ga07af1ab45d2edd8a8a05cf1986803e45">SPI_ApplicationEventCallback</a>(pHandle, <a class="code hl_define" href="group___s_p_i___events.html#ga66d763aff2422d7041fc42b670d1911b">SPI_EVENT_TX_CMPLT</a>);</div>
+<div class="line"><span class="lineno">  437</span>}</div>
+<div class="ttc" id="agroup___s_p_i___events_html_ga66d763aff2422d7041fc42b670d1911b"><div class="ttname"><a href="group___s_p_i___events.html#ga66d763aff2422d7041fc42b670d1911b">SPI_EVENT_TX_CMPLT</a></div><div class="ttdeci">#define SPI_EVENT_TX_CMPLT</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx__spi_8h_source.html#l00796">stm32f407xx_spi.h:796</a></div></div>
+<div class="ttc" id="agroup___s_p_i___i_t___t_y_p_e_html_ga4b882d1e5e1493afe4aad68483107400"><div class="ttname"><a href="group___s_p_i___i_t___t_y_p_e.html#ga4b882d1e5e1493afe4aad68483107400">SPI_IT_TYPE_TXE</a></div><div class="ttdeci">#define SPI_IT_TYPE_TXE</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx__spi_8h_source.html#l00753">stm32f407xx_spi.h:753</a></div></div>
+<div class="ttc" id="astruct_s_p_ix___handle__t_html_a54ab29aca25deaf50bf951c95a91eef8"><div class="ttname"><a href="struct_s_p_ix___handle__t.html#a54ab29aca25deaf50bf951c95a91eef8">SPIx_Handle_t::TXLen</a></div><div class="ttdeci">volatile uint32_t TXLen</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx__spi_8h_source.html#l00169">stm32f407xx_spi.h:169</a></div></div>
+<div class="ttc" id="astruct_s_p_ix___handle__t_html_ab7bc64878b66e3456dc8a035e6a480cb"><div class="ttname"><a href="struct_s_p_ix___handle__t.html#ab7bc64878b66e3456dc8a035e6a480cb">SPIx_Handle_t::TxState</a></div><div class="ttdeci">volatile uint8_t TxState</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx__spi_8h_source.html#l00170">stm32f407xx_spi.h:170</a></div></div>
+<div class="ttc" id="astruct_s_p_ix___handle__t_html_ab9994cff36b24956fad7fb0462070a6c"><div class="ttname"><a href="struct_s_p_ix___handle__t.html#ab9994cff36b24956fad7fb0462070a6c">SPIx_Handle_t::pTXBuffer</a></div><div class="ttdeci">volatile uint8_t * pTXBuffer</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx__spi_8h_source.html#l00168">stm32f407xx_spi.h:168</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="group___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s_ga0e67d8e31e905a224b3ec5d806e94897_cgraph.png" border="0" usemap="#agroup___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s_ga0e67d8e31e905a224b3ec5d806e94897_cgraph" loading="lazy" alt=""/></div>
+<map name="agroup___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s_ga0e67d8e31e905a224b3ec5d806e94897_cgraph" id="agroup___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s_ga0e67d8e31e905a224b3ec5d806e94897_cgraph">
+<area shape="rect" title="Gracefully terminate an ongoing SPI transmit interrupt operation." alt="" coords="5,35,168,61"/>
+<area shape="rect" href="group___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s.html#ga07af1ab45d2edd8a8a05cf1986803e45" title="Application callback invoked by the SPI driver on asynchronous events." alt="" coords="216,5,415,32"/>
+<area shape="poly" title=" " alt="" coords="168,35,200,31,200,36,169,40"/>
+<area shape="rect" href="group___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s.html#gae8becf850726d059d4808fe5ba705f07" title="Enable or disable specified SPI peripheral interrupts (CR2)." alt="" coords="234,56,397,99"/>
+<area shape="poly" title=" " alt="" coords="169,56,218,62,218,68,168,61"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="ga0864ea8e8f7aaf657d0ba57b60f4227e" name="ga0864ea8e8f7aaf657d0ba57b60f4227e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga0864ea8e8f7aaf657d0ba57b60f4227e">&#9670;&#160;</a></span>SPIx_DeInit()</h2>
 
@@ -164,48 +419,48 @@ Functions</h2></td></tr>
 <li>Disable peripheral clock to save power</li>
 </ol>
 
-<p class="definition">Definition at line <a class="el" href="stm32f407xx__spi_8c_source.html#l00093">93</a> of file <a class="el" href="stm32f407xx__spi_8c_source.html">stm32f407xx_spi.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   94</span>{</div>
-<div class="line"><span class="lineno">   95</span>    <a class="code hl_struct" href="struct_r_c_c___reg_def__t.html">RCC_RegDef_t</a> *pRCC = <a class="code hl_define" href="group___r_c_c___r_e_g.html#ga74944438a086975793d26ae48d5882d4">RCC</a>;</div>
-<div class="line"><span class="lineno">   96</span> </div>
-<div class="line"><span class="lineno">   97</span>    <span class="keywordflow">if</span> (pSPIx == <a class="code hl_define" href="group___s_p_i___instances.html#gad483be344a28ac800be8f03654a9612f">SPI1</a>)</div>
-<div class="line"><span class="lineno">   98</span>    {</div>
-<div class="line"><span class="lineno">   99</span>        pRCC-&gt;<a class="code hl_variable" href="struct_r_c_c___reg_def__t.html#a6c1588013b885c32b78b912e8249a26c">APB2RSTR</a> |=  (1 &lt;&lt; 12);   <span class="comment">// Force reset</span></div>
-<div class="line"><span class="lineno">  100</span>        pRCC-&gt;<a class="code hl_variable" href="struct_r_c_c___reg_def__t.html#a6c1588013b885c32b78b912e8249a26c">APB2RSTR</a> &amp;= ~(1 &lt;&lt; 12);   <span class="comment">// Release reset</span></div>
-<div class="line"><span class="lineno">  101</span>    }</div>
-<div class="line"><span class="lineno">  102</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (pSPIx == <a class="code hl_define" href="group___s_p_i___instances.html#gaf2c3d8ce359dcfbb2261e07ed42af72b">SPI2</a>)</div>
-<div class="line"><span class="lineno">  103</span>    {</div>
-<div class="line"><span class="lineno">  104</span>        pRCC-&gt;<a class="code hl_variable" href="struct_r_c_c___reg_def__t.html#acfa79aca8487958412be8f32e4632b47">APB1RSTR</a> |=  (1 &lt;&lt; 14);   <span class="comment">// Force reset</span></div>
-<div class="line"><span class="lineno">  105</span>        pRCC-&gt;<a class="code hl_variable" href="struct_r_c_c___reg_def__t.html#acfa79aca8487958412be8f32e4632b47">APB1RSTR</a> &amp;= ~(1 &lt;&lt; 14);   <span class="comment">// Release reset</span></div>
-<div class="line"><span class="lineno">  106</span>    }</div>
-<div class="line"><span class="lineno">  107</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (pSPIx == <a class="code hl_define" href="group___s_p_i___instances.html#gab2339cbf25502bf562b19208b1b257fc">SPI3</a>)</div>
-<div class="line"><span class="lineno">  108</span>    {</div>
-<div class="line"><span class="lineno">  109</span>        pRCC-&gt;<a class="code hl_variable" href="struct_r_c_c___reg_def__t.html#acfa79aca8487958412be8f32e4632b47">APB1RSTR</a> |=  (1 &lt;&lt; 15);   <span class="comment">// Force reset</span></div>
-<div class="line"><span class="lineno">  110</span>        pRCC-&gt;<a class="code hl_variable" href="struct_r_c_c___reg_def__t.html#acfa79aca8487958412be8f32e4632b47">APB1RSTR</a> &amp;= ~(1 &lt;&lt; 15);   <span class="comment">// Release reset</span></div>
-<div class="line"><span class="lineno">  111</span>    }</div>
-<div class="line"><span class="lineno">  112</span></div>
-<div class="line"><span class="lineno">  114</span>       <span class="keywordflow">if</span> (pSPIx == <a class="code hl_define" href="group___s_p_i___instances.html#gad483be344a28ac800be8f03654a9612f">SPI1</a>)</div>
-<div class="line"><span class="lineno">  115</span>       {</div>
-<div class="line"><span class="lineno">  116</span>           pRCC-&gt;<a class="code hl_variable" href="struct_r_c_c___reg_def__t.html#aa5211a53246098ec97c0e360759c5ad8">APB2ENR</a> &amp;= ~(1 &lt;&lt; 12);</div>
-<div class="line"><span class="lineno">  117</span>       }</div>
-<div class="line"><span class="lineno">  118</span>       <span class="keywordflow">else</span> <span class="keywordflow">if</span> (pSPIx == <a class="code hl_define" href="group___s_p_i___instances.html#gaf2c3d8ce359dcfbb2261e07ed42af72b">SPI2</a>)</div>
-<div class="line"><span class="lineno">  119</span>       {</div>
-<div class="line"><span class="lineno">  120</span>           pRCC-&gt;<a class="code hl_variable" href="struct_r_c_c___reg_def__t.html#a389643cd117089ebb8dd10ec060488d8">APB1ENR</a> &amp;= ~(1 &lt;&lt; 14);</div>
-<div class="line"><span class="lineno">  121</span>       }</div>
-<div class="line"><span class="lineno">  122</span>       <span class="keywordflow">else</span> <span class="keywordflow">if</span> (pSPIx == <a class="code hl_define" href="group___s_p_i___instances.html#gab2339cbf25502bf562b19208b1b257fc">SPI3</a>)</div>
-<div class="line"><span class="lineno">  123</span>       {</div>
-<div class="line"><span class="lineno">  124</span>           pRCC-&gt;<a class="code hl_variable" href="struct_r_c_c___reg_def__t.html#a389643cd117089ebb8dd10ec060488d8">APB1ENR</a> &amp;= ~(1 &lt;&lt; 15);</div>
-<div class="line"><span class="lineno">  125</span>       }</div>
-<div class="line"><span class="lineno">  126</span>}</div>
-<div class="ttc" id="agroup___r_c_c___r_e_g_html_ga74944438a086975793d26ae48d5882d4"><div class="ttname"><a href="group___r_c_c___r_e_g.html#ga74944438a086975793d26ae48d5882d4">RCC</a></div><div class="ttdeci">#define RCC</div><div class="ttdef"><b>Definition</b> <a href="_s_t_m32_f4xx___d_r_i_v_e_r_s_2_inc_2stm32f407xx_8h_source.html#l00312">stm32f407xx.h:312</a></div></div>
-<div class="ttc" id="agroup___s_p_i___instances_html_gab2339cbf25502bf562b19208b1b257fc"><div class="ttname"><a href="group___s_p_i___instances.html#gab2339cbf25502bf562b19208b1b257fc">SPI3</a></div><div class="ttdeci">#define SPI3</div><div class="ttdef"><b>Definition</b> <a href="_s_t_m32_f4xx___d_r_i_v_e_r_s_2_inc_2stm32f407xx_8h_source.html#l00743">stm32f407xx.h:743</a></div></div>
-<div class="ttc" id="agroup___s_p_i___instances_html_gad483be344a28ac800be8f03654a9612f"><div class="ttname"><a href="group___s_p_i___instances.html#gad483be344a28ac800be8f03654a9612f">SPI1</a></div><div class="ttdeci">#define SPI1</div><div class="ttdef"><b>Definition</b> <a href="_s_t_m32_f4xx___d_r_i_v_e_r_s_2_inc_2stm32f407xx_8h_source.html#l00741">stm32f407xx.h:741</a></div></div>
-<div class="ttc" id="agroup___s_p_i___instances_html_gaf2c3d8ce359dcfbb2261e07ed42af72b"><div class="ttname"><a href="group___s_p_i___instances.html#gaf2c3d8ce359dcfbb2261e07ed42af72b">SPI2</a></div><div class="ttdeci">#define SPI2</div><div class="ttdef"><b>Definition</b> <a href="_s_t_m32_f4xx___d_r_i_v_e_r_s_2_inc_2stm32f407xx_8h_source.html#l00742">stm32f407xx.h:742</a></div></div>
-<div class="ttc" id="astruct_r_c_c___reg_def__t_html"><div class="ttname"><a href="struct_r_c_c___reg_def__t.html">RCC_RegDef_t</a></div><div class="ttdef"><b>Definition</b> <a href="_s_t_m32_f4xx___d_r_i_v_e_r_s_2_inc_2stm32f407xx_8h_source.html#l00275">stm32f407xx.h:275</a></div></div>
-<div class="ttc" id="astruct_r_c_c___reg_def__t_html_a389643cd117089ebb8dd10ec060488d8"><div class="ttname"><a href="struct_r_c_c___reg_def__t.html#a389643cd117089ebb8dd10ec060488d8">RCC_RegDef_t::APB1ENR</a></div><div class="ttdeci">volatile uint32_t APB1ENR</div><div class="ttdef"><b>Definition</b> <a href="_s_t_m32_f4xx___d_r_i_v_e_r_s_2_inc_2stm32f407xx_8h_source.html#l00292">stm32f407xx.h:292</a></div></div>
-<div class="ttc" id="astruct_r_c_c___reg_def__t_html_a6c1588013b885c32b78b912e8249a26c"><div class="ttname"><a href="struct_r_c_c___reg_def__t.html#a6c1588013b885c32b78b912e8249a26c">RCC_RegDef_t::APB2RSTR</a></div><div class="ttdeci">volatile uint32_t APB2RSTR</div><div class="ttdef"><b>Definition</b> <a href="_s_t_m32_f4xx___d_r_i_v_e_r_s_2_inc_2stm32f407xx_8h_source.html#l00285">stm32f407xx.h:285</a></div></div>
-<div class="ttc" id="astruct_r_c_c___reg_def__t_html_aa5211a53246098ec97c0e360759c5ad8"><div class="ttname"><a href="struct_r_c_c___reg_def__t.html#aa5211a53246098ec97c0e360759c5ad8">RCC_RegDef_t::APB2ENR</a></div><div class="ttdeci">volatile uint32_t APB2ENR</div><div class="ttdef"><b>Definition</b> <a href="_s_t_m32_f4xx___d_r_i_v_e_r_s_2_inc_2stm32f407xx_8h_source.html#l00293">stm32f407xx.h:293</a></div></div>
-<div class="ttc" id="astruct_r_c_c___reg_def__t_html_acfa79aca8487958412be8f32e4632b47"><div class="ttname"><a href="struct_r_c_c___reg_def__t.html#acfa79aca8487958412be8f32e4632b47">RCC_RegDef_t::APB1RSTR</a></div><div class="ttdeci">volatile uint32_t APB1RSTR</div><div class="ttdef"><b>Definition</b> <a href="_s_t_m32_f4xx___d_r_i_v_e_r_s_2_inc_2stm32f407xx_8h_source.html#l00284">stm32f407xx.h:284</a></div></div>
+<p class="definition">Definition at line <a class="el" href="stm32f407xx__spi_8c_source.html#l00156">156</a> of file <a class="el" href="stm32f407xx__spi_8c_source.html">stm32f407xx_spi.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  157</span>{</div>
+<div class="line"><span class="lineno">  158</span>    <a class="code hl_struct" href="struct_r_c_c___reg_def__t.html">RCC_RegDef_t</a> *pRCC = <a class="code hl_define" href="group___r_c_c___r_e_g.html#ga74944438a086975793d26ae48d5882d4">RCC</a>;</div>
+<div class="line"><span class="lineno">  159</span> </div>
+<div class="line"><span class="lineno">  160</span>    <span class="keywordflow">if</span> (pSPIx == <a class="code hl_define" href="group___s_p_i___instances.html#gad483be344a28ac800be8f03654a9612f">SPI1</a>)</div>
+<div class="line"><span class="lineno">  161</span>    {</div>
+<div class="line"><span class="lineno">  162</span>        pRCC-&gt;<a class="code hl_variable" href="struct_r_c_c___reg_def__t.html#a6c1588013b885c32b78b912e8249a26c">APB2RSTR</a> |=  (1 &lt;&lt; 12);   <span class="comment">// Force reset</span></div>
+<div class="line"><span class="lineno">  163</span>        pRCC-&gt;<a class="code hl_variable" href="struct_r_c_c___reg_def__t.html#a6c1588013b885c32b78b912e8249a26c">APB2RSTR</a> &amp;= ~(1 &lt;&lt; 12);   <span class="comment">// Release reset</span></div>
+<div class="line"><span class="lineno">  164</span>    }</div>
+<div class="line"><span class="lineno">  165</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (pSPIx == <a class="code hl_define" href="group___s_p_i___instances.html#gaf2c3d8ce359dcfbb2261e07ed42af72b">SPI2</a>)</div>
+<div class="line"><span class="lineno">  166</span>    {</div>
+<div class="line"><span class="lineno">  167</span>        pRCC-&gt;<a class="code hl_variable" href="struct_r_c_c___reg_def__t.html#acfa79aca8487958412be8f32e4632b47">APB1RSTR</a> |=  (1 &lt;&lt; 14);   <span class="comment">// Force reset</span></div>
+<div class="line"><span class="lineno">  168</span>        pRCC-&gt;<a class="code hl_variable" href="struct_r_c_c___reg_def__t.html#acfa79aca8487958412be8f32e4632b47">APB1RSTR</a> &amp;= ~(1 &lt;&lt; 14);   <span class="comment">// Release reset</span></div>
+<div class="line"><span class="lineno">  169</span>    }</div>
+<div class="line"><span class="lineno">  170</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (pSPIx == <a class="code hl_define" href="group___s_p_i___instances.html#gab2339cbf25502bf562b19208b1b257fc">SPI3</a>)</div>
+<div class="line"><span class="lineno">  171</span>    {</div>
+<div class="line"><span class="lineno">  172</span>        pRCC-&gt;<a class="code hl_variable" href="struct_r_c_c___reg_def__t.html#acfa79aca8487958412be8f32e4632b47">APB1RSTR</a> |=  (1 &lt;&lt; 15);   <span class="comment">// Force reset</span></div>
+<div class="line"><span class="lineno">  173</span>        pRCC-&gt;<a class="code hl_variable" href="struct_r_c_c___reg_def__t.html#acfa79aca8487958412be8f32e4632b47">APB1RSTR</a> &amp;= ~(1 &lt;&lt; 15);   <span class="comment">// Release reset</span></div>
+<div class="line"><span class="lineno">  174</span>    }</div>
+<div class="line"><span class="lineno">  175</span></div>
+<div class="line"><span class="lineno">  177</span>       <span class="keywordflow">if</span> (pSPIx == <a class="code hl_define" href="group___s_p_i___instances.html#gad483be344a28ac800be8f03654a9612f">SPI1</a>)</div>
+<div class="line"><span class="lineno">  178</span>       {</div>
+<div class="line"><span class="lineno">  179</span>           pRCC-&gt;<a class="code hl_variable" href="struct_r_c_c___reg_def__t.html#aa5211a53246098ec97c0e360759c5ad8">APB2ENR</a> &amp;= ~(1 &lt;&lt; 12);</div>
+<div class="line"><span class="lineno">  180</span>       }</div>
+<div class="line"><span class="lineno">  181</span>       <span class="keywordflow">else</span> <span class="keywordflow">if</span> (pSPIx == <a class="code hl_define" href="group___s_p_i___instances.html#gaf2c3d8ce359dcfbb2261e07ed42af72b">SPI2</a>)</div>
+<div class="line"><span class="lineno">  182</span>       {</div>
+<div class="line"><span class="lineno">  183</span>           pRCC-&gt;<a class="code hl_variable" href="struct_r_c_c___reg_def__t.html#a389643cd117089ebb8dd10ec060488d8">APB1ENR</a> &amp;= ~(1 &lt;&lt; 14);</div>
+<div class="line"><span class="lineno">  184</span>       }</div>
+<div class="line"><span class="lineno">  185</span>       <span class="keywordflow">else</span> <span class="keywordflow">if</span> (pSPIx == <a class="code hl_define" href="group___s_p_i___instances.html#gab2339cbf25502bf562b19208b1b257fc">SPI3</a>)</div>
+<div class="line"><span class="lineno">  186</span>       {</div>
+<div class="line"><span class="lineno">  187</span>           pRCC-&gt;<a class="code hl_variable" href="struct_r_c_c___reg_def__t.html#a389643cd117089ebb8dd10ec060488d8">APB1ENR</a> &amp;= ~(1 &lt;&lt; 15);</div>
+<div class="line"><span class="lineno">  188</span>       }</div>
+<div class="line"><span class="lineno">  189</span>}</div>
+<div class="ttc" id="agroup___r_c_c___r_e_g_html_ga74944438a086975793d26ae48d5882d4"><div class="ttname"><a href="group___r_c_c___r_e_g.html#ga74944438a086975793d26ae48d5882d4">RCC</a></div><div class="ttdeci">#define RCC</div><div class="ttdef"><b>Definition</b> <a href="_s_t_m32_f4xx___d_r_i_v_e_r_s_2_inc_2stm32f407xx_8h_source.html#l00316">stm32f407xx.h:316</a></div></div>
+<div class="ttc" id="agroup___s_p_i___instances_html_gab2339cbf25502bf562b19208b1b257fc"><div class="ttname"><a href="group___s_p_i___instances.html#gab2339cbf25502bf562b19208b1b257fc">SPI3</a></div><div class="ttdeci">#define SPI3</div><div class="ttdef"><b>Definition</b> <a href="_s_t_m32_f4xx___d_r_i_v_e_r_s_2_inc_2stm32f407xx_8h_source.html#l00777">stm32f407xx.h:777</a></div></div>
+<div class="ttc" id="agroup___s_p_i___instances_html_gad483be344a28ac800be8f03654a9612f"><div class="ttname"><a href="group___s_p_i___instances.html#gad483be344a28ac800be8f03654a9612f">SPI1</a></div><div class="ttdeci">#define SPI1</div><div class="ttdef"><b>Definition</b> <a href="_s_t_m32_f4xx___d_r_i_v_e_r_s_2_inc_2stm32f407xx_8h_source.html#l00775">stm32f407xx.h:775</a></div></div>
+<div class="ttc" id="agroup___s_p_i___instances_html_gaf2c3d8ce359dcfbb2261e07ed42af72b"><div class="ttname"><a href="group___s_p_i___instances.html#gaf2c3d8ce359dcfbb2261e07ed42af72b">SPI2</a></div><div class="ttdeci">#define SPI2</div><div class="ttdef"><b>Definition</b> <a href="_s_t_m32_f4xx___d_r_i_v_e_r_s_2_inc_2stm32f407xx_8h_source.html#l00776">stm32f407xx.h:776</a></div></div>
+<div class="ttc" id="astruct_r_c_c___reg_def__t_html"><div class="ttname"><a href="struct_r_c_c___reg_def__t.html">RCC_RegDef_t</a></div><div class="ttdef"><b>Definition</b> <a href="_s_t_m32_f4xx___d_r_i_v_e_r_s_2_inc_2stm32f407xx_8h_source.html#l00279">stm32f407xx.h:279</a></div></div>
+<div class="ttc" id="astruct_r_c_c___reg_def__t_html_a389643cd117089ebb8dd10ec060488d8"><div class="ttname"><a href="struct_r_c_c___reg_def__t.html#a389643cd117089ebb8dd10ec060488d8">RCC_RegDef_t::APB1ENR</a></div><div class="ttdeci">volatile uint32_t APB1ENR</div><div class="ttdef"><b>Definition</b> <a href="_s_t_m32_f4xx___d_r_i_v_e_r_s_2_inc_2stm32f407xx_8h_source.html#l00296">stm32f407xx.h:296</a></div></div>
+<div class="ttc" id="astruct_r_c_c___reg_def__t_html_a6c1588013b885c32b78b912e8249a26c"><div class="ttname"><a href="struct_r_c_c___reg_def__t.html#a6c1588013b885c32b78b912e8249a26c">RCC_RegDef_t::APB2RSTR</a></div><div class="ttdeci">volatile uint32_t APB2RSTR</div><div class="ttdef"><b>Definition</b> <a href="_s_t_m32_f4xx___d_r_i_v_e_r_s_2_inc_2stm32f407xx_8h_source.html#l00289">stm32f407xx.h:289</a></div></div>
+<div class="ttc" id="astruct_r_c_c___reg_def__t_html_aa5211a53246098ec97c0e360759c5ad8"><div class="ttname"><a href="struct_r_c_c___reg_def__t.html#aa5211a53246098ec97c0e360759c5ad8">RCC_RegDef_t::APB2ENR</a></div><div class="ttdeci">volatile uint32_t APB2ENR</div><div class="ttdef"><b>Definition</b> <a href="_s_t_m32_f4xx___d_r_i_v_e_r_s_2_inc_2stm32f407xx_8h_source.html#l00297">stm32f407xx.h:297</a></div></div>
+<div class="ttc" id="astruct_r_c_c___reg_def__t_html_acfa79aca8487958412be8f32e4632b47"><div class="ttname"><a href="struct_r_c_c___reg_def__t.html#acfa79aca8487958412be8f32e4632b47">RCC_RegDef_t::APB1RSTR</a></div><div class="ttdeci">volatile uint32_t APB1RSTR</div><div class="ttdef"><b>Definition</b> <a href="_s_t_m32_f4xx___d_r_i_v_e_r_s_2_inc_2stm32f407xx_8h_source.html#l00288">stm32f407xx.h:288</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -244,21 +499,25 @@ Functions</h2></td></tr>
 <dl class="section note"><dt>Note</dt><dd>This function reads the SPI_SR register and checks the bit corresponding to the selected flag.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>uint8_t : FLAG_SET (1) if the flag is set FLAG_RESET (0) if the flag is cleared </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="stm32f407xx__spi_8c_source.html#l00141">141</a> of file <a class="el" href="stm32f407xx__spi_8c_source.html">stm32f407xx_spi.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  141</span>                                                                    {</div>
-<div class="line"><span class="lineno">  142</span>    <span class="keywordflow">return</span> (uint8_t) (((pSPIx-&gt;<a class="code hl_variable" href="struct_s_p_ix___reg_def__t.html#a8beaebfb019b994f6de84acfde02c350">SR</a>) &gt;&gt; FlagName) &amp; (0x01U));</div>
-<div class="line"><span class="lineno">  143</span>}</div>
-<div class="ttc" id="astruct_s_p_ix___reg_def__t_html_a8beaebfb019b994f6de84acfde02c350"><div class="ttname"><a href="struct_s_p_ix___reg_def__t.html#a8beaebfb019b994f6de84acfde02c350">SPIx_RegDef_t::SR</a></div><div class="ttdeci">volatile uint32_t SR</div><div class="ttdef"><b>Definition</b> <a href="_s_t_m32_f4xx___d_r_i_v_e_r_s_2_inc_2stm32f407xx_8h_source.html#l00724">stm32f407xx.h:724</a></div></div>
+<p class="definition">Definition at line <a class="el" href="stm32f407xx__spi_8c_source.html#l00204">204</a> of file <a class="el" href="stm32f407xx__spi_8c_source.html">stm32f407xx_spi.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  204</span>                                                                    {</div>
+<div class="line"><span class="lineno">  205</span>    <span class="keywordflow">return</span> (uint8_t) (((pSPIx-&gt;<a class="code hl_variable" href="struct_s_p_ix___reg_def__t.html#a8beaebfb019b994f6de84acfde02c350">SR</a>) &gt;&gt; FlagName) &amp; (0x01U));</div>
+<div class="line"><span class="lineno">  206</span>}</div>
+<div class="ttc" id="astruct_s_p_ix___reg_def__t_html_a8beaebfb019b994f6de84acfde02c350"><div class="ttname"><a href="struct_s_p_ix___reg_def__t.html#a8beaebfb019b994f6de84acfde02c350">SPIx_RegDef_t::SR</a></div><div class="ttdeci">volatile uint32_t SR</div><div class="ttdef"><b>Definition</b> <a href="_s_t_m32_f4xx___d_r_i_v_e_r_s_2_inc_2stm32f407xx_8h_source.html#l00758">stm32f407xx.h:758</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="group___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s_ga28c21c2e8a6f53982ec6666fb0969123_icgraph.png" border="0" usemap="#agroup___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s_ga28c21c2e8a6f53982ec6666fb0969123_icgraph" loading="lazy" alt=""/></div>
 <map name="agroup___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s_ga28c21c2e8a6f53982ec6666fb0969123_icgraph" id="agroup___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s_ga28c21c2e8a6f53982ec6666fb0969123_icgraph">
-<area shape="rect" title="Reads the status of a specific SPI status flag." alt="" coords="226,31,367,57"/>
-<area shape="rect" href="group___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s.html#ga66a55c39f2954c6fba416822612497cb" title="Enables or disables the SPI peripheral." alt="" coords="27,5,156,32"/>
-<area shape="poly" title=" " alt="" coords="210,36,156,29,157,24,211,31"/>
-<area shape="rect" href="group___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s.html#ga2f1a0a4006270d72092844c3e764d399" title="Send data over the specified SPI peripheral." alt="" coords="5,56,178,83"/>
-<area shape="poly" title=" " alt="" coords="211,57,179,61,178,56,210,52"/>
+<area shape="rect" title="Reads the status of a specific SPI status flag." alt="" coords="244,81,385,108"/>
+<area shape="rect" href="group___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s.html#ga9637b0d6a930d03fd844877298605e78" title="Handle all interrupt events for the given SPI peripheral." alt="" coords="34,5,167,32"/>
+<area shape="poly" title=" " alt="" coords="269,77,195,47,158,35,160,30,197,41,271,72"/>
+<area shape="rect" href="group___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s.html#ga66a55c39f2954c6fba416822612497cb" title="Enables or disables the SPI peripheral." alt="" coords="36,56,165,83"/>
+<area shape="poly" title=" " alt="" coords="228,87,165,80,166,74,229,82"/>
+<area shape="rect" href="group___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s.html#ga49a1accdcb1df29926a4f4c4cdfb334e" title="Receive data from the specified SPI peripheral in blocking mode." alt="" coords="5,107,196,133"/>
+<area shape="poly" title=" " alt="" coords="228,108,196,111,196,106,228,102"/>
+<area shape="rect" href="group___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s.html#gac63692a0517966f2db649606f09ee7ee" title="Send data over the specified SPI peripheral." alt="" coords="14,157,187,184"/>
+<area shape="poly" title=" " alt="" coords="271,117,197,148,160,159,158,154,195,143,269,112"/>
 </map>
 </div>
 
@@ -302,7 +561,7 @@ Here is the caller graph for this function:</div>
 <li>Set Bus Mode (Full Duplex/Half Duplex/Simplex) <br  />
 </li>
 </ol>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000066">Todo</a></b></dt><dd>Implement later you should make seperate API for BIDIOE Bit </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000068">Todo</a></b></dt><dd>Implement later you should make seperate API for BIDIOE Bit </dd></dl>
 <p>Clear this bit and use RX only for setting </p><dl class="section note"><dt>Note</dt><dd>Master can be in RX only mode as well, its not necessary that master has to be in TX only in Simplex mode </dd>
 <dd>
 For simplex mode BIDIMODE Bit has to be Cleared</dd></dl>
@@ -332,80 +591,81 @@ For simplex mode BIDIMODE Bit has to be Cleared</dd></dl>
 <ol type="1">
 <li>Set the FRF bit in SPI_CR2 to select the TI protocol for serial communications</li>
 </ol>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000067">Todo</a></b></dt><dd>implement CRC_EN and FRF </dd></dl>
+<p>@TODO implement CRC_EN and FRF</p>
 
-<p class="definition">Definition at line <a class="el" href="stm32f407xx__spi_8c_source.html#l00010">10</a> of file <a class="el" href="stm32f407xx__spi_8c_source.html">stm32f407xx_spi.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   10</span>                                          {</div>
-<div class="line"><span class="lineno">   11</span>    <a class="code hl_struct" href="struct_s_p_ix___reg_def__t.html">SPIx_RegDef_t</a>* pSPIx = pSPI_Handle-&gt;<a class="code hl_variable" href="struct_s_p_ix___handle__t.html#a2139a08270d0669a4bfd52184169f444">pSPIx</a>;</div>
-<div class="line"><span class="lineno">   12</span>    uint8_t SPI_DEVICE_MODE = pSPI_Handle-&gt;<a class="code hl_variable" href="struct_s_p_ix___handle__t.html#ad8dfc166a5c690bfebcc6e855132e805">SPI_CONFIG</a>.<a class="code hl_variable" href="struct_s_p_ix___config__t.html#a58ec8a46f301546f865e2e7477bf3d8f">SPI_DEVICE_MODE</a>;</div>
-<div class="line"><span class="lineno">   13</span>    uint8_t SPI_BUS_MODE = pSPI_Handle-&gt;<a class="code hl_variable" href="struct_s_p_ix___handle__t.html#ad8dfc166a5c690bfebcc6e855132e805">SPI_CONFIG</a>.<a class="code hl_variable" href="struct_s_p_ix___config__t.html#a0d54bb16c7b59c8894f9c27f2061c232">SPI_BUS_MODE</a>;</div>
-<div class="line"><span class="lineno">   14</span>    uint8_t SPI_CLOCK_SPEED = pSPI_Handle-&gt;<a class="code hl_variable" href="struct_s_p_ix___handle__t.html#ad8dfc166a5c690bfebcc6e855132e805">SPI_CONFIG</a>.<a class="code hl_variable" href="struct_s_p_ix___config__t.html#a192d86623e71d56bbbbf99b8efffd298">SPI_CLOCK_SPEED</a>;</div>
-<div class="line"><span class="lineno">   15</span>    uint8_t SPI_CPOL = pSPI_Handle-&gt;<a class="code hl_variable" href="struct_s_p_ix___handle__t.html#ad8dfc166a5c690bfebcc6e855132e805">SPI_CONFIG</a>.<a class="code hl_variable" href="struct_s_p_ix___config__t.html#a908cc1f30a9b3d2603b9c904fa16087b">SPI_CPOL</a>;</div>
-<div class="line"><span class="lineno">   16</span>    uint8_t SPI_CPHA = pSPI_Handle-&gt;<a class="code hl_variable" href="struct_s_p_ix___handle__t.html#ad8dfc166a5c690bfebcc6e855132e805">SPI_CONFIG</a>.<a class="code hl_variable" href="struct_s_p_ix___config__t.html#aa1c544b092454a095481cce8672dd4d5">SPI_CPHA</a>;</div>
-<div class="line"><span class="lineno">   17</span>    uint8_t SPI_FRAME_SIZE = pSPI_Handle-&gt;<a class="code hl_variable" href="struct_s_p_ix___handle__t.html#ad8dfc166a5c690bfebcc6e855132e805">SPI_CONFIG</a>.<a class="code hl_variable" href="struct_s_p_ix___config__t.html#a649f465ce3b2a3c787a6f5495770e1fa">SPI_FRAME_SIZE</a>;</div>
-<div class="line"><span class="lineno">   18</span>    uint8_t SPI_SSM_SETTING = pSPI_Handle-&gt;<a class="code hl_variable" href="struct_s_p_ix___handle__t.html#ad8dfc166a5c690bfebcc6e855132e805">SPI_CONFIG</a>.<a class="code hl_variable" href="struct_s_p_ix___config__t.html#a9d287666eb349733ac55fd6317aa7cc3">SPI_SSM_SETTING</a>;</div>
-<div class="line"><span class="lineno">   19</span>    uint8_t SPI_BIT_ORDER = pSPI_Handle-&gt;<a class="code hl_variable" href="struct_s_p_ix___handle__t.html#ad8dfc166a5c690bfebcc6e855132e805">SPI_CONFIG</a>.<a class="code hl_variable" href="struct_s_p_ix___config__t.html#a36304b6c78174800ccd32eb837da0754">SPI_BIT_ORDER</a>;</div>
-<div class="line"><span class="lineno">   20</span>    uint8_t SPI_SSOE = pSPI_Handle-&gt;<a class="code hl_variable" href="struct_s_p_ix___handle__t.html#ad8dfc166a5c690bfebcc6e855132e805">SPI_CONFIG</a>.<a class="code hl_variable" href="struct_s_p_ix___config__t.html#a57dd078d1351d4a0a54b79ea5a2e08cb">SPI_SSOE</a>;</div>
-<div class="line"><span class="lineno">   21</span>    uint8_t SPI_CRC_EN = pSPI_Handle-&gt;<a class="code hl_variable" href="struct_s_p_ix___handle__t.html#ad8dfc166a5c690bfebcc6e855132e805">SPI_CONFIG</a>.<a class="code hl_variable" href="struct_s_p_ix___config__t.html#a207736f784d8a45e51344760a1e2163f">SPI_CRC_EN</a>;</div>
-<div class="line"><span class="lineno">   22</span></div>
-<div class="line"><span class="lineno">   24</span>    <a class="code hl_struct" href="struct_r_c_c___reg_def__t.html">RCC_RegDef_t</a>* pRCC = <a class="code hl_define" href="group___r_c_c___r_e_g.html#ga74944438a086975793d26ae48d5882d4">RCC</a>;</div>
-<div class="line"><span class="lineno">   25</span>    <span class="keywordflow">if</span>(pSPIx == <a class="code hl_define" href="group___s_p_i___instances.html#gad483be344a28ac800be8f03654a9612f">SPI1</a>){ </div>
-<div class="line"><span class="lineno">   26</span>        pRCC-&gt;<a class="code hl_variable" href="struct_r_c_c___reg_def__t.html#aa5211a53246098ec97c0e360759c5ad8">APB2ENR</a> |= (1 &lt;&lt; 12);</div>
-<div class="line"><span class="lineno">   27</span>    }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(pSPIx == <a class="code hl_define" href="group___s_p_i___instances.html#gaf2c3d8ce359dcfbb2261e07ed42af72b">SPI2</a>){</div>
-<div class="line"><span class="lineno">   28</span>        pRCC-&gt;<a class="code hl_variable" href="struct_r_c_c___reg_def__t.html#a389643cd117089ebb8dd10ec060488d8">APB1ENR</a> |= (1 &lt;&lt; 14);</div>
-<div class="line"><span class="lineno">   29</span>    }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(pSPIx == <a class="code hl_define" href="group___s_p_i___instances.html#gab2339cbf25502bf562b19208b1b257fc">SPI3</a>){</div>
-<div class="line"><span class="lineno">   30</span>        pRCC-&gt;<a class="code hl_variable" href="struct_r_c_c___reg_def__t.html#a389643cd117089ebb8dd10ec060488d8">APB1ENR</a> |= (1 &lt;&lt; 15);</div>
-<div class="line"><span class="lineno">   31</span>    }</div>
-<div class="line"><span class="lineno">   32</span></div>
-<div class="line"><span class="lineno">   34</span>    pSPIx-&gt;<a class="code hl_variable" href="struct_s_p_ix___reg_def__t.html#ac806058f093a3e33457f2acd149e73b9">CR1</a> &amp;= ~(1 &lt;&lt; <a class="code hl_define" href="group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s.html#ga27567886a2c76d088e01ad16851cdb71">SPI_CR1_MSTR_Pos</a>);</div>
-<div class="line"><span class="lineno">   35</span>    pSPIx-&gt;<a class="code hl_variable" href="struct_s_p_ix___reg_def__t.html#ac806058f093a3e33457f2acd149e73b9">CR1</a> |= (SPI_DEVICE_MODE &lt;&lt; <a class="code hl_define" href="group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s.html#ga27567886a2c76d088e01ad16851cdb71">SPI_CR1_MSTR_Pos</a>);</div>
-<div class="line"><span class="lineno">   36</span></div>
-<div class="line"><span class="lineno">   38</span>    <span class="keywordflow">if</span> (SPI_BUS_MODE == <a class="code hl_define" href="group___s_p_i___b_u_s___m_o_d_e___m_a_c_r_o_s.html#gaaee1a51a51147bb752571735e6895d00">SPI_BUS_MODE_FULL_DUPLEX</a>) { <span class="comment">// Normal Mode</span></div>
-<div class="line"><span class="lineno">   39</span>        <span class="comment">//Clear BIDIMODE Bit in CR1 Reg</span></div>
-<div class="line"><span class="lineno">   40</span>        pSPIx-&gt;<a class="code hl_variable" href="struct_s_p_ix___reg_def__t.html#ac806058f093a3e33457f2acd149e73b9">CR1</a> &amp;= ~(1 &lt;&lt; <a class="code hl_define" href="group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s.html#gab07c9facbfdb0a7d5d89b1fd6a3ef711">SPI_CR1_BIDIMODE_Pos</a>);</div>
-<div class="line"><span class="lineno">   41</span>        <span class="comment">// Also Clear the RXONLY Bit just for safety</span></div>
-<div class="line"><span class="lineno">   42</span>        pSPIx-&gt;<a class="code hl_variable" href="struct_s_p_ix___reg_def__t.html#ac806058f093a3e33457f2acd149e73b9">CR1</a> &amp;= ~(1 &lt;&lt; <a class="code hl_define" href="group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s.html#gadd702fae4dcca65f3b43b2e02f67ee7b">SPI_CR1_RXONLY_Pos</a>);</div>
-<div class="line"><span class="lineno">   43</span>    }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(SPI_BUS_MODE == <a class="code hl_define" href="group___s_p_i___b_u_s___m_o_d_e___m_a_c_r_o_s.html#ga1997337ed2896a4722b16affed5ec968">SPI_BUS_MODE_HALF_DUPLEX</a>){</div>
-<div class="line"><span class="lineno">   44</span>        <span class="comment">//Set BIDIMODE Bit in CR1 Reg</span></div>
-<div class="line"><span class="lineno">   46</span>        pSPIx-&gt;<a class="code hl_variable" href="struct_s_p_ix___reg_def__t.html#ac806058f093a3e33457f2acd149e73b9">CR1</a> |= (1 &lt;&lt; <a class="code hl_define" href="group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s.html#gab07c9facbfdb0a7d5d89b1fd6a3ef711">SPI_CR1_BIDIMODE_Pos</a>);</div>
-<div class="line"><span class="lineno">   47</span>    }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(SPI_BUS_MODE == <a class="code hl_define" href="group___s_p_i___b_u_s___m_o_d_e___m_a_c_r_o_s.html#ga86c645f38e8da84614a462968ddf0554">SPI_BUS_MODE_SIMPLEX_RX</a>){<span class="comment">// Simplex Means either Tx only or Rx Only</span></div>
-<div class="line"><span class="lineno">   52</span>        pSPIx-&gt;<a class="code hl_variable" href="struct_s_p_ix___reg_def__t.html#ac806058f093a3e33457f2acd149e73b9">CR1</a> &amp;= ~(1 &lt;&lt; <a class="code hl_define" href="group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s.html#gab07c9facbfdb0a7d5d89b1fd6a3ef711">SPI_CR1_BIDIMODE_Pos</a>);</div>
-<div class="line"><span class="lineno">   53</span>        pSPIx-&gt;<a class="code hl_variable" href="struct_s_p_ix___reg_def__t.html#ac806058f093a3e33457f2acd149e73b9">CR1</a> |= (1 &lt;&lt; <a class="code hl_define" href="group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s.html#gadd702fae4dcca65f3b43b2e02f67ee7b">SPI_CR1_RXONLY_Pos</a>);</div>
-<div class="line"><span class="lineno">   54</span>    }</div>
-<div class="line"><span class="lineno">   55</span></div>
-<div class="line"><span class="lineno">   57</span>    pSPIx-&gt;<a class="code hl_variable" href="struct_s_p_ix___reg_def__t.html#ac806058f093a3e33457f2acd149e73b9">CR1</a> &amp;= ~(0x07 &lt;&lt; 3); </div>
-<div class="line"><span class="lineno">   58</span>    pSPIx-&gt;<a class="code hl_variable" href="struct_s_p_ix___reg_def__t.html#ac806058f093a3e33457f2acd149e73b9">CR1</a> |= (SPI_CLOCK_SPEED &lt;&lt; 3); </div>
-<div class="line"><span class="lineno">   59</span></div>
-<div class="line"><span class="lineno">   64</span>    pSPIx-&gt;<a class="code hl_variable" href="struct_s_p_ix___reg_def__t.html#ac806058f093a3e33457f2acd149e73b9">CR1</a> &amp;= ~(1 &lt;&lt; <a class="code hl_define" href="group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s.html#ga2f1d2c5a9e481ca06d0e29332f6f948a">SPI_CR1_CPHA_Pos</a>);     </div>
-<div class="line"><span class="lineno">   65</span>    pSPIx-&gt;<a class="code hl_variable" href="struct_s_p_ix___reg_def__t.html#ac806058f093a3e33457f2acd149e73b9">CR1</a> &amp;= ~(1 &lt;&lt; <a class="code hl_define" href="group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s.html#gadd3274c0dce6293370773c5050f9c4be">SPI_CR1_CPOL_Pos</a>);     </div>
-<div class="line"><span class="lineno">   66</span>    pSPIx-&gt;<a class="code hl_variable" href="struct_s_p_ix___reg_def__t.html#ac806058f093a3e33457f2acd149e73b9">CR1</a> |= (SPI_CPHA &lt;&lt; <a class="code hl_define" href="group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s.html#ga2f1d2c5a9e481ca06d0e29332f6f948a">SPI_CR1_CPHA_Pos</a>);       </div>
-<div class="line"><span class="lineno">   67</span>    pSPIx-&gt;<a class="code hl_variable" href="struct_s_p_ix___reg_def__t.html#ac806058f093a3e33457f2acd149e73b9">CR1</a> |= (SPI_CPOL &lt;&lt; <a class="code hl_define" href="group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s.html#gadd3274c0dce6293370773c5050f9c4be">SPI_CR1_CPOL_Pos</a>);       </div>
-<div class="line"><span class="lineno">   68</span></div>
-<div class="line"><span class="lineno">   70</span>    pSPIx-&gt;<a class="code hl_variable" href="struct_s_p_ix___reg_def__t.html#ac806058f093a3e33457f2acd149e73b9">CR1</a> &amp;= ~(1 &lt;&lt; <a class="code hl_define" href="group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s.html#ga5290662db14690d4bcf30ed9e4694462">SPI_CR1_DFF_Pos</a>); </div>
-<div class="line"><span class="lineno">   71</span>    pSPIx-&gt;<a class="code hl_variable" href="struct_s_p_ix___reg_def__t.html#ac806058f093a3e33457f2acd149e73b9">CR1</a> |= (SPI_FRAME_SIZE &lt;&lt; <a class="code hl_define" href="group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s.html#ga5290662db14690d4bcf30ed9e4694462">SPI_CR1_DFF_Pos</a>); </div>
-<div class="line"><span class="lineno">   72</span></div>
-<div class="line"><span class="lineno">   74</span>    pSPIx-&gt;<a class="code hl_variable" href="struct_s_p_ix___reg_def__t.html#ac806058f093a3e33457f2acd149e73b9">CR1</a> &amp;= ~(1 &lt;&lt; <a class="code hl_define" href="group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s.html#ga982b564879d1dc60a3be787409df0c27">SPI_CR1_LSBFIRST_Pos</a>);</div>
-<div class="line"><span class="lineno">   75</span>    pSPIx-&gt;<a class="code hl_variable" href="struct_s_p_ix___reg_def__t.html#ac806058f093a3e33457f2acd149e73b9">CR1</a> |= (SPI_BIT_ORDER &lt;&lt; <a class="code hl_define" href="group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s.html#ga982b564879d1dc60a3be787409df0c27">SPI_CR1_LSBFIRST_Pos</a>);</div>
-<div class="line"><span class="lineno">   76</span></div>
-<div class="line"><span class="lineno">   83</span>    pSPIx-&gt;<a class="code hl_variable" href="struct_s_p_ix___reg_def__t.html#ac806058f093a3e33457f2acd149e73b9">CR1</a> &amp;= ~(1 &lt;&lt; <a class="code hl_define" href="group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s.html#gab2909290fab17ee930afc335811f574c">SPI_CR1_SSM_Pos</a>); <span class="comment">// Clear the SSM Bit in CR1 Reg</span></div>
-<div class="line"><span class="lineno">   84</span>    pSPIx-&gt;<a class="code hl_variable" href="struct_s_p_ix___reg_def__t.html#ac806058f093a3e33457f2acd149e73b9">CR1</a> |= (SPI_SSM_SETTING &lt;&lt; <a class="code hl_define" href="group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s.html#gab2909290fab17ee930afc335811f574c">SPI_CR1_SSM_Pos</a>);<span class="comment">// Set the bit</span></div>
-<div class="line"><span class="lineno">   85</span> </div>
-<div class="line"><span class="lineno">   86</span>    pSPIx-&gt;<a class="code hl_variable" href="struct_s_p_ix___reg_def__t.html#ae19a6b4335672191e29e0e1526e27fb0">CR2</a> &amp;= ~(1 &lt;&lt; <a class="code hl_define" href="group___s_p_i___c_r2___b_i_t___p_o_s_i_t_i_o_n_s.html#gaa0d0f5f51a5804e1a204bf1643516896">SPI_CR2_SSOE_Pos</a>); <span class="comment">// Clear the SSOE Bit in CR2 Reg</span></div>
-<div class="line"><span class="lineno">   87</span>    pSPIx-&gt;<a class="code hl_variable" href="struct_s_p_ix___reg_def__t.html#ae19a6b4335672191e29e0e1526e27fb0">CR2</a> |= (SPI_SSOE &lt;&lt; <a class="code hl_define" href="group___s_p_i___c_r2___b_i_t___p_o_s_i_t_i_o_n_s.html#gaa0d0f5f51a5804e1a204bf1643516896">SPI_CR2_SSOE_Pos</a>);<span class="comment">// Set the bit</span></div>
-<div class="line"><span class="lineno">   88</span></div>
-<div class="line"><span class="lineno">   91</span>}</div>
+<p class="definition">Definition at line <a class="el" href="stm32f407xx__spi_8c_source.html#l00072">72</a> of file <a class="el" href="stm32f407xx__spi_8c_source.html">stm32f407xx_spi.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   72</span>                                          {</div>
+<div class="line"><span class="lineno">   73</span>    <a class="code hl_struct" href="struct_s_p_ix___reg_def__t.html">SPIx_RegDef_t</a>* pSPIx = pSPI_Handle-&gt;<a class="code hl_variable" href="struct_s_p_ix___handle__t.html#a2139a08270d0669a4bfd52184169f444">pSPIx</a>;</div>
+<div class="line"><span class="lineno">   74</span>    uint8_t SPI_DEVICE_MODE = pSPI_Handle-&gt;<a class="code hl_variable" href="struct_s_p_ix___handle__t.html#ad8dfc166a5c690bfebcc6e855132e805">SPI_CONFIG</a>.<a class="code hl_variable" href="struct_s_p_ix___config__t.html#a58ec8a46f301546f865e2e7477bf3d8f">SPI_DEVICE_MODE</a>;</div>
+<div class="line"><span class="lineno">   75</span>    uint8_t SPI_BUS_MODE = pSPI_Handle-&gt;<a class="code hl_variable" href="struct_s_p_ix___handle__t.html#ad8dfc166a5c690bfebcc6e855132e805">SPI_CONFIG</a>.<a class="code hl_variable" href="struct_s_p_ix___config__t.html#a0d54bb16c7b59c8894f9c27f2061c232">SPI_BUS_MODE</a>;</div>
+<div class="line"><span class="lineno">   76</span>    uint8_t SPI_CLOCK_SPEED = pSPI_Handle-&gt;<a class="code hl_variable" href="struct_s_p_ix___handle__t.html#ad8dfc166a5c690bfebcc6e855132e805">SPI_CONFIG</a>.<a class="code hl_variable" href="struct_s_p_ix___config__t.html#a192d86623e71d56bbbbf99b8efffd298">SPI_CLOCK_SPEED</a>;</div>
+<div class="line"><span class="lineno">   77</span>    uint8_t SPI_CPOL = pSPI_Handle-&gt;<a class="code hl_variable" href="struct_s_p_ix___handle__t.html#ad8dfc166a5c690bfebcc6e855132e805">SPI_CONFIG</a>.<a class="code hl_variable" href="struct_s_p_ix___config__t.html#a908cc1f30a9b3d2603b9c904fa16087b">SPI_CPOL</a>;</div>
+<div class="line"><span class="lineno">   78</span>    uint8_t SPI_CPHA = pSPI_Handle-&gt;<a class="code hl_variable" href="struct_s_p_ix___handle__t.html#ad8dfc166a5c690bfebcc6e855132e805">SPI_CONFIG</a>.<a class="code hl_variable" href="struct_s_p_ix___config__t.html#aa1c544b092454a095481cce8672dd4d5">SPI_CPHA</a>;</div>
+<div class="line"><span class="lineno">   79</span>    uint8_t SPI_FRAME_SIZE = pSPI_Handle-&gt;<a class="code hl_variable" href="struct_s_p_ix___handle__t.html#ad8dfc166a5c690bfebcc6e855132e805">SPI_CONFIG</a>.<a class="code hl_variable" href="struct_s_p_ix___config__t.html#a649f465ce3b2a3c787a6f5495770e1fa">SPI_FRAME_SIZE</a>;</div>
+<div class="line"><span class="lineno">   80</span>    uint8_t SPI_SSM_SETTING = pSPI_Handle-&gt;<a class="code hl_variable" href="struct_s_p_ix___handle__t.html#ad8dfc166a5c690bfebcc6e855132e805">SPI_CONFIG</a>.<a class="code hl_variable" href="struct_s_p_ix___config__t.html#a9d287666eb349733ac55fd6317aa7cc3">SPI_SSM_SETTING</a>;</div>
+<div class="line"><span class="lineno">   81</span>    uint8_t SPI_BIT_ORDER = pSPI_Handle-&gt;<a class="code hl_variable" href="struct_s_p_ix___handle__t.html#ad8dfc166a5c690bfebcc6e855132e805">SPI_CONFIG</a>.<a class="code hl_variable" href="struct_s_p_ix___config__t.html#a36304b6c78174800ccd32eb837da0754">SPI_BIT_ORDER</a>;</div>
+<div class="line"><span class="lineno">   82</span>    uint8_t SPI_SSOE = pSPI_Handle-&gt;<a class="code hl_variable" href="struct_s_p_ix___handle__t.html#ad8dfc166a5c690bfebcc6e855132e805">SPI_CONFIG</a>.<a class="code hl_variable" href="struct_s_p_ix___config__t.html#a57dd078d1351d4a0a54b79ea5a2e08cb">SPI_SSOE</a>;</div>
+<div class="line"><span class="lineno">   83</span>    uint8_t SPI_CRC_EN = pSPI_Handle-&gt;<a class="code hl_variable" href="struct_s_p_ix___handle__t.html#ad8dfc166a5c690bfebcc6e855132e805">SPI_CONFIG</a>.<a class="code hl_variable" href="struct_s_p_ix___config__t.html#a207736f784d8a45e51344760a1e2163f">SPI_CRC_EN</a>;</div>
+<div class="line"><span class="lineno">   84</span>    <span class="comment">//@todo use SPI_CRC_EN later</span></div>
+<div class="line"><span class="lineno">   85</span>    (void)SPI_CRC_EN;</div>
+<div class="line"><span class="lineno">   87</span>    <a class="code hl_struct" href="struct_r_c_c___reg_def__t.html">RCC_RegDef_t</a>* pRCC = <a class="code hl_define" href="group___r_c_c___r_e_g.html#ga74944438a086975793d26ae48d5882d4">RCC</a>;</div>
+<div class="line"><span class="lineno">   88</span>    <span class="keywordflow">if</span>(pSPIx == <a class="code hl_define" href="group___s_p_i___instances.html#gad483be344a28ac800be8f03654a9612f">SPI1</a>){ </div>
+<div class="line"><span class="lineno">   89</span>        pRCC-&gt;<a class="code hl_variable" href="struct_r_c_c___reg_def__t.html#aa5211a53246098ec97c0e360759c5ad8">APB2ENR</a> |= (1 &lt;&lt; 12);</div>
+<div class="line"><span class="lineno">   90</span>    }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(pSPIx == <a class="code hl_define" href="group___s_p_i___instances.html#gaf2c3d8ce359dcfbb2261e07ed42af72b">SPI2</a>){</div>
+<div class="line"><span class="lineno">   91</span>        pRCC-&gt;<a class="code hl_variable" href="struct_r_c_c___reg_def__t.html#a389643cd117089ebb8dd10ec060488d8">APB1ENR</a> |= (1 &lt;&lt; 14);</div>
+<div class="line"><span class="lineno">   92</span>    }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(pSPIx == <a class="code hl_define" href="group___s_p_i___instances.html#gab2339cbf25502bf562b19208b1b257fc">SPI3</a>){</div>
+<div class="line"><span class="lineno">   93</span>        pRCC-&gt;<a class="code hl_variable" href="struct_r_c_c___reg_def__t.html#a389643cd117089ebb8dd10ec060488d8">APB1ENR</a> |= (1 &lt;&lt; 15);</div>
+<div class="line"><span class="lineno">   94</span>    }</div>
+<div class="line"><span class="lineno">   95</span></div>
+<div class="line"><span class="lineno">   97</span>    pSPIx-&gt;<a class="code hl_variable" href="struct_s_p_ix___reg_def__t.html#ac806058f093a3e33457f2acd149e73b9">CR1</a> &amp;= ~(1 &lt;&lt; <a class="code hl_define" href="group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s.html#ga27567886a2c76d088e01ad16851cdb71">SPI_CR1_MSTR_Pos</a>);</div>
+<div class="line"><span class="lineno">   98</span>    pSPIx-&gt;<a class="code hl_variable" href="struct_s_p_ix___reg_def__t.html#ac806058f093a3e33457f2acd149e73b9">CR1</a> |= (SPI_DEVICE_MODE &lt;&lt; <a class="code hl_define" href="group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s.html#ga27567886a2c76d088e01ad16851cdb71">SPI_CR1_MSTR_Pos</a>);</div>
+<div class="line"><span class="lineno">   99</span></div>
+<div class="line"><span class="lineno">  101</span>    <span class="keywordflow">if</span> (SPI_BUS_MODE == <a class="code hl_define" href="group___s_p_i___b_u_s___m_o_d_e___m_a_c_r_o_s.html#gaaee1a51a51147bb752571735e6895d00">SPI_BUS_MODE_FULL_DUPLEX</a>) { <span class="comment">// Normal Mode</span></div>
+<div class="line"><span class="lineno">  102</span>        <span class="comment">//Clear BIDIMODE Bit in CR1 Reg</span></div>
+<div class="line"><span class="lineno">  103</span>        pSPIx-&gt;<a class="code hl_variable" href="struct_s_p_ix___reg_def__t.html#ac806058f093a3e33457f2acd149e73b9">CR1</a> &amp;= ~(1 &lt;&lt; <a class="code hl_define" href="group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s.html#gab07c9facbfdb0a7d5d89b1fd6a3ef711">SPI_CR1_BIDIMODE_Pos</a>);</div>
+<div class="line"><span class="lineno">  104</span>        <span class="comment">// Also Clear the RXONLY Bit just for safety</span></div>
+<div class="line"><span class="lineno">  105</span>        pSPIx-&gt;<a class="code hl_variable" href="struct_s_p_ix___reg_def__t.html#ac806058f093a3e33457f2acd149e73b9">CR1</a> &amp;= ~(1 &lt;&lt; <a class="code hl_define" href="group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s.html#gadd702fae4dcca65f3b43b2e02f67ee7b">SPI_CR1_RXONLY_Pos</a>);</div>
+<div class="line"><span class="lineno">  106</span>    }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(SPI_BUS_MODE == <a class="code hl_define" href="group___s_p_i___b_u_s___m_o_d_e___m_a_c_r_o_s.html#ga1997337ed2896a4722b16affed5ec968">SPI_BUS_MODE_HALF_DUPLEX</a>){</div>
+<div class="line"><span class="lineno">  107</span>        <span class="comment">//Set BIDIMODE Bit in CR1 Reg</span></div>
+<div class="line"><span class="lineno">  109</span>        pSPIx-&gt;<a class="code hl_variable" href="struct_s_p_ix___reg_def__t.html#ac806058f093a3e33457f2acd149e73b9">CR1</a> |= (1 &lt;&lt; <a class="code hl_define" href="group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s.html#gab07c9facbfdb0a7d5d89b1fd6a3ef711">SPI_CR1_BIDIMODE_Pos</a>);</div>
+<div class="line"><span class="lineno">  110</span>    }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(SPI_BUS_MODE == <a class="code hl_define" href="group___s_p_i___b_u_s___m_o_d_e___m_a_c_r_o_s.html#ga86c645f38e8da84614a462968ddf0554">SPI_BUS_MODE_SIMPLEX_RX</a>){<span class="comment">// Simplex Means either Tx only or Rx Only</span></div>
+<div class="line"><span class="lineno">  115</span>        pSPIx-&gt;<a class="code hl_variable" href="struct_s_p_ix___reg_def__t.html#ac806058f093a3e33457f2acd149e73b9">CR1</a> &amp;= ~(1 &lt;&lt; <a class="code hl_define" href="group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s.html#gab07c9facbfdb0a7d5d89b1fd6a3ef711">SPI_CR1_BIDIMODE_Pos</a>);</div>
+<div class="line"><span class="lineno">  116</span>        pSPIx-&gt;<a class="code hl_variable" href="struct_s_p_ix___reg_def__t.html#ac806058f093a3e33457f2acd149e73b9">CR1</a> |= (1 &lt;&lt; <a class="code hl_define" href="group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s.html#gadd702fae4dcca65f3b43b2e02f67ee7b">SPI_CR1_RXONLY_Pos</a>);</div>
+<div class="line"><span class="lineno">  117</span>    }</div>
+<div class="line"><span class="lineno">  118</span></div>
+<div class="line"><span class="lineno">  120</span>    pSPIx-&gt;<a class="code hl_variable" href="struct_s_p_ix___reg_def__t.html#ac806058f093a3e33457f2acd149e73b9">CR1</a> &amp;= ~(0x07 &lt;&lt; 3); </div>
+<div class="line"><span class="lineno">  121</span>    pSPIx-&gt;<a class="code hl_variable" href="struct_s_p_ix___reg_def__t.html#ac806058f093a3e33457f2acd149e73b9">CR1</a> |= (SPI_CLOCK_SPEED &lt;&lt; 3); </div>
+<div class="line"><span class="lineno">  122</span></div>
+<div class="line"><span class="lineno">  127</span>    pSPIx-&gt;<a class="code hl_variable" href="struct_s_p_ix___reg_def__t.html#ac806058f093a3e33457f2acd149e73b9">CR1</a> &amp;= ~(1 &lt;&lt; <a class="code hl_define" href="group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s.html#ga2f1d2c5a9e481ca06d0e29332f6f948a">SPI_CR1_CPHA_Pos</a>);     </div>
+<div class="line"><span class="lineno">  128</span>    pSPIx-&gt;<a class="code hl_variable" href="struct_s_p_ix___reg_def__t.html#ac806058f093a3e33457f2acd149e73b9">CR1</a> &amp;= ~(1 &lt;&lt; <a class="code hl_define" href="group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s.html#gadd3274c0dce6293370773c5050f9c4be">SPI_CR1_CPOL_Pos</a>);     </div>
+<div class="line"><span class="lineno">  129</span>    pSPIx-&gt;<a class="code hl_variable" href="struct_s_p_ix___reg_def__t.html#ac806058f093a3e33457f2acd149e73b9">CR1</a> |= (SPI_CPHA &lt;&lt; <a class="code hl_define" href="group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s.html#ga2f1d2c5a9e481ca06d0e29332f6f948a">SPI_CR1_CPHA_Pos</a>);       </div>
+<div class="line"><span class="lineno">  130</span>    pSPIx-&gt;<a class="code hl_variable" href="struct_s_p_ix___reg_def__t.html#ac806058f093a3e33457f2acd149e73b9">CR1</a> |= (SPI_CPOL &lt;&lt; <a class="code hl_define" href="group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s.html#gadd3274c0dce6293370773c5050f9c4be">SPI_CR1_CPOL_Pos</a>);       </div>
+<div class="line"><span class="lineno">  131</span></div>
+<div class="line"><span class="lineno">  133</span>    pSPIx-&gt;<a class="code hl_variable" href="struct_s_p_ix___reg_def__t.html#ac806058f093a3e33457f2acd149e73b9">CR1</a> &amp;= ~(1 &lt;&lt; <a class="code hl_define" href="group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s.html#ga5290662db14690d4bcf30ed9e4694462">SPI_CR1_DFF_Pos</a>); </div>
+<div class="line"><span class="lineno">  134</span>    pSPIx-&gt;<a class="code hl_variable" href="struct_s_p_ix___reg_def__t.html#ac806058f093a3e33457f2acd149e73b9">CR1</a> |= (SPI_FRAME_SIZE &lt;&lt; <a class="code hl_define" href="group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s.html#ga5290662db14690d4bcf30ed9e4694462">SPI_CR1_DFF_Pos</a>); </div>
+<div class="line"><span class="lineno">  135</span></div>
+<div class="line"><span class="lineno">  137</span>    pSPIx-&gt;<a class="code hl_variable" href="struct_s_p_ix___reg_def__t.html#ac806058f093a3e33457f2acd149e73b9">CR1</a> &amp;= ~(1 &lt;&lt; <a class="code hl_define" href="group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s.html#ga982b564879d1dc60a3be787409df0c27">SPI_CR1_LSBFIRST_Pos</a>);</div>
+<div class="line"><span class="lineno">  138</span>    pSPIx-&gt;<a class="code hl_variable" href="struct_s_p_ix___reg_def__t.html#ac806058f093a3e33457f2acd149e73b9">CR1</a> |= (SPI_BIT_ORDER &lt;&lt; <a class="code hl_define" href="group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s.html#ga982b564879d1dc60a3be787409df0c27">SPI_CR1_LSBFIRST_Pos</a>);</div>
+<div class="line"><span class="lineno">  139</span></div>
+<div class="line"><span class="lineno">  146</span>    pSPIx-&gt;<a class="code hl_variable" href="struct_s_p_ix___reg_def__t.html#ac806058f093a3e33457f2acd149e73b9">CR1</a> &amp;= ~(1 &lt;&lt; <a class="code hl_define" href="group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s.html#gab2909290fab17ee930afc335811f574c">SPI_CR1_SSM_Pos</a>); <span class="comment">// Clear the SSM Bit in CR1 Reg</span></div>
+<div class="line"><span class="lineno">  147</span>    pSPIx-&gt;<a class="code hl_variable" href="struct_s_p_ix___reg_def__t.html#ac806058f093a3e33457f2acd149e73b9">CR1</a> |= (SPI_SSM_SETTING &lt;&lt; <a class="code hl_define" href="group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s.html#gab2909290fab17ee930afc335811f574c">SPI_CR1_SSM_Pos</a>);<span class="comment">// Set the bit</span></div>
+<div class="line"><span class="lineno">  148</span> </div>
+<div class="line"><span class="lineno">  149</span>    pSPIx-&gt;<a class="code hl_variable" href="struct_s_p_ix___reg_def__t.html#ae19a6b4335672191e29e0e1526e27fb0">CR2</a> &amp;= ~(1 &lt;&lt; <a class="code hl_define" href="group___s_p_i___c_r2___b_i_t___p_o_s_i_t_i_o_n_s.html#gaa0d0f5f51a5804e1a204bf1643516896">SPI_CR2_SSOE_Pos</a>); <span class="comment">// Clear the SSOE Bit in CR2 Reg</span></div>
+<div class="line"><span class="lineno">  150</span>    pSPIx-&gt;<a class="code hl_variable" href="struct_s_p_ix___reg_def__t.html#ae19a6b4335672191e29e0e1526e27fb0">CR2</a> |= (SPI_SSOE &lt;&lt; <a class="code hl_define" href="group___s_p_i___c_r2___b_i_t___p_o_s_i_t_i_o_n_s.html#gaa0d0f5f51a5804e1a204bf1643516896">SPI_CR2_SSOE_Pos</a>);<span class="comment">// Set the bit</span></div>
+<div class="line"><span class="lineno">  151</span></div>
+<div class="line"><span class="lineno">  154</span>}</div>
 <div class="ttc" id="agroup___s_p_i___b_u_s___m_o_d_e___m_a_c_r_o_s_html_ga1997337ed2896a4722b16affed5ec968"><div class="ttname"><a href="group___s_p_i___b_u_s___m_o_d_e___m_a_c_r_o_s.html#ga1997337ed2896a4722b16affed5ec968">SPI_BUS_MODE_HALF_DUPLEX</a></div><div class="ttdeci">#define SPI_BUS_MODE_HALF_DUPLEX</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx__spi_8h_source.html#l00041">stm32f407xx_spi.h:41</a></div></div>
 <div class="ttc" id="agroup___s_p_i___b_u_s___m_o_d_e___m_a_c_r_o_s_html_ga86c645f38e8da84614a462968ddf0554"><div class="ttname"><a href="group___s_p_i___b_u_s___m_o_d_e___m_a_c_r_o_s.html#ga86c645f38e8da84614a462968ddf0554">SPI_BUS_MODE_SIMPLEX_RX</a></div><div class="ttdeci">#define SPI_BUS_MODE_SIMPLEX_RX</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx__spi_8h_source.html#l00042">stm32f407xx_spi.h:42</a></div></div>
 <div class="ttc" id="agroup___s_p_i___b_u_s___m_o_d_e___m_a_c_r_o_s_html_gaaee1a51a51147bb752571735e6895d00"><div class="ttname"><a href="group___s_p_i___b_u_s___m_o_d_e___m_a_c_r_o_s.html#gaaee1a51a51147bb752571735e6895d00">SPI_BUS_MODE_FULL_DUPLEX</a></div><div class="ttdeci">#define SPI_BUS_MODE_FULL_DUPLEX</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx__spi_8h_source.html#l00040">stm32f407xx_spi.h:40</a></div></div>
-<div class="ttc" id="agroup___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s_html_ga27567886a2c76d088e01ad16851cdb71"><div class="ttname"><a href="group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s.html#ga27567886a2c76d088e01ad16851cdb71">SPI_CR1_MSTR_Pos</a></div><div class="ttdeci">#define SPI_CR1_MSTR_Pos</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx__spi_8h_source.html#l00379">stm32f407xx_spi.h:379</a></div></div>
-<div class="ttc" id="agroup___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s_html_ga2f1d2c5a9e481ca06d0e29332f6f948a"><div class="ttname"><a href="group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s.html#ga2f1d2c5a9e481ca06d0e29332f6f948a">SPI_CR1_CPHA_Pos</a></div><div class="ttdeci">#define SPI_CR1_CPHA_Pos</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx__spi_8h_source.html#l00377">stm32f407xx_spi.h:377</a></div></div>
-<div class="ttc" id="agroup___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s_html_ga5290662db14690d4bcf30ed9e4694462"><div class="ttname"><a href="group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s.html#ga5290662db14690d4bcf30ed9e4694462">SPI_CR1_DFF_Pos</a></div><div class="ttdeci">#define SPI_CR1_DFF_Pos</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx__spi_8h_source.html#l00386">stm32f407xx_spi.h:386</a></div></div>
-<div class="ttc" id="agroup___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s_html_ga982b564879d1dc60a3be787409df0c27"><div class="ttname"><a href="group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s.html#ga982b564879d1dc60a3be787409df0c27">SPI_CR1_LSBFIRST_Pos</a></div><div class="ttdeci">#define SPI_CR1_LSBFIRST_Pos</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx__spi_8h_source.html#l00382">stm32f407xx_spi.h:382</a></div></div>
-<div class="ttc" id="agroup___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s_html_gab07c9facbfdb0a7d5d89b1fd6a3ef711"><div class="ttname"><a href="group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s.html#gab07c9facbfdb0a7d5d89b1fd6a3ef711">SPI_CR1_BIDIMODE_Pos</a></div><div class="ttdeci">#define SPI_CR1_BIDIMODE_Pos</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx__spi_8h_source.html#l00390">stm32f407xx_spi.h:390</a></div></div>
-<div class="ttc" id="agroup___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s_html_gab2909290fab17ee930afc335811f574c"><div class="ttname"><a href="group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s.html#gab2909290fab17ee930afc335811f574c">SPI_CR1_SSM_Pos</a></div><div class="ttdeci">#define SPI_CR1_SSM_Pos</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx__spi_8h_source.html#l00384">stm32f407xx_spi.h:384</a></div></div>
-<div class="ttc" id="agroup___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s_html_gadd3274c0dce6293370773c5050f9c4be"><div class="ttname"><a href="group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s.html#gadd3274c0dce6293370773c5050f9c4be">SPI_CR1_CPOL_Pos</a></div><div class="ttdeci">#define SPI_CR1_CPOL_Pos</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx__spi_8h_source.html#l00378">stm32f407xx_spi.h:378</a></div></div>
-<div class="ttc" id="agroup___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s_html_gadd702fae4dcca65f3b43b2e02f67ee7b"><div class="ttname"><a href="group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s.html#gadd702fae4dcca65f3b43b2e02f67ee7b">SPI_CR1_RXONLY_Pos</a></div><div class="ttdeci">#define SPI_CR1_RXONLY_Pos</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx__spi_8h_source.html#l00385">stm32f407xx_spi.h:385</a></div></div>
-<div class="ttc" id="agroup___s_p_i___c_r2___b_i_t___p_o_s_i_t_i_o_n_s_html_gaa0d0f5f51a5804e1a204bf1643516896"><div class="ttname"><a href="group___s_p_i___c_r2___b_i_t___p_o_s_i_t_i_o_n_s.html#gaa0d0f5f51a5804e1a204bf1643516896">SPI_CR2_SSOE_Pos</a></div><div class="ttdeci">#define SPI_CR2_SSOE_Pos</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx__spi_8h_source.html#l00408">stm32f407xx_spi.h:408</a></div></div>
+<div class="ttc" id="agroup___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s_html_ga27567886a2c76d088e01ad16851cdb71"><div class="ttname"><a href="group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s.html#ga27567886a2c76d088e01ad16851cdb71">SPI_CR1_MSTR_Pos</a></div><div class="ttdeci">#define SPI_CR1_MSTR_Pos</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx__spi_8h_source.html#l00628">stm32f407xx_spi.h:628</a></div></div>
+<div class="ttc" id="agroup___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s_html_ga2f1d2c5a9e481ca06d0e29332f6f948a"><div class="ttname"><a href="group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s.html#ga2f1d2c5a9e481ca06d0e29332f6f948a">SPI_CR1_CPHA_Pos</a></div><div class="ttdeci">#define SPI_CR1_CPHA_Pos</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx__spi_8h_source.html#l00626">stm32f407xx_spi.h:626</a></div></div>
+<div class="ttc" id="agroup___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s_html_ga5290662db14690d4bcf30ed9e4694462"><div class="ttname"><a href="group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s.html#ga5290662db14690d4bcf30ed9e4694462">SPI_CR1_DFF_Pos</a></div><div class="ttdeci">#define SPI_CR1_DFF_Pos</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx__spi_8h_source.html#l00635">stm32f407xx_spi.h:635</a></div></div>
+<div class="ttc" id="agroup___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s_html_ga982b564879d1dc60a3be787409df0c27"><div class="ttname"><a href="group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s.html#ga982b564879d1dc60a3be787409df0c27">SPI_CR1_LSBFIRST_Pos</a></div><div class="ttdeci">#define SPI_CR1_LSBFIRST_Pos</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx__spi_8h_source.html#l00631">stm32f407xx_spi.h:631</a></div></div>
+<div class="ttc" id="agroup___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s_html_gab07c9facbfdb0a7d5d89b1fd6a3ef711"><div class="ttname"><a href="group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s.html#gab07c9facbfdb0a7d5d89b1fd6a3ef711">SPI_CR1_BIDIMODE_Pos</a></div><div class="ttdeci">#define SPI_CR1_BIDIMODE_Pos</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx__spi_8h_source.html#l00639">stm32f407xx_spi.h:639</a></div></div>
+<div class="ttc" id="agroup___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s_html_gab2909290fab17ee930afc335811f574c"><div class="ttname"><a href="group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s.html#gab2909290fab17ee930afc335811f574c">SPI_CR1_SSM_Pos</a></div><div class="ttdeci">#define SPI_CR1_SSM_Pos</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx__spi_8h_source.html#l00633">stm32f407xx_spi.h:633</a></div></div>
+<div class="ttc" id="agroup___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s_html_gadd3274c0dce6293370773c5050f9c4be"><div class="ttname"><a href="group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s.html#gadd3274c0dce6293370773c5050f9c4be">SPI_CR1_CPOL_Pos</a></div><div class="ttdeci">#define SPI_CR1_CPOL_Pos</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx__spi_8h_source.html#l00627">stm32f407xx_spi.h:627</a></div></div>
+<div class="ttc" id="agroup___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s_html_gadd702fae4dcca65f3b43b2e02f67ee7b"><div class="ttname"><a href="group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s.html#gadd702fae4dcca65f3b43b2e02f67ee7b">SPI_CR1_RXONLY_Pos</a></div><div class="ttdeci">#define SPI_CR1_RXONLY_Pos</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx__spi_8h_source.html#l00634">stm32f407xx_spi.h:634</a></div></div>
+<div class="ttc" id="agroup___s_p_i___c_r2___b_i_t___p_o_s_i_t_i_o_n_s_html_gaa0d0f5f51a5804e1a204bf1643516896"><div class="ttname"><a href="group___s_p_i___c_r2___b_i_t___p_o_s_i_t_i_o_n_s.html#gaa0d0f5f51a5804e1a204bf1643516896">SPI_CR2_SSOE_Pos</a></div><div class="ttdeci">#define SPI_CR2_SSOE_Pos</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx__spi_8h_source.html#l00657">stm32f407xx_spi.h:657</a></div></div>
 <div class="ttc" id="astruct_s_p_ix___config__t_html_a0d54bb16c7b59c8894f9c27f2061c232"><div class="ttname"><a href="struct_s_p_ix___config__t.html#a0d54bb16c7b59c8894f9c27f2061c232">SPIx_Config_t::SPI_BUS_MODE</a></div><div class="ttdeci">uint8_t SPI_BUS_MODE</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx__spi_8h_source.html#l00144">stm32f407xx_spi.h:144</a></div></div>
 <div class="ttc" id="astruct_s_p_ix___config__t_html_a192d86623e71d56bbbbf99b8efffd298"><div class="ttname"><a href="struct_s_p_ix___config__t.html#a192d86623e71d56bbbbf99b8efffd298">SPIx_Config_t::SPI_CLOCK_SPEED</a></div><div class="ttdeci">uint8_t SPI_CLOCK_SPEED</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx__spi_8h_source.html#l00145">stm32f407xx_spi.h:145</a></div></div>
 <div class="ttc" id="astruct_s_p_ix___config__t_html_a207736f784d8a45e51344760a1e2163f"><div class="ttname"><a href="struct_s_p_ix___config__t.html#a207736f784d8a45e51344760a1e2163f">SPIx_Config_t::SPI_CRC_EN</a></div><div class="ttdeci">uint8_t SPI_CRC_EN</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx__spi_8h_source.html#l00152">stm32f407xx_spi.h:152</a></div></div>
@@ -416,12 +676,251 @@ For simplex mode BIDIMODE Bit has to be Cleared</dd></dl>
 <div class="ttc" id="astruct_s_p_ix___config__t_html_a908cc1f30a9b3d2603b9c904fa16087b"><div class="ttname"><a href="struct_s_p_ix___config__t.html#a908cc1f30a9b3d2603b9c904fa16087b">SPIx_Config_t::SPI_CPOL</a></div><div class="ttdeci">uint8_t SPI_CPOL</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx__spi_8h_source.html#l00146">stm32f407xx_spi.h:146</a></div></div>
 <div class="ttc" id="astruct_s_p_ix___config__t_html_a9d287666eb349733ac55fd6317aa7cc3"><div class="ttname"><a href="struct_s_p_ix___config__t.html#a9d287666eb349733ac55fd6317aa7cc3">SPIx_Config_t::SPI_SSM_SETTING</a></div><div class="ttdeci">uint8_t SPI_SSM_SETTING</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx__spi_8h_source.html#l00149">stm32f407xx_spi.h:149</a></div></div>
 <div class="ttc" id="astruct_s_p_ix___config__t_html_aa1c544b092454a095481cce8672dd4d5"><div class="ttname"><a href="struct_s_p_ix___config__t.html#aa1c544b092454a095481cce8672dd4d5">SPIx_Config_t::SPI_CPHA</a></div><div class="ttdeci">uint8_t SPI_CPHA</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx__spi_8h_source.html#l00147">stm32f407xx_spi.h:147</a></div></div>
-<div class="ttc" id="astruct_s_p_ix___handle__t_html_a2139a08270d0669a4bfd52184169f444"><div class="ttname"><a href="struct_s_p_ix___handle__t.html#a2139a08270d0669a4bfd52184169f444">SPIx_Handle_t::pSPIx</a></div><div class="ttdeci">SPIx_RegDef_t * pSPIx</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx__spi_8h_source.html#l00165">stm32f407xx_spi.h:165</a></div></div>
 <div class="ttc" id="astruct_s_p_ix___handle__t_html_ad8dfc166a5c690bfebcc6e855132e805"><div class="ttname"><a href="struct_s_p_ix___handle__t.html#ad8dfc166a5c690bfebcc6e855132e805">SPIx_Handle_t::SPI_CONFIG</a></div><div class="ttdeci">SPIx_Config_t SPI_CONFIG</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx__spi_8h_source.html#l00166">stm32f407xx_spi.h:166</a></div></div>
-<div class="ttc" id="astruct_s_p_ix___reg_def__t_html"><div class="ttname"><a href="struct_s_p_ix___reg_def__t.html">SPIx_RegDef_t</a></div><div class="ttdef"><b>Definition</b> <a href="_s_t_m32_f4xx___d_r_i_v_e_r_s_2_inc_2stm32f407xx_8h_source.html#l00720">stm32f407xx.h:721</a></div></div>
-<div class="ttc" id="astruct_s_p_ix___reg_def__t_html_ac806058f093a3e33457f2acd149e73b9"><div class="ttname"><a href="struct_s_p_ix___reg_def__t.html#ac806058f093a3e33457f2acd149e73b9">SPIx_RegDef_t::CR1</a></div><div class="ttdeci">volatile uint32_t CR1</div><div class="ttdef"><b>Definition</b> <a href="_s_t_m32_f4xx___d_r_i_v_e_r_s_2_inc_2stm32f407xx_8h_source.html#l00722">stm32f407xx.h:722</a></div></div>
-<div class="ttc" id="astruct_s_p_ix___reg_def__t_html_ae19a6b4335672191e29e0e1526e27fb0"><div class="ttname"><a href="struct_s_p_ix___reg_def__t.html#ae19a6b4335672191e29e0e1526e27fb0">SPIx_RegDef_t::CR2</a></div><div class="ttdeci">volatile uint32_t CR2</div><div class="ttdef"><b>Definition</b> <a href="_s_t_m32_f4xx___d_r_i_v_e_r_s_2_inc_2stm32f407xx_8h_source.html#l00723">stm32f407xx.h:723</a></div></div>
+<div class="ttc" id="astruct_s_p_ix___reg_def__t_html"><div class="ttname"><a href="struct_s_p_ix___reg_def__t.html">SPIx_RegDef_t</a></div><div class="ttdef"><b>Definition</b> <a href="_s_t_m32_f4xx___d_r_i_v_e_r_s_2_inc_2stm32f407xx_8h_source.html#l00754">stm32f407xx.h:755</a></div></div>
+<div class="ttc" id="astruct_s_p_ix___reg_def__t_html_ac806058f093a3e33457f2acd149e73b9"><div class="ttname"><a href="struct_s_p_ix___reg_def__t.html#ac806058f093a3e33457f2acd149e73b9">SPIx_RegDef_t::CR1</a></div><div class="ttdeci">volatile uint32_t CR1</div><div class="ttdef"><b>Definition</b> <a href="_s_t_m32_f4xx___d_r_i_v_e_r_s_2_inc_2stm32f407xx_8h_source.html#l00756">stm32f407xx.h:756</a></div></div>
+<div class="ttc" id="astruct_s_p_ix___reg_def__t_html_ae19a6b4335672191e29e0e1526e27fb0"><div class="ttname"><a href="struct_s_p_ix___reg_def__t.html#ae19a6b4335672191e29e0e1526e27fb0">SPIx_RegDef_t::CR2</a></div><div class="ttdeci">volatile uint32_t CR2</div><div class="ttdef"><b>Definition</b> <a href="_s_t_m32_f4xx___d_r_i_v_e_r_s_2_inc_2stm32f407xx_8h_source.html#l00757">stm32f407xx.h:757</a></div></div>
 </div><!-- fragment -->
+</div>
+</div>
+<a id="ga1a0630eb77e67dbd0f23fd7d856ebd5d" name="ga1a0630eb77e67dbd0f23fd7d856ebd5d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1a0630eb77e67dbd0f23fd7d856ebd5d">&#9670;&#160;</a></span>SPIx_IRQConfig()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SPIx_IRQConfig </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>IRQNumber</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>irq_priority</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Configure the priority of a given SPI interrupt in the NVIC. </p>
+<p>This function sets the interrupt priority for the specified SPI IRQ number in the Nested Vectored Interrupt Controller (NVIC). It does not enable or disable the interrupt; it only assigns the priority value to the corresponding NVIC IPR (Interrupt Priority Register) field.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">IRQNumber</td><td>The IRQ number associated with the SPI peripheral (e.g., IRQ_NUM_SPI1, IRQ_NUM_SPI2, IRQ_NUM_SPI3).</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">irq_priority</td><td>Priority value (0–15). Only the upper 4 bits of each NVIC priority byte are implemented on Cortex-M MCUs, so only the lower 4 bits of <code class="param">irq_priority</code> are used.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>This API does NOT enable the interrupt. Use SPIx_IRQEnable() to enable or disable the interrupt in NVIC ISER/ICER registers.</dd>
+<dd>
+This API DOES NOT configure SPI peripheral interrupt bits (CR2). For enabling TXEIE/RXNEIE/ERRIE, use the SPI peripheral configuration APIs. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="stm32f407xx__spi_8c_source.html#l00276">276</a> of file <a class="el" href="stm32f407xx__spi_8c_source.html">stm32f407xx_spi.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  276</span>                                                            {</div>
+<div class="line"><span class="lineno">  277</span>    uint8_t IPR_Reg_Number = IRQNumber / 4;</div>
+<div class="line"><span class="lineno">  278</span>    uint8_t IRQ_Pos = (IRQNumber % 4) * 8;</div>
+<div class="line"><span class="lineno">  279</span>    <a class="code hl_struct" href="struct_n_v_i_c___reg_def__t.html">NVIC_RegDef_t</a> *pNVIC = (<a class="code hl_struct" href="struct_n_v_i_c___reg_def__t.html">NVIC_RegDef_t</a> *)<a class="code hl_define" href="group___n_v_i_c___r_e_g.html#ga01d5d6d14e5ddc3602597f71315ef112">NVIC_BASEADDR</a>;</div>
+<div class="line"><span class="lineno">  280</span>    irq_priority &amp;= 0x0F; <span class="comment">// Masking the priority</span></div>
+<div class="line"><span class="lineno">  281</span>    <span class="keywordflow">if</span>(IRQNumber == <a class="code hl_define" href="group___i_r_q___n_u_m_b_e_r___m_a_c_r_o_s.html#gafc9e61e86bf6834e1adb71077337c7cd">IRQ_NUM_SPI1</a> || IRQNumber == <a class="code hl_define" href="group___i_r_q___n_u_m_b_e_r___m_a_c_r_o_s.html#gaeba85212a0d406695b18975ad4f4294e">IRQ_NUM_SPI2</a> || IRQNumber == <a class="code hl_define" href="group___i_r_q___n_u_m_b_e_r___m_a_c_r_o_s.html#gad8b18886b512111ae1c8cdf4d66e342b">IRQ_NUM_SPI3</a> ){</div>
+<div class="line"><span class="lineno">  282</span>        pNVIC-&gt;<a class="code hl_variable" href="struct_n_v_i_c___reg_def__t.html#a57ba3a0dfe22a59876fb6b15390a5b40">IPR</a>[IPR_Reg_Number] &amp;= ~(0xFF &lt;&lt; IRQ_Pos);</div>
+<div class="line"><span class="lineno">  283</span>        pNVIC-&gt;<a class="code hl_variable" href="struct_n_v_i_c___reg_def__t.html#a57ba3a0dfe22a59876fb6b15390a5b40">IPR</a>[IPR_Reg_Number] |= (((uint32_t)irq_priority) &lt;&lt; (IRQ_Pos + 4)); <span class="comment">// We Just have to write upper 4 bits</span></div>
+<div class="line"><span class="lineno">  284</span>    }<span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  285</span>        return ;</div>
+<div class="line"><span class="lineno">  286</span>    }</div>
+<div class="line"><span class="lineno">  287</span>}</div>
+<div class="ttc" id="agroup___i_r_q___n_u_m_b_e_r___m_a_c_r_o_s_html_gad8b18886b512111ae1c8cdf4d66e342b"><div class="ttname"><a href="group___i_r_q___n_u_m_b_e_r___m_a_c_r_o_s.html#gad8b18886b512111ae1c8cdf4d66e342b">IRQ_NUM_SPI3</a></div><div class="ttdeci">#define IRQ_NUM_SPI3</div><div class="ttdef"><b>Definition</b> <a href="_s_t_m32_f4xx___d_r_i_v_e_r_s_2_inc_2stm32f407xx_8h_source.html#l00698">stm32f407xx.h:698</a></div></div>
+<div class="ttc" id="agroup___i_r_q___n_u_m_b_e_r___m_a_c_r_o_s_html_gaeba85212a0d406695b18975ad4f4294e"><div class="ttname"><a href="group___i_r_q___n_u_m_b_e_r___m_a_c_r_o_s.html#gaeba85212a0d406695b18975ad4f4294e">IRQ_NUM_SPI2</a></div><div class="ttdeci">#define IRQ_NUM_SPI2</div><div class="ttdef"><b>Definition</b> <a href="_s_t_m32_f4xx___d_r_i_v_e_r_s_2_inc_2stm32f407xx_8h_source.html#l00675">stm32f407xx.h:675</a></div></div>
+<div class="ttc" id="agroup___i_r_q___n_u_m_b_e_r___m_a_c_r_o_s_html_gafc9e61e86bf6834e1adb71077337c7cd"><div class="ttname"><a href="group___i_r_q___n_u_m_b_e_r___m_a_c_r_o_s.html#gafc9e61e86bf6834e1adb71077337c7cd">IRQ_NUM_SPI1</a></div><div class="ttdeci">#define IRQ_NUM_SPI1</div><div class="ttdef"><b>Definition</b> <a href="_s_t_m32_f4xx___d_r_i_v_e_r_s_2_inc_2stm32f407xx_8h_source.html#l00674">stm32f407xx.h:674</a></div></div>
+<div class="ttc" id="agroup___n_v_i_c___r_e_g_html_ga01d5d6d14e5ddc3602597f71315ef112"><div class="ttname"><a href="group___n_v_i_c___r_e_g.html#ga01d5d6d14e5ddc3602597f71315ef112">NVIC_BASEADDR</a></div><div class="ttdeci">#define NVIC_BASEADDR</div><div class="ttdef"><b>Definition</b> <a href="_s_t_m32_f4xx___d_r_i_v_e_r_s_2_inc_2stm32f407xx_8h_source.html#l00594">stm32f407xx.h:594</a></div></div>
+<div class="ttc" id="astruct_n_v_i_c___reg_def__t_html"><div class="ttname"><a href="struct_n_v_i_c___reg_def__t.html">NVIC_RegDef_t</a></div><div class="ttdef"><b>Definition</b> <a href="_s_t_m32_f4xx___d_r_i_v_e_r_s_2_inc_2stm32f407xx_8h_source.html#l00597">stm32f407xx.h:597</a></div></div>
+<div class="ttc" id="astruct_n_v_i_c___reg_def__t_html_a57ba3a0dfe22a59876fb6b15390a5b40"><div class="ttname"><a href="struct_n_v_i_c___reg_def__t.html#a57ba3a0dfe22a59876fb6b15390a5b40">NVIC_RegDef_t::IPR</a></div><div class="ttdeci">volatile uint32_t IPR[60]</div><div class="ttdef"><b>Definition</b> <a href="_s_t_m32_f4xx___d_r_i_v_e_r_s_2_inc_2stm32f407xx_8h_source.html#l00613">stm32f407xx.h:613</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ga9f155aebbeb71ea03e0f2dd9ff4ff7b7" name="ga9f155aebbeb71ea03e0f2dd9ff4ff7b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9f155aebbeb71ea03e0f2dd9ff4ff7b7">&#9670;&#160;</a></span>SPIx_IRQControl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SPIx_IRQControl </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>IRQNumber</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>EN_DI</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Enable or disable the given SPI IRQ in the NVIC. </p>
+<p>This function controls the interrupt routing at the processor (NVIC) level. It does NOT configure SPI peripheral CR2 (TXEIE/RXNEIE/ERRIE); it only enables or disables the interrupt line in NVIC ISER/ICER registers.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">IRQNumber</td><td>IRQ number corresponding to the SPI peripheral (e.g., IRQ_NUM_SPI1, IRQ_NUM_SPI2, IRQ_NUM_SPI3).</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">EN_DI</td><td>Enable/Disable interrupt line:<ul>
+<li>ENABLE : Enable NVIC interrupt</li>
+<li>DISABLE : Disable NVIC interrupt </li>
+</ul>
+</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="stm32f407xx__spi_8c_source.html#l00289">289</a> of file <a class="el" href="stm32f407xx__spi_8c_source.html">stm32f407xx_spi.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  289</span>                                                      {</div>
+<div class="line"><span class="lineno">  290</span>    <span class="comment">//1. Check if IRQ is not spi related, if not return</span></div>
+<div class="line"><span class="lineno">  291</span>    <span class="keywordflow">if</span> (IRQNumber != <a class="code hl_define" href="group___i_r_q___n_u_m_b_e_r___m_a_c_r_o_s.html#gafc9e61e86bf6834e1adb71077337c7cd">IRQ_NUM_SPI1</a> &amp;&amp;</div>
+<div class="line"><span class="lineno">  292</span>        IRQNumber != <a class="code hl_define" href="group___i_r_q___n_u_m_b_e_r___m_a_c_r_o_s.html#gaeba85212a0d406695b18975ad4f4294e">IRQ_NUM_SPI2</a> &amp;&amp;</div>
+<div class="line"><span class="lineno">  293</span>        IRQNumber != <a class="code hl_define" href="group___i_r_q___n_u_m_b_e_r___m_a_c_r_o_s.html#gad8b18886b512111ae1c8cdf4d66e342b">IRQ_NUM_SPI3</a>) {</div>
+<div class="line"><span class="lineno">  294</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  295</span>    }</div>
+<div class="line"><span class="lineno">  296</span> </div>
+<div class="line"><span class="lineno">  297</span>    uint32_t reg_Idx = IRQNumber / 32;</div>
+<div class="line"><span class="lineno">  298</span>    uint32_t bit_position = IRQNumber % 32;</div>
+<div class="line"><span class="lineno">  299</span>    <span class="keywordflow">if</span>(EN_DI == <a class="code hl_define" href="group___m_i_s_c_e_l_l_a_n_e_o_u_s___m_a_c_r_o_s.html#ga514ad415fb6125ba296793df7d1a468a">ENABLE</a>){</div>
+<div class="line"><span class="lineno">  300</span>        <span class="comment">// Enable interrupt in NVIC using ISER</span></div>
+<div class="line"><span class="lineno">  301</span>        <a class="code hl_define" href="group___n_v_i_c___r_e_g.html#gac8e97e8ce56ae9f57da1363a937f8a17">NVIC</a>-&gt;ISER[reg_Idx] |= (1U &lt;&lt; bit_position);</div>
+<div class="line"><span class="lineno">  302</span>    }<span class="keywordflow">else</span>{</div>
+<div class="line"><span class="lineno">  303</span>        <span class="comment">// To disable the interrupt write 1 to ICER register</span></div>
+<div class="line"><span class="lineno">  304</span>        <a class="code hl_define" href="group___n_v_i_c___r_e_g.html#gac8e97e8ce56ae9f57da1363a937f8a17">NVIC</a>-&gt;ICER[reg_Idx] |= (1U &lt;&lt; bit_position);</div>
+<div class="line"><span class="lineno">  305</span>        <span class="comment">// Also clear the pending interrupt using ICPR</span></div>
+<div class="line"><span class="lineno">  306</span>        <a class="code hl_define" href="group___n_v_i_c___r_e_g.html#gac8e97e8ce56ae9f57da1363a937f8a17">NVIC</a>-&gt;ICPR[reg_Idx] |= (1U &lt;&lt; bit_position);</div>
+<div class="line"><span class="lineno">  307</span>    }</div>
+<div class="line"><span class="lineno">  308</span>}</div>
+<div class="ttc" id="agroup___m_i_s_c_e_l_l_a_n_e_o_u_s___m_a_c_r_o_s_html_ga514ad415fb6125ba296793df7d1a468a"><div class="ttname"><a href="group___m_i_s_c_e_l_l_a_n_e_o_u_s___m_a_c_r_o_s.html#ga514ad415fb6125ba296793df7d1a468a">ENABLE</a></div><div class="ttdeci">#define ENABLE</div><div class="ttdef"><b>Definition</b> <a href="_s_t_m32_f4xx___d_r_i_v_e_r_s_2_inc_2stm32f407xx_8h_source.html#l00025">stm32f407xx.h:25</a></div></div>
+<div class="ttc" id="agroup___n_v_i_c___r_e_g_html_gac8e97e8ce56ae9f57da1363a937f8a17"><div class="ttname"><a href="group___n_v_i_c___r_e_g.html#gac8e97e8ce56ae9f57da1363a937f8a17">NVIC</a></div><div class="ttdeci">#define NVIC</div><div class="ttdef"><b>Definition</b> <a href="_s_t_m32_f4xx___d_r_i_v_e_r_s_2_inc_2stm32f407xx_8h_source.html#l00620">stm32f407xx.h:620</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ga9637b0d6a930d03fd844877298605e78" name="ga9637b0d6a930d03fd844877298605e78"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9637b0d6a930d03fd844877298605e78">&#9670;&#160;</a></span>SPIx_IRQHandling()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SPIx_IRQHandling </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_s_p_ix___handle__t.html">SPIx_Handle_t</a> *</td>          <td class="paramname"><span class="paramname"><em>pHandle</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Handle all interrupt events for the given SPI peripheral. </p>
+<p>This function must be called from the actual SPI IRQ handler (e.g., SPI1_IRQHandler). It services TXE, RXNE, and OVR interrupt sources based on the state stored in the SPI handle.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">pHandle</td><td>Pointer to the SPI handle structure associated with the SPI peripheral generating the interrupt.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>This function runs in IRQ context. Keep callback handlers short and defer heavy processing to the main loop or a task.</dd></dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">None</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="stm32f407xx__spi_8c_source.html#l00376">376</a> of file <a class="el" href="stm32f407xx__spi_8c_source.html">stm32f407xx_spi.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  376</span>                                             {</div>
+<div class="line"><span class="lineno">  377</span> </div>
+<div class="line"><span class="lineno">  378</span>    <span class="comment">/* basic sanity check */</span></div>
+<div class="line"><span class="lineno">  379</span>    <span class="keywordflow">if</span> (pHandle == NULL || pHandle-&gt;<a class="code hl_variable" href="struct_s_p_ix___handle__t.html#a2139a08270d0669a4bfd52184169f444">pSPIx</a> == NULL) {</div>
+<div class="line"><span class="lineno">  380</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  381</span>    }</div>
+<div class="line"><span class="lineno">  382</span> </div>
+<div class="line"><span class="lineno">  383</span> </div>
+<div class="line"><span class="lineno">  384</span>    <span class="comment">//0. Extract the status status flags</span></div>
+<div class="line"><span class="lineno">  385</span>    <span class="comment">//uint8_t txe_flag = (pHandle-&gt;pSPIx-&gt;SR &amp; (1 &lt;&lt; SPI_SR_TXE_Pos));</span></div>
+<div class="line"><span class="lineno">  386</span>    uint8_t txe_flag = <a class="code hl_function" href="#ga28c21c2e8a6f53982ec6666fb0969123">SPIx_GetFlagStatus</a>(pHandle-&gt;<a class="code hl_variable" href="struct_s_p_ix___handle__t.html#a2139a08270d0669a4bfd52184169f444">pSPIx</a>, <a class="code hl_define" href="group___s_p_i___s_t_a_t_u_s___f_l_a_g___m_a_c_r_o_s.html#ga13cea6befcaaeb6421eb7e801abb48fe">SPI_STATUS_FLAG_TXE</a>);</div>
+<div class="line"><span class="lineno">  387</span>    <span class="comment">//uint8_t rxne_flag = (pHandle-&gt;pSPIx-&gt;SR &amp; (1 &lt;&lt; SPI_SR_RXNE_Pos));</span></div>
+<div class="line"><span class="lineno">  388</span>    uint8_t rxne_flag = <a class="code hl_function" href="#ga28c21c2e8a6f53982ec6666fb0969123">SPIx_GetFlagStatus</a>(pHandle-&gt;<a class="code hl_variable" href="struct_s_p_ix___handle__t.html#a2139a08270d0669a4bfd52184169f444">pSPIx</a>, <a class="code hl_define" href="group___s_p_i___s_t_a_t_u_s___f_l_a_g___m_a_c_r_o_s.html#gaa4bf84364251d2d1fb189fd72030656e">SPI_STATUS_FLAG_RXNE</a>);</div>
+<div class="line"><span class="lineno">  389</span>    <span class="comment">//uint8_t ovr_flag = (pHandle-&gt;pSPIx-&gt;SR &amp; (1 &lt;&lt; SPI_SR_OVR_Pos));</span></div>
+<div class="line"><span class="lineno">  390</span>    uint8_t ovr_flag = <a class="code hl_function" href="#ga28c21c2e8a6f53982ec6666fb0969123">SPIx_GetFlagStatus</a>(pHandle-&gt;<a class="code hl_variable" href="struct_s_p_ix___handle__t.html#a2139a08270d0669a4bfd52184169f444">pSPIx</a>, <a class="code hl_define" href="group___s_p_i___s_t_a_t_u_s___f_l_a_g___m_a_c_r_o_s.html#ga56a2f9dc08aa73b82af59effc87d12c6">SPI_STATUS_FLAG_OVR</a>);</div>
+<div class="line"><span class="lineno">  391</span>    uint8_t crc_err_flag = <a class="code hl_function" href="#ga28c21c2e8a6f53982ec6666fb0969123">SPIx_GetFlagStatus</a>(pHandle-&gt;<a class="code hl_variable" href="struct_s_p_ix___handle__t.html#a2139a08270d0669a4bfd52184169f444">pSPIx</a>, <a class="code hl_define" href="group___s_p_i___s_t_a_t_u_s___f_l_a_g___m_a_c_r_o_s.html#ga9c8a4d37f13d0ad3bd10eb1aa1bc19b6">SPI_STATUS_FLAG_CRCERR</a>);</div>
+<div class="line"><span class="lineno">  392</span>    uint8_t modf_flag = <a class="code hl_function" href="#ga28c21c2e8a6f53982ec6666fb0969123">SPIx_GetFlagStatus</a>(pHandle-&gt;<a class="code hl_variable" href="struct_s_p_ix___handle__t.html#a2139a08270d0669a4bfd52184169f444">pSPIx</a>, <a class="code hl_define" href="group___s_p_i___s_t_a_t_u_s___f_l_a_g___m_a_c_r_o_s.html#ga03bd0883899d8dcc406d3af27287a35e">SPI_STATUS_FLAG_MODF</a>);</div>
+<div class="line"><span class="lineno">  393</span> </div>
+<div class="line"><span class="lineno">  394</span>    uint8_t txeie_bit = (pHandle-&gt;<a class="code hl_variable" href="struct_s_p_ix___handle__t.html#a2139a08270d0669a4bfd52184169f444">pSPIx</a>-&gt;<a class="code hl_variable" href="struct_s_p_ix___reg_def__t.html#ae19a6b4335672191e29e0e1526e27fb0">CR2</a> &amp; (1 &lt;&lt; <a class="code hl_define" href="group___s_p_i___c_r2___b_i_t___p_o_s_i_t_i_o_n_s.html#ga01e9b00dc195c10d1baefd0687ab9262">SPI_CR2_TXEIE_Pos</a>));</div>
+<div class="line"><span class="lineno">  395</span>    uint8_t rxneie_bit = (pHandle-&gt;<a class="code hl_variable" href="struct_s_p_ix___handle__t.html#a2139a08270d0669a4bfd52184169f444">pSPIx</a>-&gt;<a class="code hl_variable" href="struct_s_p_ix___reg_def__t.html#ae19a6b4335672191e29e0e1526e27fb0">CR2</a> &amp; (1 &lt;&lt; <a class="code hl_define" href="group___s_p_i___c_r2___b_i_t___p_o_s_i_t_i_o_n_s.html#gaf2e1e16fa6007b96880333d0321c5971">SPI_CR2_RXNEIE_Pos</a>));</div>
+<div class="line"><span class="lineno">  396</span>    uint8_t errie_bit = (pHandle-&gt;<a class="code hl_variable" href="struct_s_p_ix___handle__t.html#a2139a08270d0669a4bfd52184169f444">pSPIx</a>-&gt;<a class="code hl_variable" href="struct_s_p_ix___reg_def__t.html#ae19a6b4335672191e29e0e1526e27fb0">CR2</a> &amp; (1 &lt;&lt; <a class="code hl_define" href="group___s_p_i___c_r2___b_i_t___p_o_s_i_t_i_o_n_s.html#ga632cdba8557df9c3bbd2561b93f4e0f7">SPI_CR2_ERRIE_Pos</a>));</div>
+<div class="line"><span class="lineno">  397</span> </div>
+<div class="line"><span class="lineno">  398</span> </div>
+<div class="line"><span class="lineno">  399</span>    <span class="comment">// Check TXE flag</span></div>
+<div class="line"><span class="lineno">  400</span>    <span class="keywordflow">if</span>(txe_flag &amp;&amp; txeie_bit){</div>
+<div class="line"><span class="lineno">  401</span>        <a class="code hl_function" href="stm32f407xx__spi_8c.html#ae47cf0d5c83626d8a21a06ad7f99e3cd">SPI_Tx_IRQ_Helper</a>(pHandle);</div>
+<div class="line"><span class="lineno">  402</span>    }</div>
+<div class="line"><span class="lineno">  403</span> </div>
+<div class="line"><span class="lineno">  404</span>    <span class="comment">// Check RXNE flag</span></div>
+<div class="line"><span class="lineno">  405</span>    <span class="keywordflow">if</span>(rxne_flag &amp;&amp; rxneie_bit){</div>
+<div class="line"><span class="lineno">  406</span>        <a class="code hl_function" href="stm32f407xx__spi_8c.html#af666fb211c7cedc7095c6c1b0a7c3a3a">SPI_Rx_IRQ_Helper</a>(pHandle);</div>
+<div class="line"><span class="lineno">  407</span>    }</div>
+<div class="line"><span class="lineno">  408</span> </div>
+<div class="line"><span class="lineno">  409</span>    <span class="comment">// Check Overrun Error</span></div>
+<div class="line"><span class="lineno">  410</span>    <span class="keywordflow">if</span> (ovr_flag &amp;&amp; errie_bit)</div>
+<div class="line"><span class="lineno">  411</span>    {</div>
+<div class="line"><span class="lineno">  412</span>        <a class="code hl_function" href="stm32f407xx__spi_8c.html#a922a4e8bad579c2f61fd2c25e070a212">SPI_OVR_Err_IRQ_Helper</a>(pHandle);</div>
+<div class="line"><span class="lineno">  413</span>    }</div>
+<div class="line"><span class="lineno">  414</span> </div>
+<div class="line"><span class="lineno">  415</span>    <span class="comment">// Check CRC Error</span></div>
+<div class="line"><span class="lineno">  416</span>    <span class="keywordflow">if</span> (crc_err_flag &amp;&amp; errie_bit)</div>
+<div class="line"><span class="lineno">  417</span>    {</div>
+<div class="line"><span class="lineno">  418</span>        <a class="code hl_function" href="stm32f407xx__spi_8c.html#a711dae34a1a0be49f23fc5c47c557bb0">SPI_CRC_Err_IRQ_Helper</a>(pHandle);</div>
+<div class="line"><span class="lineno">  419</span>    }</div>
+<div class="line"><span class="lineno">  420</span> </div>
+<div class="line"><span class="lineno">  421</span>    <span class="comment">// Check Master mode fault Error</span></div>
+<div class="line"><span class="lineno">  422</span>    <span class="keywordflow">if</span> (modf_flag &amp;&amp; errie_bit)</div>
+<div class="line"><span class="lineno">  423</span>    {</div>
+<div class="line"><span class="lineno">  424</span>        <a class="code hl_function" href="stm32f407xx__spi_8c.html#ab673d1d7ae262269e02b80a3dd2b3af4">SPI_MODF_Err_IRQ_Helper</a>(pHandle);</div>
+<div class="line"><span class="lineno">  425</span>    }</div>
+<div class="line"><span class="lineno">  426</span>}</div>
+<div class="ttc" id="agroup___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s_html_ga28c21c2e8a6f53982ec6666fb0969123"><div class="ttname"><a href="#ga28c21c2e8a6f53982ec6666fb0969123">SPIx_GetFlagStatus</a></div><div class="ttdeci">uint8_t SPIx_GetFlagStatus(SPIx_RegDef_t *pSPIx, uint32_t FlagName)</div><div class="ttdoc">Reads the status of a specific SPI status flag.</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx__spi_8c_source.html#l00204">stm32f407xx_spi.c:204</a></div></div>
+<div class="ttc" id="agroup___s_p_i___c_r2___b_i_t___p_o_s_i_t_i_o_n_s_html_ga01e9b00dc195c10d1baefd0687ab9262"><div class="ttname"><a href="group___s_p_i___c_r2___b_i_t___p_o_s_i_t_i_o_n_s.html#ga01e9b00dc195c10d1baefd0687ab9262">SPI_CR2_TXEIE_Pos</a></div><div class="ttdeci">#define SPI_CR2_TXEIE_Pos</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx__spi_8h_source.html#l00661">stm32f407xx_spi.h:661</a></div></div>
+<div class="ttc" id="agroup___s_p_i___c_r2___b_i_t___p_o_s_i_t_i_o_n_s_html_ga632cdba8557df9c3bbd2561b93f4e0f7"><div class="ttname"><a href="group___s_p_i___c_r2___b_i_t___p_o_s_i_t_i_o_n_s.html#ga632cdba8557df9c3bbd2561b93f4e0f7">SPI_CR2_ERRIE_Pos</a></div><div class="ttdeci">#define SPI_CR2_ERRIE_Pos</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx__spi_8h_source.html#l00659">stm32f407xx_spi.h:659</a></div></div>
+<div class="ttc" id="agroup___s_p_i___c_r2___b_i_t___p_o_s_i_t_i_o_n_s_html_gaf2e1e16fa6007b96880333d0321c5971"><div class="ttname"><a href="group___s_p_i___c_r2___b_i_t___p_o_s_i_t_i_o_n_s.html#gaf2e1e16fa6007b96880333d0321c5971">SPI_CR2_RXNEIE_Pos</a></div><div class="ttdeci">#define SPI_CR2_RXNEIE_Pos</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx__spi_8h_source.html#l00660">stm32f407xx_spi.h:660</a></div></div>
+<div class="ttc" id="agroup___s_p_i___s_t_a_t_u_s___f_l_a_g___m_a_c_r_o_s_html_ga03bd0883899d8dcc406d3af27287a35e"><div class="ttname"><a href="group___s_p_i___s_t_a_t_u_s___f_l_a_g___m_a_c_r_o_s.html#ga03bd0883899d8dcc406d3af27287a35e">SPI_STATUS_FLAG_MODF</a></div><div class="ttdeci">#define SPI_STATUS_FLAG_MODF</div><div class="ttdoc">Mode fault (bit 5).</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx__spi_8h_source.html#l00232">stm32f407xx_spi.h:232</a></div></div>
+<div class="ttc" id="agroup___s_p_i___s_t_a_t_u_s___f_l_a_g___m_a_c_r_o_s_html_ga13cea6befcaaeb6421eb7e801abb48fe"><div class="ttname"><a href="group___s_p_i___s_t_a_t_u_s___f_l_a_g___m_a_c_r_o_s.html#ga13cea6befcaaeb6421eb7e801abb48fe">SPI_STATUS_FLAG_TXE</a></div><div class="ttdeci">#define SPI_STATUS_FLAG_TXE</div><div class="ttdoc">Transmit buffer empty (bit 1).</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx__spi_8h_source.html#l00200">stm32f407xx_spi.h:200</a></div></div>
+<div class="ttc" id="agroup___s_p_i___s_t_a_t_u_s___f_l_a_g___m_a_c_r_o_s_html_ga56a2f9dc08aa73b82af59effc87d12c6"><div class="ttname"><a href="group___s_p_i___s_t_a_t_u_s___f_l_a_g___m_a_c_r_o_s.html#ga56a2f9dc08aa73b82af59effc87d12c6">SPI_STATUS_FLAG_OVR</a></div><div class="ttdeci">#define SPI_STATUS_FLAG_OVR</div><div class="ttdoc">Overrun error (bit 6).</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx__spi_8h_source.html#l00240">stm32f407xx_spi.h:240</a></div></div>
+<div class="ttc" id="agroup___s_p_i___s_t_a_t_u_s___f_l_a_g___m_a_c_r_o_s_html_ga9c8a4d37f13d0ad3bd10eb1aa1bc19b6"><div class="ttname"><a href="group___s_p_i___s_t_a_t_u_s___f_l_a_g___m_a_c_r_o_s.html#ga9c8a4d37f13d0ad3bd10eb1aa1bc19b6">SPI_STATUS_FLAG_CRCERR</a></div><div class="ttdeci">#define SPI_STATUS_FLAG_CRCERR</div><div class="ttdoc">CRC error (bit 4).</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx__spi_8h_source.html#l00224">stm32f407xx_spi.h:224</a></div></div>
+<div class="ttc" id="agroup___s_p_i___s_t_a_t_u_s___f_l_a_g___m_a_c_r_o_s_html_gaa4bf84364251d2d1fb189fd72030656e"><div class="ttname"><a href="group___s_p_i___s_t_a_t_u_s___f_l_a_g___m_a_c_r_o_s.html#gaa4bf84364251d2d1fb189fd72030656e">SPI_STATUS_FLAG_RXNE</a></div><div class="ttdeci">#define SPI_STATUS_FLAG_RXNE</div><div class="ttdoc">Receive buffer not empty (bit 0).</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx__spi_8h_source.html#l00192">stm32f407xx_spi.h:192</a></div></div>
+<div class="ttc" id="astm32f407xx__spi_8c_html_a711dae34a1a0be49f23fc5c47c557bb0"><div class="ttname"><a href="stm32f407xx__spi_8c.html#a711dae34a1a0be49f23fc5c47c557bb0">SPI_CRC_Err_IRQ_Helper</a></div><div class="ttdeci">static void SPI_CRC_Err_IRQ_Helper(SPIx_Handle_t *pHandle)</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx__spi_8c_source.html#l00063">stm32f407xx_spi.c:63</a></div></div>
+<div class="ttc" id="astm32f407xx__spi_8c_html_a922a4e8bad579c2f61fd2c25e070a212"><div class="ttname"><a href="stm32f407xx__spi_8c.html#a922a4e8bad579c2f61fd2c25e070a212">SPI_OVR_Err_IRQ_Helper</a></div><div class="ttdeci">static void SPI_OVR_Err_IRQ_Helper(SPIx_Handle_t *pHandle)</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx__spi_8c_source.html#l00051">stm32f407xx_spi.c:51</a></div></div>
+<div class="ttc" id="astm32f407xx__spi_8c_html_ab673d1d7ae262269e02b80a3dd2b3af4"><div class="ttname"><a href="stm32f407xx__spi_8c.html#ab673d1d7ae262269e02b80a3dd2b3af4">SPI_MODF_Err_IRQ_Helper</a></div><div class="ttdeci">static void SPI_MODF_Err_IRQ_Helper(SPIx_Handle_t *pHandle)</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx__spi_8c_source.html#l00067">stm32f407xx_spi.c:67</a></div></div>
+<div class="ttc" id="astm32f407xx__spi_8c_html_ae47cf0d5c83626d8a21a06ad7f99e3cd"><div class="ttname"><a href="stm32f407xx__spi_8c.html#ae47cf0d5c83626d8a21a06ad7f99e3cd">SPI_Tx_IRQ_Helper</a></div><div class="ttdeci">static void SPI_Tx_IRQ_Helper(SPIx_Handle_t *pHandle)</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx__spi_8c_source.html#l00016">stm32f407xx_spi.c:16</a></div></div>
+<div class="ttc" id="astm32f407xx__spi_8c_html_af666fb211c7cedc7095c6c1b0a7c3a3a"><div class="ttname"><a href="stm32f407xx__spi_8c.html#af666fb211c7cedc7095c6c1b0a7c3a3a">SPI_Rx_IRQ_Helper</a></div><div class="ttdeci">static void SPI_Rx_IRQ_Helper(SPIx_Handle_t *pHandle)</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx__spi_8c_source.html#l00034">stm32f407xx_spi.c:34</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="group___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s_ga9637b0d6a930d03fd844877298605e78_cgraph.png" border="0" usemap="#agroup___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s_ga9637b0d6a930d03fd844877298605e78_cgraph" loading="lazy" alt=""/></div>
+<map name="agroup___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s_ga9637b0d6a930d03fd844877298605e78_cgraph" id="agroup___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s_ga9637b0d6a930d03fd844877298605e78_cgraph">
+<area shape="rect" title="Handle all interrupt events for the given SPI peripheral." alt="" coords="5,132,138,159"/>
+<area shape="rect" href="stm32f407xx__spi_8c.html#a711dae34a1a0be49f23fc5c47c557bb0" title=" " alt="" coords="190,5,370,32"/>
+<area shape="poly" title=" " alt="" coords="82,130,124,86,153,62,184,42,197,36,199,40,187,46,156,67,128,90,86,133"/>
+<area shape="rect" href="stm32f407xx__spi_8c.html#ab673d1d7ae262269e02b80a3dd2b3af4" title=" " alt="" coords="186,56,375,83"/>
+<area shape="poly" title=" " alt="" coords="100,129,185,92,207,85,208,90,187,97,102,134"/>
+<area shape="rect" href="stm32f407xx__spi_8c.html#a922a4e8bad579c2f61fd2c25e070a212" title=" " alt="" coords="191,107,370,133"/>
+<area shape="poly" title=" " alt="" coords="138,135,175,130,176,135,138,140"/>
+<area shape="rect" href="stm32f407xx__spi_8c.html#af666fb211c7cedc7095c6c1b0a7c3a3a" title=" " alt="" coords="209,157,352,184"/>
+<area shape="poly" title=" " alt="" coords="138,151,193,157,193,163,138,156"/>
+<area shape="rect" href="stm32f407xx__spi_8c.html#ae47cf0d5c83626d8a21a06ad7f99e3cd" title=" " alt="" coords="210,208,351,235"/>
+<area shape="poly" title=" " alt="" coords="102,157,187,194,208,201,207,206,185,198,100,162"/>
+<area shape="rect" href="group___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s.html#ga28c21c2e8a6f53982ec6666fb0969123" title="Reads the status of a specific SPI status flag." alt="" coords="210,259,351,285"/>
+<area shape="poly" title=" " alt="" coords="86,157,128,200,156,224,187,244,199,250,197,255,184,249,153,228,124,204,82,161"/>
+<area shape="rect" href="group___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s.html#ga07af1ab45d2edd8a8a05cf1986803e45" title="Application callback invoked by the SPI driver on asynchronous events." alt="" coords="423,149,622,176"/>
+<area shape="poly" title=" " alt="" coords="361,131,429,144,428,149,360,137"/>
+<area shape="poly" title=" " alt="" coords="352,166,407,164,407,169,352,171"/>
+<area shape="rect" href="group___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s.html#gae8becf850726d059d4808fe5ba705f07" title="Enable or disable specified SPI peripheral interrupts (CR2)." alt="" coords="441,200,604,243"/>
+<area shape="poly" title=" " alt="" coords="348,182,426,199,425,204,347,187"/>
+<area shape="poly" title=" " alt="" coords="338,205,449,178,450,183,339,210"/>
+<area shape="poly" title=" " alt="" coords="352,219,426,219,426,224,352,224"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="ga66a55c39f2954c6fba416822612497cb" name="ga66a55c39f2954c6fba416822612497cb"></a>
@@ -454,24 +953,21 @@ For simplex mode BIDIMODE Bit has to be Cleared</dd></dl>
 <dl class="section note"><dt>Note</dt><dd>This function sets or clears the SPE bit in SPI_CR1 register.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>None </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="stm32f407xx__spi_8c_source.html#l00128">128</a> of file <a class="el" href="stm32f407xx__spi_8c_source.html">stm32f407xx_spi.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  128</span>                                                           {</div>
-<div class="line"><span class="lineno">  129</span>    <span class="keywordflow">if</span>(EN_DI == <a class="code hl_define" href="group___m_i_s_c_e_l_l_a_n_e_o_u_s___m_a_c_r_o_s.html#ga514ad415fb6125ba296793df7d1a468a">ENABLE</a>){</div>
-<div class="line"><span class="lineno">  130</span>        pSPIx-&gt;<a class="code hl_variable" href="struct_s_p_ix___reg_def__t.html#ac806058f093a3e33457f2acd149e73b9">CR1</a> |= (1 &lt;&lt; <a class="code hl_define" href="group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s.html#ga3f5515b536f82c1d91a64bd534030284">SPI_CR1_SPE_Pos</a>);</div>
-<div class="line"><span class="lineno">  131</span>    }<span class="keywordflow">else</span>{</div>
-<div class="line"><span class="lineno">  132</span>        <span class="comment">//  1. Wait until TXE=1</span></div>
-<div class="line"><span class="lineno">  133</span>        <span class="keywordflow">while</span>(!<a class="code hl_function" href="#ga28c21c2e8a6f53982ec6666fb0969123">SPIx_GetFlagStatus</a>(pSPIx, <a class="code hl_define" href="group___s_p_i___s_t_a_t_u_s___f_l_a_g___m_a_c_r_o_s.html#ga13cea6befcaaeb6421eb7e801abb48fe">SPI_STATUS_FLAG_TXE</a>));</div>
-<div class="line"><span class="lineno">  134</span>        <span class="comment">//  2. Then wait until BSY=0</span></div>
-<div class="line"><span class="lineno">  135</span>        <span class="keywordflow">while</span>(<a class="code hl_function" href="#ga28c21c2e8a6f53982ec6666fb0969123">SPIx_GetFlagStatus</a>(pSPIx, <a class="code hl_define" href="group___s_p_i___s_t_a_t_u_s___f_l_a_g___m_a_c_r_o_s.html#ga891a0e21281996b5ea7421f13182d5b6">SPI_STATUS_FLAG_BSY</a>));</div>
-<div class="line"><span class="lineno">  136</span>        <span class="comment">//  3. The Disable the SPI</span></div>
-<div class="line"><span class="lineno">  137</span>        pSPIx-&gt;<a class="code hl_variable" href="struct_s_p_ix___reg_def__t.html#ac806058f093a3e33457f2acd149e73b9">CR1</a> &amp;= ~(1 &lt;&lt; <a class="code hl_define" href="group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s.html#ga3f5515b536f82c1d91a64bd534030284">SPI_CR1_SPE_Pos</a>);</div>
-<div class="line"><span class="lineno">  138</span>    }</div>
-<div class="line"><span class="lineno">  139</span>}</div>
-<div class="ttc" id="agroup___m_i_s_c_e_l_l_a_n_e_o_u_s___m_a_c_r_o_s_html_ga514ad415fb6125ba296793df7d1a468a"><div class="ttname"><a href="group___m_i_s_c_e_l_l_a_n_e_o_u_s___m_a_c_r_o_s.html#ga514ad415fb6125ba296793df7d1a468a">ENABLE</a></div><div class="ttdeci">#define ENABLE</div><div class="ttdef"><b>Definition</b> <a href="_s_t_m32_f4xx___d_r_i_v_e_r_s_2_inc_2stm32f407xx_8h_source.html#l00021">stm32f407xx.h:21</a></div></div>
-<div class="ttc" id="agroup___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s_html_ga28c21c2e8a6f53982ec6666fb0969123"><div class="ttname"><a href="#ga28c21c2e8a6f53982ec6666fb0969123">SPIx_GetFlagStatus</a></div><div class="ttdeci">uint8_t SPIx_GetFlagStatus(SPIx_RegDef_t *pSPIx, uint32_t FlagName)</div><div class="ttdoc">Reads the status of a specific SPI status flag.</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx__spi_8c_source.html#l00141">stm32f407xx_spi.c:141</a></div></div>
-<div class="ttc" id="agroup___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s_html_ga3f5515b536f82c1d91a64bd534030284"><div class="ttname"><a href="group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s.html#ga3f5515b536f82c1d91a64bd534030284">SPI_CR1_SPE_Pos</a></div><div class="ttdeci">#define SPI_CR1_SPE_Pos</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx__spi_8h_source.html#l00381">stm32f407xx_spi.h:381</a></div></div>
-<div class="ttc" id="agroup___s_p_i___s_t_a_t_u_s___f_l_a_g___m_a_c_r_o_s_html_ga13cea6befcaaeb6421eb7e801abb48fe"><div class="ttname"><a href="group___s_p_i___s_t_a_t_u_s___f_l_a_g___m_a_c_r_o_s.html#ga13cea6befcaaeb6421eb7e801abb48fe">SPI_STATUS_FLAG_TXE</a></div><div class="ttdeci">#define SPI_STATUS_FLAG_TXE</div><div class="ttdoc">Transmit buffer empty (bit 1).</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx__spi_8h_source.html#l00191">stm32f407xx_spi.h:191</a></div></div>
-<div class="ttc" id="agroup___s_p_i___s_t_a_t_u_s___f_l_a_g___m_a_c_r_o_s_html_ga891a0e21281996b5ea7421f13182d5b6"><div class="ttname"><a href="group___s_p_i___s_t_a_t_u_s___f_l_a_g___m_a_c_r_o_s.html#ga891a0e21281996b5ea7421f13182d5b6">SPI_STATUS_FLAG_BSY</a></div><div class="ttdeci">#define SPI_STATUS_FLAG_BSY</div><div class="ttdoc">Busy (bit 7).</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx__spi_8h_source.html#l00239">stm32f407xx_spi.h:239</a></div></div>
+<p class="definition">Definition at line <a class="el" href="stm32f407xx__spi_8c_source.html#l00191">191</a> of file <a class="el" href="stm32f407xx__spi_8c_source.html">stm32f407xx_spi.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  191</span>                                                           {</div>
+<div class="line"><span class="lineno">  192</span>    <span class="keywordflow">if</span>(EN_DI == <a class="code hl_define" href="group___m_i_s_c_e_l_l_a_n_e_o_u_s___m_a_c_r_o_s.html#ga514ad415fb6125ba296793df7d1a468a">ENABLE</a>){</div>
+<div class="line"><span class="lineno">  193</span>        pSPIx-&gt;<a class="code hl_variable" href="struct_s_p_ix___reg_def__t.html#ac806058f093a3e33457f2acd149e73b9">CR1</a> |= (1 &lt;&lt; <a class="code hl_define" href="group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s.html#ga3f5515b536f82c1d91a64bd534030284">SPI_CR1_SPE_Pos</a>);</div>
+<div class="line"><span class="lineno">  194</span>    }<span class="keywordflow">else</span>{</div>
+<div class="line"><span class="lineno">  195</span>        <span class="comment">//  1. Wait until TXE=1</span></div>
+<div class="line"><span class="lineno">  196</span>        <span class="keywordflow">while</span>(!<a class="code hl_function" href="#ga28c21c2e8a6f53982ec6666fb0969123">SPIx_GetFlagStatus</a>(pSPIx, <a class="code hl_define" href="group___s_p_i___s_t_a_t_u_s___f_l_a_g___m_a_c_r_o_s.html#ga13cea6befcaaeb6421eb7e801abb48fe">SPI_STATUS_FLAG_TXE</a>));</div>
+<div class="line"><span class="lineno">  197</span>        <span class="comment">//  2. Then wait until BSY=0</span></div>
+<div class="line"><span class="lineno">  198</span>        <span class="keywordflow">while</span>(<a class="code hl_function" href="#ga28c21c2e8a6f53982ec6666fb0969123">SPIx_GetFlagStatus</a>(pSPIx, <a class="code hl_define" href="group___s_p_i___s_t_a_t_u_s___f_l_a_g___m_a_c_r_o_s.html#ga891a0e21281996b5ea7421f13182d5b6">SPI_STATUS_FLAG_BSY</a>));</div>
+<div class="line"><span class="lineno">  199</span>        <span class="comment">//  3. The Disable the SPI</span></div>
+<div class="line"><span class="lineno">  200</span>        pSPIx-&gt;<a class="code hl_variable" href="struct_s_p_ix___reg_def__t.html#ac806058f093a3e33457f2acd149e73b9">CR1</a> &amp;= ~(1 &lt;&lt; <a class="code hl_define" href="group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s.html#ga3f5515b536f82c1d91a64bd534030284">SPI_CR1_SPE_Pos</a>);</div>
+<div class="line"><span class="lineno">  201</span>    }</div>
+<div class="line"><span class="lineno">  202</span>}</div>
+<div class="ttc" id="agroup___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s_html_ga3f5515b536f82c1d91a64bd534030284"><div class="ttname"><a href="group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s.html#ga3f5515b536f82c1d91a64bd534030284">SPI_CR1_SPE_Pos</a></div><div class="ttdeci">#define SPI_CR1_SPE_Pos</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx__spi_8h_source.html#l00630">stm32f407xx_spi.h:630</a></div></div>
+<div class="ttc" id="agroup___s_p_i___s_t_a_t_u_s___f_l_a_g___m_a_c_r_o_s_html_ga891a0e21281996b5ea7421f13182d5b6"><div class="ttname"><a href="group___s_p_i___s_t_a_t_u_s___f_l_a_g___m_a_c_r_o_s.html#ga891a0e21281996b5ea7421f13182d5b6">SPI_STATUS_FLAG_BSY</a></div><div class="ttdeci">#define SPI_STATUS_FLAG_BSY</div><div class="ttdoc">Busy (bit 7).</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx__spi_8h_source.html#l00248">stm32f407xx_spi.h:248</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -485,8 +981,308 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="ga2f1a0a4006270d72092844c3e764d399" name="ga2f1a0a4006270d72092844c3e764d399"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga2f1a0a4006270d72092844c3e764d399">&#9670;&#160;</a></span>SPIx_SendData_Blocking()</h2>
+<a id="gae8becf850726d059d4808fe5ba705f07" name="gae8becf850726d059d4808fe5ba705f07"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae8becf850726d059d4808fe5ba705f07">&#9670;&#160;</a></span>SPIx_PeripheralInterruptControl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SPIx_PeripheralInterruptControl </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_s_p_ix___reg_def__t.html">SPIx_RegDef_t</a> *</td>          <td class="paramname"><span class="paramname"><em>pSPIx</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>ITType</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>EN_DI</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Enable or disable specified SPI peripheral interrupts (CR2). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">pSPIx</td><td>Pointer to SPI registers (SPI1, SPI2, ...). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ITType</td><td>Combination (OR) of SPI_IT_TXE, SPI_IT_RXNE, SPI_IT_ERR Refer <a class="el" href="group___s_p_i___i_t___t_y_p_e.html">SPI Peripheral Interrupt Types</a>. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">EN_DI</td><td>ENABLE (non-zero) to set bits, DISABLE (0) to clear bits.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>This controls only the SPI peripheral (CR2). NVIC must be enabled/disabled separately using <a class="el" href="#ga9f155aebbeb71ea03e0f2dd9ff4ff7b7" title="Enable or disable the given SPI IRQ in the NVIC.">SPIx_IRQControl()</a>/SPIx_IRQEnable(). </dd>
+<dd>
+Typical usage: configure priority, enable the correct CR2 bits, then enable NVIC. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="stm32f407xx__spi_8c_source.html#l00310">310</a> of file <a class="el" href="stm32f407xx__spi_8c_source.html">stm32f407xx_spi.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  310</span>                                                                                         {</div>
+<div class="line"><span class="lineno">  311</span>    <span class="keywordflow">if</span> (EN_DI) {</div>
+<div class="line"><span class="lineno">  312</span>        <span class="keywordflow">if</span> (ITType == <a class="code hl_define" href="group___s_p_i___i_t___t_y_p_e.html#ga4b882d1e5e1493afe4aad68483107400">SPI_IT_TYPE_TXE</a>) {</div>
+<div class="line"><span class="lineno">  313</span>            pSPIx-&gt;<a class="code hl_variable" href="struct_s_p_ix___reg_def__t.html#ae19a6b4335672191e29e0e1526e27fb0">CR2</a> |= (1U &lt;&lt; <a class="code hl_define" href="group___s_p_i___c_r2___b_i_t___p_o_s_i_t_i_o_n_s.html#ga01e9b00dc195c10d1baefd0687ab9262">SPI_CR2_TXEIE_Pos</a>);</div>
+<div class="line"><span class="lineno">  314</span>        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (ITType == <a class="code hl_define" href="group___s_p_i___i_t___t_y_p_e.html#ga9652fdf02a531692dedd8c19f4de71f3">SPI_IT_TYPE_RXNE</a>) {</div>
+<div class="line"><span class="lineno">  315</span>            pSPIx-&gt;<a class="code hl_variable" href="struct_s_p_ix___reg_def__t.html#ae19a6b4335672191e29e0e1526e27fb0">CR2</a> |= (1U &lt;&lt; <a class="code hl_define" href="group___s_p_i___c_r2___b_i_t___p_o_s_i_t_i_o_n_s.html#gaf2e1e16fa6007b96880333d0321c5971">SPI_CR2_RXNEIE_Pos</a>);</div>
+<div class="line"><span class="lineno">  316</span>        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (ITType == <a class="code hl_define" href="group___s_p_i___i_t___t_y_p_e.html#ga7c79bdae5b569eb88274667d83787d0a">SPI_IT_TYPE_ERR</a>) {</div>
+<div class="line"><span class="lineno">  317</span>            pSPIx-&gt;<a class="code hl_variable" href="struct_s_p_ix___reg_def__t.html#ae19a6b4335672191e29e0e1526e27fb0">CR2</a> |= (1U &lt;&lt; <a class="code hl_define" href="group___s_p_i___c_r2___b_i_t___p_o_s_i_t_i_o_n_s.html#ga632cdba8557df9c3bbd2561b93f4e0f7">SPI_CR2_ERRIE_Pos</a>);</div>
+<div class="line"><span class="lineno">  318</span>        }</div>
+<div class="line"><span class="lineno">  319</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  320</span>        <span class="keywordflow">if</span> (ITType == <a class="code hl_define" href="group___s_p_i___i_t___t_y_p_e.html#ga4b882d1e5e1493afe4aad68483107400">SPI_IT_TYPE_TXE</a>) {</div>
+<div class="line"><span class="lineno">  321</span>            pSPIx-&gt;<a class="code hl_variable" href="struct_s_p_ix___reg_def__t.html#ae19a6b4335672191e29e0e1526e27fb0">CR2</a> &amp;= ~(1U &lt;&lt; <a class="code hl_define" href="group___s_p_i___c_r2___b_i_t___p_o_s_i_t_i_o_n_s.html#ga01e9b00dc195c10d1baefd0687ab9262">SPI_CR2_TXEIE_Pos</a>);</div>
+<div class="line"><span class="lineno">  322</span>        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (ITType == <a class="code hl_define" href="group___s_p_i___i_t___t_y_p_e.html#ga9652fdf02a531692dedd8c19f4de71f3">SPI_IT_TYPE_RXNE</a>) {</div>
+<div class="line"><span class="lineno">  323</span>            pSPIx-&gt;<a class="code hl_variable" href="struct_s_p_ix___reg_def__t.html#ae19a6b4335672191e29e0e1526e27fb0">CR2</a> &amp;= ~(1U &lt;&lt; <a class="code hl_define" href="group___s_p_i___c_r2___b_i_t___p_o_s_i_t_i_o_n_s.html#gaf2e1e16fa6007b96880333d0321c5971">SPI_CR2_RXNEIE_Pos</a>);</div>
+<div class="line"><span class="lineno">  324</span>        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (ITType == <a class="code hl_define" href="group___s_p_i___i_t___t_y_p_e.html#ga7c79bdae5b569eb88274667d83787d0a">SPI_IT_TYPE_ERR</a>) {</div>
+<div class="line"><span class="lineno">  325</span>            pSPIx-&gt;<a class="code hl_variable" href="struct_s_p_ix___reg_def__t.html#ae19a6b4335672191e29e0e1526e27fb0">CR2</a> &amp;= ~(1U &lt;&lt; <a class="code hl_define" href="group___s_p_i___c_r2___b_i_t___p_o_s_i_t_i_o_n_s.html#ga632cdba8557df9c3bbd2561b93f4e0f7">SPI_CR2_ERRIE_Pos</a>);</div>
+<div class="line"><span class="lineno">  326</span>        }</div>
+<div class="line"><span class="lineno">  327</span>    }</div>
+<div class="line"><span class="lineno">  328</span>}</div>
+<div class="ttc" id="agroup___s_p_i___i_t___t_y_p_e_html_ga7c79bdae5b569eb88274667d83787d0a"><div class="ttname"><a href="group___s_p_i___i_t___t_y_p_e.html#ga7c79bdae5b569eb88274667d83787d0a">SPI_IT_TYPE_ERR</a></div><div class="ttdeci">#define SPI_IT_TYPE_ERR</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx__spi_8h_source.html#l00755">stm32f407xx_spi.h:755</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="group___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s_gae8becf850726d059d4808fe5ba705f07_icgraph.png" border="0" usemap="#agroup___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s_gae8becf850726d059d4808fe5ba705f07_icgraph" loading="lazy" alt=""/></div>
+<map name="agroup___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s_gae8becf850726d059d4808fe5ba705f07_icgraph" id="agroup___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s_gae8becf850726d059d4808fe5ba705f07_icgraph">
+<area shape="rect" title="Enable or disable specified SPI peripheral interrupts (CR2)." alt="" coords="396,124,559,167"/>
+<area shape="rect" href="group___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s.html#gaa33e1796de9a74dae78d9921de01df2a" title="Gracefully terminate an ongoing SPI receive interrupt operation." alt="" coords="195,5,338,32"/>
+<area shape="poly" title=" " alt="" coords="441,115,398,80,347,46,320,35,322,30,349,42,401,75,445,111"/>
+<area shape="rect" href="group___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s.html#ga0e67d8e31e905a224b3ec5d806e94897" title="Gracefully terminate an ongoing SPI transmit interrupt operation." alt="" coords="186,56,348,83"/>
+<area shape="poly" title=" " alt="" coords="409,120,347,97,313,86,315,81,349,92,411,115"/>
+<area shape="rect" href="stm32f407xx__spi_8c.html#af666fb211c7cedc7095c6c1b0a7c3a3a" title=" " alt="" coords="195,107,338,133"/>
+<area shape="poly" title=" " alt="" coords="380,136,339,131,339,126,381,131"/>
+<area shape="rect" href="stm32f407xx__spi_8c.html#ae47cf0d5c83626d8a21a06ad7f99e3cd" title=" " alt="" coords="196,157,338,184"/>
+<area shape="poly" title=" " alt="" coords="381,160,338,165,338,160,381,154"/>
+<area shape="rect" href="group___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s.html#ga185a067739ac2ed3d3115a03ceee35a3" title="Start a non&#45;blocking (interrupt&#45;driven) receive on the SPI peripheral." alt="" coords="194,208,340,235"/>
+<area shape="poly" title=" " alt="" coords="411,175,349,199,315,210,313,205,347,193,409,170"/>
+<area shape="rect" href="group___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s.html#ga84fe922cab70472a7ae10fc726de8d10" title="Start a non&#45;blocking (interrupt&#45;driven) transmit on the SPI peripheral." alt="" coords="203,259,330,285"/>
+<area shape="poly" title=" " alt="" coords="445,179,401,215,349,249,322,261,320,256,347,244,398,211,441,175"/>
+<area shape="rect" href="group___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s.html#ga9637b0d6a930d03fd844877298605e78" title="Handle all interrupt events for the given SPI peripheral." alt="" coords="5,132,138,159"/>
+<area shape="poly" title=" " alt="" coords="180,134,138,139,137,134,179,129"/>
+<area shape="poly" title=" " alt="" coords="181,162,137,157,138,151,181,157"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ga49a1accdcb1df29926a4f4c4cdfb334e" name="ga49a1accdcb1df29926a4f4c4cdfb334e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga49a1accdcb1df29926a4f4c4cdfb334e">&#9670;&#160;</a></span>SPIx_ReceiveData_Blocking()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SPIx_ReceiveData_Blocking </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_s_p_ix___reg_def__t.html">SPIx_RegDef_t</a> *</td>          <td class="paramname"><span class="paramname"><em>pSPIx</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *</td>          <td class="paramname"><span class="paramname"><em>pRX_Data_Buffer</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>Len_Byte</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Receive data from the specified SPI peripheral in blocking mode. </p>
+<p>This function receives a block of data from the given SPI instance using a polling-based (blocking) mechanism. In master mode, dummy writes are performed to generate the required SPI clock for data sampling. The function waits until each byte is available in the receive buffer before reading it from the data register.</p>
+<p>The function returns only after all requested bytes have been received. It does not handle interrupt- or DMA-based transfers.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">pSPIx</td><td>Pointer to the SPI peripheral register definition structure. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">pData</td><td>Pointer to the receive buffer where incoming data will be stored. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">Len</td><td>Number of bytes to be received.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>Ensure the SPI peripheral is properly configured and enabled before calling this function. In master mode, NSS should be driven low before invoking this API and released high after the transfer completes.</dd>
+<dd>
+This API internally clears Overrun (OVR) errors for safe operation.</dd></dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">None</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000069">Todo</a></b></dt><dd>Edge case in 16 Bit mode what if user sends odd bytes </dd></dl>
+<p>16 Bit SPI</p>
+<ol type="1">
+<li>Wait for TXE = 1</li>
+</ol>
+<ol type="1">
+<li>Dummy write</li>
+</ol>
+<ol type="1">
+<li>Wait for RXNE = 1</li>
+</ol>
+<ol type="1">
+<li>Read received byte</li>
+</ol>
+<p>8 Bit SPI</p>
+<ol type="1">
+<li>Wait for TXE = 1</li>
+</ol>
+<ol type="1">
+<li>Dummy write</li>
+</ol>
+<ol type="1">
+<li>Wait for RXNE = 1</li>
+</ol>
+<ol type="1">
+<li>Read received byte</li>
+</ol>
+<ol type="1">
+<li>Wait for BSY to clear</li>
+</ol>
+
+<p class="definition">Definition at line <a class="el" href="stm32f407xx__spi_8c_source.html#l00235">235</a> of file <a class="el" href="stm32f407xx__spi_8c_source.html">stm32f407xx_spi.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  236</span>{</div>
+<div class="line"><span class="lineno">  238</span>    <span class="keywordflow">while</span> (Len_Byte &gt; 0)</div>
+<div class="line"><span class="lineno">  239</span>    {</div>
+<div class="line"><span class="lineno">  240</span>        <span class="keywordflow">if</span>(pSPIx-&gt;<a class="code hl_variable" href="struct_s_p_ix___reg_def__t.html#ac806058f093a3e33457f2acd149e73b9">CR1</a> &amp; (1U &lt;&lt; <a class="code hl_define" href="group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s.html#ga5290662db14690d4bcf30ed9e4694462">SPI_CR1_DFF_Pos</a>)){</div>
+<div class="line"><span class="lineno">  242</span>            <span class="keywordflow">while</span> (!<a class="code hl_function" href="#ga28c21c2e8a6f53982ec6666fb0969123">SPIx_GetFlagStatus</a>(pSPIx, <a class="code hl_define" href="group___s_p_i___s_t_a_t_u_s___f_l_a_g___m_a_c_r_o_s.html#ga13cea6befcaaeb6421eb7e801abb48fe">SPI_STATUS_FLAG_TXE</a>));</div>
+<div class="line"><span class="lineno">  243</span></div>
+<div class="line"><span class="lineno">  245</span>            pSPIx-&gt;<a class="code hl_variable" href="struct_s_p_ix___reg_def__t.html#aa59c17ad248dcbd0b66bc5aaa64c070f">DR</a> = (uint16_t)0xFFFF;</div>
+<div class="line"><span class="lineno">  246</span></div>
+<div class="line"><span class="lineno">  248</span>            <span class="keywordflow">while</span> (!<a class="code hl_function" href="#ga28c21c2e8a6f53982ec6666fb0969123">SPIx_GetFlagStatus</a>(pSPIx, <a class="code hl_define" href="group___s_p_i___s_t_a_t_u_s___f_l_a_g___m_a_c_r_o_s.html#gaa4bf84364251d2d1fb189fd72030656e">SPI_STATUS_FLAG_RXNE</a>));</div>
+<div class="line"><span class="lineno">  249</span></div>
+<div class="line"><span class="lineno">  251</span>            *(uint16_t*)pRX_Data_Buffer = (uint16_t)pSPIx-&gt;<a class="code hl_variable" href="struct_s_p_ix___reg_def__t.html#aa59c17ad248dcbd0b66bc5aaa64c070f">DR</a>;</div>
+<div class="line"><span class="lineno">  252</span>            pRX_Data_Buffer+=2;</div>
+<div class="line"><span class="lineno">  253</span>            Len_Byte-=2;</div>
+<div class="line"><span class="lineno">  254</span>        }<span class="keywordflow">else</span>{</div>
+<div class="line"><span class="lineno">  256</span>            <span class="keywordflow">while</span> (!<a class="code hl_function" href="#ga28c21c2e8a6f53982ec6666fb0969123">SPIx_GetFlagStatus</a>(pSPIx, <a class="code hl_define" href="group___s_p_i___s_t_a_t_u_s___f_l_a_g___m_a_c_r_o_s.html#ga13cea6befcaaeb6421eb7e801abb48fe">SPI_STATUS_FLAG_TXE</a>));</div>
+<div class="line"><span class="lineno">  257</span></div>
+<div class="line"><span class="lineno">  259</span>            pSPIx-&gt;<a class="code hl_variable" href="struct_s_p_ix___reg_def__t.html#aa59c17ad248dcbd0b66bc5aaa64c070f">DR</a> = (uint8_t)0xFF;</div>
+<div class="line"><span class="lineno">  260</span></div>
+<div class="line"><span class="lineno">  262</span>            <span class="keywordflow">while</span> (!<a class="code hl_function" href="#ga28c21c2e8a6f53982ec6666fb0969123">SPIx_GetFlagStatus</a>(pSPIx, <a class="code hl_define" href="group___s_p_i___s_t_a_t_u_s___f_l_a_g___m_a_c_r_o_s.html#gaa4bf84364251d2d1fb189fd72030656e">SPI_STATUS_FLAG_RXNE</a>));</div>
+<div class="line"><span class="lineno">  263</span></div>
+<div class="line"><span class="lineno">  265</span>            *pRX_Data_Buffer = (uint8_t)pSPIx-&gt;<a class="code hl_variable" href="struct_s_p_ix___reg_def__t.html#aa59c17ad248dcbd0b66bc5aaa64c070f">DR</a>;</div>
+<div class="line"><span class="lineno">  266</span>            pRX_Data_Buffer++;</div>
+<div class="line"><span class="lineno">  267</span>            Len_Byte--;</div>
+<div class="line"><span class="lineno">  268</span>        }</div>
+<div class="line"><span class="lineno">  269</span>    }</div>
+<div class="line"><span class="lineno">  270</span></div>
+<div class="line"><span class="lineno">  272</span>    <span class="keywordflow">while</span> (!<a class="code hl_function" href="#ga28c21c2e8a6f53982ec6666fb0969123">SPIx_GetFlagStatus</a>(pSPIx, <a class="code hl_define" href="group___s_p_i___s_t_a_t_u_s___f_l_a_g___m_a_c_r_o_s.html#ga13cea6befcaaeb6421eb7e801abb48fe">SPI_STATUS_FLAG_TXE</a>));</div>
+<div class="line"><span class="lineno">  273</span>    <span class="keywordflow">while</span> (<a class="code hl_function" href="#ga28c21c2e8a6f53982ec6666fb0969123">SPIx_GetFlagStatus</a>(pSPIx, <a class="code hl_define" href="group___s_p_i___s_t_a_t_u_s___f_l_a_g___m_a_c_r_o_s.html#ga891a0e21281996b5ea7421f13182d5b6">SPI_STATUS_FLAG_BSY</a>));</div>
+<div class="line"><span class="lineno">  274</span>}</div>
+<div class="ttc" id="astruct_s_p_ix___reg_def__t_html_aa59c17ad248dcbd0b66bc5aaa64c070f"><div class="ttname"><a href="struct_s_p_ix___reg_def__t.html#aa59c17ad248dcbd0b66bc5aaa64c070f">SPIx_RegDef_t::DR</a></div><div class="ttdeci">volatile uint32_t DR</div><div class="ttdef"><b>Definition</b> <a href="_s_t_m32_f4xx___d_r_i_v_e_r_s_2_inc_2stm32f407xx_8h_source.html#l00759">stm32f407xx.h:759</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="group___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s_ga49a1accdcb1df29926a4f4c4cdfb334e_cgraph.png" border="0" usemap="#agroup___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s_ga49a1accdcb1df29926a4f4c4cdfb334e_cgraph" loading="lazy" alt=""/></div>
+<map name="agroup___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s_ga49a1accdcb1df29926a4f4c4cdfb334e_cgraph" id="agroup___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s_ga49a1accdcb1df29926a4f4c4cdfb334e_cgraph">
+<area shape="rect" title="Receive data from the specified SPI peripheral in blocking mode." alt="" coords="5,5,196,32"/>
+<area shape="rect" href="group___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s.html#ga28c21c2e8a6f53982ec6666fb0969123" title="Reads the status of a specific SPI status flag." alt="" coords="244,5,385,32"/>
+<area shape="poly" title=" " alt="" coords="196,16,228,16,228,21,196,21"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ga185a067739ac2ed3d3115a03ceee35a3" name="ga185a067739ac2ed3d3115a03ceee35a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga185a067739ac2ed3d3115a03ceee35a3">&#9670;&#160;</a></span>SPIx_ReceiveDataIT()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t SPIx_ReceiveDataIT </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_s_p_ix___handle__t.html">SPIx_Handle_t</a> *</td>          <td class="paramname"><span class="paramname"><em>pHandle</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *</td>          <td class="paramname"><span class="paramname"><em>pRxBuf</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>Len</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Start a non-blocking (interrupt-driven) receive on the SPI peripheral. </p>
+<p>This function begins an interrupt-driven receive using the SPI handle state. It programs the handle with the receive buffer and length, sets the handle state to BUSY, and enables the SPI peripheral RXNE interrupt (CR2: RXNEIE).</p>
+<p>In master mode the driver (or application) must provide clocking for the slave: the driver may perform dummy TX writes in the ISR to generate SCK (implementation detail).</p>
+<p>When the requested number of bytes has been received the application will be notified using SPI_ApplicationEventCallback(..., SPI_EVENT_RX_CMPLT).</p>
+<p>Typical safe call sequence:</p><ol type="1">
+<li>SPIx_IRQConfig(IRQ, priority);</li>
+<li>SPIx_PeripheralInterruptControl(pHandle-&gt;pSPIx, SPI_IT_TYPE_RXNEIE, ENABLE);</li>
+<li>SPIx_IRQControl(IRQ, ENABLE);</li>
+<li>SPIx_ReceiveDataIT(pHandle, pRxBuf, Len);</li>
+</ol>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">pHandle</td><td>Pointer to the SPI handle which holds peripheral and state. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">pRxBuf</td><td>Pointer to the receive buffer. Must remain valid until the SPI_EVENT_RX_CMPLT callback. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">Len</td><td>Number of bytes to receive (for DFF=16 handle as number of bytes).</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>Success — receive started. </td></tr>
+    <tr><td class="paramname">1</td><td>Busy — receive already in progress. </td></tr>
+    <tr><td class="paramname">2</td><td>Invalid parameter (NULL handle or NULL buffer or Len == 0).</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>The driver may perform dummy writes (0xFF) to generate clocks in master mode. </dd>
+<dd>
+This function only enables the SPI peripheral RXNEIE bit; NVIC enabling must be handled by the caller (SPIx_IRQConfig + SPIx_IRQControl). </dd>
+<dd>
+The completion callback is invoked from IRQ context. </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000071">Todo</a></b></dt><dd>right now assuming 8 bit receive, modify for 16 bit also. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="stm32f407xx__spi_8c_source.html#l00353">353</a> of file <a class="el" href="stm32f407xx__spi_8c_source.html">stm32f407xx_spi.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  353</span>                                                                                 {</div>
+<div class="line"><span class="lineno">  355</span>    <span class="comment">//0. Basic Check first</span></div>
+<div class="line"><span class="lineno">  356</span>    <span class="keywordflow">if</span>(pHandle-&gt;<a class="code hl_variable" href="struct_s_p_ix___handle__t.html#ab7bc64878b66e3456dc8a035e6a480cb">TxState</a> == <a class="code hl_define" href="group___s_p_i___s_t_a_t_e.html#ga0d5b8dae833d0d78120836211f01dcd7">SPI_STATE_BUSY_IN_TX</a> || pHandle-&gt;<a class="code hl_variable" href="struct_s_p_ix___handle__t.html#a1b2787461399507391258f1bfcb9db23">RxState</a> == <a class="code hl_define" href="group___s_p_i___s_t_a_t_e.html#ga08fe9e1c8d798596a59ffac40be48d06">SPI_STATE_BUSY_IN_RX</a>){</div>
+<div class="line"><span class="lineno">  357</span>        <span class="keywordflow">return</span> <a class="code hl_define" href="group___s_p_i___r_e_t_u_r_n___c_o_d_e_s.html#gad4e7ccbd897e6b2c6bd58dc6f54a6536">SPI_BUSY</a>;</div>
+<div class="line"><span class="lineno">  358</span>    }</div>
+<div class="line"><span class="lineno">  359</span>    <span class="keywordflow">if</span>(pHandle == NULL || pRxBuf == NULL || Len ==0){</div>
+<div class="line"><span class="lineno">  360</span>        <span class="keywordflow">return</span> <a class="code hl_define" href="group___s_p_i___r_e_t_u_r_n___c_o_d_e_s.html#gafc407bc9dc6c775d6c77833a9a31c724">SPI_INVALID_PARAM</a>;</div>
+<div class="line"><span class="lineno">  361</span>    }</div>
+<div class="line"><span class="lineno">  362</span>    <span class="comment">//1. Save the RxBuffer and Length info in some global variable</span></div>
+<div class="line"><span class="lineno">  363</span>    pHandle-&gt;<a class="code hl_variable" href="struct_s_p_ix___handle__t.html#ab5eac9e2244e1065f288af094873b7a3">RXLen</a> = Len;</div>
+<div class="line"><span class="lineno">  364</span>    pHandle-&gt;<a class="code hl_variable" href="struct_s_p_ix___handle__t.html#ab63ab2271c4f90c95d42b26174d98104">pRXBuffer</a> = pRxBuf;</div>
+<div class="line"><span class="lineno">  365</span> </div>
+<div class="line"><span class="lineno">  366</span>    <span class="comment">//2. Mark the SPI as Busy in Rx so that no other code can</span></div>
+<div class="line"><span class="lineno">  367</span>    <span class="comment">// take over the SPI peripheral until the rx is over</span></div>
+<div class="line"><span class="lineno">  368</span>    pHandle-&gt;<a class="code hl_variable" href="struct_s_p_ix___handle__t.html#a1b2787461399507391258f1bfcb9db23">RxState</a> = <a class="code hl_define" href="group___s_p_i___s_t_a_t_e.html#ga08fe9e1c8d798596a59ffac40be48d06">SPI_STATE_BUSY_IN_RX</a>;</div>
+<div class="line"><span class="lineno">  369</span>    <span class="comment">//3. Enable the RXNEIE control bit in the CR2 reg to generate interrupt whenever the RX buffer of the</span></div>
+<div class="line"><span class="lineno">  370</span>    <span class="comment">//corresponding SPI is not empty (i.e. Whenever the RXNE flag is set in the status register)</span></div>
+<div class="line"><span class="lineno">  371</span>    <a class="code hl_function" href="#gae8becf850726d059d4808fe5ba705f07">SPIx_PeripheralInterruptControl</a>(pHandle-&gt;<a class="code hl_variable" href="struct_s_p_ix___handle__t.html#a2139a08270d0669a4bfd52184169f444">pSPIx</a>, <a class="code hl_define" href="group___s_p_i___i_t___t_y_p_e.html#ga9652fdf02a531692dedd8c19f4de71f3">SPI_IT_TYPE_RXNE</a>, <a class="code hl_define" href="group___m_i_s_c_e_l_l_a_n_e_o_u_s___m_a_c_r_o_s.html#ga514ad415fb6125ba296793df7d1a468a">ENABLE</a>);</div>
+<div class="line"><span class="lineno">  372</span>    <span class="keywordflow">return</span> <a class="code hl_define" href="group___s_p_i___r_e_t_u_r_n___c_o_d_e_s.html#ga0341717e73492f10de2820dabebb45d1">SPI_TXRX_SUCCESS</a>;</div>
+<div class="line"><span class="lineno">  373</span>    <span class="comment">//4. @todo Data Reception will be handled by the ISR code</span></div>
+<div class="line"><span class="lineno">  374</span>}</div>
+<div class="ttc" id="agroup___s_p_i___r_e_t_u_r_n___c_o_d_e_s_html_ga0341717e73492f10de2820dabebb45d1"><div class="ttname"><a href="group___s_p_i___r_e_t_u_r_n___c_o_d_e_s.html#ga0341717e73492f10de2820dabebb45d1">SPI_TXRX_SUCCESS</a></div><div class="ttdeci">#define SPI_TXRX_SUCCESS</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx__spi_8h_source.html#l00786">stm32f407xx_spi.h:786</a></div></div>
+<div class="ttc" id="agroup___s_p_i___r_e_t_u_r_n___c_o_d_e_s_html_gad4e7ccbd897e6b2c6bd58dc6f54a6536"><div class="ttname"><a href="group___s_p_i___r_e_t_u_r_n___c_o_d_e_s.html#gad4e7ccbd897e6b2c6bd58dc6f54a6536">SPI_BUSY</a></div><div class="ttdeci">#define SPI_BUSY</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx__spi_8h_source.html#l00787">stm32f407xx_spi.h:787</a></div></div>
+<div class="ttc" id="agroup___s_p_i___r_e_t_u_r_n___c_o_d_e_s_html_gafc407bc9dc6c775d6c77833a9a31c724"><div class="ttname"><a href="group___s_p_i___r_e_t_u_r_n___c_o_d_e_s.html#gafc407bc9dc6c775d6c77833a9a31c724">SPI_INVALID_PARAM</a></div><div class="ttdeci">#define SPI_INVALID_PARAM</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx__spi_8h_source.html#l00788">stm32f407xx_spi.h:788</a></div></div>
+<div class="ttc" id="agroup___s_p_i___s_t_a_t_e_html_ga08fe9e1c8d798596a59ffac40be48d06"><div class="ttname"><a href="group___s_p_i___s_t_a_t_e.html#ga08fe9e1c8d798596a59ffac40be48d06">SPI_STATE_BUSY_IN_RX</a></div><div class="ttdeci">#define SPI_STATE_BUSY_IN_RX</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx__spi_8h_source.html#l00772">stm32f407xx_spi.h:772</a></div></div>
+<div class="ttc" id="agroup___s_p_i___s_t_a_t_e_html_ga0d5b8dae833d0d78120836211f01dcd7"><div class="ttname"><a href="group___s_p_i___s_t_a_t_e.html#ga0d5b8dae833d0d78120836211f01dcd7">SPI_STATE_BUSY_IN_TX</a></div><div class="ttdeci">#define SPI_STATE_BUSY_IN_TX</div><div class="ttdef"><b>Definition</b> <a href="stm32f407xx__spi_8h_source.html#l00771">stm32f407xx_spi.h:771</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="group___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s_ga185a067739ac2ed3d3115a03ceee35a3_cgraph.png" border="0" usemap="#agroup___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s_ga185a067739ac2ed3d3115a03ceee35a3_cgraph" loading="lazy" alt=""/></div>
+<map name="agroup___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s_ga185a067739ac2ed3d3115a03ceee35a3_cgraph" id="agroup___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s_ga185a067739ac2ed3d3115a03ceee35a3_cgraph">
+<area shape="rect" title="Start a non&#45;blocking (interrupt&#45;driven) receive on the SPI peripheral." alt="" coords="5,13,151,40"/>
+<area shape="rect" href="group___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s.html#gae8becf850726d059d4808fe5ba705f07" title="Enable or disable specified SPI peripheral interrupts (CR2)." alt="" coords="199,5,362,48"/>
+<area shape="poly" title=" " alt="" coords="151,24,183,24,183,29,151,29"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="gac63692a0517966f2db649606f09ee7ee" name="gac63692a0517966f2db649606f09ee7ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac63692a0517966f2db649606f09ee7ee">&#9670;&#160;</a></span>SPIx_SendData_Blocking()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -499,12 +1295,12 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">uint8_t *</td>          <td class="paramname"><span class="paramname"><em>pData</em></span>, </td>
+          <td class="paramtype">uint8_t *</td>          <td class="paramname"><span class="paramname"><em>pTX_Data_Buffer</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>Len</em></span>&#160;)</td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>Len_Byte</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -526,38 +1322,127 @@ Here is the call graph for this function:</div>
   </table>
   </dd>
 </dl>
+<p>@TODO Edge case in 16 Bit mode what if user sends odd bytes</p>
 <p>After writing ALL data, wait for: TXE = 1 → DR empty BSY = 0 → last bit fully shifted out</p>
 
-<p class="definition">Definition at line <a class="el" href="stm32f407xx__spi_8c_source.html#l00145">145</a> of file <a class="el" href="stm32f407xx__spi_8c_source.html">stm32f407xx_spi.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  145</span>                                                                               {</div>
-<div class="line"><span class="lineno">  146</span>    <span class="keywordflow">while</span>(Len&gt;0){</div>
-<div class="line"><span class="lineno">  147</span>        <span class="comment">// Wait until TXE = 1</span></div>
-<div class="line"><span class="lineno">  148</span>        <span class="keywordflow">while</span> (!<a class="code hl_function" href="#ga28c21c2e8a6f53982ec6666fb0969123">SPIx_GetFlagStatus</a>(pSPIx, <a class="code hl_define" href="group___s_p_i___s_t_a_t_u_s___f_l_a_g___m_a_c_r_o_s.html#ga13cea6befcaaeb6421eb7e801abb48fe">SPI_STATUS_FLAG_TXE</a>));</div>
-<div class="line"><span class="lineno">  149</span>        <span class="comment">//Check the data format</span></div>
-<div class="line"><span class="lineno">  150</span>        <span class="keywordflow">if</span>(pSPIx-&gt;<a class="code hl_variable" href="struct_s_p_ix___reg_def__t.html#ac806058f093a3e33457f2acd149e73b9">CR1</a> &amp; (1U &lt;&lt; <a class="code hl_define" href="group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s.html#ga5290662db14690d4bcf30ed9e4694462">SPI_CR1_DFF_Pos</a>)){<span class="comment">// Frame Size = 16</span></div>
-<div class="line"><span class="lineno">  151</span>            pSPIx-&gt;<a class="code hl_variable" href="struct_s_p_ix___reg_def__t.html#aa59c17ad248dcbd0b66bc5aaa64c070f">DR</a> = *((uint16_t*) pData);</div>
-<div class="line"><span class="lineno">  152</span>            pData += 2;</div>
-<div class="line"><span class="lineno">  153</span>            Len -= 2;</div>
-<div class="line"><span class="lineno">  154</span>        }<span class="keywordflow">else</span>{<span class="comment">// Frame Size = 8</span></div>
-<div class="line"><span class="lineno">  155</span>            pSPIx-&gt;<a class="code hl_variable" href="struct_s_p_ix___reg_def__t.html#aa59c17ad248dcbd0b66bc5aaa64c070f">DR</a> = *pData;</div>
-<div class="line"><span class="lineno">  156</span>            pData++;</div>
-<div class="line"><span class="lineno">  157</span>            Len--;</div>
-<div class="line"><span class="lineno">  158</span>        }</div>
-<div class="line"><span class="lineno">  159</span>    }</div>
-<div class="line"><span class="lineno">  160</span> </div>
-<div class="line"><span class="lineno">  161</span></div>
-<div class="line"><span class="lineno">  167</span>    <span class="keywordflow">while</span> (!<a class="code hl_function" href="#ga28c21c2e8a6f53982ec6666fb0969123">SPIx_GetFlagStatus</a>(pSPIx, <a class="code hl_define" href="group___s_p_i___s_t_a_t_u_s___f_l_a_g___m_a_c_r_o_s.html#ga13cea6befcaaeb6421eb7e801abb48fe">SPI_STATUS_FLAG_TXE</a>));</div>
-<div class="line"><span class="lineno">  168</span>    <span class="keywordflow">while</span>  ( <a class="code hl_function" href="#ga28c21c2e8a6f53982ec6666fb0969123">SPIx_GetFlagStatus</a>(pSPIx, <a class="code hl_define" href="group___s_p_i___s_t_a_t_u_s___f_l_a_g___m_a_c_r_o_s.html#ga891a0e21281996b5ea7421f13182d5b6">SPI_STATUS_FLAG_BSY</a>));</div>
-<div class="line"><span class="lineno">  169</span>}</div>
-<div class="ttc" id="astruct_s_p_ix___reg_def__t_html_aa59c17ad248dcbd0b66bc5aaa64c070f"><div class="ttname"><a href="struct_s_p_ix___reg_def__t.html#aa59c17ad248dcbd0b66bc5aaa64c070f">SPIx_RegDef_t::DR</a></div><div class="ttdeci">volatile uint32_t DR</div><div class="ttdef"><b>Definition</b> <a href="_s_t_m32_f4xx___d_r_i_v_e_r_s_2_inc_2stm32f407xx_8h_source.html#l00725">stm32f407xx.h:725</a></div></div>
+<p class="definition">Definition at line <a class="el" href="stm32f407xx__spi_8c_source.html#l00208">208</a> of file <a class="el" href="stm32f407xx__spi_8c_source.html">stm32f407xx_spi.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  208</span>                                                                                              {</div>
+<div class="line"><span class="lineno">  210</span>    <span class="keywordflow">while</span> (Len_Byte &gt; 0) {</div>
+<div class="line"><span class="lineno">  211</span>        <span class="comment">// Wait until TXE = 1</span></div>
+<div class="line"><span class="lineno">  212</span>        <span class="keywordflow">while</span> (!<a class="code hl_function" href="#ga28c21c2e8a6f53982ec6666fb0969123">SPIx_GetFlagStatus</a>(pSPIx, <a class="code hl_define" href="group___s_p_i___s_t_a_t_u_s___f_l_a_g___m_a_c_r_o_s.html#ga13cea6befcaaeb6421eb7e801abb48fe">SPI_STATUS_FLAG_TXE</a>));</div>
+<div class="line"><span class="lineno">  213</span>        <span class="comment">//Check the data format</span></div>
+<div class="line"><span class="lineno">  214</span>        <span class="keywordflow">if</span> (pSPIx-&gt;<a class="code hl_variable" href="struct_s_p_ix___reg_def__t.html#ac806058f093a3e33457f2acd149e73b9">CR1</a> &amp; (1U &lt;&lt; <a class="code hl_define" href="group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s.html#ga5290662db14690d4bcf30ed9e4694462">SPI_CR1_DFF_Pos</a>)) {   <span class="comment">// Frame Size = 16</span></div>
+<div class="line"><span class="lineno">  215</span>            pSPIx-&gt;<a class="code hl_variable" href="struct_s_p_ix___reg_def__t.html#aa59c17ad248dcbd0b66bc5aaa64c070f">DR</a> = *((uint16_t*) pTX_Data_Buffer);</div>
+<div class="line"><span class="lineno">  216</span>            pTX_Data_Buffer += 2;</div>
+<div class="line"><span class="lineno">  217</span>            Len_Byte -= 2;</div>
+<div class="line"><span class="lineno">  218</span>        } <span class="keywordflow">else</span> {   <span class="comment">// Frame Size = 8</span></div>
+<div class="line"><span class="lineno">  219</span>            pSPIx-&gt;<a class="code hl_variable" href="struct_s_p_ix___reg_def__t.html#aa59c17ad248dcbd0b66bc5aaa64c070f">DR</a> = *pTX_Data_Buffer;</div>
+<div class="line"><span class="lineno">  220</span>            pTX_Data_Buffer++;</div>
+<div class="line"><span class="lineno">  221</span>            Len_Byte--;</div>
+<div class="line"><span class="lineno">  222</span>        }</div>
+<div class="line"><span class="lineno">  223</span>    }</div>
+<div class="line"><span class="lineno">  224</span> </div>
+<div class="line"><span class="lineno">  225</span></div>
+<div class="line"><span class="lineno">  231</span>    <span class="keywordflow">while</span> (!<a class="code hl_function" href="#ga28c21c2e8a6f53982ec6666fb0969123">SPIx_GetFlagStatus</a>(pSPIx, <a class="code hl_define" href="group___s_p_i___s_t_a_t_u_s___f_l_a_g___m_a_c_r_o_s.html#ga13cea6befcaaeb6421eb7e801abb48fe">SPI_STATUS_FLAG_TXE</a>));</div>
+<div class="line"><span class="lineno">  232</span>    <span class="keywordflow">while</span>  ( <a class="code hl_function" href="#ga28c21c2e8a6f53982ec6666fb0969123">SPIx_GetFlagStatus</a>(pSPIx, <a class="code hl_define" href="group___s_p_i___s_t_a_t_u_s___f_l_a_g___m_a_c_r_o_s.html#ga891a0e21281996b5ea7421f13182d5b6">SPI_STATUS_FLAG_BSY</a>));</div>
+<div class="line"><span class="lineno">  233</span>}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="group___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s_ga2f1a0a4006270d72092844c3e764d399_cgraph.png" border="0" usemap="#agroup___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s_ga2f1a0a4006270d72092844c3e764d399_cgraph" loading="lazy" alt=""/></div>
-<map name="agroup___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s_ga2f1a0a4006270d72092844c3e764d399_cgraph" id="agroup___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s_ga2f1a0a4006270d72092844c3e764d399_cgraph">
+<div class="center"><img src="group___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s_gac63692a0517966f2db649606f09ee7ee_cgraph.png" border="0" usemap="#agroup___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s_gac63692a0517966f2db649606f09ee7ee_cgraph" loading="lazy" alt=""/></div>
+<map name="agroup___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s_gac63692a0517966f2db649606f09ee7ee_cgraph" id="agroup___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s_gac63692a0517966f2db649606f09ee7ee_cgraph">
 <area shape="rect" title="Send data over the specified SPI peripheral." alt="" coords="5,5,178,32"/>
 <area shape="rect" href="group___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s.html#ga28c21c2e8a6f53982ec6666fb0969123" title="Reads the status of a specific SPI status flag." alt="" coords="226,5,367,32"/>
 <area shape="poly" title=" " alt="" coords="178,16,210,16,210,21,178,21"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ga84fe922cab70472a7ae10fc726de8d10" name="ga84fe922cab70472a7ae10fc726de8d10"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga84fe922cab70472a7ae10fc726de8d10">&#9670;&#160;</a></span>SPIx_SendDataIT()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t SPIx_SendDataIT </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_s_p_ix___handle__t.html">SPIx_Handle_t</a> *</td>          <td class="paramname"><span class="paramname"><em>pHandle</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *</td>          <td class="paramname"><span class="paramname"><em>pTxBuf</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>Len</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Start a non-blocking (interrupt-driven) transmit on the SPI peripheral. </p>
+<p>This function begins an interrupt-driven transmit using the SPI handle state. It programs the handle with the transmit buffer and length, sets the handle state to BUSY, and enables the SPI peripheral TXE interrupt (CR2: TXEIE).</p>
+<p>After this function returns the transfer is performed in IRQ context. The application is notified when the transfer completes via SPI_ApplicationEventCallback(..., SPI_EVENT_TX_CMPLT).</p>
+<p>Typical safe call sequence:</p><ol type="1">
+<li>SPIx_IRQConfig(IRQ, priority);</li>
+<li>SPIx_PeripheralInterruptControl(pHandle-&gt;pSPIx, SPI_IT_TYPE_TXEIE, ENABLE);</li>
+<li>SPIx_IRQControl(IRQ, ENABLE);</li>
+<li>SPIx_SendDataIT(pHandle, pTxBuf, Len);</li>
+</ol>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">pHandle</td><td>Pointer to the SPI handle which holds peripheral and state. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pTxBuf</td><td>Pointer to the transmit buffer. MUST remain valid until the SPI_EVENT_TX_CMPLT callback is invoked. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">Len</td><td>Number of bytes to transmit (for DFF=16 handle as number of bytes).</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>Success — transfer started. </td></tr>
+    <tr><td class="paramname">1</td><td>Busy — transmit already in progress. </td></tr>
+    <tr><td class="paramname">2</td><td>Invalid parameter (NULL handle or NULL buffer or Len == 0).</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>This function only enables the SPI peripheral interrupt (CR2 TXEIE). The caller is responsible for enabling the corresponding NVIC line via <a class="el" href="#ga1a0630eb77e67dbd0f23fd7d856ebd5d" title="Configure the priority of a given SPI interrupt in the NVIC.">SPIx_IRQConfig()</a> + <a class="el" href="#ga9f155aebbeb71ea03e0f2dd9ff4ff7b7" title="Enable or disable the given SPI IRQ in the NVIC.">SPIx_IRQControl()</a> (or do that earlier in init). </dd>
+<dd>
+The transmit completion callback is invoked from IRQ context — keep it short (set a flag or schedule work for the main loop). </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000070">Todo</a></b></dt><dd>right now assuming 8 bit transfer, modify for 16 bit also. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="stm32f407xx__spi_8c_source.html#l00330">330</a> of file <a class="el" href="stm32f407xx__spi_8c_source.html">stm32f407xx_spi.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  330</span>                                                                              {</div>
+<div class="line"><span class="lineno">  332</span>    <span class="comment">//0. Basic Checks first</span></div>
+<div class="line"><span class="lineno">  333</span>    <span class="keywordflow">if</span>(pHandle == NULL || pTxBuf == NULL || Len == 0 ){</div>
+<div class="line"><span class="lineno">  334</span>        <span class="keywordflow">return</span> <a class="code hl_define" href="group___s_p_i___r_e_t_u_r_n___c_o_d_e_s.html#gafc407bc9dc6c775d6c77833a9a31c724">SPI_INVALID_PARAM</a>;</div>
+<div class="line"><span class="lineno">  335</span>    }</div>
+<div class="line"><span class="lineno">  336</span>    <span class="keywordflow">if</span>(pHandle-&gt;<a class="code hl_variable" href="struct_s_p_ix___handle__t.html#ab7bc64878b66e3456dc8a035e6a480cb">TxState</a> == <a class="code hl_define" href="group___s_p_i___s_t_a_t_e.html#ga0d5b8dae833d0d78120836211f01dcd7">SPI_STATE_BUSY_IN_TX</a> || pHandle-&gt;<a class="code hl_variable" href="struct_s_p_ix___handle__t.html#a1b2787461399507391258f1bfcb9db23">RxState</a> == <a class="code hl_define" href="group___s_p_i___s_t_a_t_e.html#ga08fe9e1c8d798596a59ffac40be48d06">SPI_STATE_BUSY_IN_RX</a>){</div>
+<div class="line"><span class="lineno">  337</span>        <span class="keywordflow">return</span> <a class="code hl_define" href="group___s_p_i___r_e_t_u_r_n___c_o_d_e_s.html#gad4e7ccbd897e6b2c6bd58dc6f54a6536">SPI_BUSY</a>;</div>
+<div class="line"><span class="lineno">  338</span>    }</div>
+<div class="line"><span class="lineno">  339</span>    <span class="comment">//1. Save TXBuffer and Length Info in some global variable</span></div>
+<div class="line"><span class="lineno">  340</span>    pHandle-&gt;<a class="code hl_variable" href="struct_s_p_ix___handle__t.html#ab9994cff36b24956fad7fb0462070a6c">pTXBuffer</a> = pTxBuf;</div>
+<div class="line"><span class="lineno">  341</span>    pHandle-&gt;<a class="code hl_variable" href="struct_s_p_ix___handle__t.html#a54ab29aca25deaf50bf951c95a91eef8">TXLen</a> = Len;</div>
+<div class="line"><span class="lineno">  342</span> </div>
+<div class="line"><span class="lineno">  343</span>    <span class="comment">//2. Mark the SPI as Busy in transmission so that no other code can</span></div>
+<div class="line"><span class="lineno">  344</span>    <span class="comment">// take over the SPI peripheral until transmission is over</span></div>
+<div class="line"><span class="lineno">  345</span>    pHandle-&gt;<a class="code hl_variable" href="struct_s_p_ix___handle__t.html#ab7bc64878b66e3456dc8a035e6a480cb">TxState</a> = <a class="code hl_define" href="group___s_p_i___s_t_a_t_e.html#ga0d5b8dae833d0d78120836211f01dcd7">SPI_STATE_BUSY_IN_TX</a>;</div>
+<div class="line"><span class="lineno">  346</span>    <span class="comment">//3. Enable the TXEIE control bit in the CR2 reg to generate interrupt whenever the TX buffer of the corresponding</span></div>
+<div class="line"><span class="lineno">  347</span>    <span class="comment">// SPI is empty (i.e. Whenever the TXE flag is set in the status register)</span></div>
+<div class="line"><span class="lineno">  348</span>    <a class="code hl_function" href="#gae8becf850726d059d4808fe5ba705f07">SPIx_PeripheralInterruptControl</a>(pHandle-&gt;<a class="code hl_variable" href="struct_s_p_ix___handle__t.html#a2139a08270d0669a4bfd52184169f444">pSPIx</a>, <a class="code hl_define" href="group___s_p_i___i_t___t_y_p_e.html#ga4b882d1e5e1493afe4aad68483107400">SPI_IT_TYPE_TXE</a>, <a class="code hl_define" href="group___m_i_s_c_e_l_l_a_n_e_o_u_s___m_a_c_r_o_s.html#ga514ad415fb6125ba296793df7d1a468a">ENABLE</a>);</div>
+<div class="line"><span class="lineno">  349</span>    <span class="keywordflow">return</span> <a class="code hl_define" href="group___s_p_i___r_e_t_u_r_n___c_o_d_e_s.html#ga0341717e73492f10de2820dabebb45d1">SPI_TXRX_SUCCESS</a>;</div>
+<div class="line"><span class="lineno">  350</span>    <span class="comment">//4. @todo Data Transmission will be handled by the ISR code</span></div>
+<div class="line"><span class="lineno">  351</span>}</div>
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="group___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s_ga84fe922cab70472a7ae10fc726de8d10_cgraph.png" border="0" usemap="#agroup___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s_ga84fe922cab70472a7ae10fc726de8d10_cgraph" loading="lazy" alt=""/></div>
+<map name="agroup___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s_ga84fe922cab70472a7ae10fc726de8d10_cgraph" id="agroup___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s_ga84fe922cab70472a7ae10fc726de8d10_cgraph">
+<area shape="rect" title="Start a non&#45;blocking (interrupt&#45;driven) transmit on the SPI peripheral." alt="" coords="5,13,133,40"/>
+<area shape="rect" href="group___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s.html#gae8becf850726d059d4808fe5ba705f07" title="Enable or disable specified SPI peripheral interrupts (CR2)." alt="" coords="181,5,344,48"/>
+<area shape="poly" title=" " alt="" coords="133,24,165,24,165,29,133,29"/>
 </map>
 </div>
 

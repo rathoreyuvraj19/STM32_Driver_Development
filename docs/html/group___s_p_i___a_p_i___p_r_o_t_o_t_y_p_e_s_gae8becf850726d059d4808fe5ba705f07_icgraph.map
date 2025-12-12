@@ -1,0 +1,18 @@
+<map id="SPIx_PeripheralInterruptControl" name="SPIx_PeripheralInterruptControl">
+<area shape="rect" id="Node000001" title="Enable or disable specified SPI peripheral interrupts (CR2)." alt="" coords="396,124,559,167"/>
+<area shape="rect" id="Node000002" href="$group___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s.html#gaa33e1796de9a74dae78d9921de01df2a" title="Gracefully terminate an ongoing SPI receive interrupt operation." alt="" coords="195,5,338,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="441,115,398,80,347,46,320,35,322,30,349,42,401,75,445,111"/>
+<area shape="rect" id="Node000003" href="$group___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s.html#ga0e67d8e31e905a224b3ec5d806e94897" title="Gracefully terminate an ongoing SPI transmit interrupt operation." alt="" coords="186,56,348,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="409,120,347,97,313,86,315,81,349,92,411,115"/>
+<area shape="rect" id="Node000004" href="$stm32f407xx__spi_8c.html#af666fb211c7cedc7095c6c1b0a7c3a3a" title=" " alt="" coords="195,107,338,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="380,136,339,131,339,126,381,131"/>
+<area shape="rect" id="Node000006" href="$stm32f407xx__spi_8c.html#ae47cf0d5c83626d8a21a06ad7f99e3cd" title=" " alt="" coords="196,157,338,184"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="381,160,338,165,338,160,381,154"/>
+<area shape="rect" id="Node000007" href="$group___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s.html#ga185a067739ac2ed3d3115a03ceee35a3" title="Start a non&#45;blocking (interrupt&#45;driven) receive on the SPI peripheral." alt="" coords="194,208,340,235"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="411,175,349,199,315,210,313,205,347,193,409,170"/>
+<area shape="rect" id="Node000008" href="$group___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s.html#ga84fe922cab70472a7ae10fc726de8d10" title="Start a non&#45;blocking (interrupt&#45;driven) transmit on the SPI peripheral." alt="" coords="203,259,330,285"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="445,179,401,215,349,249,322,261,320,256,347,244,398,211,441,175"/>
+<area shape="rect" id="Node000005" href="$group___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s.html#ga9637b0d6a930d03fd844877298605e78" title="Handle all interrupt events for the given SPI peripheral." alt="" coords="5,132,138,159"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="180,134,138,139,137,134,179,129"/>
+<area shape="poly" id="edge6_Node000006_Node000005" title=" " alt="" coords="181,162,137,157,138,151,181,157"/>
+</map>

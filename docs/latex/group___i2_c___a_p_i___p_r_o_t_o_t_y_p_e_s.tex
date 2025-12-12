@@ -1,0 +1,171 @@
+\doxysubsection{I2C API Prototypes }
+\hypertarget{group___i2_c___a_p_i___p_r_o_t_o_t_y_p_e_s}{}\label{group___i2_c___a_p_i___p_r_o_t_o_t_y_p_e_s}\index{I2C API Prototypes@{I2C API Prototypes}}
+
+
+I2C API Prototypes.  
+
+
+Collaboration diagram for I2C API Prototypes\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=278pt]{group___i2_c___a_p_i___p_r_o_t_o_t_y_p_e_s}
+\end{center}
+\end{figure}
+\doxysubsubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___i2_c___a_p_i___p_r_o_t_o_t_y_p_e_s_ga72208947f88b1f578d8ee3e3863794e8}{I2\+C\+\_\+\+Peri\+\_\+\+Control}} (\mbox{\hyperlink{struct_i2_c___reg_def__t}{I2\+C\+\_\+\+Reg\+Def\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+I2C, uint8\+\_\+t EN\+\_\+\+DI)
+\begin{DoxyCompactList}\small\item\em Enables or disables the I2C peripheral. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___i2_c___a_p_i___p_r_o_t_o_t_y_p_e_s_gaa3b6aa3ca6f4dfbd4a08b0f83a06bb89}{I2\+C\+\_\+\+Init}} (\mbox{\hyperlink{struct_i2_c___handle__t}{I2\+C\+\_\+\+Handle\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+I2\+C\+\_\+\+Handle)
+\begin{DoxyCompactList}\small\item\em Initializes the I2C peripheral using the configuration provided in the I2C handle structure. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___i2_c___a_p_i___p_r_o_t_o_t_y_p_e_s_gaf72d638c33bba5eaf203cd2f123f95fa}{I2\+C\+\_\+\+De\+Init}} (\mbox{\hyperlink{struct_i2_c___reg_def__t}{I2\+C\+\_\+\+Reg\+Def\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+I2C)
+\begin{DoxyCompactList}\small\item\em Resets the I2C peripheral registers to their default reset values. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group___i2_c___a_p_i___p_r_o_t_o_t_y_p_e_s_ga3304ea93bfe55d24df0f8fa441d3411a}{I2\+C\+\_\+\+Get\+Flag\+Status}} (\mbox{\hyperlink{struct_i2_c___reg_def__t}{I2\+C\+\_\+\+Reg\+Def\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+I2C, uint32\+\_\+t Flag\+Name)
+\begin{DoxyCompactList}\small\item\em Reads the status of a specific I2C status flag. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+I2C API Prototypes. 
+
+\begin{DoxyNote}{Note}
+Contains I2C API Prototypes 
+\end{DoxyNote}
+
+
+\label{doc-func-members}
+\Hypertarget{group___i2_c___a_p_i___p_r_o_t_o_t_y_p_e_s_doc-func-members}
+\doxysubsubsection{Function Documentation}
+\Hypertarget{group___i2_c___a_p_i___p_r_o_t_o_t_y_p_e_s_gaf72d638c33bba5eaf203cd2f123f95fa}\index{I2C API Prototypes@{I2C API Prototypes}!I2C\_DeInit@{I2C\_DeInit}}
+\index{I2C\_DeInit@{I2C\_DeInit}!I2C API Prototypes@{I2C API Prototypes}}
+\doxysubsubsubsection{\texorpdfstring{I2C\_DeInit()}{I2C\_DeInit()}}
+{\footnotesize\ttfamily \label{group___i2_c___a_p_i___p_r_o_t_o_t_y_p_e_s_gaf72d638c33bba5eaf203cd2f123f95fa} 
+void I2\+C\+\_\+\+De\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_i2_c___reg_def__t}{I2\+C\+\_\+\+Reg\+Def\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+I2C}{}\end{DoxyParamCaption})}
+
+
+
+Resets the I2C peripheral registers to their default reset values. 
+
+This function triggers a peripheral reset using the corresponding bit in the RCC-\/\texorpdfstring{$>$}{>}APB1\+RSTR register. Once the reset pulse is applied, the peripheral registers return to their hardware-\/defined reset state and the I2C peripheral clock is automatically disabled.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{in}}  & {\em p\+I2C} & Pointer to the I2C peripheral base address (e.\+g., I2\+C1, I2\+C2, I2\+C3).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+After calling this function, the user must explicitly re-\/enable the peripheral clock (via \doxylink{group___a_p_b1___p_c_l_k___e_n___d_i___m_a_c_r_o_s_ga38b3719d33b55faf15f9b9b08295b353}{I2\+C1\+\_\+\+PCLK\+\_\+\+EN()}, \doxylink{group___a_p_b1___p_c_l_k___e_n___d_i___m_a_c_r_o_s_gabe017af091eb4ddc6eb863f5a4dce79e}{I2\+C2\+\_\+\+PCLK\+\_\+\+EN()}, etc.) and reinitialize the configuration before using the I2C peripheral again.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\Hypertarget{group___i2_c___a_p_i___p_r_o_t_o_t_y_p_e_s_ga3304ea93bfe55d24df0f8fa441d3411a}\index{I2C API Prototypes@{I2C API Prototypes}!I2C\_GetFlagStatus@{I2C\_GetFlagStatus}}
+\index{I2C\_GetFlagStatus@{I2C\_GetFlagStatus}!I2C API Prototypes@{I2C API Prototypes}}
+\doxysubsubsubsection{\texorpdfstring{I2C\_GetFlagStatus()}{I2C\_GetFlagStatus()}}
+{\footnotesize\ttfamily \label{group___i2_c___a_p_i___p_r_o_t_o_t_y_p_e_s_ga3304ea93bfe55d24df0f8fa441d3411a} 
+uint8\+\_\+t I2\+C\+\_\+\+Get\+Flag\+Status (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_i2_c___reg_def__t}{I2\+C\+\_\+\+Reg\+Def\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+I2C}{, }\item[{uint32\+\_\+t}]{Flag\+Name}{}\end{DoxyParamCaption})}
+
+
+
+Reads the status of a specific I2C status flag. 
+
+This function checks the current state of the I2C status registers (SR1 and SR2) and returns whether the requested flag is set.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{in}}  & {\em p\+I2C} & Pointer to the I2C peripheral register map (e.\+g., I2\+C1, I2\+C2, I2\+C3).\\
+\hline
+\mbox{\texttt{in}}  & {\em Flag\+Name} & Bitmask identifying the flag to check. Supply one of the I2C flag macros (masks), for example\+:
+\begin{DoxyItemize}
+\item I2\+C\+\_\+\+SR1\+\_\+\+TXE
+\item I2\+C\+\_\+\+SR1\+\_\+\+RXNE
+\item I2\+C\+\_\+\+SR2\+\_\+\+BUSY See I2\+C\+\_\+\+STATUS\+\_\+\+FLAG\+\_\+\+MACROS for available flags.
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Some flags reside in SR1 while others reside in SR2. This function inspects both registers as needed. It does not clear or modify flags.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+uint8\+\_\+t FLAG\+\_\+\+SET (1) if the flag is set, or FLAG\+\_\+\+RESET (0) if cleared. 
+\end{DoxyReturn}
+\Hypertarget{group___i2_c___a_p_i___p_r_o_t_o_t_y_p_e_s_gaa3b6aa3ca6f4dfbd4a08b0f83a06bb89}\index{I2C API Prototypes@{I2C API Prototypes}!I2C\_Init@{I2C\_Init}}
+\index{I2C\_Init@{I2C\_Init}!I2C API Prototypes@{I2C API Prototypes}}
+\doxysubsubsubsection{\texorpdfstring{I2C\_Init()}{I2C\_Init()}}
+{\footnotesize\ttfamily \label{group___i2_c___a_p_i___p_r_o_t_o_t_y_p_e_s_gaa3b6aa3ca6f4dfbd4a08b0f83a06bb89} 
+void I2\+C\+\_\+\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_i2_c___handle__t}{I2\+C\+\_\+\+Handle\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+I2\+C\+\_\+\+Handle}{}\end{DoxyParamCaption})}
+
+
+
+Initializes the I2C peripheral using the configuration provided in the I2C handle structure. 
+
+This function configures CR1, CR2, OAR1, CCR and TRISE based on the fields specified inside \doxylink{struct_i2_c___config__t}{I2\+C\+\_\+\+Config\+\_\+t}. It does not modify the SPE/\+PE enable bit.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{in}}  & {\em p\+I2\+C\+\_\+\+Handle} & Pointer to an \doxylink{struct_i2_c___handle__t}{I2\+C\+\_\+\+Handle\+\_\+t} structure that contains the peripheral base address and configuration settings.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+This function does NOT enable the I2C peripheral. The user must call I2\+C\+\_\+\+Peripheral\+Control(p\+I2\+C\+\_\+\+Handle-\/\texorpdfstring{$>$}{>}p\+I2C, ENABLE) after initialization.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{stm32f407xx__i2c_8c_source_l00018}{18}} of file \mbox{\hyperlink{stm32f407xx__i2c_8c_source}{stm32f407xx\+\_\+i2c.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordflow}{if}(pI2C\_Handle\ ==\ NULL)\{}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00021\ \ \ \ \ \}}
+\DoxyCodeLine{00022\ \}}
+
+\end{DoxyCode}
+\Hypertarget{group___i2_c___a_p_i___p_r_o_t_o_t_y_p_e_s_ga72208947f88b1f578d8ee3e3863794e8}\index{I2C API Prototypes@{I2C API Prototypes}!I2C\_Peri\_Control@{I2C\_Peri\_Control}}
+\index{I2C\_Peri\_Control@{I2C\_Peri\_Control}!I2C API Prototypes@{I2C API Prototypes}}
+\doxysubsubsubsection{\texorpdfstring{I2C\_Peri\_Control()}{I2C\_Peri\_Control()}}
+{\footnotesize\ttfamily \label{group___i2_c___a_p_i___p_r_o_t_o_t_y_p_e_s_ga72208947f88b1f578d8ee3e3863794e8} 
+void I2\+C\+\_\+\+Peri\+\_\+\+Control (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_i2_c___reg_def__t}{I2\+C\+\_\+\+Reg\+Def\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+I2C}{, }\item[{uint8\+\_\+t}]{EN\+\_\+\+DI}{}\end{DoxyParamCaption})}
+
+
+
+Enables or disables the I2C peripheral. 
+
+This function sets or clears the PE (Peripheral Enable) bit in the I2\+C\+\_\+\+CR1 register, thereby enabling or disabling the selected I2C peripheral.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{in}}  & {\em p\+I2C} & Pointer to the I2C peripheral base address (e.\+g., I2\+C1, I2\+C2, I2\+C3).\\
+\hline
+\mbox{\texttt{in}}  & {\em EN\+\_\+\+DI} & Enable/\+Disable control macro\+:
+\begin{DoxyItemize}
+\item ENABLE \+: Set the PE bit to enable the peripheral.
+\item DISABLE \+: Clear the PE bit to disable the peripheral.
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+This function does NOT configure any other I2C settings; it only controls the PE bit in I2\+C\+\_\+\+CR1. Ensure initialization is completed using \doxylink{group___i2_c___a_p_i___p_r_o_t_o_t_y_p_e_s_gaa3b6aa3ca6f4dfbd4a08b0f83a06bb89}{I2\+C\+\_\+\+Init()} before enabling the peripheral.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{stm32f407xx__i2c_8c_source_l00010}{10}} of file \mbox{\hyperlink{stm32f407xx__i2c_8c_source}{stm32f407xx\+\_\+i2c.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keywordflow}{if}\ (EN\_DI\ ==\ \mbox{\hyperlink{group___m_i_s_c_e_l_l_a_n_e_o_u_s___m_a_c_r_o_s_ga514ad415fb6125ba296793df7d1a468a}{ENABLE}})\ \{}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ \}}
+\DoxyCodeLine{00016\ \}}
+
+\end{DoxyCode}

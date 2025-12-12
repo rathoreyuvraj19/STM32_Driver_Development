@@ -19,6 +19,18 @@ Collaboration diagram for SPIx\+\_\+\+Handle\+\_\+t\+:\nopagebreak
 \mbox{\hyperlink{struct_s_p_ix___reg_def__t}{SPIx\+\_\+\+Reg\+Def\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_s_p_ix___handle__t_a2139a08270d0669a4bfd52184169f444}{p\+SPIx}}
 \item 
 \mbox{\hyperlink{struct_s_p_ix___config__t}{SPIx\+\_\+\+Config\+\_\+t}} \mbox{\hyperlink{struct_s_p_ix___handle__t_ad8dfc166a5c690bfebcc6e855132e805}{SPI\+\_\+\+CONFIG}}
+\item 
+volatile uint8\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_s_p_ix___handle__t_ab9994cff36b24956fad7fb0462070a6c}{p\+TXBuffer}}
+\item 
+volatile uint32\+\_\+t \mbox{\hyperlink{struct_s_p_ix___handle__t_a54ab29aca25deaf50bf951c95a91eef8}{TXLen}}
+\item 
+volatile uint8\+\_\+t \mbox{\hyperlink{struct_s_p_ix___handle__t_ab7bc64878b66e3456dc8a035e6a480cb}{Tx\+State}}
+\item 
+volatile uint8\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_s_p_ix___handle__t_ab63ab2271c4f90c95d42b26174d98104}{p\+RXBuffer}}
+\item 
+volatile uint32\+\_\+t \mbox{\hyperlink{struct_s_p_ix___handle__t_ab5eac9e2244e1065f288af094873b7a3}{RXLen}}
+\item 
+volatile uint8\+\_\+t \mbox{\hyperlink{struct_s_p_ix___handle__t_a1b2787461399507391258f1bfcb9db23}{Rx\+State}}
 \end{DoxyCompactItemize}
 
 
@@ -32,6 +44,16 @@ Definition at line \mbox{\hyperlink{stm32f407xx__spi_8h_source_l00163}{163}} of 
 \label{doc-variable-members}
 \Hypertarget{struct_s_p_ix___handle__t_doc-variable-members}
 \doxysubsection{Member Data Documentation}
+\Hypertarget{struct_s_p_ix___handle__t_ab63ab2271c4f90c95d42b26174d98104}\index{SPIx\_Handle\_t@{SPIx\_Handle\_t}!pRXBuffer@{pRXBuffer}}
+\index{pRXBuffer@{pRXBuffer}!SPIx\_Handle\_t@{SPIx\_Handle\_t}}
+\doxysubsubsection{\texorpdfstring{pRXBuffer}{pRXBuffer}}
+{\footnotesize\ttfamily \label{struct_s_p_ix___handle__t_ab63ab2271c4f90c95d42b26174d98104} 
+volatile uint8\+\_\+t\texorpdfstring{$\ast$}{*} SPIx\+\_\+\+Handle\+\_\+t\+::p\+RXBuffer}
+
+
+
+Definition at line \mbox{\hyperlink{stm32f407xx__spi_8h_source_l00172}{172}} of file \mbox{\hyperlink{stm32f407xx__spi_8h_source}{stm32f407xx\+\_\+spi.\+h}}.
+
 \Hypertarget{struct_s_p_ix___handle__t_a2139a08270d0669a4bfd52184169f444}\index{SPIx\_Handle\_t@{SPIx\_Handle\_t}!pSPIx@{pSPIx}}
 \index{pSPIx@{pSPIx}!SPIx\_Handle\_t@{SPIx\_Handle\_t}}
 \doxysubsubsection{\texorpdfstring{pSPIx}{pSPIx}}
@@ -42,6 +64,36 @@ Pointer to SPI peripheral base address
 
 Definition at line \mbox{\hyperlink{stm32f407xx__spi_8h_source_l00165}{165}} of file \mbox{\hyperlink{stm32f407xx__spi_8h_source}{stm32f407xx\+\_\+spi.\+h}}.
 
+\Hypertarget{struct_s_p_ix___handle__t_ab9994cff36b24956fad7fb0462070a6c}\index{SPIx\_Handle\_t@{SPIx\_Handle\_t}!pTXBuffer@{pTXBuffer}}
+\index{pTXBuffer@{pTXBuffer}!SPIx\_Handle\_t@{SPIx\_Handle\_t}}
+\doxysubsubsection{\texorpdfstring{pTXBuffer}{pTXBuffer}}
+{\footnotesize\ttfamily \label{struct_s_p_ix___handle__t_ab9994cff36b24956fad7fb0462070a6c} 
+volatile uint8\+\_\+t\texorpdfstring{$\ast$}{*} SPIx\+\_\+\+Handle\+\_\+t\+::p\+TXBuffer}
+
+
+
+Definition at line \mbox{\hyperlink{stm32f407xx__spi_8h_source_l00168}{168}} of file \mbox{\hyperlink{stm32f407xx__spi_8h_source}{stm32f407xx\+\_\+spi.\+h}}.
+
+\Hypertarget{struct_s_p_ix___handle__t_ab5eac9e2244e1065f288af094873b7a3}\index{SPIx\_Handle\_t@{SPIx\_Handle\_t}!RXLen@{RXLen}}
+\index{RXLen@{RXLen}!SPIx\_Handle\_t@{SPIx\_Handle\_t}}
+\doxysubsubsection{\texorpdfstring{RXLen}{RXLen}}
+{\footnotesize\ttfamily \label{struct_s_p_ix___handle__t_ab5eac9e2244e1065f288af094873b7a3} 
+volatile uint32\+\_\+t SPIx\+\_\+\+Handle\+\_\+t\+::\+RXLen}
+
+
+
+Definition at line \mbox{\hyperlink{stm32f407xx__spi_8h_source_l00173}{173}} of file \mbox{\hyperlink{stm32f407xx__spi_8h_source}{stm32f407xx\+\_\+spi.\+h}}.
+
+\Hypertarget{struct_s_p_ix___handle__t_a1b2787461399507391258f1bfcb9db23}\index{SPIx\_Handle\_t@{SPIx\_Handle\_t}!RxState@{RxState}}
+\index{RxState@{RxState}!SPIx\_Handle\_t@{SPIx\_Handle\_t}}
+\doxysubsubsection{\texorpdfstring{RxState}{RxState}}
+{\footnotesize\ttfamily \label{struct_s_p_ix___handle__t_a1b2787461399507391258f1bfcb9db23} 
+volatile uint8\+\_\+t SPIx\+\_\+\+Handle\+\_\+t\+::\+Rx\+State}
+
+
+
+Definition at line \mbox{\hyperlink{stm32f407xx__spi_8h_source_l00174}{174}} of file \mbox{\hyperlink{stm32f407xx__spi_8h_source}{stm32f407xx\+\_\+spi.\+h}}.
+
 \Hypertarget{struct_s_p_ix___handle__t_ad8dfc166a5c690bfebcc6e855132e805}\index{SPIx\_Handle\_t@{SPIx\_Handle\_t}!SPI\_CONFIG@{SPI\_CONFIG}}
 \index{SPI\_CONFIG@{SPI\_CONFIG}!SPIx\_Handle\_t@{SPIx\_Handle\_t}}
 \doxysubsubsection{\texorpdfstring{SPI\_CONFIG}{SPI\_CONFIG}}
@@ -51,6 +103,26 @@ Definition at line \mbox{\hyperlink{stm32f407xx__spi_8h_source_l00165}{165}} of 
 SPI configuration settings 
 
 Definition at line \mbox{\hyperlink{stm32f407xx__spi_8h_source_l00166}{166}} of file \mbox{\hyperlink{stm32f407xx__spi_8h_source}{stm32f407xx\+\_\+spi.\+h}}.
+
+\Hypertarget{struct_s_p_ix___handle__t_a54ab29aca25deaf50bf951c95a91eef8}\index{SPIx\_Handle\_t@{SPIx\_Handle\_t}!TXLen@{TXLen}}
+\index{TXLen@{TXLen}!SPIx\_Handle\_t@{SPIx\_Handle\_t}}
+\doxysubsubsection{\texorpdfstring{TXLen}{TXLen}}
+{\footnotesize\ttfamily \label{struct_s_p_ix___handle__t_a54ab29aca25deaf50bf951c95a91eef8} 
+volatile uint32\+\_\+t SPIx\+\_\+\+Handle\+\_\+t\+::\+TXLen}
+
+
+
+Definition at line \mbox{\hyperlink{stm32f407xx__spi_8h_source_l00169}{169}} of file \mbox{\hyperlink{stm32f407xx__spi_8h_source}{stm32f407xx\+\_\+spi.\+h}}.
+
+\Hypertarget{struct_s_p_ix___handle__t_ab7bc64878b66e3456dc8a035e6a480cb}\index{SPIx\_Handle\_t@{SPIx\_Handle\_t}!TxState@{TxState}}
+\index{TxState@{TxState}!SPIx\_Handle\_t@{SPIx\_Handle\_t}}
+\doxysubsubsection{\texorpdfstring{TxState}{TxState}}
+{\footnotesize\ttfamily \label{struct_s_p_ix___handle__t_ab7bc64878b66e3456dc8a035e6a480cb} 
+volatile uint8\+\_\+t SPIx\+\_\+\+Handle\+\_\+t\+::\+Tx\+State}
+
+
+
+Definition at line \mbox{\hyperlink{stm32f407xx__spi_8h_source_l00170}{170}} of file \mbox{\hyperlink{stm32f407xx__spi_8h_source}{stm32f407xx\+\_\+spi.\+h}}.
 
 
 

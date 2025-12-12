@@ -1,0 +1,5 @@
+<map id="SPIx_SendData_Blocking" name="SPIx_SendData_Blocking">
+<area shape="rect" id="Node000001" title="Send data over the specified SPI peripheral." alt="" coords="5,5,178,32"/>
+<area shape="rect" id="Node000002" href="$group___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s.html#ga28c21c2e8a6f53982ec6666fb0969123" title="Reads the status of a specific SPI status flag." alt="" coords="226,5,367,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="178,16,210,16,210,21,178,21"/>
+</map>

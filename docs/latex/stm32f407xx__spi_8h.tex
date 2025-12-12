@@ -5,7 +5,7 @@ Include dependency graph for stm32f407xx\+\_\+spi.\+h\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=217pt]{stm32f407xx__spi_8h__incl}
+\includegraphics[width=350pt]{stm32f407xx__spi_8h__incl}
 \end{center}
 \end{figure}
 This graph shows which files directly or indirectly include this file\+:\nopagebreak
@@ -164,6 +164,36 @@ struct \mbox{\hyperlink{struct_s_p_ix___handle__t}{SPIx\+\_\+\+Handle\+\_\+t}}
 \#define \mbox{\hyperlink{group___s_p_i___r_x_c_r_c_r___b_i_t___p_o_s_i_t_i_o_n_s_ga2b80d92a2b51c4c61d5a646ac2b36129}{SPI\+\_\+\+RXCRCR\+\_\+\+RXCRC\+\_\+\+Pos}}~0U
 \item 
 \#define \mbox{\hyperlink{group___s_p_i___t_x_c_r_c_r___b_i_t___p_o_s_i_t_i_o_n_s_ga0a0e6e24778c36e45838350d052916d1}{SPI\+\_\+\+TXCRCR\+\_\+\+TXCRC\+\_\+\+Pos}}~0U
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___i_t___t_y_p_e_ga4b882d1e5e1493afe4aad68483107400}{SPI\+\_\+\+IT\+\_\+\+TYPE\+\_\+\+TXE}}~0U
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___i_t___t_y_p_e_ga9652fdf02a531692dedd8c19f4de71f3}{SPI\+\_\+\+IT\+\_\+\+TYPE\+\_\+\+RXNE}}~1U
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___i_t___t_y_p_e_ga7c79bdae5b569eb88274667d83787d0a}{SPI\+\_\+\+IT\+\_\+\+TYPE\+\_\+\+ERR}}~2U
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___s_t_a_t_e_gaf7d5dbefc25f5ca2aafd67440455834e}{SPI\+\_\+\+STATE\+\_\+\+READY}}~0U
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___s_t_a_t_e_ga0d5b8dae833d0d78120836211f01dcd7}{SPI\+\_\+\+STATE\+\_\+\+BUSY\+\_\+\+IN\+\_\+\+TX}}~1U
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___s_t_a_t_e_ga08fe9e1c8d798596a59ffac40be48d06}{SPI\+\_\+\+STATE\+\_\+\+BUSY\+\_\+\+IN\+\_\+\+RX}}~2U
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___r_e_t_u_r_n___c_o_d_e_s_ga0341717e73492f10de2820dabebb45d1}{SPI\+\_\+\+TXRX\+\_\+\+SUCCESS}}~0U
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___r_e_t_u_r_n___c_o_d_e_s_gad4e7ccbd897e6b2c6bd58dc6f54a6536}{SPI\+\_\+\+BUSY}}~1U
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___r_e_t_u_r_n___c_o_d_e_s_gafc407bc9dc6c775d6c77833a9a31c724}{SPI\+\_\+\+INVALID\+\_\+\+PARAM}}~2U
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___events_ga66d763aff2422d7041fc42b670d1911b}{SPI\+\_\+\+EVENT\+\_\+\+TX\+\_\+\+CMPLT}}~1
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___events_gab74714a01806856ff19f0e336e8c915d}{SPI\+\_\+\+EVENT\+\_\+\+RX\+\_\+\+CMPLT}}~2
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___events_gaa4dcad1150b9eda01f9143e0d4392f4e}{SPI\+\_\+\+EVENT\+\_\+\+OVR\+\_\+\+ERR}}~3
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___events_gac914a0a4811a6298c0d22d1a2718cfdb}{SPI\+\_\+\+EVENT\+\_\+\+CRC\+\_\+\+ERR}}~4
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___events_ga4a51a8e555e9b7556c27e38a71ac5161}{SPI\+\_\+\+EVENT\+\_\+\+MODF\+\_\+\+ERR}}~5
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___events_ga4c9dd7c4c9d8a15e37e44439eb263892}{SPI\+\_\+\+EVENT\+\_\+\+FRE\+\_\+\+ERR}}~6
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
@@ -176,5 +206,27 @@ void \mbox{\hyperlink{group___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s_ga66a55c39f295
 \begin{DoxyCompactList}\small\item\em Enables or disables the SPI peripheral. \end{DoxyCompactList}\item 
 uint8\+\_\+t \mbox{\hyperlink{group___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s_ga28c21c2e8a6f53982ec6666fb0969123}{SPIx\+\_\+\+Get\+Flag\+Status}} (\mbox{\hyperlink{struct_s_p_ix___reg_def__t}{SPIx\+\_\+\+Reg\+Def\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+SPIx, uint32\+\_\+t Flag\+Name)
 \begin{DoxyCompactList}\small\item\em Reads the status of a specific SPI status flag. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{group___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s_ga2f1a0a4006270d72092844c3e764d399}{SPIx\+\_\+\+Send\+Data\+\_\+\+Blocking}} (\mbox{\hyperlink{struct_s_p_ix___reg_def__t}{SPIx\+\_\+\+Reg\+Def\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+SPIx, uint8\+\_\+t \texorpdfstring{$\ast$}{*}p\+Data, uint32\+\_\+t Len)
-\begin{DoxyCompactList}\small\item\em Send data over the specified SPI peripheral. \end{DoxyCompactList}\end{DoxyCompactItemize}
+void \mbox{\hyperlink{group___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s_gac63692a0517966f2db649606f09ee7ee}{SPIx\+\_\+\+Send\+Data\+\_\+\+Blocking}} (\mbox{\hyperlink{struct_s_p_ix___reg_def__t}{SPIx\+\_\+\+Reg\+Def\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+SPIx, uint8\+\_\+t \texorpdfstring{$\ast$}{*}p\+TX\+\_\+\+Data\+\_\+\+Buffer, uint32\+\_\+t Len\+\_\+\+Byte)
+\begin{DoxyCompactList}\small\item\em Send data over the specified SPI peripheral. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s_ga49a1accdcb1df29926a4f4c4cdfb334e}{SPIx\+\_\+\+Receive\+Data\+\_\+\+Blocking}} (\mbox{\hyperlink{struct_s_p_ix___reg_def__t}{SPIx\+\_\+\+Reg\+Def\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+SPIx, uint8\+\_\+t \texorpdfstring{$\ast$}{*}p\+RX\+\_\+\+Data\+\_\+\+Buffer, uint32\+\_\+t Len\+\_\+\+Byte)
+\begin{DoxyCompactList}\small\item\em Receive data from the specified SPI peripheral in blocking mode. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s_ga1a0630eb77e67dbd0f23fd7d856ebd5d}{SPIx\+\_\+\+IRQConfig}} (uint8\+\_\+t IRQNumber, uint8\+\_\+t irq\+\_\+priority)
+\begin{DoxyCompactList}\small\item\em Configure the priority of a given SPI interrupt in the NVIC. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s_ga9f155aebbeb71ea03e0f2dd9ff4ff7b7}{SPIx\+\_\+\+IRQControl}} (uint8\+\_\+t IRQNumber, uint8\+\_\+t EN\+\_\+\+DI)
+\begin{DoxyCompactList}\small\item\em Enable or disable the given SPI IRQ in the NVIC. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s_gae8becf850726d059d4808fe5ba705f07}{SPIx\+\_\+\+Peripheral\+Interrupt\+Control}} (\mbox{\hyperlink{struct_s_p_ix___reg_def__t}{SPIx\+\_\+\+Reg\+Def\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+SPIx, uint8\+\_\+t ITType, uint8\+\_\+t EN\+\_\+\+DI)
+\begin{DoxyCompactList}\small\item\em Enable or disable specified SPI peripheral interrupts (CR2). \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s_ga84fe922cab70472a7ae10fc726de8d10}{SPIx\+\_\+\+Send\+Data\+IT}} (\mbox{\hyperlink{struct_s_p_ix___handle__t}{SPIx\+\_\+\+Handle\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Handle, uint8\+\_\+t \texorpdfstring{$\ast$}{*}p\+Tx\+Buf, uint32\+\_\+t Len)
+\begin{DoxyCompactList}\small\item\em Start a non-\/blocking (interrupt-\/driven) transmit on the SPI peripheral. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s_ga185a067739ac2ed3d3115a03ceee35a3}{SPIx\+\_\+\+Receive\+Data\+IT}} (\mbox{\hyperlink{struct_s_p_ix___handle__t}{SPIx\+\_\+\+Handle\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Handle, uint8\+\_\+t \texorpdfstring{$\ast$}{*}p\+Rx\+Buf, uint32\+\_\+t Len)
+\begin{DoxyCompactList}\small\item\em Start a non-\/blocking (interrupt-\/driven) receive on the SPI peripheral. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s_ga9637b0d6a930d03fd844877298605e78}{SPIx\+\_\+\+IRQHandling}} (\mbox{\hyperlink{struct_s_p_ix___handle__t}{SPIx\+\_\+\+Handle\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Handle)
+\begin{DoxyCompactList}\small\item\em Handle all interrupt events for the given SPI peripheral. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s_ga29cfe1dcabfe0dcbcb6a6cf5f1e3c3d4}{SPI\+\_\+\+Close\+\_\+\+Transfer}} (\mbox{\hyperlink{struct_s_p_ix___handle__t}{SPIx\+\_\+\+Handle\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Handle)
+\begin{DoxyCompactList}\small\item\em Finalizes an ongoing SPI communication transaction by disabling interrupts and resetting the handle state variables. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s_ga07af1ab45d2edd8a8a05cf1986803e45}{SPI\+\_\+\+Application\+Event\+Callback}} (\mbox{\hyperlink{struct_s_p_ix___handle__t}{SPIx\+\_\+\+Handle\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Handle, uint8\+\_\+t App\+Ev)
+\begin{DoxyCompactList}\small\item\em Application callback invoked by the SPI driver on asynchronous events. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s_ga0e67d8e31e905a224b3ec5d806e94897}{SPI\+\_\+\+Close\+Transmission}} (\mbox{\hyperlink{struct_s_p_ix___handle__t}{SPIx\+\_\+\+Handle\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Handle)
+\begin{DoxyCompactList}\small\item\em Gracefully terminate an ongoing SPI transmit interrupt operation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s_gaa33e1796de9a74dae78d9921de01df2a}{SPI\+\_\+\+Close\+Reception}} (\mbox{\hyperlink{struct_s_p_ix___handle__t}{SPIx\+\_\+\+Handle\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Handle)
+\begin{DoxyCompactList}\small\item\em Gracefully terminate an ongoing SPI receive interrupt operation. \end{DoxyCompactList}\end{DoxyCompactItemize}

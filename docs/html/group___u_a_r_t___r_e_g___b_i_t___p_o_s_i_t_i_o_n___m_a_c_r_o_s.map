@@ -1,0 +1,10 @@
+<map id="UART Register Bit Position Macros" name="UART Register Bit Position Macros">
+<area shape="rect" id="Node000005" href="$group___u_a_r_t___b_r_r___r_e_g___b_i_t___p_o_s_i_t_i_o_n___m_a_c_r_o_s.html" title="UART BRR Register Bit Definition Macros." alt="" coords="402,5,565,48"/>
+<area shape="rect" id="Node000006" href="$group___u_a_r_t___c_r1___r_e_g___b_i_t___p_o_s_i_t_i_o_n___m_a_c_r_o_s.html" title="UART CR1 Register Bit Definition Macros." alt="" coords="403,72,564,115"/>
+<area shape="rect" id="Node000007" href="$group___u_a_r_t___c_r2___r_e_g___b_i_t___p_o_s_i_t_i_o_n___m_a_c_r_o_s.html" title="UART CR2 Register Bit Definition Macros." alt="" coords="403,139,564,181"/>
+<area shape="rect" id="Node000008" href="$group___u_a_r_t___c_r3___r_e_g___b_i_t___p_o_s_i_t_i_o_n___m_a_c_r_o_s.html" title="UART CR3 Register Bit Definition Macros." alt="" coords="403,205,564,248"/>
+<area shape="rect" id="Node000004" href="$group___u_a_r_t___d_r___r_e_g___b_i_t___p_o_s_i_t_i_o_n___m_a_c_r_o_s.html" title="UART DR Register Bit Definition Macros." alt="" coords="406,272,561,315"/>
+<area shape="rect" id="Node000002" href="$group___u_a_r_t___p_e_r_i_p_h_e_r_a_l.html" title="UART Peripheral." alt="" coords="5,180,125,207"/>
+<area shape="rect" id="Node000001" title="UART Register Bit Definition Macros." alt="" coords="173,172,354,215"/>
+<area shape="rect" id="Node000003" href="$group___u_a_r_t___s_r___r_e_g___b_i_t___p_o_s_i_t_i_o_n___m_a_c_r_o_s.html" title="UART SR Register Bit Definition Macros." alt="" coords="407,339,560,381"/>
+</map>

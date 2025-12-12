@@ -1,0 +1,7 @@
+<map id="SPI_CloseTransmission" name="SPI_CloseTransmission">
+<area shape="rect" id="Node000001" title="Gracefully terminate an ongoing SPI transmit interrupt operation." alt="" coords="5,35,168,61"/>
+<area shape="rect" id="Node000002" href="$group___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s.html#ga07af1ab45d2edd8a8a05cf1986803e45" title="Application callback invoked by the SPI driver on asynchronous events." alt="" coords="216,5,415,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="168,35,200,31,200,36,169,40"/>
+<area shape="rect" id="Node000003" href="$group___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s.html#gae8becf850726d059d4808fe5ba705f07" title="Enable or disable specified SPI peripheral interrupts (CR2)." alt="" coords="234,56,397,99"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="169,56,218,62,218,68,168,61"/>
+</map>

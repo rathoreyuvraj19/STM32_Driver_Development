@@ -55,7 +55,7 @@ static void SPI_OVR_Err_IRQ_Helper(SPIx_Handle_t *pHandle){
 	volatile uint32_t temp;
 	temp = pHandle->pSPIx->DR; // First Read from SPI_DR reg.
 	temp = pHandle->pSPIx->SR; // Second Read from SPI_SR reg to clear the flag.
-
+	(void)temp;
 	//2. Inform the application about the over run error
 	SPI_ApplicationEventCallback(pHandle, SPI_EVENT_OVR_ERR);
 }
@@ -81,7 +81,8 @@ void SPIx_Init(SPIx_Handle_t *pSPI_Handle){
 	uint8_t SPI_BIT_ORDER = pSPI_Handle->SPI_CONFIG.SPI_BIT_ORDER;
 	uint8_t SPI_SSOE = pSPI_Handle->SPI_CONFIG.SPI_SSOE;
 	uint8_t SPI_CRC_EN = pSPI_Handle->SPI_CONFIG.SPI_CRC_EN;
-
+	//@todo use SPI_CRC_EN later
+	(void)SPI_CRC_EN;
 	/** 1. Enable the SPIx peripheral clock Through RCC */
 	RCC_RegDef_t* pRCC = RCC;
 	if(pSPIx == SPI1){ /** Enable the SPI1 RCC APB2ENR reg */
@@ -275,7 +276,7 @@ void SPIx_ReceiveData_Blocking(SPIx_RegDef_t *pSPIx, uint8_t *pRX_Data_Buffer, u
 void SPIx_IRQConfig(uint8_t IRQNumber, uint8_t irq_priority){
 	uint8_t IPR_Reg_Number = IRQNumber / 4;
 	uint8_t IRQ_Pos = (IRQNumber % 4) * 8;
-	NVIC_RegDef_t *pNVIC = NVIC_BASEADDR;
+	NVIC_RegDef_t *pNVIC = (NVIC_RegDef_t *)NVIC_BASEADDR;
 	irq_priority &= 0x0F; // Masking the priority
 	if(IRQNumber == IRQ_NUM_SPI1 || IRQNumber == IRQ_NUM_SPI2 || IRQNumber == IRQ_NUM_SPI3 ){
 		pNVIC->IPR[IPR_Reg_Number] &= ~(0xFF << IRQ_Pos);

@@ -1,0 +1,4 @@
+<map id="SPI Peripheral Interrupt Types" name="SPI Peripheral Interrupt Types">
+<area shape="rect" id="Node000002" href="$group___s_p_i___d_r_i_v_e_r___d_e_v_e_l_o_p_e_m_n_t.html" title="SPI Driver Development." alt="" coords="5,13,88,40"/>
+<area shape="rect" id="Node000001" title="Bit positions used to select which SPI interrupt to enable/disable." alt="" coords="136,5,293,48"/>
+</map>

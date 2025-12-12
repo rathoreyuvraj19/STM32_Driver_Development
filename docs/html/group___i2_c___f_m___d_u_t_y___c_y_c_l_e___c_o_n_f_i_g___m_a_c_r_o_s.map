@@ -1,0 +1,4 @@
+<map id="I2C Fast Mode Duty Cycle Configuration Macros" name="I2C Fast Mode Duty Cycle Configuration Macros">
+<area shape="rect" id="Node000002" href="$group___i2_c___c_o_n_f_i_g___m_a_c_r_o_s.html" title="I2C Driver Development." alt="" coords="5,21,176,48"/>
+<area shape="rect" id="Node000001" title="Fast&#45;mode duty cycle selection used to program CCR.DUTY bit." alt="" coords="224,5,364,64"/>
+</map>

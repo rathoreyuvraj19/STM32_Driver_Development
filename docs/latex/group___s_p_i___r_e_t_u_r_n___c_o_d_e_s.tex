@@ -1,0 +1,63 @@
+\doxysubsection{SPI Return Codes }
+\hypertarget{group___s_p_i___r_e_t_u_r_n___c_o_d_e_s}{}\label{group___s_p_i___r_e_t_u_r_n___c_o_d_e_s}\index{SPI Return Codes@{SPI Return Codes}}
+
+
+Return status values used by SPI interrupt-\/driven APIs.  
+
+
+Collaboration diagram for SPI Return Codes\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=274pt]{group___s_p_i___r_e_t_u_r_n___c_o_d_e_s}
+\end{center}
+\end{figure}
+\doxysubsubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___r_e_t_u_r_n___c_o_d_e_s_ga0341717e73492f10de2820dabebb45d1}{SPI\+\_\+\+TXRX\+\_\+\+SUCCESS}}~0U
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___r_e_t_u_r_n___c_o_d_e_s_gad4e7ccbd897e6b2c6bd58dc6f54a6536}{SPI\+\_\+\+BUSY}}~1U
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___r_e_t_u_r_n___c_o_d_e_s_gafc407bc9dc6c775d6c77833a9a31c724}{SPI\+\_\+\+INVALID\+\_\+\+PARAM}}~2U
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+Return status values used by SPI interrupt-\/driven APIs. 
+
+These codes indicate whether an SPI IT-\/based transfer request was accepted, rejected due to an ongoing transfer, or invalid due to bad arguments. 
+
+\label{doc-define-members}
+\Hypertarget{group___s_p_i___r_e_t_u_r_n___c_o_d_e_s_doc-define-members}
+\doxysubsubsection{Macro Definition Documentation}
+\Hypertarget{group___s_p_i___r_e_t_u_r_n___c_o_d_e_s_gad4e7ccbd897e6b2c6bd58dc6f54a6536}\index{SPI Return Codes@{SPI Return Codes}!SPI\_BUSY@{SPI\_BUSY}}
+\index{SPI\_BUSY@{SPI\_BUSY}!SPI Return Codes@{SPI Return Codes}}
+\doxysubsubsubsection{\texorpdfstring{SPI\_BUSY}{SPI\_BUSY}}
+{\footnotesize\ttfamily \label{group___s_p_i___r_e_t_u_r_n___c_o_d_e_s_gad4e7ccbd897e6b2c6bd58dc6f54a6536} 
+\#define SPI\+\_\+\+BUSY~1U}
+
+SPI is busy (TX or RX already in progress) 
+
+Definition at line \mbox{\hyperlink{stm32f407xx__spi_8h_source_l00787}{787}} of file \mbox{\hyperlink{stm32f407xx__spi_8h_source}{stm32f407xx\+\_\+spi.\+h}}.
+
+\Hypertarget{group___s_p_i___r_e_t_u_r_n___c_o_d_e_s_gafc407bc9dc6c775d6c77833a9a31c724}\index{SPI Return Codes@{SPI Return Codes}!SPI\_INVALID\_PARAM@{SPI\_INVALID\_PARAM}}
+\index{SPI\_INVALID\_PARAM@{SPI\_INVALID\_PARAM}!SPI Return Codes@{SPI Return Codes}}
+\doxysubsubsubsection{\texorpdfstring{SPI\_INVALID\_PARAM}{SPI\_INVALID\_PARAM}}
+{\footnotesize\ttfamily \label{group___s_p_i___r_e_t_u_r_n___c_o_d_e_s_gafc407bc9dc6c775d6c77833a9a31c724} 
+\#define SPI\+\_\+\+INVALID\+\_\+\+PARAM~2U}
+
+Invalid argument (NULL buffer, length 0, etc.) 
+
+Definition at line \mbox{\hyperlink{stm32f407xx__spi_8h_source_l00788}{788}} of file \mbox{\hyperlink{stm32f407xx__spi_8h_source}{stm32f407xx\+\_\+spi.\+h}}.
+
+\Hypertarget{group___s_p_i___r_e_t_u_r_n___c_o_d_e_s_ga0341717e73492f10de2820dabebb45d1}\index{SPI Return Codes@{SPI Return Codes}!SPI\_TXRX\_SUCCESS@{SPI\_TXRX\_SUCCESS}}
+\index{SPI\_TXRX\_SUCCESS@{SPI\_TXRX\_SUCCESS}!SPI Return Codes@{SPI Return Codes}}
+\doxysubsubsubsection{\texorpdfstring{SPI\_TXRX\_SUCCESS}{SPI\_TXRX\_SUCCESS}}
+{\footnotesize\ttfamily \label{group___s_p_i___r_e_t_u_r_n___c_o_d_e_s_ga0341717e73492f10de2820dabebb45d1} 
+\#define SPI\+\_\+\+TXRX\+\_\+\+SUCCESS~0U}
+
+Operation successful — IT transfer started 
+
+Definition at line \mbox{\hyperlink{stm32f407xx__spi_8h_source_l00786}{786}} of file \mbox{\hyperlink{stm32f407xx__spi_8h_source}{stm32f407xx\+\_\+spi.\+h}}.
+

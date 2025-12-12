@@ -16,6 +16,5 @@ var group___n_v_i_c___r_e_g =
       [ "STIR", "struct_n_v_i_c___reg_def__t.html#ae5d28eb51c43c333293dbf312fbaede9", null ]
     ] ],
     [ "NVIC", "group___n_v_i_c___r_e_g.html#gac8e97e8ce56ae9f57da1363a937f8a17", null ],
-    [ "NVIC_BASEADDR", "group___n_v_i_c___r_e_g.html#ga01d5d6d14e5ddc3602597f71315ef112", null ],
-    [ "NVIC_RegDef_t", "group___n_v_i_c___r_e_g.html#ga1a6f911773212b59cc19775cb4c41e37", null ]
+    [ "NVIC_BASEADDR", "group___n_v_i_c___r_e_g.html#ga01d5d6d14e5ddc3602597f71315ef112", null ]
 ];

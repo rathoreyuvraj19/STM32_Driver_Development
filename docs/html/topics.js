@@ -19,7 +19,11 @@ var topics =
     [ "NVIC Register Definition", "group___n_v_i_c___r_e_g.html", "group___n_v_i_c___r_e_g" ],
     [ "IRQ Numbers for STM32F407", "group___i_r_q___n_u_m_b_e_r___m_a_c_r_o_s.html", "group___i_r_q___n_u_m_b_e_r___m_a_c_r_o_s" ],
     [ "SPI Peripheral Definitions", "group___s_p_i___instances.html", "group___s_p_i___instances" ],
+    [ "I2C Peripheral Definitions", "group___i2_c___instances.html", "group___i2_c___instances" ],
+    [ "UART Peripheral", "group___u_a_r_t___p_e_r_i_p_h_e_r_a_l.html", "group___u_a_r_t___p_e_r_i_p_h_e_r_a_l" ],
     [ "RCC AHB1ENR Bit Positions", "group___r_c_c___a_h_b1_e_n_r___b_i_t___p_o_s.html", "group___r_c_c___a_h_b1_e_n_r___b_i_t___p_o_s" ],
     [ "GPIO Driver", "group___g_p_i_o___driver.html", "group___g_p_i_o___driver" ],
-    [ "SPI Driver", "group___s_p_i___d_r_i_v_e_r___d_e_v_e_l_o_p_e_m_n_t.html", "group___s_p_i___d_r_i_v_e_r___d_e_v_e_l_o_p_e_m_n_t" ]
+    [ "I2C Driver", "group___i2_c___d_r_i_v_e_r___d_e_v_e_l_o_p_e_m_n_t.html", "group___i2_c___d_r_i_v_e_r___d_e_v_e_l_o_p_e_m_n_t" ],
+    [ "SPI Driver", "group___s_p_i___d_r_i_v_e_r___d_e_v_e_l_o_p_e_m_n_t.html", "group___s_p_i___d_r_i_v_e_r___d_e_v_e_l_o_p_e_m_n_t" ],
+    [ "UART Driver", "group___u_a_r_t___d_r_i_v_e_r___d_e_v_e_l_o_p_e_m_n_t.html", "group___u_a_r_t___d_r_i_v_e_r___d_e_v_e_l_o_p_e_m_n_t" ]
 ];

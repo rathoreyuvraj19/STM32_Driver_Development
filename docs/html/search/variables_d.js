@@ -18,5 +18,7 @@ var searchData=
   ['reserved4_15',['reserved4',['../struct_r_c_c___reg_def__t.html#a3478865b120b4d405fa9c36c4ae119bd',1,'RCC_RegDef_t']]],
   ['reserved5_16',['RESERVED5',['../struct_n_v_i_c___reg_def__t.html#a055048d0ea7b966cc3cb224fb4b88a27',1,'NVIC_RegDef_t']]],
   ['rtsr_17',['RTSR',['../struct_e_x_t_i___reg_def__t.html#a8750f176ecede5dfebf1f9ed67e2bec9',1,'EXTI_RegDef_t']]],
-  ['rxcrcr_18',['RXCRCR',['../struct_s_p_ix___reg_def__t.html#a256b0a5addbc714bc5ce9b11789fdcd5',1,'SPIx_RegDef_t']]]
+  ['rxcrcr_18',['RXCRCR',['../struct_s_p_ix___reg_def__t.html#a256b0a5addbc714bc5ce9b11789fdcd5',1,'SPIx_RegDef_t']]],
+  ['rxlen_19',['RXLen',['../struct_s_p_ix___handle__t.html#ab5eac9e2244e1065f288af094873b7a3',1,'SPIx_Handle_t']]],
+  ['rxstate_20',['RxState',['../struct_s_p_ix___handle__t.html#a1b2787461399507391258f1bfcb9db23',1,'SPIx_Handle_t']]]
 ];

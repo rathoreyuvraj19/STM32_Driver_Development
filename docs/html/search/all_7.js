@@ -4,7 +4,7 @@ var searchData=
   ['dcmi_5fbaseaddr_1',['DCMI_BASEADDR',['../group___a_h_b2___p_e_r_i_p_e_h_r_a_l_s___b_a_s_e___a_d_d_r_e_s_s_e_s.html#ga8c34a1224f2552c228f62f510fd1b8a3',1,'DCMI_BASEADDR:&#160;stm32f407xx.h'],['../group___a_h_b2___p_e_r_i_p_e_h_r_a_l_s___b_a_s_e___a_d_d_r_e_s_s_e_s.html#ga8c34a1224f2552c228f62f510fd1b8a3',1,'DCMI_BASEADDR:&#160;stm32f407xx.h']]],
   ['definition_2',['Definition',['../group___e_x_t_i___r_e_g.html',1,'EXTI Peripheral Register Definition'],['../group___g_p_i_ox___r_e_g___d_e_f.html',1,'GPIOx Peripheral Register Definition'],['../group___n_v_i_c___r_e_g.html',1,'NVIC Register Definition'],['../group___r_c_c___r_e_g.html',1,'RCC Peripheral Register Definition'],['../group___s_y_s_c_f_g___r_e_g.html',1,'SYSCFG Peripheral Register Definition']]],
   ['definition_3',['definition',['../group___s_p_i___config___struct.html',1,'SPI Configuration Structure definition'],['../group___s_p_i___handle___struct.html',1,'SPI Handle Structure definition']]],
-  ['definitions_4',['SPI Peripheral Definitions',['../group___s_p_i___instances.html',1,'']]],
+  ['definitions_4',['Definitions',['../group___i2_c___instances.html',1,'I2C Peripheral Definitions'],['../group___s_p_i___instances.html',1,'SPI Peripheral Definitions'],['../group___u_a_r_t___instances.html',1,'UART Peripheral Definitions']]],
   ['demcr_5',['DEMCR',['../000___hello___world_2_src_2syscalls_8c.html#ab6c5b1baf444f12ba50bfc3b0e40e05c',1,'DEMCR:&#160;syscalls.c'],['../002___user__button__interrupt_2_src_2syscalls_8c.html#ab6c5b1baf444f12ba50bfc3b0e40e05c',1,'DEMCR:&#160;syscalls.c']]],
   ['details_6',['Implementation Details',['../index.html#autotoc_md13',1,'']]],
   ['development_7',['STM32F407 Bare-Metal Driver Development',['../index.html',1,'']]],
@@ -20,10 +20,13 @@ var searchData=
   ['documents_17',['Reference Documents',['../index.html#autotoc_md52',1,'']]],
   ['down_20options_18',['GPIO Pull-Up/Pull-Down Options',['../group___g_p_i_o___p_u_l_l_u_p___p_u_l_l_d_o_w_n.html',1,'']]],
   ['dr_19',['DR',['../struct_s_p_ix___reg_def__t.html#aa59c17ad248dcbd0b66bc5aaa64c070f',1,'SPIx_RegDef_t']]],
-  ['driver_20',['Driver',['../group___g_p_i_o___driver.html',1,'GPIO Driver'],['../group___s_p_i___d_r_i_v_e_r___d_e_v_e_l_o_p_e_m_n_t.html',1,'SPI Driver']]],
-  ['driver_20api_21',['GPIO Driver API',['../index.html#autotoc_md42',1,'']]],
-  ['driver_20api_20summary_22',['GPIO Driver API Summary',['../_s_t_m32_f4xx___d_r_i_v_e_r_s_2_src_2stm32f407xx__gpio_8c.html#GPIO_API_Summary',1,'']]],
-  ['driver_20development_23',['STM32F407 Bare-Metal Driver Development',['../index.html',1,'']]],
-  ['driver_20function_20prototypes_24',['GPIO Driver Function Prototypes',['../group___g_p_i_o___driver___a_p_is.html',1,'']]],
-  ['drivers_25',['Project 003: Testing STM32F407xx Drivers',['../index.html#autotoc_md23',1,'']]]
+  ['dr_20register_20bit_20position_20macros_20',['UART DR Register Bit Position Macros',['../group___u_a_r_t___d_r___r_e_g___b_i_t___p_o_s_i_t_i_o_n___m_a_c_r_o_s.html',1,'']]],
+  ['driver_21',['Driver',['../group___g_p_i_o___driver.html',1,'GPIO Driver'],['../group___i2_c___d_r_i_v_e_r___d_e_v_e_l_o_p_e_m_n_t.html',1,'I2C Driver'],['../group___s_p_i___d_r_i_v_e_r___d_e_v_e_l_o_p_e_m_n_t.html',1,'SPI Driver'],['../group___u_a_r_t___d_r_i_v_e_r___d_e_v_e_l_o_p_e_m_n_t.html',1,'UART Driver']]],
+  ['driver_20api_22',['GPIO Driver API',['../index.html#autotoc_md42',1,'']]],
+  ['driver_20api_20summary_23',['GPIO Driver API Summary',['../_s_t_m32_f4xx___d_r_i_v_e_r_s_2_src_2stm32f407xx__gpio_8c.html#GPIO_API_Summary',1,'']]],
+  ['driver_20development_24',['STM32F407 Bare-Metal Driver Development',['../index.html',1,'']]],
+  ['driver_20function_20prototypes_25',['GPIO Driver Function Prototypes',['../group___g_p_i_o___driver___a_p_is.html',1,'']]],
+  ['driver_20states_26',['SPI Driver States',['../group___s_p_i___s_t_a_t_e.html',1,'']]],
+  ['drivers_27',['Project 003: Testing STM32F407xx Drivers',['../index.html#autotoc_md23',1,'']]],
+  ['duty_20cycle_20configuration_20macros_28',['I2C Fast Mode Duty Cycle Configuration Macros',['../group___i2_c___f_m___d_u_t_y___c_y_c_l_e___c_o_n_f_i_g___m_a_c_r_o_s.html',1,'']]]
 ];

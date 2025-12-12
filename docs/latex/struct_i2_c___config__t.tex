@@ -1,0 +1,92 @@
+\doxysection{I2\+C\+\_\+\+Config\+\_\+t Struct Reference}
+\hypertarget{struct_i2_c___config__t}{}\label{struct_i2_c___config__t}\index{I2C\_Config\_t@{I2C\_Config\_t}}
+
+
+I2C peripheral configuration structure. This structure holds all user-\/configurable parameters required to initialize the I2C peripheral. These fields are written into CR1, CR2, OAR1, CCR and TRISE during peripheral initialization.  
+
+
+
+
+{\ttfamily \#include $<$stm32f407xx\+\_\+i2c.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_i2_c___config__t_a373e1e87afd12879e7a5d960555ed668}{I2\+C\+\_\+\+SCLSpeed}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{struct_i2_c___config__t_a431d8f66262a3ea530f5ef2a9f1b5786}{I2\+C\+\_\+\+Device\+Address}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{struct_i2_c___config__t_a55c17648019ccf38f24da360b3122667}{I2\+C\+\_\+\+ACKControl}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{struct_i2_c___config__t_aafeea1a89210e349bbc43e6d9019c89f}{I2\+C\+\_\+\+FMDuty\+Cycle}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+I2C peripheral configuration structure. This structure holds all user-\/configurable parameters required to initialize the I2C peripheral. These fields are written into CR1, CR2, OAR1, CCR and TRISE during peripheral initialization. 
+
+Definition at line \mbox{\hyperlink{stm32f407xx__i2c_8h_source_l00070}{70}} of file \mbox{\hyperlink{stm32f407xx__i2c_8h_source}{stm32f407xx\+\_\+i2c.\+h}}.
+
+
+
+\label{doc-variable-members}
+\Hypertarget{struct_i2_c___config__t_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{struct_i2_c___config__t_a55c17648019ccf38f24da360b3122667}\index{I2C\_Config\_t@{I2C\_Config\_t}!I2C\_ACKControl@{I2C\_ACKControl}}
+\index{I2C\_ACKControl@{I2C\_ACKControl}!I2C\_Config\_t@{I2C\_Config\_t}}
+\doxysubsubsection{\texorpdfstring{I2C\_ACKControl}{I2C\_ACKControl}}
+{\footnotesize\ttfamily \label{struct_i2_c___config__t_a55c17648019ccf38f24da360b3122667} 
+uint8\+\_\+t I2\+C\+\_\+\+Config\+\_\+t\+::\+I2\+C\+\_\+\+ACKControl}
+
+Acknowledge enable/disable configuration. Possible values\+:
+\begin{DoxyItemize}
+\item I2\+C\+\_\+\+ACK\+\_\+\+ENABLE
+\item I2\+C\+\_\+\+ACK\+\_\+\+DISABLE 
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{stm32f407xx__i2c_8h_source_l00083}{83}} of file \mbox{\hyperlink{stm32f407xx__i2c_8h_source}{stm32f407xx\+\_\+i2c.\+h}}.
+
+\Hypertarget{struct_i2_c___config__t_a431d8f66262a3ea530f5ef2a9f1b5786}\index{I2C\_Config\_t@{I2C\_Config\_t}!I2C\_DeviceAddress@{I2C\_DeviceAddress}}
+\index{I2C\_DeviceAddress@{I2C\_DeviceAddress}!I2C\_Config\_t@{I2C\_Config\_t}}
+\doxysubsubsection{\texorpdfstring{I2C\_DeviceAddress}{I2C\_DeviceAddress}}
+{\footnotesize\ttfamily \label{struct_i2_c___config__t_a431d8f66262a3ea530f5ef2a9f1b5786} 
+uint16\+\_\+t I2\+C\+\_\+\+Config\+\_\+t\+::\+I2\+C\+\_\+\+Device\+Address}
+
+Own device address (7-\/bit or 10-\/bit). For 7-\/bit addressing, provide the 7-\/bit value. For 10-\/bit addressing, provide the full 10-\/bit value. 
+
+Definition at line \mbox{\hyperlink{stm32f407xx__i2c_8h_source_l00078}{78}} of file \mbox{\hyperlink{stm32f407xx__i2c_8h_source}{stm32f407xx\+\_\+i2c.\+h}}.
+
+\Hypertarget{struct_i2_c___config__t_aafeea1a89210e349bbc43e6d9019c89f}\index{I2C\_Config\_t@{I2C\_Config\_t}!I2C\_FMDutyCycle@{I2C\_FMDutyCycle}}
+\index{I2C\_FMDutyCycle@{I2C\_FMDutyCycle}!I2C\_Config\_t@{I2C\_Config\_t}}
+\doxysubsubsection{\texorpdfstring{I2C\_FMDutyCycle}{I2C\_FMDutyCycle}}
+{\footnotesize\ttfamily \label{struct_i2_c___config__t_aafeea1a89210e349bbc43e6d9019c89f} 
+uint8\+\_\+t I2\+C\+\_\+\+Config\+\_\+t\+::\+I2\+C\+\_\+\+FMDuty\+Cycle}
+
+Duty cycle configuration in Fast Mode. Possible values\+:
+\begin{DoxyItemize}
+\item I2\+C\+\_\+\+FM\+\_\+\+DUTY\+\_\+2 (duty = 2)
+\item I2\+C\+\_\+\+FM\+\_\+\+DUTY\+\_\+16\+\_\+9 (duty = 16/9) 
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{stm32f407xx__i2c_8h_source_l00089}{89}} of file \mbox{\hyperlink{stm32f407xx__i2c_8h_source}{stm32f407xx\+\_\+i2c.\+h}}.
+
+\Hypertarget{struct_i2_c___config__t_a373e1e87afd12879e7a5d960555ed668}\index{I2C\_Config\_t@{I2C\_Config\_t}!I2C\_SCLSpeed@{I2C\_SCLSpeed}}
+\index{I2C\_SCLSpeed@{I2C\_SCLSpeed}!I2C\_Config\_t@{I2C\_Config\_t}}
+\doxysubsubsection{\texorpdfstring{I2C\_SCLSpeed}{I2C\_SCLSpeed}}
+{\footnotesize\ttfamily \label{struct_i2_c___config__t_a373e1e87afd12879e7a5d960555ed668} 
+uint32\+\_\+t I2\+C\+\_\+\+Config\+\_\+t\+::\+I2\+C\+\_\+\+SCLSpeed}
+
+I2C bus speed in Hz.
+\begin{DoxyItemize}
+\item Standard Mode\+: 100000
+\item Fast Mode\+: 400000
+\item Fast Mode+\+: 1000000 (if supported) 
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{stm32f407xx__i2c_8h_source_l00072}{72}} of file \mbox{\hyperlink{stm32f407xx__i2c_8h_source}{stm32f407xx\+\_\+i2c.\+h}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+STM32\+F4xx\+\_\+\+DRIVERS/\+Inc/\mbox{\hyperlink{stm32f407xx__i2c_8h}{stm32f407xx\+\_\+i2c.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,63 @@
+\doxysubsection{SPI Driver States }
+\hypertarget{group___s_p_i___s_t_a_t_e}{}\label{group___s_p_i___s_t_a_t_e}\index{SPI Driver States@{SPI Driver States}}
+
+
+Internal driver state values used to track ongoing SPI operations.  
+
+
+Collaboration diagram for SPI Driver States\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=271pt]{group___s_p_i___s_t_a_t_e}
+\end{center}
+\end{figure}
+\doxysubsubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___s_t_a_t_e_gaf7d5dbefc25f5ca2aafd67440455834e}{SPI\+\_\+\+STATE\+\_\+\+READY}}~0U
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___s_t_a_t_e_ga0d5b8dae833d0d78120836211f01dcd7}{SPI\+\_\+\+STATE\+\_\+\+BUSY\+\_\+\+IN\+\_\+\+TX}}~1U
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___s_t_a_t_e_ga08fe9e1c8d798596a59ffac40be48d06}{SPI\+\_\+\+STATE\+\_\+\+BUSY\+\_\+\+IN\+\_\+\+RX}}~2U
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+Internal driver state values used to track ongoing SPI operations. 
+
+These constants represent the current state of the SPI driver, and are used internally by APIs such as \doxylink{group___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s_ga84fe922cab70472a7ae10fc726de8d10}{SPIx\+\_\+\+Send\+Data\+IT()} and \doxylink{group___s_p_i___a_p_i___p_r_o_t_o_t_y_p_e_s_ga185a067739ac2ed3d3115a03ceee35a3}{SPIx\+\_\+\+Receive\+Data\+IT()} to prevent re-\/entrant transfers. 
+
+\label{doc-define-members}
+\Hypertarget{group___s_p_i___s_t_a_t_e_doc-define-members}
+\doxysubsubsection{Macro Definition Documentation}
+\Hypertarget{group___s_p_i___s_t_a_t_e_ga08fe9e1c8d798596a59ffac40be48d06}\index{SPI Driver States@{SPI Driver States}!SPI\_STATE\_BUSY\_IN\_RX@{SPI\_STATE\_BUSY\_IN\_RX}}
+\index{SPI\_STATE\_BUSY\_IN\_RX@{SPI\_STATE\_BUSY\_IN\_RX}!SPI Driver States@{SPI Driver States}}
+\doxysubsubsubsection{\texorpdfstring{SPI\_STATE\_BUSY\_IN\_RX}{SPI\_STATE\_BUSY\_IN\_RX}}
+{\footnotesize\ttfamily \label{group___s_p_i___s_t_a_t_e_ga08fe9e1c8d798596a59ffac40be48d06} 
+\#define SPI\+\_\+\+STATE\+\_\+\+BUSY\+\_\+\+IN\+\_\+\+RX~2U}
+
+SPI is currently receiving data (IT mode) 
+
+Definition at line \mbox{\hyperlink{stm32f407xx__spi_8h_source_l00772}{772}} of file \mbox{\hyperlink{stm32f407xx__spi_8h_source}{stm32f407xx\+\_\+spi.\+h}}.
+
+\Hypertarget{group___s_p_i___s_t_a_t_e_ga0d5b8dae833d0d78120836211f01dcd7}\index{SPI Driver States@{SPI Driver States}!SPI\_STATE\_BUSY\_IN\_TX@{SPI\_STATE\_BUSY\_IN\_TX}}
+\index{SPI\_STATE\_BUSY\_IN\_TX@{SPI\_STATE\_BUSY\_IN\_TX}!SPI Driver States@{SPI Driver States}}
+\doxysubsubsubsection{\texorpdfstring{SPI\_STATE\_BUSY\_IN\_TX}{SPI\_STATE\_BUSY\_IN\_TX}}
+{\footnotesize\ttfamily \label{group___s_p_i___s_t_a_t_e_ga0d5b8dae833d0d78120836211f01dcd7} 
+\#define SPI\+\_\+\+STATE\+\_\+\+BUSY\+\_\+\+IN\+\_\+\+TX~1U}
+
+SPI is currently transmitting data (IT mode) 
+
+Definition at line \mbox{\hyperlink{stm32f407xx__spi_8h_source_l00771}{771}} of file \mbox{\hyperlink{stm32f407xx__spi_8h_source}{stm32f407xx\+\_\+spi.\+h}}.
+
+\Hypertarget{group___s_p_i___s_t_a_t_e_gaf7d5dbefc25f5ca2aafd67440455834e}\index{SPI Driver States@{SPI Driver States}!SPI\_STATE\_READY@{SPI\_STATE\_READY}}
+\index{SPI\_STATE\_READY@{SPI\_STATE\_READY}!SPI Driver States@{SPI Driver States}}
+\doxysubsubsubsection{\texorpdfstring{SPI\_STATE\_READY}{SPI\_STATE\_READY}}
+{\footnotesize\ttfamily \label{group___s_p_i___s_t_a_t_e_gaf7d5dbefc25f5ca2aafd67440455834e} 
+\#define SPI\+\_\+\+STATE\+\_\+\+READY~0U}
+
+SPI is idle and ready for a new transfer 
+
+Definition at line \mbox{\hyperlink{stm32f407xx__spi_8h_source_l00770}{770}} of file \mbox{\hyperlink{stm32f407xx__spi_8h_source}{stm32f407xx\+\_\+spi.\+h}}.
+
