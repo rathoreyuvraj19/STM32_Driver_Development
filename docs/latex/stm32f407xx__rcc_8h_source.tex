@@ -1,0 +1,34 @@
+\doxysection{stm32f407xx\+\_\+rcc.\+h}
+\hypertarget{stm32f407xx__rcc_8h_source}{}\label{stm32f407xx__rcc_8h_source}\index{STM32F4xx\_DRIVERS/Inc/stm32f407xx\_rcc.h@{STM32F4xx\_DRIVERS/Inc/stm32f407xx\_rcc.h}}
+\mbox{\hyperlink{stm32f407xx__rcc_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__rcc_8h_source_l00001}00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__rcc_8h_source_l00002}00002\ \textcolor{comment}{\ *\ stm32f407xx\_rcc.h}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__rcc_8h_source_l00003}00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__rcc_8h_source_l00004}00004\ \textcolor{comment}{\ *\ \ Created\ on:\ Dec\ 13,\ 2025}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__rcc_8h_source_l00005}00005\ \textcolor{comment}{\ *\ \ \ \ \ \ Author:\ ratho}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__rcc_8h_source_l00006}00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__rcc_8h_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__rcc_8h_source_l00008}00008\ \textcolor{preprocessor}{\#ifndef\ INC\_STM32F407XX\_RCC\_H\_}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__rcc_8h_source_l00009}00009\ \textcolor{preprocessor}{\#define\ INC\_STM32F407XX\_RCC\_H\_}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__rcc_8h_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__rcc_8h_source_l00011}00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_s_t_m32_f4xx___d_r_i_v_e_r_s_2_inc_2stm32f407xx_8h}{stm32f407xx.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__rcc_8h_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__rcc_8h_source_l00013}\mbox{\hyperlink{stm32f407xx__rcc_8h_a91dd8b26b5bbdd9ca65de2ebb0119743}{00013}}\ \textcolor{preprocessor}{\#define\ MHZ\ \ \ \ \ \ \ \ \ (1000000U)}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__rcc_8h_source_l00014}\mbox{\hyperlink{stm32f407xx__rcc_8h_aebc69edae1f7e0e21c1552e4b2c05714}{00014}}\ \textcolor{preprocessor}{\#define\ HSI\_Freq\ \ \ \ (16U\ *\ MHZ)}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__rcc_8h_source_l00015}\mbox{\hyperlink{stm32f407xx__rcc_8h_a5ee7df49f48d236176a97db767ff43d8}{00015}}\ \textcolor{preprocessor}{\#define\ HSE\_Freq\ \ \ \ (8U\ *\ MHZ\ )}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__rcc_8h_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__rcc_8h_source_l00017}\mbox{\hyperlink{stm32f407xx__rcc_8h_ae7f0675dbb4b9dfbf4e0118ee06abcce}{00017}}\ \textcolor{preprocessor}{\#define\ CLK\_SRC\_HSI\ 0U}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__rcc_8h_source_l00018}\mbox{\hyperlink{stm32f407xx__rcc_8h_aac311b0735c62e97e07c5b9193837061}{00018}}\ \textcolor{preprocessor}{\#define\ CLK\_SRC\_HSE\ 1U}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__rcc_8h_source_l00019}\mbox{\hyperlink{stm32f407xx__rcc_8h_a467a0df8b8169431a915445c1253537f}{00019}}\ \textcolor{preprocessor}{\#define\ CLK\_SRC\_PLL\ 2U}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__rcc_8h_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__rcc_8h_source_l00021}00021\ uint32\_t\ \mbox{\hyperlink{stm32f407xx__rcc_8h_a845c69c6cff3eb3d58e2935d75a11274}{RCC\_GetPCLK1Freq}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__rcc_8h_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__rcc_8h_source_l00023}00023\ uint32\_t\ \mbox{\hyperlink{stm32f407xx__rcc_8h_a6ac3d905ad14abc7fcea0054b7aae6c4}{RCC\_GetPCLK2Freq}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__rcc_8h_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__rcc_8h_source_l00025}00025\ uint32\_t\ \mbox{\hyperlink{stm32f407xx__rcc_8h_a54d0e96dfa66e1e344ec243a2dbe9330}{RCC\_GetUSARTClock}}(\mbox{\hyperlink{struct_u_a_r_t___reg___def__t}{UART\_Reg\_Def\_t}}\ *USARTx);}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__rcc_8h_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__rcc_8h_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__rcc_8h_source_l00028}00028\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ INC\_STM32F407XX\_RCC\_H\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

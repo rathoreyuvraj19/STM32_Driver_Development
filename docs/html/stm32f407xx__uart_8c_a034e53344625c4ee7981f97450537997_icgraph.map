@@ -1,0 +1,5 @@
+<map id="UART_Peri_Control" name="UART_Peri_Control">
+<area shape="rect" id="Node000001" title="Enable or disable the UART peripheral." alt="" coords="153,5,289,32"/>
+<area shape="rect" id="Node000002" href="$stm32f407xx__uart_8c.html#a49f8479becbdfff3472e2006c733c850" title="De&#45;initialize the UART peripheral." alt="" coords="5,5,105,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="137,21,105,21,105,16,137,16"/>
+</map>

@@ -1,7 +1,7 @@
 var searchData=
 [
   ['fast_20mode_20duty_20cycle_20configuration_20macros_0',['I2C Fast Mode Duty Cycle Configuration Macros',['../group___i2_c___f_m___d_u_t_y___c_y_c_l_e___c_o_n_f_i_g___m_a_c_r_o_s.html',1,'']]],
-  ['flag_20macros_1',['SPI Status Flag Macros',['../group___s_p_i___s_t_a_t_u_s___f_l_a_g___m_a_c_r_o_s.html',1,'']]],
+  ['flag_20macros_1',['Flag Macros',['../group___s_p_i___s_t_a_t_u_s___f_l_a_g___m_a_c_r_o_s.html',1,'SPI Status Flag Macros'],['../group___u_a_r_t___s_t_a_t_u_s___f_l_a_g___m_a_c_r_o_s.html',1,'UART Status Flag Macros']]],
   ['flash_5fbaseaddr_2',['FLASH_BASEADDR',['../group___m_e_m_o_r_y___s_e_g_m_e_n_t_a_t_i_o_n.html#gaf6863e7094aca292453684fa2af16686',1,'FLASH_BASEADDR:&#160;stm32f407xx.h'],['../group___m_e_m_o_r_y___s_e_g_m_e_n_t_a_t_i_o_n.html#gaf6863e7094aca292453684fa2af16686',1,'FLASH_BASEADDR:&#160;stm32f407xx.h']]],
   ['flash_5fif_5freg_5fbaseaddr_3',['FLASH_IF_REG_BASEADDR',['../group___a_h_b1___p_e_r_i_p_e_h_r_a_l_s___b_a_s_e___a_d_d_r_e_s_s_e_s.html#ga08e24047f130faa1e7453b327ceb2aa6',1,'FLASH_IF_REG_BASEADDR:&#160;stm32f407xx.h'],['../group___a_h_b1___p_e_r_i_p_e_h_r_a_l_s___b_a_s_e___a_d_d_r_e_s_s_e_s.html#ga08e24047f130faa1e7453b327ceb2aa6',1,'FLASH_IF_REG_BASEADDR:&#160;stm32f407xx.h']]],
   ['flashing_4',['Building and Flashing',['../index.html#autotoc_md37',1,'']]],

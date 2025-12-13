@@ -3,10 +3,10 @@ var indexSectionsWithContent =
   0: "013_abcdefghiklmnoprstuvw→",
   1: "eginrsu",
   2: "mrs",
-  3: "_egims",
+  3: "_egimrsu",
   4: "_abcdefgilmoprstu",
   5: "gr",
-  6: "deginrs",
+  6: "cdeghimnrs",
   7: "0abcdefghilmnoprstuv",
   8: "013abcdefghiklmoprstuw→"
 };

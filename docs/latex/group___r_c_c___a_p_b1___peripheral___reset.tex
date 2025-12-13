@@ -1,0 +1,219 @@
+\doxysubsection{RCC APB1 Peripheral Reset Macros }
+\hypertarget{group___r_c_c___a_p_b1___peripheral___reset}{}\label{group___r_c_c___a_p_b1___peripheral___reset}\index{RCC APB1 Peripheral Reset Macros@{RCC APB1 Peripheral Reset Macros}}
+Collaboration diagram for RCC APB1 Peripheral Reset Macros\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{group___r_c_c___a_p_b1___peripheral___reset}
+\end{center}
+\end{figure}
+\doxysubsubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___r_c_c___a_p_b1___peripheral___reset_ga8961c4c0d27be554ace27ebc95c7c14b}{USART2\+\_\+\+PCLK\+\_\+\+RESET}}()
+\item 
+\#define \mbox{\hyperlink{group___r_c_c___a_p_b1___peripheral___reset_gac5726b94e80a1699e2b6fc3dc1c8aada}{USART3\+\_\+\+PCLK\+\_\+\+RESET}}()
+\item 
+\#define \mbox{\hyperlink{group___r_c_c___a_p_b1___peripheral___reset_ga7da410f445af5f21039e1fb741e9e83a}{UART4\+\_\+\+PCLK\+\_\+\+RESET}}()
+\item 
+\#define \mbox{\hyperlink{group___r_c_c___a_p_b1___peripheral___reset_ga47a0e4f951dd89eb7027fba01dfd5be1}{UART5\+\_\+\+PCLK\+\_\+\+RESET}}()
+\item 
+\#define \mbox{\hyperlink{group___r_c_c___a_p_b1___peripheral___reset_ga92e715a5cb073b89dd0b2cd71ea5c43f}{SPI2\+\_\+\+PCLK\+\_\+\+RESET}}()
+\item 
+\#define \mbox{\hyperlink{group___r_c_c___a_p_b1___peripheral___reset_ga92b599418a4fa19a9994347b02bc8d93}{SPI3\+\_\+\+PCLK\+\_\+\+RESET}}()
+\item 
+\#define \mbox{\hyperlink{group___r_c_c___a_p_b1___peripheral___reset_ga3705d669f49a4ad012aef176af49fcbd}{I2\+C1\+\_\+\+PCLK\+\_\+\+RESET}}()
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000010}{Todo}}]Complete for other peripherals \end{DoxyRefDesc}
+
+
+\label{doc-define-members}
+\Hypertarget{group___r_c_c___a_p_b1___peripheral___reset_doc-define-members}
+\doxysubsubsection{Macro Definition Documentation}
+\Hypertarget{group___r_c_c___a_p_b1___peripheral___reset_ga3705d669f49a4ad012aef176af49fcbd}\index{RCC APB1 Peripheral Reset Macros@{RCC APB1 Peripheral Reset Macros}!I2C1\_PCLK\_RESET@{I2C1\_PCLK\_RESET}}
+\index{I2C1\_PCLK\_RESET@{I2C1\_PCLK\_RESET}!RCC APB1 Peripheral Reset Macros@{RCC APB1 Peripheral Reset Macros}}
+\doxysubsubsubsection{\texorpdfstring{I2C1\_PCLK\_RESET}{I2C1\_PCLK\_RESET}}
+{\footnotesize\ttfamily \label{group___r_c_c___a_p_b1___peripheral___reset_ga3705d669f49a4ad012aef176af49fcbd} 
+\#define I2\+C1\+\_\+\+PCLK\+\_\+\+RESET(\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{do}\ \{\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \mbox{\hyperlink{group___r_c_c___r_e_g_ga74944438a086975793d26ae48d5882d4}{RCC}}-\/>APB1RSTR\ |=\ \ (1U\ <<\ \mbox{\hyperlink{group___r_c_c___a_p_b1_r_s_t_r___bit___positions_gadcd25346a7d7b0009090adfbca899b93}{RCC\_APB1RSTR\_I2C1RST}});\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \mbox{\hyperlink{group___r_c_c___r_e_g_ga74944438a086975793d26ae48d5882d4}{RCC}}-\/>APB1RSTR\ \&=\ \string~(1U\ <<\ \mbox{\hyperlink{group___r_c_c___a_p_b1_r_s_t_r___bit___positions_gadcd25346a7d7b0009090adfbca899b93}{RCC\_APB1RSTR\_I2C1RST}});\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \}\ \textcolor{keywordflow}{while}(0)}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{_s_t_m32_f4xx___d_r_i_v_e_r_s_2_inc_2stm32f407xx_8h_source_l00689}{689}} of file \mbox{\hyperlink{_s_t_m32_f4xx___d_r_i_v_e_r_s_2_inc_2stm32f407xx_8h_source}{stm32f407xx.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00689\ \textcolor{preprocessor}{\ \ \ \ \#define\ I2C1\_PCLK\_RESET()\ \ \ \ \ do\ \{\ \(\backslash\) }}
+\DoxyCodeLine{00690\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ RCC-\/>APB1RSTR\ |=\ \ (1U\ <<\ RCC\_APB1RSTR\_I2C1RST);\ \(\backslash\) }}
+\DoxyCodeLine{00691\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ RCC-\/>APB1RSTR\ \&=\ \string~(1U\ <<\ RCC\_APB1RSTR\_I2C1RST);\ \(\backslash\) }}
+\DoxyCodeLine{00692\ \textcolor{preprocessor}{\ \ \ \ \}\ while(0) }}
+
+\end{DoxyCode}
+\Hypertarget{group___r_c_c___a_p_b1___peripheral___reset_ga92e715a5cb073b89dd0b2cd71ea5c43f}\index{RCC APB1 Peripheral Reset Macros@{RCC APB1 Peripheral Reset Macros}!SPI2\_PCLK\_RESET@{SPI2\_PCLK\_RESET}}
+\index{SPI2\_PCLK\_RESET@{SPI2\_PCLK\_RESET}!RCC APB1 Peripheral Reset Macros@{RCC APB1 Peripheral Reset Macros}}
+\doxysubsubsubsection{\texorpdfstring{SPI2\_PCLK\_RESET}{SPI2\_PCLK\_RESET}}
+{\footnotesize\ttfamily \label{group___r_c_c___a_p_b1___peripheral___reset_ga92e715a5cb073b89dd0b2cd71ea5c43f} 
+\#define SPI2\+\_\+\+PCLK\+\_\+\+RESET(\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{do}\ \{\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \mbox{\hyperlink{group___r_c_c___r_e_g_ga74944438a086975793d26ae48d5882d4}{RCC}}-\/>APB1RSTR\ |=\ \ (1U\ <<\ \mbox{\hyperlink{group___r_c_c___a_p_b1_r_s_t_r___bit___positions_ga0a6289a35547cf0d5300706f9baa18ea}{RCC\_APB1RSTR\_SPI2RST}});\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \mbox{\hyperlink{group___r_c_c___r_e_g_ga74944438a086975793d26ae48d5882d4}{RCC}}-\/>APB1RSTR\ \&=\ \string~(1U\ <<\ \mbox{\hyperlink{group___r_c_c___a_p_b1_r_s_t_r___bit___positions_ga0a6289a35547cf0d5300706f9baa18ea}{RCC\_APB1RSTR\_SPI2RST}});\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \}\ \textcolor{keywordflow}{while}(0)}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{_s_t_m32_f4xx___d_r_i_v_e_r_s_2_inc_2stm32f407xx_8h_source_l00679}{679}} of file \mbox{\hyperlink{_s_t_m32_f4xx___d_r_i_v_e_r_s_2_inc_2stm32f407xx_8h_source}{stm32f407xx.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00679\ \textcolor{preprocessor}{\ \ \ \ \#define\ SPI2\_PCLK\_RESET()\ \ \ \ \ do\ \{\ \(\backslash\) }}
+\DoxyCodeLine{00680\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ RCC-\/>APB1RSTR\ |=\ \ (1U\ <<\ RCC\_APB1RSTR\_SPI2RST);\ \(\backslash\) }}
+\DoxyCodeLine{00681\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ RCC-\/>APB1RSTR\ \&=\ \string~(1U\ <<\ RCC\_APB1RSTR\_SPI2RST);\ \(\backslash\) }}
+\DoxyCodeLine{00682\ \textcolor{preprocessor}{\ \ \ \ \}\ while(0) }}
+
+\end{DoxyCode}
+\Hypertarget{group___r_c_c___a_p_b1___peripheral___reset_ga92b599418a4fa19a9994347b02bc8d93}\index{RCC APB1 Peripheral Reset Macros@{RCC APB1 Peripheral Reset Macros}!SPI3\_PCLK\_RESET@{SPI3\_PCLK\_RESET}}
+\index{SPI3\_PCLK\_RESET@{SPI3\_PCLK\_RESET}!RCC APB1 Peripheral Reset Macros@{RCC APB1 Peripheral Reset Macros}}
+\doxysubsubsubsection{\texorpdfstring{SPI3\_PCLK\_RESET}{SPI3\_PCLK\_RESET}}
+{\footnotesize\ttfamily \label{group___r_c_c___a_p_b1___peripheral___reset_ga92b599418a4fa19a9994347b02bc8d93} 
+\#define SPI3\+\_\+\+PCLK\+\_\+\+RESET(\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{do}\ \{\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \mbox{\hyperlink{group___r_c_c___r_e_g_ga74944438a086975793d26ae48d5882d4}{RCC}}-\/>APB1RSTR\ |=\ \ (1U\ <<\ \mbox{\hyperlink{group___r_c_c___a_p_b1_r_s_t_r___bit___positions_ga261e0f1b39cd1cab41ec6bf40c21867b}{RCC\_APB1RSTR\_SPI3RST}});\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \mbox{\hyperlink{group___r_c_c___r_e_g_ga74944438a086975793d26ae48d5882d4}{RCC}}-\/>APB1RSTR\ \&=\ \string~(1U\ <<\ \mbox{\hyperlink{group___r_c_c___a_p_b1_r_s_t_r___bit___positions_ga261e0f1b39cd1cab41ec6bf40c21867b}{RCC\_APB1RSTR\_SPI3RST}});\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \}\ \textcolor{keywordflow}{while}(0)}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{_s_t_m32_f4xx___d_r_i_v_e_r_s_2_inc_2stm32f407xx_8h_source_l00684}{684}} of file \mbox{\hyperlink{_s_t_m32_f4xx___d_r_i_v_e_r_s_2_inc_2stm32f407xx_8h_source}{stm32f407xx.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00684\ \textcolor{preprocessor}{\ \ \ \ \#define\ SPI3\_PCLK\_RESET()\ \ \ \ \ do\ \{\ \(\backslash\) }}
+\DoxyCodeLine{00685\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ RCC-\/>APB1RSTR\ |=\ \ (1U\ <<\ RCC\_APB1RSTR\_SPI3RST);\ \(\backslash\) }}
+\DoxyCodeLine{00686\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ RCC-\/>APB1RSTR\ \&=\ \string~(1U\ <<\ RCC\_APB1RSTR\_SPI3RST);\ \(\backslash\) }}
+\DoxyCodeLine{00687\ \textcolor{preprocessor}{\ \ \ \ \}\ while(0) }}
+
+\end{DoxyCode}
+\Hypertarget{group___r_c_c___a_p_b1___peripheral___reset_ga7da410f445af5f21039e1fb741e9e83a}\index{RCC APB1 Peripheral Reset Macros@{RCC APB1 Peripheral Reset Macros}!UART4\_PCLK\_RESET@{UART4\_PCLK\_RESET}}
+\index{UART4\_PCLK\_RESET@{UART4\_PCLK\_RESET}!RCC APB1 Peripheral Reset Macros@{RCC APB1 Peripheral Reset Macros}}
+\doxysubsubsubsection{\texorpdfstring{UART4\_PCLK\_RESET}{UART4\_PCLK\_RESET}}
+{\footnotesize\ttfamily \label{group___r_c_c___a_p_b1___peripheral___reset_ga7da410f445af5f21039e1fb741e9e83a} 
+\#define UART4\+\_\+\+PCLK\+\_\+\+RESET(\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{do}\ \{\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \mbox{\hyperlink{group___r_c_c___r_e_g_ga74944438a086975793d26ae48d5882d4}{RCC}}-\/>APB1RSTR\ |=\ \ (1U\ <<\ \mbox{\hyperlink{group___r_c_c___a_p_b1_r_s_t_r___bit___positions_ga0802e99fa9eb9388393af3135ca2cb2b}{RCC\_APB1RSTR\_UART4RST}});\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \mbox{\hyperlink{group___r_c_c___r_e_g_ga74944438a086975793d26ae48d5882d4}{RCC}}-\/>APB1RSTR\ \&=\ \string~(1U\ <<\ \mbox{\hyperlink{group___r_c_c___a_p_b1_r_s_t_r___bit___positions_ga0802e99fa9eb9388393af3135ca2cb2b}{RCC\_APB1RSTR\_UART4RST}});\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \}\ \textcolor{keywordflow}{while}(0)}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{_s_t_m32_f4xx___d_r_i_v_e_r_s_2_inc_2stm32f407xx_8h_source_l00668}{668}} of file \mbox{\hyperlink{_s_t_m32_f4xx___d_r_i_v_e_r_s_2_inc_2stm32f407xx_8h_source}{stm32f407xx.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00668\ \textcolor{preprocessor}{\ \ \ \ \#define\ UART4\_PCLK\_RESET()\ \ \ \ do\ \{\ \(\backslash\) }}
+\DoxyCodeLine{00669\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ RCC-\/>APB1RSTR\ |=\ \ (1U\ <<\ RCC\_APB1RSTR\_UART4RST);\ \(\backslash\) }}
+\DoxyCodeLine{00670\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ RCC-\/>APB1RSTR\ \&=\ \string~(1U\ <<\ RCC\_APB1RSTR\_UART4RST);\ \(\backslash\) }}
+\DoxyCodeLine{00671\ \textcolor{preprocessor}{\ \ \ \ \}\ while(0) }}
+
+\end{DoxyCode}
+\Hypertarget{group___r_c_c___a_p_b1___peripheral___reset_ga47a0e4f951dd89eb7027fba01dfd5be1}\index{RCC APB1 Peripheral Reset Macros@{RCC APB1 Peripheral Reset Macros}!UART5\_PCLK\_RESET@{UART5\_PCLK\_RESET}}
+\index{UART5\_PCLK\_RESET@{UART5\_PCLK\_RESET}!RCC APB1 Peripheral Reset Macros@{RCC APB1 Peripheral Reset Macros}}
+\doxysubsubsubsection{\texorpdfstring{UART5\_PCLK\_RESET}{UART5\_PCLK\_RESET}}
+{\footnotesize\ttfamily \label{group___r_c_c___a_p_b1___peripheral___reset_ga47a0e4f951dd89eb7027fba01dfd5be1} 
+\#define UART5\+\_\+\+PCLK\+\_\+\+RESET(\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{do}\ \{\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \mbox{\hyperlink{group___r_c_c___r_e_g_ga74944438a086975793d26ae48d5882d4}{RCC}}-\/>APB1RSTR\ |=\ \ (1U\ <<\ \mbox{\hyperlink{group___r_c_c___a_p_b1_r_s_t_r___bit___positions_ga5e4d54359192c58725e5ece2b539f8ee}{RCC\_APB1RSTR\_UART5RST}});\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \mbox{\hyperlink{group___r_c_c___r_e_g_ga74944438a086975793d26ae48d5882d4}{RCC}}-\/>APB1RSTR\ \&=\ \string~(1U\ <<\ \mbox{\hyperlink{group___r_c_c___a_p_b1_r_s_t_r___bit___positions_ga5e4d54359192c58725e5ece2b539f8ee}{RCC\_APB1RSTR\_UART5RST}});\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \}\ \textcolor{keywordflow}{while}(0)}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{_s_t_m32_f4xx___d_r_i_v_e_r_s_2_inc_2stm32f407xx_8h_source_l00673}{673}} of file \mbox{\hyperlink{_s_t_m32_f4xx___d_r_i_v_e_r_s_2_inc_2stm32f407xx_8h_source}{stm32f407xx.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00673\ \textcolor{preprocessor}{\ \ \ \ \#define\ UART5\_PCLK\_RESET()\ \ \ \ do\ \{\ \(\backslash\) }}
+\DoxyCodeLine{00674\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ RCC-\/>APB1RSTR\ |=\ \ (1U\ <<\ RCC\_APB1RSTR\_UART5RST);\ \(\backslash\) }}
+\DoxyCodeLine{00675\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ RCC-\/>APB1RSTR\ \&=\ \string~(1U\ <<\ RCC\_APB1RSTR\_UART5RST);\ \(\backslash\) }}
+\DoxyCodeLine{00676\ \textcolor{preprocessor}{\ \ \ \ \}\ while(0) }}
+
+\end{DoxyCode}
+\Hypertarget{group___r_c_c___a_p_b1___peripheral___reset_ga8961c4c0d27be554ace27ebc95c7c14b}\index{RCC APB1 Peripheral Reset Macros@{RCC APB1 Peripheral Reset Macros}!USART2\_PCLK\_RESET@{USART2\_PCLK\_RESET}}
+\index{USART2\_PCLK\_RESET@{USART2\_PCLK\_RESET}!RCC APB1 Peripheral Reset Macros@{RCC APB1 Peripheral Reset Macros}}
+\doxysubsubsubsection{\texorpdfstring{USART2\_PCLK\_RESET}{USART2\_PCLK\_RESET}}
+{\footnotesize\ttfamily \label{group___r_c_c___a_p_b1___peripheral___reset_ga8961c4c0d27be554ace27ebc95c7c14b} 
+\#define USART2\+\_\+\+PCLK\+\_\+\+RESET(\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{do}\ \{\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \mbox{\hyperlink{group___r_c_c___r_e_g_ga74944438a086975793d26ae48d5882d4}{RCC}}-\/>APB1RSTR\ |=\ \ (1U\ <<\ \mbox{\hyperlink{group___r_c_c___a_p_b1_r_s_t_r___bit___positions_ga195c39f08384ca1fa13b53a31d65d0a5}{RCC\_APB1RSTR\_USART2RST}});\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \mbox{\hyperlink{group___r_c_c___r_e_g_ga74944438a086975793d26ae48d5882d4}{RCC}}-\/>APB1RSTR\ \&=\ \string~(1U\ <<\ \mbox{\hyperlink{group___r_c_c___a_p_b1_r_s_t_r___bit___positions_ga195c39f08384ca1fa13b53a31d65d0a5}{RCC\_APB1RSTR\_USART2RST}});\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \}\ \textcolor{keywordflow}{while}(0)}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{_s_t_m32_f4xx___d_r_i_v_e_r_s_2_inc_2stm32f407xx_8h_source_l00658}{658}} of file \mbox{\hyperlink{_s_t_m32_f4xx___d_r_i_v_e_r_s_2_inc_2stm32f407xx_8h_source}{stm32f407xx.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00658\ \textcolor{preprocessor}{\ \ \ \ \#define\ USART2\_PCLK\_RESET()\ \ \ do\ \{\ \(\backslash\) }}
+\DoxyCodeLine{00659\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ RCC-\/>APB1RSTR\ |=\ \ (1U\ <<\ RCC\_APB1RSTR\_USART2RST);\ \(\backslash\) }}
+\DoxyCodeLine{00660\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ RCC-\/>APB1RSTR\ \&=\ \string~(1U\ <<\ RCC\_APB1RSTR\_USART2RST);\ \(\backslash\) }}
+\DoxyCodeLine{00661\ \textcolor{preprocessor}{\ \ \ \ \}\ while(0) }}
+
+\end{DoxyCode}
+\Hypertarget{group___r_c_c___a_p_b1___peripheral___reset_gac5726b94e80a1699e2b6fc3dc1c8aada}\index{RCC APB1 Peripheral Reset Macros@{RCC APB1 Peripheral Reset Macros}!USART3\_PCLK\_RESET@{USART3\_PCLK\_RESET}}
+\index{USART3\_PCLK\_RESET@{USART3\_PCLK\_RESET}!RCC APB1 Peripheral Reset Macros@{RCC APB1 Peripheral Reset Macros}}
+\doxysubsubsubsection{\texorpdfstring{USART3\_PCLK\_RESET}{USART3\_PCLK\_RESET}}
+{\footnotesize\ttfamily \label{group___r_c_c___a_p_b1___peripheral___reset_gac5726b94e80a1699e2b6fc3dc1c8aada} 
+\#define USART3\+\_\+\+PCLK\+\_\+\+RESET(\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{do}\ \{\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \mbox{\hyperlink{group___r_c_c___r_e_g_ga74944438a086975793d26ae48d5882d4}{RCC}}-\/>APB1RSTR\ |=\ \ (1U\ <<\ \mbox{\hyperlink{group___r_c_c___a_p_b1_r_s_t_r___bit___positions_ga766478ebdcbb647eb3f32962543bd194}{RCC\_APB1RSTR\_USART3RST}});\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \mbox{\hyperlink{group___r_c_c___r_e_g_ga74944438a086975793d26ae48d5882d4}{RCC}}-\/>APB1RSTR\ \&=\ \string~(1U\ <<\ \mbox{\hyperlink{group___r_c_c___a_p_b1_r_s_t_r___bit___positions_ga766478ebdcbb647eb3f32962543bd194}{RCC\_APB1RSTR\_USART3RST}});\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \}\ \textcolor{keywordflow}{while}(0)}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{_s_t_m32_f4xx___d_r_i_v_e_r_s_2_inc_2stm32f407xx_8h_source_l00663}{663}} of file \mbox{\hyperlink{_s_t_m32_f4xx___d_r_i_v_e_r_s_2_inc_2stm32f407xx_8h_source}{stm32f407xx.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00663\ \textcolor{preprocessor}{\ \ \ \ \#define\ USART3\_PCLK\_RESET()\ \ \ do\ \{\ \(\backslash\) }}
+\DoxyCodeLine{00664\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ RCC-\/>APB1RSTR\ |=\ \ (1U\ <<\ RCC\_APB1RSTR\_USART3RST);\ \(\backslash\) }}
+\DoxyCodeLine{00665\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ RCC-\/>APB1RSTR\ \&=\ \string~(1U\ <<\ RCC\_APB1RSTR\_USART3RST);\ \(\backslash\) }}
+\DoxyCodeLine{00666\ \textcolor{preprocessor}{\ \ \ \ \}\ while(0) }}
+
+\end{DoxyCode}

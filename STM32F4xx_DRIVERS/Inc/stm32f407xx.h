@@ -54,6 +54,98 @@
 #define AHB2_PERIPHERAL_BASEADDR 	0x50000000UL /**< AHB2 Peripheral base address */
 /** @} */
 
+/**
+ * @defgroup RCC_AHB1ENR_Bit_Positions RCC AHB1ENR Bit Position Macros
+ * @{
+ */
+#define RCC_AHB1ENR_GPIOAEN     0U
+#define RCC_AHB1ENR_GPIOBEN     1U
+#define RCC_AHB1ENR_GPIOCEN     2U
+#define RCC_AHB1ENR_GPIODEN     3U
+#define RCC_AHB1ENR_GPIOEEN     4U
+#define RCC_AHB1ENR_GPIOFEN     5U
+#define RCC_AHB1ENR_GPIOGEN     6U
+#define RCC_AHB1ENR_GPIOHEN     7U
+#define RCC_AHB1ENR_CRCEN       12U
+#define RCC_AHB1ENR_DMA1EN      21U
+#define RCC_AHB1ENR_DMA2EN      22U
+/** @} */
+
+/**
+ * @defgroup RCC_APB1ENR_Bit_Positions RCC APB1ENR Bit Position Macros
+ * @{
+ */
+#define RCC_APB1ENR_TIM2EN      0U
+#define RCC_APB1ENR_TIM3EN      1U
+#define RCC_APB1ENR_TIM4EN      2U
+#define RCC_APB1ENR_TIM5EN      3U
+#define RCC_APB1ENR_WWDGEN      11U
+#define RCC_APB1ENR_SPI2EN      14U
+#define RCC_APB1ENR_SPI3EN      15U
+#define RCC_APB1ENR_USART2EN    17U
+#define RCC_APB1ENR_USART3EN    18U
+#define RCC_APB1ENR_UART4EN     19U
+#define RCC_APB1ENR_UART5EN     20U
+#define RCC_APB1ENR_I2C1EN      21U
+#define RCC_APB1ENR_I2C2EN      22U
+#define RCC_APB1ENR_I2C3EN      23U
+#define RCC_APB1ENR_PWREN       28U
+/** @} */
+
+/**
+ * @defgroup RCC_APB2ENR_Bit_Positions RCC APB2ENR Bit Position Macros
+ * @{
+ */
+#define RCC_APB2ENR_TIM1EN      0U
+#define RCC_APB2ENR_USART1EN    4U
+#define RCC_APB2ENR_USART6EN    5U
+#define RCC_APB2ENR_ADC1EN      8U
+#define RCC_APB2ENR_SDIOEN      11U
+#define RCC_APB2ENR_SPI1EN      12U
+#define RCC_APB2ENR_SPI4EN      13U
+#define RCC_APB2ENR_SYSCFGEN    14U
+#define RCC_APB2ENR_TIM9EN      16U
+#define RCC_APB2ENR_TIM10EN     17U
+#define RCC_APB2ENR_TIM11EN     18U
+/** @} */
+
+/**
+ * @defgroup RCC_APB1RSTR_Bit_Positions RCC APB1RSTR Bit Position Macros
+ * @{
+ */
+#define RCC_APB1RSTR_TIM2RST    0U
+#define RCC_APB1RSTR_TIM3RST    1U
+#define RCC_APB1RSTR_TIM4RST    2U
+#define RCC_APB1RSTR_TIM5RST    3U
+#define RCC_APB1RSTR_SPI2RST    14U
+#define RCC_APB1RSTR_SPI3RST    15U
+#define RCC_APB1RSTR_USART2RST  17U
+#define RCC_APB1RSTR_USART3RST  18U
+#define RCC_APB1RSTR_UART4RST   19U
+#define RCC_APB1RSTR_UART5RST   20U
+#define RCC_APB1RSTR_I2C1RST    21U
+#define RCC_APB1RSTR_I2C2RST    22U
+#define RCC_APB1RSTR_I2C3RST    23U
+#define RCC_APB1RSTR_PWRRST     28U
+/** @} */
+
+/**
+ * @defgroup RCC_APB2RSTR_Bit_Positions RCC APB2RSTR Bit Position Macros
+ * @{
+ */
+#define RCC_APB2RSTR_TIM1RST    0U
+#define RCC_APB2RSTR_USART1RST  4U
+#define RCC_APB2RSTR_USART6RST  5U
+#define RCC_APB2RSTR_ADC1RST    8U
+#define RCC_APB2RSTR_SDIOEN     11U
+#define RCC_APB2RSTR_SPI1RST    12U
+#define RCC_APB2RSTR_SPI4RST    13U
+#define RCC_APB2RSTR_SYSCFGRST  14U
+#define RCC_APB2RSTR_TIM9RST    16U
+#define RCC_APB2RSTR_TIM10RST   17U
+#define RCC_APB2RSTR_TIM11RST   18U
+/** @} */
+
 
 /**
  * @defgroup AHB1_PERIPEHRALS_BASE_ADDRESSES Base address of AHB1 peripherals
@@ -536,6 +628,7 @@ typedef struct
 	/** @} */ // end of AHB1_RESET_MACROS
 
 
+
 	/**
 	 * @defgroup AHB2_RESET_MACROS AHB2 Peripheral Reset Macros
 	 * @ingroup PERIPHERAL_RESET_MACROS
@@ -559,26 +652,73 @@ typedef struct
 	/** @} */// End of AHB3 Bus Peripheral Reset Macros
 
 	/**
-	 * @defgroup APB1_RESET_MACROS APB1 Peripheral Reset Macros
-	 * @ingroup PERIPHERAL_RESET_MACROS
-	 * @brief Macros to enable or disable for peripherals belonging to APB1 bus.
+	 * @defgroup RCC_APB1_Peripheral_Reset RCC APB1 Peripheral Reset Macros
 	 * @{
 	 */
+	#define USART2_PCLK_RESET()   do { \
+		RCC->APB1RSTR |=  (1U << RCC_APB1RSTR_USART2RST); \
+		RCC->APB1RSTR &= ~(1U << RCC_APB1RSTR_USART2RST); \
+	} while(0)
 
-	/** @todo Complete for other peripherals */
+	#define USART3_PCLK_RESET()   do { \
+		RCC->APB1RSTR |=  (1U << RCC_APB1RSTR_USART3RST); \
+		RCC->APB1RSTR &= ~(1U << RCC_APB1RSTR_USART3RST); \
+	} while(0)
 
-	/** @} */// End of APB1 Bus Peripheral Reset Macros
+	#define UART4_PCLK_RESET()    do { \
+		RCC->APB1RSTR |=  (1U << RCC_APB1RSTR_UART4RST); \
+		RCC->APB1RSTR &= ~(1U << RCC_APB1RSTR_UART4RST); \
+	} while(0)
+
+	#define UART5_PCLK_RESET()    do { \
+		RCC->APB1RSTR |=  (1U << RCC_APB1RSTR_UART5RST); \
+		RCC->APB1RSTR &= ~(1U << RCC_APB1RSTR_UART5RST); \
+	} while(0)
+
+	/* Optional common peripherals */
+	#define SPI2_PCLK_RESET()     do { \
+		RCC->APB1RSTR |=  (1U << RCC_APB1RSTR_SPI2RST); \
+		RCC->APB1RSTR &= ~(1U << RCC_APB1RSTR_SPI2RST); \
+	} while(0)
+
+	#define SPI3_PCLK_RESET()     do { \
+		RCC->APB1RSTR |=  (1U << RCC_APB1RSTR_SPI3RST); \
+		RCC->APB1RSTR &= ~(1U << RCC_APB1RSTR_SPI3RST); \
+	} while(0)
+
+	#define I2C1_PCLK_RESET()     do { \
+		RCC->APB1RSTR |=  (1U << RCC_APB1RSTR_I2C1RST); \
+		RCC->APB1RSTR &= ~(1U << RCC_APB1RSTR_I2C1RST); \
+	} while(0)
+	/** @} */
+
 
 	/**
-	 * @defgroup APB2_RESET_MACROS APB2 Peripheral Reset Macros
-	 * @ingroup PERIPHERAL_RESET_MACROS
-	 * @brief Macros to enable or disable for peripherals belonging to APB2 bus.
+	 * @defgroup RCC_APB2_Peripheral_Reset RCC APB2 Peripheral Reset Macros
 	 * @{
 	 */
+	#define USART1_PCLK_RESET()   do { \
+		RCC->APB2RSTR |=  (1U << RCC_APB2RSTR_USART1RST); \
+		RCC->APB2RSTR &= ~(1U << RCC_APB2RSTR_USART1RST); \
+	} while(0)
 
-	/** @todo Complete for other peripherals */
+	#define USART6_PCLK_RESET()   do { \
+		RCC->APB2RSTR |=  (1U << RCC_APB2RSTR_USART6RST); \
+		RCC->APB2RSTR &= ~(1U << RCC_APB2RSTR_USART6RST); \
+	} while(0)
 
-	/** @} */// End of APB2 Bus Peripheral Reset Macros
+	/* Optional common peripherals */
+	#define SPI1_PCLK_RESET()     do { \
+		RCC->APB2RSTR |=  (1U << RCC_APB2RSTR_SPI1RST); \
+		RCC->APB2RSTR &= ~(1U << RCC_APB2RSTR_SPI1RST); \
+	} while(0)
+
+	#define SYSCFG_PCLK_RESET()   do { \
+		RCC->APB2RSTR |=  (1U << RCC_APB2RSTR_SYSCFGRST); \
+		RCC->APB2RSTR &= ~(1U << RCC_APB2RSTR_SYSCFGRST); \
+	} while(0)
+	/** @} */
+
 
 /** @} */
 
@@ -948,12 +1088,12 @@ typedef struct {
  *       base addresses for your target.
  */
 
-#define UART1   ((UART_RegDef_t*)USART1_BASEADDR)  /*!< UART1 base address */
-#define UART2   ((UART_RegDef_t*)USART2_BASEADDR)  /*!< UART2 base address */
-#define UART3   ((UART_RegDef_t*)USART3_BASEADDR)  /*!< UART3 base address */
-#define UART4   ((UART_RegDef_t*)UART4_BASEADDR)  /*!< UART4 base address */
-#define UART5   ((UART_RegDef_t*)UART5_BASEADDR)  /*!< UART5 base address */
-#define UART6   ((UART_RegDef_t*)USART6_BASEADDR)  /*!< UART6 base address */
+#define UART1   ((UART_Reg_Def_t*)USART1_BASEADDR)  /*!< UART1 base address */
+#define UART2   ((UART_Reg_Def_t*)USART2_BASEADDR)  /*!< UART2 base address */
+#define UART3   ((UART_Reg_Def_t*)USART3_BASEADDR)  /*!< UART3 base address */
+#define UART4   ((UART_Reg_Def_t*)UART4_BASEADDR)  /*!< UART4 base address */
+#define UART5   ((UART_Reg_Def_t*)UART5_BASEADDR)  /*!< UART5 base address */
+#define UART6   ((UART_Reg_Def_t*)USART6_BASEADDR)  /*!< UART6 base address */
 
 /** @} */ // end of UART_Instances
 
@@ -993,10 +1133,6 @@ typedef struct {
 #define RCC_AHB1ENR_OTGHSULPI_EN_Pos 31U  /*!< USB OTG HS ULPI clock enable */
 
 /** @} */ // end of RCC_AHB1ENR_BIT_POS
-
-
-
-
 
 
 

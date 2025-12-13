@@ -151,6 +151,7 @@ void display_lcd(LCD_Def_t* LCD_Def,char *data, uint8_t size) {
 	delayUS(2000);
 
 	for (int i = 0; i < size - 1; i++) {
+		char temp = data[i];
 		LCD_Data_Send(LCD_Def,data[i]);
 	}
 }

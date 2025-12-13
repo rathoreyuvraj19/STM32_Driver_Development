@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['demcr_0',['DEMCR',['../000___hello___world_2_src_2syscalls_8c.html#ab6c5b1baf444f12ba50bfc3b0e40e05c',1,'DEMCR:&#160;syscalls.c'],['../002___user__button__interrupt_2_src_2syscalls_8c.html#ab6c5b1baf444f12ba50bfc3b0e40e05c',1,'DEMCR:&#160;syscalls.c']]]
+  ['clk_5fsrc_5fhse_0',['CLK_SRC_HSE',['../stm32f407xx__rcc_8h.html#aac311b0735c62e97e07c5b9193837061',1,'stm32f407xx_rcc.h']]],
+  ['clk_5fsrc_5fhsi_1',['CLK_SRC_HSI',['../stm32f407xx__rcc_8h.html#ae7f0675dbb4b9dfbf4e0118ee06abcce',1,'stm32f407xx_rcc.h']]],
+  ['clk_5fsrc_5fpll_2',['CLK_SRC_PLL',['../stm32f407xx__rcc_8h.html#a467a0df8b8169431a915445c1253537f',1,'stm32f407xx_rcc.h']]]
 ];

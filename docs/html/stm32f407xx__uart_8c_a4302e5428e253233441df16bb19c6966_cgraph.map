@@ -1,0 +1,16 @@
+<map id="uart_init" name="uart_init">
+<area shape="rect" id="Node000001" title="Initializes the UART peripheral with user&#45;defined configuration." alt="" coords="5,31,73,57"/>
+<area shape="rect" id="Node000002" href="$stm32f407xx__uart_8c.html#a679d5555ec25a900ffb1348b3a45138f" title=" " alt="" coords="121,31,253,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="73,41,105,41,105,47,73,47"/>
+<area shape="rect" id="Node000003" href="$stm32f407xx__rcc_8c.html#a54d0e96dfa66e1e344ec243a2dbe9330" title=" " alt="" coords="301,31,459,57"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="253,41,285,41,285,47,253,47"/>
+<area shape="rect" id="Node000004" href="$stm32f407xx__rcc_8c.html#a845c69c6cff3eb3d58e2935d75a11274" title=" " alt="" coords="507,5,655,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="459,31,492,27,492,33,460,37"/>
+<area shape="rect" id="Node000007" href="$stm32f407xx__rcc_8c.html#a6ac3d905ad14abc7fcea0054b7aae6c4" title=" " alt="" coords="507,56,655,83"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="460,51,492,55,492,61,459,57"/>
+<area shape="rect" id="Node000005" href="$stm32f407xx__rcc_8c.html#acc16cc47c2d7466856b83d28a3987e70" title=" " alt="" coords="703,31,875,57"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="656,25,687,29,687,34,655,30"/>
+<area shape="rect" id="Node000006" href="$stm32f407xx__rcc_8c.html#a91660aef424c41d8577cc04fba59cda0" title=" " alt="" coords="923,31,1065,57"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="876,41,908,41,908,47,876,47"/>
+<area shape="poly" id="edge7_Node000007_Node000005" title=" " alt="" coords="655,58,687,54,687,59,656,63"/>
+</map>

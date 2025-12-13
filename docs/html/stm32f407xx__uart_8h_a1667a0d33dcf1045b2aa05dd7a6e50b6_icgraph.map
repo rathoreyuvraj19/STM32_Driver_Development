@@ -1,0 +1,9 @@
+<map id="UART_Get_Status_Flag" name="UART_Get_Status_Flag">
+<area shape="rect" id="Node000001" title="Get the status of a UART status flag." alt="" coords="416,31,578,57"/>
+<area shape="rect" id="Node000002" href="$stm32f407xx__uart_8c.html#a49f8479becbdfff3472e2006c733c850" title="De&#45;initialize the UART peripheral." alt="" coords="229,5,328,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="400,35,328,27,329,22,401,30"/>
+<area shape="rect" id="Node000003" href="$stm32f407xx__uart_8c.html#afd5a9bfb7d0ce0e102fdad0d89ce79f3" title=" " alt="" coords="189,56,368,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="400,58,369,62,368,56,400,53"/>
+<area shape="rect" id="Node000004" href="$stm32f407xx__uart_8c.html#a371a8ca6e5d0eab1c1d9c1c86d862b96" title=" " alt="" coords="5,56,141,83"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="173,72,141,72,141,67,173,67"/>
+</map>

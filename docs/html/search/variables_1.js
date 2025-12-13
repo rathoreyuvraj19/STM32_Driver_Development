@@ -11,10 +11,12 @@ var searchData=
   ['ahb3enr_8',['AHB3ENR',['../struct_r_c_c___reg_def__t.html#a169af9918bc0814f05c418f3415dc076',1,'RCC_RegDef_t']]],
   ['ahb3lpenr_9',['AHB3LPENR',['../struct_r_c_c___reg_def__t.html#a969f867be521a744da3424fca2bbc135',1,'RCC_RegDef_t']]],
   ['ahb3rstr_10',['AHB3RSTR',['../struct_r_c_c___reg_def__t.html#a1615f7058bdbf041034f173b95f48932',1,'RCC_RegDef_t']]],
-  ['apb1enr_11',['APB1ENR',['../struct_r_c_c___reg_def__t.html#a389643cd117089ebb8dd10ec060488d8',1,'RCC_RegDef_t']]],
-  ['apb1lpenr_12',['APB1LPENR',['../struct_r_c_c___reg_def__t.html#af3e9349611ac0807a4b8ad3b9092490a',1,'RCC_RegDef_t']]],
-  ['apb1rstr_13',['APB1RSTR',['../struct_r_c_c___reg_def__t.html#acfa79aca8487958412be8f32e4632b47',1,'RCC_RegDef_t']]],
-  ['apb2enr_14',['APB2ENR',['../struct_r_c_c___reg_def__t.html#aa5211a53246098ec97c0e360759c5ad8',1,'RCC_RegDef_t']]],
-  ['apb2lpenr_15',['APB2LPENR',['../struct_r_c_c___reg_def__t.html#ab7a6c876d40b24bc87fa77108508271d',1,'RCC_RegDef_t']]],
-  ['apb2rstr_16',['APB2RSTR',['../struct_r_c_c___reg_def__t.html#a6c1588013b885c32b78b912e8249a26c',1,'RCC_RegDef_t']]]
+  ['ahb_5fprescaler_5ftable_11',['AHB_PRESCALER_TABLE',['../stm32f407xx__rcc_8c.html#adf6a7b55cd594ea264481d638c5682b9',1,'stm32f407xx_rcc.c']]],
+  ['apb1enr_12',['APB1ENR',['../struct_r_c_c___reg_def__t.html#a389643cd117089ebb8dd10ec060488d8',1,'RCC_RegDef_t']]],
+  ['apb1lpenr_13',['APB1LPENR',['../struct_r_c_c___reg_def__t.html#af3e9349611ac0807a4b8ad3b9092490a',1,'RCC_RegDef_t']]],
+  ['apb1rstr_14',['APB1RSTR',['../struct_r_c_c___reg_def__t.html#acfa79aca8487958412be8f32e4632b47',1,'RCC_RegDef_t']]],
+  ['apb2enr_15',['APB2ENR',['../struct_r_c_c___reg_def__t.html#aa5211a53246098ec97c0e360759c5ad8',1,'RCC_RegDef_t']]],
+  ['apb2lpenr_16',['APB2LPENR',['../struct_r_c_c___reg_def__t.html#ab7a6c876d40b24bc87fa77108508271d',1,'RCC_RegDef_t']]],
+  ['apb2rstr_17',['APB2RSTR',['../struct_r_c_c___reg_def__t.html#a6c1588013b885c32b78b912e8249a26c',1,'RCC_RegDef_t']]],
+  ['apb_5fprescaler_5ftable_18',['APB_PRESCALER_TABLE',['../stm32f407xx__rcc_8c.html#a0c44962149a157a433ed63043de478fe',1,'stm32f407xx_rcc.c']]]
 ];

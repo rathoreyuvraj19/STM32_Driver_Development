@@ -1,0 +1,7 @@
+<map id="UART_DeInit" name="UART_DeInit">
+<area shape="rect" id="Node000001" title="De&#45;initialize the UART peripheral." alt="" coords="5,31,105,57"/>
+<area shape="rect" id="Node000002" href="$stm32f407xx__uart_8c.html#a1667a0d33dcf1045b2aa05dd7a6e50b6" title="Get the status of a UART status flag." alt="" coords="153,5,315,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="105,34,137,30,137,35,105,40"/>
+<area shape="rect" id="Node000003" href="$stm32f407xx__uart_8c.html#a034e53344625c4ee7981f97450537997" title="Enable or disable the UART peripheral." alt="" coords="166,56,302,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="105,48,151,55,150,60,105,54"/>
+</map>

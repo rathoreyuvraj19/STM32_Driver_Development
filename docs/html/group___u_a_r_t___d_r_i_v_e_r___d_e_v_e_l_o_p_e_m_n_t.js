@@ -1,12 +1,15 @@
 var group___u_a_r_t___d_r_i_v_e_r___d_e_v_e_l_o_p_e_m_n_t =
 [
+    [ "UART Configuration Macros", "group___u_a_r_t___c_o_n_f_i_g___m_a_c_r_o_s.html", "group___u_a_r_t___c_o_n_f_i_g___m_a_c_r_o_s" ],
+    [ "UART Status Flag Macros", "group___u_a_r_t___s_t_a_t_u_s___f_l_a_g___m_a_c_r_o_s.html", "group___u_a_r_t___s_t_a_t_u_s___f_l_a_g___m_a_c_r_o_s" ],
     [ "UART_Config_t", "struct_u_a_r_t___config__t.html", [
-      [ "USART_CONFIG_Buad_Rate", "struct_u_a_r_t___config__t.html#aeb92172203478a66f2ea58713b2b6d63", null ],
-      [ "USART_CONFIG_HW_Flow_Control", "struct_u_a_r_t___config__t.html#a07cf0a23bae4c856a2e8c0b9be3dd993", null ],
-      [ "USART_CONFIG_Mode", "struct_u_a_r_t___config__t.html#ad918d3ededa6681bffd8d9da4e94faef", null ],
-      [ "USART_CONFIG_No_Of_Stop_Bits", "struct_u_a_r_t___config__t.html#aa04e5460b106d54698c8626d2b606178", null ],
-      [ "USART_CONFIG_Parity", "struct_u_a_r_t___config__t.html#ac3cf15db4354669e28fe998e71648ec1", null ],
-      [ "USART_CONFIG_Word_Length", "struct_u_a_r_t___config__t.html#a03108499d299ee695610bc0a22aafed5", null ]
+      [ "UART_CONFIG_BAUD_RATE", "struct_u_a_r_t___config__t.html#add4d2aff7d45cc9b2cb191cc4e0f0577", null ],
+      [ "UART_CONFIG_HW_FLOW_CONTROL", "struct_u_a_r_t___config__t.html#a6b812daf10ca8f287930a5ef7f58d6ba", null ],
+      [ "UART_CONFIG_MODE", "struct_u_a_r_t___config__t.html#a99f001d08077a80ff9ddfa03a9e5dc65", null ],
+      [ "UART_CONFIG_NO_OF_STOP_BITS", "struct_u_a_r_t___config__t.html#a9bd1a0ca7674dc316177a8298e3b1b70", null ],
+      [ "UART_CONFIG_OVER_SAMPLING", "struct_u_a_r_t___config__t.html#a3b635ef224ef6da7417d6bf7f182d4a5", null ],
+      [ "UART_CONFIG_PARITY", "struct_u_a_r_t___config__t.html#ad943569e9c10c8eaf57554e0e7bc9da6", null ],
+      [ "UART_CONFIG_WORD_LENGTH", "struct_u_a_r_t___config__t.html#a14d51005ac9a0e843843c127a774ba21", null ]
     ] ],
     [ "UART_Handle_t", "struct_u_a_r_t___handle__t.html", [
       [ "pUARTx", "struct_u_a_r_t___handle__t.html#a6a052a1eea3b3e6f9696c3ce845c83ae", null ],

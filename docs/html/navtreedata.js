@@ -107,11 +107,11 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "000___hello___world_2_src_2main_8c.html",
-"group___a_h_b1___p_c_l_k___e_n___d_i___m_a_c_r_o_s.html#gab9e994b2e5e4ada47764117634c64728",
-"group___g_p_i_o___b_a_s_e___a_d_d_r_e_s_s_e_s.html#ga68b66ac73be4c836db878a42e1fea3cd",
-"group___i_r_q___n_u_m_b_e_r___m_a_c_r_o_s.html#ga8865ca88f006fea9c7c57514c094704e",
-"group___s_p_i___s_t_a_t_u_s___f_l_a_g___m_a_c_r_o_s.html#ga891a0e21281996b5ea7421f13182d5b6",
-"struct_s_p_ix___handle__t.html#ab5eac9e2244e1065f288af094873b7a3"
+"group___a_h_b1___p_c_l_k___e_n___d_i___m_a_c_r_o_s.html#gaa93bc85ce9310ae89c709ad615d9bb18",
+"group___g_p_i_o___b_a_s_e___a_d_d_r_e_s_s_e_s.html#ga43c3022dede7c9db7a58d3c3409dbc8d",
+"group___i_r_q___n_u_m_b_e_r___m_a_c_r_o_s.html#ga872c897c9abc3d0f0073407ff8c9b007",
+"group___s_p_i___c_r1___b_i_t___p_o_s_i_t_i_o_n_s.html#ga4280bd0e8bcc3a268fa3a17b684499d7",
+"stm32f407xx__rcc_8c.html#a91660aef424c41d8577cc04fba59cda0"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

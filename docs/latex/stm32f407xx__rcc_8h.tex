@@ -1,0 +1,227 @@
+\doxysection{STM32\+F4xx\+\_\+\+DRIVERS/\+Inc/stm32f407xx\+\_\+rcc.h File Reference}
+\hypertarget{stm32f407xx__rcc_8h}{}\label{stm32f407xx__rcc_8h}\index{STM32F4xx\_DRIVERS/Inc/stm32f407xx\_rcc.h@{STM32F4xx\_DRIVERS/Inc/stm32f407xx\_rcc.h}}
+{\ttfamily \#include "{}stm32f407xx.\+h"{}}\newline
+Include dependency graph for stm32f407xx\+\_\+rcc.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stm32f407xx__rcc_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stm32f407xx__rcc_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{stm32f407xx__rcc_8h_a91dd8b26b5bbdd9ca65de2ebb0119743}{MHZ}}~(1000000U)
+\item 
+\#define \mbox{\hyperlink{stm32f407xx__rcc_8h_aebc69edae1f7e0e21c1552e4b2c05714}{HSI\+\_\+\+Freq}}~(16U \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{stm32f407xx__rcc_8h_a91dd8b26b5bbdd9ca65de2ebb0119743}{MHZ}})
+\item 
+\#define \mbox{\hyperlink{stm32f407xx__rcc_8h_a5ee7df49f48d236176a97db767ff43d8}{HSE\+\_\+\+Freq}}~(8U \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{stm32f407xx__rcc_8h_a91dd8b26b5bbdd9ca65de2ebb0119743}{MHZ}} )
+\item 
+\#define \mbox{\hyperlink{stm32f407xx__rcc_8h_ae7f0675dbb4b9dfbf4e0118ee06abcce}{CLK\+\_\+\+SRC\+\_\+\+HSI}}~0U
+\item 
+\#define \mbox{\hyperlink{stm32f407xx__rcc_8h_aac311b0735c62e97e07c5b9193837061}{CLK\+\_\+\+SRC\+\_\+\+HSE}}~1U
+\item 
+\#define \mbox{\hyperlink{stm32f407xx__rcc_8h_a467a0df8b8169431a915445c1253537f}{CLK\+\_\+\+SRC\+\_\+\+PLL}}~2U
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{stm32f407xx__rcc_8h_a845c69c6cff3eb3d58e2935d75a11274}{RCC\+\_\+\+Get\+PCLK1\+Freq}} (void)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{stm32f407xx__rcc_8h_a6ac3d905ad14abc7fcea0054b7aae6c4}{RCC\+\_\+\+Get\+PCLK2\+Freq}} (void)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{stm32f407xx__rcc_8h_a54d0e96dfa66e1e344ec243a2dbe9330}{RCC\+\_\+\+Get\+USARTClock}} (\mbox{\hyperlink{struct_u_a_r_t___reg___def__t}{UART\+\_\+\+Reg\+\_\+\+Def\+\_\+t}} \texorpdfstring{$\ast$}{*}USARTx)
+\end{DoxyCompactItemize}
+
+
+\label{doc-define-members}
+\Hypertarget{stm32f407xx__rcc_8h_doc-define-members}
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{stm32f407xx__rcc_8h_aac311b0735c62e97e07c5b9193837061}\index{stm32f407xx\_rcc.h@{stm32f407xx\_rcc.h}!CLK\_SRC\_HSE@{CLK\_SRC\_HSE}}
+\index{CLK\_SRC\_HSE@{CLK\_SRC\_HSE}!stm32f407xx\_rcc.h@{stm32f407xx\_rcc.h}}
+\doxysubsubsection{\texorpdfstring{CLK\_SRC\_HSE}{CLK\_SRC\_HSE}}
+{\footnotesize\ttfamily \label{stm32f407xx__rcc_8h_aac311b0735c62e97e07c5b9193837061} 
+\#define CLK\+\_\+\+SRC\+\_\+\+HSE~1U}
+
+
+
+Definition at line \mbox{\hyperlink{stm32f407xx__rcc_8h_source_l00018}{18}} of file \mbox{\hyperlink{stm32f407xx__rcc_8h_source}{stm32f407xx\+\_\+rcc.\+h}}.
+
+\Hypertarget{stm32f407xx__rcc_8h_ae7f0675dbb4b9dfbf4e0118ee06abcce}\index{stm32f407xx\_rcc.h@{stm32f407xx\_rcc.h}!CLK\_SRC\_HSI@{CLK\_SRC\_HSI}}
+\index{CLK\_SRC\_HSI@{CLK\_SRC\_HSI}!stm32f407xx\_rcc.h@{stm32f407xx\_rcc.h}}
+\doxysubsubsection{\texorpdfstring{CLK\_SRC\_HSI}{CLK\_SRC\_HSI}}
+{\footnotesize\ttfamily \label{stm32f407xx__rcc_8h_ae7f0675dbb4b9dfbf4e0118ee06abcce} 
+\#define CLK\+\_\+\+SRC\+\_\+\+HSI~0U}
+
+
+
+Definition at line \mbox{\hyperlink{stm32f407xx__rcc_8h_source_l00017}{17}} of file \mbox{\hyperlink{stm32f407xx__rcc_8h_source}{stm32f407xx\+\_\+rcc.\+h}}.
+
+\Hypertarget{stm32f407xx__rcc_8h_a467a0df8b8169431a915445c1253537f}\index{stm32f407xx\_rcc.h@{stm32f407xx\_rcc.h}!CLK\_SRC\_PLL@{CLK\_SRC\_PLL}}
+\index{CLK\_SRC\_PLL@{CLK\_SRC\_PLL}!stm32f407xx\_rcc.h@{stm32f407xx\_rcc.h}}
+\doxysubsubsection{\texorpdfstring{CLK\_SRC\_PLL}{CLK\_SRC\_PLL}}
+{\footnotesize\ttfamily \label{stm32f407xx__rcc_8h_a467a0df8b8169431a915445c1253537f} 
+\#define CLK\+\_\+\+SRC\+\_\+\+PLL~2U}
+
+
+
+Definition at line \mbox{\hyperlink{stm32f407xx__rcc_8h_source_l00019}{19}} of file \mbox{\hyperlink{stm32f407xx__rcc_8h_source}{stm32f407xx\+\_\+rcc.\+h}}.
+
+\Hypertarget{stm32f407xx__rcc_8h_a5ee7df49f48d236176a97db767ff43d8}\index{stm32f407xx\_rcc.h@{stm32f407xx\_rcc.h}!HSE\_Freq@{HSE\_Freq}}
+\index{HSE\_Freq@{HSE\_Freq}!stm32f407xx\_rcc.h@{stm32f407xx\_rcc.h}}
+\doxysubsubsection{\texorpdfstring{HSE\_Freq}{HSE\_Freq}}
+{\footnotesize\ttfamily \label{stm32f407xx__rcc_8h_a5ee7df49f48d236176a97db767ff43d8} 
+\#define HSE\+\_\+\+Freq~(8U \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{stm32f407xx__rcc_8h_a91dd8b26b5bbdd9ca65de2ebb0119743}{MHZ}} )}
+
+
+
+Definition at line \mbox{\hyperlink{stm32f407xx__rcc_8h_source_l00015}{15}} of file \mbox{\hyperlink{stm32f407xx__rcc_8h_source}{stm32f407xx\+\_\+rcc.\+h}}.
+
+\Hypertarget{stm32f407xx__rcc_8h_aebc69edae1f7e0e21c1552e4b2c05714}\index{stm32f407xx\_rcc.h@{stm32f407xx\_rcc.h}!HSI\_Freq@{HSI\_Freq}}
+\index{HSI\_Freq@{HSI\_Freq}!stm32f407xx\_rcc.h@{stm32f407xx\_rcc.h}}
+\doxysubsubsection{\texorpdfstring{HSI\_Freq}{HSI\_Freq}}
+{\footnotesize\ttfamily \label{stm32f407xx__rcc_8h_aebc69edae1f7e0e21c1552e4b2c05714} 
+\#define HSI\+\_\+\+Freq~(16U \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{stm32f407xx__rcc_8h_a91dd8b26b5bbdd9ca65de2ebb0119743}{MHZ}})}
+
+
+
+Definition at line \mbox{\hyperlink{stm32f407xx__rcc_8h_source_l00014}{14}} of file \mbox{\hyperlink{stm32f407xx__rcc_8h_source}{stm32f407xx\+\_\+rcc.\+h}}.
+
+\Hypertarget{stm32f407xx__rcc_8h_a91dd8b26b5bbdd9ca65de2ebb0119743}\index{stm32f407xx\_rcc.h@{stm32f407xx\_rcc.h}!MHZ@{MHZ}}
+\index{MHZ@{MHZ}!stm32f407xx\_rcc.h@{stm32f407xx\_rcc.h}}
+\doxysubsubsection{\texorpdfstring{MHZ}{MHZ}}
+{\footnotesize\ttfamily \label{stm32f407xx__rcc_8h_a91dd8b26b5bbdd9ca65de2ebb0119743} 
+\#define MHZ~(1000000U)}
+
+
+
+Definition at line \mbox{\hyperlink{stm32f407xx__rcc_8h_source_l00013}{13}} of file \mbox{\hyperlink{stm32f407xx__rcc_8h_source}{stm32f407xx\+\_\+rcc.\+h}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{stm32f407xx__rcc_8h_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{stm32f407xx__rcc_8h_a845c69c6cff3eb3d58e2935d75a11274}\index{stm32f407xx\_rcc.h@{stm32f407xx\_rcc.h}!RCC\_GetPCLK1Freq@{RCC\_GetPCLK1Freq}}
+\index{RCC\_GetPCLK1Freq@{RCC\_GetPCLK1Freq}!stm32f407xx\_rcc.h@{stm32f407xx\_rcc.h}}
+\doxysubsubsection{\texorpdfstring{RCC\_GetPCLK1Freq()}{RCC\_GetPCLK1Freq()}}
+{\footnotesize\ttfamily \label{stm32f407xx__rcc_8h_a845c69c6cff3eb3d58e2935d75a11274} 
+uint32\+\_\+t RCC\+\_\+\+Get\+PCLK1\+Freq (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{stm32f407xx__rcc_8c_source_l00070}{70}} of file \mbox{\hyperlink{stm32f407xx__rcc_8c_source}{stm32f407xx\+\_\+rcc.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00071\ \ \ \ \ uint8\_t\ RCC\_CFGR\_PPRE1\ =\ (\mbox{\hyperlink{group___r_c_c___r_e_g_ga74944438a086975793d26ae48d5882d4}{RCC}}-\/>CFGR\ >>\ 10)\ \&\ 0x7;}
+\DoxyCodeLine{00072\ \ \ \ \ uint32\_t\ SYS\_CLK\_FREQ\ =\ \mbox{\hyperlink{stm32f407xx__rcc_8c_acc16cc47c2d7466856b83d28a3987e70}{RCC\_Get\_SYSCLK\_Freq}}();}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordflow}{if}(SYS\_CLK\_FREQ==0)\{}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00075\ \ \ \ \ \}}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordflow}{return}\ SYS\_CLK\_FREQ/\mbox{\hyperlink{stm32f407xx__rcc_8c_a0c44962149a157a433ed63043de478fe}{APB\_PRESCALER\_TABLE}}[RCC\_CFGR\_PPRE1];}
+\DoxyCodeLine{00077\ \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stm32f407xx__rcc_8h_a845c69c6cff3eb3d58e2935d75a11274_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stm32f407xx__rcc_8h_a845c69c6cff3eb3d58e2935d75a11274_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{stm32f407xx__rcc_8h_a6ac3d905ad14abc7fcea0054b7aae6c4}\index{stm32f407xx\_rcc.h@{stm32f407xx\_rcc.h}!RCC\_GetPCLK2Freq@{RCC\_GetPCLK2Freq}}
+\index{RCC\_GetPCLK2Freq@{RCC\_GetPCLK2Freq}!stm32f407xx\_rcc.h@{stm32f407xx\_rcc.h}}
+\doxysubsubsection{\texorpdfstring{RCC\_GetPCLK2Freq()}{RCC\_GetPCLK2Freq()}}
+{\footnotesize\ttfamily \label{stm32f407xx__rcc_8h_a6ac3d905ad14abc7fcea0054b7aae6c4} 
+uint32\+\_\+t RCC\+\_\+\+Get\+PCLK2\+Freq (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{stm32f407xx__rcc_8c_source_l00079}{79}} of file \mbox{\hyperlink{stm32f407xx__rcc_8c_source}{stm32f407xx\+\_\+rcc.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00080\ \ \ \ \ uint8\_t\ RCC\_CFGR\_PPRE2\ =\ (\mbox{\hyperlink{group___r_c_c___r_e_g_ga74944438a086975793d26ae48d5882d4}{RCC}}-\/>CFGR\ >>\ 13)\ \&\ 0x7;}
+\DoxyCodeLine{00081\ \ \ \ \ uint32\_t\ SYS\_CLK\_FREQ\ =\ \mbox{\hyperlink{stm32f407xx__rcc_8c_acc16cc47c2d7466856b83d28a3987e70}{RCC\_Get\_SYSCLK\_Freq}}();}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordflow}{if}(SYS\_CLK\_FREQ==0)\{}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00084\ \ \ \ \ \}}
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordflow}{return}\ SYS\_CLK\_FREQ/\mbox{\hyperlink{stm32f407xx__rcc_8c_a0c44962149a157a433ed63043de478fe}{APB\_PRESCALER\_TABLE}}[RCC\_CFGR\_PPRE2];}
+\DoxyCodeLine{00086\ \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stm32f407xx__rcc_8h_a6ac3d905ad14abc7fcea0054b7aae6c4_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stm32f407xx__rcc_8h_a6ac3d905ad14abc7fcea0054b7aae6c4_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{stm32f407xx__rcc_8h_a54d0e96dfa66e1e344ec243a2dbe9330}\index{stm32f407xx\_rcc.h@{stm32f407xx\_rcc.h}!RCC\_GetUSARTClock@{RCC\_GetUSARTClock}}
+\index{RCC\_GetUSARTClock@{RCC\_GetUSARTClock}!stm32f407xx\_rcc.h@{stm32f407xx\_rcc.h}}
+\doxysubsubsection{\texorpdfstring{RCC\_GetUSARTClock()}{RCC\_GetUSARTClock()}}
+{\footnotesize\ttfamily \label{stm32f407xx__rcc_8h_a54d0e96dfa66e1e344ec243a2dbe9330} 
+uint32\+\_\+t RCC\+\_\+\+Get\+USARTClock (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_u_a_r_t___reg___def__t}{UART\+\_\+\+Reg\+\_\+\+Def\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{USARTx}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{stm32f407xx__rcc_8c_source_l00088}{88}} of file \mbox{\hyperlink{stm32f407xx__rcc_8c_source}{stm32f407xx\+\_\+rcc.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordflow}{if}(USARTx\ ==\ \mbox{\hyperlink{group___u_a_r_t___instances_ga8d69bf04d07af4fbbab5a8bd291f65ff}{UART1}}\ ||\ USARTx\ ==\ \mbox{\hyperlink{group___u_a_r_t___instances_ga61531d783c55be06875e7029331ffd67}{UART6}})\{}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{stm32f407xx__rcc_8c_a6ac3d905ad14abc7fcea0054b7aae6c4}{RCC\_GetPCLK2Freq}}();}
+\DoxyCodeLine{00091\ \ \ \ \ \}\textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(USARTx\ ==\ \mbox{\hyperlink{group___u_a_r_t___instances_ga7f6bd6eb89ae2eeae97af4207ebe3cde}{UART2}}||\ USARTx\ ==\ \mbox{\hyperlink{group___u_a_r_t___instances_ga961726a611b38bcaf61f3d598b0a59ec}{UART3}}\ ||\ USARTx\ ==\ \mbox{\hyperlink{group___u_a_r_t___instances_ga7c035f6f443c999fc043b2b7fb598800}{UART4}}\ ||\ USARTx\ ==\ \mbox{\hyperlink{group___u_a_r_t___instances_ga9274e37cf5e8a174fc5dd627b98ec0fe}{UART5}})\{}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{stm32f407xx__rcc_8c_a845c69c6cff3eb3d58e2935d75a11274}{RCC\_GetPCLK1Freq}}();}
+\DoxyCodeLine{00093\ \ \ \ \ \}}
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00095\ \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stm32f407xx__rcc_8h_a54d0e96dfa66e1e344ec243a2dbe9330_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stm32f407xx__rcc_8h_a54d0e96dfa66e1e344ec243a2dbe9330_icgraph}
+\end{center}
+\end{figure}

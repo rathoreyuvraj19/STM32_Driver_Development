@@ -39,7 +39,7 @@ var searchData=
   ['ssm_20configuration_20macros_36',['SPI SSM Configuration Macros',['../group___s_p_i___s_s_m___m_a_c_r_o_s.html',1,'']]],
   ['ssoe_20configuration_20macros_37',['SPI SSOE Configuration Macros',['../group___s_p_i___s_s_o_e___m_a_c_r_o_s.html',1,'']]],
   ['states_38',['SPI Driver States',['../group___s_p_i___s_t_a_t_e.html',1,'']]],
-  ['status_20flag_20macros_39',['SPI Status Flag Macros',['../group___s_p_i___s_t_a_t_u_s___f_l_a_g___m_a_c_r_o_s.html',1,'']]],
+  ['status_20flag_20macros_39',['Status Flag Macros',['../group___s_p_i___s_t_a_t_u_s___f_l_a_g___m_a_c_r_o_s.html',1,'SPI Status Flag Macros'],['../group___u_a_r_t___s_t_a_t_u_s___f_l_a_g___m_a_c_r_o_s.html',1,'UART Status Flag Macros']]],
   ['stm32f407_40',['IRQ Numbers for STM32F407',['../group___i_r_q___n_u_m_b_e_r___m_a_c_r_o_s.html',1,'']]],
   ['structure_41',['GPIO Handle Structure',['../group___g_p_i_o___handle___structure.html',1,'']]],
   ['structure_20definition_42',['Structure definition',['../group___s_p_i___config___struct.html',1,'SPI Configuration Structure definition'],['../group___s_p_i___handle___struct.html',1,'SPI Handle Structure definition']]],

@@ -13,10 +13,9 @@
 #include "stm32f407xx_spi.h"
 
 // Place these definitions near the top with your other #defines (e.g., after the pin definitions)
-#define SHIFT_LEFT  0x18U
-#define SHIFT_RIGHT 0x1CU
-#define SHIFT_LEFT  0x18U
-#define SHIFT_RIGHT 0x1CU
+#define LCD_SHIFT_LEFT  0x18U
+#define LCD_SHIFT_RIGHT 0x1CU
+
 #define RS_COMMAND_SELECT 	0U
 #define RS_DATA_SELECT 		1U
 /*

@@ -2,6 +2,11 @@ var topics =
 [
     [ "General-purpose macros", "group___m_i_s_c_e_l_l_a_n_e_o_u_s___m_a_c_r_o_s.html", "group___m_i_s_c_e_l_l_a_n_e_o_u_s___m_a_c_r_o_s" ],
     [ "Memory Segmentation", "group___m_e_m_o_r_y___s_e_g_m_e_n_t_a_t_i_o_n.html", "group___m_e_m_o_r_y___s_e_g_m_e_n_t_a_t_i_o_n" ],
+    [ "RCC AHB1ENR Bit Position Macros", "group___r_c_c___a_h_b1_e_n_r___bit___positions.html", "group___r_c_c___a_h_b1_e_n_r___bit___positions" ],
+    [ "RCC APB1ENR Bit Position Macros", "group___r_c_c___a_p_b1_e_n_r___bit___positions.html", "group___r_c_c___a_p_b1_e_n_r___bit___positions" ],
+    [ "RCC APB2ENR Bit Position Macros", "group___r_c_c___a_p_b2_e_n_r___bit___positions.html", "group___r_c_c___a_p_b2_e_n_r___bit___positions" ],
+    [ "RCC APB1RSTR Bit Position Macros", "group___r_c_c___a_p_b1_r_s_t_r___bit___positions.html", "group___r_c_c___a_p_b1_r_s_t_r___bit___positions" ],
+    [ "RCC APB2RSTR Bit Position Macros", "group___r_c_c___a_p_b2_r_s_t_r___bit___positions.html", "group___r_c_c___a_p_b2_r_s_t_r___bit___positions" ],
     [ "Base address of AHB1 peripherals", "group___a_h_b1___p_e_r_i_p_e_h_r_a_l_s___b_a_s_e___a_d_d_r_e_s_s_e_s.html", "group___a_h_b1___p_e_r_i_p_e_h_r_a_l_s___b_a_s_e___a_d_d_r_e_s_s_e_s" ],
     [ "Base address of AHB2 peripherals", "group___a_h_b2___p_e_r_i_p_e_h_r_a_l_s___b_a_s_e___a_d_d_r_e_s_s_e_s.html", "group___a_h_b2___p_e_r_i_p_e_h_r_a_l_s___b_a_s_e___a_d_d_r_e_s_s_e_s" ],
     [ "Base address of APB1 peripherals", "group___a_p_b1___p_e_r_i_p_e_h_r_a_l_s___b_a_s_e___a_d_d_r_e_s_s_e_s.html", "group___a_p_b1___p_e_r_i_p_e_h_r_a_l_s___b_a_s_e___a_d_d_r_e_s_s_e_s" ],
