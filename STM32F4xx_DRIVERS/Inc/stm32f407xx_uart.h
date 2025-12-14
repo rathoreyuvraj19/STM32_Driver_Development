@@ -98,6 +98,14 @@
 	typedef struct{
 		UART_Reg_Def_t* pUARTx;
 		UART_Config_t   UART_Config;
+
+		uint8_t* pTXBuffer;
+		uint32_t TXLen;
+		uint32_t TXState;
+
+		uint8_t* pRXBuffer;
+		uint32_t RXLen;
+		uint32_t RXState;
 	}UART_Handle_t;
 
 	/** @} */ // End of UART_DRIVER_DEVELOPEMNT
@@ -214,4 +222,36 @@
 	void UART_SendData_Blocking(UART_Handle_t *pUARTHandle, uint8_t *TXBuffer, uint32_t Len);
 
 	void UART_Send_String(UART_Handle_t *pUARTHandle,char* str, uint32_t size);
+
+	void UART_RecieveData_Blocking(UART_Handle_t* pUARTHandle, uint8_t* RXBuff, uint32_t Len);
+
+	uint32_t UART_Recieve_String(UART_Handle_t *pUARTHandle,char* str);
+
+	void UART_IRQInterruptConfig(UART_Handle_t *pUARTHandle, uint8_t EnOrDi);// This function is used to configure the NVIC for the interrupt
+
+	void UART_IRQPriorityConfig(UART_Handle_t *pUARTHandle, uint32_t Priority);
+
+	void UART_IRQHandling(UART_Handle_t *pUARTHandle);
+
+	void UART_ITControl(UART_Reg_Def_t *pUARTx, uint8_t InterruptType, uint8_t EnOrDi);
+
+	uint8_t UART_RecieveData_IT(UART_Handle_t* pUARTHandle, uint8_t* RXBuff, uint32_t Len);
+
+	//*********UART INTERRUPT EVENT************//
+	#define UART_STATE_READY    0
+	#define UART_STATE_BUSY_TX  1
+	#define UART_STATE_BUSY_RX  2
+
+	#define UART_EVENT_TX_CMPLT   			1
+	#define UART_EVENT_RX_CMPLT   			2
+	#define UART_EVENT_IDLE      			3
+	#define UART_EVENT_ERROR     			4
+	#define UART_EVENT_RX_STR_CMPLT     	5
+
+	#define UART_IT_TYPE_TXE 	0
+	#define UART_IT_TYPE_TC 	1
+	#define UART_IT_TYPE_RXNE 	2
+
+
+
 #endif /* INC_STM32F407XX_UART_H_ */

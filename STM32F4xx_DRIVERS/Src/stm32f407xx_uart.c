@@ -9,6 +9,23 @@
 #include "stm32f407xx_uart.h"
 #include "stm32f407xx_rcc.h"
 
+static void ECHO(UART_Handle_t *pUARTHandle, char ch){
+	if (ch == '\b' || ch == 0x7F) {
+	    UART_Send_String(pUARTHandle, "\b \b", 3);
+	}
+	else if (ch == '\r') {
+	    UART_Send_String(pUARTHandle, "\r\n", 2);
+	}
+	else {
+	    UART_SendData_Blocking(pUARTHandle, (uint8_t*)&ch, 1);
+	}
+}
+
+__attribute__((weak)) void UART_ApplicationEventCallback(UART_Handle_t *pUARTHandle, uint8_t Event) {
+/* This function can be overridden by the application.
+ Default implementation does nothing. */
+}
+
 void uart_set_baud_rate(UART_Handle_t* pUART_Handle){
 	uint32_t fclk = RCC_GetUSARTClock(pUART_Handle->pUARTx);
 	if(fclk == 0){
@@ -165,13 +182,211 @@ void UART_Send_String(UART_Handle_t *pUARTHandle,char* str, uint32_t size){
 	}
 }
 
+void UART_RecieveData_Blocking(UART_Handle_t* pUARTHandle, uint8_t* RXBuff, uint32_t Len){
+	//Wait for RXNE Flag
+	while(Len > 0){
+		if(UART_Get_Status_Flag(pUARTHandle->pUARTx, UART_STATUS_FLAG_RXNE)){
+			*RXBuff = pUARTHandle->pUARTx->USART_DR;
+			Len--;
+			RXBuff++;
+		}
+	}
+}
 
 
 
+uint32_t UART_Recieve_String(UART_Handle_t *pUARTHandle,char* str){
+	uint32_t count = 0;
+	uint8_t temp = 0;
+	while(temp != '\r'){
+		UART_RecieveData_Blocking(pUARTHandle, &temp, 1);
+		ECHO(pUARTHandle, (char)temp);
+		if(temp == '\b'){
+			count--;
+			continue;
+		}
+		str[count] = (char)temp;
+		count++;
+	}
+	return count-1;// Reduce the "\n"
+}
+
+void UART_IRQPriorityConfig(UART_Handle_t *pUARTHandle, uint32_t Priority){
+	//First Identify the interrupt priority Number
+	uint32_t IRQNumber;
+	if(pUARTHandle->pUARTx == UART1){
+		IRQNumber = IRQ_NUM_USART1;
+	}else if(pUARTHandle->pUARTx == UART2){
+		IRQNumber = IRQ_NUM_USART2;
+	}else if(pUARTHandle->pUARTx == UART3){
+		IRQNumber = IRQ_NUM_USART3;
+	}else if(pUARTHandle->pUARTx == UART4){
+		IRQNumber = IRQ_NUM_UART4;
+	}else if(pUARTHandle->pUARTx == UART5){
+		IRQNumber = IRQ_NUM_UART5;
+	}else if(pUARTHandle->pUARTx == UART6){
+		IRQNumber = IRQ_NUM_USART6;
+	}else {
+		return;
+	}
+	uint32_t IPR_Number = IRQNumber / 4;
+	uint32_t IPR_Index = (IRQNumber % 4)*8;
+
+	//Sanity Check of the priority number
+	Priority &= 0x0F;
+
+	// Clear the previous value
+	NVIC->IPR[IPR_Number] &= ~(0xF << (IPR_Index+4));
+	NVIC->IPR[IPR_Number] |= (Priority << (IPR_Index+4));
+}
+
+void UART_IRQInterruptConfig(UART_Handle_t *pUARTHandle, uint8_t EnOrDi){
+	if(pUARTHandle == NULL || pUARTHandle->pUARTx == NULL){
+		return;
+	}
+	//First Identify the interrupt priority Number
+	uint32_t IRQNumber;
+	if(pUARTHandle->pUARTx == UART1){
+		IRQNumber = IRQ_NUM_USART1;
+	}else if(pUARTHandle->pUARTx == UART2){
+		IRQNumber = IRQ_NUM_USART2;
+	}else if(pUARTHandle->pUARTx == UART3){
+		IRQNumber = IRQ_NUM_USART3;
+	}else if(pUARTHandle->pUARTx == UART4){
+		IRQNumber = IRQ_NUM_UART4;
+	}else if(pUARTHandle->pUARTx == UART5){
+		IRQNumber = IRQ_NUM_UART5;
+	}else if(pUARTHandle->pUARTx == UART6){
+		IRQNumber = IRQ_NUM_USART6;
+	}else {
+		return;
+	}
+
+	uint32_t ISER_Reg_Number = IRQNumber / 32;
+	uint32_t ISER_Index = IRQNumber % 32;
+
+	if(EnOrDi == ENABLE){
+		NVIC->ISER[ISER_Reg_Number] |= (1U << ISER_Index);
+	}else{
+		NVIC->ICER[ISER_Reg_Number] |= (1U << ISER_Index);
+	}
+}
 
 
+void UART_IRQHandling(UART_Handle_t *pUARTHandle){
+	// Extract out all the status bits and check which type of interrupt occurred using Status Reg and Control Reg
+	uint8_t CR1_TCIE_Bit 	= ((pUARTHandle->pUARTx->USART_CR1>>USART_CR1_TCIE) & (1 ));
+	uint8_t CR1_TXEIE_Bit 	= ((pUARTHandle->pUARTx->USART_CR1>>USART_CR1_TXEIE) & (1));
+	uint8_t CR1_PEIE_Bit 	= ((pUARTHandle->pUARTx->USART_CR1>>USART_CR1_PEIE) & (1));
+	uint8_t CR1_RXNEIE_Bit 	= ((pUARTHandle->pUARTx->USART_CR1>>USART_CR1_RXNEIE) & (1));
+	uint8_t CR1_IDLEIE_Bit 	= ((pUARTHandle->pUARTx->USART_CR1>>USART_CR1_IDLEIE) & (1));
 
+	uint8_t SR_TC_Bit = UART_Get_Status_Flag(pUARTHandle->pUARTx, USART_SR_TC);
+	uint8_t SR_TXE_Bit = UART_Get_Status_Flag(pUARTHandle->pUARTx, USART_SR_TXE);
+	uint8_t SR_PE_Bit = UART_Get_Status_Flag(pUARTHandle->pUARTx, USART_SR_TC);
+	uint8_t SR_RXNE_Bit = UART_Get_Status_Flag(pUARTHandle->pUARTx, USART_SR_RXNE);
+	uint8_t SR_IDLE_Bit = UART_Get_Status_Flag(pUARTHandle->pUARTx, USART_SR_IDLE);
 
+	// Based on SR and CR decide which interrupt occurred
+	if(CR1_TCIE_Bit & SR_TC_Bit){// TC interrupt Triggered
+		//@todo
+	}
+	if(CR1_TXEIE_Bit & SR_TXE_Bit){// TXE interrupt Triggered
+
+	}
+	if(CR1_PEIE_Bit & SR_PE_Bit){// PE interrupt Triggered
+		//@todo
+	}
+	if(CR1_RXNEIE_Bit & SR_RXNE_Bit){// RXNEIE interrupt Triggered
+		// Take out the data from the RX Reg, this will automatically clear the RXNEIE flag
+		uint8_t RxByte = pUARTHandle->pUARTx->USART_DR;
+		if(pUARTHandle->RXLen > 0){
+			*(pUARTHandle->pRXBuffer) = RxByte;
+			pUARTHandle->pRXBuffer++;
+			pUARTHandle->RXLen--;
+		}
+		// If RX length becomes zero it means it have received all the bytes and now we have to disable the interrupt i.e. we require no more interrupts
+		if(pUARTHandle->RXLen == 0){
+			// Disable the RXNE interrupt
+			pUARTHandle->pUARTx->USART_CR1 &= ~(1U<<USART_CR1_RXNEIE);
+
+			//Reset States
+			pUARTHandle->RXState = UART_STATE_READY;
+			pUARTHandle->pRXBuffer = NULL;
+
+			//Notify the user app
+			UART_ApplicationEventCallback(pUARTHandle, UART_EVENT_RX_CMPLT);
+		}
+	}
+	if(CR1_IDLEIE_Bit & SR_IDLE_Bit){// IDLE interrupt Triggered
+		//@todo
+	}
+}
+
+uint8_t UART_RecieveData_IT(UART_Handle_t* pUARTHandle, uint8_t* RXBuff, uint32_t Len){
+    /* Parameter validation */
+    if (pUARTHandle == NULL || RXBuff == NULL || Len == 0) {
+        return 1;   /* Error */
+    }
+    // Check if UART is already busy in different Reception
+    /* Check if UART is already busy in RX */
+    if (pUARTHandle->RXState == UART_STATE_BUSY_RX) {
+        return 2;   /* Busy */
+    }
+
+	// Save the data in Global Handle
+	pUARTHandle->RXLen = Len;
+	pUARTHandle->RXState = UART_STATE_BUSY_RX;
+	pUARTHandle->pRXBuffer = RXBuff;
+
+	/* Enable RXNE interrupt at UART level */
+	UART_ITControl(pUARTHandle->pUARTx, UART_IT_TYPE_RXNE, ENABLE);
+
+	// On success Return 0
+	return 0;
+}
+
+void UART_ITControl(UART_Reg_Def_t *pUARTx, uint8_t InterruptType, uint8_t EnOrDi) {
+	if (pUARTx == NULL) {
+		return;
+	}
+
+	if (EnOrDi == ENABLE) {
+		switch (InterruptType) {
+		case UART_IT_TYPE_TXE:
+			pUARTx->USART_CR1 |= (1 << USART_CR1_TXEIE);
+			break;
+
+		case UART_IT_TYPE_TC:
+			pUARTx->USART_CR1 |= (1 << USART_CR1_TCIE);
+			break;
+
+		case UART_IT_TYPE_RXNE:
+			pUARTx->USART_CR1 |= (1 << USART_CR1_RXNEIE);
+			break;
+
+		default:
+			break;
+		}
+	} else {
+		switch (InterruptType) {
+		case UART_IT_TYPE_TXE:
+			pUARTx->USART_CR1 &= ~(1 << USART_CR1_TXEIE);
+			break;
+
+		case UART_IT_TYPE_TC:
+			pUARTx->USART_CR1 &= ~(1 << USART_CR1_TCIE);
+			break;
+
+		case UART_IT_TYPE_RXNE:
+			pUARTx->USART_CR1 &= ~(1 << USART_CR1_RXNEIE);
+			break;
+
+		default:
+			break;
+		}
+	}
+}
 
 
 
