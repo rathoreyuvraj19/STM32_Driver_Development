@@ -140,6 +140,7 @@ var searchData=
   ['rtc_5fbkp_5freg_5fbaseaddr_137',['RTC_BKP_REG_BASEADDR',['../group___a_p_b1___p_e_r_i_p_e_h_r_a_l_s___b_a_s_e___a_d_d_r_e_s_s_e_s.html#ga98c3e6ad32fb5503744104470f07ccd9',1,'RTC_BKP_REG_BASEADDR:&#160;stm32f407xx.h'],['../group___a_p_b1___p_e_r_i_p_e_h_r_a_l_s___b_a_s_e___a_d_d_r_e_s_s_e_s.html#ga98c3e6ad32fb5503744104470f07ccd9',1,'RTC_BKP_REG_BASEADDR:&#160;stm32f407xx.h']]],
   ['rtsr_138',['RTSR',['../struct_e_x_t_i___reg_def__t.html#a8750f176ecede5dfebf1f9ed67e2bec9',1,'EXTI_RegDef_t']]],
   ['rxcrcr_139',['RXCRCR',['../struct_s_p_ix___reg_def__t.html#a256b0a5addbc714bc5ce9b11789fdcd5',1,'SPIx_RegDef_t']]],
-  ['rxlen_140',['RXLen',['../struct_s_p_ix___handle__t.html#ab5eac9e2244e1065f288af094873b7a3',1,'SPIx_Handle_t']]],
-  ['rxstate_141',['RxState',['../struct_s_p_ix___handle__t.html#a1b2787461399507391258f1bfcb9db23',1,'SPIx_Handle_t']]]
+  ['rxlen_140',['RXLen',['../struct_s_p_ix___handle__t.html#ab5eac9e2244e1065f288af094873b7a3',1,'SPIx_Handle_t::RXLen'],['../struct_u_a_r_t___handle__t.html#a3229881c64f3bead956d4c90673c6a54',1,'UART_Handle_t::RXLen']]],
+  ['rxstate_141',['RXState',['../struct_u_a_r_t___handle__t.html#a1eb525feb3a6c645c78a15a0160fb668',1,'UART_Handle_t']]],
+  ['rxstate_142',['RxState',['../struct_s_p_ix___handle__t.html#a1b2787461399507391258f1bfcb9db23',1,'SPIx_Handle_t']]]
 ];

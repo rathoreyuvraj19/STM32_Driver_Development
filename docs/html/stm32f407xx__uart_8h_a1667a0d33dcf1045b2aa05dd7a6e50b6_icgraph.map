@@ -1,9 +1,19 @@
 <map id="UART_Get_Status_Flag" name="UART_Get_Status_Flag">
-<area shape="rect" id="Node000001" title="Get the status of a UART status flag." alt="" coords="416,31,578,57"/>
-<area shape="rect" id="Node000002" href="$stm32f407xx__uart_8c.html#a49f8479becbdfff3472e2006c733c850" title="De&#45;initialize the UART peripheral." alt="" coords="229,5,328,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="400,35,328,27,329,22,401,30"/>
-<area shape="rect" id="Node000003" href="$stm32f407xx__uart_8c.html#afd5a9bfb7d0ce0e102fdad0d89ce79f3" title=" " alt="" coords="189,56,368,83"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="400,58,369,62,368,56,400,53"/>
-<area shape="rect" id="Node000004" href="$stm32f407xx__uart_8c.html#a371a8ca6e5d0eab1c1d9c1c86d862b96" title=" " alt="" coords="5,56,141,83"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="173,72,141,72,141,67,173,67"/>
+<area shape="rect" id="Node000001" title="Get the status of a UART status flag." alt="" coords="822,81,984,108"/>
+<area shape="rect" id="Node000002" href="$stm32f407xx__uart_8c.html#a49f8479becbdfff3472e2006c733c850" title="De&#45;initialize the UART peripheral." alt="" coords="634,5,734,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="854,77,773,47,733,34,735,29,775,41,856,73"/>
+<area shape="rect" id="Node000003" href="$stm32f407xx__uart_8c.html#a6f75990a6bd25356d4e275476a203782" title=" " alt="" coords="614,56,754,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="806,86,754,80,754,75,806,81"/>
+<area shape="rect" id="Node000004" href="$stm32f407xx__uart_8c.html#a1b76f8f171e023ecbda4f31621ce5a3c" title=" " alt="" coords="349,107,546,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="806,103,547,117,547,112,806,97"/>
+<area shape="rect" id="Node000006" href="$stm32f407xx__uart_8c.html#afd5a9bfb7d0ce0e102fdad0d89ce79f3" title=" " alt="" coords="594,157,774,184"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="848,116,726,159,724,154,847,111"/>
+<area shape="rect" id="Node000005" href="$stm32f407xx__uart_8c.html#a0732a051956ba0066fb462a5a6f918b9" title=" " alt="" coords="5,132,159,159"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="334,131,159,143,159,137,333,125"/>
+<area shape="rect" id="Node000007" href="$stm32f407xx__uart_8c.html#a5bf9be676fd877d24a7061035afa7a71" title=" " alt="" coords="207,157,301,184"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="579,173,301,173,301,168,579,168"/>
+<area shape="rect" id="Node000008" href="$stm32f407xx__uart_8c.html#a371a8ca6e5d0eab1c1d9c1c86d862b96" title=" " alt="" coords="380,208,515,235"/>
+<area shape="poly" id="edge8_Node000006_Node000008" title=" " alt="" coords="604,190,514,210,513,205,603,185"/>
+<area shape="poly" id="edge7_Node000007_Node000005" title=" " alt="" coords="191,164,158,159,159,154,192,159"/>
+<area shape="poly" id="edge9_Node000008_Node000007" title=" " alt="" coords="378,206,301,185,302,180,380,201"/>
 </map>

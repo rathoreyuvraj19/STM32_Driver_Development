@@ -52,7 +52,7 @@ void load_data_pins(LCD_Def_t* LCD_Def, uint8_t data);
 void LCD_Data_Send(LCD_Def_t* LCD_Def, uint8_t data);
 void LCD_Command_Send(LCD_Def_t* LCD_Def, uint8_t command);
 void LCD_Init(LCD_Def_t* LCD_Def);
-void display_lcd(LCD_Def_t* LCD_Def, char *data, uint8_t size);
+void LCD_Display_String(LCD_Def_t* LCD_Def, char *data, uint8_t size);
 void LCD_Shift_Display(LCD_Def_t* LCD_Def, uint8_t direction, uint8_t steps);
 
 #endif /* LCD_H_ */

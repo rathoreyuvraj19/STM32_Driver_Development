@@ -1,5 +1,10 @@
 <map id="UART_SendData_Blocking" name="UART_SendData_Blocking">
-<area shape="rect" id="Node000001" title=" " alt="" coords="189,5,368,32"/>
-<area shape="rect" id="Node000002" href="$stm32f407xx__uart_8c.html#a371a8ca6e5d0eab1c1d9c1c86d862b96" title=" " alt="" coords="5,5,141,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="173,21,141,21,141,16,173,16"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="532,5,712,32"/>
+<area shape="rect" id="Node000002" href="$stm32f407xx__uart_8c.html#a5bf9be676fd877d24a7061035afa7a71" title=" " alt="" coords="207,5,301,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="516,21,301,21,301,16,516,16"/>
+<area shape="rect" id="Node000004" href="$stm32f407xx__uart_8c.html#a371a8ca6e5d0eab1c1d9c1c86d862b96" title=" " alt="" coords="349,31,484,57"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="517,34,485,38,485,33,516,29"/>
+<area shape="rect" id="Node000003" href="$stm32f407xx__uart_8c.html#a0732a051956ba0066fb462a5a6f918b9" title=" " alt="" coords="5,5,159,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="191,21,159,21,159,16,191,16"/>
+<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="333,34,301,29,302,23,334,28"/>
 </map>

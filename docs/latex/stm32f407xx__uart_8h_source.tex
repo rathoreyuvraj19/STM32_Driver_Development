@@ -79,20 +79,63 @@
 \DoxyCodeLine{\Hypertarget{stm32f407xx__uart_8h_source_l00098}\mbox{\hyperlink{struct_u_a_r_t___handle__t}{00098}}\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}\{}
 \DoxyCodeLine{\Hypertarget{stm32f407xx__uart_8h_source_l00099}\mbox{\hyperlink{struct_u_a_r_t___handle__t_a6a052a1eea3b3e6f9696c3ce845c83ae}{00099}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_u_a_r_t___reg___def__t}{UART\_Reg\_Def\_t}}*\ \mbox{\hyperlink{struct_u_a_r_t___handle__t_a6a052a1eea3b3e6f9696c3ce845c83ae}{pUARTx}};}
 \DoxyCodeLine{\Hypertarget{stm32f407xx__uart_8h_source_l00100}\mbox{\hyperlink{struct_u_a_r_t___handle__t_a591452a794b44755d8ca2c842741c6f4}{00100}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_u_a_r_t___config__t}{UART\_Config\_t}}\ \ \ \mbox{\hyperlink{struct_u_a_r_t___handle__t_a591452a794b44755d8ca2c842741c6f4}{UART\_Config}};}
-\DoxyCodeLine{\Hypertarget{stm32f407xx__uart_8h_source_l00101}00101\ \ \ \ \ \}\mbox{\hyperlink{struct_u_a_r_t___handle__t}{UART\_Handle\_t}};}
-\DoxyCodeLine{\Hypertarget{stm32f407xx__uart_8h_source_l00102}00102\ \ \textcolor{comment}{//\ End\ of\ UART\_DRIVER\_DEVELOPEMNT}}
-\DoxyCodeLine{\Hypertarget{stm32f407xx__uart_8h_source_l00104}00104\ }
-\DoxyCodeLine{\Hypertarget{stm32f407xx__uart_8h_source_l00137}00137\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{stm32f407xx__uart_8h_a4302e5428e253233441df16bb19c6966}{uart\_init}}(\mbox{\hyperlink{struct_u_a_r_t___handle__t}{UART\_Handle\_t}}*\ pUART\_Handle);}
-\DoxyCodeLine{\Hypertarget{stm32f407xx__uart_8h_source_l00138}00138\ }
-\DoxyCodeLine{\Hypertarget{stm32f407xx__uart_8h_source_l00160}00160\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{stm32f407xx__uart_8h_a034e53344625c4ee7981f97450537997}{UART\_Peri\_Control}}(\mbox{\hyperlink{struct_u_a_r_t___reg___def__t}{UART\_Reg\_Def\_t}}*\ pUARTx,\ uint8\_t\ EI\_DI);}
-\DoxyCodeLine{\Hypertarget{stm32f407xx__uart_8h_source_l00161}00161\ }
-\DoxyCodeLine{\Hypertarget{stm32f407xx__uart_8h_source_l00190}00190\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{stm32f407xx__uart_8h_a1667a0d33dcf1045b2aa05dd7a6e50b6}{UART\_Get\_Status\_Flag}}(\mbox{\hyperlink{struct_u_a_r_t___reg___def__t}{UART\_Reg\_Def\_t}}*\ pUARTx,\ uint32\_t\ FlagPos);}
-\DoxyCodeLine{\Hypertarget{stm32f407xx__uart_8h_source_l00191}00191\ }
-\DoxyCodeLine{\Hypertarget{stm32f407xx__uart_8h_source_l00212}00212\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{stm32f407xx__uart_8h_a49f8479becbdfff3472e2006c733c850}{UART\_DeInit}}(\mbox{\hyperlink{struct_u_a_r_t___reg___def__t}{UART\_Reg\_Def\_t}}*\ pUARTx);}
-\DoxyCodeLine{\Hypertarget{stm32f407xx__uart_8h_source_l00213}00213\ }
-\DoxyCodeLine{\Hypertarget{stm32f407xx__uart_8h_source_l00214}00214\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{stm32f407xx__uart_8h_afd5a9bfb7d0ce0e102fdad0d89ce79f3}{UART\_SendData\_Blocking}}(\mbox{\hyperlink{struct_u_a_r_t___handle__t}{UART\_Handle\_t}}\ *pUARTHandle,\ uint8\_t\ *TXBuffer,\ uint32\_t\ Len);}
-\DoxyCodeLine{\Hypertarget{stm32f407xx__uart_8h_source_l00215}00215\ }
-\DoxyCodeLine{\Hypertarget{stm32f407xx__uart_8h_source_l00216}00216\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{stm32f407xx__uart_8h_a371a8ca6e5d0eab1c1d9c1c86d862b96}{UART\_Send\_String}}(\mbox{\hyperlink{struct_u_a_r_t___handle__t}{UART\_Handle\_t}}\ *pUARTHandle,\textcolor{keywordtype}{char}*\ str,\ uint32\_t\ size);}
-\DoxyCodeLine{\Hypertarget{stm32f407xx__uart_8h_source_l00217}00217\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ INC\_STM32F407XX\_UART\_H\_\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__uart_8h_source_l00101}00101\ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__uart_8h_source_l00102}\mbox{\hyperlink{struct_u_a_r_t___handle__t_a0db7f9a421495a25c813f9d7117b548f}{00102}}\ \ \ \ \ \ \ \ \ uint8\_t*\ \mbox{\hyperlink{struct_u_a_r_t___handle__t_a0db7f9a421495a25c813f9d7117b548f}{pTXBuffer}};}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__uart_8h_source_l00103}\mbox{\hyperlink{struct_u_a_r_t___handle__t_a90931b73d81ce017160817857ccbad7b}{00103}}\ \ \ \ \ \ \ \ \ uint32\_t\ \mbox{\hyperlink{struct_u_a_r_t___handle__t_a90931b73d81ce017160817857ccbad7b}{TXLen}};}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__uart_8h_source_l00104}\mbox{\hyperlink{struct_u_a_r_t___handle__t_a69c93029f05bf5823c9976af627671b3}{00104}}\ \ \ \ \ \ \ \ \ uint32\_t\ \mbox{\hyperlink{struct_u_a_r_t___handle__t_a69c93029f05bf5823c9976af627671b3}{TXState}};}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__uart_8h_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__uart_8h_source_l00106}\mbox{\hyperlink{struct_u_a_r_t___handle__t_ab5b2b81ac86402edd038c2cdecd84c92}{00106}}\ \ \ \ \ \ \ \ \ uint8\_t*\ \mbox{\hyperlink{struct_u_a_r_t___handle__t_ab5b2b81ac86402edd038c2cdecd84c92}{pRXBuffer}};}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__uart_8h_source_l00107}\mbox{\hyperlink{struct_u_a_r_t___handle__t_a3229881c64f3bead956d4c90673c6a54}{00107}}\ \ \ \ \ \ \ \ \ uint32\_t\ \mbox{\hyperlink{struct_u_a_r_t___handle__t_a3229881c64f3bead956d4c90673c6a54}{RXLen}};}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__uart_8h_source_l00108}\mbox{\hyperlink{struct_u_a_r_t___handle__t_a1eb525feb3a6c645c78a15a0160fb668}{00108}}\ \ \ \ \ \ \ \ \ uint32\_t\ \mbox{\hyperlink{struct_u_a_r_t___handle__t_a1eb525feb3a6c645c78a15a0160fb668}{RXState}};}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__uart_8h_source_l00109}00109\ \ \ \ \ \}\mbox{\hyperlink{struct_u_a_r_t___handle__t}{UART\_Handle\_t}};}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__uart_8h_source_l00110}00110\ \ \textcolor{comment}{//\ End\ of\ UART\_DRIVER\_DEVELOPEMNT}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__uart_8h_source_l00112}00112\ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__uart_8h_source_l00145}00145\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{stm32f407xx__uart_8h_a4302e5428e253233441df16bb19c6966}{uart\_init}}(\mbox{\hyperlink{struct_u_a_r_t___handle__t}{UART\_Handle\_t}}*\ pUART\_Handle);}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__uart_8h_source_l00146}00146\ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__uart_8h_source_l00168}00168\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{stm32f407xx__uart_8h_a034e53344625c4ee7981f97450537997}{UART\_Peri\_Control}}(\mbox{\hyperlink{struct_u_a_r_t___reg___def__t}{UART\_Reg\_Def\_t}}*\ pUARTx,\ uint8\_t\ EI\_DI);}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__uart_8h_source_l00169}00169\ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__uart_8h_source_l00198}00198\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{stm32f407xx__uart_8h_a1667a0d33dcf1045b2aa05dd7a6e50b6}{UART\_Get\_Status\_Flag}}(\mbox{\hyperlink{struct_u_a_r_t___reg___def__t}{UART\_Reg\_Def\_t}}*\ pUARTx,\ uint32\_t\ FlagPos);}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__uart_8h_source_l00199}00199\ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__uart_8h_source_l00220}00220\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{stm32f407xx__uart_8h_a49f8479becbdfff3472e2006c733c850}{UART\_DeInit}}(\mbox{\hyperlink{struct_u_a_r_t___reg___def__t}{UART\_Reg\_Def\_t}}*\ pUARTx);}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__uart_8h_source_l00221}00221\ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__uart_8h_source_l00222}00222\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{stm32f407xx__uart_8h_afd5a9bfb7d0ce0e102fdad0d89ce79f3}{UART\_SendData\_Blocking}}(\mbox{\hyperlink{struct_u_a_r_t___handle__t}{UART\_Handle\_t}}\ *pUARTHandle,\ uint8\_t\ *TXBuffer,\ uint32\_t\ Len);}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__uart_8h_source_l00223}00223\ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__uart_8h_source_l00224}00224\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{stm32f407xx__uart_8h_a371a8ca6e5d0eab1c1d9c1c86d862b96}{UART\_Send\_String}}(\mbox{\hyperlink{struct_u_a_r_t___handle__t}{UART\_Handle\_t}}\ *pUARTHandle,\textcolor{keywordtype}{char}*\ str,\ uint32\_t\ size);}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__uart_8h_source_l00225}00225\ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__uart_8h_source_l00226}00226\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{stm32f407xx__uart_8h_a1b76f8f171e023ecbda4f31621ce5a3c}{UART\_RecieveData\_Blocking}}(\mbox{\hyperlink{struct_u_a_r_t___handle__t}{UART\_Handle\_t}}*\ pUARTHandle,\ uint8\_t*\ RXBuff,\ uint32\_t\ Len);}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__uart_8h_source_l00227}00227\ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__uart_8h_source_l00228}00228\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{stm32f407xx__uart_8h_a0732a051956ba0066fb462a5a6f918b9}{UART\_Recieve\_String}}(\mbox{\hyperlink{struct_u_a_r_t___handle__t}{UART\_Handle\_t}}\ *pUARTHandle,\textcolor{keywordtype}{char}*\ str);}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__uart_8h_source_l00229}00229\ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__uart_8h_source_l00230}00230\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{stm32f407xx__uart_8h_a45d4eca79fb5e3f2362f792e66799c64}{UART\_IRQInterruptConfig}}(\mbox{\hyperlink{struct_u_a_r_t___handle__t}{UART\_Handle\_t}}\ *pUARTHandle,\ uint8\_t\ EnOrDi);\textcolor{comment}{//\ This\ function\ is\ used\ to\ configure\ the\ NVIC\ for\ the\ interrupt}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__uart_8h_source_l00231}00231\ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__uart_8h_source_l00232}00232\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{stm32f407xx__uart_8h_a40f87d2eddf93d18d60f1f462da9823f}{UART\_IRQPriorityConfig}}(\mbox{\hyperlink{struct_u_a_r_t___handle__t}{UART\_Handle\_t}}\ *pUARTHandle,\ uint32\_t\ Priority);}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__uart_8h_source_l00233}00233\ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__uart_8h_source_l00234}00234\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{stm32f407xx__uart_8h_a6f75990a6bd25356d4e275476a203782}{UART\_IRQHandling}}(\mbox{\hyperlink{struct_u_a_r_t___handle__t}{UART\_Handle\_t}}\ *pUARTHandle);}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__uart_8h_source_l00235}00235\ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__uart_8h_source_l00236}00236\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{stm32f407xx__uart_8h_a19f08a70f5d9ceead8cc139a4c61a992}{UART\_ITControl}}(\mbox{\hyperlink{struct_u_a_r_t___reg___def__t}{UART\_Reg\_Def\_t}}\ *pUARTx,\ uint8\_t\ InterruptType,\ uint8\_t\ EnOrDi);}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__uart_8h_source_l00237}00237\ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__uart_8h_source_l00238}00238\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{stm32f407xx__uart_8h_a38c5b76dd83fcc9262ddb3469a83525a}{UART\_ReceiveData\_IT}}(\mbox{\hyperlink{struct_u_a_r_t___handle__t}{UART\_Handle\_t}}*\ pUARTHandle,\ uint8\_t*\ RXBuff,\ uint32\_t\ Len);}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__uart_8h_source_l00239}00239\ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__uart_8h_source_l00240}00240\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{stm32f407xx__uart_8h_aab5c6b1a5f6d2825455d18e6dc0988d2}{UART\_SendData\_IT}}(\mbox{\hyperlink{struct_u_a_r_t___handle__t}{UART\_Handle\_t}}*\ pUARTHandle,\ uint8\_t*\ TXBuff,\ uint32\_t\ Len);}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__uart_8h_source_l00241}00241\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{stm32f407xx__uart_8h_a5bf9be676fd877d24a7061035afa7a71}{UART\_Echo}}(\mbox{\hyperlink{struct_u_a_r_t___handle__t}{UART\_Handle\_t}}\ *pUARTHandle,\ \textcolor{keywordtype}{char}\ ch);}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__uart_8h_source_l00242}00242\ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__uart_8h_source_l00243}00243\ \ \ \ \ \textcolor{comment}{//*********UART\ INTERRUPT\ EVENT************//}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__uart_8h_source_l00244}\mbox{\hyperlink{stm32f407xx__uart_8h_a9ed5881f19353f5763f5eefdab167733}{00244}}\ \textcolor{preprocessor}{\ \ \ \ \#define\ UART\_STATE\_READY\ \ \ \ 0}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__uart_8h_source_l00245}\mbox{\hyperlink{stm32f407xx__uart_8h_a53617443361832f9bd51846c7595a81c}{00245}}\ \textcolor{preprocessor}{\ \ \ \ \#define\ UART\_STATE\_BUSY\_TX\ \ 1}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__uart_8h_source_l00246}\mbox{\hyperlink{stm32f407xx__uart_8h_ab2dd365121cd8ac2f21184e3607b1ccf}{00246}}\ \textcolor{preprocessor}{\ \ \ \ \#define\ UART\_STATE\_BUSY\_RX\ \ 2}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__uart_8h_source_l00247}00247\ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__uart_8h_source_l00248}\mbox{\hyperlink{stm32f407xx__uart_8h_a98b0c4d790c9602a5c3933c1899bcad7}{00248}}\ \textcolor{preprocessor}{\ \ \ \ \#define\ UART\_EVENT\_TX\_CMPLT\ \ \ \ \ \ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__uart_8h_source_l00249}\mbox{\hyperlink{stm32f407xx__uart_8h_a9e27b9e50a1bbd834bc43c413d45d1a9}{00249}}\ \textcolor{preprocessor}{\ \ \ \ \#define\ UART\_EVENT\_RX\_CMPLT\ \ \ \ \ \ \ \ \ \ \ \ \ 2}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__uart_8h_source_l00250}\mbox{\hyperlink{stm32f407xx__uart_8h_aa345bba17c083c9ec70ecd1b5558d431}{00250}}\ \textcolor{preprocessor}{\ \ \ \ \#define\ UART\_EVENT\_IDLE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 3}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__uart_8h_source_l00251}\mbox{\hyperlink{stm32f407xx__uart_8h_a7bf8c648bf8e1c4dce7e751e7abf54b7}{00251}}\ \textcolor{preprocessor}{\ \ \ \ \#define\ UART\_EVENT\_ERROR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 4}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__uart_8h_source_l00252}\mbox{\hyperlink{stm32f407xx__uart_8h_a040ad351ef0cd70eb678c17a45c9884b}{00252}}\ \textcolor{preprocessor}{\ \ \ \ \#define\ UART\_EVENT\_RX\_STR\_CMPLT\ \ \ \ \ \ \ \ \ 5}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__uart_8h_source_l00253}00253\ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__uart_8h_source_l00254}\mbox{\hyperlink{stm32f407xx__uart_8h_a2daadfb0d144c2417e155a9274dedeef}{00254}}\ \textcolor{preprocessor}{\ \ \ \ \#define\ UART\_IT\_TYPE\_TXE\ \ \ \ 0}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__uart_8h_source_l00255}\mbox{\hyperlink{stm32f407xx__uart_8h_adaba31fd20bd14c3287caceca38f433d}{00255}}\ \textcolor{preprocessor}{\ \ \ \ \#define\ UART\_IT\_TYPE\_TC\ \ \ \ \ 1}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__uart_8h_source_l00256}\mbox{\hyperlink{stm32f407xx__uart_8h_a5de60844530978f1452e057298430408}{00256}}\ \textcolor{preprocessor}{\ \ \ \ \#define\ UART\_IT\_TYPE\_RXNE\ \ \ 2}}
+\DoxyCodeLine{\Hypertarget{stm32f407xx__uart_8h_source_l00257}00257\ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__uart_8h_source_l00258}00258\ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__uart_8h_source_l00259}00259\ }
+\DoxyCodeLine{\Hypertarget{stm32f407xx__uart_8h_source_l00260}00260\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ INC\_STM32F407XX\_UART\_H\_\ */}\textcolor{preprocessor}{}}
 
 \end{DoxyCode}

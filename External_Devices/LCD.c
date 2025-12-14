@@ -144,22 +144,24 @@ void LCD_Init(LCD_Def_t* LCD_Def) {
 	delayUS(2000);  // Clear display
 }
 
-void display_lcd(LCD_Def_t* LCD_Def,char *data, uint8_t size) {
-	//LCD_Command_Send(0x01);
-//	delayUS(2000);  // Clear display
+void LCD_Display_String(LCD_Def_t* LCD_Def,char *data, uint8_t size) {
+	LCD_Command_Send(LCD_Def,0x01);
+	delayUS(2000);  // Clear display
 	LCD_Command_Send(LCD_Def,0x80);
 	delayUS(2000);
 
-	for (int i = 0; i < size - 1; i++) {
-		char temp = data[i];
+	for (int i = 0; i < size; i++) {
 		LCD_Data_Send(LCD_Def,data[i]);
+	}
+	if(size > 16){
+		LCD_Shift_Display(LCD_Def, LCD_SHIFT_LEFT , size-15);
 	}
 }
 
 void LCD_Shift_Display(LCD_Def_t* LCD_Def, uint8_t direction, uint8_t steps) {
 	// The delay between shifts controls the speed of the scroll.
 	// 200ms is a good starting point for a visible, smooth scroll.
-	uint32_t scroll_delay_ms = 200;
+	uint32_t scroll_delay_ms = 10;
 
 	for (uint8_t i = 0; i < steps; i++) {
 		// Send the Display Shift command (0x18 or 0x1C)

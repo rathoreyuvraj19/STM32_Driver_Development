@@ -1,0 +1,5 @@
+<map id="UART_RecieveData_Blocking" name="UART_RecieveData_Blocking">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,203,32"/>
+<area shape="rect" id="Node000002" href="$stm32f407xx__uart_8c.html#a1667a0d33dcf1045b2aa05dd7a6e50b6" title="Get the status of a UART status flag." alt="" coords="251,5,413,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="203,16,235,16,235,21,203,21"/>
+</map>

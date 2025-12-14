@@ -11,8 +11,7 @@ UART\+\_\+\+HANDLE\+\_\+\+TYPE\+\_\+\+DEF.
 
 
 
-Collaboration diagram for UART\+\_\+\+Handle\+\_\+t\+:
-\nopagebreak
+Collaboration diagram for UART\+\_\+\+Handle\+\_\+t\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -25,6 +24,18 @@ Collaboration diagram for UART\+\_\+\+Handle\+\_\+t\+:
 \mbox{\hyperlink{struct_u_a_r_t___reg___def__t}{UART\+\_\+\+Reg\+\_\+\+Def\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_u_a_r_t___handle__t_a6a052a1eea3b3e6f9696c3ce845c83ae}{p\+UARTx}}
 \item 
 \mbox{\hyperlink{struct_u_a_r_t___config__t}{UART\+\_\+\+Config\+\_\+t}} \mbox{\hyperlink{struct_u_a_r_t___handle__t_a591452a794b44755d8ca2c842741c6f4}{UART\+\_\+\+Config}}
+\item 
+uint8\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_u_a_r_t___handle__t_a0db7f9a421495a25c813f9d7117b548f}{p\+TXBuffer}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_u_a_r_t___handle__t_a90931b73d81ce017160817857ccbad7b}{TXLen}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_u_a_r_t___handle__t_a69c93029f05bf5823c9976af627671b3}{TXState}}
+\item 
+uint8\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_u_a_r_t___handle__t_ab5b2b81ac86402edd038c2cdecd84c92}{p\+RXBuffer}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_u_a_r_t___handle__t_a3229881c64f3bead956d4c90673c6a54}{RXLen}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_u_a_r_t___handle__t_a1eb525feb3a6c645c78a15a0160fb668}{RXState}}
 \end{DoxyCompactItemize}
 
 
@@ -38,6 +49,26 @@ Definition at line \mbox{\hyperlink{stm32f407xx__uart_8h_source_l00098}{98}} of 
 \label{doc-variable-members}
 \Hypertarget{struct_u_a_r_t___handle__t_doc-variable-members}
 \doxysubsection{Member Data Documentation}
+\Hypertarget{struct_u_a_r_t___handle__t_ab5b2b81ac86402edd038c2cdecd84c92}\index{UART\_Handle\_t@{UART\_Handle\_t}!pRXBuffer@{pRXBuffer}}
+\index{pRXBuffer@{pRXBuffer}!UART\_Handle\_t@{UART\_Handle\_t}}
+\doxysubsubsection{\texorpdfstring{pRXBuffer}{pRXBuffer}}
+{\footnotesize\ttfamily \label{struct_u_a_r_t___handle__t_ab5b2b81ac86402edd038c2cdecd84c92} 
+uint8\+\_\+t\texorpdfstring{$\ast$}{*} UART\+\_\+\+Handle\+\_\+t\+::p\+RXBuffer}
+
+
+
+Definition at line \mbox{\hyperlink{stm32f407xx__uart_8h_source_l00106}{106}} of file \mbox{\hyperlink{stm32f407xx__uart_8h_source}{stm32f407xx\+\_\+uart.\+h}}.
+
+\Hypertarget{struct_u_a_r_t___handle__t_a0db7f9a421495a25c813f9d7117b548f}\index{UART\_Handle\_t@{UART\_Handle\_t}!pTXBuffer@{pTXBuffer}}
+\index{pTXBuffer@{pTXBuffer}!UART\_Handle\_t@{UART\_Handle\_t}}
+\doxysubsubsection{\texorpdfstring{pTXBuffer}{pTXBuffer}}
+{\footnotesize\ttfamily \label{struct_u_a_r_t___handle__t_a0db7f9a421495a25c813f9d7117b548f} 
+uint8\+\_\+t\texorpdfstring{$\ast$}{*} UART\+\_\+\+Handle\+\_\+t\+::p\+TXBuffer}
+
+
+
+Definition at line \mbox{\hyperlink{stm32f407xx__uart_8h_source_l00102}{102}} of file \mbox{\hyperlink{stm32f407xx__uart_8h_source}{stm32f407xx\+\_\+uart.\+h}}.
+
 \Hypertarget{struct_u_a_r_t___handle__t_a6a052a1eea3b3e6f9696c3ce845c83ae}\index{UART\_Handle\_t@{UART\_Handle\_t}!pUARTx@{pUARTx}}
 \index{pUARTx@{pUARTx}!UART\_Handle\_t@{UART\_Handle\_t}}
 \doxysubsubsection{\texorpdfstring{pUARTx}{pUARTx}}
@@ -47,6 +78,46 @@ Definition at line \mbox{\hyperlink{stm32f407xx__uart_8h_source_l00098}{98}} of 
 
 
 Definition at line \mbox{\hyperlink{stm32f407xx__uart_8h_source_l00099}{99}} of file \mbox{\hyperlink{stm32f407xx__uart_8h_source}{stm32f407xx\+\_\+uart.\+h}}.
+
+\Hypertarget{struct_u_a_r_t___handle__t_a3229881c64f3bead956d4c90673c6a54}\index{UART\_Handle\_t@{UART\_Handle\_t}!RXLen@{RXLen}}
+\index{RXLen@{RXLen}!UART\_Handle\_t@{UART\_Handle\_t}}
+\doxysubsubsection{\texorpdfstring{RXLen}{RXLen}}
+{\footnotesize\ttfamily \label{struct_u_a_r_t___handle__t_a3229881c64f3bead956d4c90673c6a54} 
+uint32\+\_\+t UART\+\_\+\+Handle\+\_\+t\+::\+RXLen}
+
+
+
+Definition at line \mbox{\hyperlink{stm32f407xx__uart_8h_source_l00107}{107}} of file \mbox{\hyperlink{stm32f407xx__uart_8h_source}{stm32f407xx\+\_\+uart.\+h}}.
+
+\Hypertarget{struct_u_a_r_t___handle__t_a1eb525feb3a6c645c78a15a0160fb668}\index{UART\_Handle\_t@{UART\_Handle\_t}!RXState@{RXState}}
+\index{RXState@{RXState}!UART\_Handle\_t@{UART\_Handle\_t}}
+\doxysubsubsection{\texorpdfstring{RXState}{RXState}}
+{\footnotesize\ttfamily \label{struct_u_a_r_t___handle__t_a1eb525feb3a6c645c78a15a0160fb668} 
+uint32\+\_\+t UART\+\_\+\+Handle\+\_\+t\+::\+RXState}
+
+
+
+Definition at line \mbox{\hyperlink{stm32f407xx__uart_8h_source_l00108}{108}} of file \mbox{\hyperlink{stm32f407xx__uart_8h_source}{stm32f407xx\+\_\+uart.\+h}}.
+
+\Hypertarget{struct_u_a_r_t___handle__t_a90931b73d81ce017160817857ccbad7b}\index{UART\_Handle\_t@{UART\_Handle\_t}!TXLen@{TXLen}}
+\index{TXLen@{TXLen}!UART\_Handle\_t@{UART\_Handle\_t}}
+\doxysubsubsection{\texorpdfstring{TXLen}{TXLen}}
+{\footnotesize\ttfamily \label{struct_u_a_r_t___handle__t_a90931b73d81ce017160817857ccbad7b} 
+uint32\+\_\+t UART\+\_\+\+Handle\+\_\+t\+::\+TXLen}
+
+
+
+Definition at line \mbox{\hyperlink{stm32f407xx__uart_8h_source_l00103}{103}} of file \mbox{\hyperlink{stm32f407xx__uart_8h_source}{stm32f407xx\+\_\+uart.\+h}}.
+
+\Hypertarget{struct_u_a_r_t___handle__t_a69c93029f05bf5823c9976af627671b3}\index{UART\_Handle\_t@{UART\_Handle\_t}!TXState@{TXState}}
+\index{TXState@{TXState}!UART\_Handle\_t@{UART\_Handle\_t}}
+\doxysubsubsection{\texorpdfstring{TXState}{TXState}}
+{\footnotesize\ttfamily \label{struct_u_a_r_t___handle__t_a69c93029f05bf5823c9976af627671b3} 
+uint32\+\_\+t UART\+\_\+\+Handle\+\_\+t\+::\+TXState}
+
+
+
+Definition at line \mbox{\hyperlink{stm32f407xx__uart_8h_source_l00104}{104}} of file \mbox{\hyperlink{stm32f407xx__uart_8h_source}{stm32f407xx\+\_\+uart.\+h}}.
 
 \Hypertarget{struct_u_a_r_t___handle__t_a591452a794b44755d8ca2c842741c6f4}\index{UART\_Handle\_t@{UART\_Handle\_t}!UART\_Config@{UART\_Config}}
 \index{UART\_Config@{UART\_Config}!UART\_Handle\_t@{UART\_Handle\_t}}

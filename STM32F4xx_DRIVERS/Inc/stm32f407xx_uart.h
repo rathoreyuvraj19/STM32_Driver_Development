@@ -235,7 +235,10 @@
 
 	void UART_ITControl(UART_Reg_Def_t *pUARTx, uint8_t InterruptType, uint8_t EnOrDi);
 
-	uint8_t UART_RecieveData_IT(UART_Handle_t* pUARTHandle, uint8_t* RXBuff, uint32_t Len);
+	uint8_t UART_ReceiveData_IT(UART_Handle_t* pUARTHandle, uint8_t* RXBuff, uint32_t Len);
+
+	uint8_t UART_SendData_IT(UART_Handle_t* pUARTHandle, uint8_t* TXBuff, uint32_t Len);
+	void UART_Echo(UART_Handle_t *pUARTHandle, char ch);
 
 	//*********UART INTERRUPT EVENT************//
 	#define UART_STATE_READY    0

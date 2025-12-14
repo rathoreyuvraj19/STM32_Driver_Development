@@ -26,8 +26,9 @@ var searchData=
   ['tools_23',['Required Tools',['../index.html#autotoc_md7',1,'']]],
   ['trigger_20type_20macros_24',['Interrupt Trigger Type Macros',['../group___i_n_t_e_r_r_u_p_t___t_r_i_g_g_e_r___t_y_p_e___m_a_c_r_o_s.html',1,'']]],
   ['txcrcr_25',['TXCRCR',['../struct_s_p_ix___reg_def__t.html#a37ee205892e1b0dcce79a8450ebb43c2',1,'SPIx_RegDef_t']]],
-  ['txlen_26',['TXLen',['../struct_s_p_ix___handle__t.html#a54ab29aca25deaf50bf951c95a91eef8',1,'SPIx_Handle_t']]],
-  ['txstate_27',['TxState',['../struct_s_p_ix___handle__t.html#ab7bc64878b66e3456dc8a035e6a480cb',1,'SPIx_Handle_t']]],
-  ['type_20macros_28',['Interrupt Trigger Type Macros',['../group___i_n_t_e_r_r_u_p_t___t_r_i_g_g_e_r___t_y_p_e___m_a_c_r_o_s.html',1,'']]],
-  ['types_29',['Types',['../group___g_p_i_o___o_p___t_y_p_e_s.html',1,'GPIO Output Types'],['../group___s_p_i___i_t___t_y_p_e.html',1,'SPI Peripheral Interrupt Types']]]
+  ['txlen_26',['TXLen',['../struct_s_p_ix___handle__t.html#a54ab29aca25deaf50bf951c95a91eef8',1,'SPIx_Handle_t::TXLen'],['../struct_u_a_r_t___handle__t.html#a90931b73d81ce017160817857ccbad7b',1,'UART_Handle_t::TXLen']]],
+  ['txstate_27',['TXState',['../struct_u_a_r_t___handle__t.html#a69c93029f05bf5823c9976af627671b3',1,'UART_Handle_t']]],
+  ['txstate_28',['TxState',['../struct_s_p_ix___handle__t.html#ab7bc64878b66e3456dc8a035e6a480cb',1,'SPIx_Handle_t']]],
+  ['type_20macros_29',['Interrupt Trigger Type Macros',['../group___i_n_t_e_r_r_u_p_t___t_r_i_g_g_e_r___t_y_p_e___m_a_c_r_o_s.html',1,'']]],
+  ['types_30',['Types',['../group___g_p_i_o___o_p___t_y_p_e_s.html',1,'GPIO Output Types'],['../group___s_p_i___i_t___t_y_p_e.html',1,'SPI Peripheral Interrupt Types']]]
 ];

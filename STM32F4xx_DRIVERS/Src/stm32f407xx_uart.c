@@ -9,7 +9,7 @@
 #include "stm32f407xx_uart.h"
 #include "stm32f407xx_rcc.h"
 
-static void ECHO(UART_Handle_t *pUARTHandle, char ch){
+void UART_Echo(UART_Handle_t *pUARTHandle, char ch){
 	if (ch == '\b' || ch == 0x7F) {
 	    UART_Send_String(pUARTHandle, "\b \b", 3);
 	}
@@ -193,14 +193,12 @@ void UART_RecieveData_Blocking(UART_Handle_t* pUARTHandle, uint8_t* RXBuff, uint
 	}
 }
 
-
-
 uint32_t UART_Recieve_String(UART_Handle_t *pUARTHandle,char* str){
 	uint32_t count = 0;
 	uint8_t temp = 0;
 	while(temp != '\r'){
 		UART_RecieveData_Blocking(pUARTHandle, &temp, 1);
-		ECHO(pUARTHandle, (char)temp);
+		UART_Echo(pUARTHandle, (char)temp);
 		if(temp == '\b'){
 			count--;
 			continue;
@@ -292,7 +290,24 @@ void UART_IRQHandling(UART_Handle_t *pUARTHandle){
 		//@todo
 	}
 	if(CR1_TXEIE_Bit & SR_TXE_Bit){// TXE interrupt Triggered
+		// Load the TX data
+		if(pUARTHandle->TXLen > 0){
+			pUARTHandle->pUARTx->USART_DR = *(pUARTHandle->pTXBuffer);
+			pUARTHandle->pTXBuffer++;
+			pUARTHandle->TXLen--;
+		}
+		// If the length become zero close the communication
+		if(pUARTHandle->TXLen == 0){
+			//Disable TXNIE interrupt
+			UART_ITControl(pUARTHandle->pUARTx, UART_IT_TYPE_TXE, DISABLE);
 
+			//Clear the global Handle
+			pUARTHandle->TXState = UART_STATE_READY;
+			pUARTHandle->pTXBuffer = NULL;
+
+			//Notify the user app
+		    UART_ApplicationEventCallback(pUARTHandle, UART_EVENT_TX_CMPLT);
+		}
 	}
 	if(CR1_PEIE_Bit & SR_PE_Bit){// PE interrupt Triggered
 		//@todo
@@ -308,7 +323,7 @@ void UART_IRQHandling(UART_Handle_t *pUARTHandle){
 		// If RX length becomes zero it means it have received all the bytes and now we have to disable the interrupt i.e. we require no more interrupts
 		if(pUARTHandle->RXLen == 0){
 			// Disable the RXNE interrupt
-			pUARTHandle->pUARTx->USART_CR1 &= ~(1U<<USART_CR1_RXNEIE);
+			UART_ITControl(pUARTHandle->pUARTx, UART_IT_TYPE_RXNE, DISABLE);
 
 			//Reset States
 			pUARTHandle->RXState = UART_STATE_READY;
@@ -323,12 +338,35 @@ void UART_IRQHandling(UART_Handle_t *pUARTHandle){
 	}
 }
 
-uint8_t UART_RecieveData_IT(UART_Handle_t* pUARTHandle, uint8_t* RXBuff, uint32_t Len){
+uint8_t UART_SendData_IT(UART_Handle_t* pUARTHandle, uint8_t* TXBuff, uint32_t Len){
+	/* Parameter validation */
+	if (pUARTHandle == NULL || TXBuff == NULL || Len == 0) {
+	    return 1;   /* Error */
+	}
+
+	/* Check if UART is already busy in TX */
+    if (pUARTHandle->TXState == UART_STATE_BUSY_TX) {
+        return 2;   /* Busy */
+    }
+
+    // Save the data in Global Handle
+    pUARTHandle->TXLen = Len;
+    pUARTHandle->pTXBuffer = TXBuff;
+    pUARTHandle->TXState = UART_STATE_BUSY_TX;
+
+    //Enable TXE interrupt
+    UART_ITControl(pUARTHandle->pUARTx, UART_IT_TYPE_TXE, ENABLE);
+
+    // On success return 0;
+    return 0;
+}
+
+uint8_t UART_ReceiveData_IT(UART_Handle_t* pUARTHandle, uint8_t* RXBuff, uint32_t Len){
     /* Parameter validation */
     if (pUARTHandle == NULL || RXBuff == NULL || Len == 0) {
         return 1;   /* Error */
     }
-    // Check if UART is already busy in different Reception
+
     /* Check if UART is already busy in RX */
     if (pUARTHandle->RXState == UART_STATE_BUSY_RX) {
         return 2;   /* Busy */
